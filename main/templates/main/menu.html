@@ -1,0 +1,61 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% load static %}
+<body>
+<main>
+    <section class="skrollable pb-5"
+             style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
+    background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
+
+        <h2 class="text-center py-3 fw-bold" style="color: #fd7014; font-family: Montserrat">МЕНЮ</h2>
+
+        <div class="sticky-top">
+            <div class="container pt-3 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        {% for ft in food_type %}
+                        <div class="btn fs-5 bg-dark mx-2 shadow-lg"
+                             style="color: #fd7014; font-family: Montserrat; --bs-bg-opacity: .8; border-radius: 50px;">
+                            {{ ft }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for ft in food_type %}
+        <h2 class="mx-5">{{ ft }}</h2>
+        <div class="container-fluid my-3">
+            <div class="row gy-3 mx-auto">
+                {% for dish in dishes %}
+                {% if dish.food_type == ft and dish.stop == False %}
+                <div class="col-lg-4 col-sm-6 bg-dark col-sm-5" style="--bs-bg-opacity: .7; border-radius: 50px;">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-4 text-center">
+                            <img src="/{{ dish.image }}" alt="" height="100px" width="100px" class="img my-3"
+                                 style="border-radius: 25px;">
+                        </div>
+                        <div class="col-lg-4 col-sm-4 text-start">
+                            <h5 class=" mb-0">{{ dish.name }}</h5>
+                            <p class=" fs-6">{{ dish.description }}</p>
+                        </div>
+                        <div class="col-lg-4 col-sm-4 text-center">
+                            {% if dish.old_price > dish.actual_price %}
+                            <del class="my-1 ms-1">{{ dish.old_price }}</del>
+                            ₸
+                            {% endif %}
+                            <p class="my-1 ms-1">{{ dish.actual_price }} ₸</p>
+                            <button class="btn btn-success my-1">Добавить</button>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </section>
+</main>
+</body>
+{% endblock content %}

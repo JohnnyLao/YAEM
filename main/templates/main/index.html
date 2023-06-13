@@ -1,0 +1,94 @@
+{% extends "main/base.html" %}
+{% block content %}
+{% load static %}
+<body>
+<main>
+
+    <section class="skrollable pb-5"
+             style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
+    background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
+
+        <h1 class="text-center py-3 fw-bold" style="color: #fd7014; font-family: Montserrat">ЗАВЕДЕНИЯ</h1>
+
+        <div class="sticky-top">
+            <div class="container py-3 text-center">
+                <div class="row">
+                    <div class="col-12">
+                        {% for t in types %}
+                        <div class="btn fs-5 bg-dark mx-2 shadow-lg"
+                             style="color: #fd7014; font-family: Montserrat; --bs-bg-opacity: .8; border-radius: 50px;">
+                            {{ t }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row my-3 gy-3 mx-auto">
+                <!--- цикл -->
+                {% for client in clients %}
+                {% if client.status %}
+                <div class="col-lg-3 col-sm-5 bg-dark text-center mx-auto"
+                     style="--bs-bg-opacity: .5; border-radius: 25px;">
+                    <img src="{{client.logo}}" alt="" class="w-50 my-2 mx-auto"
+                         style="border-radius: 25px;">
+                    <h4 class="text-start-center my-0">{{ client.name }}</h4>
+                    <p class="text-start my-0 ms-1 fst-italic">Время работы: {{ client.working_time }}</p>
+                    <p class="text-start my-0 ms-1">{{ client.description }}</p>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <p class="text-start my-1">Самовывоз</p>
+                                <p class="text-start my-1">Доставка</p>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <p class="text my-0">
+                                    {% if client.outside %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-check text-light bg-success" viewBox="0 0 16 16"
+                                         style="border-radius: 25px;">
+                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg>
+                                    {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                         class="bi bi-x bg-danger" viewBox="0 0 16 16"
+                                         style="border-radius: 25px;">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                    {% endif %}
+                                </p>
+                                <p class="text my-0">
+                                    {% if client.delivery %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                         class="bi bi-check text-light bg-success" viewBox="0 0 16 16"
+                                         style="border-radius: 25px;"> viewBox="0 0 16 16">
+                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                    </svg>
+                                    {% else %}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                         class="bi bi-x bg-danger" viewBox="0 0 16 16"
+                                         style="border-radius: 25px;">
+                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="menu/{{client.url_name}}">
+                        <button class="btn btn-success my-2">Перейти</button>
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+
+{% endblock content %}
