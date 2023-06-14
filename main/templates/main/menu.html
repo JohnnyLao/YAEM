@@ -1,13 +1,13 @@
 {% extends "main/base.html" %}
 {% block content %}
 {% load static %}
-<body>
+<body style="font-family: Montserrat">
 <main>
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
 
-        <h2 class="text-center py-3 fw-bold" style="color: #fd7014; font-family: Montserrat">МЕНЮ</h2>
+        <h2 class="text-center py-3 fw-bold">МЕНЮ</h2>
 
         <div class="sticky-top">
             <div class="container pt-3 text-center">
@@ -30,7 +30,7 @@
             <div class="row gy-3 mx-auto">
                 {% for dish in dishes %}
                 {% if dish.food_type == ft and dish.stop == False %}
-                <div class="col-lg-4 col-sm-6 bg-dark col-sm-5" style="--bs-bg-opacity: .7; border-radius: 50px;">
+                <div class="col-lg-6 col-sm-6 bg-dark col-sm-12" style="--bs-bg-opacity: .7; border-radius: 50px;">
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 text-center">
                             <img src="/{{ dish.image }}" alt="" height="100px" width="100px" class="img my-3"
