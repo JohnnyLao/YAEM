@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
 from main.models import Client, Dish, Food_type2, Client_Type
+from django.utils.translation import activate
 
 
 class Main(TemplateView):
@@ -26,3 +27,12 @@ class Menu(TemplateView):
         context['dishes'] = dishes
         context['food_type'] = food_type
         return context
+
+
+# Перевод шаблонов на разные языки
+def set_language(request):
+    if request.method == 'POST':
+        language = request.POST.get('language')  # получил выбранный язык из запроса
+        request.session['django_language'] = language  # сохранил выбранный язык в сессии
+        activate(language)  # установил выбранный язык
+    return redirect(request.META.get('HTTP_REFERER', '/'))

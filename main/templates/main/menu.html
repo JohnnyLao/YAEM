@@ -1,4 +1,7 @@
 {% extends "main/base.html" %}
+<!--тег для работы с переводами-->
+{% load i18n %}
+
 {% block content %}
 {% load static %}
 <body style="font-family: Montserrat">
@@ -7,7 +10,7 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
 
-        <h2 class="text-center pt-3 fw-bold">МЕНЮ</h2>
+        <h2 class="text-center pt-3 fw-bold">{% trans 'МЕНЮ' %}</h2>
 
         <div class="sticky-top">
             <div class="container pt-3 text-center">
@@ -46,7 +49,7 @@
                             ₸
                             {% endif %}
                             <p class="my-1 ms-1 fs-5 fw-bold">{{ dish.actual_price }} ₸</p>
-                            <button class="btn btn-success my-1">Добавить</button>
+                            <button class="btn btn-success my-1">{% trans 'Добавить' %}</button>
                         </div>
                     </div>
                 </div>
