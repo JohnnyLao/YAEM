@@ -31,9 +31,9 @@
                 {% for client in clients %}
                 {% if client.status %}
                 <div class="col-lg-3 col-sm-5 bg-dark text-center mx-auto"
-                     style="--bs-bg-opacity: .5; border-radius: 25px;">
-                    <img src="{{client.logo}}" alt="" class="w-50 my-2 mx-auto"
-                         style="border-radius: 25px;">
+                     style="--bs-bg-opacity: .5; border-radius: 30%">
+                    <img src="{{client.logo}}" alt="" height="150px" width="auto" class="my-2 mx-auto"
+                         style="border-radius: 15px;">
                     <h4 class="text-start-center my-0">{{ client.name }}</h4>
                     <p class="text-start my-0 ms-1 fst-italic">Время работы: {{ client.working_time }}</p>
                     <p class="text-start my-0 ms-1">{{ client.description }}</p>

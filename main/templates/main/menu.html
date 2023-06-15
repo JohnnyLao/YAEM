@@ -7,7 +7,7 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
 
-        <h2 class="text-center py-3 fw-bold">МЕНЮ</h2>
+        <h2 class="text-center pt-3 fw-bold">МЕНЮ</h2>
 
         <div class="sticky-top">
             <div class="container pt-3 text-center">
@@ -33,11 +33,11 @@
                 <div class="col-lg-6 col-sm-6 bg-dark col-sm-12" style="--bs-bg-opacity: .7; border-radius: 50px;">
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 text-center">
-                            <img src="/{{ dish.image }}" alt="" height="100px" width="100px" class="img my-3"
+                            <img src="/{{ dish.image }}" alt="" height="100px" width="auto" class="img my-3"
                                  style="border-radius: 25px;">
                         </div>
                         <div class="col-lg-4 col-sm-4 text-start">
-                            <h5 class=" mb-0">{{ dish.name }}</h5>
+                            <h5 class=" mb-0 fw-bold">{{ dish.name }}</h5>
                             <p class=" fs-6">{{ dish.description }}</p>
                         </div>
                         <div class="col-lg-4 col-sm-4 text-center">
@@ -45,7 +45,7 @@
                             <del class="my-1 ms-1">{{ dish.old_price }}</del>
                             ₸
                             {% endif %}
-                            <p class="my-1 ms-1">{{ dish.actual_price }} ₸</p>
+                            <p class="my-1 ms-1 fs-5 fw-bold">{{ dish.actual_price }} ₸</p>
                             <button class="btn btn-success my-1">Добавить</button>
                         </div>
                     </div>
