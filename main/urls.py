@@ -1,9 +1,11 @@
 from django.urls import path
-from main.views import Main, Menu
+from main.views import Main, Menu, set_language
 
 app_name = "main"
 
 urlpatterns = [
     path('', Main.as_view(), name="main_page"),
     path('menu/<str:url_name>/', Menu.as_view(), name="menu_page"),
+    # урл для работы функции переводчика
+    path('set-language/', set_language, name='set_language')
 ]

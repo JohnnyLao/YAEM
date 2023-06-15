@@ -1,4 +1,7 @@
 {% extends "main/base.html" %}
+<!--тег для работы с переводами-->
+{% load i18n %}
+
 {% block content %}
 {% load static %}
 <body style="font-family: Montserrat;">
@@ -8,7 +11,7 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
 
-        <h1 class="text-center py-3 fw-bold">ЗАВЕДЕНИЯ</h1>
+        <h1 class="text-center py-3 fw-bold">{% trans 'ЗАВЕДЕНИЯ' %}</h1>
 
         <div class="sticky-top">
             <div class="container py-3 text-center">
@@ -41,8 +44,8 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-6">
-                                <p class="text-start my-1">Самовывоз</p>
-                                <p class="text-start my-1">Доставка</p>
+                                <p class="text-start my-1">{% trans 'Самовывоз' %}</p>
+                                <p class="text-start my-1">{% trans 'Доставка' %}</p>
                             </div>
 
                             <div class="col-sm-6">
@@ -80,7 +83,7 @@
                         </div>
                     </div>
                     <a href="menu/{{client.url_name}}">
-                        <button class="btn btn-success my-2">Перейти</button>
+                        <button class="btn btn-success my-2">{% trans 'Перейти' %}</button>
                     </a>
                 </div>
                 {% endif %}
