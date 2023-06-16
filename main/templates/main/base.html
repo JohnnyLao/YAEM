@@ -40,10 +40,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a href="/" class="nav-link fs-5 text-black" style="font-family: Montserrat">{% trans 'ГЛАВНАЯ' %}</a>
+                    <a href="/" class="nav-link fs-5 text-black"
+                       style="font-family: Montserrat">{% trans 'ГЛАВНАЯ' %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/partner/" class="nav-link fs-5 text-black" style="font-family: Montserrat">{% trans 'КОНТАКТЫ' %}</a>
+                    <a href="/partner/" class="nav-link fs-5 text-black"
+                       style="font-family: Montserrat">{% trans 'КОНТАКТЫ' %}</a>
                 </li>
             </ul>
         </div>
@@ -126,7 +128,33 @@
     </div>
 </div>
 <!--- MODAL -->
+<section class="">
+
+    <div id="counter" class="indicator-list  container">
+        <div class="row text-center fs-2 my-4 fw-bold" style="color: #fd7014">
+            <div class="col col-lg-4">
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num="14" class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-body">Заведений</div>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="indicators-item"><!--item-2-->
+                    <div data-num="1017" class="indicators-title"></div>
+                    <div class="lng-unit5 indicators-subtitle text-body">Посетителей</div>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="indicators-item"><!--item-3-->
+                    <div data-num="432" class="indicators-title"></div>
+                    <div class="lng-unit6 indicators-subtitle text-body">Заказов</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
+
 
 {% block content %}
 
@@ -189,6 +217,7 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
     $(document).ready(function() {
@@ -209,6 +238,8 @@
 
 
 
+
     </script>
+    <script src="{% static 'js/script.js' %}"></script>
 </footer>
 </html>
