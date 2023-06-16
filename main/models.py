@@ -42,7 +42,7 @@ class Client(models.Model):
     def save(self, *args, **kwargs):
         # Создаем папку для хранения логотипов при сохранении экземпляра класса
         if not self.pk:
-            os.makedirs(f"images/{self.name}/logo/", exist_ok=True)
+            os.makedirs(f"./static/images/{self.name}/logo/", exist_ok=True)
         super().save(*args, **kwargs)
 
 

@@ -30,20 +30,20 @@
         {% for ft in food_type %}
         <h2 class="mx-5">{{ ft }}</h2>
         <div class="container-fluid my-3">
-            <div class="row gy-3 mx-auto">
+            <div class="row gy-3 mx-auto justify-content-center">
                 {% for dish in dishes %}
                 {% if dish.food_type == ft and dish.stop == False %}
-                <div class="col-lg-6 col-sm-6 bg-dark col-sm-12" style="--bs-bg-opacity: .7; border-radius: 50px;">
+                <div class="col-lg-5 bg-dark col-sm-12 mx-1" style="--bs-bg-opacity: .7; border-radius: 50px;">
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 text-center">
-                            <img src="/{{ dish.image }}" alt="" height="100px" width="auto" class="img my-3"
+                            <img src="/{{ dish.image }}" alt="" height="100px" width="135px" class="img my-3"
                                  style="border-radius: 25px;">
                         </div>
-                        <div class="col-lg-4 col-sm-4 text-start">
+                        <div class="col-lg-5 col-sm-4 text-start">
                             <h5 class=" mb-0 fw-bold">{{ dish.name }}</h5>
                             <p class=" fs-6">{{ dish.description }}</p>
                         </div>
-                        <div class="col-lg-4 col-sm-4 text-center">
+                        <div class="col-lg-3 col-sm-4 text-center">
                             {% if dish.old_price > dish.actual_price %}
                             <del class="my-1 ms-1">{{ dish.old_price }}</del>
                             ₸

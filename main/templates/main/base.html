@@ -2,9 +2,10 @@
 <!--тег для работы с переводами-->
 {% load i18n %}
 
-<!DOCTYPE html>
+
 <html lang="en" data-bs-theme="dark" style="font-family: Montserrat">
 {% get_current_language as LANGUAGE_CODE %}
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -51,22 +52,19 @@
                 </li>
             </ul>
         </div>
-        <button class="btn text-black"> {% trans 'Корзина' %}
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
-                 viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-        </button>
+        <a href="/cart/">
+            <button class="btn text-black"> {% trans 'Корзина' %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
+                     viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+            </button>
+        </a>
 
-        <button class="btn me-1 text-black" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
-                 viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-        </button>
+
 
         <!--  форма для переключения языков  -->
-        <form method="post" action="{% url 'main:set_language' %}">
+        <form class="my-auto" method="post" action="{% url 'main:set_language' %}">
             {% csrf_token %}
             <button type="submit" name="language" value="ru" class="btn text-black">RU</button>
             <!--     Джанго жалуется на праввильность передов КЗ даже протестить не получается,
@@ -79,64 +77,7 @@
     </div>
 </nav>
 
-<!--- MODAL -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">{% trans 'Корзина' %}</h5>
-                <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-            </div>
-
-            <div class="modal-body">
-                <h6 class="text-center">
-                    <div class="row">
-                        <div class="col-4">{% trans 'название' %}</div> <!--- цикл -->
-                        <div class="col-4">{% trans 'количество' %}</div> <!--- цикл -->
-                        <div class="col-4">{% trans 'цена' %}</div> <!--- цикл -->
-                    </div>
-                    <label class="text-end my-3 mx-5"> {% trans 'общая стоимость' %}</label>
-                </h6>
-
-                <form action="">
-                    <div class="row mb-3">
-                        <div class="row mb-3">
-                            <div class="col-sm-6">
-                                <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="switch">
-                                    <label class="form-check-label" for="switch">
-                                        {% trans 'Доставка/самовывоз' %}</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mb-3" id="input_1" style="display: none">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput_1"
-                                   placeholder="name@example.com">
-                            <label class="ms-2" for="floatingInput_1">{% trans 'Введите имя' %}</label>
-                        </div>
-                    </div>
-                    <div class="row mb-3" id="input_2" style="display: none">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput_2"
-                                   placeholder="name@example.com">
-                            <label class="ms-2" for="floatingInput_2">{% trans 'Введите телефон' %}</label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="modal-footer">
-                <button class="btn btn-success" id="input_3" style="display: none">{% trans 'Отправить Заказ' %}
-                </button>
-                <button class="btn btn-danger" data-bs-dismiss="modal">{% trans 'Закрыть' %}</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--- MODAL END -->
 
 <!--COUNTER START-->
 <section>
@@ -229,33 +170,6 @@
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-    $(document).ready(function() {
-        $('#switch').change(function() {
-            if ($(this).is(':checked')) {
-                $('#input_1, #input_2, #input_3').show();
-            } else {
-                $('#input_1, #input_2, #input_3').hide();
-            }
-        });
-    });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
     <script src="{% static 'js/script.js' %}"></script>
 </footer>
 </html>
