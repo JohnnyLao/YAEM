@@ -26,6 +26,7 @@ class Menu(TemplateView):
         food_type = Food_type2.objects.filter(dish__in=dishes).distinct()
         context['dishes'] = dishes
         context['food_type'] = food_type
+        context['client'] = client
         return context
 
 

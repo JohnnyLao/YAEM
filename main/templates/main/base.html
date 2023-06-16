@@ -82,7 +82,7 @@
 <!--COUNTER START-->
 <section>
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center fs-2 my-4 fw-bold" style="color: #fd7014">
+        <div class="row text-center fs-4 my-3 fw-bold" style="color: #fd7014">
             <div class="col col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num="14" class="indicators-title"></div>
@@ -113,25 +113,25 @@
 
 <footer style="font-family: Montserrat">
     <div class="container-fluid py-3 bg-black" style="--bs-bg-opacity: .3; ">
-        <h2 class="text-center my-3">{% trans 'НАША КОМАНДА' %}</h2>
+        <h3 class="text-center my-3">{% trans 'НАША КОМАНДА' %}</h3>
         <div class="row">
             <div class="col-lg-4 col-sm-6 text-center">
-                <img src="{% static 'images/people-1.jpg' %}" height="200" width="auto" alt="" class="img"
+                <img src="{% static 'images/people-1.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
-                <p class="fs-4 mt-3">{% trans 'Егор' %}</p>
-                <p class="fs-5">{% trans 'Закладчик' %}</p>
+                <p class="fs-5 mt-3">{% trans 'Егор' %}</p>
+                <p class="">{% trans 'Коммерческий директор' %}</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img src="{% static 'images/people-2.jpg' %}" height="200" width="auto" alt="" class="img"
+                <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
-                <p class="fs-4 mt-3">{% trans 'Олег' %}</p>
-                <p class="fs-5">{% trans 'Менеджер' %}</p>
+                <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
+                <p class="">{% trans 'Руководитель отдела развития' %}</p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img src="{% static 'images/people-3.jpg' %}" height="200" width="auto" alt="" class="img"
+                <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
-                <p class="fs-4 mt-3">{% trans 'Артём' %}</p>
-                <p class="fs-5">{% trans 'IT Man' %}</p>
+                <p class="fs-5 mt-3">{% trans 'Артём' %}</p>
+                <p class="">{% trans 'Руководитель отдела разработки' %}</p>
             </div>
 
         </div>
@@ -139,8 +139,8 @@
     </div>
 
 
-    <div class="container-fluid bg-dark mb-5 fw-bold">
-        <h3 class="text-center my-3">{% trans 'СВЯЗАТЬСЯ С НАМИ' %}</h3>
+    <div class="container-fluid bg-dark">
+        <h4 class="text-center my-3">{% trans 'СВЯЗАТЬСЯ С НАМИ' %}</h4>
         <div class="row my-3">
             <div class="col-md-4 text-end">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
