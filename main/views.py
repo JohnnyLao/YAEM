@@ -28,8 +28,14 @@ class Menu(TemplateView):
         context['food_type'] = food_type
         return context
 
+
 class Partner(TemplateView):
     template_name = "main/partner.html"
+
+
+class Cart(TemplateView):
+    template_name = "main/cart.html"
+
 # Перевод шаблонов на разные языки
 def set_language(request):
     if request.method == 'POST':

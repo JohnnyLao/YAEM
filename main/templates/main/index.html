@@ -11,7 +11,7 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
 
-        <h1 class="text-center py-3 fw-bold">{% trans 'ЗАВЕДЕНИЯ' %}</h1>
+        <h1 class="text-center pt-4 fw-bold" style="color: #fd7014">{% trans 'ЗАВЕДЕНИЯ' %}</h1>
 
         <div class="sticky-top">
             <div class="container py-3 text-center">
@@ -20,7 +20,7 @@
                         {% for t in types %}
                         <div class="btn fs-5 bg-dark mx-2 shadow-lg"
                              style="color: #fd7014; font-family: Montserrat; --bs-bg-opacity: .8; border-radius: 50px;">
-                            {{ t }}
+                            {{ t|trans }}
                         </div>
                         {% endfor %}
                     </div>

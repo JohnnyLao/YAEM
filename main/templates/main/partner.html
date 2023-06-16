@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     {% extends "main/base.html" %}
     {% block content %}
@@ -7,9 +7,12 @@
 <body>
 <main>
 
+    <!--BG START-->
     <section class="skrollable py-3"
              style="background-image: url({% static 'images/5.jpg' %});
     background-attachment:fixed; background-repeat: repeat">
+        <!--BG END-->
+
         <div class="container">
             <div class="row text-white pt-5">
                 <div class="col col-6"></div>
@@ -68,10 +71,11 @@
         </div>
         <div class="container text-center">
 
+            <!--CAROUSEL START-->
             <div class="container text-center mb-5 mt-0">
                 <h2 class="my-5">Примеры онлайн меню</h2>
                 <div class="row justify-content-center">
-                    <div class="col col-7">
+                    <div class="col col-lg-7 col-sm-10">
                         <div id="carouselExampleIndicators" class="carousel slide">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
@@ -110,11 +114,11 @@
             </div>
         </div>
     </section>
-
+    <!--CAROUSEL END-->
 
     <section class="skrollable py-3"
              style="background-image: url({% static 'images/1.jpg' %});
-    background-attachment:fixed; background-position: 50%; background-repeat: repeat">
+    background-attachment:fixed; background-position: 60%; background-repeat: repeat; background-size: 250%">
         <div class="container">
             <h2 class="text-center fw-bold text-white my-5">НАШИ ПРИЕМУЩЕСТВА</h2>
             <div class="row gy-5 mb-5">
