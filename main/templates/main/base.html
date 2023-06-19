@@ -1,5 +1,4 @@
 {% load static %}
-<!--тег для работы с переводами-->
 {% load i18n %}
 
 
@@ -25,7 +24,7 @@
 
 <nav class="navbar navbar-expand-sm bg-light">
     <div class="container text-dark">
-        <a href="/">
+        <a href="{% url 'main:main_page' %}">
             <button class="btn me-5" role="link">
                 <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </button>
@@ -43,16 +42,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a href="/" class="nav-link fs-5 text-black"
+                    <a href="{% url 'main:main_page' %}" class="nav-link fs-5 text-black"
                        style="font-family: Montserrat">{% trans 'ГЛАВНАЯ' %}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/partner/" class="nav-link fs-5 text-black"
+                    <a href="{% url 'partner:partner_page' %}" class="nav-link fs-5 text-black"
                        style="font-family: Montserrat">{% trans 'КОНТАКТЫ' %}</a>
                 </li>
             </ul>
         </div>
-        <a href="/cart/">
+        <a href="{% url 'cart:cart_page' %}">
             <button class="btn text-black"> {% trans 'Корзина' %}
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart3"
                      viewBox="0 0 16 16">
@@ -85,20 +84,20 @@
         <div class="row text-center fs-4 my-3 fw-bold" style="color: #fd7014">
             <div class="col col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="14" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">Заведений</div>
+                    <div data-num="{{total_clients}}" class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
                 </div>
             </div>
             <div class="col col-lg-4">
-                <div class="indicators-item"><!--item-2-->
-                    <div data-num="1017" class="indicators-title"></div>
-                    <div class="lng-unit5 indicators-subtitle text-white">Посетителей</div>
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num={{total_dishes}} class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Блюд' %}</div>
                 </div>
             </div>
             <div class="col col-lg-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num="432" class="indicators-title"></div>
-                    <div class="lng-unit6 indicators-subtitle text-white">Заказов</div>
+                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div class="lng-unit6 indicators-subtitle text-white">{% trans 'Заказов' %}</div>
                 </div>
             </div>
         </div>

@@ -1,7 +1,6 @@
 {% extends "main/base.html" %}
 <!--тег для работы с переводами-->
 {% load i18n %}
-
 {% block content %}
 {% load static %}
 <body style="font-family: Montserrat">
@@ -20,7 +19,8 @@
                     </div>
                     <div class="col-7"><h4 class="text-start ms-5">Добро пожаловать в {{ client.name }}</h4>
                         <p class="text-start ms-2 my-1 fst-italic text-body">Время работы: {{ client.working_time }}</p>
-                        <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон: {{client.phone}}</p>
+                        <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон:
+                            {{client.phone}}</p>
                         <p class="text-start ms-2 my-2">{{ client.description }}</p>
                         <div class="container-fluid">
                             <div class="row">
@@ -39,7 +39,7 @@
                                         </svg>
                                         {% else %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                             class="bi bi-x bg-danger mt-3" viewBox="0 0 16 16"
+                                             class="bi bi-x bg-danger mt-0" viewBox="0 0 16 16"
                                              style="border-radius: 25px;">
                                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                         </svg>
@@ -112,7 +112,23 @@
                             ₸
                             {% endif %}
                             <p class="my-1 ms-1 fs-5 fw-bold">{{ dish.actual_price }} ₸</p>
-                            <button class="btn btn-success my-1">{% trans 'Добавить' %}</button>
+
+
+
+
+                            <!--       Add to cart form       -->
+                            <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}">
+<!--                                <button class="btn btn-danger my-1" type="submit" style="border-radius: 100px;">-</button>  ДОБАВИТЬ В ФУНКЦИЮ ПО УДАЛЕНИЮ-->
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{ dish.id }}">
+                                <input type="number" name="quantity" value="1" style="width: 50px;">
+                                <button class="btn btn-success my-1" type="submit" style="border-radius: 100px;">+</button>
+                            </form>
+
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                            <script src="{% static 'js/add_to_cart.js' %}"></script>
+
+
                         </div>
                     </div>
                 </div>
