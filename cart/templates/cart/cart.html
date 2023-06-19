@@ -20,13 +20,20 @@
         <div>
             <h4>{{ cart_item.product.name }}</h4>
             <p>Quantity: {{ cart_item.quantity }}</p>
+            <p>Price: {{ cart_item.product.actual_price }}₸</p>
+            <p>Subtotal: {{cart_item.sub_total}}₸</p>
+            <form method="post" action="{% url 'cart:cart_page' %}">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="{{ cart_item.product.id }}">
+                <button type="submit">Remove</button>
+            </form>
         </div>
         {% endfor %}
 
         <div class="row my-5">
             <div class="col-8"></div>
             <div class="col-4 text-center my-5">
-                <h5 class="my-3">TOTAL PRICE ₸</h5>
+                <h5 class="my-3">{{ total_price }}₸</h5>
                 <button class="btn btn-success mx-3 px-4" data-bs-toggle="modal" data-bs-target="#exampleModal">Заказать
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-rocket-takeoff" viewBox="0 0 16 16">

@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from main.models import Dish
 
@@ -35,19 +35,43 @@ class AddToCartView(View):
 class CartView(View):
     def get(self, request):
         cart = request.session.get('cart', {})
-
-        # Получение информации о товарах в корзине
         cart_items = []
+        sub_total_price = 0
+        total_price = 0
+
         for product_id, quantity in cart.items():
-            # Получение информации о товаре по его идентификатору
             try:
                 product = Dish.objects.get(id=product_id)
                 cart_item = {
                     'product': product,
-                    'quantity': quantity
+                    'quantity': quantity,
+                    'sub_total': product.actual_price * quantity,
                 }
                 cart_items.append(cart_item)
+                sub_total_price += cart_item['sub_total']
             except Dish.DoesNotExist:
                 pass
 
-        return render(request, 'cart/cart.html', {'cart_items': cart_items})
+        total_price = sub_total_price  # Вычисление общей суммы
+
+        context = {
+            'cart_items': cart_items,
+            'sub_total_price': sub_total_price,
+            'total_price': total_price,
+        }
+
+        return render(request, 'cart/cart.html', context=context)
+
+    def post(self, request):
+        product_id = request.POST.get('product_id')
+
+        if product_id:
+            cart = request.session.get('cart', {})
+            if product_id in cart:
+                # Уменьшаем количество товара на 1
+                cart[product_id] -= 1
+                if cart[product_id] <= 0:
+                    del cart[product_id]
+                request.session['cart'] = cart
+
+        return redirect('cart:cart_page')
