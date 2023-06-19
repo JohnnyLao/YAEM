@@ -71,7 +71,6 @@ class Client_Category(models.Model):
 
 class Food_type(models.Model):
     name = models.CharField(max_length=30, verbose_name="Категория")
-    client = models.ManyToManyField(Client, blank=True)
 
     class Meta:
         verbose_name = "Категория"

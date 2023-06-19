@@ -11,6 +11,9 @@ class Main(TemplateView):
         context = super().get_context_data(**kwargs)
         context["clients"] = Client.objects.all()
         context["types"] = Client_Type.objects.all()
+        context['total_dishes'] = Dish.objects.count()
+        context['total_clients'] = Client.objects.count()
+        context["total_orders"] = (context['total_dishes'] * 21)
         return context
 
 
@@ -27,6 +30,9 @@ class Menu(TemplateView):
         context['dishes'] = dishes
         context['food_type'] = food_type
         context['client'] = client
+        context['total_dishes'] = Dish.objects.count()
+        context['total_clients'] = Client.objects.count()
+        context["total_orders"] = (context['total_dishes'] * 21)
         return context
 
 

@@ -9,7 +9,6 @@ admin.site.register(Client_Category)
 @admin.register(Food_type)
 class Food_typeAdmin(admin.ModelAdmin):
     list_display = ['name']
-    list_filter = ["client"]
 
 
 @admin.register(Food_type2)
