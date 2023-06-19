@@ -73,5 +73,6 @@ class CartView(View):
                 if cart[product_id] <= 0:
                     del cart[product_id]
                 request.session['cart'] = cart
+                return JsonResponse({'success': True})
 
-        return redirect('cart:cart_page')
+        return JsonResponse({'success': False})
