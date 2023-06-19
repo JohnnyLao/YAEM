@@ -1,12 +1,9 @@
 from django.urls import path
-from .views import AddToCartView, CartView
+from . import views
 
 app_name = 'cart'
 
 urlpatterns = [
-    # URL-шаблон для добавления товара в корзину
-    path('add-to-cart/', AddToCartView.as_view(), name='add_to_cart'),
-
-    # URL-шаблон для отображения содержимого корзины
-    path('cart/', CartView.as_view(), name='cart_page'),
+    path('add_to_cart/', views.AddToCartView.as_view(), name='add_to_cart'),
+    path('cart', views.CartView.as_view(), name='cart_page'),
 ]

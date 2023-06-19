@@ -118,38 +118,37 @@
                             <button class="btn btn-success my-1"></button>
 
                             <!--       Add to cart form       -->
-                            <form id="add-to-cart-form">
+                            <!--       Add to cart form       -->
+                            <form class="add-to-cart-form">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value="{{ product.id }}">
-                                <input type="number" name="quantity" value="1">
+                                <input type="number" name="quantity" value="1" style="width: 50px;">
+
                                 <button class="btn btn-success my-1" type="submit">{% trans 'Добавить' %}</button>
                             </form>
 
+                            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                             <script>
-    // Отправка AJAX-запроса при отправке формы
-    document.getElementById('add-to-cart-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Предотвращаем обычное поведение отправки формы
+    $(document).ready(function() {
+        $(".add-to-cart-form").submit(function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            var formData = new FormData(form[0]);
 
-        // Создаем объект FormData из формы
-        var formData = new FormData(this);
-
-        // Отправляем AJAX-запрос
-        fetch("{% url 'cart:add_to_cart' %}", {
-            method: 'POST',
-            body: formData
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            if (data.success) {
-                console.log("Товар успешно добавлен в корзину!");
-            } else {
-                console.log("Произошла ошибка при добавлении товара в корзину.");
-            }
-        })
-        .catch(function(error) {
-            console.error('Произошла ошибка:', error);
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // handle success response
+                },
+                error: function(xhr, status, error) {
+                    // handle error response
+                }
+            });
         });
     });
 

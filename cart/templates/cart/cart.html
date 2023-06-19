@@ -17,11 +17,10 @@
     <div class="container bg-black my-5 position-relative" style="--bs-bg-opacity: .35">
         <!--    for loop    -->
         {% for cart_item in cart_items %}
-            <div class="row my-5 py-3">
-                <div class="col-6">{{ cart_item.product.name }}</div>
-                <div class="col-3">{{ cart_item.quantity }}</div>
-                <div class="col-3">{{ cart_item.product.actual_price }} ₸</div>
-            </div>
+        <div>
+            <h4>{{ cart_item.product.name }}</h4>
+            <p>Quantity: {{ cart_item.quantity }}</p>
+        </div>
         {% endfor %}
 
         <div class="row my-5">

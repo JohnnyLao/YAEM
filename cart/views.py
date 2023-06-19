@@ -22,9 +22,9 @@ class AddToCartView(View):
         cart = request.session['cart']
 
         # Добавление товара в корзину
-        if product_id in cart:
+        if product_id and product_id in cart:
             cart[product_id] += int(quantity)
-        else:
+        elif product_id:
             cart[product_id] = int(quantity)
 
         request.session.modified = True
