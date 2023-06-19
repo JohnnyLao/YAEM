@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-15 10:14+0000\n"
+"POT-Creation-Date: 2023-06-19 05:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,87 +18,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/templates/main/base.html:17
-msgid "QR МЕНЮ ДЛЯ ЗАВЕДЕНИЙ"
-msgstr "QR MENU FOR ESTABLISHMENTS"
-
-#: main/templates/main/base.html:43
-msgid "ГЛАВНАЯ"
-msgstr "MAIN"
-
-#: main/templates/main/base.html:46
-msgid "КОНТАКТЫ"
-msgstr "CONTACTS"
-
-#: main/templates/main/base.html:74
+#: cart/templates/cart/cart.html:16 main/templates/main/base.html:55
 msgid "Корзина"
 msgstr "Cart"
 
-#: main/templates/main/base.html:81
-msgid "название"
-msgstr "name"
+#: cart/templates/cart/cart.html:55
+msgid "Заказ"
+msgstr "Order"
 
-#: main/templates/main/base.html:82
-msgid "количество"
-msgstr "quantity"
+#: cart/templates/cart/cart.html:67 main/templates/main/index.html:48
+#: main/templates/main/menu.html:29
+msgid "Доставка"
+msgstr "Delivery"
 
-#: main/templates/main/base.html:83
-msgid "цена"
-msgstr "price"
+#: cart/templates/cart/cart.html:74 main/templates/main/index.html:47
+#: main/templates/main/menu.html:28
+msgid "Самовывоз"
+msgstr "Pickup"
 
-#: main/templates/main/base.html:85
-msgid "общая стоимость"
-msgstr "total price"
-
-#: main/templates/main/base.html:94
-msgid "Доставка/самовывоз"
-msgstr "Delivery/pickup"
-
-#: main/templates/main/base.html:103
+#: cart/templates/cart/cart.html:83
 msgid "Введите имя"
 msgstr "Enter your name"
 
-#: main/templates/main/base.html:110
+#: cart/templates/cart/cart.html:90
 msgid "Введите телефон"
 msgstr "Enter your phone"
 
-#: main/templates/main/base.html:117
+#: cart/templates/cart/cart.html:97
 msgid "Отправить Заказ"
 msgstr "Send an order"
 
-#: main/templates/main/base.html:118
+#: cart/templates/cart/cart.html:99
 msgid "Закрыть"
 msgstr "Close"
 
-#: main/templates/main/base.html:132
+#: main/templates/main/base.html:18
+msgid "QR МЕНЮ ДЛЯ ЗАВЕДЕНИЙ"
+msgstr "QR MENU FOR ESTABLISHMENTS"
+
+#: main/templates/main/base.html:46
+msgid "ГЛАВНАЯ"
+msgstr "MAIN"
+
+#: main/templates/main/base.html:50
+msgid "КОНТАКТЫ"
+msgstr "CONTACTS"
+
+#: main/templates/main/base.html:88
+msgid "Заведений"
+msgstr "Establishments"
+
+#: main/templates/main/base.html:94
+msgid "Клиенты"
+msgstr "Clients"
+
+#: main/templates/main/base.html:100
+msgid "Заказов"
+msgstr "Orders"
+
+#: main/templates/main/base.html:115
 msgid "НАША КОМАНДА"
 msgstr "OUR TEAMS"
 
-#: main/templates/main/base.html:137
+#: main/templates/main/base.html:120
 msgid "Егор"
 msgstr "Egor"
 
-#: main/templates/main/base.html:138
-msgid "Закладчик"
-msgstr "Pawnbroker"
+#: main/templates/main/base.html:121
+msgid "Коммерческий директор"
+msgstr "Commercial Director"
 
-#: main/templates/main/base.html:143
+#: main/templates/main/base.html:126
 msgid "Олег"
 msgstr "Oleg"
 
-#: main/templates/main/base.html:144
-msgid "Менеджер"
-msgstr "Manager"
+#: main/templates/main/base.html:127
+msgid "Руководитель отдела развития"
+msgstr "Head of Development Department"
 
-#: main/templates/main/base.html:149
+#: main/templates/main/base.html:132
 msgid "Артём"
 msgstr "Artyom"
 
-#: main/templates/main/base.html:150
-msgid "IT Man"
-msgstr "IT Man"
+#: main/templates/main/base.html:133
+msgid "Руководитель отдела разработки"
+msgstr "Head of Development Department"
 
-#: main/templates/main/base.html:159
+#: main/templates/main/base.html:142
 msgid "СВЯЗАТЬСЯ С НАМИ"
 msgstr "CONNECT WITH US"
 
@@ -106,25 +112,77 @@ msgstr "CONNECT WITH US"
 msgid "ЗАВЕДЕНИЯ"
 msgstr "ESTABLISHMENTS"
 
-#: main/templates/main/index.html:47
-msgid "Самовывоз"
-msgstr "Pickup"
-
-#: main/templates/main/index.html:48
-msgid "Доставка"
-msgstr "Delivery"
-
 #: main/templates/main/index.html:86
 msgid "Перейти"
 msgstr "Go to"
 
-#: main/templates/main/menu.html:13
+#: main/templates/main/menu.html:74 partner/templates/partner/partner.html:27
 msgid "МЕНЮ"
 msgstr "MENU"
 
-#: main/templates/main/menu.html:52
+#: main/templates/main/menu.html:115
 msgid "Добавить"
 msgstr "Add"
+
+#: partner/templates/partner/partner.html:26
+msgid "ОНЛАЙН"
+msgstr "ONLINE"
+
+#: partner/templates/partner/partner.html:28
+msgid "БЕСПЛАТНО"
+msgstr "FREE"
+
+#: partner/templates/partner/partner.html:38
+msgid "Присоединяйтесь к сети заведений с онлайн меню"
+msgstr "Join the network of establishments with an online menu"
+
+#: partner/templates/partner/partner.html:39
+msgid "И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД"
+msgstr "AND WE WILL MAKE ONLINE MENU AND QR CODE FOR YOU"
+
+#: partner/templates/partner/partner.html:40
+msgid "Подключить"
+msgstr "To plug"
+
+#: partner/templates/partner/partner.html:51
+msgid "Всё просто"
+msgstr "It's simple"
+
+#: partner/templates/partner/partner.html:52
+msgid "Берём образец"
+msgstr "We take a sample"
+
+#: partner/templates/partner/partner.html:52
+msgid "Вашего меню"
+msgstr "your menu"
+
+#: partner/templates/partner/partner.html:53
+msgid "Создаём страницу с меню на"
+msgstr "Create a menu page"
+
+#: partner/templates/partner/partner.html:53
+msgid "Нашем сайте"
+msgstr "Our site"
+
+#: partner/templates/partner/partner.html:54
+msgid "Выдаём QR код для перехода в"
+msgstr "We issue a QR code to go to"
+
+#: partner/templates/partner/partner.html:54
+msgid "Ваше онлайн меню"
+msgstr "Your online menu"
+
+#: partner/templates/partner/partner.html:65
+msgid "Свяжитесь со мной"
+msgstr "Contact me"
+
+#: partner/templates/partner/partner.html:81
+msgid "Примеры онлайн меню"
+msgstr "Online menu examples"
+
+#: partner/templates/partner/partner.html:128
+msgid "НАШИ ПРИЕМУЩЕСТВА"
+msgstr "OUR ADVANTAGES"
 
 #: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
 msgid "Messages"
@@ -1332,3 +1390,36 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Посетителей"
+#~ msgstr "Visitors"
+
+#, fuzzy
+#~| msgid "Введите телефон"
+#~ msgid "Номер телефона"
+#~ msgstr "Phone number"
+
+#~ msgid "название"
+#~ msgstr "name"
+
+#~ msgid "количество"
+#~ msgstr "quantity"
+
+#~ msgid "цена"
+#~ msgstr "price"
+
+#~ msgid "общая стоимость"
+#~ msgstr "total price"
+
+#~ msgid "Доставка/самовывоз"
+#~ msgstr "Delivery/pickup"
+
+#~ msgid "Закладчик"
+#~ msgstr "Pawnbroker"
+
+#~ msgid "Менеджер"
+#~ msgstr "Manager"
+
+#~ msgid "IT Man"
+#~ msgstr "IT Man"

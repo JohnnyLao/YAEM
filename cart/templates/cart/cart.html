@@ -13,23 +13,17 @@
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/4.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
-    <h1 class="text-center pt-5">Корзина</h1>
+    <h1 class="text-center pt-5">{% trans 'Корзина' %}</h1>
     <div class="container bg-black my-5 position-relative" style="--bs-bg-opacity: .35">
-        <div class="row my-5 py-3">
-            <div class="col-6">DISH.DESCRIPTION</div>
-            <div class="col-3">DISH.QUANTITY</div>
-            <div class="col-3">SUBTOTAL_PRICE ₸</div>
-        </div>
-        <div class="row my-5 py-3">
-            <div class="col-6">DISH.DESCRIPTION</div>
-            <div class="col-3">DISH.QUANTITY</div>
-            <div class="col-3">SUBTOTAL_PRICE ₸</div>
-        </div>
-        <div class="row my-5 py-3">
-            <div class="col-6">DISH.DESCRIPTION</div>
-            <div class="col-3">DISH.QUANTITY</div>
-            <div class="col-3">SUBTOTAL_PRICE ₸</div>
-        </div>
+        <!--    for loop    -->
+        {% for cart_item in cart_items %}
+            <div class="row my-5 py-3">
+                <div class="col-6">{{ cart_item.product.name }}</div>
+                <div class="col-3">{{ cart_item.quantity }}</div>
+                <div class="col-3">{{ cart_item.product.actual_price }} ₸</div>
+            </div>
+        {% endfor %}
+
         <div class="row my-5">
             <div class="col-8"></div>
             <div class="col-4 text-center my-5">

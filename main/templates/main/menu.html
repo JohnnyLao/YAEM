@@ -20,7 +20,8 @@
                     </div>
                     <div class="col-7"><h4 class="text-start ms-5">Добро пожаловать в {{ client.name }}</h4>
                         <p class="text-start ms-2 my-1 fst-italic text-body">Время работы: {{ client.working_time }}</p>
-                        <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон: {{client.phone}}</p>
+                        <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон:
+                            {{client.phone}}</p>
                         <p class="text-start ms-2 my-2">{{ client.description }}</p>
                         <div class="container-fluid">
                             <div class="row">
@@ -112,7 +113,49 @@
                             ₸
                             {% endif %}
                             <p class="my-1 ms-1 fs-5 fw-bold">{{ dish.actual_price }} ₸</p>
-                            <button class="btn btn-success my-1">{% trans 'Добавить' %}</button>
+
+
+                            <button class="btn btn-success my-1"></button>
+
+                            <!--       Add to cart form       -->
+                            <form id="add-to-cart-form">
+                                {% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                <input type="number" name="quantity" value="1">
+                                <button class="btn btn-success my-1" type="submit">{% trans 'Добавить' %}</button>
+                            </form>
+
+                            <script>
+    // Отправка AJAX-запроса при отправке формы
+    document.getElementById('add-to-cart-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем обычное поведение отправки формы
+
+        // Создаем объект FormData из формы
+        var formData = new FormData(this);
+
+        // Отправляем AJAX-запрос
+        fetch("{% url 'cart:add_to_cart' %}", {
+            method: 'POST',
+            body: formData
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            if (data.success) {
+                console.log("Товар успешно добавлен в корзину!");
+            } else {
+                console.log("Произошла ошибка при добавлении товара в корзину.");
+            }
+        })
+        .catch(function(error) {
+            console.error('Произошла ошибка:', error);
+        });
+    });
+
+                            </script>
+
+
                         </div>
                     </div>
                 </div>
