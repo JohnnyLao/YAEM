@@ -68,7 +68,7 @@ class CartView(View):
         if product_id:
             cart = request.session.get('cart', {})
             if product_id in cart:
-                # Уменьшаем количество товара на 1
+
                 cart[product_id] -= 1
                 if cart[product_id] <= 0:
                     del cart[product_id]
@@ -76,3 +76,6 @@ class CartView(View):
                 return JsonResponse({'success': True})
 
         return JsonResponse({'success': False})
+
+
+
