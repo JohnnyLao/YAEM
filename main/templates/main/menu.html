@@ -17,7 +17,18 @@
                         <img src="/{{client.logo}}" alt="" height="200px" width="auto" class="my-4"
                              style="border-radius: 15px;">
                     </div>
-                    <div class="col-7"><h4 class="text-start ms-5">Добро пожаловать в {{ client.name }}</h4>
+
+                    <div class="col-7">
+                        <h4 class="text-start ms-5">
+                            Добро пожаловать в {{ client.name }}
+                            <a href="{{ client.inst }}">
+                                <div class="btn btn-success btn-sm" style="border-radius: 50px">
+                                    <img src="{% static 'images/inst.png' %}" height="20px" class="img">
+                                </div>
+                            </a>
+                        </h4>
+
+
                         <p class="text-start ms-2 my-1 fst-italic text-body">Время работы: {{ client.working_time }}</p>
                         <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон:
                             {{client.phone}}</p>
@@ -99,7 +110,7 @@
                     <div class="row">
                         <div class="col-lg-4 col-sm-4 text-center">
                             <img src="/{{ dish.image }}" alt="" height="100px" width="135px"
-                                 class="img my-3"
+                                 class="img my-3 bg-white"
                                  style="border-radius: 25px;">
                         </div>
                         <div class="col-lg-5 col-sm-4 text-start">
@@ -108,10 +119,9 @@
                         </div>
                         <div class="col-lg-3 col-sm-4 text-center">
                             {% if dish.old_price > dish.actual_price %}
-                            <del class="my-1 ms-1">{{ dish.old_price }}</del>
-                            ₸
+                            <del class="mt-5 fs-4">{{ dish.old_price }}</del>
                             {% endif %}
-                            <p class="mt-3 ms-1 fs-4 fw-bold">{{ dish.actual_price }} ₸</p>
+                            <p class="mt-2 fs-4 fw-bold">{{ dish.actual_price }} ₸</p>
 
                             <!--       Add to cart form       -->
                             <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}">
@@ -150,3 +160,4 @@
 </main>
 </body>
 {% endblock content %}
+<script src="{% static 'js/script.js' %}"></script>
