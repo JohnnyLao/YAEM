@@ -3,7 +3,7 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
-<body style="font-family: Montserrat">
+<body>
 <main>
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
@@ -79,7 +79,7 @@
                     <div class="col-12">
                         {% for ft in food_type %}
                         <div class="btn fs-5 bg-dark mx-2 shadow-lg"
-                             style="color: #fd7014; font-family: Montserrat; --bs-bg-opacity: .8; border-radius: 50px;">
+                             style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;">
                             {{ ft }}
                         </div>
                         {% endfor %}
@@ -111,18 +111,27 @@
                             <del class="my-1 ms-1">{{ dish.old_price }}</del>
                             ₸
                             {% endif %}
-                            <p class="my-1 ms-1 fs-5 fw-bold">{{ dish.actual_price }} ₸</p>
-
-
-
+                            <p class="mt-3 ms-1 fs-4 fw-bold">{{ dish.actual_price }} ₸</p>
 
                             <!--       Add to cart form       -->
                             <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}">
-<!--                                <button class="btn btn-danger my-1" type="submit" style="border-radius: 100px;">-</button>  ДОБАВИТЬ В ФУНКЦИЮ ПО УДАЛЕНИЮ-->
+                                <button class="btn btn-sm my-1" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                         class="bi bi-dash-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
+                                    </svg>
+                                </button>
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value="{{ dish.id }}">
                                 <input type="number" name="quantity" value="1" style="width: 50px;">
-                                <button class="btn btn-success my-1" type="submit" style="border-radius: 100px;">+</button>
+                                <button class="btn btn-sm my-1" type="submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                         class="bi bi-plus-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                                    </svg>
+                                </button>
                             </form>
 
                             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
