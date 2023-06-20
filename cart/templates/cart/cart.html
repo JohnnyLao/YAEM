@@ -35,6 +35,7 @@
     </div>
 
     <div class="container bg-black my-5 position-relative" style="--bs-bg-opacity: .35">
+        {% if not is_empty %}
         {% for cart_item in cart_items %}
         <div class="row shadow-lg">
             <div class="col col-5 text-start ms-3 my-3">
@@ -43,14 +44,21 @@
             </div>
             <div class="col-4 my-3 text-center">
                 <p>
-                    <button class="btn remove-item" data-product-id="{{ cart_item.product.id }}">
+
+
+                    <button class="btn remove-item" data-product-id="{{ cart_item.product.id }}"
+                            onclick="document.getElementById('remove-form').submit()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                              class="bi bi-dash-circle" viewBox="0 0 16 16">
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
                             <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
                         </svg>
                     </button>
+
+
                     {{ cart_item.quantity }}
+
+
                     <button class="btn add-item" data-product-id="{{ cart_item.product.id }}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                              class="bi bi-plus-circle" viewBox="0 0 16 16">
@@ -58,6 +66,7 @@
                             <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                         </svg>
                     </button>
+
                 </p>
             </div>
             <div class="col-2 my-3 text-center">
@@ -65,7 +74,7 @@
             </div>
         </div>
 
-        <!--    for loop    -->
+
         <div>
         </div>
         {% endfor %}
@@ -75,6 +84,9 @@
             <div class="col-8"></div>
             <div class="col-4 text-center my-5">
                 <h5 class="my-3">Итого: {{ total_price }} ₸</h5>
+
+
+
                 <button class="btn btn-success mx-3 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         disabled>Заказать
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
@@ -82,13 +94,27 @@
                         <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
                     </svg>
                 </button>
-                <button class="btn btn-danger my-3 mx-3 px-2">Очистить
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                         class="bi bi-trash" viewBox="0 0 16 16">
-                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                    </svg>
-                </button>
+
+
+                <form id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
+                    {% csrf_token %}
+                    <button class="btn btn-danger my-3 mx-3 px-2" type="submit">
+                        Очистить
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                             class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                        </svg>
+                    </button>
+                </form>
+
+
+                {% else %}
+                <h5 class="my-3">Корзина пуста</h5>
+
+                {% endif %}
+
+
             </div>
         </div>
         <!--        2 удалить и 1 циклом проставить-->
@@ -148,8 +174,12 @@
             </div>
         </div>
     </div>
+
+
     <!--- MODAL END -->
 </section>
+
+
 </body>
 </html>
 {% endblock content %}

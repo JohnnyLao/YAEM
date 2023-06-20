@@ -1,5 +1,6 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.views import View
 from main.models import Dish
 
@@ -58,24 +59,16 @@ class CartView(View):
             'cart_items': cart_items,
             'sub_total_price': sub_total_price,
             'total_price': total_price,
+            'is_empty': len(cart_items) == 0,
         }
 
         return render(request, 'cart/cart.html', context=context)
 
+
+class CartClearView(View):
     def post(self, request):
-        product_id = request.POST.get('product_id')
-
-        if product_id:
-            cart = request.session.get('cart', {})
-            if product_id in cart:
-
-                cart[product_id] -= 1
-                if cart[product_id] <= 0:
-                    del cart[product_id]
-                request.session['cart'] = cart
-                return JsonResponse({'success': True})
-
-        return JsonResponse({'success': False})
+        request.session['cart'] = {}  # Очистка корзины
+        return redirect(reverse('cart:cart_page'))
 
 
 
