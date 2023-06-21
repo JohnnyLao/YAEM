@@ -99,11 +99,11 @@ def get_dish_upload_path(instance, filename):
 class Dish(models.Model):
     client = models.ForeignKey(Client, models.CASCADE, verbose_name="Заведение")
     food_type = models.ForeignKey(Food_type2, models.CASCADE, verbose_name="Подкатегория")
-    name = models.CharField(verbose_name="Блюдо_RU", max_length=20)
+    name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
     name_kz = models.CharField(verbose_name="Блюдо_KZ", max_length=50, blank=True)
     name_en = models.CharField(verbose_name="Блюдо_EN", max_length=50, blank=True)
     image = models.ImageField(verbose_name="Фото", upload_to=get_dish_upload_path, blank=True)
-    description = models.TextField(verbose_name="Описание", max_length=60, blank=True)
+    description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(verbose_name="Старая цена",max_digits=10, decimal_places=0, default=0)
     actual_price = models.DecimalField(verbose_name="Текущая цена", max_digits=10, decimal_places=0)

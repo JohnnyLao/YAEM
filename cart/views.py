@@ -69,6 +69,3 @@ class CartClearView(View):
     def post(self, request):
         request.session['cart'] = {}  # Очистка корзины
         return redirect(reverse('cart:cart_page'))
-
-
-

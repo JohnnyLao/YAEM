@@ -37,7 +37,8 @@
                 <div class="col col-lg-6 col-sm-8 text-white text-center">
                     <h1 class="fw-bold mt-0">{% trans 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
                     <h6 class="fw-bold my-4">{% trans 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
-                    <div class="btn btn-success text-center text-white" style="border-radius: 50px">{% trans 'Подключить' %}
+                    <div class="btn btn-success text-center text-white" style="border-radius: 50px">{% trans
+                        'Подключить' %}
                     </div>
                 </div>
             </div>
@@ -50,8 +51,10 @@
                 <div class="col-8 text-center">
                     <h2 class="fw-bold mb-5">{% trans 'Всё просто' %}</h2>
                     <h5 class="my-3">{% trans 'Берём образец' %} <strong>{% trans 'Вашего меню' %} </strong></h5>
-                    <h5 class="my-3">{% trans 'Создаём страницу с меню на' %} <strong>{% trans 'Нашем сайте' %}</strong></h5>
-                    <h5 class="my-3">{% trans 'Выдаём QR код для перехода в' %} <strong>{% trans 'Ваше онлайн меню' %}</strong></h5>
+                    <h5 class="my-3">{% trans 'Создаём страницу с меню на' %} <strong>{% trans 'Нашем сайте' %}</strong>
+                    </h5>
+                    <h5 class="my-3">{% trans 'Выдаём QR код для перехода в' %} <strong>{% trans 'Ваше онлайн меню'
+                        %}</strong></h5>
                     <div class="row text-center">
                         <div class="col-7 text-center">
                             <div class="form-floating my-5 mx-3">
@@ -160,9 +163,106 @@
             </div>
         </div>
     </section>
+
+    <section>
+        <body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h1>Countdown Timer</h1>
+                    <div id="countdown" class="row">
+                        <div class="col">
+                            <h2 id="days" class="countdown-number">0</h2>
+                            <p>Days</p>
+                        </div>
+                        <div class="col">
+                            <h2 id="hours" class="countdown-number">0</h2>
+                            <p>Hours</p>
+                        </div>
+                        <div class="col">
+                            <h2 id="minutes" class="countdown-number">0</h2>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="col">
+                            <h2 id="seconds" class="countdown-number">0</h2>
+                            <p>Seconds</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 </body>
 
+
+<style>
+        /* Animation for changing numbers */
+        @keyframes countAnimation {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .countdown-number.animate {
+            animation: countAnimation 1s infinite;
+        }
+
+
+</style>
+<script>
+        // Set the countdown date and time (replace with your own)
+        var countdownDate = new Date("2023-12-31T23:59:59");
+
+        // Update the countdown every 1 second
+        var countdownTimer = setInterval(function() {
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Calculate the remaining time
+            var timeDifference = countdownDate - now;
+
+            // Calculate days, hours, minutes, and seconds
+            var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            // Update the countdown display with animation for changing numbers
+            updateCountdown("days", days);
+            updateCountdown("hours", hours);
+            updateCountdown("minutes", minutes);
+            updateCountdown("seconds", seconds);
+
+            // If the countdown is finished, display a message
+            if (timeDifference < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("countdown").innerHTML = "<h2>Countdown Finished</h2>";
+            }
+        }, 1000);
+
+        function updateCountdown(id, value) {
+            var element = document.getElementById(id);
+            var currentVal = parseInt(element.innerText);
+
+            // Add or remove the 'animate' class based on whether the value has changed
+            if (currentVal !== value) {
+                element.classList.add("animate");
+            } else {
+                element.classList.remove("animate");
+            }
+
+            // Update the value
+            element.innerText = value;
+        }
+
+</script>
 {% endblock content %}
 <body>
 

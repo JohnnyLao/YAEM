@@ -47,4 +47,3 @@ $('#counter').each(function(){
 
 
 
-

@@ -4,6 +4,7 @@
 {% load i18n %}
 {% block content %}
 {% load static %}
+{% load humanize %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +19,7 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-5">
-                <div class="btn" onclick="history.back();" value="Назад" style="border-radius: 20px; ">
+                <div class="btn" onclick="history.back();" style="border-radius: 20px; ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="white"
                          class="bi bi-arrow-left"
                          viewBox="0 0 16 16">
@@ -27,7 +28,6 @@
                     </svg>
                 </div>
             </div>
-
             <div class="col-6">
                 <h1 class="">{% trans 'Корзина' %}</h1>
             </div>
@@ -42,50 +42,20 @@
                 <h4>{{ cart_item.product.name }}</h4>
                 <p>{{ cart_item.product.description }}</p>
             </div>
-            <div class="col-4 my-3 text-center">
-                <p>
-
-
-                    <button class="btn remove-item" data-product-id="{{ cart_item.product.id }}"
-                            onclick="document.getElementById('remove-form').submit()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                             class="bi bi-dash-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-                        </svg>
-                    </button>
-
-
-                    {{ cart_item.quantity }}
-
-
-                    <button class="btn add-item" data-product-id="{{ cart_item.product.id }}">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                             class="bi bi-plus-circle" viewBox="0 0 16 16">
-                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-                        </svg>
-                    </button>
-
-                </p>
+            <div class="col-4 my-3 text-center">{{ cart_item.quantity }}
             </div>
             <div class="col-2 my-3 text-center">
-                <h5>{{cart_item.sub_total}} ₸</h5>
+                <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
             </div>
         </div>
-
-
         <div>
         </div>
         {% endfor %}
 
-
         <div class="row my-5">
             <div class="col-8"></div>
             <div class="col-4 text-center my-5">
-                <h5 class="my-3">Итого: {{ total_price }} ₸</h5>
-
-
+                <h5 class="my-3">Итого: {{ total_price|intcomma }} ₸</h5>
 
                 <button class="btn btn-success mx-3 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         disabled>Заказать
@@ -95,11 +65,9 @@
                     </svg>
                 </button>
 
-
                 <form id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
                     {% csrf_token %}
-                    <button class="btn btn-danger my-3 mx-3 px-2" type="submit">
-                        Очистить
+                    <button class="btn btn-danger my-3 mx-3 px-2" type="submit" >Очистить
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                              class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
@@ -110,17 +78,14 @@
 
 
                 {% else %}
-                <h5 class="my-3">Корзина пуста</h5>
+                <h5 class="text-center py-5">Корзина пуста</h5>
 
                 {% endif %}
-
-
             </div>
         </div>
-        <!--        2 удалить и 1 циклом проставить-->
     </div>
-    <!--- MODAL -->
 
+    <!--- MODAL -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -169,13 +134,11 @@
                 <div class="modal-footer">
                     <button class="btn btn-success" id="input_3">{% trans 'Отправить Заказ' %}
                     </button>
-                    <button class="btn btn-danger" data-bs-dismiss="modal">{% trans 'Закрыть' %}</button>
+                    <button class="btn btn-danger" data-bs-dismiss="modal" >{% trans 'Закрыть' %}</button>
                 </div>
             </div>
         </div>
     </div>
-
-
     <!--- MODAL END -->
 </section>
 

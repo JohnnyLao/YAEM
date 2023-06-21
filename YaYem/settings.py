@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.template',
+    'django.contrib.humanize',
 
     # my app
     "main.apps.MainConfig",

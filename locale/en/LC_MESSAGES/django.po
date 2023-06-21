@@ -78,7 +78,7 @@ msgstr "Orders"
 
 #: main/templates/main/base.html:115
 msgid "НАША КОМАНДА"
-msgstr "OUR TEAMS"
+msgstr "OUR TEAM"
 
 #: main/templates/main/base.html:120
 msgid "Егор"
