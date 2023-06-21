@@ -1,4 +1,4 @@
-<script>
+
     $(document).ready(function() {
         $("form.add-to-cart-form").submit(function(e) {
             e.preventDefault();
@@ -33,4 +33,4 @@
             });
         });
     });
-</script>
+

@@ -142,14 +142,16 @@
                                 ₸</p>
 
                             <!--       Add to cart form       -->
-                            <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}">
+                            <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value="{{ dish.id }}">
                                 <input type="number" name="quantity" value="1" style="width: 50px">
                                 <button class="btn btn-success my-1 btn-animate" type="submit"
-                                        style="--bs-btn-active-bg: #fd7014;"
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal">Добавить
+                                        style="--bs-btn-active-bg: #fd7014;">
+                                    Добавить
                                 </button>
+
+
                             </form>
 
                         </div>
@@ -199,6 +201,8 @@
     }
 
 
+
+
 </style>
 
 <!--Cart Script-->
@@ -210,6 +214,8 @@
             $('#Cart').fadeOut();
         }
     });
+
+
 
 </script>
 
