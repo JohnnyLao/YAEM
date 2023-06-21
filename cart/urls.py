@@ -1,6 +1,6 @@
 from django.urls import path
 
-from cart.views import  CartView, AddToCartView, CartClearView
+from cart.views import CartView, AddToCartView, CartClearView
 
 app_name = 'cart'
 
