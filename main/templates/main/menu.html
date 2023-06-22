@@ -145,9 +145,9 @@
                             <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value="{{ dish.id }}">
-                                <input type="number" name="quantity" value="1" style="width: 50px">
+                                <input type="hidden" name="quantity" value="1" style="width: 50px">
                                 <button class="btn btn-success my-1 btn-animate" type="submit"
-                                        style="--bs-btn-active-bg: #fd7014;">
+                                        style="--bs-btn-active-bg: #fd7014;" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Добавить
                                 </button>
 
@@ -160,12 +160,14 @@
                 {% endif %}
                 {% endfor %}
             </div>
-            <!--    перенес скрипты добавления сюда        -->
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="{% static 'js/add_to_cart.js' %}"></script>
-            <!--            -->
+
         </div>
         {% endfor %}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'js/add_to_cart.js' %}"></script>
+
+
     </section>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -203,6 +205,7 @@
 
 
 
+
 </style>
 
 <!--Cart Script-->
@@ -214,6 +217,7 @@
             $('#Cart').fadeOut();
         }
     });
+
 
 
 
