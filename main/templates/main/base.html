@@ -66,18 +66,11 @@
             </ul>
         </div>
 
-        <!--  форма для переключения языков  -->
-        <form class="my-auto" method="post" action="{% url 'main:set_language' %}">
-            {% csrf_token %}
-            <div class="btn-group" role="group">
-                <button type="submit" name="language" value="ru" class="btn text-black btn-animate">RU</button>
-                <!--     Джанго жалуется на праввильность передов КЗ даже протестить не получается,
-                 ему именно корректный Кз перевод подавай       -->
 
-                <button type="submit" name="language" value="kz" class="btn text-black btn-animate">KZ</button>
-                <button type="submit" name="language" value="en" class="btn text-black btn-animate">EN</button>
-            </div>
-        </form>
+        <!--  форма для переключения языков  -->
+
+
+        <!--        -->
 
     </div>
 </nav>

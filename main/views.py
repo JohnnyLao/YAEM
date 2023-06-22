@@ -4,21 +4,25 @@ from main.models import Client, Dish, Food_type2, Client_Type
 from django.utils.translation import activate
 
 
+
 class Main(TemplateView):
     template_name = "main/index.html"
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["clients"] = Client.objects.all()
-        context["types"] = Client_Type.objects.all()
-        context['total_dishes'] = Dish.objects.count()
-        context['total_clients'] = Client.objects.count()
-        context["total_orders"] = (context['total_dishes'] * 21)
+        context["clients"] = Client.objects.values('name',
+                                                   'working_time',
+                                                   'description',
+                                                   'status',
+                                                   'delivery',
+                                                   'url_name')
         return context
 
 
 class Menu(TemplateView):
     template_name = "main/menu.html"
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -30,16 +34,5 @@ class Menu(TemplateView):
         context['dishes'] = dishes
         context['food_type'] = food_type
         context['client'] = client
-        context['total_dishes'] = Dish.objects.count()
-        context['total_clients'] = Client.objects.count()
-        context["total_orders"] = (context['total_dishes'] * 21)
+
         return context
-
-
-# Перевод шаблонов на разные языки
-def set_language(request):
-    if request.method == 'POST':
-        language = request.POST.get('language')  # получил выбранный язык из запроса
-        request.session['django_language'] = language  # сохранил выбранный язык в сессии
-        activate(language)  # установил выбранный язык
-    return redirect(request.META.get('HTTP_REFERER', '/'))

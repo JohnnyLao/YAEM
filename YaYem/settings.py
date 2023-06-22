@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "main.apps.MainConfig",
     'partner.apps.PartnerConfig',
     'cart.apps.CartConfig',
+
+    # debug_toolbar
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'YaYem.urls'
@@ -67,6 +71,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                'context_processors.context_processors.data_counter_site',
             ],
         },
     },
@@ -116,13 +122,20 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'), ]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # languages
-LANGUAGES = [
-    ('en', 'English'),
-    ('ru', 'Russian'),
-    # ('kz', 'Kazakh'),
-    # другие языки
-]
+# LANGUAGES = [
+#     ('en', 'English'),
+#     ('ru', 'Russian'),
+#   ('kz', 'Kazakh'),
+# другие языки
+# ]
+#
+# LOCALE_PATHS = [
+#     BASE_DIR / 'locale',
+# ]
 
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
+
+# debug-toolbar
+INTERNAL_IPS = ['127.0.0.1', ]
+
+
+
