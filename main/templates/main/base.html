@@ -68,13 +68,15 @@
                 </li>
             </ul>
         </div>
-
-
         <!--  форма для переключения языков  -->
-
-
-        <!--        -->
-
+        <form class="my-auto" method="post" action="">
+<!--            {% csrf_token %}-->
+            <div class="btn-group" role="group">
+                <button type="submit" name="language" value="ru" class="btn text-black btn-animate" disabled>RU</button>
+                <button type="submit" name="language" value="kz" class="btn text-black btn-animate" disabled>KZ</button>
+                <button type="submit" name="language" value="en" class="btn text-black btn-animate" disabled>EN</button>
+            </div>
+        </form>
     </div>
 </nav>
 
@@ -186,6 +188,8 @@
 
 
 
+
+
     </style>
 
 
@@ -201,6 +205,8 @@
             $('#scrollToTopButton').removeClass('animated-button');
         }
     });
+
+
 
 
     </script>
