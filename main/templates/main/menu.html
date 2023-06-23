@@ -96,22 +96,106 @@
 
         <h2 class="text-center pt-4 fw-bold" style="color: #fd7014">{% trans 'МЕНЮ' %}</h2>
 
+
         <!--        Button Slider for Categories-->
+        <!-- Подключение стилей и скриптов Swiper -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+        <style>
+    .swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+        </style>
+
         <div class="sticky-top">
             <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5">
                 <div class="row">
                     <div class="col-12">
-                        <div class="button-slider">
-                            {% for ft in food_type %}
-                            <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"
-                               style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
-                               href="#{{ ft }}">{{ ft }}</a>
-                            {% endfor %}
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for ft in food_type %}
+                                <div class="swiper-slide">
+                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"
+                                       style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
+                                       href="#{{ ft }}">{{ ft }}</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 'auto',
+        spaceBetween: 7,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+        </script>
+        <style>
+    .swiper-button-next,
+    .swiper-button-prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #ffffff;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -20px; /* Уменьшить отступ сверху */
+        margin-right: 10px; /* Добавить отступ справа */
+        z-index: 10; /* Установить z-index для кнопок */
+    }
+
+    .swiper-button-next {
+        right: 20px; /* Правый отступ для кнопки next */
+    }
+
+    .swiper-button-prev {
+        left: 20px; /* Левый отступ для кнопки prev */
+    }
+
+    .swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 10px; /* Пространство между категориями */
+    }
+
+    .swiper-slide:last-child {
+        padding-right: 0; /* Убрать пространство после последней категории */
+    }
+</style>
+
+
+
+
 
         {% for ft in food_type %}
         <h2 class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
@@ -147,7 +231,8 @@
                                 <input type="hidden" name="product_id" value="{{ dish.id }}">
                                 <input type="hidden" name="quantity" value="1" style="width: 50px">
                                 <button class="btn btn-success my-1 btn-animate" type="submit"
-                                        style="--bs-btn-active-bg: #fd7014;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        style="--bs-btn-active-bg: #fd7014;" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
                                     Добавить
                                 </button>
 
@@ -206,6 +291,10 @@
 
 
 
+
+
+
+
 </style>
 
 <!--Cart Script-->
@@ -217,6 +306,10 @@
             $('#Cart').fadeOut();
         }
     });
+
+
+
+
 
 
 
