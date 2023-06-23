@@ -19,8 +19,7 @@ class Main(TemplateView):
         return context
 
 
-class Error(TemplateView):
-    template_name = "main/404.html"
+
 
 
 class Menu(TemplateView):
