@@ -44,6 +44,9 @@
                 <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </button>
         </a>
+        <a href="{% url 'main:404' %}">
+            <button class="btn btn-danger" role="link">404 Test</button>
+        </a>
         {% if user.is_staff or user.is_superuser %}
         <a href="{% url 'admin:index' %}">
             <button class="btn text-dark btn-animate">
@@ -182,6 +185,7 @@
 
 
 
+
     </style>
 
 
@@ -197,6 +201,7 @@
             $('#scrollToTopButton').removeClass('animated-button');
         }
     });
+
 
     </script>
 </footer>

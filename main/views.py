@@ -4,10 +4,8 @@ from main.models import Client, Dish, Food_type2, Client_Type
 from django.utils.translation import activate
 
 
-
 class Main(TemplateView):
     template_name = "main/index.html"
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -21,9 +19,12 @@ class Main(TemplateView):
         return context
 
 
+class Error(TemplateView):
+    template_name = "main/404.html"
+
+
 class Menu(TemplateView):
     template_name = "main/menu.html"
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
