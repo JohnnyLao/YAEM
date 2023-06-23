@@ -2,13 +2,34 @@
 {% extends "main/base.html" %}
 {% block content %}
 {% load static %}
+{% load i18n %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Ошибка</title>
 </head>
 
 <body>
+<section class="bg_404" style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.5)), url({% static 'images/12.webp' %});
+        background-size: 150%; background-position: 70% 50%; background-repeat: repeat; height: 600px; width: auto">
+    <div class="container pt-5">
+        <div class="row pt-5">
+            <div class="col-8 pt-5 text-center" style="">
+                <h1 style="font-size: 100px; text-shadow: 4px 4px 8px #000000; color: #fd7014;">404</h1>
+                <h3 class="pt-5">Упс, кажется что-то пошло не так</h3>
+                <h4 class="my-3">Но Вы можете вернуться</h4>
+                <div class="btn my-3 bg-black" onclick="history.back();" style="border-radius: 40px;--bs-bg-opacity: 0.2 ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="60" fill="#fd7014"
+                         class="bi bi-arrow-left"
+                         viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
