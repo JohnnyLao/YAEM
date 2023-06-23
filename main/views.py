@@ -16,7 +16,8 @@ class Main(TemplateView):
                                                    'description',
                                                    'status',
                                                    'delivery',
-                                                   'url_name')
+                                                   'url_name',
+                                                   'logo')
         return context
 
 
