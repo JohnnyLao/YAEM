@@ -13,13 +13,11 @@ class Main(TemplateView):
                                                    'working_time',
                                                    'description',
                                                    'status',
+                                                   'outside',
                                                    'delivery',
                                                    'url_name',
                                                    'logo')
         return context
-
-
-
 
 
 class Menu(TemplateView):

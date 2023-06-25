@@ -4,6 +4,12 @@
 {% block content %}
 {% load static %}
 {% load humanize %}
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Я ЕМ с {{client.name}}</title>
+</head>
+
 <body>
 <main>
     <section class="skrollable pb-5"
@@ -99,9 +105,31 @@
 
         <!--        Button Slider for Categories-->
         <!-- Подключение стилей и скриптов Swiper -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!--        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
+<!--        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
 
+
+<!--        <div class="sticky-top">-->
+<!--            <div class="container-fluid text-center bg-dark" style="&#45;&#45;bs-bg-opacity: 0.5">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-12">-->
+<!--                        <div class="swiper-container">-->
+<!--                            <div class="swiper-wrapper">-->
+<!--                                {% for ft in food_type %}-->
+<!--                                <div class="swiper-slide">-->
+<!--                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"-->
+<!--                                       style="color: #fd7014; &#45;&#45;bs-bg-opacity: .8; border-radius: 50px;"-->
+<!--                                       href="#{{ ft }}">{{ ft }}</a>-->
+<!--                                </div>-->
+<!--                                {% endfor %}-->
+<!--                            </div>-->
+<!--                            <div class="swiper-button-next"></div>-->
+<!--                            <div class="swiper-button-prev"></div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <style>
     .swiper-slide {
         width: auto;
@@ -117,30 +145,8 @@
         max-width: 100%;
     }
 
+
         </style>
-
-        <div class="sticky-top">
-            <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                {% for ft in food_type %}
-                                <div class="swiper-slide">
-                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"
-                                       style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
-                                       href="#{{ ft }}">{{ ft }}</a>
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <script>
     var swiper = new Swiper('.swiper-container', {
         slidesPerView: 'auto',
@@ -150,6 +156,11 @@
             prevEl: '.swiper-button-prev',
         },
     });
+
+
+
+
+
 
         </script>
         <style>
@@ -191,10 +202,12 @@
     .swiper-slide:last-child {
         padding-right: 0; /* Убрать пространство после последней категории */
     }
-</style>
 
 
 
+
+
+        </style>
 
 
         {% for ft in food_type %}
@@ -235,10 +248,7 @@
                                         data-bs-target="#exampleModal">
                                     Добавить
                                 </button>
-
-
                             </form>
-
                         </div>
                     </div>
                 </div>
@@ -252,20 +262,20 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="{% static 'js/add_to_cart.js' %}"></script>
 
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title ms-5" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
+                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                    </div>
 
-    </section>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title ms-5" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+
                 </div>
-
-
             </div>
         </div>
-    </div>
+    </section>
+
 </main>
 </body>
 
@@ -290,11 +300,6 @@
 
 
 
-
-
-
-
-
 </style>
 
 <!--Cart Script-->
@@ -311,10 +316,8 @@
 
 
 
-
-
-
 </script>
+
 
 {% endblock content %}
 

@@ -1,15 +1,15 @@
-<!DOCTYPE html>
 {% extends "main/base.html" %}
 <!--тег для работы с переводами-->
 {% load i18n %}
 {% block content %}
 {% load static %}
 {% load humanize %}
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Корзина</title>
 </head>
+
 <body>
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/4.jpg' %});
@@ -59,7 +59,7 @@
         <div class="row my-5">
             <div class="col-8"></div>
             <div class="col-4 text-center my-5">
-                <h5 class="my-3">Итого: {{ total_price|intcomma }} ₸</h5>
+                <h5 class="my-3" style="color: #fd7014">Итого: {{ total_price|intcomma }} ₸</h5>
 
                 <button class="btn btn-success mx-3 px-3" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         disabled>Заказать
@@ -148,5 +148,5 @@
 
 
 </body>
-</html>
+
 {% endblock content %}

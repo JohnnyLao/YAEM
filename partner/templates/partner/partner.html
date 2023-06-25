@@ -1,16 +1,15 @@
 {% extends "main/base.html" %}
-
 {% block content %}
 {% load static %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="ru">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Меню для Заведений</title>
+</head>
 
 <body>
 <main>
-
     <!--BG START-->
     <section class="skrollable py-3"
              style="background-image: url({% static 'images/5.jpg' %});
@@ -165,7 +164,6 @@
     </section>
 
     <section>
-        <body>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
@@ -215,6 +213,7 @@
         }
 
 
+
 </style>
 <script>
         // Set the countdown date and time (replace with your own)
@@ -262,9 +261,8 @@
             element.innerText = value;
         }
 
-</script>
-{% endblock content %}
-<body>
 
-</body>
-</html>
+</script>
+
+
+{% endblock content %}
