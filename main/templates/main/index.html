@@ -9,7 +9,34 @@
 </head>
 
 <body style="font-family: Montserrat;">
-<main>
+
+    <!--COUNTER START-->
+<section>
+    <div id="counter" class="indicator-list  container">
+        <div class="row text-center fs-4 my-3 fw-bold" style="color: #fd7014">
+            <div class="col col-lg-4">
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num="{{total_clients}}" class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num={{total_dishes}} class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Блюд' %}</div>
+                </div>
+            </div>
+            <div class="col col-lg-4">
+                <div class="indicators-item"><!--item-3-->
+                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div class="lng-unit6 indicators-subtitle text-white">{% trans 'Заказов' %}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--COUNTER END-->
 
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
@@ -95,7 +122,6 @@
             </div>
         </div>
     </section>
-</main>
 </body>
 
 

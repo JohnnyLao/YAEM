@@ -8,189 +8,216 @@
     <title>QR Меню для Заведений</title>
 </head>
 
+
+<!--BG START-->
 <body>
-<main>
-    <!--BG START-->
-    <section class="skrollable py-3"
-             style="background-image: url({% static 'images/5.jpg' %});
-    background-attachment:fixed; background-repeat: repeat; background-size: 150%;
-    background-position: 10% 10%">
-        <!--BG END-->
-
-        <div class="container">
-            <div class="row text-white pt-5">
-                <div class="col col-6"></div>
-                <div class="col col-lg-3 col-sm-5 bg-success text-center"
-                     style="border-radius: 50%;--bs-bg-opacity: .9">
-                    <h4 class="mt-2 mb-0 fw-bold">{% trans 'ОНЛАЙН' %}</h4>
-                    <h4 class="mt-0 mb-0 fw-bold">{% trans 'МЕНЮ' %}</h4>
-                    <h3 class="my-1 fw-bold">{% trans 'БЕСПЛАТНО' %}</h3>
-                    <img src="{% static 'images/qr_code.png' %}" height="150px" alt="" class="img mb-4"
-                         style="border-radius: 10%">
+<section class="bg-dark">
+        <div id="counter" class="indicator-list container py-3">
+            <div class="row text-center fs-4 fw-bold" style="color: #fd7014">
+                <div class="col col-lg-4">
+                    <div class="indicators-item"> <!--item-1-->
+                        <div data-num="{{total_clients}}" class="indicators-title"></div>
+                        <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="container my-3">
-            <div class="row">
-                <div class="col col-lg-6 col-sm-8 text-white text-center">
-                    <h1 class="fw-bold mt-0">{% trans 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
-                    <h6 class="fw-bold my-4">{% trans 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
-                    <div class="btn btn-success text-center text-white" style="border-radius: 50px">
-                        {% trans 'Подключить' %}
+                <div class="col col-lg-4">
+                    <div class="indicators-item"> <!--item-1-->
+                        <div data-num={{total_dishes}} class="indicators-title"></div>
+                        <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Блюд' %}</div>
+                    </div>
+                </div>
+                <div class="col col-lg-4">
+                    <div class="indicators-item"><!--item-3-->
+                        <div data-num={{total_orders}} class="indicators-title"></div>
+                        <div class="lng-unit6 indicators-subtitle text-white">{% trans 'Заказов' %}</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+<section class="skrollable py-3"
+         style="background-image: url({% static 'images/5.jpg' %});
+    background-attachment:fixed; background-repeat: repeat; background-size: 150%;
+    background-position: 10% 10%">
+    <!--BG END-->
 
-    <section class="text-white">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-8 text-center">
-                    <h2 class="fw-bold mb-5">{% trans 'Всё просто' %}</h2>
-                    <h5 class="my-3">{% trans 'Берём образец' %} <strong>{% trans 'Вашего меню' %} </strong></h5>
-                    <h5 class="my-3">{% trans 'Создаём страницу с меню на' %} <strong>{% trans 'Нашем сайте' %}</strong>
-                    </h5>
-                    <h5 class="my-3">{% trans 'Выдаём QR код для перехода в' %} <strong>{% trans 'Ваше онлайн меню'
-                        %}</strong></h5>
-                    <div class="row text-center">
-                        <div class="col-7 text-center">
-                            <div class="form-floating my-5 mx-3">
-                                <input type="tel" class="form-control bg-white text-black ms-5" id="floatingInput"
-                                       placeholder="" style="border-radius: 50px;">
-                                <label class="ms-5 text-light" for="floatingInput">Номер телефона</label>
-                            </div>
+    <!--COUNTER START-->
+
+
+    <!--COUNTER END-->
+    <div class="container">
+        <div class="row text-white pt-5">
+            <div class="col col-6"></div>
+            <div class="col col-lg-3 col-sm-5 bg-success text-center"
+                 style="border-radius: 50%;--bs-bg-opacity: .9">
+                <h4 class="mt-2 mb-0 fw-bold">{% trans 'ОНЛАЙН' %}</h4>
+                <h4 class="mt-0 mb-0 fw-bold">{% trans 'МЕНЮ' %}</h4>
+                <h3 class="my-1 fw-bold">{% trans 'БЕСПЛАТНО' %}</h3>
+                <img src="{% static 'images/qr_code.png' %}" height="150px" alt="" class="img mb-4"
+                     style="border-radius: 10%">
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col col-lg-6 col-sm-8 text-white text-center">
+                <h1 class="fw-bold mt-0">{% trans 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
+                <h6 class="fw-bold my-4">{% trans 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
+                <div class="btn btn-success text-center text-white" style="border-radius: 50px">
+                    {% trans 'Подключить' %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text-white">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-8 text-center">
+                <h2 class="fw-bold mb-5">{% trans 'Всё просто' %}</h2>
+                <h5 class="my-3">{% trans 'Берём образец' %} <strong>{% trans 'Вашего меню' %} </strong></h5>
+                <h5 class="my-3">{% trans 'Создаём страницу с меню на' %} <strong>{% trans 'Нашем сайте' %}</strong>
+                </h5>
+                <h5 class="my-3">{% trans 'Выдаём QR код для перехода в' %} <strong>{% trans 'Ваше онлайн меню'
+                    %}</strong></h5>
+                <div class="row text-center">
+                    <div class="col-7 text-center">
+                        <div class="form-floating my-5 mx-3">
+                            <input type="tel" class="form-control bg-white text-black ms-5" id="floatingInput"
+                                   placeholder="" style="border-radius: 50px;">
+                            <label class="ms-5 text-light" for="floatingInput">Номер телефона</label>
                         </div>
-                        <div class="col-5 position-relative">
+                    </div>
+                    <div class="col-5 position-relative">
                             <span class="position-absolute top-50 start-50 translate-middle mx-3">
                                 <div class="btn btn-success px-5" style="border-radius: 50px;">{% trans 'Свяжитесь со мной' %}</div>
                             </span>
 
-                        </div>
                     </div>
                 </div>
-                <div class="col-4 text-start">
-                    <img src="{% static 'images/qr_menu.jpg' %}" alt="" height="300" width="300" class="img"
-                         style="border-radius: 50%;">
-                </div>
+            </div>
+            <div class="col-4 text-start">
+                <img src="{% static 'images/qr_menu.jpg' %}" alt="" height="300" width="300" class="img"
+                     style="border-radius: 50%;">
             </div>
         </div>
-        <div class="container text-center">
+    </div>
+    <div class="container text-center">
 
-            <!--CAROUSEL START-->
-            <div class="container text-center mb-5 mt-0">
-                <h2 class="my-5">{% trans 'Примеры онлайн меню' %}</h2>
-                <div class="row justify-content-center">
-                    <div class="col col-lg-7 col-sm-10">
-                        <div id="carouselExampleIndicators" class="carousel slide">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="{% static 'images/menu_concept_montserrat.png' %}" height="600px"
-                                         width="auto"
-                                         class="d-block mx-auto" alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="{% static 'images/menu_concept2.png' %}" height="600px" width="auto"
-                                         class="d-block mx-auto"
-                                         alt="">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="{% static 'images/menu_concept4.png' %}" height="600px" width="auto"
-                                         class="d-block mx-auto"
-                                         alt="">
-                                </div>
+        <!--CAROUSEL START-->
+        <div class="container text-center mb-5 mt-0">
+            <h2 class="my-5">{% trans 'Примеры онлайн меню' %}</h2>
+            <div class="row justify-content-center">
+                <div class="col col-lg-7 col-sm-10">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'images/menu_concept_montserrat.png' %}" height="600px"
+                                     width="auto"
+                                     class="d-block mx-auto" alt="">
                             </div>
-                            <button class="carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="prev">
+                            <div class="carousel-item">
+                                <img src="{% static 'images/menu_concept2.png' %}" height="600px" width="auto"
+                                     class="d-block mx-auto"
+                                     alt="">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'images/menu_concept4.png' %}" height="600px" width="auto"
+                                     class="d-block mx-auto"
+                                     alt="">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"
                                       style="border-radius: 10px;"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators"
-                                    data-bs-slide="next">
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
                                 <span class="carousel-control-next-icon bg-dark" aria-hidden="true"
                                       style="border-radius: 10px;"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!--CAROUSEL END-->
+    </div>
+</section>
+<!--CAROUSEL END-->
 
-    <section class="skrollable py-3"
-             style="background-image: linear-gradient(0deg, rgba(100, 51, 51, 0.2), rgba(100, 51, 51, 0.2)), url({% static 'images/1.jpg' %});
+<section class="skrollable py-3"
+         style="background-image: linear-gradient(0deg, rgba(100, 51, 51, 0.2), rgba(100, 51, 51, 0.2)), url({% static 'images/1.jpg' %});
     background-attachment:fixed; background-position: 50%; background-repeat: repeat; background-size: 200%">
-        <div class="container">
-            <h2 class="text-center fw-bold text-white my-5">{% trans 'НАШИ ПРИЕМУЩЕСТВА' %}</h2>
-            <div class="row gy-5 mb-5">
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
-                <div class="col col-lg-4 col-sm-6 text-center text-white">
-                    @ИКОНКА@
-                    <h3 class="my-3">lorem</h3>
-                    <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
-                </div>
+    <div class="container">
+        <h2 class="text-center fw-bold text-white my-5">{% trans 'НАШИ ПРИЕМУЩЕСТВА' %}</h2>
+        <div class="row gy-5 mb-5">
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
+            </div>
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
+            </div>
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
+            </div>
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
+            </div>
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
+            </div>
+            <div class="col col-lg-4 col-sm-6 text-center text-white">
+                @ИКОНКА@
+                <h3 class="my-3">lorem</h3>
+                <h4 class="my-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, obcaecati.</h4>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h1>Countdown Timer</h1>
-                    <div id="countdown" class="row">
-                        <div class="col">
-                            <h2 id="days" class="countdown-number">0</h2>
-                            <p>Days</p>
-                        </div>
-                        <div class="col">
-                            <h2 id="hours" class="countdown-number">0</h2>
-                            <p>Hours</p>
-                        </div>
-                        <div class="col">
-                            <h2 id="minutes" class="countdown-number">0</h2>
-                            <p>Minutes</p>
-                        </div>
-                        <div class="col">
-                            <h2 id="seconds" class="countdown-number">0</h2>
-                            <p>Seconds</p>
-                        </div>
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1>Countdown Timer</h1>
+                <div id="countdown" class="row">
+                    <div class="col">
+                        <h2 id="days" class="countdown-number">0</h2>
+                        <p>Days</p>
+                    </div>
+                    <div class="col">
+                        <h2 id="hours" class="countdown-number">0</h2>
+                        <p>Hours</p>
+                    </div>
+                    <div class="col">
+                        <h2 id="minutes" class="countdown-number">0</h2>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="col">
+                        <h2 id="seconds" class="countdown-number">0</h2>
+                        <p>Seconds</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</main>
+    </div>
+</section>
 </body>
 
 
@@ -211,6 +238,9 @@
         .countdown-number.animate {
             animation: countAnimation 1s infinite;
         }
+
+
+
 
 
 
@@ -260,6 +290,9 @@
             // Update the value
             element.innerText = value;
         }
+
+
+
 
 
 </script>
