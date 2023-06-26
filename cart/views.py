@@ -1,7 +1,11 @@
+import json
+
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
+from django.views.decorators.csrf import csrf_exempt
+
 from main.models import Dish
 
 
@@ -63,6 +67,10 @@ class CartView(View):
         }
 
         return render(request, 'cart/cart.html', context=context)
+
+
+
+
 
 
 class CartClearView(View):

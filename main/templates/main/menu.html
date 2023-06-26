@@ -1,17 +1,27 @@
 {% extends "main/base.html" %}
-<!--тег для работы с переводами-->
-{% load i18n %}
-{% block content %}
 {% load static %}
 {% load humanize %}
+{% load i18n %}
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Я ЕМ с {{client.name}}</title>
-</head>
 
-<body>
+{% block title %} CHOICE TITLE HERE! {% endblock title %}
+
+{% block content %}
+
+<!--button up-->
+<a id="scrollToTopButton" class="btn fs-5 bg-dark mx-2 shadow"
+   style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 100px; right: 50px; display: none;"
+   href="#header">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up"
+         viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+    </svg>
+</a>
+<!--button end-->
+
 <main>
+<!--  MAIN CONTENT  -->
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
@@ -25,7 +35,7 @@
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
             </svg>
         </a>
-
+        <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid pt-4">
             <div class="col-lg-12 bg-dark text-center"
                  style="--bs-bg-opacity: .7; border-radius: 50px;">
@@ -99,121 +109,36 @@
                 </div>
             </div>
         </div>
-
         <h2 class="text-center pt-4 fw-bold" style="color: #fd7014">{% trans 'МЕНЮ' %}</h2>
 
+        <!--    FOOD TYPE SWIPER    -->
+        <div class="sticky-top">
+            <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for ft in food_type %}
+                                <div class="swiper-slide">
+                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"
+                                       style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
+                                       href="#{{ ft }}">{{ ft }}</a>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <!--        Button Slider for Categories-->
-        <!-- Подключение стилей и скриптов Swiper -->
-<!--        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">-->
-<!--        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
-
-
-<!--        <div class="sticky-top">-->
-<!--            <div class="container-fluid text-center bg-dark" style="&#45;&#45;bs-bg-opacity: 0.5">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-12">-->
-<!--                        <div class="swiper-container">-->
-<!--                            <div class="swiper-wrapper">-->
-<!--                                {% for ft in food_type %}-->
-<!--                                <div class="swiper-slide">-->
-<!--                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"-->
-<!--                                       style="color: #fd7014; &#45;&#45;bs-bg-opacity: .8; border-radius: 50px;"-->
-<!--                                       href="#{{ ft }}">{{ ft }}</a>-->
-<!--                                </div>-->
-<!--                                {% endfor %}-->
-<!--                            </div>-->
-<!--                            <div class="swiper-button-next"></div>-->
-<!--                            <div class="swiper-button-prev"></div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <style>
-    .swiper-slide {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .swiper-slide a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
-
-        </style>
-        <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 7,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-
-
-
-
-
-
-        </script>
-        <style>
-    .swiper-button-next,
-    .swiper-button-prev {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: #ffffff;
-        font-size: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: -20px; /* Уменьшить отступ сверху */
-        margin-right: 10px; /* Добавить отступ справа */
-        z-index: 10; /* Установить z-index для кнопок */
-    }
-
-    .swiper-button-next {
-        right: 20px; /* Правый отступ для кнопки next */
-    }
-
-    .swiper-button-prev {
-        left: 20px; /* Левый отступ для кнопки prev */
-    }
-
-    .swiper-slide {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-right: 10px; /* Пространство между категориями */
-    }
-
-    .swiper-slide:last-child {
-        padding-right: 0; /* Убрать пространство после последней категории */
-    }
-
-
-
-
-
-        </style>
-
-
+        <!--    FOOD TYPE DOWN    -->
         {% for ft in food_type %}
         <h2 class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
 
-
+        <!--    DISH CONTENT    -->
         <div class="container-fluid my-3">
             <div class="row gy-3 mx-auto justify-content-center">
                 {% for dish in dishes %}
@@ -221,11 +146,7 @@
                 <div class="col-lg-5 bg-dark col-sm-12 mx-1"
                      style="--bs-bg-opacity: .7; border-radius: 50px;">
                     <div class="row">
-                        <!--                        <div class="col-lg-4 col-sm-4 text-center">-->
-                        <!--                            <img src="/{{ dish.image }}" alt="" height="100px" width="135px"-->
-                        <!--                                 class="img my-3 bg-white"-->
-                        <!--                                 style="border-radius: 25px;">-->
-                        <!--                        </div>-->
+
                         <div class="col-lg-9 col-sm-9 text-start ps-5">
                             <h5 class="mb-0 fw-bold">{{ dish.name }}</h5>
                             <p class=" fs-6">{{ dish.description }}</p>
@@ -255,69 +176,22 @@
                 {% endif %}
                 {% endfor %}
             </div>
-
         </div>
         {% endfor %}
+    </section>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="{% static 'js/add_to_cart.js' %}"></script>
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title ms-5" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
-                        <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
-                    </div>
-
-
+<!--  MODAL CART WINDOW  -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title ms-5" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
 </main>
-</body>
-
-<!--Button animation script-->
-<style>
-    .btn-animate:active {
-        animation-name: buttonPress;
-        animation-duration: 0.2s;
-    }
-    @keyframes buttonPress {
-        0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(0.85);
-        }
-        100% {
-            transform: scale(1);
-        }
-    }
-
-
-
-
-</style>
-
-<!--Cart Script-->
-<script>
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= 500) {
-            $('#Cart').fadeIn();
-        } else {
-            $('#Cart').fadeOut();
-        }
-    });
-
-
-
-
-
-</script>
-
 
 {% endblock content %}
 

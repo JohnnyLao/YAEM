@@ -26,4 +26,70 @@
     background-repeat: repeat;
     }
 
+@keyframes fadeInFromBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(100px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .animated-button {
+        animation: fadeInFromBottom 0.5s ease-out;
+    }
+
+
+.swiper-slide {
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide a {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+    }
+
+    .btn-animate:active {
+        animation-name: buttonPress;
+        animation-duration: 0.2s;
+    }
+
+@keyframes buttonPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.85);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+
+
+
+
+
+
+/* Animation for changing numbers */
+@keyframes countAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.countdown-number.animate {
+    animation: countAnimation 1s infinite;
+}
 

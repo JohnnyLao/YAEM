@@ -1,42 +1,27 @@
 {% load static %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
 
+<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark" style="font-family: Montserrat">
-
 <head>
     <meta charset="UTF-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <!--    CSS-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <!--    JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-            crossorigin="anonymous"></script>
-    <!--    Browser Icon-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'images/favicon1.jpg' %}">
+    <title>{% block title %} {% endblock title %}</title>
 </head>
-
 <body class="text-white" style="font-family: Montserrat;">
 
-<!--Кнопка наверх-->
-<a id="scrollToTopButton" class="btn fs-5 bg-dark mx-2 shadow"
-   style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 100px; right: 50px; display: none;"
-   href="#header">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up"
-         viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-              d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
-    </svg>
-</a>
 
-<!--Меню-->
+<!--  HEADER  -->
 <nav class="navbar navbar-expand-sm bg-light" id="header">
     <div class="container text-dark">
         <a href="{% url 'main:main_page' %}">
             <button class="btn me-5" role="link">
-                <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo" style="width: 100px">
+                <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </button>
         </a>
         {% if user.is_staff or user.is_superuser %}
@@ -60,9 +45,7 @@
                 </li>
             </ul>
         </div>
-        <!--  форма для переключения языков  -->
         <form class="my-auto" method="post" action="">
-            <!--            {% csrf_token %}-->
             <div class="btn-group" role="group">
                 <button type="submit" name="language" value="ru" class="btn text-black btn-animate" disabled>RU</button>
                 <button type="submit" name="language" value="kz" class="btn text-black btn-animate" disabled>KZ</button>
@@ -71,12 +54,17 @@
         </form>
     </div>
 </nav>
+<!--  HEADER END -->
 
 
-
+<!--CONTENT-->
 {% block content %}
-{% endblock content %}
 
+{% endblock content %}
+<!--CONTENT END-->
+
+
+<!--FOOTER-->
 <footer>
     <div class="container-fluid py-3 bg-black" style="--bs-bg-opacity: .3; ">
         <h3 class="text-center my-3">{% trans 'НАША КОМАНДА' %}</h3>
@@ -132,38 +120,21 @@
         </div>
     </div>
 </footer>
-
-<style>
-    @keyframes fadeInFromBottom {
-        0% {
-            opacity: 0;
-            transform: translateY(100px);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    .animated-button {
-        animation: fadeInFromBottom 0.5s ease-out;
-    }
+<!--FOOTER END-->
 
 
-</style>
-
-
-<script>
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= 500) {
-            $('#scrollToTopButton').fadeIn();
-            $('#scrollToTopButton').addClass('animated-button');
-        } else {
-            $('#scrollToTopButton').fadeOut();
-            $('#scrollToTopButton').removeClass('animated-button');
-        }
-    });
-
-</script>
+<!--SCRIPTS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous">
+    </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="{% static 'js/script.js' %}"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/button_up.js' %}"></script>
+<script src="{% static 'js/flying_cart.js' %}"></script>
+<script src="{% static 'js/swiper.js' %}"></script>
+<script src="{% static 'js/add_to_cart.js' %}"></script>
+<!--SCRIPTS END-->
+</body>
 </html>
