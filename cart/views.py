@@ -4,7 +4,7 @@ from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views import View
-from django.views.decorators.csrf import csrf_exempt
+
 
 from main.models import Dish
 
@@ -68,6 +68,25 @@ class CartView(View):
 
         return render(request, 'cart/cart.html', context=context)
 
+
+class RemoveFromCartView(View):
+    def post(self, request):
+        product_id = request.POST.get('product_id')
+
+        if not product_id or not product_id.isdigit():
+            return JsonResponse({'success': False, 'error': 'Invalid product_id'})
+
+        cart = request.session.get('cart', {})
+
+        # Удаление товара из корзины
+        if product_id in cart:
+            if cart[product_id] == 1:
+                del cart[product_id]
+            else:
+                cart[product_id] -= 1
+            request.session.modified = True
+
+        return JsonResponse({'success': True})
 
 
 

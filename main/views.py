@@ -27,7 +27,7 @@ class Menu(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs['url_name']
         client = Client.objects.get(url_name=url_name)
-        dishes = Dish.objects.filter(client=client)
+        dishes = Dish.objects.select_related('client').prefetch_related('food_type').filter(client=client)
         # Получение уникальных категорий для блюд
         food_type = Food_type2.objects.filter(dish__in=dishes).distinct()
         context['dishes'] = dishes

@@ -21,7 +21,7 @@
 <!--button end-->
 
 <main>
-<!--  MAIN CONTENT  -->
+    <!--  MAIN CONTENT  -->
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 50% 50%; background-repeat: repeat">
@@ -113,7 +113,7 @@
 
         <!--    FOOD TYPE SWIPER    -->
         <div class="sticky-top">
-            <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5">
+            <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
                 <div class="row">
                     <div class="col-12">
                         <div class="swiper-container">
@@ -133,6 +133,46 @@
                 </div>
             </div>
         </div>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="{% static 'js/swiper.js' %}"></script>
+        <script>
+  var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+  var categoriesContainer = document.querySelector('.sticky-top');
+
+  window.addEventListener('scroll', function() {
+    var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollPos > prevScrollPos && currentScrollPos > 510) {
+
+      categoriesContainer.classList.remove('show');
+      categoriesContainer.classList.add('hide');
+    } else {
+
+      categoriesContainer.classList.remove('hide');
+      categoriesContainer.classList.add('show');
+    }
+
+    prevScrollPos = currentScrollPos;
+  });
+
+        </script>
+        <style>
+  .sticky-top {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+
+  .hide {
+    opacity: 0;
+  }
+
+  .show {
+    opacity: 1;
+  }
+
+        </style>
+        <!--    FOOD TYPE SWIPER    -->
 
         <!--    FOOD TYPE DOWN    -->
         {% for ft in food_type %}
@@ -180,7 +220,7 @@
         {% endfor %}
     </section>
 
-<!--  MODAL CART WINDOW  -->
+    <!--  MODAL CART WINDOW  -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
