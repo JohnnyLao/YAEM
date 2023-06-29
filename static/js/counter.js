@@ -1,51 +1,27 @@
-// INDIKATOR
 var time = 2;
-$('#counter').each(function(){
-  $('div').each(function(){
-    var
-    i = 1,
-    num = $(this).data('num'),
-    step = 1200 * time / num,
-    that = $(this),
-    int = setInterval(function(){
-      if (i <= num) {
-        that.html(i);
-      }
-      else {
-        clearInterval(int);
-      }
-      i++;
-    },step);
-  });
+var counterElements = $('#counter').find('div');
+var maxNum = 0;
+
+counterElements.each(function(){
+  var num = $(this).data('num');
+  if (num > maxNum) {
+    maxNum = num;
+  }
 });
 
+var i = 0;
+var step = (1200 * time) / maxNum;
+var int = setInterval(function() {
+  if (i > maxNum) {
+    clearInterval(int);
+  }
 
+  counterElements.each(function(){
+    var num = $(this).data('num');
+    if (i <= num) {
+      $(this).html(i);
+    }
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  i++;
+}, step);
