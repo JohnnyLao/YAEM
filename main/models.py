@@ -13,14 +13,14 @@ class City(models.Model):
         return self.name
 
 
-def get_logo_upload_path(instance, filename):
-    return f"./static/images/{instance.url_name}/logo/{filename}"
+# def get_logo_upload_path(instance, filename):
+#     return f"./static/images/{instance.url_name}/logo/{filename}"
 
 
 class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
-    logo = models.ImageField(upload_to=get_logo_upload_path, blank=True, verbose_name="Лого")
+    logo = models.ImageField(upload_to='logo', blank=True, verbose_name="Лого")
     description = models.TextField(verbose_name="Описание", max_length=60)
     working_time = models.CharField(max_length=20, verbose_name="Рабочеее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
@@ -39,11 +39,11 @@ class Client(models.Model):
     def __str__(self):
         return self.name
 
-    def save(self, *args, **kwargs):
-        # Создаем папку для хранения логотипов при сохранении экземпляра класса
-        if not self.pk:
-            os.makedirs(f"./static/images/{self.name}/logo/", exist_ok=True)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     # Создаем папку для хранения логотипов при сохранении экземпляра класса
+    #     if not self.pk:
+    #         os.makedirs(f"./static/images/{self.name}/logo/", exist_ok=True)
+    #     super().save(*args, **kwargs)
 
 
 class Client_Type(models.Model):
@@ -92,8 +92,8 @@ class Food_type2(models.Model):
         return self.name
 
 
-def get_dish_upload_path(instance, filename):
-    return f"./static/images/{instance.client.url_name}/dishes/{filename}"
+# def get_dish_upload_path(instance, filename):
+#     return f"./static/images/{instance.client.url_name}/dishes/{filename}"
 
 
 class Dish(models.Model):
@@ -102,7 +102,7 @@ class Dish(models.Model):
     name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
     name_kz = models.CharField(verbose_name="Блюдо_KZ", max_length=50, blank=True)
     name_en = models.CharField(verbose_name="Блюдо_EN", max_length=50, blank=True)
-    image = models.ImageField(verbose_name="Фото", upload_to=get_dish_upload_path, blank=True)
+    image = models.ImageField(verbose_name="Фото", upload_to='dishes', blank=True)
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(verbose_name="Старая цена",max_digits=10, decimal_places=0, default=0)

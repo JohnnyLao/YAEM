@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=30, verbose_name='Название')),
-                ('logo', models.ImageField(blank=True, upload_to=main.models.get_logo_upload_path, verbose_name='Лого')),
+                ('logo', models.ImageField(blank=True, upload_to='logo', verbose_name='Лого')),
                 ('description', models.TextField(verbose_name='Описание')),
                 ('working_time', models.CharField(max_length=20, verbose_name='Рабочеее время')),
                 ('address', models.CharField(max_length=50, verbose_name='Адрес')),
@@ -89,7 +89,7 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=50, verbose_name='Блюдо_RU')),
                 ('name_kz', models.CharField(blank=True, max_length=50, verbose_name='Блюдо_KZ')),
                 ('name_en', models.CharField(blank=True, max_length=50, verbose_name='Блюдо_EN')),
-                ('image', models.ImageField(blank=True, upload_to=main.models.get_dish_upload_path, verbose_name='Фото')),
+                ('image', models.ImageField(blank=True, upload_to='dishes', verbose_name='Фото')),
                 ('description', models.TextField(blank=True, max_length=100, verbose_name='Описание')),
                 ('stop', models.BooleanField(verbose_name='Стоп Лист')),
                 ('old_price', models.DecimalField(decimal_places=0, default=0, max_digits=10, verbose_name='Старая цена')),

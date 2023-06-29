@@ -9,14 +9,7 @@ class Main(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["clients"] = Client.objects.values('name',
-                                                   'working_time',
-                                                   'description',
-                                                   'status',
-                                                   'outside',
-                                                   'delivery',
-                                                   'url_name',
-                                                   'logo')
+        context["clients"] = Client.objects.all()
         return context
 
 
