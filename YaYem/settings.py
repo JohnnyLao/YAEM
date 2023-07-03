@@ -19,6 +19,7 @@ env = environ.Env(
     DEBUG=bool,
     SECRET_KEY=str,
     DOMAIN_NAME=str,
+    ALLOWED_HOSTS=list,
 )
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +30,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 DOMAIN_NAME = env('DOMAIN_NAME')
 
 
