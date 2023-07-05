@@ -10,9 +10,9 @@
 
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 bg-dark mx-2 shadow"
-   style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 100px; right: 50px; display: none;"
+   style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 60px; position: fixed; bottom: 100px; left: 10px; display: none;"
    href="#header">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up"
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
         <path fill-rule="evenodd"
               d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
@@ -28,28 +28,25 @@
 
         <!--Flying Cart-->
         <a id="Cart" class="btn fs-5 bg-dark mx-2 shadow btn-animate"
-           style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 30px; right: 50px; display: none"
+           style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 30px; left: 10px; display: none"
            href="{% url 'cart:cart_page' %}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cart3"
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart3"
                  viewBox="0 0 16 16">
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
             </svg>
         </a>
         <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid pt-4">
-            <div class="col-lg-12 bg-dark text-center"
+            <div class="col-12 bg-dark text-center"
                  style="--bs-bg-opacity: .7; border-radius: 50px;">
                 <div class="row">
-                    <div class="col-4">
-                        <img src="{{client.logo.url}}" alt="" height="200px" width="auto" class="my-4"
-                             style="border-radius: 15px;">
-                    </div>
-
-                    <div class="col-7 content">
-                        <h4 class="text-start ms-2 mt-1">
-                            Добро пожаловать в {{ client.name }}
+                    <img src="{{client.logo.url}}" alt="" class="w-100 my-3 mx-auto"
+                         style="border-radius: 15px; max-width: 250px">
+                    <div class="col-12 content">
+                        <h4 class="mx-auto mt-1 text-nowrap">
+                            Добро пожаловать в <b>{{ client.name }}</b>
                             <a href="{{ client.inst }}">
-                                <div class="btn ms-5 btn-animate text-white"
+                                <div class="btn ms-2 btn-animate text-white"
                                      style="border-radius: 50px; background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -65,28 +62,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         </h4>
 
 
-                        <p class="text-start ms-2 my-1 fst-italic text-body">Время работы: {{ client.working_time }}</p>
-                        <p class="text-start ms-2 my-1 text-body">г.{{client.city}}, {{client.address}}; Телефон:
+                        <p class="ms-2 my-1 fst-italic ">Время работы: {{ client.working_time }}</p>
+                        <p class="ms-2 my-1 ">г.{{client.city}}, {{client.address}}; Телефон:
                             {{client.phone}}</p>
-                        <p class="text-start ms-2 my-2">{{ client.description }}</p>
+                        <p class="ms-2 my-2">{{ client.description }}</p>
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-sm-2">
-                                    <p class="text-start mt-0 text-body">{% trans 'Самовывоз' %}:</p>
-                                    <p class="text-start my-0 text-body">{% trans 'Доставка' %}:</p>
+                                <div class="text-end col-6">
+                                    <p class="mt-3 ">{% trans 'Самовывоз' %}:</p>
+                                    <p class="my-0 ">{% trans 'Доставка' %}:</p>
                                 </div>
-                                <div class="col-3">
-                                    <p class="text my-0">
+                                <div class="text-start col-6">
+                                    <p class="my-0">
                                         {% if client.outside %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                              fill="currentColor"
-                                             class="bi bi-check text-light bg-success mt-0" viewBox="0 0 16 16"
+                                             class="bi bi-check text-light bg-success mt-3" viewBox="0 0 16 16"
                                              style="border-radius: 25px;">
                                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                                         </svg>
                                         {% else %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                             class="bi bi-x bg-danger mt-0" viewBox="0 0 16 16"
+                                             class="bi bi-x bg-danger mt-3" viewBox="0 0 16 16"
                                              style="border-radius: 25px;">
                                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
                                         </svg>
@@ -119,21 +116,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
         <!--    FOOD TYPE SWIPER    -->
         <div class="sticky-top">
-            <div class="container-fluid text-center bg-dark" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
+            <div class="container-fluid text-center bg-dark py-2" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
                 <div class="row">
                     <div class="col-12">
                         <div class="swiper-container">
                             <div class="swiper-wrapper">
                                 {% for ft in food_type %}
                                 <div class="swiper-slide">
-                                    <a class="btn fs-5 bg-dark mx-2 shadow btn-animate"
+                                    <a class="btn bg-dark shadow btn-animate"
                                        style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
                                        href="#{{ ft }}">{{ ft }}</a>
                                 </div>
                                 {% endfor %}
                             </div>
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
                         </div>
                     </div>
                 </div>
@@ -163,7 +158,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
   });
 
 
+
+
         </script>
+
         <style>
   .sticky-top {
     opacity: 1;
@@ -179,6 +177,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
   }
 
 
+
+
         </style>
         <!--    FOOD TYPE SWIPER    -->
 
@@ -188,18 +188,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
         <!--    DISH CONTENT    -->
         <div class="container-fluid my-3">
-            <div class="row gy-3 mx-auto justify-content-center">
+            <div class="row gy-2 mx-auto justify-content-center">
                 {% for dish in dishes %}
                 {% if dish.food_type == ft and dish.stop == False %}
-                <div class="col-lg-5 bg-dark col-sm-12 mx-1"
+                <div class="col-12 col-lg-6 bg-dark"
                      style="--bs-bg-opacity: .7; border-radius: 50px;">
                     <div class="row">
 
-                        <div class="col-lg-9 col-sm-9 text-start ps-5">
+                        <div class="col-8  text-start ps-5 mx-0">
                             <h5 class="mb-0 fw-bold">{{ dish.name }}</h5>
                             <p class=" fs-6">{{ dish.description }}</p>
                         </div>
-                        <div class="col-lg-3 col-sm-3 text-center">
+                        <div class="col-4 text-center mx-0 position-relative">
                             {% if dish.old_price > dish.actual_price %}
                             <del class="fs-4 text-danger">
                                 <p class="my-0" style="color: #fd7014">{{ dish.old_price|intcomma }}</p></del>
@@ -208,11 +208,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 ₸</p>
 
                             <!--       Add to cart form       -->
-                            <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
+                            <form class="add-to-cart-form pb-3" action="{% url 'cart:add_to_cart' %}" method="post">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_id" value="{{ dish.id }}">
                                 <input type="hidden" name="quantity" value="1" style="width: 50px">
-                                <button class="btn btn-success my-1 btn-animate" type="submit"
+                                <button class="btn btn-sm btn-success my-1 btn-animate" type="submit"
                                         style="--bs-btn-active-bg: #fd7014;" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
                                     Добавить
@@ -230,11 +230,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     <!--  MODAL CART WINDOW  -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title ms-5" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
-                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content bg-dark">
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h5 class="modal-title" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -2,16 +2,16 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark" style="font-family: Montserrat">
+<html lang="en" data-bs-theme="" style="font-family: Montserrat">
 <head>
     <meta charset="UTF-8">
-<!--    CSS-->
+    <!--    CSS-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<!--    -->
+    <!--    -->
     <link rel="icon" href="{% static 'images/favicon1.jpg' %}">
     <title>{% block title %} {% endblock title %}</title>
 </head>
@@ -19,10 +19,10 @@
 
 
 <!--  HEADER  -->
-<nav class="navbar navbar-expand-sm bg-light" id="header">
-    <div class="container text-dark">
+<nav class="navbar bg-light" id="header">
+    <div class="container text-dark position-relative">
         <a href="{% url 'main:main_page' %}">
-            <button class="btn me-5" role="link">
+            <button class="btn" role="link">
                 <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </button>
         </a>
@@ -36,24 +36,38 @@
             </button>
         </a>
         {% endif %}
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                    <a href="{% url 'main:main_page' %}" class="nav-link fs-5 text-black">{% trans 'ГЛАВНАЯ' %}</a>
+        <form class="my-auto fs-6 ms-auto" method="post" action="">
+            <div class="btn-group-sm" role="group">
+                <button type="submit" name="language" value="ru" class="btn btn-animate"
+                        disabled>KZ
+                </button>
+                <button type="submit" name="language" value="kz" class="btn btn-animate"
+                        disabled>RU
+                </button>
+                <button type="submit" name="language" value="en" class="btn btn-animate"
+                        disabled>EN
+                </button>
+            </div>
+        </form>
+        <button class="navbar-toggler position-absolute top-0 start-50 translate-middle-x mt-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse active" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item mx-auto">
+                    <a class="nav-link active fw-bold" aria-current="page"
+                       href="{% url 'main:main_page' %}">ГЛАВНАЯ</a>
                 </li>
-                <li class="nav-item">
-                    <a href="{% url 'partner:partner_page' %}" class="nav-link fs-5 text-black">
-                        {% trans 'КОНТАКТЫ'%}</a>
+                <li class="nav-item mx-auto">
+                    <a class="nav-link disabled" href="{% url 'partner:partner_page' %}" data-bs-toggle="Скоро" title="Tooltip">КОНТАКТЫ</a>
+                </li>
+                <li class="nav-item mx-auto">
                 </li>
             </ul>
         </div>
-        <form class="my-auto" method="post" action="">
-            <div class="btn-group" role="group">
-                <button type="submit" name="language" value="ru" class="btn text-black btn-animate" disabled>KZ</button>
-                <button type="submit" name="language" value="kz" class="btn text-black btn-animate" disabled>RU</button>
-                <button type="submit" name="language" value="en" class="btn text-black btn-animate" disabled>EN</button>
-            </div>
-        </form>
+
     </div>
 </nav>
 <!--  HEADER END -->
@@ -67,23 +81,23 @@
 
 
 <!--FOOTER-->
-<footer>
-    <div class="container-fluid py-3 bg-black" style="--bs-bg-opacity: .3; ">
+<footer class="bg-black" style="--bs-bg-opacity: 90%">
+    <div class="container-fluid py-3" style="--bs-bg-opacity: .3; ">
         <h3 class="text-center my-3">{% trans 'НАША КОМАНДА' %}</h3>
         <div class="row">
-            <div class="col-lg-4 col-sm-6 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-1.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Егор' %}</p>
                 <p class="">{% trans 'Коммерческий директор' %}</p>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
                 <p class="">{% trans 'Руководитель отдела развития' %}</p>
             </div>
-            <div class="col-lg-4 col-sm-6 text-center">
+            <div class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Артём' %}</p>
@@ -93,9 +107,9 @@
     </div>
 
     <div class="container-fluid bg-dark">
-        <h4 class="text-center my-3">{% trans 'СВЯЗАТЬСЯ С НАМИ' %}</h4>
-        <div class="row my-3">
-            <div class="col-md-4 text-end">
+        <h4 class="text-center pt-3">{% trans 'СВЯЗАТЬСЯ С НАМИ' %}</h4>
+        <div class="row my-3 text-center">
+            <div class="col-12 col-md-4 my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                      class="bi bi-envelope bg-success" viewBox="0 0 16 16"
                      style="border-radius: 40%; padding: 10px;">
@@ -103,7 +117,7 @@
                 </svg>
                 Email: YaYem@gmail.com
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-12 col-md-4 my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                      class="bi bi-whatsapp bg-success" viewBox="0 0 16 16"
                      style="border-radius: 40%; padding: 10px;">
@@ -111,7 +125,7 @@
                 </svg>
                 Whatsapp: +7 701 530 28 12
             </div>
-            <div class="col-md-4 text-start">
+            <div class="col-12 col-md-4 my-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
                      class="bi bi-instagram bg-success" viewBox="0 0 16 16"
                      style="border-radius: 40%; padding: 10px;">
@@ -127,8 +141,8 @@
 
 <!--SCRIPTS-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-            crossorigin="anonymous"></script>
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script src="{% static 'js/counter.js' %}"></script>
