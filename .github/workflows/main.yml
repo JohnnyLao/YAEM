@@ -33,6 +33,6 @@ jobs:
         with:
           host: 194.58.120.24
           username: root
-          password: L|7H7iV~fV=q
+          password: A+aY:%4NiYmd
           script: expect /home/artem/Site1/pull.exp
 
