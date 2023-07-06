@@ -36,8 +36,6 @@ jobs:
           password: A+aY:%4NiYmd
           script: |
             cd /home/artem/Site1
-            git reset --hard HEAD
-            git clean -df
             git pull origin master
             echo "artem16" | sudo -S systemctl restart gunicorn
 
