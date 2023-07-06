@@ -2,7 +2,7 @@ name: Развертывание, тестирование, форматиров
 
 on:
   push:
-    branches: [maser]
+    branches: [master]
 
 jobs:
   testing:
@@ -37,5 +37,5 @@ jobs:
           host: 194.58.120.24
           username: root
           password: L|7H7iV~fV=q
-          scripts: expect /home/artem/Site1/pull.exp
+          script: expect /home/artem/Site1/pull.exp
 
