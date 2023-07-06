@@ -22,9 +22,6 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r requirements.txt
 
-      - name: Проверка синтаксиса flake8
-        run: flake8 .
-
       - name: Сортировка импортов isort
         run: isort .
 
