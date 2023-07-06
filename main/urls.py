@@ -4,7 +4,7 @@ from django.views.decorators.cache import cache_page
 
 
 # Кеширование на 5 часов
-cache_duration = 60 * 60
+cache_duration = 0
 app_name = "main"
 
 urlpatterns = [
