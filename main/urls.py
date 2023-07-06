@@ -9,7 +9,7 @@ app_name = "main"
 
 urlpatterns = [
     path(
-        "<str:url_name>/menu",
+        "<str:url_name>/menu/",
         cache_page(cache_duration)(Menu.as_view()),
         name="menu_page",
     ),
