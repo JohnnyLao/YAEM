@@ -1,0 +1,41 @@
+name: Развертывание, тестирование, форматирование и проверка синтаксиса
+
+on:
+  push:
+    branches: [dev]
+
+jobs:
+  testing:
+    runs-on: ubuntu-22.04
+    env:
+      SECRET_KEY: 'django-insecure-s!1=txswelx%a4*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_'
+      DEBUG: 'False'
+    steps:
+      - name: Проверка репозитория на наличие изменений
+        uses: actions/checkout@v3
+
+      - name: Установка и создание Python окружения
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.10
+
+      - name: Установка зависимостей
+        run: pip install -r requirements.txt
+
+      - name: Проверка синтаксиса flake8
+        run: flake8 .
+
+      - name: Сортировка импортов isort
+        run: isort .
+
+      - name: Форматирование кода black
+        run: black .
+
+      - name: Деплой..
+        uses: appleboy/ssh-action@master
+        with:
+          host: 194.58.120.24
+          username: root
+          password: L|7H7iV~fV=q
+          scripts: expect /home/artem/Site1/pull.exp
+

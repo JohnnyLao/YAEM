@@ -1,5 +1,6 @@
-from django.db import models
 import os
+
+from django.db import models
 
 
 class City(models.Model):
@@ -20,7 +21,7 @@ class City(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
-    logo = models.ImageField(upload_to='logo', blank=True, verbose_name="Лого")
+    logo = models.ImageField(upload_to="logo", blank=True, verbose_name="Лого")
     description = models.TextField(verbose_name="Описание", max_length=60)
     working_time = models.CharField(max_length=20, verbose_name="Рабочеее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
@@ -66,7 +67,7 @@ class Client_Category(models.Model):
         verbose_name_plural = "Заведение - Области"
 
     def __str__(self):
-        return f'В {self.client} есть {self.category}'
+        return f"В {self.client} есть {self.category}"
 
 
 class Food_type(models.Model):
@@ -98,15 +99,21 @@ class Food_type2(models.Model):
 
 class Dish(models.Model):
     client = models.ForeignKey(Client, models.CASCADE, verbose_name="Заведение")
-    food_type = models.ForeignKey(Food_type2, models.CASCADE, verbose_name="Подкатегория")
+    food_type = models.ForeignKey(
+        Food_type2, models.CASCADE, verbose_name="Подкатегория"
+    )
     name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
     name_kz = models.CharField(verbose_name="Блюдо_KZ", max_length=50, blank=True)
     name_en = models.CharField(verbose_name="Блюдо_EN", max_length=50, blank=True)
-    image = models.ImageField(verbose_name="Фото", upload_to='dishes', blank=True)
+    image = models.ImageField(verbose_name="Фото", upload_to="dishes", blank=True)
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
-    old_price = models.DecimalField(verbose_name="Старая цена",max_digits=10, decimal_places=0, default=0)
-    actual_price = models.DecimalField(verbose_name="Текущая цена", max_digits=10, decimal_places=0)
+    old_price = models.DecimalField(
+        verbose_name="Старая цена", max_digits=10, decimal_places=0, default=0
+    )
+    actual_price = models.DecimalField(
+        verbose_name="Текущая цена", max_digits=10, decimal_places=0
+    )
 
     class Meta:
         verbose_name = "Блюдо"

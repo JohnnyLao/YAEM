@@ -1,30 +1,29 @@
 import json
 
-from django.http import JsonResponse, HttpResponse
-from django.shortcuts import render, redirect
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
-
 
 from main.models import Dish
 
 
 class AddToCartView(View):
     def post(self, request):
-        product_id = request.POST.get('product_id')
-        quantity = request.POST.get('quantity')
+        product_id = request.POST.get("product_id")
+        quantity = request.POST.get("quantity")
 
         if not product_id or not product_id.isdigit():
-            return JsonResponse({'success': False, 'error': 'Invalid product_id'})
+            return JsonResponse({"success": False, "error": "Invalid product_id"})
 
         if not quantity or not quantity.isdigit():
-            return JsonResponse({'success': False, 'error': 'Invalid quantity'})
+            return JsonResponse({"success": False, "error": "Invalid quantity"})
 
         # Проверка наличия корзины в сессии
-        if 'cart' not in request.session:
-            request.session['cart'] = {}
+        if "cart" not in request.session:
+            request.session["cart"] = {}
 
-        cart = request.session['cart']
+        cart = request.session["cart"]
 
         # Добавление товара в корзину
         if product_id and product_id in cart:
@@ -34,12 +33,12 @@ class AddToCartView(View):
 
         request.session.modified = True
 
-        return JsonResponse({'success': True})
+        return JsonResponse({"success": True})
 
 
 class CartView(View):
     def get(self, request):
-        cart = request.session.get('cart', {})
+        cart = request.session.get("cart", {})
         cart_items = []
         sub_total_price = 0
         total_price = 0
@@ -48,35 +47,35 @@ class CartView(View):
             try:
                 product = Dish.objects.get(id=product_id)
                 cart_item = {
-                    'product': product,
-                    'quantity': quantity,
-                    'sub_total': product.actual_price * quantity,
+                    "product": product,
+                    "quantity": quantity,
+                    "sub_total": product.actual_price * quantity,
                 }
                 cart_items.append(cart_item)
-                sub_total_price += cart_item['sub_total']
+                sub_total_price += cart_item["sub_total"]
             except Dish.DoesNotExist:
                 pass
 
         total_price = sub_total_price  # Вычисление общей суммы
 
         context = {
-            'cart_items': cart_items,
-            'sub_total_price': sub_total_price,
-            'total_price': total_price,
-            'is_empty': len(cart_items) == 0,
+            "cart_items": cart_items,
+            "sub_total_price": sub_total_price,
+            "total_price": total_price,
+            "is_empty": len(cart_items) == 0,
         }
 
-        return render(request, 'cart/cart.html', context=context)
+        return render(request, "cart/cart.html", context=context)
 
 
 class RemoveFromCartView(View):
     def post(self, request):
-        product_id = request.POST.get('product_id')
+        product_id = request.POST.get("product_id")
 
         if not product_id or not product_id.isdigit():
-            return JsonResponse({'success': False, 'error': 'Invalid product_id'})
+            return JsonResponse({"success": False, "error": "Invalid product_id"})
 
-        cart = request.session.get('cart', {})
+        cart = request.session.get("cart", {})
 
         # Удаление товара из корзины
         if product_id in cart:
@@ -86,13 +85,10 @@ class RemoveFromCartView(View):
                 cart[product_id] -= 1
             request.session.modified = True
 
-        return JsonResponse({'success': True})
-
-
-
+        return JsonResponse({"success": True})
 
 
 class CartClearView(View):
     def post(self, request):
-        request.session['cart'] = {}  # Очистка корзины
-        return redirect(reverse('cart:cart_page'))
+        request.session["cart"] = {}  # Очистка корзины
+        return redirect(reverse("cart:cart_page"))

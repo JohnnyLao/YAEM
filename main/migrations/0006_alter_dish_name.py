@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0005_remove_food_type2_client'),
+        ("main", "0005_remove_food_type2_client"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='dish',
-            name='name',
-            field=models.CharField(max_length=30, verbose_name='Блюдо_RU'),
+            model_name="dish",
+            name="name",
+            field=models.CharField(max_length=30, verbose_name="Блюдо_RU"),
         ),
     ]

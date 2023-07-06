@@ -1,4 +1,4 @@
-from main.models import Dish, Client
+from main.models import Client, Dish
 
 
 def data_counter_site(request):
@@ -7,7 +7,7 @@ def data_counter_site(request):
     total_orders = total_dishes * 21
 
     return {
-        'total_dishes': total_dishes,
-        'total_clients': total_clients,
-        'total_orders': total_orders,
+        "total_dishes": total_dishes,
+        "total_clients": total_clients,
+        "total_orders": total_orders,
     }
