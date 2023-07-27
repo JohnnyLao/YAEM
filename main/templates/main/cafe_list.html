@@ -22,7 +22,7 @@
 <!--COUNTER START-->
 <section class="bg-dark">
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
+        <div class="row text-center fs-4 py-3 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title"></div>
@@ -56,7 +56,6 @@
 
         <div class="container">
             <div class="row my-3 gy-3 mx-auto justify-content-center">
-
                 <!--- цикл -->
                 {% for client in clients %}
                 {% if client.status %}
@@ -109,7 +108,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="{{client.url_name}}/menu">
+                    <a href="menu/{{client.url_name}}">
                         <button class="btn btn-success my-2">{% trans 'Перейти' %}</button>
                     </a>
                 </div>
