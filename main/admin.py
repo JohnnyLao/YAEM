@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from main.models import *
+from main.models import Client, Client_Type, City, Client_Category, Food_type, Food_type2, Dish
 
 admin.site.register(Client_Type)
 admin.site.register(City)
@@ -21,9 +21,11 @@ class Food_type2Admin(admin.ModelAdmin):
 class ClientAdmin(admin.ModelAdmin):
     list_display = ["name", "city", "status", "outside", "delivery", "visitors"]
     list_filter = ["city", "status"]
+    search_fields = ["name"]
 
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
     list_display = ["name", "food_type", "stop", "actual_price"]
     list_filter = ["food_type", "stop", "client"]
+    search_fields = ["name"]
