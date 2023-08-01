@@ -1,20 +1,27 @@
 import os
 from pathlib import Path
-
 import environ
 
 # environ
-
-
 env = environ.Env(
     DEBUG=bool,
     SECRET_KEY=str,
+    # For development using SQLite
+    SQLITE_DB_NAME=str,
+    # For production using PostgreSQL
+    POSTGRES_DB_NAME=str,
+    POSTGRES_USER=str,
+    POSTGRES_PASSWORD=str,
+    POSTGRES_HOST=str,
+    POSTGRES_PORT=int,
 )
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
+
 if DEBUG:
     ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 else:
@@ -73,12 +80,27 @@ WSGI_APPLICATION = "YaYem.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+# development
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': env('SQLITE_DB_NAME'),
+        }
     }
-}
+# production
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': env('POSTGRES_DB_NAME'),
+            'USER': env('POSTGRES_USER'),
+            'PASSWORD': env('POSTGRES_PASSWORD'),
+            'HOST': env('POSTGRES_HOST'),
+            'PORT': env('POSTGRES_PORT'),
+        }
+    }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -121,17 +143,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # languages
-# LANGUAGES = [
-#     ('en', 'English'),
-#     ('ru', 'Russian'),
-#   ('kz', 'Kazakh'),
-# другие языки
-# ]
-#
-# LOCALE_PATHS = [
-#     BASE_DIR / 'locale',
-# ]
+LANGUAGES = [
+    ('en', 'English'),
+    ('ru', 'Russian'),
+    ('kz', 'Kazakh'),
+]
 
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
 
 # debug-toolbar
 INTERNAL_IPS = [

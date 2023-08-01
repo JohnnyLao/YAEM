@@ -28,6 +28,12 @@ jobs:
       - name: Форматирование кода black
         run: black .
 
+      - name: Выполнение миграций базы данных
+        run: python manage.py migrate
+
+      - name: Загрузка данных из фикстур
+        run: python manage.py loaddata DB_data/data.json
+
       - name: Деплой
         uses: appleboy/ssh-action@master
         with:
