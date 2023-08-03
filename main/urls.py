@@ -1,10 +1,9 @@
 from django.urls import path
 from django.views.decorators.cache import cache_page
-
 from main.views import Main, Menu
 
-# Кеширование на 5 часов
-cache_duration = 60 * 60
+
+cache_duration = 0
 app_name = "main"
 
 urlpatterns = [
