@@ -1,10 +1,8 @@
 import json
-
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
-
 from main.models import Dish
 
 
