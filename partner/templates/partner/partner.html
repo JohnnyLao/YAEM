@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %} QR Меню для заведений {% endblock title %}
+{% block title %} {% trans 'QR Меню для заведений' %} {% endblock title %}
 
 {% block content %}
 
@@ -153,7 +153,7 @@
              style="background-image: linear-gradient(0deg, rgba(100, 51, 51, 0.2), rgba(100, 51, 51, 0.2)), url({% static 'images/1.jpg' %});
     background-attachment:fixed; background-position: 60%; background-repeat: repeat; background-size: 220vh">
         <div class="container">
-            <h2 class="text-center fw-bold text-white pt-3">Наши приемущества</h2>
+            <h2 class="text-center fw-bold text-white pt-3">{% trans 'Наши приемущества' %}</h2>
             <div class="row gy-3 py-3">
                 <div class="col-lg-4 col-sm-6 text-center">
                     <h3 class="my-3 me-4" style="color: #fd7014">
@@ -165,10 +165,9 @@
                             <path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z"/>
                             <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"/>
                         </svg>
-                        Простота
+                        {% trans 'Простота' %}
                     </h3>
-                    <h5 class="my-3">Возможность мгновенно обновлять и изменять цены, акции и меню позволяет кафе и
-                        ресторанам оперативно реагировать на изменения рынка и предпочтений клиентов</h5>
+                    <h5 class="my-3">{% trans 'Возможность мгновенно обновлять и изменять цены, акции и меню позволяет кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений клиентов' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -178,10 +177,9 @@
                             <path fill-rule="evenodd"
                                   d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
                         </svg>
-                        Продажи
+                        {% trans 'Продажи' %}
                     </h3>
-                    <h5 class="my-3">Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты могут
-                        легко добавлять в нее дополнительные блюда и напитки</h5>
+                    <h5 class="my-3">{% trans 'Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
                     <h3 class="my-3" style="color: #fd7014">
@@ -189,10 +187,9 @@
                              class="bi bi-basket3-fill" viewBox="0 0 16 16">
                             <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
                         </svg>
-                        Новые клиенты
+                        {% trans 'Новые клиенты' %}
                     </h3>
-                    <h5 class="my-3">Опция дистанционного отправления заказов через позволяет привлечь
-                        клиентов, которые предпочитают питание на вынос или доставку</h5>
+                    <h5 class="my-3">{% trans 'Опция дистанционного отправления заказов через позволяет привлечь клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -203,10 +200,9 @@
                             <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
                             <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
                         </svg>
-                        Эффективность
+                        {% trans 'Эффективность' %}
                     </h3>
-                    <h5 class="my-3">Возможность клиента ознакомиться с меню, принимать заказы
-                        удаленно, вести стоп-лист и изменять меню, что сокращает временные затраты
+                    <h5 class="my-3">{% trans 'Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести стоп-лист и изменять меню, что сокращает временные затраты' %}
                     </h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
@@ -217,11 +213,9 @@
                             <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
                             <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"/>
                         </svg>
-                        Аналитика
+                        {% trans 'Аналитика' %}
                     </h3>
-                    <h5 class="my-3">Получать полезные данные о
-                        популярных блюдах и предпочтениях. Делать более обоснованные
-                        бизнес-решения и адаптировать меню под потребности клиентов.</h5>
+                    <h5 class="my-3">{% trans 'Получать полезные данные о популярных блюдах и предпочтениях. Делать более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -231,10 +225,9 @@
                             <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
                             <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
                         </svg>
-                        Мультиязычность
+                        {% trans 'Мультиязычность' %}
                     </h3>
-                    <h5 class="my-3">Предоставление меню на нескольких языках делает заведение более привлекательным для
-                        иностранных посетителей и туристов</h5>
+                    <h5 class="my-3">{% trans 'Предоставление меню на нескольких языках делает заведение более привлекательным для иностранных посетителей и туристов' %}</h5>
                 </div>
             </div>
         </div>
@@ -244,23 +237,23 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6 text-center">
-                    <h2 class="my-3">Бесплатное подключение</h2>
+                    <h2 class="my-3">{% trans 'Бесплатное подключение' %}</h2>
                     <div id="countdown" class="row gy-3 my-3" style="color: #fd7014">
                         <div class="col">
                             <h2 id="days" class="countdown-number">0</h2>
-                            <h4>Дней</h4>
+                            <h4>{% trans 'Дней' %}</h4>
                         </div>
                         <div class="col">
                             <h2 id="hours" class="countdown-number">0</h2>
-                            <h4>Часов</h4>
+                            <h4>{% trans 'Часов' %}</h4>
                         </div>
                         <div class="col">
                             <h2 id="minutes" class="countdown-number">0</h2>
-                            <h4>Минут</h4>
+                            <h4>{% trans 'Минут' %}</h4>
                         </div>
                         <div class="col">
                             <h2 id="seconds" class="countdown-number">0</h2>
-                            <h4>Секунд</h4>
+                            <h4>{% trans 'Секунд' %}</h4>
                         </div>
                     </div>
                 </div>
@@ -270,7 +263,7 @@
     <!--    PART 5 PRICING-->
     <section class="bg-dark">
         <div class="container">
-            <h2 class="text-center py-3">Тарифные планы</h2>
+            <h2 class="text-center py-3">{% trans 'Тарифные планы' %}</h2>
 
             <div class="row text-center gy-3 py-3">
                 <div class="col-10 col-sm-5 col-lg-3 mx-auto shadow-lg bg-body-secondary"
@@ -278,36 +271,36 @@
                      border-radius: 10px; background-size: 150%;">
                     <img class="img w-25 my-3" src="{% static 'images/t-1.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 15%; border-radius: 50px">Бронза</h4>
+                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 15%; border-radius: 50px">{% trans 'Бронза' %}</h4>
                     <h5 style="color: #">
-                        <del>60 000 тг в год</del>
+                        <del>60 000 {% trans 'тг в год' %}</del>
                     </h5>
-                    <h3 class="fw-bold" style="color: #"> 0 тг в год</h3>
+                    <h3 class="fw-bold" style="color: #"> 0 {% trans 'тг в год' %}</h3>
                     <div class="container py-3">
                         <h6 class="bg-white shadow text-start" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Онлайн меню
+                            {% trans 'Онлайн меню' %}
                         </h6>
                         <h6 class="bg-white shadow text-start" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Настольный QR код
+                            {% trans 'Настольный QR код' %}
                         </h6>
                         <h6 class="bg-white shadow text-start" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Редакция 4 раза в год
+                            {% trans 'Редакция 4 раза в год' %}
                         </h6>
                     </div>
                     <button class="btn btn-success my-3 btn-animate" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Подключить
+                            data-bs-target="#exampleModal">{% trans 'Подключить' %}
                     </button>
                 </div>
 
@@ -319,55 +312,55 @@
                     <img class="img w-50" src="{% static 'images/t-2.png' %}" alt=""
                          style="border-radius: 10px; max-width: 120px; opacity: 50%">
                     <h3 class="fw-bold my-3 bg-white shadow" style="--bs-bg-opacity: 30%; border-radius: 50px">
-                        Серебро</h3>
-                    <h4 class="" style="color: #">15 000 тг/мес</h4>
-                    <h3 class="fw-bold" style="color: #"> 150 000 тг/год</h3>
+                        {% trans 'Серебро' %}</h3>
+                    <h4 class="" style="color: #">15 000 {% trans 'тг/мес' %}</h4>
+                    <h3 class="fw-bold" style="color: #"> 150 000 {% trans 'тг/год' %}</h3>
                     <div class="container py-3" style="--bs-bg-opacity: 10%; border-radius: 50px">
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Онлайн меню с фото блюд
+                            {% trans 'Онлайн меню с фото блюд' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Настольный QR код
+                            {% trans 'Настольный QR код' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Неограниченная редакция
+                            {% trans 'Неограниченная редакция' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Техническая поддержка
+                            {% trans 'Техническая поддержка' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Меню на 3х языках
+                            {% trans 'Меню на 3х языках' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Бонус: "Самовывоз" и "Доставка"
+                            {% trans 'Бонус: "Самовывоз" и "Доставка"' %}
                         </h5>
                     </div>
                     <button class="btn btn-success my-3 btn-animate" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Подключить
+                            data-bs-target="#exampleModal">{% trans 'Подключить' %}
                     </button>
                 </div>
 
@@ -377,9 +370,9 @@
                      background-size: 100vh; border-radius: 10px; background-position: 50% 50%">
                     <img class="img w-25 my-3" src="{% static 'images/t-3.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">Золото</h4>
-                    <h4 class="fw" style="color: #">25 000 тг/мес</h4>
-                    <h2 class="fw-bold" style="color: #"> 250 000 тг/год</h2>
+                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% trans 'Золото' %}</h4>
+                    <h4 class="fw" style="color: #">25 000 {% trans 'тг/мес' %}</h4>
+                    <h2 class="fw-bold" style="color: #"> 250 000 {% trans 'тг/год' %}</h2>
                     <div class="container py-3">
                         <h5 class="bg-white shadow text-start ps-2 fw-bold"
                             style="--bs-bg-opacity: 10%; border-radius: 10px">
@@ -387,53 +380,53 @@
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Тариф "Серебро"
+                            {% trans 'Тариф "Серебро"' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Эксклюзивный QR код
+                            {% trans 'Эксклюзивный QR код' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Эксклюзивный дизайн меню
+                            {% trans 'Эксклюзивный дизайн меню' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Личный кабинет
+                            {% trans 'Личный кабинет' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Онлайн оплата Kaspi
+                            {% trans 'Онлайн оплата Kaspi' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Персональный менеджер
+                            {% trans 'Персональный менеджер' %}
                         </h5>
                         <h5 class="bg-white shadow text-start ps-2" style="--bs-bg-opacity: 10%; border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            Аналитика Google, Yandex
+                            {% trans 'Аналитика Google, Yandex' %}
                         </h5>
                     </div>
                     <button class="btn btn-success my-3 btn-animate" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">Подключить
+                            data-bs-target="#exampleModal">{% trans 'Подключить' %}
                     </button>
                 </div>
             </div>
@@ -451,9 +444,9 @@
                 </div>
 
                 <div class="modal-body">
-                    <p class="text-center">Вы можете оставить свои данные и мы с Вами свяжемся</p>
+                    <p class="text-center">{trans 'Вы можете оставить свои данные и мы с Вами свяжемся' %}</p>
 
-                    <p>Имя:</p>
+                    <p>{% trans 'Имя:' %}</p>
                     <div class="row mb-3" id="input_1">
                         <div class="form-floating">
                             <input type="email" class="form-control" id="floatingInput_1"
@@ -461,7 +454,7 @@
                             <label class="ms-2" for="floatingInput_1">{% trans 'Введите имя' %}</label>
                         </div>
                     </div>
-                    <p>Номер телефона:</p>
+                    <p>{% trans 'Номер телефона:' %}</p>
                     <div class="row mb-3" id="input_2">
                         <div class="form-floating">
                             <input type="email" class="form-control" id="floatingInput_2"
@@ -469,11 +462,11 @@
                             <label class="ms-2" for="floatingInput_2">{% trans 'Введите телефон' %}</label>
                         </div>
                     </div>
-                    <p>Позиция:</p>
+                    <p>{% trans 'Позиция' %}:</p>
                     <select class="form-select mb-3" aria-label="Small select example">
-                        <option class="w-50" value="1">Предприниматель</option>
-                        <option value="2">Руководитель</option>
-                        <option value="3">Менеджер</option>
+                        <option class="w-50" value="1">{% trans 'Предприниматель' %}</option>
+                        <option value="2">{% trans 'Руководитель'  %}</option>
+                        <option value="3">{% trans 'Менеджер' %}</option>
                     </select>
                 </div>
                 <!--FOOTER-->

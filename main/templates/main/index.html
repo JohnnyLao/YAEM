@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %} Я ЕМ | Онлайн Меню {% endblock title %}
+{% block title %} {% trans 'Я ЕМ | Онлайн Меню' %} {% endblock title %}
 
 {% block content %}
 
@@ -66,11 +66,11 @@
 
                         <div class="card-body my-0 py-1">
                             <h4 class="card-title my-0">{{ client.name }}</h4>
-                            <p class="card-text my-0 text-white-50">Время работы: {{ client.working_time }}</p>
+                            <p class="card-text my-0 text-white-50">{% trans 'Время работы' %}: {{ client.working_time }}</p>
                             <p class="text-start my-0">{{ client.description }}</p>
                             <div class="row my-0">
                                 <div class="col-6 my-0">
-                                    <p class="text my-0"> Самовывоз
+                                    <p class="text my-0"> {% trans 'Самовывоз' %}
                                 {% if client.outside %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                      class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -87,7 +87,7 @@
                                 {% endif %}
                                 </div>
                                 <div class="col-6 my-0">
-                                    <p class="my-0">Доставка
+                                    <p class="my-0">{% trans 'Доставка' %}
                                 {% if client.delivery %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                      class="bi bi-check bg-success" viewBox="0 0 16 16"

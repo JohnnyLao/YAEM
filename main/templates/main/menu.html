@@ -4,7 +4,7 @@
 {% load i18n %}
 
 
-{% block title %} Я ЕМ с {{client.name}} {% endblock title %}
+{% block title %} {% trans 'Я ЕМ с' %} {{client.name}} {% endblock title %}
 
 {% block content %}
 
@@ -44,7 +44,7 @@
                          style="border-radius: 15px; max-width: 250px">
                     <div class="col-12 content">
                         <h4 class="mx-auto mt-1 text-nowrap">
-                            Добро пожаловать в <b>{{ client.name }}</b>
+                            {% trans 'Добро пожаловать в' %} <b>{{ client.name }}</b>
                             <a href="{{ client.inst }}">
                                 <div class="btn ms-2 btn-animate text-white"
                                      style="border-radius: 50px; background: #f09433;
@@ -62,8 +62,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         </h4>
 
 
-                        <p class="ms-2 my-1 fst-italic ">Время работы: {{ client.working_time }}</p>
-                        <p class="ms-2 my-1 ">г.{{client.city}}, {{client.address}}; Телефон:
+                        <p class="ms-2 my-1 fst-italic ">{% trans 'Время работы' %}: {{ client.working_time }}</p>
+                        <p class="ms-2 my-1 ">г.{{client.city}}, {{client.address}}; {% trans 'Телефон' %}:
                             {{client.phone}}</p>
                         <p class="ms-2 my-2">{{ client.description }}</p>
                         <div class="container-fluid">
@@ -215,7 +215,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 <button class="btn btn-sm btn-success my-1 btn-animate" type="submit"
                                         style="--bs-btn-active-bg: #fd7014;" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
-                                    Добавить
+                                    {% trans 'Добавить' %}
                                 </button>
                             </form>
                         </div>

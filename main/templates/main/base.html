@@ -28,7 +28,9 @@
         </a>
         <img class="d-none d-lg-block ms-5 w-25 mt-2" src="{% static 'images/Gogol Regular 400.png' %}" alt=""
              style="opacity: 50%">
-        <form class="my-auto fs-6 ms-auto" method="post" action="">
+
+        <form class="my-auto fs-6 ms-auto" method="post" action="{% url 'main:switch_language' %}">
+            {% csrf_token %}
             <div class="btn-group-sm" role="group">
 
                 <button type="submit" name="language" value="kz" class="btn btn-animate"
@@ -36,10 +38,10 @@
                 </button>
 
                 <button type="submit" name="language" value="ru" class="btn btn-animate"
-                        disabled>RU
+                        >RU
                 </button>
                 <button type="submit" name="language" value="en" class="btn btn-animate"
-                        disabled>EN
+                        >EN
                 </button>
             </div>
         </form>
@@ -53,26 +55,26 @@
             <ul class="navbar-nav fw-bold ">
                 <li class="nav-item mx-auto">
                     <a class="nav-link active " aria-current="page"
-                       href="{% url 'main:main_page' %}">ГЛАВНАЯ</a>
+                       href="{% url 'main:main_page' %}">{% trans 'ГЛАВНАЯ' %}</a>
                 </li>
                 <li class="nav-item dropdown mx-auto">
                     <a class="nav-link dropdown-toggle mx-5" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">ДОСТАВКА
+                       aria-expanded="false">{% trans 'ДОСТАВКА' %}
                     </a>
                     <ul class="dropdown-menu mx-auto ">
-                        <li><a class="dropdown-item text-center " href="{% url 'main:main_page' %}">ЗАВЕДЕНИЯ
+                        <li><a class="dropdown-item text-center " href="{% url 'main:main_page' %}">{% trans 'ЗАВЕДЕНИЯ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="green"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
                             </svg>
                         </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">СУПЕРМАРКЕТЫ
+                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'СУПЕРМАРКЕТЫ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
                             </svg>
                         </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">БАНКЕТЫ
+                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'БАНКЕТЫ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
@@ -82,22 +84,22 @@
                 </li>
                 <li class="nav-item dropdown mx-auto fw-bold">
                     <a class="nav-link dropdown-toggle mx-5" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">БИЗНЕСУ
+                       aria-expanded="false">{% trans 'БИЗНЕСУ' %}
                     </a>
                     <ul class="dropdown-menu mx-auto">
-                        <li><a class="dropdown-item text-center disabled" href="#">КАЙТЕРИНГ
+                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'КАЙТЕРИНГ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
                             </svg>
                         </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">ПРЕДСТАВИТЕЛИ
+                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'ПРЕДСТАВИТЕЛИ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
                             </svg>
                         </a></li>
-                        <li><a class="dropdown-item text-center" href="/partner">КОНТАКТЫ
+                        <li><a class="dropdown-item text-center" href="/partner">{% trans 'КОНТАКТЫ' %}
                             <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="green"
                                  class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
                                 <circle cx="8" cy="8" r="8"/>
@@ -205,31 +207,26 @@
 <script src="{% static 'js/flying_cart.js' %}"></script>
 <script src="{% static 'js/session.js' %}"></script>
 <script src="{% static 'js/add_to_cart.js' %}"></script>
+
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-    m[i].l=1*new Date();
-    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-    ym(94306475, "init", {
-         clickmap:true,
-         trackLinks:true,
-         accurateTrackBounce:true,
-         webvisor:true
-    });
-
-
-
-
-
-
-</script>
-<noscript>
-    <div><img src="https://mc.yandex.ru/watch/94306475" style="position:absolute; left:-9999px;" alt=""/></div>
-</noscript>
+<!--<script type="text/javascript">-->
+<!--    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
+<!--    m[i].l=1*new Date();-->
+<!--    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}-->
+<!--    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
+<!--    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
+<!--    ym(94306475, "init", {-->
+<!--         clickmap:true,-->
+<!--         trackLinks:true,-->
+<!--         accurateTrackBounce:true,-->
+<!--         webvisor:true-->
+<!--    });-->
+<!--</script>-->
+<!--<noscript>-->
+<!--    <div><img src="https://mc.yandex.ru/watch/94306475" style="position:absolute; left:-9999px;" alt=""/></div>-->
+<!--</noscript>-->
 <!-- /Yandex.Metrika counter -->
+
 <!--SCRIPTS END-->
 </body>
 </html>

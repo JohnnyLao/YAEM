@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.utils.translation import activate
 from django.views.generic import TemplateView
@@ -33,3 +34,12 @@ class Menu(TemplateView):
         context["client"] = client
 
         return context
+
+
+def switch_language(request):
+    if request.method == "POST":
+        language = request.POST.get("language")
+        if language in ["kz", "ru", "en"]:
+            request.session["django_language"] = language
+            activate(language)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
