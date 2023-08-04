@@ -116,20 +116,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
         <!--    FOOD TYPE SWIPER    -->
         <div class="sticky-top">
-            <div class="container-fluid text-center bg-dark py-2" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                {% for ft in food_type %}
-                                <div class="swiper-slide">
-                                    <a class="btn bg-dark shadow btn-animate"
-                                       style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
-                                       href="#{{ ft }}">{{ ft }}</a>
-                                </div>
-                                {% endfor %}
-                            </div>
+            <div class="container-fluid bg-dark py-2" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for ft in food_type %}
+                        <div class="swiper-slide">
+                            <a class="btn bg-dark shadow btn-animate"
+                               style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
+                               href="#{{ ft }}">{{ ft }}</a>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -160,6 +156,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
 
 
+
         </script>
 
         <style>
@@ -175,6 +172,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
   .show {
     opacity: 1;
   }
+
 
 
 
