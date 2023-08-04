@@ -47,16 +47,16 @@
 <!--COUNTER END-->
 <main>
     <!--  PART 1  -->
-    <section class="skrollable"
+    <section class="skrollable py-3"
              style="background-image: url({% static 'images/5.jpg' %});
     background-attachment:fixed; background-repeat: repeat; background-size: 200vh;
     background-position: 20%">
 
         <div class="container">
-            <div class="row text-white pt-5">
+            <div class="row text-white">
                 <div class="col-lg-6"></div>
-                <div class="col-lg-3 col-sm-6 bg-success text-center my-3"
-                     style="border-radius: 50px;--bs-bg-opacity: .3">
+                <div class="col-8 col-lg-3 col-sm-5 bg-success text-center my-3 mx-auto"
+                     style="border-radius: 50px;--bs-bg-opacity: .7">
                     <h4 class="mt-2 mb-0 ">{% trans 'ОНЛАЙН' %}</h4>
                     <h4 class="my-0 ">{% trans 'МЕНЮ' %}</h4>
                     <h3 class="my-3 fw-bold">{% trans 'БЕСПЛАТНО' %}</h3>
@@ -80,74 +80,132 @@
             </div>
         </div>
     </section>
+
+
     <!--  PART 2  -->
-    <section class="bg-dark">
-        <!--MAIN CONTENT-->
+    <section class="bg-dark py-3">
         <div class="container">
-            <div class="row">
+            <div class="row gy-3">
                 <div class="col-lg-6 col-sm-12 text-center">
-                    <h2 class="fw-bold my-5">{% trans 'Всё просто !' %}</h2>
+                    <h2 class="fw-bold my-4">{% trans 'Всё просто !' %}</h2>
                     <h5 class="">{% trans 'Берём образец' %} <strong>{% trans 'Вашего меню' %} </strong></h5>
                     <h5 class="m-3">{% trans 'Создаём страницу с меню на' %} <strong>{% trans 'Нашем сайте' %}</strong>
                     </h5>
-                    <h5 class="">{% trans 'Выдаём бумажный QR код для перехода в' %} <strong>
+                    <h5 class="">{% trans 'Выдаём QR код для перехода в' %} <strong>
                         {% trans 'Ваше онлайн меню'%}</strong></h5>
                     <div class="row text-center text-nowrap">
                     </div>
 
                 </div>
-                <div class="col-lg-6 col-sm-12 text-center my-3">
-                    <img src="{% static 'images/qr_menu.jpg' %}" alt="" class="img w-75"
-                         style="border-radius: 50%;">
-                </div>
-                <!--CAROUSEL START-->
-                <div class="container text-center bg-dark-emphasis">
-                    <div class="container text-center mb-5 mt-0">
-                        <h2 class="my-3">{% trans 'Макеты QR кода' %}</h2>
-                        <div class="row justify-content-center">
-                            <div class="col col-lg-7 col-sm-12">
-                                <div id="carouselExampleIndicators" class="carousel slide">
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="{% static 'images/menu_concept_montserrat.png' %}" height="500px"
-                                                 width="auto"
-                                                 class="d-block mx-auto" alt="">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="{% static 'images/menu_concept2.png' %}" height="500px"
-                                                 width="auto"
-                                                 class="d-block mx-auto"
-                                                 alt="">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="{% static 'images/menu_concept4.png' %}" height="500px"
-                                                 width="auto"
-                                                 class="d-block mx-auto"
-                                                 alt="">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleIndicators"
-                                            data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"
-                                      style="border-radius: 10px;"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleIndicators"
-                                            data-bs-slide="next">
-                                <span class="carousel-control-next-icon bg-dark" aria-hidden="true"
-                                      style="border-radius: 10px;"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col-9 col-lg-6 mx-auto my-4">
+                    <img src="{% static 'images/partner/menu.jpeg' %}" alt="" class="img-fluid w-auto"
+                         style="border-radius: 50px;">
                 </div>
             </div>
         </div>
     </section>
+
+    <!--CAROUSEL START-->
+    <section class="py-3 bg-dark">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-0">{%trans 'Примеры оформления:'%}</h2>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+            <!-- Demo styles -->
+            <style>
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 400px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+
+
+
+
+
+
+            </style>
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img class="img-fluid" src="{% static 'images/partner/sample1.png' %}"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'images/partner/sample2.png' %}"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'images/partner/sample3.png' %}"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'images/partner/sample4.png' %}"/>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{% static 'images/partner/sample5.png' %}"/>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+
+
+
+
+
+
+        </script>
+    </section>
+
     <!--  PART 3  -->
     <section class="skrollable"
              style="background-image: linear-gradient(0deg, rgba(100, 51, 51, 0.2), rgba(100, 51, 51, 0.2)), url({% static 'images/1.jpg' %});
@@ -167,7 +225,8 @@
                         </svg>
                         {% trans 'Простота' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Возможность мгновенно обновлять и изменять цены, акции и меню позволяет кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений клиентов' %}</h5>
+                    <h5 class="my-3">{% trans 'Возможность мгновенно обновлять и изменять цены, акции и меню позволяет
+                        кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений клиентов' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -179,7 +238,8 @@
                         </svg>
                         {% trans 'Продажи' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
+                    <h5 class="my-3">{% trans 'Корзина в онлайн меню способствует увеличению среднего чека, так как
+                        клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
                     <h3 class="my-3" style="color: #fd7014">
@@ -189,7 +249,8 @@
                         </svg>
                         {% trans 'Новые клиенты' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Опция дистанционного отправления заказов через позволяет привлечь клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
+                    <h5 class="my-3">{% trans 'Опция дистанционного отправления заказов через позволяет привлечь
+                        клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -202,7 +263,8 @@
                         </svg>
                         {% trans 'Эффективность' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести стоп-лист и изменять меню, что сокращает временные затраты' %}
+                    <h5 class="my-3">{% trans 'Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести
+                        стоп-лист и изменять меню, что сокращает временные затраты' %}
                     </h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
@@ -215,7 +277,8 @@
                         </svg>
                         {% trans 'Аналитика' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Получать полезные данные о популярных блюдах и предпочтениях. Делать более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
+                    <h5 class="my-3">{% trans 'Получать полезные данные о популярных блюдах и предпочтениях. Делать
+                        более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center">
 
@@ -227,39 +290,13 @@
                         </svg>
                         {% trans 'Мультиязычность' %}
                     </h3>
-                    <h5 class="my-3">{% trans 'Предоставление меню на нескольких языках делает заведение более привлекательным для иностранных посетителей и туристов' %}</h5>
+                    <h5 class="my-3">{% trans 'Предоставление меню на нескольких языках делает заведение более
+                        привлекательным для иностранных посетителей и туристов' %}</h5>
                 </div>
             </div>
         </div>
     </section>
-    <!--  PART 4 countdown -->
-    <section class="bg-dark">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h2 class="my-3">{% trans 'Бесплатное подключение' %}</h2>
-                    <div id="countdown" class="row gy-3 my-3" style="color: #fd7014">
-                        <div class="col">
-                            <h2 id="days" class="countdown-number">0</h2>
-                            <h4>{% trans 'Дней' %}</h4>
-                        </div>
-                        <div class="col">
-                            <h2 id="hours" class="countdown-number">0</h2>
-                            <h4>{% trans 'Часов' %}</h4>
-                        </div>
-                        <div class="col">
-                            <h2 id="minutes" class="countdown-number">0</h2>
-                            <h4>{% trans 'Минут' %}</h4>
-                        </div>
-                        <div class="col">
-                            <h2 id="seconds" class="countdown-number">0</h2>
-                            <h4>{% trans 'Секунд' %}</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!--    PART 5 PRICING-->
     <section class="bg-dark">
         <div class="container">
@@ -271,7 +308,8 @@
                      border-radius: 10px; background-size: 150%;">
                     <img class="img w-25 my-3" src="{% static 'images/t-1.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 15%; border-radius: 50px">{% trans 'Бронза' %}</h4>
+                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 15%; border-radius: 50px">{% trans
+                        'Бронза' %}</h4>
                     <h5 style="color: #">
                         <del>60 000 {% trans 'тг в год' %}</del>
                     </h5>
@@ -305,7 +343,7 @@
                 </div>
 
                 <!--                SILVER-->
-                <div class="col-10 col-sm-5 col-lg-4 mx-auto shadow-lg"
+                <div class="col-10 col-sm-5 col-lg-4 mx-auto shadow-lg border"
                      style="border-radius: 10px; background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.9)), url({% static 'images/silver1.jpg' %});
                      background-repeat: no-repeat; background-size: 100vh;
     background-position: 50% 50%">
@@ -370,7 +408,8 @@
                      background-size: 100vh; border-radius: 10px; background-position: 50% 50%">
                     <img class="img w-25 my-3" src="{% static 'images/t-3.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% trans 'Золото' %}</h4>
+                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% trans
+                        'Золото' %}</h4>
                     <h4 class="fw" style="color: #">25 000 {% trans 'тг/мес' %}</h4>
                     <h2 class="fw-bold" style="color: #"> 250 000 {% trans 'тг/год' %}</h2>
                     <div class="container py-3">
@@ -433,6 +472,36 @@
         </div>
 
     </section>
+
+
+    <!--  PART 4 countdown -->
+    <section class="bg-dark">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <h2 class="my-3">{% trans 'Бесплатное подключение' %}</h2>
+                    <div id="countdown" class="row gy-3 my-3 border" style="color: #fd7014">
+                        <div class="col">
+                            <p id="days" class="countdown-number fs-1 fw-bold">0</p>
+                            <h4>{% trans 'Дней' %}</h4>
+                        </div>
+                        <div class="col">
+                            <p id="hours" class="countdown-number fs-1 fw-bold">0</p>
+                            <h4>{% trans 'Часов' %}</h4>
+                        </div>
+                        <div class="col">
+                            <p id="minutes" class="countdown-number fs-1 fw-bold">0</p>
+                            <h4>{% trans 'Минут' %}</h4>
+                        </div>
+                        <div class="col">
+                            <p id="seconds" class="countdown-number fs-1 fw-bold">0</p>
+                            <h4>{% trans 'Секунд' %}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!--    MODAL-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -465,7 +534,7 @@
                     <p>{% trans 'Позиция' %}:</p>
                     <select class="form-select mb-3" aria-label="Small select example">
                         <option class="w-50" value="1">{% trans 'Предприниматель' %}</option>
-                        <option value="2">{% trans 'Руководитель'  %}</option>
+                        <option value="2">{% trans 'Руководитель' %}</option>
                         <option value="3">{% trans 'Менеджер' %}</option>
                     </select>
                 </div>
