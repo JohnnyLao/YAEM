@@ -25,40 +25,36 @@
 </head>
 <body class="text-white" style="font-family: Montserrat;">
 
-
-<!--  HEADER  -->
 <!-- Navbar -->
 <nav class="navbar navbar-light">
     <!-- Container wrapper -->
     <div class="container text-center">
-        <div class="col-4 mx-auto">
+        <div class="col-5 text-start">
             <a href="{% url 'main:main_page' %}">
                 <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </a>
         </div>
-        <div class="col-4 mx-auto">
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+
+        <div class="col-2 mx-auto">
+            <button class="navbar-toggler border" data-mdb-toggle="collapse"
                     data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars fs-3"></i>
             </button>
         </div>
 
-        </div>
-        <div class="col-4 mx-auto">
-            <form class="my-auto fs-6 ms-auto" method="post" action="{% url 'main:switch_language' %}">
+        <div class="col-5 mx-auto">
+            <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
                 {% csrf_token %}
                 <div class="btn-group-sm" role="group">
-
-                    <button type="submit" name="language" value="kz" class="btn"
+                    <button type="submit" name="language" value="kz" class="btn btn-success btn-animate"
                             disabled>KZ
                     </button>
-
-                    <button type="submit" name="language" value="ru" class="btn"
+                    <button type="submit" name="language" value="ru" class="btn btn-success btn-animate"
                     >RU
                     </button>
-                    <button type="submit" name="language" value="en" class="btn"
+                    <button type="submit" name="language" value="en" class="btn btn-success btn-animate"
                     >EN
                     </button>
                 </div>
@@ -66,68 +62,85 @@
         </div>
     </div>
 
-<!--    DROPDOWN-->
+
+    <!--    DROPDOWN-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav fw-bold ">
-                <li class="nav-item mx-auto">
-                    <a class="nav-link active " aria-current="page"
-                       href="{% url 'main:main_page' %}">{% trans 'ГЛАВНАЯ' %}</a>
-                </li>
-                <li class="nav-item dropdown mx-auto">
-                    <a class="nav-link dropdown-toggle mx-5" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">{% trans 'ДОСТАВКА' %}
-                    </a>
-                    <ul class="dropdown-menu mx-auto ">
-                        <li><a class="dropdown-item text-center " href="{% url 'main:main_page' %}">{% trans 'ЗАВЕДЕНИЯ'
-                            %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="green"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'СУПЕРМАРКЕТЫ' %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'БАНКЕТЫ' %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown mx-auto fw-bold">
-                    <a class="nav-link dropdown-toggle mx-5" href="#" role="button" data-bs-toggle="dropdown"
-                       aria-expanded="false">{% trans 'БИЗНЕСУ' %}
-                    </a>
-                    <ul class="dropdown-menu mx-auto">
-                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'КАЙТЕРИНГ' %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                        <li><a class="dropdown-item text-center disabled" href="#">{% trans 'ПРЕДСТАВИТЕЛИ' %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="crimson"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                        <li><a class="dropdown-item text-center" href="/partner">{% trans 'КОНТАКТЫ' %}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="6" height="6" fill="green"
-                                 class="bi bi-circle-fill ms-1" viewBox="0 0 16 16">
-                                <circle cx="8" cy="8" r="8"/>
-                            </svg>
-                        </a></li>
-                    </ul>
-                <li class="nav-item text-center">
-                    <img class="d-block d-lg-none w-50 mx-auto" src="{% static 'images/Gogol Regular 400.png' %}" alt=""
-                         style="opacity: 50%">
-                </li>
-            </ul>
+        <ul class="navbar-nav fw-bold">
+            <li class="nav-item mx-auto">
+                <a class="nav-link active " aria-current="page"
+                   href="{% url 'main:main_page' %}">{% trans 'ГЛАВНАЯ' %}</a>
+            </li>
+            <li class="nav-item mx-auto my-2">
+                <a href="" class="navbar-toggler fs-6"
+                   type="button"
+                   data-mdb-toggle="collapse"
+                   data-mdb-target="#navbarToggler1"
+                   aria-controls="navbarToggler1"
+                   aria-expanded="false"
+                   aria-label="Toggle navigation">
+                    {% trans 'ЗАКАЗАТЬ' %}
+                    <i class="fas fa-angle-down"></i>
+                </a>
+            </li>
+
+            <div class="collapse" id="navbarToggler1">
+                <ul class="navbar-nav fw-bold">
+                    <li class="nav-item mx-auto">
+                        <div class="btn-group-sm" role="group">
+                            <a class="" href="{% url 'main:main_page' %}">
+                                <button class="btn">{% trans 'Блюда' %} <i class="fas fa-circle fa-xs"
+                                                                           style="color: green"></i></button>
+                            </a>
+                            <a class="" href="#">
+                                <button class="btn  text-secondary" disabled>{% trans 'Продукты' %} <i
+                                        class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
+                            </a>
+                            <a class="" href="#">
+                                <button class="btn  text-secondary" disabled>{% trans 'Банкет' %} <i
+                                        class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <li class="nav-item mx-auto my-2">
+                <a href="" class="navbar-toggler fs-6"
+                   type="button"
+                   data-mdb-toggle="collapse"
+                   data-mdb-target="#navbarToggler2"
+                   aria-controls="navbarToggler2"
+                   aria-expanded="false"
+                   aria-label="Toggle navigation">
+                    {% trans 'БИЗНЕСУ' %}
+                    <i class="fas fa-angle-down"></i>
+                </a>
+            </li>
+
+            <div class="collapse" id="navbarToggler2">
+                <ul class="navbar-nav fw-bold">
+                    <li class="nav-item mx-auto">
+                        <div class="btn-group-sm" role="group">
+                            <a class="" href="{% url 'main:main_page' %}">
+                                <button class="btn text-secondary" disabled>{% trans 'Кайтеринг' %} <i
+                                        class="fas fa-circle fa-xs"
+                                        style="color: #C0392B"></i></button>
+                            </a>
+                            <a class="" href="#">
+                                <button class="btn text-secondary" disabled>{% trans 'Представители' %} <i
+                                        class="fas fa-circle fa-xs"
+                                        style="color: #C0392B"></i></button>
+                            </a>
+                            <a class="" href="{% url 'partner:partner_page' %}">
+                                <button class="btn">{% trans 'Контакты' %} <i class="fas fa-circle fa-xs"
+                                                                              style="color: green"></i></button>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </div>
 </nav>
 <!-- Navbar -->
 
@@ -240,8 +253,8 @@
 
 
 <!--FOOTER-->
-<footer class="bg-black" style="--bs-bg-opacity: 90%">
-    <div class="container-fluid py-3" style="--bs-bg-opacity: .3; ">
+<footer class="">
+    <div class="container-fluid py-3" style="background: rgba(0, 0, 0, 0.9)">
         <h3 class="text-center my-3">{% trans 'Наша команда' %}</h3>
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-4 text-center">
@@ -265,7 +278,7 @@
         </div>
     </div>
 
-    <div class="container-fluid bg-dark py-3">
+    <div class="container-fluid py-3" style="background-color: #212529">
         <h4 class="text-center my-3">{% trans 'Контакты' %}</h4>
         <div class="row text-center">
             <div class="col-12 col-md-4 my-2">
@@ -304,7 +317,7 @@
 
             </div>
         </div>
-        <p class="text-center pt-4">Copyright © 2023. YAEM Kazakhstan</p>
+        <p class="text-center pt-4">Copyright © 2023. YAEM Kazakhstan <i class="flag flag-kazakhstan"></i></p>
     </div>
 </footer>
 <!--FOOTER END-->

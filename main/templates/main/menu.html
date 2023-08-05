@@ -37,8 +37,8 @@
         </a>
         <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid pt-4">
-            <div class="col-12 bg-dark text-center"
-                 style="--bs-bg-opacity: .7; border-radius: 50px;">
+            <div class="col-12 text-center"
+                 style="background: rgba(33, 37, 41, 0.5)">
                 <div class="row">
                     <img src="{{client.logo.url}}" alt="" class="w-100 my-3 mx-auto"
                          style="border-radius: 15px; max-width: 250px">
@@ -116,13 +116,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
         <!--    FOOD TYPE SWIPER    -->
         <div class="sticky-top">
-            <div class="container-fluid bg-dark py-2" style="--bs-bg-opacity: 0.5; overflow-x: hidden;">
+            <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
                         {% for ft in food_type %}
                         <div class="swiper-slide">
-                            <a class="btn bg-dark shadow btn-animate"
-                               style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px;"
+                            <a class="btn btn-animate btn-rounded"
+                               style="color: #fd7014"
                                href="#{{ ft }}">{{ ft }}</a>
                         </div>
                         {% endfor %}
@@ -152,11 +152,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     prevScrollPos = currentScrollPos;
   });
-
-
-
-
-
         </script>
 
         <style>
@@ -172,11 +167,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
   .show {
     opacity: 1;
   }
-
-
-
-
-
         </style>
         <!--    FOOD TYPE SWIPER    -->
 

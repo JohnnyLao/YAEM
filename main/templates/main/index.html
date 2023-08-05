@@ -20,7 +20,7 @@
 <!--button end-->
 
 <!--COUNTER START-->
-<section class="bg-black">
+<section class="" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
@@ -61,7 +61,7 @@
                 {% for client in clients %}
                 {% if client.status %}
                 <div class="col-10 col-md-6 col-lg-4 text-center">
-                    <div class="card bg-dark text-white" style="--bs-bg-opacity: 0.5">
+                    <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
                         <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
                              style="border-radius: 15px; max-width: 220px">
 
@@ -105,12 +105,9 @@
                             </p>
                                 </div>
                             </div>
-                            <div class="card-footer my-0 py-0">
                                 <a href="{{client.url_name}}/menu">
-                                <button class="btn btn-success px-4 my-2">{% trans 'Перейти' %}</button>
+                                <button class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% trans 'Перейти' %}</button>
                             </a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
