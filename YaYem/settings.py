@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "cart.apps.CartConfig",
     # debug_toolbar
     "debug_toolbar",
+    # translation
+    'modeltranslation'
 ]
 
 MIDDLEWARE = [
@@ -143,16 +145,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # languages
+gettext = lambda s: s
 LANGUAGES = [
-    ('en', 'English'),
-    ('ru', 'Russian'),
-    ('kz', 'Kazakh'),
+    ('ru', gettext('Russian')),
+    ('en', gettext('English')),
+    ('kz', gettext('Kazakh')),
 ]
-
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
-
 # debug-toolbar
 INTERNAL_IPS = [
     "127.0.0.1",

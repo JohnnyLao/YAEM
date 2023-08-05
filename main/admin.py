@@ -1,20 +1,18 @@
 from django.contrib import admin
 
-from main.models import Client, Client_Type, City, Client_Category, Food_type, Food_type2, Dish
+from main.models import Client, City, Food_type2, Dish
 
-admin.site.register(Client_Type)
+
 admin.site.register(City)
-admin.site.register(Client_Category)
 
 
-@admin.register(Food_type)
-class Food_typeAdmin(admin.ModelAdmin):
-    list_display = ["name"]
+
 
 
 @admin.register(Food_type2)
 class Food_type2Admin(admin.ModelAdmin):
     list_display = ["name"]
+    search_fields = ["name"]
 
 
 @admin.register(Client)
