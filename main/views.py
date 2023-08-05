@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.utils.translation import activate
 from django.views.generic import TemplateView
 
-from main.models import Client, Client_Type, Dish, Food_type2
+from main.models import Client, Dish, Food_type2
 
 
 class Main(TemplateView):
