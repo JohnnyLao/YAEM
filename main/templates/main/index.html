@@ -8,8 +8,8 @@
 {% block content %}
 
 <!--button up-->
-<a id="scrollToTopButton" class="btn fs-5 bg-dark mx-2 shadow"
-   style="color: #fd7014; --bs-bg-opacity: .8; border-radius: 50px; position: fixed; bottom: 100px; left: 10px; display: none;"
+<a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none;"
    href="#header">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
@@ -67,7 +67,7 @@
                         <div class="card-body my-0 py-1">
                             <h4 class="card-title my-0">{{ client.name }}</h4>
                             <p class="card-text my-0 text-white-50">{% trans 'Время работы' %}: {{ client.working_time }}</p>
-                            <p class="text-start my-0">{{ client.description }}</p>
+                            <p class="my-0">{{ client.description }}</p>
                             <div class="row my-0">
                                 <div class="col-6 my-0">
                                     <p class="text my-0"> {% trans 'Самовывоз' %}
