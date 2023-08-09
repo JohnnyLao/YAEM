@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+
 import environ
 
 # environ
@@ -44,7 +45,7 @@ INSTALLED_APPS = [
     # debug_toolbar
     "debug_toolbar",
     # translation
-    'modeltranslation'
+    "modeltranslation",
 ]
 
 MIDDLEWARE = [
@@ -85,21 +86,21 @@ WSGI_APPLICATION = "YaYem.wsgi.application"
 # development
 if DEBUG:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': env('SQLITE_DB_NAME'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": env("SQLITE_DB_NAME"),
         }
     }
 # production
 else:
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': env('POSTGRES_DB_NAME'),
-            'USER': env('POSTGRES_USER'),
-            'PASSWORD': env('POSTGRES_PASSWORD'),
-            'HOST': env('POSTGRES_HOST'),
-            'PORT': env('POSTGRES_PORT'),
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": env("POSTGRES_DB_NAME"),
+            "USER": env("POSTGRES_USER"),
+            "PASSWORD": env("POSTGRES_PASSWORD"),
+            "HOST": env("POSTGRES_HOST"),
+            "PORT": env("POSTGRES_PORT"),
         }
     }
 
@@ -123,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-LANGUAGE_CODE = "Ru-ru"
+LANGUAGE_CODE = "ru"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_TZ = True
@@ -136,7 +137,7 @@ if DEBUG:
         os.path.join(BASE_DIR, "static/"),
     ]
 else:
-    STATIC_ROOT = 'static'
+    STATIC_ROOT = (os.path.join(BASE_DIR, "staticfiles/"),)
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -145,14 +146,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # languages
-gettext = lambda s: s
 LANGUAGES = [
-    ('ru', gettext('Russian')),
-    ('en', gettext('English')),
-    ('kz', gettext('Kazakh')),
+    ("ru", "Russian"),
+    ("en", "English"),
+    ("kk", "Kazakh"),
 ]
 LOCALE_PATHS = [
-    BASE_DIR / 'locale',
+    BASE_DIR / "locale",
 ]
 # debug-toolbar
 INTERNAL_IPS = [
@@ -162,11 +162,11 @@ INTERNAL_IPS = [
 
 if not DEBUG:
     CACHES = {
-        'default': {
-            'BACKEND': 'django_redis.cache.RedisCache',
-            'LOCATION': 'redis://127.0.0.1:6379/1',
-            'OPTIONS': {
-                'CLIENT_CLASS': 'django_redis.client.DefaultClient',
-            }
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/1",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            },
         }
     }

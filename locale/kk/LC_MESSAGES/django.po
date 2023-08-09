@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-09 19:11+0600\n"
+"POT-Creation-Date: 2023-08-09 14:40+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
 #: cart/templates/cart/cart.html:26
 msgid "Корзина"
 msgstr ""
@@ -46,14 +47,16 @@ msgid "Заказ"
 msgstr ""
 
 #: cart/templates/cart/cart.html:155 hosting_static_lostindex/index.html:75
-#: main/templates/main/index.html:90 main/templates/main/menu.html:99
+#: main/templates/main/cafe_list.html:74 main/templates/main/index.html:90
+#: main/templates/main/menu.html:99
 msgid "Доставка"
-msgstr ""
+msgstr "Жеткізу"
 
 #: cart/templates/cart/cart.html:162 hosting_static_lostindex/index.html:74
-#: main/templates/main/index.html:73 main/templates/main/menu.html:57
+#: main/templates/main/cafe_list.html:73 main/templates/main/index.html:73
+#: main/templates/main/menu.html:57
 msgid "Самовывоз"
-msgstr ""
+msgstr "Ала кету"
 
 #: cart/templates/cart/cart.html:171 partner/templates/partner/partner.html:506
 msgid "Введите имя"
@@ -71,28 +74,30 @@ msgstr ""
 msgid "Закрыть"
 msgstr ""
 
-#: hosting_static_lostindex/index.html:29 main/templates/main/index.html:29
-#: partner/templates/partner/partner.html:29
+#: hosting_static_lostindex/index.html:29 main/templates/main/cafe_list.html:29
+#: main/templates/main/index.html:29 partner/templates/partner/partner.html:29
 msgid "Заведений"
-msgstr ""
+msgstr "Мекемелер"
 
-#: hosting_static_lostindex/index.html:35 main/templates/main/index.html:35
-#: partner/templates/partner/partner.html:35
+#: hosting_static_lostindex/index.html:35 main/templates/main/cafe_list.html:35
+#: main/templates/main/index.html:35 partner/templates/partner/partner.html:35
 msgid "Блюд"
-msgstr ""
+msgstr "Ыдыс-аяқ"
 
-#: hosting_static_lostindex/index.html:41 main/templates/main/index.html:41
-#: partner/templates/partner/partner.html:41
+#: hosting_static_lostindex/index.html:41 main/templates/main/cafe_list.html:41
+#: main/templates/main/index.html:41 partner/templates/partner/partner.html:41
 msgid "Заказов"
-msgstr ""
+msgstr "Тапсырыстар"
 
-#: hosting_static_lostindex/index.html:54 main/templates/main/index.html:54
+#: hosting_static_lostindex/index.html:54 main/templates/main/cafe_list.html:54
+#: main/templates/main/index.html:54
 msgid "ЗАВЕДЕНИЯ"
-msgstr "ESTABLISHMENTS"
+msgstr "МЕКЕМЕЛЕР"
 
-#: hosting_static_lostindex/index.html:113 main/templates/main/index.html:108
+#: hosting_static_lostindex/index.html:113
+#: main/templates/main/cafe_list.html:112 main/templates/main/index.html:108
 msgid "Перейти"
-msgstr ""
+msgstr "Бар"
 
 #: main/templates/main/404.html:5
 msgid "Ошибка"
@@ -106,77 +111,77 @@ msgstr ""
 msgid "Но Вы можете вернуться"
 msgstr ""
 
-#: main/templates/main/base.html:74
+#: main/templates/main/base.html:72
 msgid "ГЛАВНАЯ"
-msgstr ""
+msgstr "ҮЙ"
 
-#: main/templates/main/base.html:84
+#: main/templates/main/base.html:82
 msgid "ЗАКАЗАТЬ"
-msgstr ""
+msgstr "ТАПСЫРЫС"
 
-#: main/templates/main/base.html:94
+#: main/templates/main/base.html:92
 msgid "Блюда"
-msgstr ""
+msgstr "Ыдыс-аяқ"
 
-#: main/templates/main/base.html:98
+#: main/templates/main/base.html:96
 msgid "Продукты"
-msgstr ""
+msgstr "Өнімдер"
 
-#: main/templates/main/base.html:102
+#: main/templates/main/base.html:100
 msgid "Банкет"
-msgstr ""
+msgstr "Банкет"
 
-#: main/templates/main/base.html:118
+#: main/templates/main/base.html:116
 msgid "БИЗНЕСУ"
-msgstr ""
+msgstr "БИЗНЕС ҮШІН"
 
-#: main/templates/main/base.html:128
+#: main/templates/main/base.html:126
 msgid "Кайтеринг"
-msgstr ""
+msgstr "Тамақтандыру"
 
-#: main/templates/main/base.html:133
+#: main/templates/main/base.html:131
 msgid "Представители"
-msgstr ""
+msgstr "Өкілдері"
 
-#: main/templates/main/base.html:138 main/templates/main/base.html:187
+#: main/templates/main/base.html:136 main/templates/main/base.html:185
 msgid "Контакты"
-msgstr ""
+msgstr "Контактілер"
 
-#: main/templates/main/base.html:163
+#: main/templates/main/base.html:161
 msgid "Наша команда"
-msgstr ""
+msgstr "Біздің команда"
 
-#: main/templates/main/base.html:168
+#: main/templates/main/base.html:166
 msgid "Егор"
-msgstr ""
+msgstr "Егор"
 
-#: main/templates/main/base.html:169
+#: main/templates/main/base.html:167
 msgid "Коммерческий директор"
-msgstr ""
+msgstr "Коммерциялық директор"
 
-#: main/templates/main/base.html:174
+#: main/templates/main/base.html:172
 msgid "Олег"
-msgstr ""
+msgstr "Олег"
 
-#: main/templates/main/base.html:175
+#: main/templates/main/base.html:173
 msgid "Руководитель отдела развития"
-msgstr ""
+msgstr "Маркетинг бөлімінің бастығы"
 
-#: main/templates/main/base.html:180
+#: main/templates/main/base.html:178
 msgid "Артём"
-msgstr ""
+msgstr "Артём"
 
-#: main/templates/main/base.html:181
+#: main/templates/main/base.html:179
 msgid "Руководитель отдела разработки"
-msgstr ""
+msgstr "Дамыту бөлімінің бастығы"
 
 #: main/templates/main/index.html:6
 msgid "Я ЕМ | Онлайн Меню"
-msgstr ""
+msgstr "МЕН ЖЕГЕНІМ | Онлайн мәзір"
 
 #: main/templates/main/index.html:69 main/templates/main/menu.html:50
 msgid "Время работы"
-msgstr ""
+msgstr "Жұмыс уақыты"
 
 #: main/templates/main/menu.html:7
 msgid "Я ЕМ с"
@@ -188,7 +193,7 @@ msgstr ""
 
 #: main/templates/main/menu.html:51
 msgid "г"
-msgstr ""
+msgstr "қ"
 
 #: main/templates/main/menu.html:51
 msgid "Телефон"

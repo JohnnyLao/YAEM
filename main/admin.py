@@ -1,12 +1,8 @@
 from django.contrib import admin
 
-from main.models import Client, City, Food_type2, Dish
-
+from main.models import City, Client, Dish, Food_type2
 
 admin.site.register(City)
-
-
-
 
 
 @admin.register(Food_type2)
