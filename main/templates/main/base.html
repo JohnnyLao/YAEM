@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 
-<html lang="en" style="font-family: Montserrat">
+<html lang="en" style="font-family: Montserrat; overflow-x: hidden">
 <head>
     <meta charset="UTF-8">
     <!-- Font Awesome -->
@@ -19,7 +19,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <link rel="stylesheet" href="{% static 'MDBootstrap/css/mdb.min.css'%}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!--    -->
+<!--    CSS AOS-->
+    <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
+    <!--  ICON -->
     <link rel="icon" href="{% static 'images/favicon1.jpg' %}">
     <title>{% block title %} {% endblock title %}</title>
 </head>
@@ -31,13 +33,13 @@
     <div class="container text-center">
         <div class="col-5 text-start">
             <a href="{% url 'main:main_page' %}">
-                <img src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
+                <img data-aos="fade-right" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
 
             </a>
         </div>
 
         <div class="col-2 mx-auto">
-            <button class="navbar-toggler border btn-animate" data-mdb-toggle="collapse"
+            <button data-aos="fade-top" class="navbar-toggler border btn-animate" data-mdb-toggle="collapse"
                     data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -49,13 +51,13 @@
             <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
                 {% csrf_token %}
                 <div class="btn-group-sm" role="group">
-                    <button type="submit" name="language" value="kz" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" type="submit" name="language" value="kz" class="btn btn-success btn-animate"
                             disabled>KZ
                     </button>
-                    <button type="submit" name="language" value="ru" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" data-aos-delay="200" type="submit" name="language" value="ru" class="btn btn-success btn-animate"
                     >RU
                     </button>
-                    <button type="submit" name="language" value="en" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" data-aos-delay="400" type="submit" name="language" value="en" class="btn btn-success btn-animate"
                     >EN
                     </button>
                 </div>
@@ -160,19 +162,19 @@
     <div class="container-fluid py-3" style="background: rgba(0, 0, 0, 0.9)">
         <h3 class="text-center my-3">{% trans 'Наша команда' %}</h3>
         <div class="row">
-            <div class="col-12 col-sm-6 col-lg-4 text-center">
+            <div data-aos="fade-right" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-1.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Егор' %}</p>
                 <p class="">{% trans 'Коммерческий директор' %}</p>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 text-center">
+            <div data-aos="fade-bottom" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
                 <p class="">{% trans 'Руководитель отдела развития' %}</p>
             </div>
-            <div class="col-12 col-sm-6 col-lg-4 text-center">
+            <div data-aos="fade-left" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Артём' %}</p>
@@ -184,7 +186,7 @@
     <div class="container-fluid py-3" style="background: rgba(33, 37, 41)">
         <h4 class="text-center my-3">{% trans 'Контакты' %}</h4>
         <div class="row text-center">
-            <div class="col-12 col-md-4 my-2">
+            <div data-aos="fade-right" class="col-12 col-md-4 my-2">
                 <a href="mailto:Yaem@gmail.com?subject=YAEM"
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -195,7 +197,7 @@
                 </a>
                 Email: Yaem@gmail.com
             </div>
-            <div class="col-12 col-md-4 my-2">
+            <div data-aos="fade-bottom" data-aos-delay="200" class="col-12 col-md-4 my-2">
                 <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20с%20YAEM. "
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -205,9 +207,8 @@
                     </svg>
                 </a>
                 Whatsapp: +7 701 530 28 12
-
             </div>
-            <div class="col-12 col-md-4 my-2">
+            <div data-aos="fade-left" data-aos-delay="400" class="col-12 col-md-4 my-2">
                 <a href="https://www.instagram.com/yaem_qr/"
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -229,6 +230,11 @@
 <!--SCRIPTS-->
 <!-- MDB -->
 <script type="text/javascript" src="{% static 'MDBootstrap/js/mdb.min.js'%}"></script>
+<!--AOS-->
+<script src="{% static 'aos-master/dist/aos.js' %}"></script>
+<script>
+  AOS.init();
+</script>
 <!-- Custom scripts -->
 <script type="{% static 'MDBootstrap/text/javascript' %}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
