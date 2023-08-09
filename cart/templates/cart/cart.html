@@ -15,8 +15,8 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-12">
-                <div class="btn btn-animate shadow-0" onclick="history.back();" style="border-radius: 20px; ">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="white"
+                <div data-aos="fade-right" class="btn btn-animate shadow-0" onclick="history.back();" style="border-radius: 20px; ">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
                          class="bi bi-arrow-left text-start"
                          viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -38,7 +38,7 @@
                 <p>{{ cart_item.product.description }}</p>
             </div>
             <div class="col-3 my-auto text-center">
-                <div class="delete-button" data-product-id="{{ cart_item.product.id }}">
+                <div  class="delete-button" data-product-id="{{ cart_item.product.id }}">
                     <button class="btn btn-danger btn-sm mx-auto btn-animate btn-floating" style="border-radius: 100%">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                              class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="col-4 my-auto text-center">
+            <div  class="col-4 my-auto text-center">
                 <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
             </div>
 
@@ -100,14 +100,14 @@
         <div class="row my-5">
             <div class="col-6"></div>
             <div class="col-6 text-center my-5">
-                <h4 class="">{% trans 'Итого' %}:
+                <h4 data-aos="fade-up" class="">{% trans 'Итого' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h4>
-                <p class="mb-0">*Обслуживание: 10%</p>
-                <h5 class="">{% trans 'Итого с обслуживанием' %}:
+                <p data-aos="fade-up" data-aos-delay="200" class="mb-0">*Обслуживание: 10%</p>
+                <h5 data-aos="fade-up" data-aos-delay="400" class="">{% trans 'Итого с обслуживанием' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h5>
-                <button class="btn btn-sm btn-success btn-animate my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="max-width: 140px"
+                <button data-aos="fade-up" data-aos-delay="600" class="btn btn-sm btn-success btn-animate my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="max-width: 140px"
                         disabled>{% trans 'Заказать' %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-truck" viewBox="0 0 16 16">
@@ -115,7 +115,7 @@
                     </svg>
                 </button>
 
-                <form id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
+                <form data-aos="fade-up" data-aos-delay="800" id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-danger btn-animate" type="submit" style="max-width: 140px">{% trans 'Очистить' %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
