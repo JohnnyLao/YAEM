@@ -4,7 +4,7 @@
 {% load i18n %}
 
 
-{% block title %} {% trans 'Я ЕМ с' %} {{client.name}} {% endblock title %}
+{% block title %} {% translate 'Я ЕМ с' %} {{client.name}} {% endblock title %}
 
 {% block content %}
 
@@ -20,9 +20,8 @@
 </a>
 <!--button end-->
 
-
-<!--  MAIN CONTENT  -->
 <main>
+    <!--  MAIN CONTENT  -->
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
@@ -36,27 +35,26 @@
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
             </svg>
         </a>
-
         <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid pt-4">
             <div class="col-12 text-center">
                 <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                    <img data-aos="zoom-out" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
+                    <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
                          style="border-radius: 15px; max-width: 220px">
 
-                    <div  class="card-body my-0 py-1">
-                        <h4 data-aos="zoom-out" class="my-0">{% trans 'Добро пожаловать в' %}
+                    <div class="card-body my-0 py-1">
+                        <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
                             <div class="d-inline" style="color: #FD7014">{{ client.name }}
                             </div>
                         </h4>
-                        <p data-aos="zoom-out" class="my-0 text-white-50">{% trans 'Время работы' %}: {{ client.working_time}}</p>
-                        <p data-aos="zoom-out" class="ms-2 my-1 ">г.{{client.city}}, {{client.address}}; {% trans 'Телефон' %}:
-                            {{client.phone}}</p>
-                        <p data-aos="zoom-out" class="my-0">{{ client.description }}</p>
+                        <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
+                        <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}; {% translate 'Телефон' %}:
+                            {{client.phone}}</p>late
+                        <p class="my-0">{{ client.description }}</p>
 
                         <div class="row my-0">
                             <div class="col-5 text-end">
-                                <p data-aos="zoom-out-right" class="text"> {% trans 'Самовывоз' %}
+                                <p class="text"> {% translate 'Самовывоз' %}
                                     {% if client.outside %}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                          class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -73,8 +71,8 @@
                                 {% endif %}
                             </div>
                             <div class="col-2">
-                                <a  href="{{ client.inst }}">
-                                    <div data-aos="fade-right" class="btn btn-animate text-white btn-floating"
+                                <a href="{{ client.inst }}">
+                                    <div class="btn btn-animate text-white btn-floating"
                                          style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -85,7 +83,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     </div>
                                 </a>
                                 <a href="https://2gis.kz/karaganda/geo/11822584677071447?m=72.905272%2C50.092583%2F18.47">
-                                    <div data-aos="fade-left" class="btn btn-animate text-white btn-floating"
+                                    <div class="btn btn-animate text-white btn-floating"
                                          style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -98,7 +96,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </a>
                             </div>
                             <div class="col-5 text-start">
-                                <p data-aos="zoom-out-left" class="">{% trans 'Доставка' %}
+                                <p class="">{% translate 'Доставка' %}
                                     {% if client.delivery %}
                                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                          class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -119,56 +117,79 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                 </div>
             </div>
         </div>
-        <h2 data-aos="zoom-out" class="text-center pt-4 fw-bold" style="color: #fd7014">{% trans 'МЕНЮ' %}</h2>
+        <h2 class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
 
         <!--    FOOD TYPE SWIPER    -->
+
         <div class="sticky-top">
-            <div class="container-fluid py-1" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+            <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper text-center">
                         {% for ft in food_type %}
-                        <div data-aos="zoom-out" class="swiper-slide d-inline mx-0">
-                            <a href="#{{ft}}" class="">
-                                <button class="btn shadow-0 btn-animate btn-sm" style="color: #FD7014">
-                                    {{ft}}
-                                </button>
+                        <div class="swiper-slide d-inline">
+                            <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014" href="#{{ ft }}">
+                                {{ ft }}
                             </a>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
-
-                <!-- Swiper JS -->
-                <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-                <!-- Initialize Swiper -->
-                <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 10,
-      centeredSlides: true,
-      spaceBetween: 30,
-      grabCursor: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
-
-                </script>
             </div>
         </div>
-        <!--    FOOD TYPE SWIPER    -->
 
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 5,
+ });
+        </script>
+        <script>
+            var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+            var categoriesContainer = document.querySelector('.sticky-top');
+
+            window.addEventListener('scroll', function() {
+              var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
+
+              if (currentScrollPos > prevScrollPos && currentScrollPos > 510) {
+
+                categoriesContainer.classList.remove('show');
+                categoriesContainer.classList.add('hide');
+              } else {
+
+                categoriesContainer.classList.remove('hide');
+                categoriesContainer.classList.add('show');
+              }
+
+              prevScrollPos = currentScrollPos;
+            });
+        </script>
+        <style>
+            .sticky-top {
+              opacity: 1;
+              transition: opacity 0.3s;
+            }
+
+            .hide {
+              opacity: 0;
+            }
+
+            .show {
+              opacity: 1;
+            }
+        </style>
         <!--    FOOD TYPE DOWN    -->
+
+
         {% for ft in food_type %}
-        <h2 data-aos="zoom-out-right" class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+        <h2 class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
 
         <!--    DISH CONTENT    -->
         <div class="container-fluid my-3">
             <div class="row gy-2 mx-auto justify-content-center">
                 {% for dish in dishes %}
                 {% if dish.food_type == ft and dish.stop == False %}
-                <div data-aos="fade-right" data-aos-delay="100" class="col-12 col-lg-5 mx-auto"
+                <div class="col-12 col-lg-5 mx-auto"
                      style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
                     <div class="row">
 
@@ -192,7 +213,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 <button class="btn btn-sm btn-success my-1 btn-animate btn-rounded" type="submit"
                                         style="--bs-btn-active-bg: #fd7014;" data-mdb-toggle="modal"
                                         data-mdb-target="#exampleModal">
-                                    {% trans 'Добавить' %}
+                                    {% translate 'Добавить' %}
                                 </button>
                             </form>
                         </div>
@@ -213,7 +234,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <h5 class="modal-title" id="exampleModalLabel">{% trans 'Добавлено в корзину' %}</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ class Menu(TemplateView):
 def switch_language(request):
     if request.method == "POST":
         language = request.POST.get("language")
-        if language in ["kz", "ru", "en"]:
+        if language in ["ru", "en", "kk"]:
             request.session["django_language"] = language
             activate(language)
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    return HttpResponseRedirect(request.META.get("HTTP_REFERER", "/"))
