@@ -21,6 +21,7 @@ class Client(models.Model):
     address = models.CharField(max_length=50, verbose_name="Адрес")
     phone = models.DecimalField(max_digits=15, decimal_places=0, verbose_name="Телефон")
     inst = models.CharField(max_length=100, blank=True, verbose_name="Instagram")
+    two_gis = models.CharField(max_length=150, verbose_name="2gis", unique=True, blank=True)
     status = models.BooleanField(verbose_name="Активен")
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
