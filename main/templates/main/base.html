@@ -19,7 +19,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <link rel="stylesheet" href="{% static 'MDBootstrap/css/mdb.min.css'%}"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-<!--    CSS AOS-->
+    <!--    CSS AOS-->
     <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
     <!--  ICON -->
     <link rel="icon" href="{% static 'images/favicon1.jpg' %}">
@@ -51,13 +51,16 @@
             <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
                 {% csrf_token %}
                 <div class="btn-group-sm" role="group">
-                    <button data-aos="fade-left" type="submit" name="language" value="kk" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" type="submit" name="language" value="kk"
+                            class="btn btn-success btn-animate"
                     >KZ
                     </button>
-                    <button data-aos="fade-left" data-aos-delay="200" type="submit" name="language" value="ru" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" data-aos-delay="200" type="submit" name="language" value="ru"
+                            class="btn btn-success btn-animate"
                     >RU
                     </button>
-                    <button data-aos="fade-left" data-aos-delay="400" type="submit" name="language" value="en" class="btn btn-success btn-animate"
+                    <button data-aos="fade-left" data-aos-delay="400" type="submit" name="language" value="en"
+                            class="btn btn-success btn-animate"
                     >EN
                     </button>
                 </div>
@@ -237,6 +240,9 @@
 <script src="{% static 'aos-master/dist/aos.js' %}"></script>
 <script>
   AOS.init();
+
+
+
 </script>
 <!-- Custom scripts -->
 <script type="{% static 'MDBootstrap/text/javascript' %}"></script>
