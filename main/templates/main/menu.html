@@ -10,7 +10,7 @@
 
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
-   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none;"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none; z-index: 100"
    href="#header">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
@@ -28,7 +28,7 @@
 
         <!--Flying Cart-->
         <a id="Cart" class="btn fs-5 mx-2 shadow btn-animate btn-rounded"
-           style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none"
+           style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
            href="{% url 'cart:cart_page' %}">
             <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart3"
                  viewBox="0 0 16 16">
@@ -71,6 +71,7 @@
                                 {% endif %}
                             </div>
                             <div data-aos="flip-left" class="col-2">
+                                {% if client.inst %}
                                 <a href="{{ client.inst }}" target="_blank">
                                     <div  class="btn btn-animate text-white btn-floating"
                                          style="background: #f09433;
@@ -82,6 +83,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <i class="fab fa-instagram fa-2x"></i>
                                     </div>
                                 </a>
+                                {% endif %}
+                                {% if client.two_gis %}
                                 <a href="{{ client.two_gis }}" target="_blank">
                                     <div class="btn btn-animate text-white btn-floating"
                                          style="background: #f09433;
@@ -94,6 +97,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                              style="border-radius: 25px;">
                                     </div>
                                 </a>
+                                {% endif %}
                             </div>
                             <div class="col-5 text-start">
                                 <p class="">{% translate 'Доставка' %}

@@ -103,11 +103,11 @@
                 <h4 data-aos="fade-up" class="">{% translate 'Итого' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h4>
-                <p data-aos="fade-up" data-aos-delay="200" class="mb-0">*Обслуживание: 10%</p>
-                <h5 data-aos="fade-up" data-aos-delay="400" class="">{% translate 'Итого с обслуживанием' %}:
+                <p data-aos="fade-up" data-aos-delay="200" class="mb-0">{% translate '*Обслуживание: 10%'%}</p>
+                <h6 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Итого с *' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
-                </h5>
-                <button data-aos="fade-up" data-aos-delay="600" class="btn btn-sm btn-success btn-animate my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="max-width: 140px"
+                </h6>
+                <button data-aos="fade-up" data-aos-delay="400" class="btn btn-sm btn-success btn-animate my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="max-width: 140px"
                         disabled>{% translate 'Заказать' %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-truck" viewBox="0 0 16 16">
@@ -115,7 +115,7 @@
                     </svg>
                 </button>
 
-                <form data-aos="fade-up" data-aos-delay="800" id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
+                <form data-aos="fade-up" data-aos-delay="500" id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-danger btn-animate" type="submit" style="max-width: 140px">{% translate 'Очистить' %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"

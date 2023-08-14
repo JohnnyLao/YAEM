@@ -9,7 +9,7 @@
 
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
-   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none;"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none; z-index: 100"
    href="#header">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
@@ -19,6 +19,7 @@
 </a>
 <!--button end-->
 
+<body>
 <!--COUNTER START-->
 <section class="" style="background: rgba(33, 37, 41)">
     <div id="counter" class="indicator-list container">
@@ -26,26 +27,25 @@
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Заведений' %}</div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num={{total_dishes}} class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Блюд' %}</div>
+                    <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Блюд' %}</div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
                     <div data-num={{total_orders}} class="indicators-title"></div>
-                    <div class="lng-unit6 indicators-subtitle text-white">{% trans 'Заказов' %}</div>
+                    <div class="lng-unit6 indicators-subtitle text-white">{% translate 'Заказов' %}</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--COUNTER END-->
-<main>
     <!--  PART 1  -->
     <section class="skrollable py-3"
              style="background-image: url({% static 'images/5.jpg' %});
@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row text-white">
                 <div class="col-lg-6"></div>
-                <div data-aos="fade-left" class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
+                <div data-aos="fade-up" class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
                      style="background: rgba(20, 164, 77, 0.85);border-radius: 50px">
                     <h4 class="mt-2 mb-0 ">{% translate 'ОНЛАЙН' %}</h4>
                     <h4 class="my-0 ">{% translate 'МЕНЮ' %}</h4>
@@ -69,10 +69,8 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-6 col-sm-8 text-white text-center">
-                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к сети заведений с онлайн
-                        меню' %}</h1>
-                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС
-                        ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
+                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
+                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
                     <div data-aos="fade-up" data-aos-delay="200" class="btn btn-success text-white btn-animate"
                          style="border-radius: 50px"
                          data-mdb-toggle="modal"
@@ -91,20 +89,21 @@
             <div class="row gy-3">
                 <div class="col-lg-6 col-sm-12 text-center">
                     <h2 data-aos="fade-up" class="fw-bold my-4">{% translate 'Всё просто !' %}</h2>
-                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong>{%
-                        translate 'Вашего меню' %} </strong></h5>
+                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong>
+                        {% translate 'Вашего меню' %} </strong></h5>
                     <h5 data-aos="fade-up" data-aos-delay="200" class="m-3">{% translate 'Создаём страницу с меню на' %}
                         <strong>{% translate 'Нашем сайте' %}</strong>
                     </h5>
                     <h5 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Выдаём QR код для перехода в' %}
-                        <strong>
-                            {% translate 'Ваше онлайн меню'%}</strong></h5>
-                    <div class="row text-center text-nowrap">
-                    </div>
+                        <strong>{% translate 'Ваше онлайн меню'%}</strong>
+                    </h5>
+                    <h5 data-aos="fade-up" data-aos-delay="500" class="my-5 border"><strong>{% translate 'Ваши клиенты' %}</strong>
+                        {% translate 'смогут просматривать меню онлайн как в заведении, так и удалённо, совершая заказы онлайн' %}
+                    </h5>
 
                 </div>
                 <div class="col-9 col-lg-6 mx-auto my-4">
-                    <img data-aos="fade-left" src="{% static 'images/partner/menu.jpeg' %}" alt=""
+                    <img data-aos="fade-up" src="{% static 'images/partner/menu.jpeg' %}" alt=""
                          class="img-fluid w-auto"
                          style="border-radius: 50px;">
                 </div>
@@ -160,9 +159,11 @@
 
 
 
+
+
             </style>
             <!-- Swiper -->
-            <div data-aos="fade-left" class="swiper mySwiper">
+            <div data-aos="fade-up" class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img class="img-fluid" src="{% static 'images/partner/sample1.png' %}"/>
@@ -213,6 +214,8 @@
 
 
 
+
+
         </script>
     </section>
 
@@ -238,59 +241,62 @@
                                 </svg>
                                 {% translate 'Простота' %}
                             </h3>
-                            <h5 class="">{% translate 'Возможность мгновенно обновлять и изменять цены, акции и меню
-                                позволяет кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений
-                                клиентов' %}</h5>
+                            <h5 class="">{% translate 'Возможность мгновенно обновлять и изменять цены, акции и меню позволяет оперативно реагировать на изменения рынка и предпочтений клиентов' %}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-down" data-aos-delay="200" class="col-lg-4 col-sm-6 text-center">
+                    <div class="card" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px">
+                        <div class="card-body">
+                            <h3 class="my-3 me-4" style="color: #fd7014">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                     class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                          d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                                </svg>
+                                {% translate 'Продажи' %}
+                            </h3>
+                            <h5 class="my-3">{% translate 'Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400" class="col-lg-4 col-sm-6 text-center">
+                    <div class="card" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                        <div class="card-body">
+                            <h3 class="my-3" style="color: #fd7014">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                     class="bi bi-basket3-fill" viewBox="0 0 16 16">
+                                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
+                                </svg>
+                                {% translate 'Новые клиенты' %}
+                            </h3>
+                            <h5 class="my-3">{% translate 'Опция дистанционного отправления заказов позволяет привлечь клиентов, которые предпочитают блюда на вынос или доставку' %}</h5>
                         </div>
                     </div>
 
                 </div>
-                <div data-aos="fade-down" data-aos-delay="200" class="col-lg-4 col-sm-6 text-center"
-                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px">
-
-                    <h3 class="my-3 me-4" style="color: #fd7014">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                             class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
-                        </svg>
-                        {% translate 'Продажи' %}
-                    </h3>
-                    <h5 class="my-3">{% translate 'Корзина в онлайн меню способствует увеличению среднего чека, так как
-                        клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
+                <div data-aos="fade-right" data-aos-delay="600" class="col-lg-4 col-sm-6 text-center">
+                    <div class="card" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                        <div class="card-body">
+                            <h3 class="my-3" style="color: #fd7014">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                     class="bi bi-clock-history" viewBox="0 0 16 16">
+                                    <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+                                    <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+                                    <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                                </svg>
+                                {% translate 'Эффективность' %}
+                            </h3>
+                            <h5 class="my-3">{% translate 'Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести стоп-лист и изменять меню, что сокращает временные затраты' %}
+                            </h5>
+                        </div>
+                    </div>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="400" class="col-lg-4 col-sm-6 text-center"
-                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
-                    <h3 class="my-3" style="color: #fd7014">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                             class="bi bi-basket3-fill" viewBox="0 0 16 16">
-                            <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
-                        </svg>
-                        {% translate 'Новые клиенты' %}
-                    </h3>
-                    <h5 class="my-3">{% translate 'Опция дистанционного отправления заказов через позволяет привлечь
-                        клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
-                </div>
-                <div data-aos="fade-right" data-aos-delay="600" class="col-lg-4 col-sm-6 text-center"
-                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
 
-                    <h3 class="my-3" style="color: #fd7014">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                             class="bi bi-clock-history" viewBox="0 0 16 16">
-                            <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
-                            <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
-                            <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
-                        </svg>
-                        {% translate 'Эффективность' %}
-                    </h3>
-                    <h5 class="my-3">{% translate 'Возможность клиента ознакомиться с меню, принимать заказы удаленно,
-                        вести стоп-лист и изменять меню, что сокращает временные затраты' %}
-                    </h5>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="800" class="col-lg-4 col-sm-6 text-center"
-                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
-
-                    <h3 class="my-3" style="color: #fd7014">
+                <div data-aos="fade-up" data-aos-delay="800" class="col-lg-4 col-sm-6 text-center">
+                    <div class="card" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                        <div class="card-body">
+                            <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                              class="bi bi-search-heart" viewBox="0 0 16 16">
                             <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z"/>
@@ -298,13 +304,15 @@
                         </svg>
                         {% translate 'Аналитика' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Получать полезные данные о популярных блюдах и предпочтениях. Делать
-                        более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
+                    <h5 class="my-3">{% translate 'Получать полезные данные о популярных блюдах и предпочтениях. Делать более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
+                        </div>
+                    </div>
                 </div>
-                <div data-aos="fade-left" data-aos-delay="1000" class="col-lg-4 col-sm-6 text-center"
-                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
 
-                    <h3 class="my-3" style="color: #fd7014">
+                <div data-aos="fade-up" data-aos-delay="1000" class="col-lg-4 col-sm-6 text-center">
+                    <div class="card" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                        <div class="card-body">
+                             <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                              class="bi bi-translate" viewBox="0 0 16 16">
                             <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
@@ -312,8 +320,9 @@
                         </svg>
                         {% translate 'Мультиязычность' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Предоставление меню на нескольких языках делает заведение более
-                        привлекательным для иностранных посетителей и туристов' %}</h5>
+                    <h5 class="my-3">{% translate 'Предоставление меню на нескольких языках делает заведение более привлекательным для иностранных посетителей и туристов' %}</h5>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -331,8 +340,7 @@
                      border-radius: 10px; background-size: 150%;">
                     <img class="img w-25 my-3" src="{% static 'images/t-1.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3" style="background: rgba(255, 132, 0, 0.3); border-radius: 50px">{%
-                        translate 'Бронза' %}</h4>
+                    <h4 class="fw-bold my-3 bg-warning" style="border-radius: 50px; --mdb-bg-opacity: 15%">{%translate 'Бронза' %}</h4>
                     <h5 style="color: #">
                         <del>60 000 {% translate 'тг в год' %}</del>
                     </h5>
@@ -378,8 +386,8 @@
                             {% translate 'Редакция 4 раза в год' %}
                         </h6>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">{% translate 'Подключить' %}
+                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
+                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
                     </button>
                 </div>
 
@@ -391,7 +399,7 @@
     background-position: 50% 50%">
                     <img class="img w-50" src="{% static 'images/t-2.png' %}" alt=""
                          style="border-radius: 10px; max-width: 120px; opacity: 50%">
-                    <h3 class="fw-bold my-3 bg-secondary shadow" style="--bs-bg-opacity: 30%; border-radius: 50px">
+                    <h3 class="fw-bold my-3 bg-secondary shadow" style="border-radius: 50px; --mdb-bg-opacity: 50%">
                         {% translate 'Серебро' %}</h3>
                     <h4 class="" style="color: #">15 000 {% translate 'тг/мес' %}</h4>
                     <h3 class="fw-bold" style="color: #"> 150 000 {% translate 'тг/год' %}</h3>
@@ -445,8 +453,8 @@
                             {% translate 'Услуга: "Самовывоз" и "Доставка"' %}
                         </h5>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">{% translate 'Подключить' %}
+                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
+                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
                     </button>
                 </div>
 
@@ -455,9 +463,8 @@
                      style=" background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.8)), url({% static 'images/gold3.png' %});
                      background-size: 100vh; border-radius: 10px; background-position: 50% 50%">
                     <img class="img w-25 my-3" src="{% static 'images/t-3.png' %}" alt=""
-                         style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% translate
-                        'Золото' %}</h4>
+                         style="border-radius: 10px; max-width: 100px; opacity: 80%">
+                    <h4 class="fw-bold my-3 bg-warning" style="border-radius: 50px; --mdb-bg-opacity: 75%">{% translate 'Золото' %}</h4>
                     <h4 class="fw" style="color: #">25 000 {% translate 'тг/мес' %}</h4>
                     <h2 class="fw-bold" style="color: #"> 250 000 {% translate 'тг/год' %}</h2>
                     <div class="container py-3">
@@ -536,18 +543,17 @@
                                 data-mdb-toggle="collapse"
                                 data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne" style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Бронза"
+                            <i class="fas fa-question-circle me-2 opacity-70"></i> {% translate 'Подробнее о тарифном плане "Бронза"' %}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                          aria-labelledby="headingOne">
                         <div class="accordion-body text-white">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            {% translate 'Тарифный план бесплатный до конца срока действия Акции. Данный тариф позволяет ознакомиться с технологией Онлайн Меню.' %}
+                            <p class="my-0">Вы получите:</p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>Закрытую</u> страницу с карточкой заведения и меню на языке оригинала</p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> QR коды для размещения (до 5 шт. бесплатно)</p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> Функцию корзины</p>
                         </div>
                     </div>
                 </div>
@@ -557,18 +563,18 @@
                                 data-mdb-toggle="collapse"
                                 data-mdb-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseTwo" style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Серебро"
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Подробнее о тарифном плане "Серебро"' %}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                          aria-labelledby="headingTwo">
                         <div class="accordion-body text-white">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            {% translate '"Серебро" - самый популярный тариф. Позволяет Вашему заведению раскрыться для клиента, предоставив удобный сервис по взаимодействию. Смотрите на предпочтения клиентов и готовьтесь в онлайн заказам. Меню реализовано на минимум трёх языках.' %}
+                            <p class="my-0">Вы получите:</p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u style="color: #FD7014">Открытую</u> страницу с карточкой заведения и меню <strong style="color: #FD7014"> на минимум 3-х языках и фото </strong>  </p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> QR коды для размещения <u style="color: #FD7014">(неограничено)</u></p>
+                            <p class="my-0" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i> Функцию корзины и возможность использовать услугу "Доставка / Самовывоз". Принимать заказы удалённо через Телеграм</p>
+                            <p class="my-0" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i> Техническую поддержку с возможностью устроить акцию или скидку на блюда, управление стоп-листом</p>
                         </div>
                     </div>
                 </div>
@@ -579,18 +585,19 @@
                                 data-mdb-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseThree"
                                 style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Золото"
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Подробнее о тарифном плане "Золото"'%}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                          aria-labelledby="headingThree">
                         <div class="accordion-body text-white">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            {% translate '"Золото" - Тариф для знающих. Позволяет Вашему заведению находится в первых строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR кода. Личный кабинет для ведения статистики и аналитики по количеству заказов, предпочтений клиентов, карточке клиента и многие другие показатели. Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные условия по услуге "Доставка/Самовывоз" и многие другие бонусы.' %}
+                            <p class="my-0">Вы получите:</p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>Открытую</u> страницу с карточкой заведения и меню на минимум 3-х языках и фото блюд с <strong style="color: #FD7014">эксклюзивным дизайном</strong> </p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong style="color: #FD7014">Уникальные</strong> QR коды для размещения <u>(неограничено)</u></p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> Функцию корзины и возможность использовать услугу "Доставка / Самовывоз" <strong style="color: #FD7014">на более выгодных условиях.</strong>  Принимать заказы удалённо через Телеграм и <strong style="color: #FD7014">оплатой Kaspi</strong> </p>
+                            <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong style="color: #FD7014">Персонального менджера</strong> с возможностью устроить акцию или скидку на блюда, управление стоп-листом и <strong style="color: #FD7014">дополнительные услуги от YAEM </strong> </p>
+                            <p class="my-0 fw-bold" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i> Личный кабинет, где будут подключены Yandex и Google метрики</p>
                         </div>
                     </div>
                 </div>
@@ -601,7 +608,7 @@
                                 data-mdb-target="#panelsStayOpen-collapse4" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapse4"
                                 style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>Есть ли бесплатный период ?
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Есть ли бесплатный период ?'%}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse"
@@ -623,7 +630,7 @@
                                 data-mdb-target="#panelsStayOpen-collapse5" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapse5"
                                 style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>Я готов, как начать ?
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Я готов, как начать ?'%}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
@@ -644,47 +651,48 @@
 
     <!--    MODAL-->
     <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-         data-mdb-backdrop="static" data-mdb-keyboard="false">
+         data-mdb-backdrop="static" data-mdb-keyboard="false" style="--mdb-modal-header-border-color: #FD7014; --mdb-modal-footer-border-color: #FD7014;">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content" style="background: rgba(33, 37, 41, 0.9);">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
-                    <button type="button" class="btn-close bg-danger" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">{% translate 'Оставить заявку'%}</h5>
+                    <button type="button" class="btn-close bg-danger" data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="form-outline">
                         <input type="text" id="typeText" class="form-control text-light" maxlength="50"/>
-                        <label class="form-label text-secondary" for="typeText">Имя</label>
+                        <label class="form-label text-secondary" for="typeText">{% translate 'Имя'%}</label>
                     </div>
                     <div id="name" class="form-text mb-3 text-secondary">
-                        Как к Вам обращаться?
+                        {% translate 'Как к Вам обращаться?'%}
                     </div>
                     <div class="form-outline">
                         <input type="email" id="typeEmail" class="form-control text-light" maxlength="50"/>
-                        <label class="form-label text-secondary" for="typeEmail">Почта</label>
+                        <label class="form-label text-secondary" for="typeEmail">{% translate 'Почта'%}</label>
                     </div>
                     <div id="email" class="form-text mb-3 text-secondary">
-                        Укажите почтовый адрес
+                        {% translate 'Укажите почтовый адрес'%}
                     </div>
                     <div class="form-outline">
                         <input type="tel" id="typePhone" class="form-control text-light" maxlength="20"/>
-                        <label class="form-label text-secondary" for="typePhone">Телефон</label>
+                        <label class="form-label text-secondary" for="typePhone">{% translate 'Телефон'%}</label>
                     </div>
                     <div id="phone" class="form-text text-secondary">
-                        Укажите телефон с привязкой WhatsApp
+                        {% translate 'Укажите телефон с привязкой WhatsApp'%}
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
-                        Закрыть
+                        {% translate 'Закрыть'%}
                     </button>
-                    <button type="button" class="btn btn-success">Отправить</button>
+                    <button type="button" class="btn btn-success">{% translate 'Отправить'%}</button>
                 </div>
             </div>
         </div>
     </div>
     <!--  scripts  -->
     <script src="{% static 'js/countdown.js' %}"></script>
-</main>
+</body>
 
 {% endblock content %}
