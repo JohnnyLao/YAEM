@@ -51,7 +51,7 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-size: 150vh; background-repeat: repeat">
 
-        <h1 class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
+        <h1 data-aos="fade-up" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
 
 
         <div class="container">
@@ -60,18 +60,18 @@
                 <!--- цикл -->
                 {% for client in clients %}
                 {% if client.status %}
-                <div class="col-10 col-md-6 col-lg-4 text-center">
+                <div class="col-12 col-md-6 col-lg-4 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
+                        <img data-aos="fade-down" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
                              style="border-radius: 15px; max-width: 220px">
 
                         <div class="card-body my-0 py-1">
-                            <h4 class="card-title my-0">{{ client.name }}</h4>
-                            <p class="card-text my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time }}</p>
-                            <p class="my-0">{{ client.description }}</p>
+                            <h4 data-aos="fade-right" class="card-title my-0">{{ client.name }}</h4>
+                            <p data-aos="fade-left" class="card-text my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time }}</p>
+                            <p data-aos="fade-right" class="my-0">{{ client.description }}</p>
                             <div class="row my-0">
-                                <div class="col-6 my-0">
-                                    <p class="text my-0"> {% translate 'Самовывоз' %}
+                                <div data-aos="fade-right" class="col-6 my-0">
+                                    <p  class="text my-0"> {% translate 'Самовывоз' %}
                                 {% if client.outside %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                      class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -87,7 +87,7 @@
                                     </p>
                                 {% endif %}
                                 </div>
-                                <div class="col-6 my-0">
+                                <div data-aos="fade-left" class="col-6 my-0">
                                     <p class="my-0">{% translate 'Доставка' %}
                                 {% if client.delivery %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
@@ -106,7 +106,7 @@
                                 </div>
                             </div>
                                 <a href="{{client.url_name}}/menu">
-                                <button class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}</button>
+                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}</button>
                             </a>
                         </div>
                     </div>

@@ -8,10 +8,10 @@
 {% block content %}
 
 <!--button up-->
-<a id="scrollToTopButton" class="btn fs-5 mx-2 shadow"
-   style="color: #fd7014; background: rgba(33, 37, 41, 0.8); border-radius: 50px; bottom: 100px; left: 10px; display: none;"
+<a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none;"
    href="#header">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up"
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
         <path fill-rule="evenodd"
               d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
@@ -55,7 +55,7 @@
         <div class="container">
             <div class="row text-white">
                 <div class="col-lg-6"></div>
-                <div class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
+                <div data-aos="fade-left" class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
                      style="background: rgba(20, 164, 77, 0.85);border-radius: 50px">
                     <h4 class="mt-2 mb-0 ">{% translate 'ОНЛАЙН' %}</h4>
                     <h4 class="my-0 ">{% translate 'МЕНЮ' %}</h4>
@@ -69,11 +69,14 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-6 col-sm-8 text-white text-center">
-                    <h1 class="fw-bold mt-0">{% translate 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
-                    <h6 class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
-                    <div class="btn btn-success text-white btn-animate" style="border-radius: 50px"
-                         data-bs-toggle="modal"
-                         data-bs-target="#exampleModal">
+                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к сети заведений с онлайн
+                        меню' %}</h1>
+                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС
+                        ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
+                    <div data-aos="fade-up" data-aos-delay="200" class="btn btn-success text-white btn-animate"
+                         style="border-radius: 50px"
+                         data-mdb-toggle="modal"
+                         data-mdb-target="#exampleModal">
                         {% translate 'Подключить' %}
                     </div>
                 </div>
@@ -87,18 +90,22 @@
         <div class="container">
             <div class="row gy-3">
                 <div class="col-lg-6 col-sm-12 text-center">
-                    <h2 class="fw-bold my-4">{% translate 'Всё просто !' %}</h2>
-                    <h5 class="">{% translate 'Берём образец' %} <strong>{% translate 'Вашего меню' %} </strong></h5>
-                    <h5 class="m-3">{% translate 'Создаём страницу с меню на' %} <strong>{% translate 'Нашем сайте' %}</strong>
+                    <h2 data-aos="fade-up" class="fw-bold my-4">{% translate 'Всё просто !' %}</h2>
+                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong>{%
+                        translate 'Вашего меню' %} </strong></h5>
+                    <h5 data-aos="fade-up" data-aos-delay="200" class="m-3">{% translate 'Создаём страницу с меню на' %}
+                        <strong>{% translate 'Нашем сайте' %}</strong>
                     </h5>
-                    <h5 class="">{% translate 'Выдаём QR код для перехода в' %} <strong>
-                        {% translate 'Ваше онлайн меню'%}</strong></h5>
+                    <h5 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Выдаём QR код для перехода в' %}
+                        <strong>
+                            {% translate 'Ваше онлайн меню'%}</strong></h5>
                     <div class="row text-center text-nowrap">
                     </div>
 
                 </div>
                 <div class="col-9 col-lg-6 mx-auto my-4">
-                    <img src="{% static 'images/partner/menu.jpeg' %}" alt="" class="img-fluid w-auto"
+                    <img data-aos="fade-left" src="{% static 'images/partner/menu.jpeg' %}" alt=""
+                         class="img-fluid w-auto"
                          style="border-radius: 50px;">
                 </div>
             </div>
@@ -147,9 +154,15 @@
       display: block;
       width: 100%;
     }
+
+
+
+
+
+
             </style>
             <!-- Swiper -->
-            <div class="swiper mySwiper">
+            <div data-aos="fade-left" class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img class="img-fluid" src="{% static 'images/partner/sample1.png' %}"/>
@@ -194,6 +207,12 @@
         el: ".swiper-pagination",
       },
     });
+
+
+
+
+
+
         </script>
     </section>
 
@@ -204,21 +223,30 @@
         <div class="container">
             <h2 class="text-center fw-bold text-white pt-3">{% translate 'Наши приемущества' %}</h2>
             <div class="row gy-3 py-3">
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
-                    <h3 class="my-3 me-4" style="color: #fd7014">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                             class="bi bi-qr-code" viewBox="0 0 16 16">
-                            <path d="M2 2h2v2H2V2Z"/>
-                            <path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"/>
-                            <path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"/>
-                            <path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z"/>
-                            <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"/>
-                        </svg>
-                        {% translate 'Простота' %}
-                    </h3>
-                    <h5 class="my-3">{% translate 'Возможность мгновенно обновлять и изменять цены, акции и меню позволяет кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений клиентов' %}</h5>
+                <div class="col-lg-4 col-sm-6 text-center">
+                    <div data-aos="fade-right" class="card"
+                         style="background: rgba(33, 37, 41, 0.4);border-radius: 10px ">
+                        <div class="card-body">
+                            <h3 class="" style="color: #fd7014">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                     class="bi bi-qr-code" viewBox="0 0 16 16">
+                                    <path d="M2 2h2v2H2V2Z"/>
+                                    <path d="M6 0v6H0V0h6ZM5 1H1v4h4V1ZM4 12H2v2h2v-2Z"/>
+                                    <path d="M6 10v6H0v-6h6Zm-5 1v4h4v-4H1Zm11-9h2v2h-2V2Z"/>
+                                    <path d="M10 0v6h6V0h-6Zm5 1v4h-4V1h4ZM8 1V0h1v2H8v2H7V1h1Zm0 5V4h1v2H8ZM6 8V7h1V6h1v2h1V7h5v1h-4v1H7V8H6Zm0 0v1H2V8H1v1H0V7h3v1h3Zm10 1h-1V7h1v2Zm-1 0h-1v2h2v-1h-1V9Zm-4 0h2v1h-1v1h-1V9Zm2 3v-1h-1v1h-1v1H9v1h3v-2h1Zm0 0h3v1h-2v1h-1v-2Zm-4-1v1h1v-2H7v1h2Z"/>
+                                    <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"/>
+                                </svg>
+                                {% translate 'Простота' %}
+                            </h3>
+                            <h5 class="">{% translate 'Возможность мгновенно обновлять и изменять цены, акции и меню
+                                позволяет кафе и ресторанам оперативно реагировать на изменения рынка и предпочтений
+                                клиентов' %}</h5>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                <div data-aos="fade-down" data-aos-delay="200" class="col-lg-4 col-sm-6 text-center"
+                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px">
 
                     <h3 class="my-3 me-4" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -228,9 +256,11 @@
                         </svg>
                         {% translate 'Продажи' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
+                    <h5 class="my-3">{% translate 'Корзина в онлайн меню способствует увеличению среднего чека, так как
+                        клиенты могут легко добавлять в нее дополнительные блюда и напитки' %}</h5>
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                <div data-aos="fade-left" data-aos-delay="400" class="col-lg-4 col-sm-6 text-center"
+                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
                     <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                              class="bi bi-basket3-fill" viewBox="0 0 16 16">
@@ -238,9 +268,11 @@
                         </svg>
                         {% translate 'Новые клиенты' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Опция дистанционного отправления заказов через позволяет привлечь клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
+                    <h5 class="my-3">{% translate 'Опция дистанционного отправления заказов через позволяет привлечь
+                        клиентов, которые предпочитают питание на вынос или доставку' %}</h5>
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                <div data-aos="fade-right" data-aos-delay="600" class="col-lg-4 col-sm-6 text-center"
+                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
 
                     <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -251,10 +283,12 @@
                         </svg>
                         {% translate 'Эффективность' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести стоп-лист и изменять меню, что сокращает временные затраты' %}
+                    <h5 class="my-3">{% translate 'Возможность клиента ознакомиться с меню, принимать заказы удаленно,
+                        вести стоп-лист и изменять меню, что сокращает временные затраты' %}
                     </h5>
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                <div data-aos="fade-up" data-aos-delay="800" class="col-lg-4 col-sm-6 text-center"
+                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
 
                     <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -264,9 +298,11 @@
                         </svg>
                         {% translate 'Аналитика' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Получать полезные данные о популярных блюдах и предпочтениях. Делать более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
+                    <h5 class="my-3">{% translate 'Получать полезные данные о популярных блюдах и предпочтениях. Делать
+                        более обоснованные бизнес-решения и адаптировать меню под потребности клиентов.' %}</h5>
                 </div>
-                <div class="col-lg-4 col-sm-6 text-center" style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
+                <div data-aos="fade-left" data-aos-delay="1000" class="col-lg-4 col-sm-6 text-center"
+                     style="background: rgba(33, 37, 41, 0.3);border-radius: 10px ">
 
                     <h3 class="my-3" style="color: #fd7014">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
@@ -276,7 +312,8 @@
                         </svg>
                         {% translate 'Мультиязычность' %}
                     </h3>
-                    <h5 class="my-3">{% translate 'Предоставление меню на нескольких языках делает заведение более привлекательным для иностранных посетителей и туристов' %}</h5>
+                    <h5 class="my-3">{% translate 'Предоставление меню на нескольких языках делает заведение более
+                        привлекательным для иностранных посетителей и туристов' %}</h5>
                 </div>
             </div>
         </div>
@@ -288,16 +325,36 @@
             <h2 class="text-center py-3">{% translate 'Тарифные планы' %}</h2>
 
             <div class="row text-center gy-3 py-3">
-                <div class="col-10 col-sm-5 col-lg-3 mx-auto shadow-lg bg-body-secondary"
+                <div data-aos="fade-right" data-aos-delay="800"
+                     class="col-10 col-sm-5 col-lg-3 mx-auto shadow-lg bg-body-secondary"
                      style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.8)), url({% static 'images/bronze.jpg' %});
                      border-radius: 10px; background-size: 150%;">
                     <img class="img w-25 my-3" src="{% static 'images/t-1.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3" style="background: rgba(255, 132, 0, 0.3); border-radius: 50px">{% translate 'Бронза' %}</h4>
+                    <h4 class="fw-bold my-3" style="background: rgba(255, 132, 0, 0.3); border-radius: 50px">{%
+                        translate 'Бронза' %}</h4>
                     <h5 style="color: #">
                         <del>60 000 {% translate 'тг в год' %}</del>
                     </h5>
                     <h3 class="fw-bold" style=""> 0 {% translate 'тг в год' %}</h3>
+                    <div id="countdown" class="row" style="color: #fd7014">
+                        <div class="col">
+                            <p id="days" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Дней' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="hours" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Часов' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="minutes" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Минут' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="seconds" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Секунд' %}</p>
+                        </div>
+                    </div>
                     <div class="container py-3">
                         <h6 class="shadow text-start" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
@@ -327,7 +384,8 @@
                 </div>
 
                 <!--                SILVER-->
-                <div class="col-10 col-sm-5 col-lg-4 mx-auto shadow-lg border"
+                <div data-aos="fade-right" data-aos-delay="400"
+                     class="col-10 col-sm-5 col-lg-4 mx-auto shadow-lg border"
                      style="border-radius: 10px; background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.9)), url({% static 'images/silver1.jpg' %});
                      background-repeat: no-repeat; background-size: 100vh;
     background-position: 50% 50%">
@@ -338,47 +396,53 @@
                     <h4 class="" style="color: #">15 000 {% translate 'тг/мес' %}</h4>
                     <h3 class="fw-bold" style="color: #"> 150 000 {% translate 'тг/год' %}</h3>
                     <div class="container py-3">
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Онлайн меню с фото блюд' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Настольный QR код' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Неограниченная редакция' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Техническая поддержка' %}
                         </h5>
-                        <h5 class=" shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class=" shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Меню на 3х языках' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            {% translate 'Бонус: "Самовывоз" и "Доставка"' %}
+                            {% translate 'Услуга: "Самовывоз" и "Доставка"' %}
                         </h5>
                     </div>
                     <button class="btn btn-success my-3 btn-animate btn-rounded" data-bs-toggle="modal"
@@ -387,12 +451,13 @@
                 </div>
 
                 <!--                GOLD-->
-                <div class="col-10 col-sm-6 col-lg-3 mx-auto shadow-lg"
+                <div data-aos="fade-right" class="col-10 col-sm-6 col-lg-3 mx-auto shadow-lg"
                      style=" background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.8)), url({% static 'images/gold3.png' %});
                      background-size: 100vh; border-radius: 10px; background-position: 50% 50%">
                     <img class="img w-25 my-3" src="{% static 'images/t-3.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% translate 'Золото' %}</h4>
+                    <h4 class="fw-bold my-3 bg-warning" style="--bs-bg-opacity: 50%; border-radius: 50px">{% translate
+                        'Золото' %}</h4>
                     <h4 class="fw" style="color: #">25 000 {% translate 'тг/мес' %}</h4>
                     <h2 class="fw-bold" style="color: #"> 250 000 {% translate 'тг/год' %}</h2>
                     <div class="container py-3">
@@ -404,42 +469,48 @@
                             </svg>
                             {% translate 'Тариф "Серебро"' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Эксклюзивный QR код' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Эксклюзивный дизайн меню' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Личный кабинет' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Онлайн оплата Kaspi' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Персональный менеджер' %}
                         </h5>
-                        <h5 class="shadow text-start ps-2" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                        <h5 class="shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
@@ -447,85 +518,167 @@
                             {% translate 'Аналитика Google, Yandex' %}
                         </h5>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">{% translate 'Подключить' %}
+                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
+                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
                     </button>
                 </div>
             </div>
         </div>
-
     </section>
 
-
-    <!--  PART 4 countdown -->
-    <section class="" style="background: rgba(33, 37, 41, 0.95);">
+    <section class="text-light py-5" style="background: rgba(33, 37, 41, 0.95);">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-6 text-center">
-                    <h2 class="my-3">{% translate 'Бесплатное подключение' %}</h2>
-                    <div id="countdown" class="row gy-3 my-3 border" style="color: #fd7014">
-                        <div class="col">
-                            <p id="days" class="countdown-number fs-1 fw-bold">0</p>
-                            <h4>{% translate 'Дней' %}</h4>
+            <h2 class="text-center py-3">Часто задаваемые вопросы:</h2>
+            <div class="accordion accordion-borderless" id="accordionPanelsStayOpenExample">
+                <div data-aos="fade-right" class="accordion-item py-1">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button collapsed shadow text-light fs-5" type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne" style="background: rgba(33, 37, 41, 0.95);">
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Бронза"
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+                         aria-labelledby="headingOne">
+                        <div class="accordion-body text-white">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default,
+                            until the collapse plugin adds the appropriate classes that we use to style each
+                            element. These classes control the overall appearance, as well as the showing and
+                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                            our default variables. It's also worth noting that just about any HTML can go within
+                            the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
-                        <div class="col">
-                            <p id="hours" class="countdown-number fs-1 fw-bold">0</p>
-                            <h4>{% translate 'Часов' %}</h4>
+                    </div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="100" class="accordion-item py-1">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed text-white shadow fs-5" type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo" style="background: rgba(33, 37, 41, 0.95);">
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Серебро"
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                         aria-labelledby="headingTwo">
+                        <div class="accordion-body text-white">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default,
+                            until the collapse plugin adds the appropriate classes that we use to style each
+                            element. These classes control the overall appearance, as well as the showing and
+                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                            our default variables. It's also worth noting that just about any HTML can go within
+                            the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
-                        <div class="col">
-                            <p id="minutes" class="countdown-number fs-1 fw-bold">0</p>
-                            <h4>{% translate 'Минут' %}</h4>
+                    </div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="200" class="accordion-item py-1">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed text-white shadow fs-5" type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree"
+                                style="background: rgba(33, 37, 41, 0.95);">
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>Подробнее о тарифном плане "Золото"
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                         aria-labelledby="headingThree">
+                        <div class="accordion-body text-white">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                            until the collapse plugin adds the appropriate classes that we use to style each
+                            element. These classes control the overall appearance, as well as the showing and
+                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                            our default variables. It's also worth noting that just about any HTML can go within
+                            the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
-                        <div class="col">
-                            <p id="seconds" class="countdown-number fs-1 fw-bold">0</p>
-                            <h4>{% translate 'Секунд' %}</h4>
+                    </div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="300" class="accordion-item py-1">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed text-white shadow fs-5" type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#panelsStayOpen-collapse4" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse4"
+                                style="background: rgba(33, 37, 41, 0.95);">
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>Есть ли бесплатный период ?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse"
+                         aria-labelledby="heading4">
+                        <div class="accordion-body text-white">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                            until the collapse plugin adds the appropriate classes that we use to style each
+                            element. These classes control the overall appearance, as well as the showing and
+                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                            our default variables. It's also worth noting that just about any HTML can go within
+                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="400" class="accordion-item py-1">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed text-white shadow fs-5" type="button"
+                                data-mdb-toggle="collapse"
+                                data-mdb-target="#panelsStayOpen-collapse5" aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapse5"
+                                style="background: rgba(33, 37, 41, 0.95);">
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>Я готов, как начать ?
+                        </button>
+                    </h2>
+                    <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
+                         aria-labelledby="heading5">
+                        <div class="accordion-body text-white">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
+                            until the collapse plugin adds the appropriate classes that we use to style each
+                            element. These classes control the overall appearance, as well as the showing and
+                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
+                            our default variables. It's also worth noting that just about any HTML can go within
+                            the <code>.accordion-body</code>, though the transition does limit overflow.
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!--    MODAL-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+         data-mdb-backdrop="static" data-mdb-keyboard="false">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content bg-dark ">
-                <!--                HEADER-->
+            <div class="modal-content" style="background: rgba(33, 37, 41, 0.9);">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="exampleModalLabel">{% translate 'Оставить заявку' %}</h5>
-                    <button class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="close"></button>
+                    <h5 class="modal-title" id="exampleModalLabel">Оставить заявку</h5>
+                    <button type="button" class="btn-close bg-danger" data-mdb-dismiss="modal" aria-label="Close"></button>
                 </div>
-
                 <div class="modal-body">
-                    <p class="text-center">{translate 'Вы можете оставить свои данные и мы с Вами свяжемся' %}</p>
-
-                    <p>{% translate 'Имя:' %}</p>
-                    <div class="row mb-3" id="input_1">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput_1"
-                                   placeholder="name@example.com">
-                            <label class="ms-2" for="floatingInput_1">{% translate 'Введите имя' %}</label>
-                        </div>
+                    <div class="form-outline">
+                        <input type="text" id="typeText" class="form-control text-light" maxlength="50"/>
+                        <label class="form-label text-secondary" for="typeText">Имя</label>
                     </div>
-                    <p>{% translate 'Номер телефона:' %}</p>
-                    <div class="row mb-3" id="input_2">
-                        <div class="form-floating">
-                            <input type="email" class="form-control" id="floatingInput_2"
-                                   placeholder="name@example.com">
-                            <label class="ms-2" for="floatingInput_2">{% translate 'Введите телефон' %}</label>
-                        </div>
+                    <div id="name" class="form-text mb-3 text-secondary">
+                        Как к Вам обращаться?
                     </div>
-                    <p>{% translate 'Позиция' %}:</p>
-                    <select class="form-select mb-3" aria-label="Small select example">
-                        <option class="w-50" value="1">{% translate 'Предприниматель' %}</option>
-                        <option value="2">{% translate 'Руководитель' %}</option>
-                        <option value="3">{% translate 'Менеджер' %}</option>
-                    </select>
+                    <div class="form-outline">
+                        <input type="email" id="typeEmail" class="form-control text-light" maxlength="50"/>
+                        <label class="form-label text-secondary" for="typeEmail">Почта</label>
+                    </div>
+                    <div id="email" class="form-text mb-3 text-secondary">
+                        Укажите почтовый адрес
+                    </div>
+                    <div class="form-outline">
+                        <input type="tel" id="typePhone" class="form-control text-light" maxlength="20"/>
+                        <label class="form-label text-secondary" for="typePhone">Телефон</label>
+                    </div>
+                    <div id="phone" class="form-text text-secondary">
+                        Укажите телефон с привязкой WhatsApp
+                    </div>
                 </div>
-                <!--FOOTER-->
                 <div class="modal-footer">
-                    <button class="btn btn-success" id="input_4">{% translate 'Отправить' %}
+                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
+                        Закрыть
                     </button>
-                    <button class="btn btn-danger" data-bs-dismiss="modal">{% translate 'Закрыть' %}</button>
+                    <button type="button" class="btn btn-success">Отправить</button>
                 </div>
             </div>
         </div>
