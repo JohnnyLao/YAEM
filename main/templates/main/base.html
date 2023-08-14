@@ -30,12 +30,15 @@
 <!-- Navbar -->
 <nav class="navbar navbar-light" id="header">
     <!-- Container wrapper -->
-    <div class="container text-center">
-        <div class="col-5 text-start">
+    <div class="container-fluid text-center">
+        <div class="col-5">
             <a href="{% url 'main:main_page' %}">
                 <img data-aos="fade-right" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
-
             </a>
+            <button data-aos="fade-up" class="btn btn-sm btn-success mb-2 mx-1 btn-floating btn-animate" type="button" data-mdb-toggle="modal"
+                    data-mdb-target="#Cities">
+                <i class="fas fa-city fa-lg"></i>
+            </button>
         </div>
 
         <div class="col-2 mx-auto">
@@ -51,16 +54,16 @@
             <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
                 {% csrf_token %}
                 <div class="btn-group-sm" role="group">
-                    <button data-aos="fade-left" type="submit" name="language" value="kk"
-                            class="btn btn-success btn-animate"
+                    <button data-aos="fade-up" type="submit" name="language" value="kk"
+                            class="btn btn-success btn-animate my-1"
                     >KZ
                     </button>
-                    <button data-aos="fade-left" data-aos-delay="200" type="submit" name="language" value="ru"
-                            class="btn btn-success btn-animate"
+                    <button data-aos="fade-up" data-aos-delay="200" type="submit" name="language" value="ru"
+                            class="btn btn-success btn-animate my-1"
                     >RU
                     </button>
-                    <button data-aos="fade-left" data-aos-delay="400" type="submit" name="language" value="en"
-                            class="btn btn-success btn-animate"
+                    <button data-aos="fade-up" data-aos-delay="400" type="submit" name="language" value="en"
+                            class="btn btn-success btn-animate my-1"
                     >EN
                     </button>
                 </div>
@@ -89,7 +92,7 @@
                 </a>
             </li>
 
-            <div class="collapse" id="navbarToggler1">
+            <div class="collapse text-center" id="navbarToggler1">
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
@@ -123,7 +126,7 @@
                 </a>
             </li>
 
-            <div class="collapse" id="navbarToggler2">
+            <div class="collapse text-center" id="navbarToggler2">
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
@@ -171,13 +174,13 @@
                 <p class="fs-5 mt-3">{% trans 'Егор' %}</p>
                 <p class="">{% trans 'Коммерческий директор' %}</p>
             </div>
-            <div data-aos="fade-bottom" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
+            <div data-aos="fade-right" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
                 <p class="">{% trans 'Руководитель отдела развития' %}</p>
             </div>
-            <div data-aos="fade-left" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
+            <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Артём' %}</p>
@@ -213,7 +216,7 @@
                 </a>
                 Whatsapp: +7 701 530 28 12
             </div>
-            <div data-aos="fade-left" data-aos-delay="400" class="col-12 col-md-4 my-2">
+            <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-md-4 my-2">
                 <a href="https://www.instagram.com/yaem_qr/"
                    target="_blank"
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
@@ -231,8 +234,26 @@
     </div>
 </footer>
 <!--FOOTER END-->
-
-
+<!--MODAL-->
+<div class="modal fade" id="cities" tabindex="-1" aria-labelledby="cityLabel" aria-hidden="false"
+     data-mdb-keyboard="false" style="--mdb-modal-header-border-color: #FD7014">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: rgba(33, 37, 41, 0.8);">
+            <div class="modal-header">
+                <h5 class="modal-title mx-auto" id="exampleModalLabel">Укажите город</h5>
+            </div>
+            <div class="modal-body">
+                <div class="col-12">
+                    <!--                ПОЛОЖИТЬ ЦИКЛ ПО ГОРОДАМ-->
+                    <button class="btn btn-success btn-rounded btn-sm my-1">Караганда</button>
+                    <button class="btn btn-success btn-rounded btn-sm my-1">Темиртау</button>
+                    <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Астана</button>
+                    <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Алматы</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!--SCRIPTS-->
 <!-- MDB -->
 <script type="text/javascript" src="{% static 'MDBootstrap/js/mdb.min.js'%}"></script>
@@ -240,6 +261,12 @@
 <script src="{% static 'aos-master/dist/aos.js' %}"></script>
 <script>
   AOS.init();
+
+
+
+
+
+
 
 
 
