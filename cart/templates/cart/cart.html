@@ -45,8 +45,6 @@
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                         </svg>
                     </button>
-
-
                     <!--       SCRIPT   обязательно под кнопкой удалить      -->
                     <script>
   // JavaScript-обработчик для удаления товара из корзины
@@ -76,22 +74,13 @@
       });
     });
   });
-
-
-
-
                     </script>
-
-
                     {{ cart_item.quantity }}
                 </div>
             </div>
-
             <div  class="col-4 my-auto text-center">
                 <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
             </div>
-
-
         </div>
         <div>
         </div>
@@ -107,8 +96,9 @@
                 <h6 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Итого с *' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h6>
-                <button data-aos="fade-up" data-aos-delay="400" class="btn btn-sm btn-success btn-animate my-3" data-bs-toggle="modal" data-bs-target="#exampleModal" style="max-width: 140px"
-                        disabled>{% translate 'Заказать' %}
+                <button data-aos="fade-up" data-aos-delay="400" class="btn btn-sm btn-success btn-animate my-3"
+                        data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="max-width: 140px"
+                        >{% translate 'Заказать' %}
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                          class="bi bi-truck" viewBox="0 0 16 16">
                         <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
@@ -126,7 +116,6 @@
                     </button>
                 </form>
 
-
                 {% else %}
                 <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
 
@@ -136,60 +125,161 @@
     </div>
 
 
-    <!--    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-    <!--        <div class="modal-dialog ">-->
-    <!--            <div class="modal-content">-->
-    <!--                <div class="modal-header">-->
-    <!--                    <h5 class="modal-title" id="exampleModalLabel">{% trans 'Заказ' %}</h5>-->
-    <!--                    <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>-->
-    <!--                </div>-->
+    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+         data-mdb-backdrop="static" data-mdb-keyboard="false"
+         style="--mdb-modal-header-border-color: #FD7014; --mdb-modal-footer-border-color: #FD7014;">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background: rgba(33, 37, 41, 0.9);">
+                <div class="modal-header">
+                    <div class="btn-group mx-auto">
+                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"/>
+                        <label class="btn btn-success" for="option1">В зале</label>
 
-    <!--                <div class="modal-body">-->
+                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off"/>
+                        <label class="btn btn-success" for="option2">Самовывоз</label>
 
-    <!--                    <form action="">-->
-    <!--                        <div class="row mb-3 mx-3">-->
-    <!--                            <div class="form-check">-->
-    <!--                                <input class="form-check-input" type="radio" name="flexRadioDefault"-->
-    <!--                                       id="flexRadioDefault1">-->
-    <!--                                <label class="form-check-label" for="flexRadioDefault1">-->
-    <!--                                    {% trans 'Доставка' %}-->
-    <!--                                </label>-->
-    <!--                            </div>-->
-    <!--                            <div class="form-check">-->
-    <!--                                <input class="form-check-input" type="radio" name="flexRadioDefault"-->
-    <!--                                       id="flexRadioDefault2">-->
-    <!--                                <label class="form-check-label" for="flexRadioDefault2">-->
-    <!--                                    {% trans 'Самовывоз' %}-->
-    <!--                                </label>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
+                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off"/>
+                        <label class="btn btn-success" for="option3">Доставка</label>
+                    </div>
+                </div>
 
-    <!--                        <div class="row mb-3" id="input_1">-->
-    <!--                            <div class="form-floating">-->
-    <!--                                <input type="email" class="form-control" id="floatingInput_1"-->
-    <!--                                       placeholder="name@example.com">-->
-    <!--                                <label class="ms-2" for="floatingInput_1">{% trans 'Введите имя' %}</label>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                        <div class="row mb-3" id="input_2">-->
-    <!--                            <div class="form-floating">-->
-    <!--                                <input type="email" class="form-control" id="floatingInput_2"-->
-    <!--                                       placeholder="name@example.com">-->
-    <!--                                <label class="ms-2" for="floatingInput_2">{% trans 'Введите телефон' %}</label>-->
-    <!--                            </div>-->
-    <!--                        </div>-->
-    <!--                    </form>-->
-    <!--                </div>-->
+                <div class="modal-body">
+                    <div id="inputContainer1" class="form-outline" style="display: none">
+                        <form action="" class="needs-validation" novalidate>
+                            <p class="text-light">Отправьте заказ, не дожидаясь официанта</p>
+                            <div class="form-outline">
+                                <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>
+                                <label class="form-label text-secondary" for="table#">Номер стола</label>
+                                <div class="invalid-feedback">Вы не указали номер стола</div>
+                            </div>
+                            <div class="col-12 text-end">
+                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
+                                    {% translate 'Закрыть'%}
+                                </button>
+                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
 
-    <!--                <div class="modal-footer">-->
-    <!--                    <button class="btn btn-success" id="input_3">{% trans 'Отправить Заказ' %}-->
-    <!--                    </button>-->
-    <!--                    <button class="btn btn-danger" data-bs-dismiss="modal">{% trans 'Закрыть' %}</button>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
+                    <div id="inputContainer2" class="form-outline" style="display: none">
+                        <form action="" class="needs-validation" novalidate>
+                            <p class="text-light">Отправьте заказ, и заберите в удобное для Вас время</p>
+                            <div class="form-outline">
+                                <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary" for="name">Ваше имя</label>
+                                <div class="form-helper"></div>
+                                <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                            </div>
+                            <div class="form-outline my-5">
+                                <input type="tel" id="phone" class="form-control text-light"
+                                       data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary" for="phone">Номер телефона</label>
+                                <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                            </div>
+                            <div class="form-outline mb-5">
+                                <input type="time" id="time" class="form-control text-light border"
+                                       data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary ms-5" for="time">Время самовывоза</label>
+                                <div class="invalid-feedback">Вы не указали время, когда забрать заказ</div>
+                            </div>
+                            <div class="col-12 text-end mt-5">
+                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
+                                    {% translate 'Закрыть'%}
+                                </button>
+                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="inputContainer3" class="form-outline" style="display: none">
+                        <form action="" class="needs-validation" novalidate>
+                            <p class="text-light">Отправьте заказ, и Вам доставят в удобное время</p>
+                            <div class="form-outline">
+                                <input type="text" id="name1" class="form-control text-light border" data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary" for="name1">Ваше имя</label>
+                                <div class="form-helper"></div>
+                                <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                            </div>
+                            <div class="form-outline my-5 ">
+                                <input type="tel" id="phone1" class="form-control text-light border"
+                                       data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary" for="phone1">Номер телефона</label>
+                                <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                            </div>
+                            <div class="form-outline mb-5 ">
+                                <input type="text" id="address" class="form-control text-light border"
+                                       data-mdb-showcounter="true"
+                                       maxlength="60" required/>
+                                <label class="form-label text-secondary" for="address">Адрес доставки</label>
+                                <div class="form-helper"></div>
+                                <div class="invalid-feedback">Вы не указали свой адрес для доставки</div>
+                            </div>
+                            <div class="form-outline mb-5">
+                                <input type="time" id="time1" class="form-control text-light border"
+                                       data-mdb-showcounter="true"
+                                       maxlength="20" required/>
+                                <label class="form-label text-secondary ms-5" for="time1">Время доставки</label>
+                                <div class="invalid-feedback">Вы не указали время, когда доставить</div>
+                            </div>
+                            <div class="col-12 text-end mt-5">
+                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
+                                    {% translate 'Закрыть'%}
+                                </button>
+                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
+<!--СКРИПТ ПО ОБРАБОТКЕ РАДИО-->
+<script>
+    const radioOptions = document.querySelectorAll('input[name="options"]');
+    const inputContainers = document.querySelectorAll('[id^="inputContainer"]');
+
+    radioOptions.forEach((radio, index) => {
+        radio.addEventListener('change', () => {
+            inputContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+
+            if (radio.checked) {
+                inputContainers[index].style.display = 'block';
+            }
+        });
+    });
+</script>
+
+<!--СКРИПТ ПО ОБРАБОТКЕ ОТВЕТОВ-->
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();</script>
 
 {% endblock content %}
