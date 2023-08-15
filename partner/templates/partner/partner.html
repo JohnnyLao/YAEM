@@ -10,7 +10,7 @@
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
    style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none; z-index: 100"
-   href="#header">
+   href="#header" xmlns="http://www.w3.org/1999/html">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -69,8 +69,8 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-6 col-sm-8 text-white text-center">
-                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к сети заведений с онлайн меню' %}</h1>
-                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС ОНЛАЙН МЕНЮ И QR КОД' %}</h6>
+                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к <strong style="color: #FD7014"> сети </strong> заведений' %}</h1>
+                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС <strong style="color: #FD7014"> ОНЛАЙН МЕНЮ </strong> И QR КОД' %}</h6>
                     <div data-aos="fade-up" data-aos-delay="200" class="btn btn-success text-white btn-animate"
                          style="border-radius: 50px"
                          data-mdb-toggle="modal"
@@ -89,17 +89,17 @@
             <div class="row gy-3">
                 <div class="col-lg-6 col-sm-12 text-center">
                     <h2 data-aos="fade-up" class="fw-bold my-4">{% translate 'Всё просто !' %}</h2>
-                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong>
+                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong style="color: #FD7014">
                         {% translate 'Вашего меню' %} </strong></h5>
                     <h5 data-aos="fade-up" data-aos-delay="200" class="m-3">{% translate 'Создаём страницу с меню на' %}
-                        <strong>{% translate 'Нашем сайте' %}</strong>
+                        <strong style="color: #FD7014">{% translate 'Нашем сайте' %}</strong>
                     </h5>
                     <h5 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Выдаём QR код для перехода в' %}
-                        <strong>{% translate 'Ваше онлайн меню'%}</strong>
+                        <strong style="color: #FD7014">{% translate 'Ваше онлайн меню'%}</strong>
                     </h5>
-                    <h5 data-aos="fade-up" data-aos-delay="500" class="my-5 border"><strong>{% translate 'Ваши клиенты' %}</strong>
+                    <h4 data-aos="fade-up" data-aos-delay="500" class="my-5"><strong style="color: #FD7014">{% translate 'Ваши клиенты' %}</strong>
                         {% translate 'смогут просматривать меню онлайн как в заведении, так и удалённо, совершая заказы онлайн' %}
-                    </h5>
+                    </h4>
 
                 </div>
                 <div class="col-9 col-lg-6 mx-auto my-4">
@@ -426,7 +426,7 @@
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
-                            {% translate 'Неограниченная редакция' %}
+                            {% translate 'Акции и скидки' %}
                         </h5>
                         <h5 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -465,65 +465,65 @@
                     <img class="img w-25 my-3" src="{% static 'images/t-3.png' %}" alt=""
                          style="border-radius: 10px; max-width: 100px; opacity: 80%">
                     <h4 class="fw-bold my-3 bg-warning" style="border-radius: 50px; --mdb-bg-opacity: 75%">{% translate 'Золото' %}</h4>
-                    <h4 class="fw" style="color: #">25 000 {% translate 'тг/мес' %}</h4>
-                    <h2 class="fw-bold" style="color: #"> 250 000 {% translate 'тг/год' %}</h2>
+                    <h5 class="fw" style="color: #">25 000 {% translate 'тг/мес' %}</h5>
+                    <h4 class="fw-bold" style="color: #"> 250 000 {% translate 'тг/год' %}</h4>
                     <div class="container py-3">
-                        <h5 class="shadow text-start ps-2 fw-bold"
+                        <h6 class="shadow text-start ps-2 fw-bold"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Тариф "Серебро"' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Эксклюзивный QR код' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Эксклюзивный дизайн меню' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Личный кабинет' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Онлайн оплата Kaspi' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Персональный менеджер' %}
-                        </h5>
-                        <h5 class="shadow text-start ps-2"
+                        </h6>
+                        <h6 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                                  class="bi bi-check" viewBox="0 0 16 16">
                                 <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                             </svg>
                             {% translate 'Аналитика Google, Yandex' %}
-                        </h5>
+                        </h6>
                     </div>
                     <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
                             data-mdb-target="#exampleModal">{% translate 'Подключить' %}
