@@ -35,7 +35,8 @@
             <a href="{% url 'main:main_page' %}">
                 <img data-aos="fade-right" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </a>
-            <button data-aos="fade-up" class="btn btn-sm btn-success mb-2 mx-1 btn-floating btn-animate" type="button" data-mdb-toggle="modal"
+            <button data-aos="fade-up" class="btn btn-sm btn-success mb-2 mx-1 btn-floating btn-animate" type="button"
+                    data-mdb-toggle="modal"
                     data-mdb-target="#Cities">
                 <i class="fas fa-city fa-lg"></i>
             </button>
@@ -77,7 +78,7 @@
         <ul class="navbar-nav fw-bold">
             <li class="nav-item mx-auto">
                 <a class="nav-link active " aria-current="page"
-                   href="{% url 'main:main_page' %}">{% trans 'ГЛАВНАЯ' %}</a>
+                   href="{% url 'main:main_page' %}">{% translate 'ГЛАВНАЯ' %}</a>
             </li>
             <li class="nav-item mx-auto my-2">
                 <a href="" class="navbar-toggler fs-6"
@@ -87,7 +88,7 @@
                    aria-controls="navbarToggler1"
                    aria-expanded="false"
                    aria-label="Toggle navigation">
-                    {% trans 'ЗАКАЗАТЬ' %}
+                    {% translate 'ЗАКАЗАТЬ' %}
                     <i class="fas fa-angle-down"></i>
                 </a>
             </li>
@@ -97,15 +98,15 @@
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
                             <a class="" href="{% url 'main:main_page' %}">
-                                <button class="btn">{% trans 'Блюда' %} <i class="fas fa-circle fa-xs"
-                                                                           style="color: green"></i></button>
+                                <button class="btn">{% translate 'Блюда' %} <i class="fas fa-circle fa-xs"
+                                                                               style="color: green"></i></button>
                             </a>
                             <a class="" href="#">
-                                <button class="btn  text-secondary" disabled>{% trans 'Продукты' %} <i
+                                <button class="btn  text-secondary" disabled>{% translate 'Продукты' %} <i
                                         class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
                             <a class="" href="#">
-                                <button class="btn  text-secondary" disabled>{% trans 'Банкет' %} <i
+                                <button class="btn  text-secondary" disabled>{% translate 'Банкет' %} <i
                                         class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
                         </div>
@@ -121,7 +122,7 @@
                    aria-controls="navbarToggler2"
                    aria-expanded="false"
                    aria-label="Toggle navigation">
-                    {% trans 'БИЗНЕСУ' %}
+                    {% translate 'БИЗНЕСУ' %}
                     <i class="fas fa-angle-down"></i>
                 </a>
             </li>
@@ -131,18 +132,18 @@
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
                             <a class="" href="{% url 'main:main_page' %}">
-                                <button class="btn text-secondary" disabled>{% trans 'Кайтеринг' %} <i
+                                <button class="btn text-secondary" disabled>{% translate 'Кайтеринг' %} <i
                                         class="fas fa-circle fa-xs"
                                         style="color: #C0392B"></i></button>
                             </a>
                             <a class="" href="#">
-                                <button class="btn text-secondary" disabled>{% trans 'Представители' %} <i
+                                <button class="btn text-secondary" disabled>{% translate 'Представители' %} <i
                                         class="fas fa-circle fa-xs"
                                         style="color: #C0392B"></i></button>
                             </a>
                             <a class="" href="{% url 'partner:partner_page' %}">
-                                <button class="btn">{% trans 'Контакты' %} <i class="fas fa-circle fa-xs"
-                                                                              style="color: green"></i></button>
+                                <button class="btn">{% translate 'Контакты' %} <i class="fas fa-circle fa-xs"
+                                                                                  style="color: green"></i></button>
                             </a>
                         </div>
                     </li>
@@ -166,31 +167,31 @@
 <!--FOOTER-->
 <footer class="">
     <div class="container-fluid py-3" style="background: rgba(0, 0, 0, 0.9)">
-        <h3 class="text-center my-3">{% trans 'Наша команда' %}</h3>
+        <h3 class="text-center my-3">{% translate 'Наша команда' %}</h3>
         <div class="row">
             <div data-aos="fade-right" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-1.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
-                <p class="fs-5 mt-3">{% trans 'Егор' %}</p>
-                <p class="">{% trans 'Коммерческий директор' %}</p>
+                <p class="fs-5 mt-3">{% translate 'Егор' %}</p>
+                <p class="">{% translate 'Коммерческий директор' %}</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
-                <p class="">{% trans 'Руководитель отдела развития' %}</p>
+                <p class="">{% translate 'Руководитель отдела развития' %}</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
                 <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
-                <p class="fs-5 mt-3">{% trans 'Артём' %}</p>
-                <p class="">{% trans 'Руководитель отдела разработки' %}</p>
+                <p class="fs-5 mt-3">{% translate 'Артём' %}</p>
+                <p class="">{% translate 'Руководитель отдела разработки' %}</p>
             </div>
         </div>
     </div>
 
     <div class="container-fluid py-3" style="background: rgba(33, 37, 41)">
-        <h4 class="text-center my-3">{% trans 'Контакты' %}</h4>
+        <h4 class="text-center my-3">{% translate 'Контакты' %}</h4>
         <div class="row text-center">
             <div data-aos="fade-right" class="col-12 col-md-4 my-2">
                 <a href="mailto:Yaem@gmail.com?subject=YAEM"
@@ -245,8 +246,8 @@
             <div class="modal-body">
                 <div class="col-12">
                     <!--                ПОЛОЖИТЬ ЦИКЛ ПО ГОРОДАМ-->
-                    <button class="btn btn-success btn-rounded btn-sm my-1">Караганда</button>
-                    <button class="btn btn-success btn-rounded btn-sm my-1">Темиртау</button>
+                    <button class="btn btn-success btn-rounded btn-sm my-1">{% translate 'Караганда' %}</button>
+                    <button class="btn btn-success btn-rounded btn-sm my-1">{% translate 'Темиртау' %}</button>
                     <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Астана</button>
                     <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Алматы</button>
                 </div>
@@ -260,16 +261,7 @@
 <!--AOS-->
 <script src="{% static 'aos-master/dist/aos.js' %}"></script>
 <script>
-  AOS.init();
-
-
-
-
-
-
-
-
-
+    AOS.init();
 </script>
 <!-- Custom scripts -->
 <script type="{% static 'MDBootstrap/text/javascript' %}"></script>
@@ -280,24 +272,6 @@
 <script src="{% static 'js/session.js' %}"></script>
 <script src="{% static 'js/add_to_cart.js' %}"></script>
 
-<!-- Yandex.Metrika counter -->
-<!--<script type="text/javascript">-->
-<!--    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};-->
-<!--    m[i].l=1*new Date();-->
-<!--    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}-->
-<!--    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})-->
-<!--    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");-->
-<!--    ym(94306475, "init", {-->
-<!--         clickmap:true,-->
-<!--         trackLinks:true,-->
-<!--         accurateTrackBounce:true,-->
-<!--         webvisor:true-->
-<!--    });-->
-<!--</script>-->
-<!--<noscript>-->
-<!--    <div><img src="https://mc.yandex.ru/watch/94306475" style="position:absolute; left:-9999px;" alt=""/></div>-->
-<!--</noscript>-->
-<!-- /Yandex.Metrika counter -->
 
 <!--SCRIPTS END-->
 </body>
