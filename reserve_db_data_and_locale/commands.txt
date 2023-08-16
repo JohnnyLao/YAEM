@@ -1,0 +1,13 @@
+Выгрузка данных из БД путь прописан:
+python manage.py dumpdata > reserve_db_data_and_locale/fixtures/data_16_08_23_version.json
+---------------------------------------------------------------------------------
+Загрузка данных в БД путь прописан:
+python manage.py loaddata reserve_db_data_and_locale/fixtures/data_16_08_23_version.json
+---------------------------------------------------------------------------------
+Создание файлов перевода для англ/кз:
+django-admin makemessages -l en -e html
+django-admin makemessages -l kk -e html
+---------------------------------------------------------------------------------
+Используется для компиляции файлов перевода .po в бинарные .mo файлы:
+django-admin compilemessages
+
