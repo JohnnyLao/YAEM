@@ -15,7 +15,8 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-12">
-                <div data-aos="fade-right" class="btn btn-animate shadow-0" onclick="history.back();" style="border-radius: 20px; ">
+                <div data-aos="fade-right" class="btn btn-animate shadow-0" onclick="history.back();"
+                     style="border-radius: 20px; ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
                          class="bi bi-arrow-left text-start"
                          viewBox="0 0 16 16">
@@ -33,12 +34,12 @@
         {% if not is_empty %}
         {% for cart_item in cart_items %}
         <div class="row shadow-5">
-            <div class="col-5 my-auto">
+            <div class="col-6 my-auto">
                 <h4>{{ cart_item.product.name }}</h4>
                 <p>{{ cart_item.product.description }}</p>
             </div>
-            <div class="col-3 my-auto text-center">
-                <div  class="delete-button" data-product-id="{{ cart_item.product.id }}">
+            <div class="col-2 my-auto text-center">
+                <div class="delete-button" data-product-id="{{ cart_item.product.id }}">
                     <button class="btn btn-danger btn-sm mx-auto btn-animate btn-floating" style="border-radius: 100%">
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                              class="bi bi-x-lg" viewBox="0 0 16 16">
@@ -75,39 +76,24 @@
     });
   });
                     </script>
-                    {{ cart_item.quantity }}
+                    <h5 class="d-inline">{{ cart_item.quantity }}</h5>
                 </div>
             </div>
-            <div  class="col-4 my-auto text-center">
+            <div class="col-4 my-auto text-center">
                 <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
             </div>
         </div>
         <div>
         </div>
         {% endfor %}
+        <div class="row mt-2">
 
-        <div class="row my-5">
-            <div class="col-6"></div>
-            <div class="col-6 text-center my-5">
-                <h4 data-aos="fade-up" class="">{% translate 'Итого' %}:
-                    <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
-                </h4>
-                <p data-aos="fade-up" data-aos-delay="200" class="mb-0">{% translate '*Обслуживание: 10%'%}</p>
-                <h6 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Итого с *' %}:
-                    <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
-                </h6>
-                <button data-aos="fade-up" data-aos-delay="400" class="btn btn-sm btn-success btn-animate my-3"
-                        data-mdb-toggle="modal" data-mdb-target="#exampleModal" style="max-width: 140px"
-                        >{% translate 'Заказать' %}
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                         class="bi bi-truck" viewBox="0 0 16 16">
-                        <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                    </svg>
-                </button>
 
-                <form data-aos="fade-up" data-aos-delay="500" id="clear-form" method="post" action="{% url 'cart:cart_clear' %}">
+            <div class="col-7 text-end">
+                <form data-aos="fade-up" data-aos-delay="500" id="clear-form" method="post"
+                      action="{% url 'cart:cart_clear' %}">
                     {% csrf_token %}
-                    <button class="btn btn-sm btn-danger btn-animate" type="submit" style="max-width: 140px">{% translate 'Очистить' %}
+                    <button class="btn btn-sm btn-danger btn-animate mt-3" type="submit" style="max-width: 140px">{% translate 'Очистить' %}
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                              class="bi bi-trash" viewBox="0 0 16 16">
                             <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
@@ -115,23 +101,25 @@
                         </svg>
                     </button>
                 </form>
-
+            </div>
+            <div class="col-5 col-lg-4 text-center">
+                <h4 data-aos="fade-up" class="">{% translate 'Итого' %}:
+                    <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
+                </h4>
+                <p data-aos="fade-up" data-aos-delay="200" class="my-0">{% translate '+ Обслуживание: 10% '%} <strong
+                        style="color: #FD7014"> {{ total_price|intcomma }} ₸</strong></p>
                 {% else %}
                 <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
 
                 {% endif %}
             </div>
         </div>
-    </div>
 
-
-    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-         data-mdb-backdrop="static" data-mdb-keyboard="false"
-         style="--mdb-modal-header-border-color: #FD7014; --mdb-modal-footer-border-color: #FD7014;">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="background: rgba(33, 37, 41, 0.9);">
-                <div class="modal-header">
-                    <div class="btn-group mx-auto">
+        {% if not is_empty %}
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="btn-group mx-auto mb-3">
                         <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"/>
                         <label class="btn btn-success" for="option1">В зале</label>
 
@@ -142,104 +130,94 @@
                         <label class="btn btn-success" for="option3">Доставка</label>
                     </div>
                 </div>
+                <div id="inputContainer1" class="form-outline" style="display: none">
+                    <form action="" class="needs-validation" novalidate>
+                        <p class="text-light">Отправьте заказ, не дожидаясь официанта</p>
+                        <div class="form-outline">
+                            <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>
+                            <label class="form-label text-secondary" for="table#">Номер стола</label>
+                            <div class="invalid-feedback">Вы не указали номер стола</div>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-                <div class="modal-body">
-                    <div id="inputContainer1" class="form-outline" style="display: none">
-                        <form action="" class="needs-validation" novalidate>
-                            <p class="text-light">Отправьте заказ, не дожидаясь официанта</p>
-                            <div class="form-outline">
-                                <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>
-                                <label class="form-label text-secondary" for="table#">Номер стола</label>
-                                <div class="invalid-feedback">Вы не указали номер стола</div>
-                            </div>
-                            <div class="col-12 text-end">
-                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
-                                    {% translate 'Закрыть'%}
-                                </button>
-                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <div id="inputContainer2" class="form-outline" style="display: none">
+                    <form action="" class="needs-validation" novalidate>
+                        <p class="text-light">Отправьте заказ, и заберите в удобное для Вас время</p>
+                        <div class="form-outline">
+                            <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary" for="name">Ваше имя</label>
+                            <div class="form-helper"></div>
+                            <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                        </div>
+                        <div class="form-outline my-5">
+                            <input type="tel" id="phone" class="form-control text-light"
+                                   data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary" for="phone">Номер телефона</label>
+                            <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                        </div>
+                        <div class="form-outline">
+                            <input type="time" id="time" class="form-control text-light border"
+                                   data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary ms-5" for="time">Время самовывоза</label>
+                            <div class="invalid-feedback">Вы не указали время, когда забрать заказ</div>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            </button>
+                        </div>
+                    </form>
+                </div>
 
-                    <div id="inputContainer2" class="form-outline" style="display: none">
-                        <form action="" class="needs-validation" novalidate>
-                            <p class="text-light">Отправьте заказ, и заберите в удобное для Вас время</p>
-                            <div class="form-outline">
-                                <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary" for="name">Ваше имя</label>
-                                <div class="form-helper"></div>
-                                <div class="invalid-feedback">Вы не указали Ваше имя</div>
-                            </div>
-                            <div class="form-outline my-5">
-                                <input type="tel" id="phone" class="form-control text-light"
-                                       data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary" for="phone">Номер телефона</label>
-                                <div class="invalid-feedback">Вы не указали свой номер телефона</div>
-                            </div>
-                            <div class="form-outline mb-5">
-                                <input type="time" id="time" class="form-control text-light border"
-                                       data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary ms-5" for="time">Время самовывоза</label>
-                                <div class="invalid-feedback">Вы не указали время, когда забрать заказ</div>
-                            </div>
-                            <div class="col-12 text-end mt-5">
-                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
-                                    {% translate 'Закрыть'%}
-                                </button>
-                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <div id="inputContainer3" class="form-outline" style="display: none">
-                        <form action="" class="needs-validation" novalidate>
-                            <p class="text-light">Отправьте заказ, и Вам доставят в удобное время</p>
-                            <div class="form-outline">
-                                <input type="text" id="name1" class="form-control text-light border" data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary" for="name1">Ваше имя</label>
-                                <div class="form-helper"></div>
-                                <div class="invalid-feedback">Вы не указали Ваше имя</div>
-                            </div>
-                            <div class="form-outline my-5 ">
-                                <input type="tel" id="phone1" class="form-control text-light border"
-                                       data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary" for="phone1">Номер телефона</label>
-                                <div class="invalid-feedback">Вы не указали свой номер телефона</div>
-                            </div>
-                            <div class="form-outline mb-5 ">
-                                <input type="text" id="address" class="form-control text-light border"
-                                       data-mdb-showcounter="true"
-                                       maxlength="60" required/>
-                                <label class="form-label text-secondary" for="address">Адрес доставки</label>
-                                <div class="form-helper"></div>
-                                <div class="invalid-feedback">Вы не указали свой адрес для доставки</div>
-                            </div>
-                            <div class="form-outline mb-5">
-                                <input type="time" id="time1" class="form-control text-light border"
-                                       data-mdb-showcounter="true"
-                                       maxlength="20" required/>
-                                <label class="form-label text-secondary ms-5" for="time1">Время доставки</label>
-                                <div class="invalid-feedback">Вы не указали время, когда доставить</div>
-                            </div>
-                            <div class="col-12 text-end mt-5">
-                                <button type="button" class="btn btn-danger mx-auto" data-mdb-dismiss="modal">
-                                    {% translate 'Закрыть'%}
-                                </button>
-                                <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+                <div id="inputContainer3" class="form-outline" style="display: none">
+                    <form action="" class="needs-validation" novalidate>
+                        <p class="text-light">Отправьте заказ, и Вам доставят в удобное время</p>
+                        <div class="form-outline">
+                            <input type="text" id="name1" class="form-control text-light border"
+                                   data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary" for="name1">Ваше имя</label>
+                            <div class="form-helper"></div>
+                            <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                        </div>
+                        <div class="form-outline my-5 ">
+                            <input type="tel" id="phone1" class="form-control text-light border"
+                                   data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary" for="phone1">Номер телефона</label>
+                            <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                        </div>
+                        <div class="form-outline mb-5 ">
+                            <input type="text" id="address" class="form-control text-light border"
+                                   data-mdb-showcounter="true"
+                                   maxlength="60" required/>
+                            <label class="form-label text-secondary" for="address">Адрес доставки</label>
+                            <div class="form-helper"></div>
+                            <div class="invalid-feedback">Вы не указали свой адрес для доставки</div>
+                        </div>
+                        <div class="form-outline">
+                            <input type="time" id="time1" class="form-control text-light border"
+                                   data-mdb-showcounter="true"
+                                   maxlength="20" required/>
+                            <label class="form-label text-secondary ms-5" for="time1">Время доставки</label>
+                            <div class="invalid-feedback">Вы не указали время, когда доставить</div>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 </section>
 
@@ -259,6 +237,11 @@
             }
         });
     });
+
+
+
+
+
 </script>
 
 <!--СКРИПТ ПО ОБРАБОТКЕ ОТВЕТОВ-->
@@ -280,6 +263,11 @@
       form.classList.add('was-validated');
     }, false);
   });
-})();</script>
+})();
+
+
+
+
+</script>
 
 {% endblock content %}

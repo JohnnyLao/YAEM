@@ -21,30 +21,30 @@
 
 <body>
 <!--COUNTER START-->
-<section class="" style="background: rgba(33, 37, 41)">
-    <div id="counter" class="indicator-list container">
-        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
-            <div class="col-6 col-lg-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{total_clients}}" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Заведений' %}</div>
+    <section class="" style="background: rgba(33, 37, 41)">
+        <div id="counter" class="indicator-list container">
+            <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
+                <div class="col-6 col-lg-4">
+                    <div class="indicators-item"> <!--item-1-->
+                        <div data-num="{{total_clients}}" class="indicators-title"></div>
+                        <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Заведений' %}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num={{total_dishes}} class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Блюд' %}</div>
+                <div class="col-6 col-lg-4">
+                    <div class="indicators-item"> <!--item-1-->
+                        <div data-num={{total_dishes}} class="indicators-title"></div>
+                        <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Блюд' %}</div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title"></div>
-                    <div class="lng-unit6 indicators-subtitle text-white">{% translate 'Заказов' %}</div>
+                <div class="col-6 col-lg-4">
+                    <div class="indicators-item"><!--item-3-->
+                        <div data-num={{total_orders}} class="indicators-title"></div>
+                        <div class="lng-unit6 indicators-subtitle text-white">{% translate 'Заказов' %}</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 <!--COUNTER END-->
     <!--  PART 1  -->
     <section class="skrollable py-3"
@@ -71,12 +71,12 @@
                 <div class="col-lg-6 col-sm-8 text-white text-center">
                     <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к <strong style="color: #FD7014"> сети </strong> заведений' %}</h1>
                     <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'И МЫ СДЕЛАЕМ ДЛЯ ВАС <strong style="color: #FD7014"> ОНЛАЙН МЕНЮ </strong> И QR КОД' %}</h6>
-                    <div data-aos="fade-up" data-aos-delay="200" class="btn btn-success text-white btn-animate"
-                         style="border-radius: 50px"
-                         data-mdb-toggle="modal"
-                         data-mdb-target="#exampleModal">
-                        {% translate 'Подключить' %}
-                    </div>
+                    <a href="#quote">
+                        <button data-aos="fade-up" data-aos-delay="200" type="button"
+                                class="btn btn-success btn-rounded btn-animate">
+                            {% translate 'Подключить' %}
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -221,7 +221,7 @@
 
     <!--  PART 3  -->
     <section class="skrollable"
-             style="background-image: linear-gradient(0deg, rgba(100, 51, 51, 0.2), rgba(100, 51, 51, 0.2)), url({% static 'images/1.jpg' %});
+             style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)), url({% static 'images/1.jpg' %});
     background-attachment:fixed; background-position: 60%; background-repeat: repeat; background-size: 220vh">
         <div class="container">
             <h2 class="text-center fw-bold text-white pt-3">{% translate 'Наши приемущества' %}</h2>
@@ -386,9 +386,12 @@
                             {% translate 'Редакция 4 раза в год' %}
                         </h6>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
-                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
-                    </button>
+                    <a href="#quote">
+                        <button type="button"
+                                class="btn btn-success btn-rounded btn-animate">
+                            {% translate 'Подключить' %}
+                        </button>
+                    </a>
                 </div>
 
                 <!--                SILVER-->
@@ -453,9 +456,12 @@
                             {% translate 'Услуга: "Самовывоз" и "Доставка"' %}
                         </h5>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
-                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
-                    </button>
+                    <a href="#quote">
+                        <button type="button"
+                                class="btn btn-success btn-rounded btn-animate mb-3">
+                            {% translate 'Подключить' %}
+                        </button>
+                    </a>
                 </div>
 
                 <!--                GOLD-->
@@ -525,9 +531,12 @@
                             {% translate 'Аналитика Google, Yandex' %}
                         </h6>
                     </div>
-                    <button class="btn btn-success my-3 btn-animate btn-rounded" data-mdb-toggle="modal"
-                            data-mdb-target="#exampleModal">{% translate 'Подключить' %}
-                    </button>
+                    <a href="#quote">
+                        <button type="button"
+                                class="btn btn-success btn-rounded btn-animate">
+                            {% translate 'Подключить' %}
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -648,61 +657,71 @@
             </div>
         </div>
     </section>
+<section class="skrollable" id="quote"
+         style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.4), rgba(33, 37, 41, 0.4)), url({% static 'images/2.jpg' %});
+    background-attachment:fixed; background-position: 10%; background-repeat: repeat; background-size: 220vh">
+    <div class="container">
+        <form class="row mb-0 py-3">
+            <h2 data-aos="fade-right" class="fw-bold mb-3 ms-3">{% translate 'Оставить заявку'%}</h2>
 
-    <!--    MODAL-->
-    <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-         data-mdb-backdrop="static" data-mdb-keyboard="false" style="--mdb-modal-header-border-color: #FD7014; --mdb-modal-footer-border-color: #FD7014;">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content" style="background: rgba(33, 37, 41, 0.9);">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">{% translate 'Оставить заявку'%}</h5>
-                    <button type="button" class="btn-close bg-danger" data-mdb-dismiss="modal"
-                            aria-label="Close"></button>
+            <div class="col-12 col-sm-5">
+                <div data-aos="fade-right" data-aos-delay="100" class="form-outline">
+                    <input name="name" type="text" id="typeText" class="form-control text-light"
+                           data-mdb-showcounter="true"
+                           maxlength="20" required/>
+                    <label class="form-label text-secondary">{% translate 'Имя'%}</label>
+                    <div class="form-helper text-secondary fw-bold"></div>
                 </div>
-
-
-                <!--        MODAL FORM        -->
-
-
-
-                <div class="modal-body">
-                    <div class="form-outline">
-
-                        <input name="name" type="text" id="typeText" class="form-control text-light" maxlength="50"/>
-                        <label class="form-label text-secondary">{% translate 'Имя'%}</label>
-                    </div>
-                    <div id="name" class="form-text mb-3 text-secondary">
-                        {% translate 'Как к Вам обращаться?'%}
-                    </div>
-                    <div class="form-outline">
-
-                        <input name="email" type="email" id="typeEmail" class="form-control text-light" maxlength="50"/>
-                        <label class="form-label text-secondary">{% translate 'Почта'%}</label>
-                    </div>
-                    <div id="email" class="form-text mb-3 text-secondary">
-                        {% translate 'Укажите почтовый адрес'%}
-                    </div>
-                    <div class="form-outline">
-
-                        <input name="phone" type="tel" id="typePhone" class="form-control text-light" maxlength="20"/>
-                        <label class="form-label text-secondary">{% translate 'Телефон'%}</label>
-                    </div>
-                    <div id="phone" class="form-text text-secondary">
-                        {% translate 'Укажите телефон с привязкой WhatsApp'%}
-                    </div>
+                <div data-aos="fade-right" data-aos-delay="100" id="name" class="form-text mb-3 text-secondary">
+                    {% translate 'Как к Вам обращаться?'%}
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">
-                        {% translate 'Закрыть'%}
-                    </button>
-                    <button type="submit" class="btn btn-success">{% translate 'Отправить'%}</button>
+                <div data-aos="fade-right" data-aos-delay="200" class="form-outline">
+                    <input name="email" type="email" id="typeEmail" class="form-control text-light"
+                           data-mdb-showcounter="true" maxlength="50" required/>
+                    <label class="form-label text-secondary">{% translate 'Почта'%}</label>
+                    <div class="form-helper text-secondary fw-bold"></div>
                 </div>
-
-
-
+                <div data-aos="fade-right" data-aos-delay="200" id="email" class="form-text mb-2 text-secondary">
+                    {% translate 'Укажите почтовый адрес'%}
+                </div>
+                <div data-aos="fade-right" data-aos-delay="300" class="form-outline">
+                    <input name="phone" type="tel" id="typePhone" class="form-control text-light"
+                           data-mdb-showcounter="true" maxlength="20" required/>
+                    <label class="form-label text-secondary">{% translate 'Телефон'%}</label>
+                    <div class="form-helper text-secondary fw-bold"></div>
+                </div>
+                <div data-aos="fade-right" data-aos-delay="300" id="phone" class="form-text text-secondary">
+                    {% translate 'Укажите телефон с привязкой WhatsApp'%}
+                </div>
+                <button data-aos="fade-up" data-aos-delay="400" type="submit" class="btn btn-success btn-rounded btn-animate ms-3 my-3">{% translate 'Отправить'%}
+                </button>
             </div>
-        </div>
+        </form>
     </div>
+</section>
+
+<script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+
+</script>
+
     <!--  scripts  -->
     <script src="{% static 'js/countdown.js' %}"></script>
 </body>

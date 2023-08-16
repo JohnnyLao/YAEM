@@ -20,232 +20,267 @@
 </a>
 <!--button end-->
 
-<main>
-    <!--  MAIN CONTENT  -->
-    <section class="skrollable pb-5"
-             style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/3.jpg' %});
+<body>
+<!--  MAIN CONTENT  -->
+<section class="skrollable pb-5"
+         style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
 
-        <!--Flying Cart-->
-        <a id="Cart" class="btn fs-5 mx-2 shadow btn-animate btn-rounded"
-           style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
-           href="{% url 'cart:cart_page' %}">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart3"
-                 viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-            </svg>
-        </a>
-        <!--    CAFE DESCRIPTION    -->
-        <div class="container-fluid pt-4">
-            <div class="col-12 text-center">
-                <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                    <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
-                         style="border-radius: 15px; max-width: 220px">
+    <!--Flying Cart-->
+    <a id="Cart" class="btn fs-5 mx-2 shadow btn-animate btn-rounded"
+       style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
+       href="{% url 'cart:cart_page' %}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-cart3"
+             viewBox="0 0 16 16">
+            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+        </svg>
+    </a>
+    <!--    CAFE DESCRIPTION    -->
+    <div class="container-fluid pt-4">
+        <div class="col-12 text-center">
+            <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+                <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
+                     style="border-radius: 15px; max-width: 220px">
 
-                    <div class="card-body my-0 py-1">
-                        <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
-                            <div class="d-inline" style="color: #FD7014">{{ client.name }}
-                            </div>
-                        </h4>
-                        <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
-                        <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}; {% translate 'Телефон' %}:
-                            {{client.phone}}</p>
-                        <p class="my-0">{{ client.description }}</p>
-
-                        <div class="row my-0">
-                            <div class="col-5 text-end">
-                                <p class="text"> {% translate 'Самовывоз' %}
-                                    {% if client.outside %}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                         class="bi bi-check bg-success" viewBox="0 0 16 16"
-                                         style="border-radius: 25px;">
-                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                    </svg>
-                                    {% else %}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                         class="bi bi-x bg-danger" viewBox="0 0 16 16"
-                                         style="border-radius: 25px;">
-                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                    </svg>
-                                </p>
-                                {% endif %}
-                            </div>
-                            <div data-aos="flip-left" class="col-2">
-                                {% if client.inst %}
-                                <a href="{{ client.inst }}" target="_blank">
-                                    <div  class="btn btn-animate text-white btn-floating"
-                                         style="background: #f09433;
-background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  }">
-                                        <i class="fab fa-instagram fa-2x"></i>
-                                    </div>
-                                </a>
-                                {% endif %}
-                                {% if client.two_gis %}
-                                <a href="{{ client.two_gis }}" target="_blank">
-                                    <div class="btn btn-animate text-white btn-floating"
-                                         style="background: #f09433;
-background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-  }">
-                                        <img src="{% static 'images/2gis.png' %}" alt="" class="img-fluid"
-                                             style="border-radius: 25px;">
-                                    </div>
-                                </a>
-                                {% endif %}
-                            </div>
-                            <div class="col-5 text-start">
-                                <p class="">{% translate 'Доставка' %}
-                                    {% if client.delivery %}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                                         class="bi bi-check bg-success" viewBox="0 0 16 16"
-                                         style="border-radius: 25px;"> viewBox="0 0 16 16">
-                                        <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                    </svg>
-                                    {% else %}
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                         class="bi bi-x bg-danger" viewBox="0 0 16 16"
-                                         style="border-radius: 25px;">
-                                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                    </svg>
-                                    {% endif %}
-                                </p>
-                            </div>
+                <div class="card-body my-0 py-1">
+                    <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
+                        <div class="d-inline" style="color: #FD7014">{{ client.name }}
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <h2 data-aos="fade-right" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
+                    </h4>
+                    <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
+                    <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}; {% translate
+                        'Телефон' %}:
+                        {{client.phone}}</p>
+                    <p class="my-0">{{ client.description }}</p>
 
-        <!--    FOOD TYPE SWIPER    -->
-
-        <div data-aos="fade-right" class="sticky-top">
-            <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
-                <div class="swiper-container">
-                    <div class="swiper-wrapper text-center">
-                        {% for ft in food_type %}
-                        <div class="swiper-slide d-inline">
-                            <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014" href="#{{ ft }}">
-                                {{ ft }}
-                            </a>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 'auto',
-                spaceBetween: 5,
- });
-        </script>
-        <script>
-            var prevScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-            var categoriesContainer = document.querySelector('.sticky-top');
-
-            window.addEventListener('scroll', function() {
-              var currentScrollPos = window.pageYOffset || document.documentElement.scrollTop;
-
-              if (currentScrollPos > prevScrollPos && currentScrollPos > 510) {
-
-                categoriesContainer.classList.remove('show');
-                categoriesContainer.classList.add('hide');
-              } else {
-
-                categoriesContainer.classList.remove('hide');
-                categoriesContainer.classList.add('show');
-              }
-
-              prevScrollPos = currentScrollPos;
-            });
-        </script>
-        <style>
-            .sticky-top {
-              opacity: 1;
-              transition: opacity 0.3s;
-            }
-
-            .hide {
-              opacity: 0;
-            }
-
-            .show {
-              opacity: 1;
-            }
-        </style>
-        <!--    FOOD TYPE DOWN    -->
-
-
-        {% for ft in food_type %}
-        <h2 data-aos="fade-right" class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
-
-        <!--    DISH CONTENT    -->
-        <div class="container-fluid my-3">
-            <div class="row gy-2 mx-auto justify-content-center">
-                {% for dish in dishes %}
-                {% if dish.food_type == ft and dish.stop == False %}
-                <div data-aos="fade-right" class="col-12 col-lg-5 mx-auto"
-                     style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
-                    <div class="row">
-
-                        <div class="col-8">
-                            <h5 class="mb-0 fw-bold">{{ dish.name }}</h5>
-                            <p class="">{{ dish.description }}</p>
-                        </div>
-                        <div class="col-4 text-center mx-0">
-                            {% if dish.old_price > dish.actual_price %}
-                            <del class="fs-4 text-danger">
-                                <p class="my-0" style="color: #fd7014">{{ dish.old_price|intcomma }}</p></del>
+                    <div class="row my-0">
+                        <div class="col-5 text-end">
+                            <p class="text"> {% translate 'Самовывоз' %}
+                                {% if client.outside %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                     class="bi bi-check bg-success" viewBox="0 0 16 16"
+                                     style="border-radius: 25px;">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                </svg>
+                                {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                     class="bi bi-x bg-danger" viewBox="0 0 16 16"
+                                     style="border-radius: 25px;">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                            </p>
                             {% endif %}
-                            <p class="my-0 fs-4 fw-bold" style="color: #fd7014">{{ dish.actual_price|intcomma }}
-                                ₸</p>
-
-                            <!--       Add to cart form       -->
-                            <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
-                                {% csrf_token %}
-                                <input type="hidden" name="product_id" value="{{ dish.id }}">
-                                <input type="hidden" name="quantity" value="1">
-                                <button class="btn btn-sm btn-success my-1 btn-animate btn-rounded" type="submit"
-                                        style="--bs-btn-active-bg: #fd7014;" data-mdb-toggle="modal"
-                                        data-mdb-target="#exampleModal">
-                                    {% translate 'Добавить' %}
-                                </button>
-                            </form>
                         </div>
-                    </div>
-                </div>
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-        {% endfor %}
-    </section>
-
-    <!--  MODAL CART WINDOW  -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-sm">
-            <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
-
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>
+                        <div data-aos="flip-left" class="col-2">
+                            {% if client.inst %}
+                            <a href="{{ client.inst }}" target="_blank">
+                                <div class="btn btn-animate text-white btn-floating"
+                                     style="background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                            {% endif %}
+                            {% if client.two_gis %}
+                            <a href="{{ client.two_gis }}" target="_blank">
+                                <div class="btn btn-animate text-white btn-floating"
+                                     style="background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }">
+                                    <img src="{% static 'images/2gis.png' %}" alt="" class="img-fluid"
+                                         style="border-radius: 25px;">
+                                </div>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <div class="col-5 text-start">
+                            <p class="">{% translate 'Доставка' %}
+                                {% if client.delivery %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                     class="bi bi-check bg-success" viewBox="0 0 16 16"
+                                     style="border-radius: 25px;"> viewBox="0 0 16 16">
+                                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                </svg>
+                                {% else %}
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                     class="bi bi-x bg-danger" viewBox="0 0 16 16"
+                                     style="border-radius: 25px;">
+                                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                </svg>
+                                {% endif %}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</main>
+    <h2 data-aos="fade-right" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
+
+
+    <!--        SWIPER-->
+    <!--CAROUSEL START-->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+            <!-- Demo styles -->
+            <style>
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-wrapper {
+    height:auto;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: auto;
+      height: auto;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+            </style>
+
+        <!-- Swiper JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+        <!-- Initialize Swiper -->
+        <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+        </script>
+
+    <!--    FOOD TYPE SWIPER    -->
+
+    <div data-aos="fade-right" class="sticky-top">
+        <div class="container-fluid pt-1" style="background: rgba(33, 37, 41, 0.9); overflow-x: hidden;">
+            <div class="swiper-container">
+                <div class="swiper-wrapper text-center">
+                    {% for ft in food_type %}
+                    <div class="swiper-slide mx-0">
+                        <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014" href="#{{ ft }}">
+                            {{ ft }}
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 0,
+ });
+
+    </script>
+    <script src="{% static 'js/swiper.js' %}"></script>
+    <!--    FOOD TYPE DOWN    -->
+
+
+    {% for ft in food_type %}
+    <h2 data-aos="fade-right" class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+
+    <!--    DISH CONTENT    -->
+    <div class="container-fluid my-3">
+        <div class="row gy-2 mx-auto justify-content-center">
+            {% for dish in dishes %}
+            {% if dish.food_type == ft and dish.stop == False %}
+            <div data-aos="fade-right" class="col-12 col-lg-5 mx-auto"
+                 style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
+                <div class="row">
+
+                    <div class="col-8">
+                        <h5 class="mb-0 fw-bold">{{ dish.name }}</h5>
+                        <p class="">{{ dish.description }}</p>
+                    </div>
+                    <div class="col-4 text-center mx-0">
+                        {% if dish.old_price > dish.actual_price %}
+                        <del class="fs-4 text-danger">
+                            <p class="my-0" style="color: #fd7014">{{ dish.old_price|intcomma }}</p></del>
+                        {% endif %}
+                        <p class="my-0 fs-4 fw-bold" style="color: #fd7014">{{ dish.actual_price|intcomma }}
+                            ₸</p>
+
+                        <!--       Add to cart form       -->
+                        <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{ dish.id }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button class="btn btn-sm btn-success my-1 btn-animate btn-rounded" type="submit"
+                                    style="--bs-btn-active-bg: #fd7014;" data-mdb-toggle="modal"
+                                    data-mdb-target="#exampleModal">
+                                {% translate 'Добавить' %}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<!--  MODAL CART WINDOW  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 
 {% endblock content %}
 
