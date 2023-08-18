@@ -661,14 +661,14 @@
          style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.4), rgba(33, 37, 41, 0.4)), url({% static 'images/2.jpg' %});
     background-attachment:fixed; background-position: 10%; background-repeat: repeat; background-size: 220vh">
     <div class="container">
-        <form class="row mb-0 py-3">
-            <h2 data-aos="fade-right" class="fw-bold mb-3 ms-3">{% translate 'Оставить заявку'%}</h2>
 
+        <form class="row mb-0 py-3" method="post">
+            {% csrf_token %}
+            <h2 data-aos="fade-right" class="fw-bold mb-3 ms-3">{% translate 'Оставить заявку'%}</h2>
             <div class="col-12 col-sm-5">
                 <div data-aos="fade-right" data-aos-delay="100" class="form-outline">
-                    <input name="name" type="text" id="typeText" class="form-control text-light"
-                           data-mdb-showcounter="true"
-                           maxlength="20" required/>
+                    {{ form.name }}
+                    {{ form.name.errors }}
                     <label class="form-label text-secondary">{% translate 'Имя'%}</label>
                     <div class="form-helper text-secondary fw-bold"></div>
                 </div>
@@ -676,8 +676,8 @@
                     {% translate 'Как к Вам обращаться?'%}
                 </div>
                 <div data-aos="fade-right" data-aos-delay="200" class="form-outline">
-                    <input name="email" type="email" id="typeEmail" class="form-control text-light"
-                           data-mdb-showcounter="true" maxlength="50" required/>
+                    {{ form.email }}
+                    {{ form.email.errors }}
                     <label class="form-label text-secondary">{% translate 'Почта'%}</label>
                     <div class="form-helper text-secondary fw-bold"></div>
                 </div>
@@ -685,8 +685,8 @@
                     {% translate 'Укажите почтовый адрес'%}
                 </div>
                 <div data-aos="fade-right" data-aos-delay="300" class="form-outline">
-                    <input name="phone" type="tel" id="typePhone" class="form-control text-light"
-                           data-mdb-showcounter="true" maxlength="20" required/>
+                    {{ form.phone }}
+                    {{ form.phone.errors }}
                     <label class="form-label text-secondary">{% translate 'Телефон'%}</label>
                     <div class="form-helper text-secondary fw-bold"></div>
                 </div>
@@ -697,6 +697,8 @@
                 </button>
             </div>
         </form>
+
+
     </div>
 </section>
 
