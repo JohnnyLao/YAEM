@@ -10,7 +10,7 @@
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
    style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none; z-index: 100"
-   href="#header" xmlns="http://www.w3.org/1999/html">
+   href="#header" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -600,7 +600,7 @@
                     <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                          aria-labelledby="headingThree">
                         <div class="accordion-body text-white">
-                            {% translate '"Золото" - Тариф для знающих. Позволяет Вашему заведению находится в первых строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR кода. Личный кабинет для ведения статистики и аналитики по количеству заказов, предпочтений клиентов, карточке клиента и многие другие показатели. Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные условия по услуге "Доставка/Самовывоз" и многие другие бонусы.' %}
+                            {% translate 'ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR кода. Личный кабинет для ведения статистики и аналитики по количеству заказов, предпочтений клиентов, карточке клиента и многие другие показатели. Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные условия по услуге "Доставка/Самовывоз" и многие другие бонусы.' %}
                             <p class="my-0">Вы получите:</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню на минимум 3-х языках и фото блюд с' %} <strong style="color: #FD7014">{% translate 'эксклюзивным дизайном' %}</strong> </p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong style="color: #FD7014">{% translate 'Уникальные' %}</strong> {% translate 'QR коды для размещения' %} <u>({% translate 'неограничено' %})</u></p>
@@ -623,12 +623,8 @@
                     <div id="panelsStayOpen-collapse4" class="accordion-collapse collapse"
                          aria-labelledby="heading4">
                         <div class="accordion-body text-white">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <p>{% translate 'Конечно, до конца года тариф' %} <strong style="color: #fd7014">{% translate 'Бронза' %}</strong> {% translate 'является бесплатным. Конечно функционал будет ограничен, и Вам будет легко понять концепцию онлайн меню и потенциал сотрудничества с нами' %}</p>
+                            <p>{% translate 'Тарифы' %} <strong style="color: #fd7014">{% translate 'Серебро' %}</strong> и <strong style="color: #fd7014">{% translate 'Золото' %}</strong> {% translate 'не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска проекта' %}</p>
                         </div>
                     </div>
                 </div>
@@ -639,18 +635,16 @@
                                 data-mdb-target="#panelsStayOpen-collapse5" aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapse5"
                                 style="background: rgba(33, 37, 41, 0.95);">
-                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Я готов, как начать ?'%}
+                            <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Я готов, как начать ?  Оплата ?'%}
                         </button>
                     </h2>
                     <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
                          aria-labelledby="heading5">
                         <div class="accordion-body text-white">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            <p>{% translate 'Вы можете оставить заявку в форме ниже. Мы свяжемся с Вами и организуем встречу' %}</p>
+                            <p>{% translate 'Оплата по тарифам происходит в двух форматах:' %}</p>
+                            <li> <strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'до 15го числа каждого месяца' %}</li>
+                            <li> <strong style="color: #fd7014">{% translate 'Погодовая' %}:</strong>: {% translate 'оплата происходит до 15го числа за последующий год' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)</li>
                         </div>
                     </div>
                 </div>
