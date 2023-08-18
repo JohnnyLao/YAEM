@@ -693,7 +693,7 @@
                 <div data-aos="fade-right" data-aos-delay="300" id="phone" class="form-text text-secondary">
                     {% translate 'Укажите телефон с привязкой WhatsApp'%}
                 </div>
-                <button data-aos="fade-up" data-aos-delay="400" type="submit" class="btn btn-success btn-rounded btn-animate ms-3 my-3">{% translate 'Отправить'%}
+                <button data-aos="fade-up" data-mdb-toggle="modal" data-mdb-target="#exampleModal" data-aos-delay="400" type="submit" class="btn btn-success btn-rounded btn-animate ms-3 my-3">{% translate 'Отправить'%}
                 </button>
             </div>
         </form>
@@ -709,6 +709,23 @@
 
     </div>
 </section>
+
+<!--MODAL: ORDER CONFIRMED-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="ModalConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background: rgba(33, 37, 41, 0.95);">
+      <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h4 class="my-3 fw-bold" style="color: #FD7014">{% translate 'Спасибо!' %}</h4>
+                        <h5 class="">{% translate 'Заявка принята' %}</h5>
+                        <h5 class="">{% translate 'Мы скоро свяжемся с Вами' %}</h5>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
 
 <script>
         // Example starter JavaScript for disabling form submissions if there are invalid fields
