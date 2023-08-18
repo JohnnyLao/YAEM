@@ -89,8 +89,8 @@
         <div class="row mt-2">
 
 
-            <div class="col-7 text-end">
-                <form data-aos="fade-up" data-aos-delay="500" id="clear-form" method="post"
+            <div class="col-6 col-lg-8 text-end">
+                <form data-aos="fade-up" data-aos-delay="100" id="clear-form" method="post"
                       action="{% url 'cart:cart_clear' %}">
                     {% csrf_token %}
                     <button class="btn btn-sm btn-danger btn-animate mt-3" type="submit" style="max-width: 140px">{% translate 'Очистить' %}
@@ -102,12 +102,10 @@
                     </button>
                 </form>
             </div>
-            <div class="col-5 col-lg-4 text-center">
-                <h4 data-aos="fade-up" class="">{% translate 'Итого' %}:
+            <div class="col-6 col-lg-4 text-center">
+                <h4 data-aos="fade-up" class="my-3">{% translate 'Итого' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h4>
-                <p data-aos="fade-up" data-aos-delay="200" class="my-0">{% translate '+ Обслуживание: 10% '%} <strong
-                        style="color: #FD7014"> {{ total_price|intcomma }} ₸</strong></p>
                 {% else %}
                 <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
 
@@ -119,27 +117,27 @@
         <div class="container my-5">
             <div class="row">
                 <div class="col-12 text-center">
-                    <div class="btn-group mx-auto mb-3">
+                    <div data-aos="flip-up" data-aos-delay="500" class="btn-group mx-auto mb-3">
                         <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"/>
-                        <label class="btn btn-success" for="option1">В зале</label>
+                        <label class="btn btn-success" for="option1">{% translate 'В зале' %}</label>
 
                         <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off"/>
-                        <label class="btn btn-success" for="option2">Самовывоз</label>
+                        <label class="btn btn-success" for="option2">{% translate 'Самовывоз' %}</label>
 
                         <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off"/>
-                        <label class="btn btn-success" for="option3">Доставка</label>
+                        <label class="btn btn-success" for="option3">{% translate 'Доставка' %}</label>
                     </div>
                 </div>
                 <div id="inputContainer1" class="form-outline" style="display: none">
                     <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">Отправьте заказ, не дожидаясь официанта</p>
+                        <p class="text-light">{% translate 'Отправьте заказ, не дожидаясь официанта' %}</p>
                         <div class="form-outline">
                             <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>
-                            <label class="form-label text-secondary" for="table#">Номер стола</label>
-                            <div class="invalid-feedback">Вы не указали номер стола</div>
+                            <label class="form-label text-secondary" for="table#">{% translate 'Номер стола' %}</label>
+                            <div class="invalid-feedback">{% translate 'Вы не указали номер стола' %}</div>
                         </div>
                         <div class="col-12 text-center mt-3">
-                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
                             </button>
                         </div>
                     </form>
@@ -147,30 +145,30 @@
 
                 <div id="inputContainer2" class="form-outline" style="display: none">
                     <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">Отправьте заказ, и заберите в удобное для Вас время</p>
+                        <p class="text-light">{% translate 'Отправьте заказ, и заберите в удобное время' %}</p>
                         <div class="form-outline">
                             <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary" for="name">Ваше имя</label>
+                            <label class="form-label text-secondary" for="name">{% translate 'Ваше имя' %}</label>
                             <div class="form-helper"></div>
-                            <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>
                         </div>
                         <div class="form-outline my-5">
                             <input type="tel" id="phone" class="form-control text-light"
                                    data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary" for="phone">Номер телефона</label>
-                            <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                            <label class="form-label text-secondary" for="phone">{% translate 'Номер телефона' %}</label>
+                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>
                         </div>
                         <div class="form-outline">
                             <input type="time" id="time" class="form-control text-light border"
                                    data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary ms-5" for="time">Время самовывоза</label>
-                            <div class="invalid-feedback">Вы не указали время, когда забрать заказ</div>
+                            <label class="form-label text-secondary ms-5" for="time">{% translate 'Время самовывоза' %}</label>
+                            <div class="invalid-feedback">{% translate 'Вы не указали время' %}</div>
                         </div>
                         <div class="col-12 text-center mt-3">
-                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
                             </button>
                         </div>
                     </form>
@@ -178,39 +176,39 @@
 
                 <div id="inputContainer3" class="form-outline" style="display: none">
                     <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">Отправьте заказ, и Вам доставят в удобное время</p>
+                        <p class="text-light">{% translate 'Отправьте заказ, и Вам доставят в удобное время' %}</p>
                         <div class="form-outline">
                             <input type="text" id="name1" class="form-control text-light border"
                                    data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary" for="name1">Ваше имя</label>
+                            <label class="form-label text-secondary" for="name1">{% translate 'Ваше имя' %}</label>
                             <div class="form-helper"></div>
-                            <div class="invalid-feedback">Вы не указали Ваше имя</div>
+                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>
                         </div>
                         <div class="form-outline my-5 ">
                             <input type="tel" id="phone1" class="form-control text-light border"
                                    data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary" for="phone1">Номер телефона</label>
-                            <div class="invalid-feedback">Вы не указали свой номер телефона</div>
+                            <label class="form-label text-secondary" for="phone1">{% translate 'Номер телефона' %}</label>
+                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>
                         </div>
                         <div class="form-outline mb-5 ">
                             <input type="text" id="address" class="form-control text-light border"
                                    data-mdb-showcounter="true"
                                    maxlength="60" required/>
-                            <label class="form-label text-secondary" for="address">Адрес доставки</label>
+                            <label class="form-label text-secondary" for="address">{% translate 'Адрес доставки' %}</label>
                             <div class="form-helper"></div>
-                            <div class="invalid-feedback">Вы не указали свой адрес для доставки</div>
+                            <div class="invalid-feedback">{% translate 'Вы не указали адрес доставки' %}</div>
                         </div>
                         <div class="form-outline">
                             <input type="time" id="time1" class="form-control text-light border"
                                    data-mdb-showcounter="true"
                                    maxlength="20" required/>
-                            <label class="form-label text-secondary ms-5" for="time1">Время доставки</label>
-                            <div class="invalid-feedback">Вы не указали время, когда доставить</div>
+                            <label class="form-label text-secondary ms-5" for="time1">{% translate 'Время доставки' %}</label>
+                            <div class="invalid-feedback">{% translate 'Вы не указали время доставки' %}</div>
                         </div>
                         <div class="col-12 text-center mt-3">
-                            <button type="submit" class="btn btn-success mx-auto">{% translate 'Отправить'%}
+                            <button type="submit" data-mdb-toggle="modal" data-mdb-target="#exampleModal" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
                             </button>
                         </div>
                     </form>
@@ -220,6 +218,21 @@
         {% endif %}
     </div>
 </section>
+
+<!--MODAL: ORDER CONFIRMED-->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="ModalConfirmLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background: rgba(33, 37, 41, 0.95);">
+      <div class="modal-body">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Заказ принят' %}</h5>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
 
 <!--СКРИПТ ПО ОБРАБОТКЕ РАДИО-->
 <script>
