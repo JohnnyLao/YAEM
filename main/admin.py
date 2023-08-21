@@ -7,15 +7,15 @@ admin.site.register(City)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'z_index']
     search_fields = ["name"]
     list_filter = ['name']
 
 
 @admin.register(Food_type2)
 class Food_type2Admin(admin.ModelAdmin):
-    list_filter = ['category']
-    search_fields = ["name"]
+    list_filter = ['category', 'client']
+    search_fields = ["name", 'client']
 
     def category_name(self, obj):
         return obj.category.name if obj.category else 'Не указанно'

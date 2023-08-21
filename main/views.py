@@ -22,7 +22,7 @@ class Menu(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
         client = Client.objects.get(url_name=url_name)
-        categories = Category.objects.all()
+        categories = Category.objects.all().order_by('z_index')
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
