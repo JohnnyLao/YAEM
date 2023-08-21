@@ -1,0 +1,759 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-19 13:02+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: cart/templates/cart/cart.html:6 cart/templates/cart/cart.html:27
+msgid "Корзина"
+msgstr ""
+
+#: cart/templates/cart/cart.html:96
+msgid "Очистить"
+msgstr ""
+
+#: cart/templates/cart/cart.html:106
+msgid "Итого"
+msgstr ""
+
+#: cart/templates/cart/cart.html:110
+msgid "Корзина пуста"
+msgstr ""
+
+#: cart/templates/cart/cart.html:122
+msgid "В зале"
+msgstr ""
+
+#: cart/templates/cart/cart.html:125 main/templates/main/index.html:75
+#: main/templates/main/menu.html:58
+msgid "Самовывоз"
+msgstr ""
+
+#: cart/templates/cart/cart.html:128 main/templates/main/index.html:93
+#: main/templates/main/menu.html:104
+msgid "Доставка"
+msgstr ""
+
+#: cart/templates/cart/cart.html:133
+msgid "Отправьте заказ, не дожидаясь официанта"
+msgstr ""
+
+#: cart/templates/cart/cart.html:136
+msgid "Номер стола"
+msgstr ""
+
+#: cart/templates/cart/cart.html:137
+msgid "Вы не указали номер стола"
+msgstr ""
+
+#: cart/templates/cart/cart.html:140 cart/templates/cart/cart.html:171
+#: cart/templates/cart/cart.html:211 partner/templates/partner/partner.html:692
+msgid "Отправить"
+msgstr ""
+
+#: cart/templates/cart/cart.html:148
+msgid "Отправьте заказ, и заберите в удобное время"
+msgstr ""
+
+#: cart/templates/cart/cart.html:152 cart/templates/cart/cart.html:184
+msgid "Ваше имя"
+msgstr ""
+
+#: cart/templates/cart/cart.html:154 cart/templates/cart/cart.html:186
+msgid "Вы не указали имя"
+msgstr ""
+
+#: cart/templates/cart/cart.html:160 cart/templates/cart/cart.html:192
+msgid "Номер телефона"
+msgstr ""
+
+#: cart/templates/cart/cart.html:161 cart/templates/cart/cart.html:193
+msgid "Вы не указали номер телефона"
+msgstr ""
+
+#: cart/templates/cart/cart.html:167
+msgid "Время самовывоза"
+msgstr ""
+
+#: cart/templates/cart/cart.html:168
+msgid "Вы не указали время"
+msgstr ""
+
+#: cart/templates/cart/cart.html:179
+msgid "Отправьте заказ, и Вам доставят в удобное время"
+msgstr ""
+
+#: cart/templates/cart/cart.html:199
+msgid "Адрес доставки"
+msgstr ""
+
+#: cart/templates/cart/cart.html:201
+msgid "Вы не указали адрес доставки"
+msgstr ""
+
+#: cart/templates/cart/cart.html:207
+msgid "Время доставки"
+msgstr ""
+
+#: cart/templates/cart/cart.html:208
+msgid "Вы не указали время доставки"
+msgstr ""
+
+#: cart/templates/cart/cart.html:229
+msgid "Заказ принят!"
+msgstr ""
+
+#: main/templates/main/404.html:5
+msgid "Ошибка"
+msgstr ""
+
+#: main/templates/main/404.html:15
+msgid "Упс, кажется что-то пошло не так"
+msgstr ""
+
+#: main/templates/main/404.html:16
+msgid "Но Вы можете вернуться"
+msgstr ""
+
+#: main/templates/main/base.html:120
+msgid "ГЛАВНАЯ"
+msgstr ""
+
+#: main/templates/main/base.html:130
+msgid "ЗАКАЗАТЬ"
+msgstr ""
+
+#: main/templates/main/base.html:140
+msgid "Блюда"
+msgstr ""
+
+#: main/templates/main/base.html:144
+msgid "Продукты"
+msgstr ""
+
+#: main/templates/main/base.html:148
+msgid "Банкет"
+msgstr ""
+
+#: main/templates/main/base.html:164
+msgid "БИЗНЕСУ"
+msgstr ""
+
+#: main/templates/main/base.html:174
+msgid "Кайтеринг"
+msgstr ""
+
+#: main/templates/main/base.html:179
+msgid "Представители"
+msgstr ""
+
+#: main/templates/main/base.html:184 main/templates/main/base.html:233
+msgid "Контакты"
+msgstr ""
+
+#: main/templates/main/base.html:209
+msgid "Наша команда"
+msgstr ""
+
+#: main/templates/main/base.html:214
+msgid "Егор"
+msgstr ""
+
+#: main/templates/main/base.html:215
+msgid "Коммерческий директор"
+msgstr ""
+
+#: main/templates/main/base.html:220
+msgid "Олег"
+msgstr ""
+
+#: main/templates/main/base.html:221
+msgid "Руководитель отдела развития"
+msgstr ""
+
+#: main/templates/main/base.html:226
+msgid "Артём"
+msgstr ""
+
+#: main/templates/main/base.html:227
+msgid "Руководитель отдела разработки"
+msgstr ""
+
+#: main/templates/main/base.html:288
+msgid "Караганда"
+msgstr ""
+
+#: main/templates/main/base.html:289
+msgid "Темиртау"
+msgstr ""
+
+#: main/templates/main/index.html:6
+msgid "Я ЕМ | Онлайн Меню"
+msgstr ""
+
+#: main/templates/main/index.html:29 partner/templates/partner/partner.html:30
+msgid "Заведений"
+msgstr ""
+
+#: main/templates/main/index.html:35 partner/templates/partner/partner.html:36
+msgid "Блюд"
+msgstr ""
+
+#: main/templates/main/index.html:41 partner/templates/partner/partner.html:42
+msgid "Заказов"
+msgstr ""
+
+#: main/templates/main/index.html:54
+msgid "ЗАВЕДЕНИЯ"
+msgstr ""
+
+#: main/templates/main/index.html:70 main/templates/main/menu.html:50
+msgid "Время работы"
+msgstr ""
+
+#: main/templates/main/index.html:112
+msgid "Перейти"
+msgstr ""
+
+#: main/templates/main/menu.html:7
+msgid "Я ЕМ с"
+msgstr ""
+
+#: main/templates/main/menu.html:46
+msgid "Добро пожаловать в"
+msgstr ""
+
+#: main/templates/main/menu.html:51
+msgid "г"
+msgstr ""
+
+#: main/templates/main/menu.html:125 partner/templates/partner/partner.html:61
+msgid "МЕНЮ"
+msgstr ""
+
+#: main/templates/main/menu.html:255
+msgid "Добавить"
+msgstr ""
+
+#: main/templates/main/menu.html:276
+msgid "Добавлено в корзину"
+msgstr ""
+
+#: partner/forms.py:18
+msgid "Имя должно содержать больше 3 символов."
+msgstr ""
+
+#: partner/forms.py:24
+msgid "Введите корректный адрес электронной почты."
+msgstr ""
+
+#: partner/forms.py:30
+msgid "Введите корректный телефонный номер."
+msgstr ""
+
+#: partner/templates/partner/partner.html:6
+msgid "QR Меню для заведений"
+msgstr ""
+
+#: partner/templates/partner/partner.html:60
+msgid "ОНЛАЙН"
+msgstr ""
+
+#: partner/templates/partner/partner.html:62
+msgid "БЕСПЛАТНО"
+msgstr ""
+
+#: partner/templates/partner/partner.html:72
+msgid "Присоединяйтесь к"
+msgstr ""
+
+#: partner/templates/partner/partner.html:72
+msgid "сети"
+msgstr ""
+
+#: partner/templates/partner/partner.html:72
+msgid "заведений"
+msgstr ""
+
+#: partner/templates/partner/partner.html:73
+msgid "И МЫ СДЕЛАЕМ ДЛЯ ВАС"
+msgstr ""
+
+#: partner/templates/partner/partner.html:73
+msgid "ОНЛАЙН МЕНЮ"
+msgstr ""
+
+#: partner/templates/partner/partner.html:73
+msgid "И QR КОД"
+msgstr ""
+
+#: partner/templates/partner/partner.html:77
+#: partner/templates/partner/partner.html:392
+#: partner/templates/partner/partner.html:462
+#: partner/templates/partner/partner.html:537
+msgid "Подключить"
+msgstr ""
+
+#: partner/templates/partner/partner.html:91
+msgid "Всё просто !"
+msgstr ""
+
+#: partner/templates/partner/partner.html:92
+msgid "Берём образец"
+msgstr ""
+
+#: partner/templates/partner/partner.html:93
+msgid "Вашего меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:94
+msgid "Создаём страницу с меню на"
+msgstr ""
+
+#: partner/templates/partner/partner.html:95
+msgid "Нашем сайте"
+msgstr ""
+
+#: partner/templates/partner/partner.html:97
+msgid "Выдаём QR код для перехода в"
+msgstr ""
+
+#: partner/templates/partner/partner.html:98
+msgid "Ваше онлайн меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:100
+msgid "Ваши клиенты"
+msgstr ""
+
+#: partner/templates/partner/partner.html:101
+msgid ""
+"смогут просматривать меню онлайн как в заведении, так и удалённо, совершая "
+"заказы онлайн"
+msgstr ""
+
+#: partner/templates/partner/partner.html:117
+msgid "Примеры оформления:"
+msgstr ""
+
+#: partner/templates/partner/partner.html:227
+msgid "Наши приемущества"
+msgstr ""
+
+#: partner/templates/partner/partner.html:242
+msgid "Простота"
+msgstr ""
+
+#: partner/templates/partner/partner.html:244
+msgid ""
+"Возможность мгновенно обновлять и изменять цены, акции и меню позволяет "
+"оперативно реагировать на изменения рынка и предпочтений клиентов"
+msgstr ""
+
+#: partner/templates/partner/partner.html:257
+msgid "Продажи"
+msgstr ""
+
+#: partner/templates/partner/partner.html:259
+msgid ""
+"Корзина в онлайн меню способствует увеличению среднего чека, так как клиенты "
+"могут легко добавлять в нее дополнительные блюда и напитки"
+msgstr ""
+
+#: partner/templates/partner/partner.html:271
+msgid "Новые клиенты"
+msgstr ""
+
+#: partner/templates/partner/partner.html:273
+msgid ""
+"Опция дистанционного отправления заказов позволяет привлечь клиентов, "
+"которые предпочитают блюда на вынос или доставку"
+msgstr ""
+
+#: partner/templates/partner/partner.html:288
+msgid "Эффективность"
+msgstr ""
+
+#: partner/templates/partner/partner.html:290
+msgid ""
+"Возможность клиента ознакомиться с меню, принимать заказы удаленно, вести "
+"стоп-лист и изменять меню, что сокращает временные затраты"
+msgstr ""
+
+#: partner/templates/partner/partner.html:305
+msgid "Аналитика"
+msgstr ""
+
+#: partner/templates/partner/partner.html:307
+msgid ""
+"Получать полезные данные о популярных блюдах и предпочтениях. Делать более "
+"обоснованные бизнес-решения и адаптировать меню под потребности клиентов."
+msgstr ""
+
+#: partner/templates/partner/partner.html:321
+msgid "Мультиязычность"
+msgstr ""
+
+#: partner/templates/partner/partner.html:323
+msgid ""
+"Предоставление меню на нескольких языках делает заведение более "
+"привлекательным для иностранных посетителей и туристов"
+msgstr ""
+
+#: partner/templates/partner/partner.html:334
+msgid "Тарифные планы"
+msgstr ""
+
+#: partner/templates/partner/partner.html:343
+#: partner/templates/partner/partner.html:626
+msgid "Бронза"
+msgstr ""
+
+#: partner/templates/partner/partner.html:345
+#: partner/templates/partner/partner.html:347
+msgid "тг в год"
+msgstr ""
+
+#: partner/templates/partner/partner.html:351
+msgid "Дней"
+msgstr ""
+
+#: partner/templates/partner/partner.html:355
+msgid "Часов"
+msgstr ""
+
+#: partner/templates/partner/partner.html:359
+msgid "Минут"
+msgstr ""
+
+#: partner/templates/partner/partner.html:363
+msgid "Секунд"
+msgstr ""
+
+#: partner/templates/partner/partner.html:372
+msgid "Онлайн меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:379
+#: partner/templates/partner/partner.html:424
+msgid "Настольный QR код"
+msgstr ""
+
+#: partner/templates/partner/partner.html:386
+msgid "Редакция 4 раза в год"
+msgstr ""
+
+#: partner/templates/partner/partner.html:406
+#: partner/templates/partner/partner.html:627
+msgid "Серебро"
+msgstr ""
+
+#: partner/templates/partner/partner.html:407
+#: partner/templates/partner/partner.html:474
+msgid "тг/мес"
+msgstr ""
+
+#: partner/templates/partner/partner.html:408
+#: partner/templates/partner/partner.html:475
+msgid "тг/год"
+msgstr ""
+
+#: partner/templates/partner/partner.html:416
+msgid "Онлайн меню с фото блюд"
+msgstr ""
+
+#: partner/templates/partner/partner.html:432
+msgid "Акции и скидки"
+msgstr ""
+
+#: partner/templates/partner/partner.html:440
+msgid "Техническая поддержка"
+msgstr ""
+
+#: partner/templates/partner/partner.html:448
+msgid "Меню на 3х языках"
+msgstr ""
+
+#: partner/templates/partner/partner.html:456
+msgid "Услуга: Самовывоз и Доставка"
+msgstr ""
+
+#: partner/templates/partner/partner.html:473
+#: partner/templates/partner/partner.html:627
+msgid "Золото"
+msgstr ""
+
+#: partner/templates/partner/partner.html:483
+msgid "Тариф Серебро"
+msgstr ""
+
+#: partner/templates/partner/partner.html:491
+msgid "Эксклюзивный QR код"
+msgstr ""
+
+#: partner/templates/partner/partner.html:499
+msgid "Эксклюзивный дизайн меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:507
+msgid "Личный кабинет"
+msgstr ""
+
+#: partner/templates/partner/partner.html:515
+msgid "Онлайн оплата Kaspi"
+msgstr ""
+
+#: partner/templates/partner/partner.html:523
+msgid "Персональный менеджер"
+msgstr ""
+
+#: partner/templates/partner/partner.html:531
+msgid "Аналитика Google, Yandex"
+msgstr ""
+
+#: partner/templates/partner/partner.html:547
+msgid "Часто задаваемые вопросы"
+msgstr ""
+
+#: partner/templates/partner/partner.html:555
+msgid "Подробнее о тарифном плане Бронза"
+msgstr ""
+
+#: partner/templates/partner/partner.html:561
+msgid ""
+"Тарифный план бесплатный до конца срока действия Акции. Данный тариф "
+"позволяет ознакомиться с технологией Онлайн Меню."
+msgstr ""
+
+#: partner/templates/partner/partner.html:562
+msgid "Вы получите"
+msgstr ""
+
+#: partner/templates/partner/partner.html:563
+msgid "Закрытую"
+msgstr ""
+
+#: partner/templates/partner/partner.html:563
+msgid "страницу с карточкой заведения и меню на языке оригинала"
+msgstr ""
+
+#: partner/templates/partner/partner.html:564
+msgid "QR коды для размещения (до 5 шт. бесплатно)"
+msgstr ""
+
+#: partner/templates/partner/partner.html:565
+msgid "Функцию корзины"
+msgstr ""
+
+#: partner/templates/partner/partner.html:575
+msgid "Подробнее о тарифном плане Серебро"
+msgstr ""
+
+#: partner/templates/partner/partner.html:581
+msgid ""
+"Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для "
+"клиента, предоставив удобный сервис по взаимодействию. Смотрите на "
+"предпочтения клиентов и готовьтесь в онлайн заказам. Меню реализовано на "
+"минимум трёх языках."
+msgstr ""
+
+#: partner/templates/partner/partner.html:583
+#: partner/templates/partner/partner.html:605
+msgid "Открытую"
+msgstr ""
+
+#: partner/templates/partner/partner.html:583
+msgid "страницу с карточкой заведения и меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:583
+msgid "на минимум 3-х языках и фото"
+msgstr ""
+
+#: partner/templates/partner/partner.html:584
+#: partner/templates/partner/partner.html:606
+msgid "QR коды для размещения"
+msgstr ""
+
+#: partner/templates/partner/partner.html:584
+#: partner/templates/partner/partner.html:606
+msgid "неограничено"
+msgstr ""
+
+#: partner/templates/partner/partner.html:585
+msgid ""
+"Функцию корзины и возможность использовать услугу Доставка / Самовывоз. "
+"Принимать заказы удалённо через Телеграм"
+msgstr ""
+
+#: partner/templates/partner/partner.html:586
+msgid ""
+"Техническую поддержку с возможностью устроить акцию или скидку на блюда, "
+"управление стоп-листом"
+msgstr ""
+
+#: partner/templates/partner/partner.html:597
+msgid "Подробнее о тарифном плане Золото"
+msgstr ""
+
+#: partner/templates/partner/partner.html:603
+msgid ""
+"ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых "
+"строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR "
+"кода. Личный кабинет для ведения статистики и аналитики по количеству "
+"заказов, предпочтений клиентов, карточке клиента и многие другие показатели. "
+"Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные "
+"условия по услуге Доставка/Самовывоз и многие другие бонусы."
+msgstr ""
+
+#: partner/templates/partner/partner.html:605
+msgid ""
+"страницу с карточкой заведения и меню на минимум 3-х языках и фото блюд с"
+msgstr ""
+
+#: partner/templates/partner/partner.html:605
+msgid "эксклюзивным дизайном"
+msgstr ""
+
+#: partner/templates/partner/partner.html:606
+msgid "Уникальные"
+msgstr ""
+
+#: partner/templates/partner/partner.html:607
+msgid "Функцию корзины и возможность использовать услугу Доставка / Самовывоз"
+msgstr ""
+
+#: partner/templates/partner/partner.html:607
+msgid "на более выгодных условиях"
+msgstr ""
+
+#: partner/templates/partner/partner.html:607
+msgid "Принимать заказы удалённо через Телеграм и"
+msgstr ""
+
+#: partner/templates/partner/partner.html:607
+msgid "оплатой Kaspi"
+msgstr ""
+
+#: partner/templates/partner/partner.html:608
+msgid "Персонального менджера"
+msgstr ""
+
+#: partner/templates/partner/partner.html:608
+msgid ""
+"с возможностью устроить акцию или скидку на блюда, управление стоп-листом и"
+msgstr ""
+
+#: partner/templates/partner/partner.html:608
+msgid "дополнительные услуги от YAEM"
+msgstr ""
+
+#: partner/templates/partner/partner.html:609
+msgid "Личный кабинет, где будут подключены Yandex и Google метрики"
+msgstr ""
+
+#: partner/templates/partner/partner.html:620
+msgid "Есть ли бесплатный период ?"
+msgstr ""
+
+#: partner/templates/partner/partner.html:626
+msgid "Конечно, до конца года тариф"
+msgstr ""
+
+#: partner/templates/partner/partner.html:626
+msgid ""
+"является бесплатным. Конечно функционал будет ограничен, и Вам будет легко "
+"понять концепцию онлайн меню и потенциал сотрудничества с нами"
+msgstr ""
+
+#: partner/templates/partner/partner.html:627
+msgid "Тарифы"
+msgstr ""
+
+#: partner/templates/partner/partner.html:627
+msgid ""
+"не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска "
+"проекта"
+msgstr ""
+
+#: partner/templates/partner/partner.html:638
+msgid "Я готов, как начать ?  Оплата ?"
+msgstr ""
+
+#: partner/templates/partner/partner.html:644
+msgid ""
+"Вы можете оставить заявку в форме ниже. Мы свяжемся с Вами и организуем "
+"встречу"
+msgstr ""
+
+#: partner/templates/partner/partner.html:645
+msgid "Оплата по тарифам происходит в двух форматах:"
+msgstr ""
+
+#: partner/templates/partner/partner.html:646
+msgid "Помесячная"
+msgstr ""
+
+#: partner/templates/partner/partner.html:646
+msgid "до 15го числа каждого месяца"
+msgstr ""
+
+#: partner/templates/partner/partner.html:647
+msgid "Погодовая"
+msgstr ""
+
+#: partner/templates/partner/partner.html:647
+msgid "оплата происходит до 15го числа за последующий год"
+msgstr ""
+
+#: partner/templates/partner/partner.html:647
+#, python-format
+msgid "Скидка -20%%"
+msgstr ""
+
+#: partner/templates/partner/partner.html:661
+msgid "Оставить заявку"
+msgstr ""
+
+#: partner/templates/partner/partner.html:666
+msgid "Имя"
+msgstr ""
+
+#: partner/templates/partner/partner.html:670
+msgid "Как к Вам обращаться?"
+msgstr ""
+
+#: partner/templates/partner/partner.html:675
+msgid "Почта"
+msgstr ""
+
+#: partner/templates/partner/partner.html:679
+msgid "Укажите почтовый адрес"
+msgstr ""
+
+#: partner/templates/partner/partner.html:684
+msgid "Телефон"
+msgstr ""
+
+#: partner/templates/partner/partner.html:688
+msgid "Укажите телефон с привязкой WhatsApp"
+msgstr ""
+
+#: partner/views.py:13
+msgid "Спасибо, мы свяжемся с вами в ближайшее время!"
+msgstr ""
+

@@ -1,6 +1,6 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from main.models import City, Client, Dish, Food_type2
+from main.models import City, Client, Dish, Food_type2, Category
 
 
 class ClientTranslationOptions(TranslationOptions):
@@ -15,6 +15,13 @@ class CityTranslationOptions(TranslationOptions):
 
 
 translator.register(City, CityTranslationOptions)
+
+
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ["name"]
+
+
+translator.register(Category, CategoryTranslationOptions)
 
 
 class Food_type2TranslationOptions(TranslationOptions):

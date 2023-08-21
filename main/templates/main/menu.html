@@ -11,7 +11,7 @@
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-5 mx-2 shadow btn-rounded"
    style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 10px; display: none; z-index: 100"
-   href="#header">
+   href="#header" xmlns="http://www.w3.org/1999/html">
     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-arrow-up"
          viewBox="0 0 16 16">
         <path fill-rule="evenodd"
@@ -27,6 +27,7 @@
     background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
 
     <!--Flying Cart-->
+
     <a id="Cart" class="btn fs-5 mx-2 shadow btn-animate btn-rounded"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
        href="{% url 'cart:cart_page' %}">
@@ -35,6 +36,7 @@
             <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
         </svg>
     </a>
+
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid pt-4">
         <div class="col-12 text-center">
@@ -125,16 +127,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     <h2 data-aos="fade-right" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
 
 
-    <!--        SWIPER-->
-    <!--CAROUSEL START-->
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-            <!-- Demo styles -->
-            <style>
-    body {
-      position: relative;
-      height: 100%;
-    }
+{% for category in categories %}
+    <h2 data-aos="fade-right"
+        class="text-center pt-4 fw-bold"
+        style="color: #fd7014">
+        {{ category }}
+    </h2>
+{% endfor %}
 
+
+<!--  SWIPER -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+<!-- Demo styles -->
+<style>
     body {
       background: #eee;
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -148,6 +153,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
       width: 100%;
       padding-top: 50px;
       padding-bottom: 50px;
+      transition: opacity 0.3s ease;
     }
 
     .swiper-wrapper {
@@ -164,34 +170,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     .swiper-slide img {
       display: block;
       width: 100%;
-    }
-            </style>
 
-        <!-- Swiper JS -->
-        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+</style>
 
-        <!-- Initialize Swiper -->
-        <script>
-    var swiper = new Swiper(".mySwiper", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: true,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-      },
-    });
-        </script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!--    FOOD TYPE SWIPER    -->
-
     <div data-aos="fade-right" class="sticky-top">
         <div class="container-fluid pt-1" style="background: rgba(33, 37, 41, 0.9); overflow-x: hidden;">
             <div class="swiper-container">
@@ -208,15 +194,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         </div>
     </div>
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
             var swiper = new Swiper('.swiper-container', {
                 slidesPerView: 'auto',
                 spaceBetween: 0,
  });
-
     </script>
-    <script src="{% static 'js/swiper.js' %}"></script>
+<!--    <script src="{% static 'js/swiper.js' %}"></script>-->
     <!--    FOOD TYPE DOWN    -->
 
 
@@ -227,7 +211,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     <div class="container-fluid my-3">
         <div class="row gy-2 mx-auto justify-content-center">
             {% for dish in dishes %}
-            {% if dish.food_type == ft and dish.stop == False %}
+            {% if dish.food_type == ft and not dish.stop %}
             <div data-aos="fade-right" class="col-12 col-lg-5 mx-auto"
                  style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
                 <div class="row">
