@@ -27,6 +27,7 @@ class Client(models.Model):
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
     visitors = models.IntegerField(blank=True, default=0, verbose_name="Посетителей")
+    tarif_number = models.IntegerField(blank=True, null=True, verbose_name="Тариф(1-3)")
 
     class Meta:
         verbose_name = "Заведение"
