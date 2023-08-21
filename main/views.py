@@ -3,7 +3,7 @@ from django.shortcuts import redirect
 from django.utils.translation import activate
 from django.views.generic import TemplateView
 
-from main.models import Client, Dish, Food_type2
+from main.models import Client, Dish, Food_type2, Category
 
 
 class Main(TemplateView):
@@ -22,6 +22,7 @@ class Menu(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
         client = Client.objects.get(url_name=url_name)
+        categories = Category.objects.all()
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
@@ -31,8 +32,8 @@ class Menu(TemplateView):
         food_type = Food_type2.objects.filter(dish__in=dishes).distinct()
         context["dishes"] = dishes
         context["food_type"] = food_type
+        context['categories'] = categories
         context["client"] = client
-
         return context
 
 
