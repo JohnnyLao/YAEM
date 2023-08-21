@@ -38,6 +38,7 @@ class Client(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=30, verbose_name='Категория')
+    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, unique=True)
 
     class Meta:
         verbose_name = "Категория"
@@ -50,6 +51,7 @@ class Category(models.Model):
 class Food_type2(models.Model):
     name = models.CharField(max_length=30, verbose_name="Подкатегория")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', blank=True, null=True)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент', blank=True, null=True)
 
     class Meta:
         verbose_name = "Подкатегория"
