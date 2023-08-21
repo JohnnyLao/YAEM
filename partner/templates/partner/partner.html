@@ -71,7 +71,8 @@
                 <div class="col-lg-6 col-sm-8 text-white text-center">
                     <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к нашей' %} <strong style="color: #FD7014"> сети </strong> {% translate 'заведений' %}</h1>
                     <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'ЧТОБЫ ПОЛУЧИТЬ' %} <strong style="color: #FD7014"> {% translate 'ОНЛАЙН МЕНЮ' %} </strong></h6>
-                    <a href="#quote">
+                    <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20YAEM."
+                   target="_blank">
                         <button data-aos="fade-up" data-aos-delay="200" type="button"
                                 class="btn btn-success btn-rounded btn-animate">
                             {% translate 'Подключить' %}
@@ -383,9 +384,10 @@
                             {% translate 'Редакция 4 раза в год' %}
                         </h6>
                     </div>
-                    <a href="#quote">
+                    <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20YAEM%20касаемо%20тарифа%20Бронза."
+                   target="_blank">
                         <button type="button"
-                                class="btn btn-success btn-rounded btn-animate">
+                                class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
                         </button>
                     </a>
@@ -453,7 +455,8 @@
                             {% translate 'Услуга: "Самовывоз" и "Доставка"' %}
                         </h5>
                     </div>
-                    <a href="#quote">
+                    <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20YAEM%20касаемо%20тарифа%20Серебро."
+                   target="_blank">
                         <button type="button"
                                 class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
@@ -528,9 +531,10 @@
                             {% translate 'Аналитика Google, Yandex' %}
                         </h6>
                     </div>
-                    <a href="#quote">
+                    <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20YAEM%20касаемо%20тарифа%20Золото."
+                   target="_blank">
                         <button type="button"
-                                class="btn btn-success btn-rounded btn-animate">
+                                class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
                         </button>
                     </a>
@@ -539,6 +543,7 @@
         </div>
     </section>
 
+<!--FAQ-->
     <section class="text-light py-5" style="background: rgba(33, 37, 41, 0.95);">
         <div class="container">
             <h2 class="text-center py-3">{% translate 'Часто задаваемые вопросы' %}:</h2>
@@ -638,7 +643,7 @@
                     <div id="panelsStayOpen-collapse5" class="accordion-collapse collapse"
                          aria-labelledby="heading5">
                         <div class="accordion-body text-white">
-                            <p>{% translate 'Вы можете оставить заявку в форме ниже. Мы свяжемся с Вами и организуем встречу' %}</p>
+                            <p>{% translate 'Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и организуем встречу' %}</p>
                             <p>{% translate 'Оплата по тарифам происходит в двух форматах:' %}</p>
                             <li> <strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'до 15го числа каждого месяца' %}</li>
                             <li> <strong style="color: #fd7014">{% translate 'Погодовая' %}:</strong>: {% translate 'оплата происходит до 15го числа за последующий год' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)</li>
@@ -648,58 +653,6 @@
             </div>
         </div>
     </section>
-<section class="skrollable" id="quote"
-         style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.4), rgba(33, 37, 41, 0.4)), url({% static 'images/2.jpg' %});
-    background-attachment:fixed; background-position: 10%; background-repeat: repeat; background-size: 220vh">
-    <div class="container">
-
-        <form class="row mb-0 py-3" method="post">
-            {% csrf_token %}
-            <h2 data-aos="fade-right" class="fw-bold mb-3 ms-3">{% translate 'Оставить заявку'%}</h2>
-            <div class="col-12 col-sm-5">
-                <div data-aos="fade-right" data-aos-delay="100" class="form-outline">
-                    {{ form.name }}
-                    {{ form.name.errors }}
-                    <label class="form-label text-secondary">{% translate 'Имя'%}</label>
-                    <div class="form-helper text-secondary fw-bold"></div>
-                </div>
-                <div data-aos="fade-right" data-aos-delay="100" id="name" class="form-text mb-3 text-secondary">
-                    {% translate 'Как к Вам обращаться?'%}
-                </div>
-                <div data-aos="fade-right" data-aos-delay="200" class="form-outline">
-                    {{ form.email }}
-                    {{ form.email.errors }}
-                    <label class="form-label text-secondary">{% translate 'Почта'%}</label>
-                    <div class="form-helper text-secondary fw-bold"></div>
-                </div>
-                <div data-aos="fade-right" data-aos-delay="200" id="email" class="form-text mb-2 text-secondary">
-                    {% translate 'Укажите почтовый адрес'%}
-                </div>
-                <div data-aos="fade-right" data-aos-delay="300" class="form-outline">
-                    {{ form.phone }}
-                    {{ form.phone.errors }}
-                    <label class="form-label text-secondary">{% translate 'Телефон'%}</label>
-                    <div class="form-helper text-secondary fw-bold"></div>
-                </div>
-                <div data-aos="fade-right" data-aos-delay="300" id="phone" class="form-text text-secondary">
-                    {% translate 'Укажите телефон с привязкой WhatsApp'%}
-                </div>
-                <button data-aos="fade-up" data-mdb-toggle="modal" data-mdb-target="#exampleModal" data-aos-delay="400" type="submit" class="btn btn-success btn-rounded btn-animate ms-3 my-3">{% translate 'Отправить'%}
-                </button>
-            </div>
-        </form>
-
-        {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-        {% endif %}
-
-
-    </div>
-</section>
 
 <!--MODAL: ORDER CONFIRMED-->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="ModalConfirmLabel" aria-hidden="true">

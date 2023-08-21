@@ -124,16 +124,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             </div>
         </div>
     </div>
-    <h2 data-aos="fade-right" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
-
-
-{% for category in categories %}
-    <h2 data-aos="fade-right"
-        class="text-center pt-4 fw-bold"
-        style="color: #fd7014">
-        {{ category }}
-    </h2>
-{% endfor %}
+    <div class="container text-center my-3">
+        <h2 data-aos="fade-right" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
+        <div data-aos="fade-right" class="btn-group-sm" role="group">
+            {% for category in categories %}
+            <button class="btn btn-success btn-animate" style="">{{ category }}</button>
+            {% endfor %}
+        </div>
+    </div>
 
 
 <!--  SWIPER -->
@@ -178,7 +176,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!--    FOOD TYPE SWIPER    -->
-    <div data-aos="fade-right" class="sticky-top">
+    <div data-aos="flip-up" class="sticky-top">
         <div class="container-fluid pt-1" style="background: rgba(33, 37, 41, 0.9); overflow-x: hidden;">
             <div class="swiper-container">
                 <div class="swiper-wrapper text-center">
