@@ -63,7 +63,7 @@
     </noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
-<body class="text-white" style="font-family: Montserrat;">
+<body class="text-white my-0 py-0" style="font-family: Montserrat;">
 
 <!-- Navbar -->
 <nav class="navbar navbar-light" id="header">
@@ -73,12 +73,6 @@
             <a href="{% url 'main:main_page' %}">
                 <img data-aos="fade-right" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </a>
-<!--            <button data-aos="fade-up" class="btn btn-sm btn-warning my-2 mx-2 btn-animate d-inline" type="button"-->
-<!--                    data-mdb-toggle="modal"-->
-<!--                    data-mdb-target="#Cities">-->
-<!--                <i class="fas fa-city fa-lg"></i>-->
-<!--                Город-->
-<!--            </button>-->
         </div>
 
         <div class="col-2 mx-auto">
@@ -274,26 +268,7 @@
     </div>
 </footer>
 <!--FOOTER END-->
-<!--MODAL-->
-<!--<div class="modal fade" id="cities" tabindex="-1" aria-labelledby="cityLabel" aria-hidden="false"-->
-<!--     data-mdb-keyboard="false" style="&#45;&#45;mdb-modal-header-border-color: #FD7014">-->
-<!--    <div class="modal-dialog modal-dialog-centered">-->
-<!--        <div class="modal-content" style="background: rgba(33, 37, 41, 0.8);">-->
-<!--            <div class="modal-header">-->
-<!--                <h5 class="modal-title mx-auto" id="exampleModalLabel">Укажите город</h5>-->
-<!--            </div>-->
-<!--            <div class="modal-body">-->
-<!--                <div class="col-12">-->
-<!--                    &lt;!&ndash;                ПОЛОЖИТЬ ЦИКЛ ПО ГОРОДАМ&ndash;&gt;-->
-<!--                    <button class="btn btn-success btn-rounded btn-sm my-1">{% translate 'Караганда' %}</button>-->
-<!--                    <button class="btn btn-success btn-rounded btn-sm my-1">{% translate 'Темиртау' %}</button>-->
-<!--                    <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Астана</button>-->
-<!--                    <button class="btn btn-success btn-rounded btn-sm my-1" disabled>Алматы</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
+
 <!--SCRIPTS-->
 <!-- MDB -->
 <script type="text/javascript" src="{% static 'MDBootstrap/js/mdb.min.js'%}"></script>

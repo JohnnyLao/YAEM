@@ -51,28 +51,30 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/3.jpg' %});
     background-attachment: fixed; background-size: 150vh; background-repeat: repeat">
 
-        <h1 data-aos="fade-up" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
+        <div data-aos="fade-up" class="container text-center">
+            <h1 data-aos="fade-up" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
+            <!--   CITY FOR LOOP     -->
+            <div class="btn-group-sm" role="group">
+                <a href="{% url 'main:main_page' %}"
+                   {% if city_selected is None %}
+                   class="btn btn-warning btn-animate"
+                   {% else %}
+                   class="btn btn-success btn-animate"
+                   {% endif %}>{% translate 'Все' %}
+                </a>
 
-        <!--   CITY FOR LOOP     -->
-        <a href="{% url 'main:main_page' %}"
-           {% if city_selected is None %}
-           class="btn btn-danger btn-rounded px-4 my-2 btn-animate"
-           {% else %}
-           class="btn btn-success btn-rounded px-4 my-2 btn-animate"
-           {% endif %}>{% translate 'Все' %}
-        </a>
-
-        {% for city in cities %}
-        <a href="{% url 'main:city_filter' city.slug %}"
-           {% if city.pk == city_selected.pk %}
-           class="btn btn-danger btn-rounded px-4 my-2 btn-animate"
-           {% else %}
-           class="btn btn-success btn-rounded px-4 my-2 btn-animate"
-           {% endif %}>{{ city }}
-        </a>
-        {% endfor %}
-        <!--   END CITY FOR LOOP     -->
-
+                {% for city in cities %}
+                <a href="{% url 'main:city_filter' city.slug %}"
+                   {% if city.pk == city_selected.pk %}
+                   class="btn btn-warning btn-animate"
+                   {% else %}
+                   class="btn btn-success btn-animate"
+                   {% endif %}>{{ city }}
+                </a>
+                {% endfor %}
+                <!--   END CITY FOR LOOP     -->
+            </div>
+        </div>
 
 
         <div class="container">
@@ -84,7 +86,7 @@
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
                         <img data-aos="fade-down" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0"
                              alt="..."
-                             style="border-radius: 15px; max-width: 220px">
+                             style="border-radius: 15px; max-width: 225px; max-height: 225px">
 
                         <div class="card-body my-0 py-1">
                             <h4 data-aos="fade-right" class="card-title my-0">{{ client.name }}</h4>
