@@ -2,7 +2,13 @@ from django.contrib import admin
 
 from main.models import City, Client, Dish, Food_type2, Category
 
-admin.site.register(City)
+
+
+@admin.register(City)
+class CityAdmin(admin.ModelAdmin):
+    list_display = ['name', 'slug']
+    prepopulated_fields = {'slug': ('name', )}
+
 
 
 @admin.register(Category)
@@ -14,14 +20,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Food_type2)
 class Food_type2Admin(admin.ModelAdmin):
-    list_filter = ['category', 'client']
-    search_fields = ["name", 'client']
+    list_filter = ['category']
+    search_fields = ["name"]
 
     def category_name(self, obj):
         return obj.category.name if obj.category else 'Не указанно'
     category_name.short_description = 'Категория'
 
-    list_display = ["name", 'category_name']
+    list_display = ["name", 'category_name', 'z_index']
 
 
 @admin.register(Client)
@@ -33,6 +39,6 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display = ["name", "food_type", "stop", "actual_price"]
-    list_filter = ["food_type", "stop", "client"]
+    list_display = ["name", "food_type", "stop", "actual_price", 'z_index']
+    list_filter = ["stop"]
     search_fields = ["name"]

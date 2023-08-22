@@ -13,5 +13,6 @@ urlpatterns = [
         name="menu_page",
     ),
     path("", cache_page(cache_duration)(Main.as_view()), name="main_page"),
+    path("city/<slug:city_slug>/", cache_page(cache_duration)(Main.as_view()), name="city_filter"),
     path("switch-language/", switch_language, name="switch_language"),
 ]

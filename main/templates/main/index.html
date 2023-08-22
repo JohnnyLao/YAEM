@@ -53,6 +53,27 @@
 
         <h1 data-aos="fade-up" class="text-center pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
 
+        <!--   CITY FOR LOOP     -->
+        <a href="{% url 'main:main_page' %}"
+           {% if city_selected is None %}
+           class="btn btn-danger btn-rounded px-4 my-2 btn-animate"
+           {% else %}
+           class="btn btn-success btn-rounded px-4 my-2 btn-animate"
+           {% endif %}>{% translate 'Все' %}
+        </a>
+
+        {% for city in cities %}
+        <a href="{% url 'main:city_filter' city.slug %}"
+           {% if city.pk == city_selected.pk %}
+           class="btn btn-danger btn-rounded px-4 my-2 btn-animate"
+           {% else %}
+           class="btn btn-success btn-rounded px-4 my-2 btn-animate"
+           {% endif %}>{{ city }}
+        </a>
+        {% endfor %}
+        <!--   END CITY FOR LOOP     -->
+
+
 
         <div class="container">
             <div class="row my-3 gy-3 mx-auto justify-content-center">
@@ -109,7 +130,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="{{client.url_name}}/menu">
+                            <a href="/{{client.url_name}}/menu">
                                 <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
                                 </button>
                             </a>
