@@ -227,7 +227,7 @@ msgstr "All"
 
 #: main/templates/main/index.html:91 main/templates/main/menu.html:52
 msgid "Время работы"
-msgstr "Working time"
+msgstr "Working hours"
 
 #: main/templates/main/index.html:133
 msgid "Перейти"
@@ -243,7 +243,7 @@ msgstr "Welcome to"
 
 #: main/templates/main/menu.html:53
 msgid "г"
-msgstr "c."
+msgstr "c"
 
 #: main/templates/main/menu.html:53
 msgid "Телефон"
@@ -255,7 +255,7 @@ msgstr "MENU"
 
 #: main/templates/main/menu.html:236
 msgid "Добавить"
-msgstr "add to cart"
+msgstr "Add"
 
 #: main/templates/main/menu.html:257
 msgid "Добавлено в корзину"
