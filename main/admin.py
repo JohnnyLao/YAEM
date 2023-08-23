@@ -20,7 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Food_type2)
 class Food_type2Admin(admin.ModelAdmin):
-    list_filter = ['category']
+    list_filter = ['client']
     search_fields = ["name"]
 
     def category_name(self, obj):
@@ -39,6 +39,6 @@ class ClientAdmin(admin.ModelAdmin):
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display = ["name", "food_type", "stop", "actual_price", 'z_index']
-    list_filter = ["stop"]
+    list_display = ["name", "food_type", "stop", "actual_price"]
+    list_filter = ["client", "stop"]
     search_fields = ["name"]

@@ -50,13 +50,12 @@
                         </div>
                     </h4>
                     <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
-                    <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}; {% translate 'Телефон' %}:
-                        {{client.phone}}</p>
-                    <p class="my-0">{{ client.description }}</p>
+                    <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}</p>
+                    <p class="mb-1">{{ client.description }}</p>
 
                     <div class="row my-0">
-                        <div class="col-5 text-end">
-                            <p class="text"> {% translate 'Самовывоз' %}
+                        <div class="col-4 col-lg-5 text-center text-lg-end px-0">
+                            <p class="my-2"> {% translate 'Самовывоз' %}
                                 {% if client.outside %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                      class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -72,10 +71,10 @@
                             </p>
                             {% endif %}
                         </div>
-                        <div data-aos="flip-left" class="col-2">
+                        <div data-aos="flip-left" class="col-4 col-lg-2 px-0">
                             {% if client.inst %}
                             <a href="{{ client.inst }}" target="_blank">
-                                <div class="btn btn-animate text-white btn-floating"
+                                <div class="btn btn-animate text-white btn-floating mt-1 mx-0"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -88,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             {% endif %}
                             {% if client.two_gis %}
                             <a href="{{ client.two_gis }}" target="_blank">
-                                <div class="btn btn-animate text-white btn-floating"
+                                <div class="btn btn-animate text-white btn-floating mt-1 mx-0"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -100,9 +99,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
                             {% endif %}
+                            {% if client.phone %}
+                            <a href="tel:+{{client.phone}}">
+                                <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-0">
+                                    <i class="fas fa-phone-flip fa-lg"></i>
+                                </div>
+                            </a>
+                            {% endif %}
                         </div>
-                        <div class="col-5 text-start">
-                            <p class="">{% translate 'Доставка' %}
+                        <div class="col-4 col-lg-5 text-center text-lg-start px-0">
+                            <p class="my-2">{% translate 'Доставка' %}
                                 {% if client.delivery %}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                      class="bi bi-check bg-success" viewBox="0 0 16 16"
@@ -176,12 +182,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     <!--    FOOD TYPE SWIPER    -->
     <div data-aos="flip-up" class="sticky-top">
-        <div class="container-fluid pt-1" style="background: rgba(33, 37, 41, 0.9); overflow-x: hidden;">
+        <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
             <div class="swiper-container">
                 <div class="swiper-wrapper text-center">
                     {% for ft in food_type %}
                     <div class="swiper-slide mx-0">
-                        <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014" href="#{{ ft }}">
+                        <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014; background: rgba(33, 37, 41, 0.8)" href="#{{ ft }}">
                             {{ ft }}
                         </a>
                     </div>

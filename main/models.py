@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class City(models.Model):
     name = models.CharField(max_length=40, verbose_name="Город")
     slug = models.SlugField(unique=True, verbose_name="Слаг", blank=True, null=True)
@@ -12,8 +11,6 @@ class City(models.Model):
 
     def __str__(self):
         return self.name
-
-
 
 
 class Client(models.Model):
@@ -30,14 +27,14 @@ class Client(models.Model):
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
-    visitors = models.IntegerField(blank=True, default=0, verbose_name="Посетителей")
+    visitors = models.IntegerField(blank=True, default=0,
+                                   verbose_name="Посетителей")  # УДАЛИТЬ, будем брать цифру с метрик
     tarif_number = models.IntegerField(blank=True, null=True, verbose_name="Тариф(1-3)")
-    # z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, unique=True)
+    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, default=1)
 
     class Meta:
         verbose_name = "Заведение"
         verbose_name_plural = "Заведения"
-
 
     def __str__(self):
         return self.name
@@ -60,7 +57,8 @@ class Food_type2(models.Model):
     name = models.CharField(max_length=30, verbose_name="Подкатегория")
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', blank=True, null=True)
     client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент', blank=True, null=True)
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, unique=True)
+    z_index = models.IntegerField(verbose_name='Порядковый №', default=0)
+
     class Meta:
         verbose_name = "Подкатегория"
         verbose_name_plural = "Подкатегории"
@@ -85,7 +83,7 @@ class Dish(models.Model):
     actual_price = models.DecimalField(
         verbose_name="Текущая цена", max_digits=10, decimal_places=0
     )
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, unique=True)
+    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True)
 
     class Meta:
         verbose_name = "Блюдо"
