@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect, get_object_or_404
 from django.utils.translation import activate
+from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
 from main.models import Client, Dish, Food_type2, Category, City
 

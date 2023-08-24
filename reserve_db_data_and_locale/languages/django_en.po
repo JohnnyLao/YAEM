@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-22 15:40+0600\n"
+"POT-Creation-Date: 2023-08-22 16:30+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,12 +38,12 @@ msgstr "Nothing in cart"
 msgid "В зале"
 msgstr "Inside"
 
-#: cart/templates/cart/cart.html:125 main/templates/main/index.html:79
+#: cart/templates/cart/cart.html:125 main/templates/main/index.html:96
 #: main/templates/main/menu.html:59
 msgid "Самовывоз"
 msgstr "Pick-up"
 
-#: cart/templates/cart/cart.html:128 main/templates/main/index.html:97
+#: cart/templates/cart/cart.html:128 main/templates/main/index.html:114
 #: main/templates/main/menu.html:105
 msgid "Доставка"
 msgstr "Delivery"
@@ -221,11 +221,15 @@ msgstr "Orders"
 msgid "ЗАВЕДЕНИЯ"
 msgstr "Establishments"
 
-#: main/templates/main/index.html:74 main/templates/main/menu.html:52
-msgid "Время работы"
-msgstr ""
+#: main/templates/main/index.html:62
+msgid "Все"
+msgstr "All"
 
-#: main/templates/main/index.html:116
+#: main/templates/main/index.html:91 main/templates/main/menu.html:52
+msgid "Время работы"
+msgstr "Working hours"
+
+#: main/templates/main/index.html:133
 msgid "Перейти"
 msgstr "Follow"
 
@@ -239,7 +243,7 @@ msgstr "Welcome to"
 
 #: main/templates/main/menu.html:53
 msgid "г"
-msgstr "c."
+msgstr "c"
 
 #: main/templates/main/menu.html:53
 msgid "Телефон"
@@ -251,7 +255,7 @@ msgstr "MENU"
 
 #: main/templates/main/menu.html:236
 msgid "Добавить"
-msgstr "add to cart"
+msgstr "Add"
 
 #: main/templates/main/menu.html:257
 msgid "Добавлено в корзину"
@@ -768,4 +772,47 @@ msgstr "Your request accepted"
 msgid "Мы скоро свяжемся с Вами"
 msgstr "We shall contact you soon"
 
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
 
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
