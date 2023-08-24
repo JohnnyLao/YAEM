@@ -32,7 +32,7 @@ class Food_type2Admin(admin.ModelAdmin):
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    list_display = ["name", "city", "status", "outside", "delivery", "visitors"]
+    list_display = ["name", "city", "status", "outside", "delivery"]
     list_filter = ["city", "status"]
     search_fields = ["name"]
 

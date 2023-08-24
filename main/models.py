@@ -16,7 +16,7 @@ class City(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
-    logo = models.ImageField(upload_to="logo", blank=True, verbose_name="Лого")
+    logo = models.ImageField(upload_to="logo", verbose_name="Лого")
     description = models.TextField(verbose_name="Описание", max_length=60)
     working_time = models.CharField(max_length=20, verbose_name="Рабочеее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
@@ -27,10 +27,8 @@ class Client(models.Model):
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
-    visitors = models.IntegerField(blank=True, default=0,
-                                   verbose_name="Посетителей")  # УДАЛИТЬ, будем брать цифру с метрик
     tarif_number = models.IntegerField(blank=True, null=True, verbose_name="Тариф(1-3)")
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, default=1)
+    z_index = models.IntegerField(verbose_name='Порядковый №', default=1)
 
     class Meta:
         verbose_name = "Заведение"
@@ -42,7 +40,7 @@ class Client(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=30, verbose_name='Категория')
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True, unique=True)
+    z_index = models.IntegerField(verbose_name='Порядковый №')
 
     class Meta:
         verbose_name = "Категория"
@@ -62,7 +60,7 @@ class Food_type2(models.Model):
     class Meta:
         verbose_name = "Подкатегория"
         verbose_name_plural = "Подкатегории"
-        ordering = ["z_index"]
+        ordering = ["client"]
 
     def __str__(self):
         return self.name
