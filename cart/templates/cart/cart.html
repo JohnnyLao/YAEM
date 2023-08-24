@@ -8,8 +8,8 @@
 {% block content %}
 <!--CART-->
 <section class="skrollable pb-5"
-         style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/4.jpg' %});
-    background-attachment: fixed; background-position: 50%; background-size: 100vh background-repeat: repeat">
+         style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/1.jpg' %});
+    background-attachment: fixed; background-position: 70%; background-size: 100vh background-repeat: repeat">
 
     <!-- PART 1  -->
     <div class="container">
@@ -114,150 +114,132 @@
             </div>
         </div>
 
-        {% if not is_empty %}
-        <div class="container my-5">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <div data-aos="flip-up" data-aos-delay="500" class="btn-group mx-auto mb-3">
-                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off"/>
-                        <label class="btn btn-success" for="option1">{% translate 'В зале' %}</label>
+<!--        {% if not is_empty %}-->
+<!--        <div class="container my-5">-->
+<!--            <div class="row">-->
+<!--                <div class="col-12 text-center">-->
+<!--                    <div data-aos="flip-up" data-aos-delay="500" class="btn-group mx-auto mb-3">-->
+<!--                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" disabled/>-->
+<!--                        <label class="btn btn-success" for="option1">{% translate 'В зале' %}</label>-->
 
-                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off"/>
-                        <label class="btn btn-success" for="option2">{% translate 'Самовывоз' %}</label>
+<!--                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" disabled/>-->
+<!--                        <label class="btn btn-success" for="option2">{% translate 'Самовывоз' %}</label>-->
 
-                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off"/>
-                        <label class="btn btn-success" for="option3">{% translate 'Доставка' %}</label>
-                    </div>
-                </div>
-                <div id="inputContainer1" class="form-outline" style="display: none">
-                    <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">{% translate 'Отправьте заказ, не дожидаясь официанта' %}</p>
-                        <div class="form-outline">
-                            <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>
-                            <label class="form-label text-secondary" for="table#">{% translate 'Номер стола' %}</label>
-                            <div class="invalid-feedback">{% translate 'Вы не указали номер стола' %}</div>
-                        </div>
-                        <div class="col-12 text-center mt-3">
-                            <button type="submit" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
-                                    class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <div id="inputContainer2" class="form-outline" style="display: none">
-                    <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">{% translate 'Отправьте заказ, и заберите в удобное время' %}</p>
-                        <div class="form-outline">
-                            <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary" for="name">{% translate 'Ваше имя' %}</label>
-                            <div class="form-helper"></div>
-                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>
-                        </div>
-                        <div class="form-outline my-5">
-                            <input type="tel" id="phone" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary" for="phone">{% translate 'Номер телефона'%}</label>
-                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>
-                        </div>
-                        <div class="form-outline">
-                            <input type="time" id="time" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary ms-5" for="time">{% translate 'Время самовывоза'%}</label>
-                            <div class="invalid-feedback">{% translate 'Вы не указали время' %}</div>
-                        </div>
-                        <div class="col-12 text-center mt-3">
-                            <button type="submit" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
-                                    class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <!--СКРИПТ ПО ОБРАБОТКЕ ОТВЕТОВ-->
-                <script>
-// Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict';
-
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation');
-
-  // Loop over them and prevent submission
-  Array.prototype.slice.call(forms).forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
-
-                </script>
-                <div id="inputContainer3" class="form-outline" style="display: none">
-                    <form action="" class="needs-validation" novalidate>
-                        <p class="text-light">{% translate 'Отправьте заказ, и Вам доставят в удобное время' %}</p>
-                        <div class="form-outline">
-                            <input type="text" id="name1" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary" for="name1">{% translate 'Ваше имя' %}</label>
-                            <div class="form-helper"></div>
-                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>
-                        </div>
-                        <div class="form-outline my-5 ">
-                            <input type="tel" id="phone1" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary" for="phone1">{% translate 'Номер телефона'%}</label>
-                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>
-                        </div>
-                        <div class="form-outline mb-5 ">
-                            <input type="text" id="address" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="60" required/>
-                            <label class="form-label text-secondary" for="address">{% translate 'Адрес доставки'%}</label>
-                            <div class="form-helper"></div>
-                            <div class="invalid-feedback">{% translate 'Вы не указали адрес доставки' %}</div>
-                        </div>
-                        <div class="form-outline">
-                            <input type="time" id="time1" class="form-control text-light"
-                                   data-mdb-showcounter="true"
-                                   maxlength="20" required/>
-                            <label class="form-label text-secondary ms-5" for="time1">{% translate 'Время доставки'%}</label>
-                            <div class="invalid-feedback ">{% translate 'Вы не указали время доставки' %}</div>
-                        </div>
-                        <div class="col-12 text-center mt-3">
-                            <button type="submit" data-mdb-toggle="modal" data-mdb-target="#exampleModal"
-                                    class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        {% endif %}
-    </div>
-</section>
-
-<!--&lt;!&ndash;MODAL: ORDER CONFIRMED&ndash;&gt;-->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="ModalConfirmLabel" aria-hidden="true">-->
-<!--  <div class="modal-dialog modal-dialog-centered">-->
-<!--    <div class="modal-content" style="background: rgba(33, 37, 41, 0.95);">-->
-<!--      <div class="modal-body">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-12 text-center">-->
-<!--                        <h5 class="modal-title fw-bold" style="color: #FD7014">{% translate 'Заказ принят!' %}</h5>-->
+<!--                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled/>-->
+<!--                        <label class="btn btn-success" for="option3">{% translate 'Доставка' %}</label>-->
 <!--                    </div>-->
 <!--                </div>-->
+<!--                <div id="inputContainer1" class="form-outline" style="display: none">-->
+<!--                    <form action="" class="needs-validation" novalidate>-->
+<!--                        <p class="text-light">{% translate 'Отправьте заказ, не дожидаясь официанта' %}</p>-->
+<!--                        <div class="form-outline">-->
+<!--                            <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary" for="table#">{% translate 'Номер стола' %}</label>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер стола' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 text-center mt-3">-->
+<!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+
+<!--                <div id="inputContainer2" class="form-outline" style="display: none">-->
+<!--                    <form action="" class="needs-validation" novalidate>-->
+<!--                        <p class="text-light">{% translate 'Отправьте заказ, и заберите в удобное время' %}</p>-->
+<!--                        <div class="form-outline">-->
+<!--                            <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary" for="name">{% translate 'Ваше имя' %}</label>-->
+<!--                            <div class="form-helper"></div>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="form-outline my-5">-->
+<!--                            <input type="tel" id="phone" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary" for="phone">{% translate 'Номер телефона'%}</label>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="form-outline">-->
+<!--                            <input type="time" id="time" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary ms-5" for="time">{% translate 'Время самовывоза'%}</label>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали время' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 text-center mt-3">-->
+<!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;СКРИПТ ПО ОБРАБОТКЕ ОТВЕТОВ&ndash;&gt;-->
+<!--                <script>-->
+<!--// Example starter JavaScript for disabling form submissions if there are invalid fields-->
+<!--(() => {-->
+<!--  'use strict';-->
+
+<!--  // Fetch all the forms we want to apply custom Bootstrap validation styles to-->
+<!--  const forms = document.querySelectorAll('.needs-validation');-->
+
+<!--  // Loop over them and prevent submission-->
+<!--  Array.prototype.slice.call(forms).forEach((form) => {-->
+<!--    form.addEventListener('submit', (event) => {-->
+<!--      if (!form.checkValidity()) {-->
+<!--        event.preventDefault();-->
+<!--        event.stopPropagation();-->
+<!--      }-->
+<!--      form.classList.add('was-validated');-->
+<!--    }, false);-->
+<!--  });-->
+<!--})();-->
+
+<!--                </script>-->
+<!--                <div id="inputContainer3" class="form-outline" style="display: none">-->
+<!--                    <form action="" class="needs-validation" novalidate>-->
+<!--                        <p class="text-light">{% translate 'Отправьте заказ, и Вам доставят в удобное время' %}</p>-->
+<!--                        <div class="form-outline">-->
+<!--                            <input type="text" id="name1" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary" for="name1">{% translate 'Ваше имя' %}</label>-->
+<!--                            <div class="form-helper"></div>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="form-outline my-5 ">-->
+<!--                            <input type="tel" id="phone1" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary" for="phone1">{% translate 'Номер телефона'%}</label>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="form-outline mb-5 ">-->
+<!--                            <input type="text" id="address" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="60" required/>-->
+<!--                            <label class="form-label text-secondary" for="address">{% translate 'Адрес доставки'%}</label>-->
+<!--                            <div class="form-helper"></div>-->
+<!--                            <div class="invalid-feedback">{% translate 'Вы не указали адрес доставки' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="form-outline">-->
+<!--                            <input type="time" id="time1" class="form-control text-light"-->
+<!--                                   data-mdb-showcounter="true"-->
+<!--                                   maxlength="20" required/>-->
+<!--                            <label class="form-label text-secondary ms-5" for="time1">{% translate 'Время доставки'%}</label>-->
+<!--                            <div class="invalid-feedback ">{% translate 'Вы не указали время доставки' %}</div>-->
+<!--                        </div>-->
+<!--                        <div class="col-12 text-center mt-3">-->
+<!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
 <!--            </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--        </div>-->
+<!--        {% endif %}-->
+    </div>
+</section>
 
 
 <!--СКРИПТ ПО ОБРАБОТКЕ РАДИО-->
@@ -276,13 +258,5 @@
             }
         });
     });
-
-
-
-
-
-
 </script>
-
-
 {% endblock content %}
