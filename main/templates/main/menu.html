@@ -212,7 +212,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                  style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
                 <div class="row">
 
-                    <div class="col-8 my-auto">
+                    <div class="col-8 my-auto px-1 text-center text-lg-start">
+                        <img src="{% static 'images/food_img_default/hot_dishes.png' %}" alt="dish img"
+                             class="img-fluid bg-white mt-1"
+                             style="max-width: 80px; border-radius: 20px">
                         <h5 class="my-1 fw-bold">{{ dish.name }}</h5>
                         <p class="mb-1">{{ dish.description }}</p>
                     </div>
