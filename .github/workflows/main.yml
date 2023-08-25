@@ -1,4 +1,4 @@
-name: Развертывание, форматирование и проверка синтаксиса, Подгрузка данных из БД
+name: Развертывание, форматирование, проверка синтаксиса, выполнение миграций, загрузка фикстур, сбор статики
 
 on:
   push:
@@ -11,33 +11,33 @@ jobs:
       SECRET_KEY: 'django-insecure-s!1=txswelx%a4*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_'
       DEBUG: 'False'
     steps:
-      - name: Проверка репозитория на наличие изменений
+      - name: Проверка репозитория на наличие изменений...
         uses: actions/checkout@v3
 
-      - name: Установка и создание Python окружения
+      - name: Установка и создание Python окружения...
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
 
-      - name: Установка зависимостей
+      - name: Установка зависимостей(requirements)...
         run: pip install -r requirements.txt
 
-      - name: Сортировка импортов isort
+      - name: Сортировка импортов isort...
         run: isort .
 
-      - name: Форматирование кода black
+      - name: Форматирование кода black...
         run: black .
 
-      - name: Создание миграций
-        run: python manage.py makemigrations
-
-      - name: Выполнение миграций базы данных
+      - name: Выполнение миграций базы данных...
         run: python manage.py migrate
 
-      - name: Загрузка данных из фикстур
-        run: python manage.py loaddata reserve_db_data_and_locale/data.json
+      - name: Сбор статики...
+        run: python manage.py collectstatic --noinput
 
-      - name: Деплой
+      - name: Загрузка данных из фикстур...
+        run: python manage.py loaddata reserve_db_data_and_locale/fixtures/data_25_08_23_version.json
+
+      - name: Деплой...
         uses: appleboy/ssh-action@master
         with:
           host: 194.58.120.24

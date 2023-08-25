@@ -26,13 +26,15 @@ class Client(models.Model):
     address = models.CharField(max_length=50, verbose_name="Адрес")
     phone = models.DecimalField(max_digits=15, decimal_places=0, verbose_name="Телефон")
     inst = models.CharField(max_length=100, blank=True, verbose_name="Instagram")
-    two_gis = models.CharField(max_length=150, verbose_name="2gis", unique=True, blank=True, null=True)
+    two_gis = models.CharField(
+        max_length=150, verbose_name="2gis", unique=True, blank=True, null=True
+    )
     status = models.BooleanField(verbose_name="Активен")
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
     tarif_number = models.IntegerField(blank=True, null=True, verbose_name="Тариф(1-3)")
-    z_index = models.IntegerField(verbose_name='Порядковый №', default=1)
+    z_index = models.IntegerField(verbose_name="Порядковый №", default=1)
 
     class Meta:
         verbose_name = "Заведение"
@@ -43,8 +45,8 @@ class Client(models.Model):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=30, verbose_name='Категория')
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True)
+    name = models.CharField(max_length=30, verbose_name="Категория")
+    z_index = models.IntegerField(verbose_name="Порядковый №", blank=True, null=True)
 
     class Meta:
         verbose_name = "Категория"
@@ -57,9 +59,17 @@ class Category(models.Model):
 
 class Food_type2(models.Model):
     name = models.CharField(max_length=30, verbose_name="Подкатегория")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', blank=True, null=True)
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, verbose_name='Клиент', blank=True, null=True)
-    z_index = models.IntegerField(verbose_name='Порядковый №', default=0)
+    category = models.ForeignKey(
+        Category,
+        on_delete=models.CASCADE,
+        verbose_name="Категория",
+        blank=True,
+        null=True,
+    )
+    client = models.ForeignKey(
+        Client, on_delete=models.CASCADE, verbose_name="Клиент", blank=True, null=True
+    )
+    z_index = models.IntegerField(verbose_name="Порядковый №", default=0)
 
     class Meta:
         verbose_name = "Подкатегория"
@@ -80,7 +90,9 @@ class Dish(models.Model):
         Food_type2, models.CASCADE, verbose_name="Подкатегория"
     )
     name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
-    image = models.ImageField(verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True)
+    image = models.ImageField(
+        verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True
+    )
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(
@@ -89,7 +101,7 @@ class Dish(models.Model):
     actual_price = models.DecimalField(
         verbose_name="Текущая цена", max_digits=10, decimal_places=0
     )
-    z_index = models.IntegerField(verbose_name='Порядковый №', blank=True, null=True)
+    z_index = models.IntegerField(verbose_name="Порядковый №", blank=True, null=True)
 
     class Meta:
         verbose_name = "Блюдо"

@@ -1,9 +1,10 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import redirect, get_object_or_404
+from django.shortcuts import get_object_or_404, redirect
 from django.utils.translation import activate
 from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
-from main.models import Client, Dish, Food_type2, Category, City
+
+from main.models import Category, City, Client, Dish, Food_type2
 
 
 class Main(TemplateView):
@@ -19,7 +20,7 @@ class Main(TemplateView):
         else:
             context["clients"] = Client.objects.all()
         context["cities"] = City.objects.all()
-        context['city_selected'] = city_selected
+        context["city_selected"] = city_selected
         return context
 
 
@@ -30,17 +31,20 @@ class Menu(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
         client = Client.objects.get(url_name=url_name)
-        categories = Category.objects.all().order_by('z_index')
+        categories = Category.objects.all().order_by("z_index")
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
-            .filter(client=client).order_by('z_index')
+            .filter(client=client)
+            .order_by("z_index")
         )
         # Получение уникальных категорий для блюд
-        food_type = Food_type2.objects.filter(dish__in=dishes).distinct().order_by('z_index')
+        food_type = (
+            Food_type2.objects.filter(dish__in=dishes).distinct().order_by("z_index")
+        )
         context["dishes"] = dishes
         context["food_type"] = food_type
-        context['categories'] = categories
+        context["categories"] = categories
         context["client"] = client
         return context
 

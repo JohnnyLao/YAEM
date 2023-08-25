@@ -153,14 +153,11 @@ LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
-MODELTRANSLATION_LANGUAGES = ('ru', 'en', 'kk')
+MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
+MODELTRANSLATION_LANGUAGES = ("ru", "en", "kk")
 
 # debug-toolbar
 INTERNAL_IPS = [
     "127.0.0.1",
     "localhost",
 ]
-
-
-
