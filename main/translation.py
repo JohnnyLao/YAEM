@@ -1,6 +1,6 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from main.models import City, Client, Dish, Food_type2, Category
+from main.models import Category, City, Client, Dish, Food_type2
 
 
 class ClientTranslationOptions(TranslationOptions):

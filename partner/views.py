@@ -1,9 +1,8 @@
 # from .forms import FeedBackForm
-from django.views.generic.edit import FormView
-from django.views.generic import TemplateView
 from django.contrib import messages
 from django.utils.translation import gettext
-
+from django.views.generic import TemplateView
+from django.views.generic.edit import FormView
 
 # class Partner(FormView):
 #     template_name = "partner/partner.html"
@@ -19,4 +18,4 @@ from django.utils.translation import gettext
 
 
 class Partner(TemplateView):
-    template_name = 'partner/partner.html'
+    template_name = "partner/partner.html"
