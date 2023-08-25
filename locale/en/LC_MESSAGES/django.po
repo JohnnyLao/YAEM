@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-24 22:26+0600\n"
+"POT-Creation-Date: 2023-08-25 14:48+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -60,62 +60,58 @@ msgstr "Table №"
 msgid "Вы не указали номер стола"
 msgstr "Please point a table №"
 
-#: cart/templates/cart/cart.html:142 cart/templates/cart/cart.html:174
-#: cart/templates/cart/cart.html:236
+#: cart/templates/cart/cart.html:141 cart/templates/cart/cart.html:172
+#: cart/templates/cart/cart.html:233
 msgid "Отправить"
 msgstr "Send"
 
-#: cart/templates/cart/cart.html:150
+#: cart/templates/cart/cart.html:149
 msgid "Отправьте заказ, и заберите в удобное время"
 msgstr "Send your order, and pick-up later"
 
-#: cart/templates/cart/cart.html:154 cart/templates/cart/cart.html:208
+#: cart/templates/cart/cart.html:153 cart/templates/cart/cart.html:206
 msgid "Ваше имя"
 msgstr "Name"
 
-#: cart/templates/cart/cart.html:156 cart/templates/cart/cart.html:210
+#: cart/templates/cart/cart.html:155 cart/templates/cart/cart.html:208
 msgid "Вы не указали имя"
 msgstr "Please put your name"
 
-#: cart/templates/cart/cart.html:162 cart/templates/cart/cart.html:216
+#: cart/templates/cart/cart.html:161 cart/templates/cart/cart.html:214
 msgid "Номер телефона"
 msgstr "Phone number"
 
-#: cart/templates/cart/cart.html:163 cart/templates/cart/cart.html:217
+#: cart/templates/cart/cart.html:162 cart/templates/cart/cart.html:215
 msgid "Вы не указали номер телефона"
 msgstr "Please put your phone number"
 
-#: cart/templates/cart/cart.html:169
+#: cart/templates/cart/cart.html:168
 msgid "Время самовывоза"
 msgstr "Pick-up time"
 
-#: cart/templates/cart/cart.html:170
+#: cart/templates/cart/cart.html:169
 msgid "Вы не указали время"
 msgstr "Please fill up"
 
-#: cart/templates/cart/cart.html:203
+#: cart/templates/cart/cart.html:201
 msgid "Отправьте заказ, и Вам доставят в удобное время"
 msgstr "Send your order for delivery"
 
-#: cart/templates/cart/cart.html:223
+#: cart/templates/cart/cart.html:221
 msgid "Адрес доставки"
 msgstr "Address"
 
-#: cart/templates/cart/cart.html:225
+#: cart/templates/cart/cart.html:223
 msgid "Вы не указали адрес доставки"
 msgstr "Please put address"
 
-#: cart/templates/cart/cart.html:231
+#: cart/templates/cart/cart.html:229
 msgid "Время доставки"
 msgstr "Delivery time"
 
-#: cart/templates/cart/cart.html:232
+#: cart/templates/cart/cart.html:230
 msgid "Вы не указали время доставки"
 msgstr "Please fill up"
-
-#: cart/templates/cart/cart.html:254
-msgid "Заказ принят!"
-msgstr "Order completed!"
 
 #: main/templates/main/404.html:5
 msgid "Ошибка"
@@ -241,11 +237,11 @@ msgstr "c"
 msgid "МЕНЮ"
 msgstr "MENU"
 
-#: main/templates/main/menu.html:235
+#: main/templates/main/menu.html:240
 msgid "Добавить"
 msgstr "Add"
 
-#: main/templates/main/menu.html:256
+#: main/templates/main/menu.html:261
 msgid "Добавлено в корзину"
 msgstr "Added to Cart"
 
@@ -540,8 +536,8 @@ msgstr ""
 
 #: partner/templates/partner/partner.html:560
 #: partner/templates/partner/partner.html:580
-msgid "Вы получите"
-msgstr "What you get"
+msgid "Вы получите:"
+msgstr "What you get:"
 
 #: partner/templates/partner/partner.html:561
 msgid "Закрытую"
@@ -805,6 +801,9 @@ msgstr ""
 #: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
 msgid "Connect, get help, or contribute"
 msgstr ""
+
+#~ msgid "Заказ принят!"
+#~ msgstr "Order completed!"
 
 #~ msgid "Караганда"
 #~ msgstr "Karaganda"
