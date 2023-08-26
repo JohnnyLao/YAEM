@@ -14,7 +14,7 @@ class City(models.Model):
 
 
 def client_logo_upload_to(instance, filename):
-    return f"logo_{instance.name.replace(' ', '_').capitalize()}/{filename}"
+    return f"{instance.name.replace(' ', '_').capitalize()}/logo/{filename}"
 
 
 class Client(models.Model):
@@ -81,7 +81,9 @@ class Food_type2(models.Model):
 
 
 def dish_image_upload_to(instance, filename):
-    return f"image_{instance.client.name.replace(' ', '_').capitalize()}/{filename}"
+    # if instance.photo:
+        # sys instance.photo delete
+    return f"{instance.client.name.replace(' ', '_').capitalize()}/dishes/{instance.food_type.name}/{instance.name}_{filename}"
 
 
 class Dish(models.Model):
