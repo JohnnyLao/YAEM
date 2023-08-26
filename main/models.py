@@ -1,4 +1,8 @@
 from django.db import models
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+import os
+from django.core.files import File
 
 
 class City(models.Model):
@@ -81,8 +85,6 @@ class Food_type2(models.Model):
 
 
 def dish_image_upload_to(instance, filename):
-    # if instance.photo:
-        # sys instance.photo delete
     return f"{instance.client.name.replace(' ', '_').capitalize()}/dishes/{instance.food_type.name}/{instance.name}_{filename}"
 
 
@@ -92,9 +94,7 @@ class Dish(models.Model):
         Food_type2, models.CASCADE, verbose_name="Подкатегория"
     )
     name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
-    image = models.ImageField(
-        verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True
-    )
+    image = models.ImageField(verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True)
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(
@@ -112,3 +112,10 @@ class Dish(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# @receiver(pre_delete, sender=Dish)
+# def dish_image_delete(sender, instance, **kwargs):
+#     if instance.image:
+#         if os.path.isfile(instance.image.path):
+#             os.remove(instance.image.path)
