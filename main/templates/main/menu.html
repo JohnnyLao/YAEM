@@ -39,8 +39,7 @@
 
                 <div class="card-body my-0 py-1">
                     <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
-                        <div class="d-inline" style="color: #FD7014">{{ client.name }}
-                        </div>
+                        <div class="d-inline" style="color: #FD7014">{{ client.name }}</div>
                     </h4>
                     <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
                     <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}</p>
@@ -212,7 +211,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                  style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
                 <div class="row">
 
-                    <div class="col-8 my-auto px-1 text-center text-lg-start">
+                    <div class="col-8 my-auto px-1 text-center">
                         {% if dish.image %}
                         <img src="{{ dish.image.url }}" alt="dish img"
                              class="img-fluid bg-white mt-1"
