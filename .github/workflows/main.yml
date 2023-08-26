@@ -28,9 +28,6 @@ jobs:
       - name: Форматирование кода black...
         run: black .
 
-      - name: Выполнение миграций базы данных...
-        run: python manage.py migrate
-
       - name: Сбор статики...
         run: python manage.py collectstatic --noinput
 
