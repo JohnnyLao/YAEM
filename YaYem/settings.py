@@ -1,20 +1,12 @@
 import os
 from pathlib import Path
-
 import environ
+
 
 # environ
 env = environ.Env(
     DEBUG=bool,
     SECRET_KEY=str,
-    # For development using SQLite
-    SQLITE_DB_NAME=str,
-    # For production using PostgreSQL
-    POSTGRES_DB_NAME=str,
-    POSTGRES_USER=str,
-    POSTGRES_PASSWORD=str,
-    POSTGRES_HOST=str,
-    POSTGRES_PORT=int,
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,26 +74,13 @@ WSGI_APPLICATION = "YaYem.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# development
-if DEBUG:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": env("SQLITE_DB_NAME"),
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": 'db.sqlite3',
     }
-# production
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql_psycopg2",
-            "NAME": env("POSTGRES_DB_NAME"),
-            "USER": env("POSTGRES_USER"),
-            "PASSWORD": env("POSTGRES_PASSWORD"),
-            "HOST": env("POSTGRES_HOST"),
-            "PORT": env("POSTGRES_PORT"),
-        }
-    }
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -135,8 +114,7 @@ if DEBUG:
         os.path.join(BASE_DIR, "static/"),
     ]
 else:
-    STATIC_ROOT = (os.path.join(BASE_DIR, "staticfiles/"),)
-
+    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")

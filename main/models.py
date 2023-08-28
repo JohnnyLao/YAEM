@@ -114,8 +114,4 @@ class Dish(models.Model):
         return self.name
 
 
-# @receiver(pre_delete, sender=Dish)
-# def dish_image_delete(sender, instance, **kwargs):
-#     if instance.image:
-#         if os.path.isfile(instance.image.path):
-#             os.remove(instance.image.path)
+
