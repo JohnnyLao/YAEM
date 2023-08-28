@@ -33,7 +33,7 @@ jobs:
         with:
           host: 194.58.120.24
           username: root
-          password: A+aY:%4NiYmd
+          password: +=w*3F49H!_+
           script: |
             su artem
             cd /home/artem/Site1
