@@ -37,6 +37,8 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '832887075055638');
         fbq('track', 'PageView');
+
+
     </script>
     <noscript><img height="1" width="1" style="display:none"
                    src="https://www.facebook.com/tr?id=832887075055638&ev=PageView&noscript=1"
@@ -57,6 +59,8 @@
              accurateTrackBounce:true,
              webvisor:true
         });
+
+
     </script>
     <noscript>
         <div><img src="https://mc.yandex.ru/watch/94643226" style="position:absolute; left:-9999px;" alt=""/></div>
@@ -66,7 +70,7 @@
 <body class="text-white my-0 py-0" style="font-family: Montserrat;">
 <div class="mask" style=" width: 100%;
     height: 100%;
-    background: black;
+    background: rgba(33, 37, 41);
     position: fixed;
     top: 0;
     z-index: 100;
@@ -74,8 +78,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 80%;">
-    <div class="spinner-border text-warning" role="status">
+    opacity: 95%;">
+    <div class="spinner-border text-warning" role="status" style="width: 6rem; height: 6rem;">
         <span class="visually-hidden my-auto">Loading...</span>
     </div>
 </div>
@@ -83,6 +87,8 @@
     let mask = document.querySelector('.mask');
     window.addEventListener('load', () => {
         mask.style.display = 'none'});
+
+
 </script>
 <!-- Navbar -->
 <nav class="navbar navbar-light" id="header">
@@ -90,7 +96,7 @@
     <div class="container-fluid text-center">
         <div class="col-5 mx-auto">
             <a href="{% url 'main:main_page' %}">
-                <img data-aos="fade-right" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
+                <img data-aos="fade-down" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
             </a>
         </div>
 
@@ -103,23 +109,41 @@
             </button>
         </div>
 
-        <div class="col-5 mx-auto">
+        <div class="col-5" style="align-content: center">
             <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
                 {% csrf_token %}
-                <div class="btn-group-sm" role="group">
-                    <button data-aos="fade-up" type="submit" name="language" value="kk"
-                            class="btn btn-success btn-animate my-1" disabled
-                    >KZ
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="200" type="submit" name="language" value="ru"
-                            class="btn btn-success btn-animate my-1"
-                    >RU
-                    </button>
-                    <button data-aos="fade-up" data-aos-delay="400" type="submit" name="language" value="en"
-                            class="btn btn-success btn-animate my-1"
-                    >EN
-                    </button>
-                </div>
+                    <ul class="navbar-nav">
+                        <!-- Icon dropdown -->
+                        <li class="nav-item dropdown mx-auto">
+                            <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="navbarDropdown"
+                                    role="button"
+                                    data-mdb-toggle="dropdown"
+                                    aria-expanded="false"
+                            >
+                                <i class="flag-russia flag m-0"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="flag-russia flag"></i>Русский
+                                        <i class="fa fa-check text-success ms-2"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider"/>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item bg-secondary text-muted" href="#"><i class="flag-kazakhstan flag"></i>Қазақша</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
             </form>
         </div>
     </div>
@@ -183,7 +207,7 @@
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
-                            <a class="" href="{% url 'main:main_page' %}">
+                            <a class="" href="#">
                                 <button class="btn text-secondary" disabled>{% translate 'Кайтеринг' %} <i
                                         class="fas fa-circle fa-xs"
                                         style="color: #C0392B"></i></button>
@@ -295,6 +319,8 @@
 <script src="{% static 'aos-master/dist/aos.js' %}"></script>
 <script>
     AOS.init();
+
+
 </script>
 <!-- Custom scripts -->
 <script type="{% static 'MDBootstrap/text/javascript' %}"></script>
