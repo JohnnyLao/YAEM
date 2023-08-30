@@ -38,5 +38,5 @@ jobs:
             su artem
             cd /home/artem/Site1
             git pull origin master
-            echo "artem16" | sudo -S systemctl restart gunicorn
+            echo "artemchik16" | sudo -S systemctl restart gunicorn
 
