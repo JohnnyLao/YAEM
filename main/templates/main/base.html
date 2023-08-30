@@ -110,41 +110,43 @@
         </div>
 
         <div class="col-5" style="align-content: center">
-            <form class="my-auto" method="post" action="{% url 'main:switch_language' %}">
-                {% csrf_token %}
-                    <ul class="navbar-nav">
-                        <!-- Icon dropdown -->
-                        <li class="nav-item dropdown mx-auto">
-                            <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="navbarDropdown"
-                                    role="button"
-                                    data-mdb-toggle="dropdown"
-                                    aria-expanded="false"
-                            >
-                                <i class="flag-russia flag m-0"></i>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="flag-russia flag"></i>Русский
-                                        <i class="fa fa-check text-success ms-2"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <hr class="dropdown-divider"/>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item bg-secondary text-muted" href="#"><i class="flag-kazakhstan flag"></i>Қазақша</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-            </form>
+
+            <a href="{% url 'main:set_language' 'ru' %}">RU</a>
+            <a href="{% url 'main:set_language' 'en' %}">EN</a>
+
+
+<!--                    <ul class="navbar-nav">-->
+<!--                        &lt;!&ndash; Icon dropdown &ndash;&gt;-->
+<!--                        <li class="nav-item dropdown mx-auto">-->
+<!--                            <a-->
+<!--                                    class="nav-link dropdown-toggle"-->
+<!--                                    href="#"-->
+<!--                                    id="navbarDropdown"-->
+<!--                                    role="button"-->
+<!--                                    data-mdb-toggle="dropdown"-->
+<!--                                    aria-expanded="false"-->
+<!--                            >-->
+<!--                                <i class="flag-russia flag m-0"></i>-->
+<!--                            </a>-->
+<!--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                                <li>-->
+<!--                                    <a class="dropdown-item" href="#">-->
+<!--                                        <i class="flag-russia flag"></i>Русский-->
+<!--                                        <i class="fa fa-check text-success ms-2"></i>-->
+<!--                                    </a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <hr class="dropdown-divider"/>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a class="dropdown-item bg-secondary text-muted" href="#"><i class="flag-kazakhstan flag"></i>Қазақша</a>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </li>-->
+<!--                    </ul>-->
         </div>
     </div>
 

@@ -132,7 +132,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="/{{client.url_name}}/menu">
+                            <a href="{% url 'main:menu_page' url_name=client.url_name %}">
                                 <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
                                 </button>
                             </a>
