@@ -39,6 +39,8 @@
         fbq('track', 'PageView');
 
 
+
+
     </script>
     <noscript><img height="1" width="1" style="display:none"
                    src="https://www.facebook.com/tr?id=832887075055638&ev=PageView&noscript=1"
@@ -59,6 +61,8 @@
              accurateTrackBounce:true,
              webvisor:true
         });
+
+
 
 
     </script>
@@ -89,6 +93,8 @@
         mask.style.display = 'none'});
 
 
+
+
 </script>
 <!-- Navbar -->
 <nav class="navbar navbar-light" id="header">
@@ -109,47 +115,49 @@
             </button>
         </div>
 
-        <div class="col-5" style="align-content: center">
+        <div class="col-5 text-center" style="">
+            <ul class="navbar-nav">
+    <!-- Icon dropdown -->
+    <li class="nav-item dropdown mx-auto">
+        <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+        >
+            {% if request.LANGUAGE_CODE == 'ru' %}
+                <i class="flag-russia flag" id="current_language_flag"></i>
+            {% elif request.LANGUAGE_CODE == 'kk' %}
+                <i class="flag-kazakhstan flag" id="current_language_flag"></i>
+            {% elif request.LANGUAGE_CODE == 'en' %}
+                <i class="flag-united-kingdom flag" id="current_language_flag"></i>
+            {% endif %}
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+                <a class="dropdown-item" href="{% url 'main:set_language' 'ru' %}">
+                    <i class="flag-russia flag"></i>Русский
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item bg-secondary text-muted" href="{% url 'main:set_language' 'kk' %}">
+                    <i class="flag-kazakhstan flag"></i>Қазақша
+                </a>
+            </li>
+            <li>
+                <a class="dropdown-item" href="{% url 'main:set_language' 'en' %}">
+                    <i class="flag-united-kingdom flag"></i>English
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>
 
-            <a href="{% url 'main:set_language' 'ru' %}">RU</a>
-            <a href="{% url 'main:set_language' 'en' %}">EN</a>
 
-
-<!--                    <ul class="navbar-nav">-->
-<!--                        &lt;!&ndash; Icon dropdown &ndash;&gt;-->
-<!--                        <li class="nav-item dropdown mx-auto">-->
-<!--                            <a-->
-<!--                                    class="nav-link dropdown-toggle"-->
-<!--                                    href="#"-->
-<!--                                    id="navbarDropdown"-->
-<!--                                    role="button"-->
-<!--                                    data-mdb-toggle="dropdown"-->
-<!--                                    aria-expanded="false"-->
-<!--                            >-->
-<!--                                <i class="flag-russia flag m-0"></i>-->
-<!--                            </a>-->
-<!--                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                                <li>-->
-<!--                                    <a class="dropdown-item" href="#">-->
-<!--                                        <i class="flag-russia flag"></i>Русский-->
-<!--                                        <i class="fa fa-check text-success ms-2"></i>-->
-<!--                                    </a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <hr class="dropdown-divider"/>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a class="dropdown-item bg-secondary text-muted" href="#"><i class="flag-kazakhstan flag"></i>Қазақша</a>-->
-<!--                                </li>-->
-<!--                                <li>-->
-<!--                                    <a class="dropdown-item" href="#"><i class="flag-united-kingdom flag"></i>English</a>-->
-<!--                                </li>-->
-<!--                            </ul>-->
-<!--                        </li>-->
-<!--                    </ul>-->
         </div>
     </div>
-
 
     <!--    DROPDOWN-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -321,6 +329,8 @@
 <script src="{% static 'aos-master/dist/aos.js' %}"></script>
 <script>
     AOS.init();
+
+
 
 
 </script>
