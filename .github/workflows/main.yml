@@ -2,7 +2,7 @@ name: Развертывание, форматирование, проверка
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
 jobs:
   testing:
@@ -37,7 +37,7 @@ jobs:
           script: |
             su artem
             cd /home/artem/Site1
-            git pull origin dev
+            git pull origin master
             echo "artemchik16" | sudo -S systemctl restart gunicorn
 
       - name: Запуск тестов Django...
