@@ -2,7 +2,7 @@ name: Развертывание, форматирование, проверка
 
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
 
 jobs:
   testing:
