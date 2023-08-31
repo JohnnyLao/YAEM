@@ -40,3 +40,6 @@ jobs:
             git pull origin master
             echo "artemchik16" | sudo -S systemctl restart gunicorn
 
+      - name: Запуск тестов Django...
+        run: python manage.py test
+

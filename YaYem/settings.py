@@ -1,8 +1,8 @@
 import os
 from pathlib import Path
-from django.utils.translation import gettext_lazy as _
-import environ
 
+import environ
+from django.utils.translation import gettext_lazy as _
 
 # environ
 env = environ.Env(
@@ -79,7 +79,7 @@ WSGI_APPLICATION = "YaYem.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": 'db.sqlite3',
+        "NAME": "db.sqlite3",
     }
 }
 

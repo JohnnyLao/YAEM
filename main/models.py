@@ -1,8 +1,9 @@
+import os
+
+from django.core.files import File
 from django.db import models
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
-import os
-from django.core.files import File
 
 
 class City(models.Model):
@@ -94,7 +95,9 @@ class Dish(models.Model):
         Food_type2, models.CASCADE, verbose_name="Подкатегория"
     )
     name = models.CharField(verbose_name="Блюдо_RU", max_length=30)
-    image = models.ImageField(verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True)
+    image = models.ImageField(
+        verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True
+    )
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(
@@ -112,6 +115,3 @@ class Dish(models.Model):
 
     def __str__(self):
         return self.name
-
-
-

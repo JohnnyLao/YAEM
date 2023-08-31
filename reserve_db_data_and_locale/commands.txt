@@ -5,9 +5,10 @@ python manage.py dumpdata > reserve_db_data_and_locale/fixtures/data_day_month_y
 python manage.py loaddata reserve_db_data_and_locale/fixtures/data_day_month_year_version.json
 ---------------------------------------------------------------------------------
 Создание файлов перевода для англ/кз:
-django-admin makemessages -l en -e html
-django-admin makemessages -l kk -e html
+django-admin makemessages --all
 ---------------------------------------------------------------------------------
 Используется для компиляции файлов перевода .po в бинарные .mo файлы:
 django-admin compilemessages
-
+---------------------------------------------------------------------------------
+Проверка тестов во всех приложениях
+python manage.py test .

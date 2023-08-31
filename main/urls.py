@@ -1,5 +1,6 @@
 from django.urls import path
 from django.views.decorators.cache import cache_page
+
 from main.views import Main, Menu, set_language
 
 cache_duration = 60 * 60 * 5
@@ -17,6 +18,5 @@ urlpatterns = [
         cache_page(cache_duration)(Main.as_view()),
         name="city_filter",
     ),
-    # path("switch-language/", switch_language, name="switch_language"),
     path("set_language/<str:language>", set_language, name="set_language"),
 ]
