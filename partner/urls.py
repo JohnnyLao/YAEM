@@ -1,4 +1,3 @@
-from django.conf.urls.i18n import i18n_patterns
 from django.urls import path
 from django.views.decorators.cache import cache_page
 
@@ -12,4 +11,3 @@ urlpatterns = [
         "partner/", cache_page(cache_duration)(Partner.as_view()), name="partner_page"
     ),
 ]
-
