@@ -360,7 +360,7 @@ msgstr "Sales"
 
 #: partner/templates/partner/partner.html:256
 msgid ""
-"Ваша корзины - мощный инструмент для увеличения среднего чека. Простота "
+"Ваша корзина - мощный инструмент для увеличения среднего чека. Простота "
 "добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам"
 msgstr ""
 "Your shopping cart is a powerful tool to increase your average check. Ease "
@@ -575,7 +575,7 @@ msgstr "More for Silver"
 msgid ""
 "Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для "
 "клиента, предоставив удобный сервис по взаимодействию. Смотрите на "
-"предпочтения клиентов и готовьтесь в онлайн заказам. Меню реализовано на "
+"предпочтения клиентов и готовьтесь к онлайн заказам. Меню реализовано на "
 "минимум трёх языках."
 msgstr ""
 "Silver is the most popular tariff. Allows your establishment to open up to "
@@ -594,7 +594,7 @@ msgid "страницу с карточкой заведения и меню"
 msgstr "web-page with card of your establishment and"
 
 #: partner/templates/partner/partner.html:581
-msgid "на минимум 3-х языках и фото"
+msgid "на минимум 3-х языках с фото"
 msgstr "at least 3 languages and photos"
 
 #: partner/templates/partner/partner.html:582

@@ -22,7 +22,7 @@
     <!--    CSS AOS  -->
     <link href="{% static 'aos-master/dist/aos.css' %}" rel="stylesheet">
     <!--  ICON -->
-    <link rel="icon" href="{% static 'images/favicon1.jpg' %}">
+    <link rel="icon" href="{% static 'images/base/favicon1-min.jpg' %}">
     <title>{% block title %} {% endblock title %}</title>
 
     <!-- Meta Pixel Code -->
@@ -102,7 +102,7 @@
     <div class="container-fluid text-center">
         <div class="col-5 mx-auto">
             <a href="{% url 'main:main_page' %}">
-                <img data-aos="fade-down" src="{% static 'images/logo.png' %}" alt="#" class="img-fluid-logo">
+                <img data-aos="fade-down" src="{% static 'images/base/logo-min.png' %}" alt="#" class="img-fluid-logo">
             </a>
         </div>
 
@@ -256,19 +256,19 @@
         <h3 class="text-center my-3">{% translate 'Наша команда' %}</h3>
         <div class="row">
             <div data-aos="fade-right" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/people-1.jpg' %}" height="150" width="auto" alt="" class="img"
+                <img src="{% static 'images/base/people-1-min.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% translate 'Егор' %}</p>
                 <p class="">{% translate 'Коммерческий директор' %}</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/people-2.jpg' %}" height="150" width="auto" alt="" class="img"
+                <img src="{% static 'images/base/people-2-min.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
                 <p class="">{% translate 'Руководитель отдела развития' %}</p>
             </div>
             <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/people-3.jpg' %}" height="150" width="auto" alt="" class="img"
+                <img src="{% static 'images/base/people-3-min.jpg' %}" height="150" width="auto" alt="" class="img"
                      style="border-radius: 100%;">
                 <p class="fs-5 mt-3">{% translate 'Артём' %}</p>
                 <p class="">{% translate 'Руководитель отдела разработки' %}</p>
