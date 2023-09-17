@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-25 14:48+0600\n"
+"POT-Creation-Date: 2023-09-16 17:30+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: YaYem/settings.py:130
+msgid "Russian"
+msgstr ""
+
+#: YaYem/settings.py:131
+msgid "English"
+msgstr ""
+
+#: YaYem/settings.py:132
+msgid "Kazakh"
+msgstr ""
 
 #: cart/templates/cart/cart.html:6 cart/templates/cart/cart.html:27
 msgid "Корзина"
@@ -38,13 +50,13 @@ msgstr "Nothing in cart"
 msgid "В зале"
 msgstr "Inside"
 
-#: cart/templates/cart/cart.html:126 main/templates/main/index.html:98
-#: main/templates/main/menu.html:51
+#: cart/templates/cart/cart.html:126 main/templates/main/index.html:99
+#: main/templates/main/menu.html:50
 msgid "Самовывоз"
 msgstr "Pick-up"
 
-#: cart/templates/cart/cart.html:129 main/templates/main/index.html:116
-#: main/templates/main/menu.html:104
+#: cart/templates/cart/cart.html:129 main/templates/main/index.html:117
+#: main/templates/main/menu.html:103
 msgid "Доставка"
 msgstr "Delivery"
 
@@ -125,67 +137,67 @@ msgstr "Oops... Something is wrong"
 msgid "Но Вы можете вернуться"
 msgstr "Return"
 
-#: main/templates/main/base.html:114
+#: main/templates/main/base.html:144
 msgid "ГЛАВНАЯ"
 msgstr "MAIN"
 
-#: main/templates/main/base.html:124
+#: main/templates/main/base.html:154
 msgid "ЗАКАЗАТЬ"
 msgstr "ORDER"
 
-#: main/templates/main/base.html:134
+#: main/templates/main/base.html:164
 msgid "Блюда"
 msgstr "Food"
 
-#: main/templates/main/base.html:138
+#: main/templates/main/base.html:168
 msgid "Продукты"
 msgstr "Groceries"
 
-#: main/templates/main/base.html:142
+#: main/templates/main/base.html:172
 msgid "Банкет"
 msgstr "Banquet"
 
-#: main/templates/main/base.html:158
+#: main/templates/main/base.html:188
 msgid "БИЗНЕСУ"
 msgstr "BUSINESS"
 
-#: main/templates/main/base.html:168
+#: main/templates/main/base.html:198
 msgid "Кайтеринг"
 msgstr "Catering"
 
-#: main/templates/main/base.html:173
+#: main/templates/main/base.html:203
 msgid "Представители"
 msgstr "Dealers"
 
-#: main/templates/main/base.html:178 main/templates/main/base.html:227
+#: main/templates/main/base.html:208 main/templates/main/base.html:257
 msgid "Контакты"
 msgstr "Contact us"
 
-#: main/templates/main/base.html:203
+#: main/templates/main/base.html:233
 msgid "Наша команда"
 msgstr "Our team"
 
-#: main/templates/main/base.html:208
+#: main/templates/main/base.html:238
 msgid "Егор"
 msgstr "Egor"
 
-#: main/templates/main/base.html:209
+#: main/templates/main/base.html:239
 msgid "Коммерческий директор"
 msgstr "Commercial Director"
 
-#: main/templates/main/base.html:214
+#: main/templates/main/base.html:244
 msgid "Олег"
 msgstr "Oleg"
 
-#: main/templates/main/base.html:215
+#: main/templates/main/base.html:245
 msgid "Руководитель отдела развития"
 msgstr "Marketing dep."
 
-#: main/templates/main/base.html:220
+#: main/templates/main/base.html:250
 msgid "Артём"
 msgstr "Artem"
 
-#: main/templates/main/base.html:221
+#: main/templates/main/base.html:251
 msgid "Руководитель отдела разработки"
 msgstr "Development dep."
 
@@ -213,11 +225,11 @@ msgstr "Establishments"
 msgid "Все"
 msgstr "All"
 
-#: main/templates/main/index.html:93 main/templates/main/menu.html:45
+#: main/templates/main/index.html:94 main/templates/main/menu.html:44
 msgid "Время работы"
 msgstr "Working hours"
 
-#: main/templates/main/index.html:135
+#: main/templates/main/index.html:136
 msgid "Перейти"
 msgstr "Follow"
 
@@ -229,19 +241,19 @@ msgstr "YAEM with"
 msgid "Добро пожаловать в"
 msgstr "Welcome to"
 
-#: main/templates/main/menu.html:46
+#: main/templates/main/menu.html:45
 msgid "г"
 msgstr "c"
 
-#: main/templates/main/menu.html:126 partner/templates/partner/partner.html:57
+#: main/templates/main/menu.html:125 partner/templates/partner/partner.html:57
 msgid "МЕНЮ"
 msgstr "MENU"
 
-#: main/templates/main/menu.html:240
+#: main/templates/main/menu.html:238
 msgid "Добавить"
 msgstr "Add"
 
-#: main/templates/main/menu.html:261
+#: main/templates/main/menu.html:260
 msgid "Добавлено в корзину"
 msgstr "Added to Cart"
 
@@ -348,7 +360,7 @@ msgstr "Sales"
 
 #: partner/templates/partner/partner.html:256
 msgid ""
-"Ваша корзины - мощный инструмент для увеличения среднего чека. Простота "
+"Ваша корзина - мощный инструмент для увеличения среднего чека. Простота "
 "добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам"
 msgstr ""
 "Your shopping cart is a powerful tool to increase your average check. Ease "
@@ -563,7 +575,7 @@ msgstr "More for Silver"
 msgid ""
 "Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для "
 "клиента, предоставив удобный сервис по взаимодействию. Смотрите на "
-"предпочтения клиентов и готовьтесь в онлайн заказам. Меню реализовано на "
+"предпочтения клиентов и готовьтесь к онлайн заказам. Меню реализовано на "
 "минимум трёх языках."
 msgstr ""
 "Silver is the most popular tariff. Allows your establishment to open up to "
@@ -582,7 +594,7 @@ msgid "страницу с карточкой заведения и меню"
 msgstr "web-page with card of your establishment and"
 
 #: partner/templates/partner/partner.html:581
-msgid "на минимум 3-х языках и фото"
+msgid "на минимум 3-х языках c фото"
 msgstr "at least 3 languages and photos"
 
 #: partner/templates/partner/partner.html:582
@@ -756,60 +768,3 @@ msgstr "Your request accepted"
 #: partner/templates/partner/partner.html:662
 msgid "Мы скоро свяжемся с Вами"
 msgstr "We shall contact you soon"
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
-#, python-format
-msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" "
-"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
-"configured any URLs."
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
-msgid "Django Documentation"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
-msgid "Get started with Django"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
-msgid "Django Community"
-msgstr ""
-
-#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
-msgid "Connect, get help, or contribute"
-msgstr ""
-
-#~ msgid "Заказ принят!"
-#~ msgstr "Order completed!"
-
-#~ msgid "Караганда"
-#~ msgstr "Karaganda"
-
-#~ msgid "Темиртау"
-#~ msgstr "Temirtau"
-
-#~ msgid "Телефон"
-#~ msgstr "Phone"
