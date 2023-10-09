@@ -23,11 +23,13 @@
     background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
 
     <!--Flying Cart-->
-
     <a id="Cart" class="btn fs-2 mx-2 shadow btn-animate btn-rounded"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
        href="{% url 'cart:cart_page' %}">
         <i class="fas fa-cart-shopping"></i>
+        <!--cart info(total price or total quantity)-->
+        <h1 id="cart-info"></h1>
+        <!--cart info end-->
     </a>
 
     <!--    CAFE DESCRIPTION    -->
@@ -123,54 +125,49 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     </div>
     <div class="container text-center my-3">
         <h2 data-aos="fade-right" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
-<!--        <div data-aos="fade-right" class="btn-group-sm" role="group">-->
-<!--            {% for category in categories %}-->
-<!--            <button class="btn btn-success btn-animate" style="">{{ category }}</button>-->
-<!--            {% endfor %}-->
-<!--        </div>-->
     </div>
 
 
-<!--  SWIPER -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-<!-- Demo styles -->
-<style>
-    body {
-      background: #eee;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color: #000;
-      margin: 0;
-      padding: 0;
-    }
+    <!--  SWIPER -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <!-- Demo styles -->
+    <style>
+        body {
+          background: #eee;
+          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #000;
+          margin: 0;
+          padding: 0;
+        }
 
-    .swiper {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      transition: opacity 0.3s ease;
-    }
+        .swiper {
+          width: 100%;
+          padding-top: 50px;
+          padding-bottom: 50px;
+          transition: opacity 0.3s ease;
+        }
 
-    .swiper-wrapper {
-    height:auto;
-    }
+        .swiper-wrapper {
+        height:auto;
+        }
 
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: auto;
-      height: auto;
-    }
+        .swiper-slide {
+          background-position: center;
+          background-size: cover;
+          width: auto;
+          height: auto;
+        }
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
+        .swiper-slide img {
+          display: block;
+          width: 100%;
 
-</style>
+    </style>
 
 
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!--    FOOD TYPE SWIPER    -->
     <div data-aos="flip-up" class="sticky-top">
@@ -179,7 +176,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                 <div class="swiper-wrapper text-center">
                     {% for ft in food_type %}
                     <div class="swiper-slide mx-0">
-                        <a class="btn btn-rounded shadow-0 btn-animate" style="color: #fd7014; background: rgba(33, 37, 41, 0.8)" href="#{{ ft }}">
+                        <a class="btn btn-rounded shadow-0 btn-animate"
+                           style="color: #fd7014; background: rgba(33, 37, 41, 0.8)" href="#{{ ft }}">
                             {{ ft }}
                         </a>
                     </div>
@@ -190,10 +188,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     </div>
 
     <script>
-            var swiper = new Swiper('.swiper-container', {
-                slidesPerView: 'auto',
-                spaceBetween: 0,
- });
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 0,
+});
     </script>
     <!--    FOOD TYPE DOWN    -->
 
@@ -227,18 +225,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <p class="my-0 fs-4 fw-bold" style="color: #fd7014">{{ dish.actual_price|intcomma }}
                             ₸</p>
 
-                        <!--       Add to cart form       -->
-                        <form class="add-to-cart-form" action="{% url 'cart:add_to_cart' %}" method="post">
+                        <!--CART-->
+                        <form>
                             {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{ dish.id }}">
-                            <input type="hidden" name="quantity" value="1">
-                            <button class="btn btn-sm btn-success my-1 btn-animate btn-rounded" type="submit"
-                                    style="--bs-btn-active-bg: #fd7014;" data-mdb-toggle="modal"
-                                    data-mdb-target="#exampleModal">
-                                {% translate 'Добавить' %}
+                            <!-- Кнопка "+" для увеличения количества товара -->
+                            <input type="hidden" name="add_quantity" value="1">
+                            <button class="btn btn-success btn-animate" hx-post="{% url 'cart:add_to_cart' dish.id %}" hx-trigger="click"
+                                    hx-target="#cart-info"> +
+                            </button>
+                            <!-- Кнопка "-" для уменьшения количества товара -->
+                            <input type="hidden" name="remove_quantity" value="1">
+                            <button class="btn btn-danger btn-animate" hx-post="{% url 'cart:remove_from_cart' dish.id %}" hx-trigger="click"
+                                    hx-target="#cart-info"> -
                             </button>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -250,20 +250,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 </section>
 
 <!--  MODAL CART WINDOW  -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
+<!--    <div class="modal-dialog modal-dialog-centered modal-sm">-->
+<!--        <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">-->
 
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!--            <div class="modal-body">-->
+<!--                <div class="row">-->
+<!--                    <div class="col-12 text-center">-->
+<!--                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 </body>
 
 

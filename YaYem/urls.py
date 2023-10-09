@@ -12,6 +12,7 @@ urlpatterns += i18n_patterns(
     path("", include("main.urls", namespace="main")),
     path("", include("partner.urls", namespace="partner")),
     path("", include("cart.urls", namespace="cart")),
+    path("", include("banquets.urls", namespace="banquets")),
     prefix_default_language=False,
 )
 

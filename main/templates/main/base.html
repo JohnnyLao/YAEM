@@ -47,6 +47,10 @@
         <div><img src="https://mc.yandex.ru/watch/94643226" style="position:absolute; left:-9999px;" alt=""/></div>
     </noscript>
     <!-- /Yandex.Metrika counter -->
+
+    <script src="https://unpkg.com/htmx.org@1.9.6"></script>
+
+
 </head>
 <body class="text-white my-0 py-0" style="font-family: Montserrat;">
 <div class="mask" style=" width: 100%;
@@ -169,6 +173,7 @@
                                         class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
                             <a class="" href="#">
+                                <!--{% url 'banquets:banquets_page' %}-->
                                 <button class="btn  text-secondary" disabled>{% translate 'Банкет' %} <i
                                         class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
@@ -266,7 +271,7 @@
                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                     </svg>
                 </a>
-                Email: Yaem@gmail.com
+                Email: yaem.menu@gmail.com
             </div>
             <div data-aos="fade-bottom" data-aos-delay="200" class="col-12 col-md-4 my-2">
                 <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20с%20YAEM."
@@ -317,7 +322,6 @@
 <script src="{% static 'js/counter.js' %}"></script>
 <script src="{% static 'js/button_up.js' %}"></script>
 <script src="{% static 'js/flying_cart.js' %}"></script>
-<script src="{% static 'js/add_to_cart.js' %}"></script>
 <script src="{% static 'js/session.js' %}"></script>
 
 <!--SCRIPTS END-->

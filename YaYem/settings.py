@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "main.apps.MainConfig",
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
+    "banquets.apps.BanquetsConfig",
     # debug_toolbar
     "debug_toolbar",
     # translation
@@ -66,6 +67,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "context_processors.context_processors.data_counter_site",
+                # "context_processors.context_processors.cart_items_count",
             ],
         },
     },

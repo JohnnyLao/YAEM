@@ -11,3 +11,9 @@ def data_counter_site(request):
         "total_clients": total_clients,
         "total_orders": total_orders,
     }
+
+
+# def cart_items_count(request):
+#     cart = request.session.get('cart', {})
+#     print(cart)
+#     return {'counter_cart_items': len(cart)}
