@@ -19,3 +19,9 @@ def data_counter_site(request):
         "total_banquets": total_banquets,
         "total_cities": total_cities,
     }
+
+
+# def cart_items_count(request):
+#     cart = request.session.get('cart', {})
+#     print(cart)
+#     return {'counter_cart_items': len(cart)}
