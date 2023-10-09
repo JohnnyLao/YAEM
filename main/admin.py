@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from main.models import Category, City, Client, Dish, Food_type2
+from main.models import Category, City, Client, Dish, Food_type2, EstablishmentRates
 
 
 @admin.register(City)
@@ -20,6 +20,7 @@ class CategoryAdmin(admin.ModelAdmin):
 class Food_type2Admin(admin.ModelAdmin):
     list_filter = ["client"]
     search_fields = ["name"]
+    filter_horizontal = ["client"]
 
     def category_name(self, obj):
         return obj.category.name if obj.category else "Не указанно"
@@ -41,3 +42,8 @@ class DishAdmin(admin.ModelAdmin):
     list_display = ["name", "food_type", "stop", "actual_price", "z_index"]
     list_filter = ["client", "stop"]
     search_fields = ["name"]
+
+
+@admin.register(EstablishmentRates)
+class EstablishmentRatesAdmin(admin.ModelAdmin):
+    pass

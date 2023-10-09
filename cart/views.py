@@ -1,42 +1,14 @@
 import json
 
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.views import View
 
 from main.models import Dish
 
 
-class AddToCartView(View):
-    def post(self, request):
-        product_id = request.POST.get("product_id")
-        quantity = request.POST.get("quantity")
-
-        if not product_id or not product_id.isdigit():
-            return JsonResponse({"success": False, "error": "Invalid product_id"})
-
-        if not quantity or not quantity.isdigit():
-            return JsonResponse({"success": False, "error": "Invalid quantity"})
-
-        # Проверка наличия корзины в сессии
-        if "cart" not in request.session:
-            request.session["cart"] = {}
-
-        cart = request.session["cart"]
-
-        # Добавление товара в корзину
-        if product_id and product_id in cart:
-            cart[product_id] += int(quantity)
-        elif product_id:
-            cart[product_id] = int(quantity)
-
-        request.session.modified = True
-
-        return JsonResponse({"success": True})
-
-
-class CartView(View):
+class ViewCartPage(View):
     def get(self, request):
         cart = request.session.get("cart", {})
         cart_items = []
@@ -44,48 +16,82 @@ class CartView(View):
         total_price = 0
 
         for product_id, quantity in cart.items():
-            try:
-                product = Dish.objects.get(id=product_id)
-                cart_item = {
-                    "product": product,
-                    "quantity": quantity,
-                    "sub_total": product.actual_price * quantity,
-                }
-                cart_items.append(cart_item)
-                sub_total_price += cart_item["sub_total"]
-            except Dish.DoesNotExist:
-                pass
-
-        total_price = sub_total_price  # Вычисление общей суммы
-
+            product = get_object_or_404(Dish, id=product_id)
+            cart_item = {
+                "product": product,
+                "quantity": quantity,
+                "sub_total": product.actual_price * quantity,
+            }
+            cart_items.append(cart_item)
+            sub_total_price += cart_item["sub_total"]
+        total_price = sub_total_price
         context = {
             "cart_items": cart_items,
             "sub_total_price": sub_total_price,
             "total_price": total_price,
             "is_empty": len(cart_items) == 0,
         }
-
         return render(request, "cart/cart.html", context=context)
 
 
-class RemoveFromCartView(View):
-    def post(self, request):
-        product_id = request.POST.get("product_id")
+class AddToCart(View):
+    def post(self, request, product_id):
+        product = get_object_or_404(Dish, id=product_id)
+        quantity = int(request.POST.get("add_quantity", 1))
+        if "cart" not in request.session:
+            request.session["cart"] = {}
+        cart = request.session["cart"]
+        key = str(product_id)
+        if key in cart:
+            cart[key] += quantity
+        else:
+            cart[key] = quantity
+        request.session.modified = True
+        # debug
+        # for k, v in cart.items():
+        #     print(f'Продукт № : {k}\nКоличество : {v}')
+        #     print()
+        # end debug
+        total_cart_items_added = sum(cart.values())
+        total_cart_price = sum(
+            product.actual_price * quantity for product_id, quantity in cart.items()
+        )
+        return HttpResponse(total_cart_items_added)
 
-        if not product_id or not product_id.isdigit():
-            return JsonResponse({"success": False, "error": "Invalid product_id"})
 
+class RemoveFromCart(View):
+    def post(self, request, product_id):
+        product = get_object_or_404(Dish, id=product_id)
+        quantity = int(request.POST.get("remove_quantity", 1))
         cart = request.session.get("cart", {})
+        key = str(product_id)
+        cart[key] = max(cart.get(key, 0) - quantity, 0)
+        if cart[key] == 0:
+            del cart[key]
+        request.session.modified = True
+        # debug
+        # for k, v in cart.items():
+        #     print(f'Продукт № : {k}\nКоличество : {v}')
+        #     print()
+        # end debug
+        total_cart_items_removed = sum(cart.values())
+        total_cart_price = sum(
+            product.actual_price * quantity for product_id, quantity in cart.items()
+        )
+        return HttpResponse(total_cart_items_removed)
 
-        # Удаление товара из корзины
+
+class RemoveFromCartOnCartPage(View):
+    def post(self, request):
+        product_id = request.POST.get('product_id')
+        cart = request.session['cart']
         if product_id in cart:
             if cart[product_id] == 1:
                 del cart[product_id]
             else:
                 cart[product_id] -= 1
             request.session.modified = True
-
-        return JsonResponse({"success": True})
+        return redirect(reverse("cart:cart_page"))
 
 
 class CartClearView(View):
