@@ -21,6 +21,24 @@ class City(models.Model):
 def client_logo_upload_to(instance, filename):
     return f"{instance.name.replace(' ', '_').capitalize()}/logo/{filename}"
 
+class EstablishmentRates(models.Model):
+    BRONZE = 'БРОНЗА'
+    SILVER = 'СЕРЕБРО'
+    GOLD = 'ЗОЛОТО'
+    RATE_ESTABLISHMENT_CHOICES = [
+        (BRONZE, 'БРОНЗА'),
+        (SILVER, 'СЕРЕБРО'),
+        (GOLD, 'ЗОЛОТО'),
+    ]
+    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, verbose_name='Название тарифа', unique=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = "Тариф"
+        verbose_name_plural = "Тарифы"
+
 
 class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
@@ -38,7 +56,7 @@ class Client(models.Model):
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
-    tarif_number = models.IntegerField(blank=True, null=True, verbose_name="Тариф(1-3)")
+    tarif_number = models.ForeignKey(EstablishmentRates, on_delete=models.CASCADE, blank=True, null=True, verbose_name="Тариф")
     z_index = models.IntegerField(verbose_name="Порядковый №", default=1)
 
     class Meta:
@@ -114,18 +132,4 @@ class Dish(models.Model):
         return self.name
 
 
-class EstablishmentRates(models.Model):
-    BRONZE = 'bronze'
-    SILVER = 'silver'
-    GOLD = 'gold'
-    RATE_ESTABLISHMENT_CHOICES = [
-        (BRONZE, 'БРОНЗА'),
-        (SILVER, 'СЕРЕБРО'),
-        (GOLD, 'ЗОЛОТО'),
-    ]
-    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, default=BRONZE,
-                            verbose_name='Название тарифа',)
 
-    class Meta:
-        verbose_name = "Тариф"
-        verbose_name_plural = "Тарифы"
