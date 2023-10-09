@@ -1,6 +1,6 @@
 //button up
 $(window).scroll(function() {
-        if ($(this).scrollTop() >= 500) {
+        if ($(this).scrollTop() >= 1000) {
             $('#scrollToTopButton').fadeIn();
             $('#scrollToTopButton').addClass('animated-button');
         } else {
