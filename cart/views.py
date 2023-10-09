@@ -56,7 +56,7 @@ class AddToCart(View):
         total_cart_price = sum(
             product.actual_price * quantity for product_id, quantity in cart.items()
         )
-        return HttpResponse(total_cart_items_added)
+        return HttpResponse(f'{total_cart_price} ₸')
 
 
 class RemoveFromCart(View):
@@ -78,7 +78,7 @@ class RemoveFromCart(View):
         total_cart_price = sum(
             product.actual_price * quantity for product_id, quantity in cart.items()
         )
-        return HttpResponse(total_cart_items_removed)
+        return HttpResponse(f'{total_cart_price} ₸')
 
 
 class RemoveFromCartOnCartPage(View):

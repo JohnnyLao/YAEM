@@ -97,17 +97,17 @@
                 {% if client.status %}
                 <div class="col-12 col-md-6 col-lg-4 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <img data-aos="fade-down" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0"
+                        <img data-aos="zoom-out-right" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0"
                              alt="..."
                              style="border-radius: 15px; max-width: 225px; max-height: 225px">
 
                         <div class="card-body my-0 py-1">
-                            <h4 data-aos="fade-right" class="card-title my-0">{{ client.name }}</h4>
-                            <p data-aos="fade-up" class="card-text my-0 text-white-50">{% translate 'Время работы' %}:
+                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ client.name }}</h4>
+                            <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">{% translate 'Время работы' %}:
                                 {{ client.working_time }}</p>
-                            <p data-aos="fade-right" class="my-0">{{ client.description }}</p>
+                            <p data-aos="zoom-out-right" class="my-0">{{ client.description }}</p>
                             <div class="row my-0">
-                                <div data-aos="fade-right" class="col-6 my-0">
+                                <div data-aos="zoom-out-right" class="col-6 my-0">
                                     <p class="text my-0"> {% translate 'Самовывоз' %}
                                         {% if client.outside %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"

@@ -23,12 +23,12 @@
     background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
 
     <!--Flying Cart-->
-    <a id="Cart" class="btn fs-2 mx-2 shadow btn-animate btn-rounded"
+    <a id="Cart" class="d-inline btn fs-2 mx-2 shadow btn-rounded"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
        href="{% url 'cart:cart_page' %}">
         <i class="fas fa-cart-shopping"></i>
-        <!--cart info(total price or total quantity)-->
-        <h1 id="cart-info"></h1>
+        <!--cart info(total price) {{ total_price|intcomma }}-->
+        <span class="fs-3 my-0 py-0" id="cart-info">0</span>
         <!--cart info end-->
     </a>
 
@@ -228,16 +228,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <!--CART-->
                         <form>
                             {% csrf_token %}
-                            <!-- Кнопка "+" для увеличения количества товара -->
-                            <input type="hidden" name="add_quantity" value="1">
-                            <button class="btn btn-success btn-animate" hx-post="{% url 'cart:add_to_cart' dish.id %}" hx-trigger="click"
-                                    hx-target="#cart-info"> +
-                            </button>
                             <!-- Кнопка "-" для уменьшения количества товара -->
                             <input type="hidden" name="remove_quantity" value="1">
-                            <button class="btn btn-danger btn-animate" hx-post="{% url 'cart:remove_from_cart' dish.id %}" hx-trigger="click"
-                                    hx-target="#cart-info"> -
+                            <button class="btn btn-animate shadow-0 px-0 py-0" data-mdb-ripple-color="danger" hx-post="{% url 'cart:remove_from_cart' dish.id %}" hx-trigger="click"
+                                    hx-target="#cart-info"><i class="far fa-square-minus fa-3x text-danger"></i>
                             </button>
+                            <!--КОЛ-ВО БЛЮДА-->
+                            <span class="fs-4 mx-1">1</span>
+                            <!-- Кнопка "+" для увеличения количества товара -->
+                            <input type="hidden" name="add_quantity" value="1">
+                            <button class="btn btn-animate shadow-0 px-0 py-0" data-mdb-ripple-color="success" hx-post="{% url 'cart:add_to_cart' dish.id %}" hx-trigger="click"
+                                    hx-target="#cart-info"><i class="far fa-square-plus fa-3x text-success"></i>
+                            </button>
+
                         </form>
                     </div>
                 </div>
