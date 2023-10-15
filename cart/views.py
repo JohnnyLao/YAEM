@@ -52,7 +52,10 @@ class AddToCart(View):
             product = get_object_or_404(Dish, id=product_id)
             sub_total = product.actual_price * quantity
             total_price += sub_total
-        return HttpResponse(total_price)
+        html = """<span  data-aos="fade-up" class="fs-3 my-0 py-0"> 
+                        <i class="fas fa-cart-shopping my-0 py-0"></i>"""
+        formatted_total_price = f'{html} {total_price:,} ₸</span>'.replace(',', ' ')
+        return HttpResponse(formatted_total_price)
 
 
 class RemoveFromCart(View):
@@ -70,7 +73,13 @@ class RemoveFromCart(View):
             product = get_object_or_404(Dish, id=product_id)
             sub_total = product.actual_price * quantity
             total_price += sub_total
-        return HttpResponse(total_price)
+        html = """<span  data-aos="fade-up" class="fs-3 my-0 py-0" style="color: #fd7014; background: rgba(33, 37, 41, 0.5)"> 
+                                <i class="fas fa-cart-shopping my-0 py-0"></i>"""
+        formatted_total_price = f'{html} {total_price:,} ₸</span>'.replace(',', ' ')
+        if total_price == 0:
+            formatted_total_price = f''
+            return HttpResponse(formatted_total_price)
+        return HttpResponse(formatted_total_price)
 
 
 class RemoveFromCartOnCartPage(View):
