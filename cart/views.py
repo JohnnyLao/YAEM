@@ -47,16 +47,12 @@ class AddToCart(View):
         else:
             cart[key] = quantity
         request.session.modified = True
-        # debug
-        # for k, v in cart.items():
-        #     print(f'Продукт № : {k}\nКоличество : {v}')
-        #     print()
-        # end debug
-        total_cart_items_added = sum(cart.values())
-        total_cart_price = sum(
-            product.actual_price * quantity for product_id, quantity in cart.items()
-        )
-        return HttpResponse(f'{total_cart_price} ₸')
+        total_price = 0
+        for product_id, quantity in cart.items():
+            product = get_object_or_404(Dish, id=product_id)
+            sub_total = product.actual_price * quantity
+            total_price += sub_total
+        return HttpResponse(total_price)
 
 
 class RemoveFromCart(View):
@@ -69,16 +65,12 @@ class RemoveFromCart(View):
         if cart[key] == 0:
             del cart[key]
         request.session.modified = True
-        # debug
-        # for k, v in cart.items():
-        #     print(f'Продукт № : {k}\nКоличество : {v}')
-        #     print()
-        # end debug
-        total_cart_items_removed = sum(cart.values())
-        total_cart_price = sum(
-            product.actual_price * quantity for product_id, quantity in cart.items()
-        )
-        return HttpResponse(f'{total_cart_price} ₸')
+        total_price = 0
+        for product_id, quantity in cart.items():
+            product = get_object_or_404(Dish, id=product_id)
+            sub_total = product.actual_price * quantity
+            total_price += sub_total
+        return HttpResponse(total_price)
 
 
 class RemoveFromCartOnCartPage(View):
