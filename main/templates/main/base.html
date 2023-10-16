@@ -82,13 +82,13 @@
     <!-- Container wrapper -->
     <div class="container-fluid text-center">
         <div class="col-5 mx-auto">
-            <a href="{% url 'main:main_page' %}">
-                <img data-aos="fade-down" src="{% static 'images/base/logo-min.png' %}" alt="#" class="img-fluid-logo">
+            <a href="{% url 'main:main_page' %}" data-mdb-toggle="tooltip" title="Вся еда в одном месте">
+                <img data-aos="flip-right" src="{% static 'images/base/logo-min.png' %}" alt="#" class="img-fluid-logo">
             </a>
         </div>
 
         <div class="col-2 mx-auto">
-            <button data-aos="fade-top" class="navbar-toggler border btn-animate" data-mdb-toggle="collapse"
+            <button data-aos="flip-right" class="navbar-toggler border btn-animate" data-mdb-toggle="collapse"
                     data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -99,9 +99,9 @@
         <div class="col-5 text-center" style="">
             <ul class="navbar-nav">
     <!-- Icon dropdown -->
-    <li class="nav-item dropdown mx-auto">
+    <li data-aos="flip-right" class="nav-item dropdown mx-auto">
         <a
-                class="nav-link dropdown-toggle"
+                class="nav-link dropdown-toggle btn-animate"
                 href="#"
                 id="navbarDropdown"
                 role="button"

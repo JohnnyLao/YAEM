@@ -22,11 +22,11 @@
 <!--COUNTER START-->
 <section class="" style="background: #212529">
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
+        <div data-aos="fade-right" class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
+                    <div  class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
@@ -50,44 +50,52 @@
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/index/3-min.jpg' %});
     background-attachment: fixed; background-size: 150vh; background-repeat: repeat">
+        <div class="container">
+            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
 
-        <div data-aos="fade-up" class="container text-center">
-            <h1 data-aos="fade-up" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
-            <!--   CITY FOR LOOP     -->
-            <div class="btn-group-sm" role="group">
-                <a href="{% url 'main:main_page' %}"
-                   {% if city_selected is None %}
-                   class="btn btn-warning btn-animate"
-                   {% else %}
-                   class="btn btn-success btn-animate"
-                   {% endif %}>{% translate 'Все' %}
-                </a>
+            <div class="row gy-3">
+                <div class="col-12 text-center mx-auto">
 
-                {% for city in cities %}
-                <a href="{% url 'main:city_filter' city.slug %}"
-                   {% if city.pk == city_selected.pk %}
-                   class="btn btn-warning btn-animate"
-                   {% else %}
-                   class="btn btn-success btn-animate"
-                   {% endif %}>{{ city }}
-                </a>
-                {% endfor %}
+                    <!--   CITY FOR LOOP     -->
+                    <div class="btn-group-sm" role="group">
+                        <a href="{% url 'main:main_page' %}"
+                           {% if city_selected is None %}
+                           class="btn btn-warning btn-animate"
+                           {% else %}
+                           class="btn btn-success btn-animate"
+                           {% endif %}>{% translate 'Все' %}
+                        </a>
+
+                        {% for city in cities %}
+                        <a href="{% url 'main:city_filter' city.slug %}"
+                           {% if city.pk == city_selected.pk %}
+                           class="btn btn-warning btn-animate"
+                           {% else %}
+                           class="btn btn-success btn-animate"
+                           {% endif %}>{{ city }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
                 <!--   END CITY FOR LOOP     -->
 
-
                 <!--  SEARCH FIELD -->
-
-                <form method="get">
-                    <input type="text" name="q" placeholder="Название заведения">
-                    <button type="submit">Найти</button>
-                </form>
-
-
-                <!-- END SEARCH FIELD -->
-
-            </div>
-        </div>
-
+                <div class="col-8 col-md-4 text-center mx-auto">
+                    <form method="get" class="text-center">
+                        <div class="input-group">
+                            <div class="form-outline form-white">
+                                <input id="search-input" name="q" class="form-control"/>
+                                <label class="form-label" for="search-input">Поиск заведения</label>
+                            </div>
+                            <button type="button" class="btn btn-warning btn-animate" data-mdb-html="true" data-mdb-toggle="tooltip" title="Hi! I'm tooltip">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                    </div>
+                    <!-- END SEARCH FIELD -->
+                </div>
 
         <div class="container">
             <div class="row my-3 gy-3 mx-auto justify-content-center">
