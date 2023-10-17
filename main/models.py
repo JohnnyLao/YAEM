@@ -21,6 +21,7 @@ class City(models.Model):
 def client_logo_upload_to(instance, filename):
     return f"{instance.name.replace(' ', '_').capitalize()}/logo/{filename}"
 
+
 class EstablishmentRates(models.Model):
     BRONZE = 'БРОНЗА'
     SILVER = 'СЕРЕБРО'
@@ -30,7 +31,8 @@ class EstablishmentRates(models.Model):
         (SILVER, 'СЕРЕБРО'),
         (GOLD, 'ЗОЛОТО'),
     ]
-    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, verbose_name='Название тарифа', unique=True)
+    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, verbose_name='Название тарифа',
+                            unique=True)
 
     def __str__(self):
         return self.name
@@ -56,7 +58,8 @@ class Client(models.Model):
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
-    tarif_number = models.ForeignKey(EstablishmentRates, on_delete=models.CASCADE, blank=True, null=True, verbose_name="Тариф")
+    tarif_number = models.ForeignKey(EstablishmentRates, on_delete=models.CASCADE, blank=True, null=True,
+                                     verbose_name="Тариф")
     z_index = models.IntegerField(verbose_name="Порядковый №", default=1)
 
     class Meta:
@@ -130,6 +133,3 @@ class Dish(models.Model):
 
     def __str__(self):
         return self.name
-
-
-
