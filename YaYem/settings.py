@@ -22,6 +22,8 @@ else:
     ALLOWED_HOSTS = ["yayem.kz", "www.yayem.kz"]
 
 INSTALLED_APPS = [
+    # modern admin
+    'jazzmin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -35,6 +37,7 @@ INSTALLED_APPS = [
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
+    "accounts.apps.AccountsConfig",
     # debug_toolbar
     "debug_toolbar",
     # translation
@@ -84,7 +87,6 @@ DATABASES = {
         "NAME": "db.sqlite3",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -145,3 +147,38 @@ INTERNAL_IPS = [
     "127.0.0.1",
     "localhost",
 ]
+
+# jazzmin config ui
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "litera",
+}
+
+JAZZMIN_SETTINGS = {
+    "topmenu_links": [
+        {
+            "name": "Админ-панель",
+            "url": "admin:index",
+            "permissions": ["auth.view_user"],
+        },
+        {
+            "name": "Главная",
+            "url": "main:main_page",
+            "new_window": True,
+            "permissions": ["auth.view_user"],
+        },
+        {
+            "name": "Партнерка",
+            "url": "partner:partner_page",
+            "new_window": True,
+            "permissions": ["auth.view_user"],
+        },
+    ],
+    "usermenu_links": [
+        {
+            "name": "Открыть сайт",
+            "url": "main:main_page",
+            "permissions": ["auth.view_user"],
+        },
+    ],
+}
