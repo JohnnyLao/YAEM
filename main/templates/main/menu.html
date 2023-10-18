@@ -41,13 +41,13 @@
 
                 <div class="card-body my-0 py-1">
                     <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
-                        <div class="d-inline" style="color: #FD7014">{{ client.name }}</div>
+                        <span class="d-inline" style="color: #FD7014">{{ client.name }}</span>
                     </h4>
                     <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
                     <p class="ms-2 my-1 ">{% translate 'г' %}.{{client.city}}, {{client.address}}</p>
                     <p class="mb-1">{{ client.description }}</p>
 
-                    <div class="row my-0">
+                    <div class="row my-0 d-flex justify-content-around">
                         <div class="col-4 col-lg-5 text-center text-lg-end px-0">
                             <p class="my-2"> {% translate 'Самовывоз' %}
                                 {% if client.outside %}
@@ -65,6 +65,7 @@
                             </p>
                             {% endif %}
                         </div>
+                        {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                         <div data-aos="flip-left" class="col-4 col-lg-2 px-0">
                             {% if client.inst %}
                             <a href="{{ client.inst }}" target="_blank">
@@ -101,6 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             </a>
                             {% endif %}
                         </div>
+                        {% endif %}
                         <div class="col-4 col-lg-5 text-center text-lg-start px-0">
                             <p class="my-2">{% translate 'Доставка' %}
                                 {% if client.delivery %}
@@ -207,9 +209,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             <div data-aos="fade-right" class="col-12 col-md-5 mx-auto"
                  style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
                 <div class="row">
-
-                    <div class="col-8 my-auto px-1 text-center">
-                        {% if dish.image %}
+                    <div class="col-8 col-lg-9 my-auto px-1 text-center">
+                        {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                         <img src="{{ dish.image.url }}" alt="dish img"
                              class="img-fluid bg-white mt-1"
                              style="max-width: 80px; border-radius: 20px">
@@ -217,7 +218,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <h5 class="my-1 fw-bold">{{ dish.name }}</h5>
                         <p class="mb-1">{{ dish.description }}</p>
                     </div>
-                    <div class="col-4 text-center mx-0 my-auto">
+                    <div class="col-4 col-lg-3 text-center mx-0 my-auto ">
                         {% if dish.old_price > dish.actual_price %}
                         <del class="fs-4 text-danger">
                             <p class="my-0" style="color: #fd7014">{{ dish.old_price|intcomma }}</p></del>
@@ -226,27 +227,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             ₸</p>
 
                         <!--CART-->
-                        <form>
+                        <form class="d-flex justify-content-between">
                             {% csrf_token %}
                             <!-- Кнопка "-" для уменьшения количества товара -->
                             <input type="hidden" name="remove_quantity" value="1">
                             <button class="btn btn-animate shadow-0 px-0 py-0 me-1" data-mdb-ripple-color="danger"
                                     hx-post="{% url 'cart:remove_from_cart' dish.id %}"
                                     hx-trigger="click"
-                                    hx-target="#product-quantity-{{ dish.id }}"><i class="far fa-square-minus fa-3x text-danger"></i>
+                                    hx-target="#product-quantity-{{ dish.id }}"
+                                    hidden="hidden">
+                                <i class="far fa-square-minus fa-3x text-danger"></i>
                             </button>
 
                             <!--КОЛ-ВО БЛЮДА-->
-                            <span class="fw-bold fs-4" id="product-quantity-{{ dish.id }}"></span>
+                            <span class="fw-bold fs-5" id="product-quantity-{{ dish.id }}"></span>
 
                             <!-- Кнопка "+" для увеличения количества товара -->
                             <input type="hidden" name="add_quantity" value="1">
                             <button class="btn btn-animate shadow-0 px-0 py-0 ms-1" data-mdb-ripple-color="success"
                                     hx-post="{% url 'cart:add_to_cart' dish.id %}"
                                     hx-trigger="click"
-                                    hx-target="#product-quantity-{{ dish.id }}"><i class="far fa-square-plus fa-3x text-success"></i>
+                                    hx-target="#product-quantity-{{ dish.id }}"><i
+                                    class="far fa-square-plus fa-3x text-success"></i>
                             </button>
                         </form>
+                        <script>
+                            // Добавление обработчика события для кнопки "+"
+                            document.querySelectorAll('button[data-mdb-ripple-color="success"]').forEach((button) => {
+                                const quantitySpanId = button.getAttribute("hx-target").substring(1); // Удаление "#"
+                                const minusButton = document.querySelector(`button[data-mdb-ripple-color="danger"][hx-target="#${quantitySpanId}"]`);
+
+                                button.addEventListener("click", () => {
+                                    // Сделаем кнопку "-" видимой
+                                    minusButton.removeAttribute("hidden");
+
+                                    // Другие действия, которые вы хотите выполнить при нажатии на "+"
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
