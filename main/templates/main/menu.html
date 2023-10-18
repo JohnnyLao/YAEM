@@ -11,7 +11,8 @@
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
    style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 90px; left: 15px; display: none; z-index: 100"
-   href="#header">
+   href="#header"
+    data-mdb-ripple-color="#FD7014">
     <i class="fas fa-arrow-up-long"></i>
 </a>
 <!--button end-->
@@ -20,21 +21,21 @@
 <!--  MAIN CONTENT  -->
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 1)), url({% static 'images/menu/3-min.jpg' %});
-    background-attachment: fixed; background-position: 30%;background-size: 150vh; background-repeat: repeat">
+    background-attachment: fixed;background-size: cover; background-repeat: no-repeat">
 
     <!--Flying Cart-->
-    <a class="d-inline btn fs-2 shadow btn-rounded mx-0 my-0 px-2 py-2"
-       style="color: #fd7014; background: rgba(33, 37, 41, 0.75); position: fixed; bottom: 30px; left: 10px; display: none; z-index: 101"
-       href="{% url 'cart:cart_page' %}">
-        <span data-aos="fade-up" class="fs-3 my-0 py-0" style="color: #fd7014; background: rgba(33, 37, 41, 0.5)">
+    <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
+       style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 15px; display: none; z-index: 101"
+       href="{% url 'cart:cart_page' %}"
+        data-mdb-ripple-color="#FD7014">
             <i class="fas fa-cart-shopping my-0 py-0"></i>
-        </span>
+
     </a>
 
     <!--    CAFE DESCRIPTION    -->
-    <div class="container-fluid pt-4">
+    <div class="container-fluid">
         <div class="col-12 text-center">
-            <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+            <div class="card text-white" style="background: rgba(33, 37, 41, 0.5); z-index: auto" >
                 <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
                      style="border-radius: 15px; max-width: 220px">
 
