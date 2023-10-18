@@ -98,45 +98,45 @@
             </button>
         </div>
 
-        <div class="col-5 text-center" style="">
+        <div class="col-5 text-center" >
             <ul class="navbar-nav">
-    <!-- Icon dropdown -->
-    <li data-aos="flip-right" class="nav-item dropdown mx-auto">
-        <a
-                class="nav-link dropdown-toggle btn-animate"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-        >
-            {% if request.LANGUAGE_CODE == 'ru' %}
-                <i class="flag-russia flag" id="current_language_flag"></i>
-            {% elif request.LANGUAGE_CODE == 'kk' %}
-                <i class="flag-kazakhstan flag" id="current_language_flag"></i>
-            {% elif request.LANGUAGE_CODE == 'en' %}
-                <i class="flag-united-kingdom flag" id="current_language_flag"></i>
-            {% endif %}
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-                <a class="dropdown-item" href="{% url 'main:set_language' 'ru' %}">
-                    <i class="flag-russia flag"></i>Русский
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="{% url 'main:set_language' 'kk' %}">
-                    <i class="flag-kazakhstan flag"></i>Қазақша
-                </a>
-            </li>
-            <li>
-                <a class="dropdown-item" href="{% url 'main:set_language' 'en' %}">
-                    <i class="flag-united-kingdom flag"></i>English
-                </a>
-            </li>
-        </ul>
-    </li>
-</ul>
+                <!-- Icon dropdown -->
+                <li class="nav-item dropdown mx-auto">
+                    <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            id="navbarDropdown"
+                            role="button"
+                            data-mdb-toggle="dropdown"
+                            aria-expanded="false"
+                    >
+                        {% if request.LANGUAGE_CODE == 'ru' %}
+                        <i class="flag-russia flag" id="current_language_flag"></i>
+                        {% elif request.LANGUAGE_CODE == 'kk' %}
+                        <i class="flag-kazakhstan flag" id="current_language_flag"></i>
+                        {% elif request.LANGUAGE_CODE == 'en' %}
+                        <i class="flag-united-kingdom flag" id="current_language_flag"></i>
+                        {% endif %}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'main:set_language' 'ru' %}">
+                                <i class="flag-russia flag"></i>Русский
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'main:set_language' 'kk' %}">
+                                <i class="flag-kazakhstan flag"></i>Қазақша
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'main:set_language' 'en' %}">
+                                <i class="flag-united-kingdom flag"></i>English
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 
