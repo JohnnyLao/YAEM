@@ -18,30 +18,37 @@
 
 <body>
 <!--COUNTER START-->
-    <section class="" style="background: rgba(33, 37, 41)">
-        <div id="counter" class="indicator-list container">
-            <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
-                <div class="col-6 col-lg-4">
-                    <div class="indicators-item"> <!--item-1-->
-                        <div data-num="{{total_clients}}" class="indicators-title"></div>
-                        <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Заведений' %}</div>
+<section class="user-select-none" style="background: #212529">
+    <div id="counter" class="indicator-list  container">
+        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
+            <div class="col-6 col-lg-4">
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num="{{total_clients}}" class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
+                    </i> {% trans 'Заведений' %}
                     </div>
                 </div>
-                <div class="col-6 col-lg-4">
-                    <div class="indicators-item"> <!--item-1-->
-                        <div data-num={{total_dishes}} class="indicators-title"></div>
-                        <div class="lng-unit4 indicators-subtitle text-white">{% translate 'Блюд' %}</div>
+            </div>
+            <div class="col-6 col-lg-4">
+                <div class="indicators-item"> <!--item-1-->
+                    <div data-num={{total_dishes}} class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
+
+                    </i> {% trans 'Блюд' %}
                     </div>
                 </div>
-                <div class="col-6 col-lg-4">
-                    <div class="indicators-item"><!--item-3-->
-                        <div data-num={{total_orders}} class="indicators-title"></div>
-                        <div class="lng-unit6 indicators-subtitle text-white">{% translate 'Заказов' %}</div>
+            </div>
+            <div class="col-6 col-lg-4">
+                <div class="indicators-item"><!--item-3-->
+                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div class="lng-unit6 indicators-subtitle text-white">
+                        <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <!--COUNTER END-->
     <!--  PART 1  -->
     <section class="skrollable py-3"
@@ -203,18 +210,10 @@
         el: ".swiper-pagination",
       },
     });
-
-
-
-
-
-
-
-
         </script>
     </section>
 
-    <!--  PART 3  -->
+    <!--  PART 4  -->
     <section class="skrollable"
              style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)), url({% static 'images/partner/1-min.jpg' %});
     background-attachment:fixed; background-size: cover">
@@ -270,7 +269,7 @@
                     </div>
 
                 </div>
-                <div data-aos="fade-right" data-aos-delay="600" class="col-lg-4 col-sm-6 text-center">
+                <div data-aos="fade-right" class="col-lg-4 col-sm-6 text-center">
                     <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                         <div class="card-body">
                             <h3 class="" style="color: #fd7014">
@@ -288,7 +287,7 @@
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="800" class="col-lg-4 col-sm-6 text-center">
+                <div data-aos="fade-up" data-aos-delay="200" class="col-lg-4 col-sm-6 text-center">
                     <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                         <div class="card-body">
 
@@ -305,7 +304,7 @@
                     </div>
                 </div>
 
-                <div data-aos="fade-up" data-aos-delay="1000" class="col-lg-4 col-sm-6 text-center">
+                <div data-aos="fade-up" data-aos-delay="400" class="col-lg-4 col-sm-6 text-center">
                     <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                         <div class="card-body">
                              <h3 class="" style="color: #fd7014">

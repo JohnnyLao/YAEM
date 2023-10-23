@@ -16,7 +16,7 @@
         <div class="row pt-5">
             <div class="col-12">
                 <div data-aos="fade-right" class="btn btn-animate shadow-0" onclick="history.back();"
-                     style="border-radius: 20px; ">
+                     style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
                          class="bi bi-arrow-left text-start"
                          viewBox="0 0 16 16">
@@ -38,18 +38,17 @@
                 <h4>{{ cart_item.product.name }}</h4>
                 <p>{{ cart_item.product.description }}</p>
             </div>
-            <div class="col-2 my-auto text-center">
-                    <h5 class="d-inline my-auto">{{ cart_item.quantity }}</h5>
-
-                <form class="d-inline mx-3" method="post" action="{% url 'cart:remove_on_cart_page' %}">
+            <div class="col-2 my-auto">
+                    <span class="d-inline my-auto">{{ cart_item.quantity }}</span>
+                <form class="d-inline" method="post" action="{% url 'cart:remove_on_cart_page' %}">
                     {% csrf_token %}
                     <input class="" type="hidden" name="product_id" value="{{ cart_item.product.id }}">
                         <button class="btn btn-animate shadow-0 px-0 py-0 " data-mdb-ripple-color="danger"
-                        ><i class="far fa-square-minus fa-3x text-danger"></i>
+                        ><i class="far fa-square-minus fa-2x text-danger"></i>
                         </button>
                 </form>
-
             </div>
+
             <div class="col-4 my-auto text-center">
                 <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
             </div>
@@ -72,9 +71,10 @@
                 </form>
             </div>
             <div class="col-6 col-lg-4 text-center">
-                <h4 data-aos="fade-up" class="my-3">{% translate 'Итого' %}:
+                <h4 data-aos="fade-up" class="mt-3 mb-0">{% translate 'Итого' %}:
                     <div class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</div>
                 </h4>
+                <p data-aos="fade-up">*{% translate 'Без обслуживания'%}</p>
                 {% else %}
                 <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
 

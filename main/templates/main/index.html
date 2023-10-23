@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %} {% translate 'Я ЕМ | Онлайн Меню' %} {% endblock title %}
+{% block title %} {% translate 'Я ЕМ | Доставка еды напрямую от заведения' %} {% endblock title %}
 
 {% block content %}
 
@@ -17,25 +17,32 @@
 <!--button end-->
 
 <!--COUNTER START-->
-<section class="" style="background: #212529">
+<section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Заведений' %}</div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
+                    </i> {% trans 'Заведений' %}
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num={{total_dishes}} class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">{% trans 'Блюд' %}</div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
+
+                    </i> {% trans 'Блюд' %}
+                    </div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
                     <div data-num={{total_orders}} class="indicators-title"></div>
-                    <div class="lng-unit6 indicators-subtitle text-white">{% trans 'Заказов' %}</div>
+                    <div class="lng-unit6 indicators-subtitle text-white">
+                        <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -43,7 +50,7 @@
 </section>
 <!--COUNTER END-->
 
-<main>
+<main class="user-select-none">
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/index/3-min.jpg' %});
     background-attachment: fixed; background-size: cover;">
@@ -112,12 +119,14 @@
 
                 <!--- цикл -->
                 {% for client in clients %}
-                {% if client.status %}
+                {% if client.status and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                 <div class="col-12 col-md-6 col-lg-4 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <img data-aos="zoom-out-right" src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0"
-                             alt="..."
-                             style="border-radius: 15px; max-width: 225px; max-height: 225px">
+                        <img data-aos="zoom-out-right" src="{{client.logo.url}}"
+                             class="card-img-top mx-auto mt-2 mb-0 rounded"
+                             alt="logo image"
+                             style="max-width: 225px; max-height: 225px"
+                        draggable="false">
 
                         <div class="card-body my-0 py-1">
                             <h4 data-aos="zoom-out-right" class="card-title my-0">{{ client.name }}</h4>

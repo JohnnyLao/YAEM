@@ -35,9 +35,11 @@
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
         <div class="col-12 text-center">
-            <div class="card text-white" style="background: rgba(33, 37, 41, 0.5); z-index: auto" >
-                <img src="{{client.logo.url}}" class="card-img-top mx-auto mt-2 mb-0" alt="..."
-                     style="border-radius: 15px; max-width: 220px">
+            <div class="card text-white shadow user-select-none" style="background: rgba(33, 37, 41, 0.5); z-index: auto" >
+                <img src="{{client.logo.url}}"
+                     class="card-img-top mx-auto mt-2 mb-0 shadow rounded" alt="logo image"
+                     style="max-width: 220px"
+                    draggable="false">
 
                 <div class="card-body my-0 py-1">
                     <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
@@ -172,7 +174,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!--    FOOD TYPE SWIPER    -->
-    <div data-aos="flip-up" class="sticky-top">
+    <div class="sticky-top">
         <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
             <div class="swiper-container">
                 <div class="swiper-wrapper text-center">
@@ -212,8 +214,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     <div class="col-8 col-lg-9 my-auto px-1 text-center">
                         {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                         <img src="{{ dish.image.url }}" alt="dish img"
-                             class="img-fluid bg-white mt-1"
-                             style="max-width: 80px; border-radius: 20px">
+                             class="img bg-white mt-1"
+                             style="max-width: 80px; border-radius: 20px"
+                            draggable="false">
                         {% endif %}
                         <h5 class="my-1 fw-bold">{{ dish.name }}</h5>
                         <p class="mb-1">{{ dish.description }}</p>
