@@ -135,18 +135,4 @@ class Dish(models.Model):
         return self.name
 
 
-class EstablishmentRates(models.Model):
-    BRONZE = 'bronze'
-    SILVER = 'silver'
-    GOLD = 'gold'
-    RATE_ESTABLISHMENT_CHOICES = [
-        (BRONZE, 'БРОНЗА'),
-        (SILVER, 'СЕРЕБРО'),
-        (GOLD, 'ЗОЛОТО'),
-    ]
-    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, default=BRONZE,
-                            verbose_name='Название тарифа',)
 
-    class Meta:
-        verbose_name = "Тариф"
-        verbose_name_plural = "Тарифы"
