@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-16 17:30+0600\n"
+"POT-Creation-Date: 2023-10-23 17:49+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,110 +18,153 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: YaYem/settings.py:130
+#: YaYem/settings.py:172
 msgid "Russian"
 msgstr ""
 
-#: YaYem/settings.py:131
+#: YaYem/settings.py:173
 msgid "English"
 msgstr ""
 
-#: YaYem/settings.py:132
+#: YaYem/settings.py:174
 msgid "Kazakh"
+msgstr ""
+
+#: accounts/templates/accounts/logout.html:5
+#: accounts/templates/accounts/logout.html:8
+#: accounts/templates/accounts/logout.html:17
+msgid "Sign Out"
+msgstr ""
+
+#: accounts/templates/accounts/logout.html:10
+msgid "Are you sure you want to sign out?"
+msgstr ""
+
+#: accounts/templates/accounts/password_change.html:5
+#: accounts/templates/accounts/password_change.html:8
+#: accounts/templates/accounts/password_change.html:15
+msgid "Change Password"
+msgstr ""
+
+#: accounts/templates/accounts/password_change.html:16
+msgid "Forgot Password?"
+msgstr ""
+
+#: accounts/templates/accounts/password_reset.html:6
+#: accounts/templates/accounts/password_reset.html:10
+msgid "Password Reset"
+msgstr ""
+
+#: accounts/templates/accounts/password_reset.html:17
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr ""
+
+#: accounts/templates/accounts/password_reset.html:22
+msgid "Reset My Password"
+msgstr ""
+
+#: accounts/templates/accounts/password_reset.html:25
+msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
 
 #: cart/templates/cart/cart.html:6 cart/templates/cart/cart.html:27
 msgid "Корзина"
 msgstr "Cart"
 
-#: cart/templates/cart/cart.html:97
+#: cart/templates/cart/cart.html:64
 msgid "Очистить"
 msgstr "Clear"
 
-#: cart/templates/cart/cart.html:107
+#: cart/templates/cart/cart.html:74
 msgid "Итого"
 msgstr "Total"
 
-#: cart/templates/cart/cart.html:111
+#: cart/templates/cart/cart.html:77
+msgid "Без обслуживания"
+msgstr "No service"
+
+#: cart/templates/cart/cart.html:79
 msgid "Корзина пуста"
 msgstr "Nothing in cart"
 
-#: cart/templates/cart/cart.html:123
+#: cart/templates/cart/cart.html:91
 msgid "В зале"
 msgstr "Inside"
 
-#: cart/templates/cart/cart.html:126 main/templates/main/index.html:99
-#: main/templates/main/menu.html:50
+#: cart/templates/cart/cart.html:94 main/templates/main/index.html:138
+#: main/templates/main/menu.html:54
 msgid "Самовывоз"
 msgstr "Pick-up"
 
-#: cart/templates/cart/cart.html:129 main/templates/main/index.html:117
-#: main/templates/main/menu.html:103
+#: cart/templates/cart/cart.html:97 main/templates/main/index.html:156
+#: main/templates/main/menu.html:109
 msgid "Доставка"
 msgstr "Delivery"
 
-#: cart/templates/cart/cart.html:134
+#: cart/templates/cart/cart.html:102
 msgid "Отправьте заказ, не дожидаясь официанта"
 msgstr "Send your order, w/o waitress"
 
-#: cart/templates/cart/cart.html:137
+#: cart/templates/cart/cart.html:105
 msgid "Номер стола"
 msgstr "Table №"
 
-#: cart/templates/cart/cart.html:138
+#: cart/templates/cart/cart.html:106
 msgid "Вы не указали номер стола"
 msgstr "Please point a table №"
 
-#: cart/templates/cart/cart.html:141 cart/templates/cart/cart.html:172
-#: cart/templates/cart/cart.html:233
+#: cart/templates/cart/cart.html:109 cart/templates/cart/cart.html:140
+#: cart/templates/cart/cart.html:201
 msgid "Отправить"
 msgstr "Send"
 
-#: cart/templates/cart/cart.html:149
+#: cart/templates/cart/cart.html:117
 msgid "Отправьте заказ, и заберите в удобное время"
 msgstr "Send your order, and pick-up later"
 
-#: cart/templates/cart/cart.html:153 cart/templates/cart/cart.html:206
+#: cart/templates/cart/cart.html:121 cart/templates/cart/cart.html:174
 msgid "Ваше имя"
 msgstr "Name"
 
-#: cart/templates/cart/cart.html:155 cart/templates/cart/cart.html:208
+#: cart/templates/cart/cart.html:123 cart/templates/cart/cart.html:176
 msgid "Вы не указали имя"
 msgstr "Please put your name"
 
-#: cart/templates/cart/cart.html:161 cart/templates/cart/cart.html:214
+#: cart/templates/cart/cart.html:129 cart/templates/cart/cart.html:182
 msgid "Номер телефона"
 msgstr "Phone number"
 
-#: cart/templates/cart/cart.html:162 cart/templates/cart/cart.html:215
+#: cart/templates/cart/cart.html:130 cart/templates/cart/cart.html:183
 msgid "Вы не указали номер телефона"
 msgstr "Please put your phone number"
 
-#: cart/templates/cart/cart.html:168
+#: cart/templates/cart/cart.html:136
 msgid "Время самовывоза"
 msgstr "Pick-up time"
 
-#: cart/templates/cart/cart.html:169
+#: cart/templates/cart/cart.html:137
 msgid "Вы не указали время"
 msgstr "Please fill up"
 
-#: cart/templates/cart/cart.html:201
+#: cart/templates/cart/cart.html:169
 msgid "Отправьте заказ, и Вам доставят в удобное время"
 msgstr "Send your order for delivery"
 
-#: cart/templates/cart/cart.html:221
+#: cart/templates/cart/cart.html:189
 msgid "Адрес доставки"
 msgstr "Address"
 
-#: cart/templates/cart/cart.html:223
+#: cart/templates/cart/cart.html:191
 msgid "Вы не указали адрес доставки"
 msgstr "Please put address"
 
-#: cart/templates/cart/cart.html:229
+#: cart/templates/cart/cart.html:197
 msgid "Время доставки"
 msgstr "Delivery time"
 
-#: cart/templates/cart/cart.html:230
+#: cart/templates/cart/cart.html:198
 msgid "Вы не указали время доставки"
 msgstr "Please fill up"
 
@@ -137,123 +180,119 @@ msgstr "Oops... Something is wrong"
 msgid "Но Вы можете вернуться"
 msgstr "Return"
 
-#: main/templates/main/base.html:144
+#: main/templates/main/base.html:157
 msgid "ГЛАВНАЯ"
 msgstr "MAIN"
 
-#: main/templates/main/base.html:154
+#: main/templates/main/base.html:167
 msgid "ЗАКАЗАТЬ"
 msgstr "ORDER"
 
-#: main/templates/main/base.html:164
+#: main/templates/main/base.html:177
 msgid "Блюда"
 msgstr "Food"
 
-#: main/templates/main/base.html:168
+#: main/templates/main/base.html:181
 msgid "Продукты"
 msgstr "Groceries"
 
-#: main/templates/main/base.html:172
+#: main/templates/main/base.html:186
 msgid "Банкет"
 msgstr "Banquet"
 
-#: main/templates/main/base.html:188
+#: main/templates/main/base.html:202
 msgid "БИЗНЕСУ"
 msgstr "BUSINESS"
 
-#: main/templates/main/base.html:198
+#: main/templates/main/base.html:212
 msgid "Кайтеринг"
 msgstr "Catering"
 
-#: main/templates/main/base.html:203
+#: main/templates/main/base.html:217
 msgid "Представители"
 msgstr "Dealers"
 
-#: main/templates/main/base.html:208 main/templates/main/base.html:257
+#: main/templates/main/base.html:222 main/templates/main/base.html:274
 msgid "Контакты"
 msgstr "Contact us"
 
-#: main/templates/main/base.html:233
+#: main/templates/main/base.html:247
 msgid "Наша команда"
 msgstr "Our team"
 
-#: main/templates/main/base.html:238
+#: main/templates/main/base.html:253
 msgid "Егор"
 msgstr "Egor"
 
-#: main/templates/main/base.html:239
+#: main/templates/main/base.html:254
 msgid "Коммерческий директор"
 msgstr "Commercial Director"
 
-#: main/templates/main/base.html:244
+#: main/templates/main/base.html:260
 msgid "Олег"
 msgstr "Oleg"
 
-#: main/templates/main/base.html:245
+#: main/templates/main/base.html:261
 msgid "Руководитель отдела развития"
 msgstr "Marketing dep."
 
-#: main/templates/main/base.html:250
+#: main/templates/main/base.html:267
 msgid "Артём"
 msgstr "Artem"
 
-#: main/templates/main/base.html:251
+#: main/templates/main/base.html:268
 msgid "Руководитель отдела разработки"
 msgstr "Development dep."
 
 #: main/templates/main/index.html:6
-msgid "Я ЕМ | Онлайн Меню"
-msgstr "YAEM | Online Menu"
+msgid "Я ЕМ | Доставка еды напрямую от заведения"
+msgstr "I EAT | Food delivery directly from the establishment"
 
-#: main/templates/main/index.html:29 partner/templates/partner/partner.html:26
+#: main/templates/main/index.html:27 partner/templates/partner/partner.html:28
 msgid "Заведений"
 msgstr "Establishments"
 
-#: main/templates/main/index.html:35 partner/templates/partner/partner.html:32
+#: main/templates/main/index.html:36 partner/templates/partner/partner.html:37
 msgid "Блюд"
 msgstr "Dishes"
 
-#: main/templates/main/index.html:41 partner/templates/partner/partner.html:38
-msgid "Заказов"
-msgstr "Orders"
+#: main/templates/main/index.html:44 partner/templates/partner/partner.html:45
+msgid "Онлайн"
+msgstr "Online"
 
-#: main/templates/main/index.html:55
+#: main/templates/main/index.html:58
 msgid "ЗАВЕДЕНИЯ"
 msgstr "Establishments"
 
-#: main/templates/main/index.html:63
+#: main/templates/main/index.html:70
 msgid "Все"
 msgstr "All"
 
-#: main/templates/main/index.html:94 main/templates/main/menu.html:44
+#: main/templates/main/index.html:133 main/templates/main/menu.html:48
 msgid "Время работы"
 msgstr "Working hours"
 
-#: main/templates/main/index.html:136
+#: main/templates/main/index.html:175
 msgid "Перейти"
 msgstr "Follow"
 
-#: main/templates/main/menu.html:7
-msgid "Я ЕМ с"
-msgstr "YAEM with"
+#: main/templates/main/menu.html:7 partner/templates/partner/partner.html:363
+msgid "Онлайн меню"
+msgstr "Online menu"
 
-#: main/templates/main/menu.html:41
+#: main/templates/main/menu.html:45
 msgid "Добро пожаловать в"
 msgstr "Welcome to"
 
-#: main/templates/main/menu.html:45
+#: main/templates/main/menu.html:49
 msgid "г"
 msgstr "c"
 
-#: main/templates/main/menu.html:125 partner/templates/partner/partner.html:57
+#: main/templates/main/menu.html:131 partner/templates/partner/partner.html:64
 msgid "МЕНЮ"
 msgstr "MENU"
 
-#: main/templates/main/menu.html:238
-msgid "Добавить"
-msgstr "Add"
-
-#: main/templates/main/menu.html:260
+#: main/templates/main/menu.html:290
 msgid "Добавлено в корзину"
 msgstr "Added to Cart"
 
@@ -261,92 +300,92 @@ msgstr "Added to Cart"
 msgid "QR Меню для заведений"
 msgstr "QR Menu for food establishments"
 
-#: partner/templates/partner/partner.html:56
+#: partner/templates/partner/partner.html:63
 msgid "ОНЛАЙН"
 msgstr "ONLINE"
 
-#: partner/templates/partner/partner.html:58
+#: partner/templates/partner/partner.html:65
 msgid "БЕСПЛАТНО"
 msgstr "FREE"
 
-#: partner/templates/partner/partner.html:68
+#: partner/templates/partner/partner.html:75
 msgid "Присоединяйтесь к нашей"
 msgstr "Join to our"
 
-#: partner/templates/partner/partner.html:68
+#: partner/templates/partner/partner.html:75
 msgid "сети"
 msgstr "network"
 
-#: partner/templates/partner/partner.html:68
+#: partner/templates/partner/partner.html:75
 msgid "заведений"
 msgstr "of food establishments"
 
-#: partner/templates/partner/partner.html:69
+#: partner/templates/partner/partner.html:76
 msgid "ЧТОБЫ ПОЛУЧИТЬ"
 msgstr "YOU WILL GET"
 
-#: partner/templates/partner/partner.html:69
+#: partner/templates/partner/partner.html:76
 msgid "ОНЛАЙН МЕНЮ"
 msgstr "QR MENU"
 
-#: partner/templates/partner/partner.html:74
-#: partner/templates/partner/partner.html:387
-#: partner/templates/partner/partner.html:458
-#: partner/templates/partner/partner.html:534
+#: partner/templates/partner/partner.html:81
+#: partner/templates/partner/partner.html:384
+#: partner/templates/partner/partner.html:454
+#: partner/templates/partner/partner.html:530
 msgid "Подключить"
 msgstr "Join us"
 
-#: partner/templates/partner/partner.html:88
+#: partner/templates/partner/partner.html:95
 msgid "Всё просто !"
 msgstr "So simple !"
 
-#: partner/templates/partner/partner.html:89
+#: partner/templates/partner/partner.html:96
 msgid "Берём образец"
 msgstr "Collect sample of"
 
-#: partner/templates/partner/partner.html:90
+#: partner/templates/partner/partner.html:97
 msgid "Вашего меню"
 msgstr "Your menu"
 
-#: partner/templates/partner/partner.html:91
+#: partner/templates/partner/partner.html:98
 msgid "Создаём страницу с меню на"
 msgstr "Create a web-page with online menu at"
 
-#: partner/templates/partner/partner.html:92
+#: partner/templates/partner/partner.html:99
 msgid "Нашем сайте"
 msgstr "Our web-platform"
 
-#: partner/templates/partner/partner.html:94
+#: partner/templates/partner/partner.html:101
 msgid "Устанавливаем QR код для перехода в"
 msgstr "You will get a QR code for"
 
-#: partner/templates/partner/partner.html:95
+#: partner/templates/partner/partner.html:102
 msgid "Ваше онлайн меню"
 msgstr "Your online menu"
 
-#: partner/templates/partner/partner.html:97
+#: partner/templates/partner/partner.html:104
 msgid "Ваши клиенты"
 msgstr "Your clients"
 
-#: partner/templates/partner/partner.html:98
+#: partner/templates/partner/partner.html:105
 msgid ""
 "смогут просматривать меню онлайн как в заведении, так и удалённо, совершая "
 "заказы онлайн"
 msgstr "may use online menu inside and remotely, making orders online"
 
-#: partner/templates/partner/partner.html:114
+#: partner/templates/partner/partner.html:119
 msgid "Примеры оформления:"
 msgstr "QR Samples:"
 
-#: partner/templates/partner/partner.html:224
+#: partner/templates/partner/partner.html:221
 msgid "Наши приемущества"
 msgstr "Why us ?"
 
-#: partner/templates/partner/partner.html:239
+#: partner/templates/partner/partner.html:236
 msgid "Удобство"
 msgstr "Convenience"
 
-#: partner/templates/partner/partner.html:241
+#: partner/templates/partner/partner.html:238
 msgid ""
 "Меняйте меню, цены и акции мгновенно! Наша платформа даёт заведению "
 "возможность оперативно адаптироваться к рынку и вкусам клиентов"
@@ -354,11 +393,11 @@ msgstr ""
 "Change menus, prices and promotions instantly! Our platform gives the "
 "opportunity to quickly adapt to market and tastes of customers"
 
-#: partner/templates/partner/partner.html:254
+#: partner/templates/partner/partner.html:251
 msgid "Продажи"
 msgstr "Sales"
 
-#: partner/templates/partner/partner.html:256
+#: partner/templates/partner/partner.html:253
 msgid ""
 "Ваша корзина - мощный инструмент для увеличения среднего чека. Простота "
 "добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам"
@@ -366,11 +405,11 @@ msgstr ""
 "Your shopping cart is a powerful tool to increase your average check. Ease "
 "of adding food and drinks to the online menu encourages customers to buy"
 
-#: partner/templates/partner/partner.html:268
+#: partner/templates/partner/partner.html:265
 msgid "Новые клиенты"
 msgstr "New clients"
 
-#: partner/templates/partner/partner.html:270
+#: partner/templates/partner/partner.html:267
 msgid ""
 "Расширьте свою аудиторию с помощью возможности заказа на вынос и доставку. "
 "Привлекайте тех, кто ценит удобство и разнообразие в питании"
@@ -378,11 +417,11 @@ msgstr ""
 "Expand your audience with the ability to order takeaway and delivery. "
 "Attract those who value convenience and variety in nutrition"
 
-#: partner/templates/partner/partner.html:285
+#: partner/templates/partner/partner.html:282
 msgid "Эффективность"
 msgstr "Effectivity"
 
-#: partner/templates/partner/partner.html:287
+#: partner/templates/partner/partner.html:284
 msgid ""
 "Сократите временные затраты благодаря возможности удаленного заказа, ведения "
 "стоп-листа и гибкости в изменении меню. Каждая минута - ценный ресурс для "
@@ -391,11 +430,11 @@ msgstr ""
 "Save time with remote ordering, stop listing, and menu flexibility. Every "
 "minute is a valuable resource for you and your business"
 
-#: partner/templates/partner/partner.html:303
+#: partner/templates/partner/partner.html:300
 msgid "Мультиязычность"
 msgstr "Multilingual"
 
-#: partner/templates/partner/partner.html:305
+#: partner/templates/partner/partner.html:302
 msgid ""
 "Привлекайте посетителей со всего мира с помощью меню на нескольких языках. "
 "Сделайте своё заведение удобным для каждого гостя, независимо от языковых "
@@ -405,11 +444,11 @@ msgstr ""
 "Make your establishment convenient for every guest, regardless of language "
 "preferences"
 
-#: partner/templates/partner/partner.html:315
+#: partner/templates/partner/partner.html:312
 msgid "Уникальность"
 msgstr "Unique"
 
-#: partner/templates/partner/partner.html:317
+#: partner/templates/partner/partner.html:314
 msgid ""
 "Мы гордимся своей независимостью. Наша собственная команда разработчиков "
 "обеспечивает непрерывное обновление и расширение без посредников, что "
@@ -419,126 +458,122 @@ msgstr ""
 "continuous updates and extensions without intermediaries, which guarantees "
 "you timely support and innovative features"
 
-#: partner/templates/partner/partner.html:328
+#: partner/templates/partner/partner.html:325
 msgid "Тарифные планы"
 msgstr "Price list"
 
-#: partner/templates/partner/partner.html:337
-#: partner/templates/partner/partner.html:624
+#: partner/templates/partner/partner.html:334
+#: partner/templates/partner/partner.html:620
 msgid "Бронза"
 msgstr "Bronze"
 
-#: partner/templates/partner/partner.html:339
-#: partner/templates/partner/partner.html:341
+#: partner/templates/partner/partner.html:336
+#: partner/templates/partner/partner.html:338
 msgid "тг в год"
 msgstr "KZT/a"
 
-#: partner/templates/partner/partner.html:345
+#: partner/templates/partner/partner.html:342
 msgid "Дней"
 msgstr "Days"
 
-#: partner/templates/partner/partner.html:349
+#: partner/templates/partner/partner.html:346
 msgid "Часов"
 msgstr "Hours"
 
-#: partner/templates/partner/partner.html:353
+#: partner/templates/partner/partner.html:350
 msgid "Минут"
 msgstr "Mins"
 
-#: partner/templates/partner/partner.html:357
+#: partner/templates/partner/partner.html:354
 msgid "Секунд"
 msgstr "Secs"
 
-#: partner/templates/partner/partner.html:366
-msgid "Онлайн меню"
-msgstr "Online menu"
-
-#: partner/templates/partner/partner.html:373
-#: partner/templates/partner/partner.html:419
+#: partner/templates/partner/partner.html:370
+#: partner/templates/partner/partner.html:415
 msgid "Настольный QR код"
 msgstr "Table QR code"
 
-#: partner/templates/partner/partner.html:380
+#: partner/templates/partner/partner.html:377
 msgid "Редакция 4 раза в год"
 msgstr "Edit 4 times per year"
 
-#: partner/templates/partner/partner.html:401
-#: partner/templates/partner/partner.html:625
+#: partner/templates/partner/partner.html:397
+#: partner/templates/partner/partner.html:621
 msgid "Серебро"
 msgstr "Silver"
 
-#: partner/templates/partner/partner.html:402
-#: partner/templates/partner/partner.html:470
+#: partner/templates/partner/partner.html:398
+#: partner/templates/partner/partner.html:466
 msgid "тг/мес"
 msgstr "KZT/m"
 
-#: partner/templates/partner/partner.html:403
-#: partner/templates/partner/partner.html:471
+#: partner/templates/partner/partner.html:399
+#: partner/templates/partner/partner.html:467
 msgid "тг/год"
 msgstr "KZT/a"
 
-#: partner/templates/partner/partner.html:411
+#: partner/templates/partner/partner.html:407
 msgid "Онлайн меню с фото блюд"
 msgstr "Online menu with photos"
 
-#: partner/templates/partner/partner.html:427
+#: partner/templates/partner/partner.html:423
 msgid "Акции и скидки"
 msgstr "Promotions and discounts"
 
-#: partner/templates/partner/partner.html:435
+#: partner/templates/partner/partner.html:431
 msgid "Техническая поддержка"
 msgstr "Techical support"
 
-#: partner/templates/partner/partner.html:443
+#: partner/templates/partner/partner.html:439
 msgid "Меню на 3х языках"
 msgstr "3-languages Menu"
 
-#: partner/templates/partner/partner.html:451
+#: partner/templates/partner/partner.html:447
 msgid "Услуга: Самовывоз и Доставка"
 msgstr "Service: Pick-up and Delivery"
 
-#: partner/templates/partner/partner.html:469
-#: partner/templates/partner/partner.html:625
+#: partner/templates/partner/partner.html:465
+#: partner/templates/partner/partner.html:621
 msgid "Золото"
 msgstr "Gold"
 
-#: partner/templates/partner/partner.html:479
+#: partner/templates/partner/partner.html:475
 msgid "Тариф Серебро"
 msgstr "All from Silver"
 
-#: partner/templates/partner/partner.html:487
+#: partner/templates/partner/partner.html:483
 msgid "Эксклюзивный QR код"
 msgstr "Exclusive QR code"
 
-#: partner/templates/partner/partner.html:495
+#: partner/templates/partner/partner.html:491
 msgid "Эксклюзивный дизайн меню"
 msgstr "Exclusive menu design"
 
-#: partner/templates/partner/partner.html:503
+#: partner/templates/partner/partner.html:499
 msgid "Личный кабинет"
 msgstr "Online profile"
 
-#: partner/templates/partner/partner.html:511
+#: partner/templates/partner/partner.html:507
 msgid "Онлайн оплата Kaspi"
 msgstr "Kaspi Pay"
 
-#: partner/templates/partner/partner.html:519
+#: partner/templates/partner/partner.html:515
 msgid "Персональный менеджер"
 msgstr "Personal manager"
 
-#: partner/templates/partner/partner.html:527
+#: partner/templates/partner/partner.html:523
 msgid "Аналитика Google, Yandex"
 msgstr "Google/Yandex analysis"
 
-#: partner/templates/partner/partner.html:545
+#: partner/templates/partner/partner.html:541
 msgid "Часто задаваемые вопросы"
 msgstr "FAQ"
 
-#: partner/templates/partner/partner.html:553
+#: partner/templates/partner/partner.html:549
 msgid "Подробнее о тарифном плане \"Бронза\""
 msgstr "More for Bronze"
 
-#: partner/templates/partner/partner.html:559
+#: partner/templates/partner/partner.html:555
 msgid ""
 "Тарифный план бесплатный до конца срока действия Акции. Данный тариф "
 "позволяет ознакомиться с технологией Онлайн Меню."
@@ -546,32 +581,32 @@ msgstr ""
 "The tariff plan is free until the end of the Promotion period. This tariff "
 "allows you to get acquainted with the Online Menu technology"
 
-#: partner/templates/partner/partner.html:560
-#: partner/templates/partner/partner.html:580
+#: partner/templates/partner/partner.html:556
+#: partner/templates/partner/partner.html:576
 msgid "Вы получите:"
 msgstr "What you get:"
 
-#: partner/templates/partner/partner.html:561
+#: partner/templates/partner/partner.html:557
 msgid "Закрытую"
 msgstr "Closed"
 
-#: partner/templates/partner/partner.html:561
+#: partner/templates/partner/partner.html:557
 msgid "страницу с карточкой заведения и меню на языке оригинала"
 msgstr "page with card of your establishment and original menu"
 
-#: partner/templates/partner/partner.html:562
+#: partner/templates/partner/partner.html:558
 msgid "QR коды для размещения (до 5 шт. бесплатно)"
 msgstr "QR codes (up to 5 free)"
 
-#: partner/templates/partner/partner.html:563
+#: partner/templates/partner/partner.html:559
 msgid "Функцию корзины"
 msgstr "Cart function"
 
-#: partner/templates/partner/partner.html:573
+#: partner/templates/partner/partner.html:569
 msgid "Подробнее о тарифном плане \"Серебро\""
 msgstr "More for Silver"
 
-#: partner/templates/partner/partner.html:579
+#: partner/templates/partner/partner.html:575
 msgid ""
 "Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для "
 "клиента, предоставив удобный сервис по взаимодействию. Смотрите на "
@@ -583,31 +618,31 @@ msgstr ""
 "customer preferences and prepare for online orders. The menu is implemented "
 "in at least three languages"
 
-#: partner/templates/partner/partner.html:581
-#: partner/templates/partner/partner.html:603
+#: partner/templates/partner/partner.html:577
+#: partner/templates/partner/partner.html:599
 msgid "Открытую"
 msgstr "Open"
 
-#: partner/templates/partner/partner.html:581
-#: partner/templates/partner/partner.html:603
+#: partner/templates/partner/partner.html:577
+#: partner/templates/partner/partner.html:599
 msgid "страницу с карточкой заведения и меню"
 msgstr "web-page with card of your establishment and"
 
-#: partner/templates/partner/partner.html:581
+#: partner/templates/partner/partner.html:577
 msgid "на минимум 3-х языках c фото"
 msgstr "at least 3 languages and photos"
 
-#: partner/templates/partner/partner.html:582
-#: partner/templates/partner/partner.html:604
+#: partner/templates/partner/partner.html:578
+#: partner/templates/partner/partner.html:600
 msgid "QR коды для размещения"
 msgstr "multilingual menu with photos"
 
-#: partner/templates/partner/partner.html:582
-#: partner/templates/partner/partner.html:604
+#: partner/templates/partner/partner.html:578
+#: partner/templates/partner/partner.html:600
 msgid "неограничено"
 msgstr "not limited"
 
-#: partner/templates/partner/partner.html:583
+#: partner/templates/partner/partner.html:579
 msgid ""
 "Функцию корзины и возможность использовать услугу \"Доставка / Самовывоз\". "
 "Принимать заказы удалённо через Телеграм"
@@ -615,7 +650,7 @@ msgstr ""
 "Cart function and the ability to use the Delivery / Pick-up service. Receive "
 "orders remotely via Telegram"
 
-#: partner/templates/partner/partner.html:584
+#: partner/templates/partner/partner.html:580
 msgid ""
 "Техническую поддержку с возможностью устроить акцию или скидку на блюда, "
 "управление стоп-листом"
@@ -623,11 +658,11 @@ msgstr ""
 "Technical support with the ability to arrange a promotion or discount on "
 "dishes, stop-list management"
 
-#: partner/templates/partner/partner.html:595
+#: partner/templates/partner/partner.html:591
 msgid "Подробнее о тарифном плане \"Золото\""
 msgstr "More for Gold"
 
-#: partner/templates/partner/partner.html:601
+#: partner/templates/partner/partner.html:597
 msgid ""
 "ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых "
 "строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR "
@@ -644,62 +679,62 @@ msgstr ""
 "More favorable conditions for the service Delivery/Pickup and many other "
 "bonuses"
 
-#: partner/templates/partner/partner.html:603
+#: partner/templates/partner/partner.html:599
 msgid "на минимум 3-х языках и фото блюд с"
 msgstr "at least 3 languages and photos of dishes with"
 
-#: partner/templates/partner/partner.html:603
+#: partner/templates/partner/partner.html:599
 msgid "эксклюзивным дизайном"
 msgstr "exclusive design"
 
-#: partner/templates/partner/partner.html:604
+#: partner/templates/partner/partner.html:600
 msgid "Уникальные"
 msgstr "Unique"
 
-#: partner/templates/partner/partner.html:605
+#: partner/templates/partner/partner.html:601
 msgid "Функцию корзины и возможность использовать услугу Доставка / Самовывоз"
 msgstr "Cart function and the ability to use the Delivery / Pick-up service"
 
-#: partner/templates/partner/partner.html:605
+#: partner/templates/partner/partner.html:601
 msgid "на более выгодных условиях"
 msgstr "on more favorable terms"
 
-#: partner/templates/partner/partner.html:605
+#: partner/templates/partner/partner.html:601
 msgid "Принимать заказы удалённо через Телеграм и"
 msgstr "Accept orders remotely via Telegram and"
 
-#: partner/templates/partner/partner.html:605
+#: partner/templates/partner/partner.html:601
 msgid "оплатой Kaspi"
 msgstr "Kaspi Pay"
 
-#: partner/templates/partner/partner.html:606
+#: partner/templates/partner/partner.html:602
 msgid "Персонального менджера"
 msgstr "Personal manager"
 
-#: partner/templates/partner/partner.html:606
+#: partner/templates/partner/partner.html:602
 msgid ""
 "с возможностью устроить акцию или скидку на блюда, управление стоп-листом и"
 msgstr ""
 "with the ability to arrange a promotion or a discount on dishes, manage a "
 "stop list and"
 
-#: partner/templates/partner/partner.html:606
+#: partner/templates/partner/partner.html:602
 msgid "дополнительные услуги от YAEM"
 msgstr "more services from YAEM"
 
-#: partner/templates/partner/partner.html:607
+#: partner/templates/partner/partner.html:603
 msgid "Личный кабинет, где будут подключены Yandex и Google метрики"
 msgstr "Personal account, where Yandex and Google metrics will be connected"
 
-#: partner/templates/partner/partner.html:618
+#: partner/templates/partner/partner.html:614
 msgid "Есть ли бесплатный период ?"
 msgstr "Do you have a Free period ?"
 
-#: partner/templates/partner/partner.html:624
+#: partner/templates/partner/partner.html:620
 msgid "Конечно, до конца года тариф"
 msgstr "Sure, till end of the year"
 
-#: partner/templates/partner/partner.html:624
+#: partner/templates/partner/partner.html:620
 msgid ""
 "является бесплатным. Конечно функционал будет ограничен, и Вам будет легко "
 "понять концепцию онлайн меню и потенциал сотрудничества с нами"
@@ -708,11 +743,11 @@ msgstr ""
 "for you to understand the concept of the online menu and the potential of "
 "cooperation with us"
 
-#: partner/templates/partner/partner.html:625
+#: partner/templates/partner/partner.html:621
 msgid "Тарифы"
 msgstr "Tariffs"
 
-#: partner/templates/partner/partner.html:625
+#: partner/templates/partner/partner.html:621
 msgid ""
 "не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска "
 "проекта"
@@ -720,11 +755,11 @@ msgstr ""
 "do not have a free period, because require more investment to launch the "
 "project"
 
-#: partner/templates/partner/partner.html:636
+#: partner/templates/partner/partner.html:632
 msgid "Я готов, как начать ?  Оплата ?"
 msgstr "Im ready ! How to get started ? Payments ?"
 
-#: partner/templates/partner/partner.html:642
+#: partner/templates/partner/partner.html:638
 msgid ""
 "Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и "
 "организуем встречу"
@@ -732,39 +767,1546 @@ msgstr ""
 "You can submit a request in the form below. We will contact you and arrange "
 "a meeting"
 
-#: partner/templates/partner/partner.html:643
+#: partner/templates/partner/partner.html:639
 msgid "Оплата по тарифам происходит в двух форматах:"
 msgstr "Tariffs are paid in two options:"
 
-#: partner/templates/partner/partner.html:644
+#: partner/templates/partner/partner.html:640
 msgid "Помесячная"
 msgstr "Monthly"
 
-#: partner/templates/partner/partner.html:644
+#: partner/templates/partner/partner.html:640
 msgid "до 15го числа каждого месяца"
 msgstr "before 15th of each month"
 
-#: partner/templates/partner/partner.html:645
+#: partner/templates/partner/partner.html:641
 msgid "Погодовая"
 msgstr "Annual"
 
-#: partner/templates/partner/partner.html:645
+#: partner/templates/partner/partner.html:641
 msgid "оплата происходит до 15го числа за последующий год"
 msgstr "payment before 15th of each year"
 
-#: partner/templates/partner/partner.html:645
+#: partner/templates/partner/partner.html:641
 #, python-format
 msgid "Скидка -20%%"
 msgstr "Discount -20%"
 
-#: partner/templates/partner/partner.html:660
+#: partner/templates/partner/partner.html:656
 msgid "Спасибо!"
 msgstr "Thank you!"
 
-#: partner/templates/partner/partner.html:661
+#: partner/templates/partner/partner.html:657
 msgid "Заявка принята"
 msgstr "Your request accepted"
 
-#: partner/templates/partner/partner.html:662
+#: partner/templates/partner/partner.html:658
 msgid "Мы скоро свяжемся с Вами"
 msgstr "We shall contact you soon"
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:518
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/_termui_impl.py:522
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1120
+msgid "Aborted!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1309
+#: venv/lib/python3.10/site-packages/click/decorators.py:559
+msgid "Show this message and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1340
+#: venv/lib/python3.10/site-packages/click/core.py:1370
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1387
+msgid "Options"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1413
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1429
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1636
+msgid "Commands"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1668
+msgid "Missing command."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:1746
+msgid "No such command {name!r}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2310
+msgid "Value must be an iterable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2331
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2778
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2808
+msgid "(dynamic)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2821
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/core.py:2834
+msgid "required"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/decorators.py:528
+msgid "Show the version and exit."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:44
+#: venv/lib/python3.10/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:72
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:121
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:123
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:179
+msgid "Missing argument"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:181
+msgid "Missing option"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:183
+msgid "Missing parameter"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:185
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:192
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:212
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:224
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:262
+msgid "unknown error"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/exceptions.py:269
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:319
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/shell_completion.py:326
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:266
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:298
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:392
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:414
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:470
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:611
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:635
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:822
+msgid "file"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:824
+msgid "directory"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:826
+msgid "path"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:877
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:886
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:894
+#, python-brace-format
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:903
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:912
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:921
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/click/types.py:988
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr ""
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: venv/lib/python3.10/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/paginator.py:54
+msgid "That page contains no results"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:104
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:749
+msgid "Enter a valid URL."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:164
+msgid "Enter a valid integer."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:175
+msgid "Enter a valid email address."
+msgstr ""
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: venv/lib/python3.10/site-packages/django/core/validators.py:256
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:264
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:276
+#: venv/lib/python3.10/site-packages/django/core/validators.py:284
+#: venv/lib/python3.10/site-packages/django/core/validators.py:313
+msgid "Enter a valid IPv4 address."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:293
+#: venv/lib/python3.10/site-packages/django/core/validators.py:314
+msgid "Enter a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:305
+#: venv/lib/python3.10/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:348
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:354
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:389
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:398
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:407
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:417
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:435
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:458
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:347
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:460
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:470
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:541
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/core/validators.py:602
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/base.py:1423
+#: venv/lib/python3.10/site-packages/django/forms/models.py:893
+msgid "and"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/base.py:1425
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:128
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:129
+msgid "This field cannot be null."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be blank."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:131
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:135
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:173
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1094
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1095
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1097
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1147
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1149
+msgid "String (unlimited)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1253
+msgid "Comma-separated integers"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1354
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1358
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1493
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1362
+msgid "Date (without time)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1489
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1497
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1502
+msgid "Date (with time)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1626
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1628
+msgid "Decimal number"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1789
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1793
+msgid "Duration"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1845
+msgid "Email address"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1870
+msgid "File path"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1948
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1950
+msgid "Floating point number"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1990
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1992
+msgid "Integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2088
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2105
+msgid "Small integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2113
+msgid "IPv4 address"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2144
+msgid "IP address"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2237
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2238
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2240
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2291
+msgid "Positive big integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2306
+msgid "Positive integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2321
+msgid "Positive small integer"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2337
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2373
+msgid "Text"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2448
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2452
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2456
+msgid "Time"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2564
+msgid "URL"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2588
+msgid "Raw binary data"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2653
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2655
+msgid "Universally unique identifier"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/files.py:232
+msgid "File"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/files.py:393
+msgid "Image"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:919
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:921
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1212
+msgid "One-to-one relationship"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1269
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1271
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/db/models/fields/related.py:1319
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: venv/lib/python3.10/site-packages/django/forms/boundfield.py:184
+msgid ":?.!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:467
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1238
+msgid "Enter a valid date."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:490
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1239
+msgid "Enter a valid time."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:618
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:619
+msgid "No file was submitted."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:620
+msgid "The submitted file is empty."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:622
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:627
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:691
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:854
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:946
+#: venv/lib/python3.10/site-packages/django/forms/models.py:1566
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:948
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1067
+#: venv/lib/python3.10/site-packages/django/forms/models.py:1564
+msgid "Enter a list of values."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1068
+msgid "Enter a complete value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1307
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/fields.py:1337
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: venv/lib/python3.10/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/forms.py:244
+#: venv/lib/python3.10/site-packages/django/forms/forms.py:328
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:484
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:491
+msgid "Order"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:886
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:891
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:898
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:907
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:1338
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:1429
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/models.py:1568
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:463
+msgid "Clear"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:464
+msgid "Currently"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:465
+msgid "Change"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:794
+msgid "Unknown"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:795
+msgid "Yes"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/forms/widgets.py:796
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:861
+msgid "yes,no,maybe"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:891
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:912
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:914
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:916
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/template/defaultfilters.py:918
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:73
+msgid "p.m."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:74
+msgid "a.m."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:79
+msgid "PM"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:80
+msgid "AM"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:152
+msgid "midnight"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dateformat.py:154
+msgid "noon"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/text.py:78
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/text.py:254
+msgid "or"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: venv/lib/python3.10/site-packages/django/utils/text.py:273
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:135
+msgid ", "
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:64
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:115
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:349
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
+msgid "Django Documentation"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Get started with Django"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
+msgid "Django Community"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/isort/main.py:158
+msgid "show this help message and exit"
+msgstr ""
+
+#: venv/lib/python3.10/site-packages/modeltranslation/widgets.py:24
+msgid "None"
+msgstr ""
+
+#~ msgid "Я ЕМ | Онлайн Меню"
+#~ msgstr "YAEM | Online Menu"
+
+#~ msgid "Заказов"
+#~ msgstr "Orders"
+
+#~ msgid "Я ЕМ с"
+#~ msgstr "YAEM with"
+
+#~ msgid "Добавить"
+#~ msgstr "Add"
