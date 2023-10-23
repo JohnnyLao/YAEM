@@ -70,11 +70,11 @@ class RemoveFromCart(View):
         total_price = calculate_total_price(cart)
         # Generate HTML for total price
         formatted_total_price = generate_total_price_html(total_price, cart_data).replace(',', ' ')
-        if total_price == 0:
-            formatted_total_price = ''
             # return HttpResponse(formatted_total_price)
         # Get the updated quantity for the specific product
         updated_quantity = cart.get(key, 0)
+        if updated_quantity == 0:
+            updated_quantity = ''
         return HttpResponse(updated_quantity)
         # return HttpResponse(formatted_total_price)
 
