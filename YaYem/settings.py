@@ -24,6 +24,7 @@ else:
 INSTALLED_APPS = [
     # modern admin
     'jazzmin',
+    # default django
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,18 +43,29 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # translation
     "modeltranslation",
+    # all auth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
+    # 'allauth.socialaccount.providers.facebook',
+    # 'allauth.socialaccount.providers.mailru',
 ]
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    # languages
     "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # debug toolbar
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    # all auth
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = "YaYem.urls"
@@ -129,6 +141,32 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 # Default primary key field type
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# default redirect
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
+# cookie time
+SESSION_COOKIE_AGE = 604800
+
+# django all auth
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
+
+# Provider specific settings
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'APP': {
+#             'client_id': '201932057240-947a016k120mbef3tst1c9ujc11hm49g.apps.googleusercontent.com',
+#             'secret': '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',
+#             'key': ''
+#         }
+#     }
+# }
+
+
+
+
 # languages
 LANGUAGES = [
     ("ru", _("Russian")),
@@ -138,7 +176,7 @@ LANGUAGES = [
 LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
-
+# model translation
 MODELTRANSLATION_DEFAULT_LANGUAGE = "ru"
 MODELTRANSLATION_LANGUAGES = ("ru", "en", "kk")
 
@@ -149,7 +187,6 @@ INTERNAL_IPS = [
 ]
 
 # jazzmin config ui
-
 JAZZMIN_UI_TWEAKS = {
     "theme": "litera",
 }

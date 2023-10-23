@@ -14,7 +14,8 @@ urlpatterns += i18n_patterns(
     path("", include("partner.urls", namespace="partner")),
     path("", include("cart.urls", namespace="cart")),
     path("", include("banquets.urls", namespace="banquets")),
-    path("", include("accounts.urls", namespace="accounts")),
+    path("users/", include("accounts.urls", namespace="accounts")),
+    path('accounts/', include('allauth.urls')),
     prefix_default_language=False,
 )
 
