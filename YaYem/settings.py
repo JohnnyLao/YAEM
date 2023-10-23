@@ -19,7 +19,7 @@ DEBUG = env("DEBUG")
 if DEBUG:
     ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 else:
-    ALLOWED_HOSTS = ["yayem.kz", "www.yayem.kz"]
+    ALLOWED_HOSTS = ["yaem.kz", "www.yaem.kz"]
 
 INSTALLED_APPS = [
     # modern admin
