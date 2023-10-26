@@ -6,7 +6,6 @@ from django.utils.translation import gettext_lazy as _
 
 # environ
 env = environ.Env(
-    DEBUG=bool,
     SECRET_KEY=str,
 )
 
@@ -14,13 +13,17 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env(BASE_DIR / ".env")
 
 SECRET_KEY = env("SECRET_KEY")
-DEBUG = env("DEBUG")
-
-if DEBUG:
-    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-else:
-    ALLOWED_HOSTS = ["yayem.kz", "www.yayem.kz"]
-
+# mutable variables
+DEBUG = True
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+# Database
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "db.sqlite3",
+    }
+}
+# end mutable variables
 INSTALLED_APPS = [
     # modern admin
     'jazzmin',
@@ -90,16 +93,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "YaYem.wsgi.application"
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -163,8 +156,6 @@ AUTHENTICATION_BACKENDS = [
 #         }
 #     }
 # }
-
-
 
 
 # languages
