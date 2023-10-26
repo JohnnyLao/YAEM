@@ -2,12 +2,12 @@
 {% load static %}
 {% load i18n %}
 
-{% block title %} {% translate 'Ошибка' %} {% endblock title %}
+{% block title %} {% translate 'Ошибка 404' %} {% endblock title %}
 
 {% block content %}
 <body>
 <section class="bg_404" style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.5), rgba(51, 51, 51, 0.5)), url({% static 'images/4-min.jpg' %});
-        background-size: 150%; background-position: 30% 50%; background-repeat: repeat; height: 600px; width: auto">
+        background-size: cover; background-position: fixed; background-repeat: no-repeat;">
     <div class="container pt-5">
         <div class="row pt-5">
             <div class="col-8 pt-5 text-center" style="">
