@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
-    "accounts.apps.AccountsConfig",
+    'registration.apps.RegistrationConfig',
     # debug_toolbar
     "debug_toolbar",
     # translation

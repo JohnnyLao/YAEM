@@ -14,24 +14,8 @@ from main.models import Category, City, Client, Dish, Food_type2
 class Main(TemplateView):
     template_name = "main/index.html"
 
-    def get_context_data(self, city_slug=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        city_selected = None
-        query = self.request.GET.get("q")
-        clients = Client.objects.all()
 
-        if city_slug:
-            city_selected = get_object_or_404(City, slug=city_slug)
-            clients = Client.objects.filter(city=city_selected)
-        elif query:
-            clients = Client.objects.filter(name__icontains=query)
-        context["clients"] = clients
-        context["cities"] = City.objects.all()
-        context["city_selected"] = city_selected
-        return context
-
-
-class delivery_list(TemplateView):
+class DeliveryList(TemplateView):
     template_name = "main/delivery_list.html"
 
     def get_context_data(self, city_slug=None, **kwargs):
@@ -51,24 +35,7 @@ class delivery_list(TemplateView):
         return context
 
 
-class banquet_list(TemplateView):
-    template_name = "main/banquet_list.html"
 
-    def get_context_data(self, city_slug=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        city_selected = None
-        query = self.request.GET.get("q")
-        clients = Client.objects.all()
-
-        if city_slug:
-            city_selected = get_object_or_404(City, slug=city_slug)
-            clients = Client.objects.filter(city=city_selected)
-        elif query:
-            clients = Client.objects.filter(name__icontains=query)
-        context["clients"] = clients
-        context["cities"] = City.objects.all()
-        context["city_selected"] = city_selected
-        return context
 
 
 class Menu(TemplateView):
