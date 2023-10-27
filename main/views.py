@@ -10,6 +10,8 @@ from django.views.generic import TemplateView
 
 from main.models import Category, City, Client, Dish, Food_type2
 
+from django.core.cache import cache
+
 
 class Main(TemplateView):
     template_name = "main/index.html"
@@ -33,9 +35,6 @@ class DeliveryList(TemplateView):
         context["cities"] = City.objects.all()
         context["city_selected"] = city_selected
         return context
-
-
-
 
 
 class Menu(TemplateView):

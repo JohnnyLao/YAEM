@@ -122,10 +122,10 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 if DEBUG:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, "static/"),
-    ]
+    # static for dev
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/"),]
 else:
+    # static for prod
     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 MEDIA_URL = "/media/"
@@ -139,7 +139,8 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 # cookie time
 SESSION_COOKIE_AGE = 604800
-
+# cache lifetime (dev django, prod redis)
+CACHES_LIFE_TIME = 60 * 15
 # django all auth
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -210,3 +211,9 @@ JAZZMIN_SETTINGS = {
         },
     ],
 }
+
+# Celery settings
+# CELERY_BROKER_URL = "redis://localhost:6379"
+# CELERY_RESULT_BACKEND = "redis://localhost:6379"
+
+
