@@ -4,7 +4,15 @@
 {% load i18n %}
 
 
-{% block title %} {% translate 'Онлайн меню' %} {{client.name}} {{client.city}} {% endblock title %}
+{% block title %}
+{% translate 'Онлайн меню' %} {{client.name}} {{client.city}}
+{% endblock title %}
+
+
+{% block description %}
+{% translate 'Онлайн меню {{client.name}}' %}
+{% endblock description %}
+
 
 {% block content %}
 
