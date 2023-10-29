@@ -34,7 +34,7 @@
 #         name = self.cleaned_data['name']
 #         email = self.cleaned_data['email']
 #         phone = self.cleaned_data['phone']
-#         subject = 'Здравствуйте, я с сайта YaEm'
+#         subject = 'Здравствуйте, я с сайта Yaem'
 #         message = f'Имя: {name}\nEmail: {email}\nТелефон: {phone}'
 #         recipient_list = ['y4.3m@yandex.ru']
 #         send_mail(subject, message, email, recipient_list)
