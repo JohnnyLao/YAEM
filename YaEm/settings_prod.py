@@ -1,4 +1,4 @@
-from YaYem.settings_dev import *
+from YaEm.settings_dev import *
 
 # debug for prod
 DEBUG = False

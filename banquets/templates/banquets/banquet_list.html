@@ -111,21 +111,21 @@
             <div class="row my-3 gy-3 mx-auto justify-content-center">
 
                 <!--- цикл -->
-                {% for client in clients %}
-                {% if client.status and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
+                {% for banquet in banquets %}
+                {% if banquet.status %}
                 <div class="col-12 col-md-6 col-lg-4 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <img data-aos="zoom-out-right" src="{{client.logo.url}}"
+                        <img data-aos="zoom-out-right" src="{{banquet.logo.url}}"
                              class="card-img-top mx-auto mt-2 mb-0 rounded"
                              alt="logo image"
                              style="max-width: 225px; max-height: 225px"
                         draggable="false">
 
                         <div class="card-body my-0 py-1">
-                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ client.name }}</h4>
+                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ banquet.name }}</h4>
                             <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">{% translate 'Время работы' %}:
-                                {{ client.working_time }}</p>
-                            <p data-aos="zoom-out-right" class="my-0">{{ client.description }}</p>
+                                {{ banquet.working_time }}</p>
+                            <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
                             <div class="row my-0">
                                 <div data-aos="zoom-out-right" class="col-6 my-0">
                                     <p class="text my-0"> {% translate 'Самовывоз' %}
@@ -164,7 +164,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="{% url 'main:menu_page' url_name=client.url_name %}">
+                            <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
                                 <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
                                 </button>
                             </a>
