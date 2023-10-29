@@ -1,6 +1,6 @@
 from django.urls import path
 from django.views.decorators.cache import cache_page
-from YaYem.settings_dev import CACHES_LIFE_TIME
+from Yaem.settings_dev import CACHES_LIFE_TIME
 from main.views import Main, Menu, set_language, DeliveryList
 
 app_name = "main"

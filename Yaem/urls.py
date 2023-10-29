@@ -19,7 +19,7 @@ urlpatterns += i18n_patterns(
     prefix_default_language=False,
 )
 
-handler404 = "YaYem.views.page_not_found_view"
+handler404 = "Yaem.views.page_not_found_view"
 
 if settings.DEBUG:
     urlpatterns.append(path("__debug__/", include("debug_toolbar.urls")))
