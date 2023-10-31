@@ -78,44 +78,42 @@
                     <div class="col-2">
                         <select class="form-select" id="select_3" aria-label="Default select example" name="city">
                             <option selected value="">Город</option>
-                            {% for banquet in banquets %}
-                            <option value="{{ banquet.city }}">{{ banquet.city }}</option>
-                            {% endfor %}
+                            <option value="Темиртау">Темиртау</option>
+                            <option value="Караганда">Караганда</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-2 mx-auto mt-3 text-center">
-                    <button class="btn btn-success" type="submit">Confirm</button>
+                    <button class="btn btn-success" type="submit">Найти</button>
                 </div>
             </form>
         </div>
         <div class="container">
 
-            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы в' %}
-                {{city_selected}}</h1>
+<!--            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы в' %}-->
+<!--                {{city_selected}}</h1>-->
 
             <div class="row gy-3">
                 <div class="col-12 text-center mx-auto">
-
                     <!--   CITY FOR LOOP     -->
-                    <div class="btn-group-sm" role="group">
-                        <a href="{% url 'main:main_page' %}"
-                           {% if city_selected is None %}
-                           class="btn btn-warning btn-animate"
-                           {% else %}
-                           class="btn btn-success btn-animate"
-                           {% endif %}>{% translate 'Все' %}
-                        </a>
+<!--                    <div class="btn-group-sm" role="group">-->
+<!--                        <a href="{% url 'main:main_page' %}"-->
+<!--                           {% if city_selected is None %}-->
+<!--                           class="btn btn-warning btn-animate"-->
+<!--                           {% else %}-->
+<!--                           class="btn btn-success btn-animate"-->
+<!--                           {% endif %}>{% translate 'Все' %}-->
+<!--                        </a>-->
 
-                        {% for city in cities %}
-                        <a href="{% url 'main:city_filter' city.slug %}"
-                           {% if city.pk == city_selected.pk %}
-                           class="btn btn-warning btn-animate"
-                           {% else %}
-                           class="btn btn-success btn-animate"
-                           {% endif %}>{{ city }}
-                        </a>
-                        {% endfor %}
+<!--                        {% for city in cities %}-->
+<!--                        <a href="{% url 'main:city_filter' city.slug %}"-->
+<!--                           {% if city.pk == city_selected.pk %}-->
+<!--                           class="btn btn-warning btn-animate"-->
+<!--                           {% else %}-->
+<!--                           class="btn btn-success btn-animate"-->
+<!--                           {% endif %}>{{ city }}-->
+<!--                        </a>-->
+<!--                        {% endfor %}-->
                     </div>
                 </div>
             </div>
