@@ -3,7 +3,7 @@
 {% load i18n %}
 
 
-{% block title %} {% translate 'Я ЕМ | Доставка еды напрямую от заведения' %} {% endblock title %}
+{% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
 
 {% block content %}
 
@@ -55,37 +55,38 @@
              style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.8), rgba(51, 51, 51, 0.9)), url({% static 'images/банкет.jpg' %});
     background-attachment: fixed; background-size: cover;">
         <div class="container pt-3">
-            <form action="">
+            <form action="" method="post">
+                {% csrf_token %}
                 <div class="row d-flex justify-content-center">
                     <div class="col-2">
-                        <select class="form-select" id="select_1" aria-label="Default select example">
-                            <option selected="">Вместимость</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" id="select_1" aria-label="Default select example" name="capacity">
+                            <option selected value="">Вместимость</option>
+                            <option value="500">500</option>
+                            <option value="1000">1000</option>
+                            <option value="2000">2000</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <select class="form-select" id="select_2" aria-label="Default select example">
-                            <option selected="">Цена за человека</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" id="select_2" aria-label="Default select example"
+                                name="price_for_person">
+                            <option selected value="">Цена за человека</option>
+                            <option value="5000">5000</option>
+                            <option value="8000">8000</option>
+                            <option value="10000">10000</option>
                         </select>
                     </div>
                     <div class="col-2">
-                        <select class="form-select" id="select_3" aria-label="Default select example">
-                            <option selected="">Город</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select" id="select_3" aria-label="Default select example" name="city">
+                            <option selected value="">Город</option>
+                            {% for banquet in banquets %}
+                            <option value="{{ banquet.city }}">{{ banquet.city }}</option>
+                            {% endfor %}
                         </select>
                     </div>
-
                 </div>
                 <div class="col-2 mx-auto mt-3 text-center">
-                    <button class="btn btn-success" type="submit">Confirm</button></div>
-
+                    <button class="btn btn-success" type="submit">Confirm</button>
+                </div>
             </form>
         </div>
         <div class="container">
@@ -117,28 +118,9 @@
                         {% endfor %}
                     </div>
                 </div>
-                <!--   END CITY FOR LOOP     -->
-
-                <!--  SEARCH FIELD -->
-                <!--                <div class="col-8 col-md-4 text-center mx-auto">-->
-                <!--                    <form method="get" class="text-center">-->
-                <!--                        <div class="input-group">-->
-                <!--                            <div class="form-outline form-white">-->
-                <!--                                <input id="search-input" name="q" class="form-control"/>-->
-                <!--                                <label class="form-label" for="search-input">Поиск заведения</label>-->
-                <!--                            </div>-->
-                <!--                            <button type="submit" class="btn btn-warning btn-animate" data-mdb-html="true"-->
-                <!--                                    data-mdb-toggle="tooltip" title="Hi! I'm tooltip">-->
-                <!--                                <i class="fas fa-search"></i>-->
-                <!--                            </button>-->
-                <!--                        </div>-->
-                <!--                    </form>-->
-                <!--                </div>-->
-
             </div>
 
 
-            <!-- END SEARCH FIELD -->
         </div>
 
         <div class="container">
@@ -200,8 +182,7 @@
                                 </div>
                             </div>
                             <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
-                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{%
-                                    translate 'Перейти' %}
+                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
                                 </button>
                             </a>
                         </div>
