@@ -40,14 +40,13 @@
                 <div class="indicators-item"> <!--item-1-->
                     <div data-num={{total_dishes}} class="indicators-title"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
-
-                    </i> {% trans 'Блюд' %}
+                    </i> {% trans 'Банкетных залов' %}
                     </div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_online}} class="indicators-title"></div>
+                    <div data-num={{total_orders}} class="indicators-title"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -61,11 +60,11 @@
 <!--SECTION-->
 <main class="user-select-none">
     <section class="skrollable pb-5"
-             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.1), rgba(25, 25, 25, 0.9)), url({% static 'images/index/bg-min.jpg' %});
+             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.1), rgba(25, 25, 25, 0.9)), url({% static 'images/9-min.jpg' %});
     background-attachment: fixed; background-size: cover;">
         <div class="container">
             <h1 data-aos="fade-up" class="pt-4 fw-bold text-center">{% translate 'Добро пожаловать в' %} <span
-                    style="color: #fd7014">Я ЕМ</span></h1>
+                    style="color: #fd7014">YAEM</span></h1>
             <h2 data-aos="fade-up" class="fw-bold text-center">Выберите услугу</h2>
              <!--      DEMO LOGIN/REGISTER BUTTONS      -->
             <a href="{% url 'register:signup' %}">Регистрация</a>
@@ -77,9 +76,7 @@
             <div class="row my-3 gy-5 d-flex justify-content-center text-center">
                 <!--- DELIVERY -->
                 <div data-aos="fade-up" class="col-12 col-md-6 col-lg-4">
-                    <a href="delivery" class="btn px-0 py-0 btn-animate" data-mdb-ripple-color="#FD7014"
-                       data-mdb-ripple-unbound="true"
-                       data-mdb-ripple-radius="100">
+                    <a href="delivery" class="btn px-0 py-0 btn-animate" data-mdb-ripple-color="#FD7014">
                         <div class="card shadow"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.5), rgba(25, 25, 25, 0.7)),
                                          url({% static 'images/index/menu-min.jpg' %});

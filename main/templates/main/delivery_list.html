@@ -56,7 +56,7 @@
 
 <main class="user-select-none">
     <section class="skrollable pb-5"
-             style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.7), rgba(51, 51, 51, 0.8)), url({% static 'images/7.jpg' %});
+             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.8)), url({% static 'images/delivery/7-min.jpg' %});
     background-attachment: fixed; background-size: cover;">
         <div class="container">
             <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
@@ -88,23 +88,21 @@
                 <!--   END CITY FOR LOOP     -->
 
                 <!--  SEARCH FIELD -->
-<!--                <div class="col-8 col-md-4 text-center mx-auto">-->
-<!--                    <form method="get" class="text-center">-->
-<!--                        <div class="input-group">-->
-<!--                            <div class="form-outline form-white">-->
-<!--                                <input id="search-input" name="q" class="form-control"/>-->
-<!--                                <label class="form-label" for="search-input">Поиск заведения</label>-->
-<!--                            </div>-->
-<!--                            <button type="submit" class="btn btn-warning btn-animate" data-mdb-html="true"-->
-<!--                                    data-mdb-toggle="tooltip" title="Hi! I'm tooltip">-->
-<!--                                <i class="fas fa-search"></i>-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
+                <!--                <div class="col-8 col-md-4 text-center mx-auto">-->
+                <!--                    <form method="get" class="text-center">-->
+                <!--                        <div class="input-group">-->
+                <!--                            <div class="form-outline form-white">-->
+                <!--                                <input id="search-input" name="q" class="form-control"/>-->
+                <!--                                <label class="form-label" for="search-input">Поиск заведения</label>-->
+                <!--                            </div>-->
+                <!--                            <button type="submit" class="btn btn-warning btn-animate" data-mdb-html="true"-->
+                <!--                                    data-mdb-toggle="tooltip" title="Hi! I'm tooltip">-->
+                <!--                                <i class="fas fa-search"></i>-->
+                <!--                            </button>-->
+                <!--                        </div>-->
+                <!--                    </form>-->
+                <!--                </div>-->
             </div>
-
-
 
 
             <!-- END SEARCH FIELD -->
@@ -122,10 +120,16 @@
                              class="card-img-top mx-auto mt-2 mb-0 rounded"
                              alt="logo image"
                              style="max-width: 225px; max-height: 225px"
-                        draggable="false">
+                             draggable="false">
 
                         <div class="card-body my-0 py-1">
-                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ client.name }}</h4>
+                            <h4 data-aos="zoom-out-right" class="card-title my-0 ps-5">{{ client.name }}
+                            <span>
+                                <a href="#">
+                                    <button class="btn btn-success btn-animate px-1 py-0 mb-3">{% translate 'Банкет' %}</button>
+                                </a>
+                            </span>
+                            </h4>
                             <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">{% translate 'Время работы' %}:
                                 {{ client.working_time }}</p>
                             <p data-aos="zoom-out-right" class="my-0">{{ client.description }}</p>
@@ -166,28 +170,10 @@
                                         {% endif %}
                                     </p>
                                 </div>
-                                <div data-aos="zoom-out-right" class="col-6 my-0">
-                                    <p class="text my-0">
-                                        <a href="#">{% translate 'Банкетный зал' %}</a>
-                                        {% if client.outside %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                             fill="currentColor"
-                                             class="bi bi-check bg-success" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        {% else %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                             class="bi bi-x bg-danger" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </p>
-                                    {% endif %}
-                                </div>
                             </div>
                             <a href="{% url 'main:menu_page' url_name=client.url_name %}">
-                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
+                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">
+                                    {% translate 'Перейти' %}
                                 </button>
                             </a>
                         </div>
