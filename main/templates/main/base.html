@@ -71,7 +71,7 @@
     background: rgba(33, 37, 41);
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 200;
     transition: 2s;
     display: flex;
     justify-content: center;
@@ -83,12 +83,8 @@
 </div>
 <script>
     let mask = document.querySelector('.mask');
-    window.addEventListener('load', () => {
+    window.addEventListener('DOMContentLoaded', () => {
         mask.style.display = 'none'});
-
-
-
-
 </script>
 <!-- Navbar -->
 <nav class="navbar navbar-light user-select-none" id="header">

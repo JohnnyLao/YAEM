@@ -5,12 +5,12 @@ from random import randint
 def data_counter_site(request):
     total_dishes = Dish.objects.count()
     total_clients = Client.objects.count()
-    total_orders = total_clients * randint(20, 50)
+    total_online = total_clients * randint(9, 15)
 
     return {
         "total_dishes": total_dishes,
         "total_clients": total_clients,
-        "total_orders": total_orders,
+        "total_online": total_online,
     }
 
 # def cart_items_count(request):
