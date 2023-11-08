@@ -2,4 +2,4 @@
 .env
 /server_files/
 /fixtures/
-/venv/.gitignore
+/venv/

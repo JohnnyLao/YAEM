@@ -116,11 +116,11 @@
                               font-size: 14px;
                               color: #000;
                               margin: 0;
-<!--                              padding: 0;-->
+                              padding: 0;
                             }
 
                             .swiper {
-                              width: 95%;
+                              width: 90%;
                               height: 300px;
                               border-radius: 15px;
                             }
@@ -128,7 +128,7 @@
                             .swiper-slide {
                               text-align: center;
                               font-size: 18px;
-                              background: #fff;
+                              background: rgba(33, 37, 41, 0);
                               display: flex;
                               justify-content: center;
                               align-items: center;
@@ -136,14 +136,15 @@
 
                             .swiper-slide img {
                               display: block;
-                              width: 100%;
+                              max-width: 100%;
                               height: 100%;
                               object-fit: cover;
+                              border-radius: 15px
                             }
                         </style>
 
                         <!-- Swiper -->
-                        <div class="swiper mySwiper">
+                        <div class="swiper mySwiper mt-1">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
                                 {% if banquet.photo1 %}
@@ -179,7 +180,7 @@
                                 enabled: false,
                               },
                               autoplay: {
-                                delay: 2000,
+                                delay: 4000,
                                 disableOnInteraction: true,
                               },
                             });
@@ -194,10 +195,10 @@
                             </p>
                             <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
                                 <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
-                                   <i class="fas fa-user"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
+                                   <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
                                 </p>
                                 <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
-                                    <i class="fas fa-chair"></i> {{banquet.capacity}}
+                                    <i class="fas fa-user"></i> {{banquet.capacity}} мест
                                 </p>
                             </div>
 
