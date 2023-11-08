@@ -6,7 +6,6 @@
 {% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
 
 {% block content %}
-
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
    style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 25px; left: 15px; display: none; z-index: 100"
@@ -22,26 +21,27 @@
         <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{total_clients}}" class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
-                    </i> {% trans 'Заведений' %}
+                    <div data-num="10" class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">
+                        <i class="fas fa-bell-concierge fa-xs"></i>
+                        {% trans 'Банкетных залов' %}
                     </div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num={{total_dishes}} class="indicators-title"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
-
-                    </i> {% trans 'Блюд' %}
+                    <div data-num=7 class="indicators-title"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white">
+                        <i class="fas fa-city fa-xs"></i>
+                        {% trans 'Городов' %}
                     </div>
                 </div>
             </div>
             <div class="col-6 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div data-num=99 class="indicators-title"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
-                        <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
+                        <i class="fas fa-user fa-xs"></i> {% trans 'Посетителей' %}
                     </div>
                 </div>
             </div>
@@ -57,25 +57,27 @@
         <div class="container pt-3">
             <form action="" method="post">
                 {% csrf_token %}
-                <div class="row d-flex justify-content-center">
-                    <div class="col-2">
+                <div class="row gy-3 d-flex justify-content-center">
+                    <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_1" aria-label="Default select example" name="capacity">
                             <option selected value="">Вместимость</option>
-                            <option value="500">500</option>
-                            <option value="1000">1000</option>
-                            <option value="2000">2000</option>
+                            <option value="500">до 100</option>
+                            <option value="1000">100-200</option>
+                            <option value="2000">200-400</option>
+                            <option value="2000">Свыше 400</option>
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_2" aria-label="Default select example"
                                 name="price_for_person">
                             <option selected value="">Цена за человека</option>
-                            <option value="5000">5000</option>
-                            <option value="8000">8000</option>
-                            <option value="10000">10000</option>
+                            <option value="1500">до 3 000</option>
+                            <option value="3000">3 000 - 5 000</option>
+                            <option value="5000">5 000 - 10 000</option>
+                            <option value="10000">10 000 - 15 000</option>
                         </select>
                     </div>
-                    <div class="col-2">
+                    <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_3" aria-label="Default select example" name="city">
                             <option selected value="">Город</option>
                             <option value="Темиртау">Темиртау</option>
@@ -83,104 +85,126 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-2 mx-auto mt-3 text-center">
-                    <button class="btn btn-success" type="submit">Найти</button>
+                <div class="d-flex mx-auto mt-3 justify-content-center">
+                    <button class="btn btn-success btn-rounded btn-animate" type="submit">Найти</button>
                 </div>
             </form>
         </div>
-        <div class="container">
 
-<!--            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы в' %}-->
-<!--                {{city_selected}}</h1>-->
-
-            <div class="row gy-3">
-                <div class="col-12 text-center mx-auto">
-                    <!--   CITY FOR LOOP     -->
-<!--                    <div class="btn-group-sm" role="group">-->
-<!--                        <a href="{% url 'main:main_page' %}"-->
-<!--                           {% if city_selected is None %}-->
-<!--                           class="btn btn-warning btn-animate"-->
-<!--                           {% else %}-->
-<!--                           class="btn btn-success btn-animate"-->
-<!--                           {% endif %}>{% translate 'Все' %}-->
-<!--                        </a>-->
-
-<!--                        {% for city in cities %}-->
-<!--                        <a href="{% url 'main:city_filter' city.slug %}"-->
-<!--                           {% if city.pk == city_selected.pk %}-->
-<!--                           class="btn btn-warning btn-animate"-->
-<!--                           {% else %}-->
-<!--                           class="btn btn-success btn-animate"-->
-<!--                           {% endif %}>{{ city }}-->
-<!--                        </a>-->
-<!--                        {% endfor %}-->
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
 
         <div class="container">
-            <div class="row my-3 gy-3 mx-auto justify-content-center">
-
+            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
+            <div class="row my-3 gy-5 mx-auto justify-content-center">
                 <!--- цикл -->
                 {% for banquet in banquets %}
                 {% if banquet.status %}
-                <div class="col-12 col-md-6 col-lg-4 text-center">
+                <div class="col-12 col-lg-6 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <img data-aos="zoom-out-right" src="{{banquet.logo.url}}"
-                             class="card-img-top mx-auto mt-2 mb-0 rounded"
-                             alt="logo image"
-                             style="max-width: 225px; max-height: 225px"
-                             draggable="false">
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-                        <div class="card-body my-0 py-1">
-                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ banquet.name }}</h4>
-                            <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">{% translate 'Время
-                                работы' %}:
-                                {{ banquet.working_time }}</p>
-                            <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
-                            <div class="row my-0">
-                                <div data-aos="zoom-out-right" class="col-6 my-0">
-                                    <p class="text my-0"> {% translate 'Самовывоз' %}
-                                        {% if client.outside %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                             fill="currentColor"
-                                             class="bi bi-check bg-success" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        {% else %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                             class="bi bi-x bg-danger" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                    </p>
-                                    {% endif %}
-                                </div>
-                                <div data-aos="fade-up" class="col-6 my-0">
-                                    <p class="my-0">{% translate 'Доставка' %}
-                                        {% if client.delivery %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                             fill="currentColor"
-                                             class="bi bi-check bg-success" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;"> viewBox="0 0 16 16">
-                                            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
-                                        </svg>
-                                        {% else %}
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                                             class="bi bi-x bg-danger" viewBox="0 0 16 16"
-                                             style="border-radius: 25px;">
-                                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                                        </svg>
-                                        {% endif %}
-                                    </p>
-                                </div>
+                        <!-- Demo styles -->
+                        <style>
+                            html,
+                            body {
+                              position: relative;
+                              height: 100%;
+                            }
+
+                            body {
+                              background: #eee;
+                              font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                              font-size: 14px;
+                              color: #000;
+                              margin: 0;
+<!--                              padding: 0;-->
+                            }
+
+                            .swiper {
+                              width: 95%;
+                              height: 300px;
+                              border-radius: 15px;
+                            }
+
+                            .swiper-slide {
+                              text-align: center;
+                              font-size: 18px;
+                              background: #fff;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                            }
+
+                            .swiper-slide img {
+                              display: block;
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+                        </style>
+
+                        <!-- Swiper -->
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
+                                {% if banquet.photo1 %}
+                                <div class="swiper-slide"><img src="{{banquet.photo1.url}}" loading="lazy" alt=""></div>
+                                {% endif %}
+                                {% if banquet.photo2 %}
+                                <div class="swiper-slide"><img src="{{banquet.photo2.url}}" loading="lazy" alt=""></div>
+                                {% endif %}
+                                {% if banquet.photo3 %}
+                                <div class="swiper-slide"><img src="{{banquet.photo3.url}}" loading="lazy" alt=""></div>
+                                {% endif %}
+                                {% if banquet.photo4 %}
+                                <div class="swiper-slide"><img src="{{banquet.photo4.url}}" loading="lazy" alt=""></div>
+                                {% endif %}
+                                {% if banquet.photo5 %}
+                                <div class="swiper-slide"><img src="{{banquet.photo5.url}}" loading="lazy" alt=""></div>
+                                {% endif %}
                             </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- Swiper JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                        <!-- Initialize Swiper -->
+                        <script>
+                            var swiper = new Swiper(".mySwiper", {
+                              slidesPerView: 1,
+                              spaceBetween: 1,
+                              loop: true,
+                              lazy: true,
+                              keyboard: {
+                                enabled: false,
+                              },
+                              autoplay: {
+                                delay: 2000,
+                                disableOnInteraction: true,
+                              },
+                            });
+                        </script>
+                        <div class="card-body my-0 py-1">
+                            <h4 data-aos="zoom-out-right" class="card-title my-0">Банкетный зал
+                                <span style="color: #FD7014">{{ banquet.name }}</span></h4>
+                            <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">{{ banquet.address }}</p>
+                            <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">
+                                {% translate 'Время работы' %}:
+                                {{ banquet.working_time }}
+                            </p>
+                            <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
+                                <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
+                                   <i class="fas fa-user"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
+                                </p>
+                                <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
+                                    <i class="fas fa-chair"></i> {{banquet.capacity}}
+                                </p>
+                            </div>
+
+                            <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
                             <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
-                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">{% translate 'Перейти' %}
+                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">
+                                    {% translate 'Перейти' %}
                                 </button>
                             </a>
                         </div>
@@ -191,7 +215,6 @@
             </div>
         </div>
     </section>
-
 </main>
 
 {% endblock content %}

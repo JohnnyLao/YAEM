@@ -1,9 +1,4 @@
-import os
-
-from django.core.files import File
 from django.db import models
-from django.db.models.signals import pre_delete
-from django.dispatch import receiver
 
 
 class City(models.Model):

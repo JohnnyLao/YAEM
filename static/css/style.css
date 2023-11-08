@@ -34,20 +34,6 @@
     }
 
 
-.swiper-slide {
-        width: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .swiper-slide a {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
     .btn-animate:active {
         animation-name: buttonPress;
         animation-duration: 0.2s;
