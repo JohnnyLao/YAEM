@@ -21,7 +21,7 @@ def banquet_logo_upload_to(instance, filename):
 class Banquet(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name='Название банкетного зала')
     description = models.TextField(max_length=256, blank=True, null=True, verbose_name='Описание')
-    logo = models.ImageField(verbose_name='Лого', upload_to=banquet_logo_upload_to, blank=True, null=True)
+    photo = models.ImageField(verbose_name='Лого', upload_to=banquet_logo_upload_to, blank=True, null=True)
     photo1 = models.ImageField(verbose_name='Фото 1', upload_to=banquet_logo_upload_to, blank=True, null=True)
     photo2 = models.ImageField(verbose_name='Фото 2', upload_to=banquet_logo_upload_to, blank=True, null=True)
     photo3 = models.ImageField(verbose_name='Фото 3', upload_to=banquet_logo_upload_to, blank=True, null=True)
