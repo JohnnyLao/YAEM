@@ -1,15 +1,282 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-ТЕСТ УРЛА
-<br>
+{% extends "main/base.html" %}
+{% load static %}
+{% load i18n %}
 
 
-{{ banquets.name }}
+{% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
 
-</body>
-</html>
+{% block description %}
+{% translate 'Создавайте меню c QR-кодом для своего ресторана.' %}
+{% endblock description %}
+
+{% block content %}
+<!--button up-->
+<a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 25px; left: 15px; display: none; z-index: 100"
+   href="#header"
+   data-mdb-ripple-color="#FD7014">
+    <i class="fas fa-arrow-up-long"></i>
+</a>
+<!--button end-->
+
+<section style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
+    background-attachment: fixed; background-size: cover">
+    <div class="container py-3">
+        <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+
+            <h1 class="py-3 fw-bold text-center">{% translate 'Банкетный зал' %}
+                <span style="color: #fd7014"> {{ banquet.name }}</span>
+            </h1>
+            <!-- Tabs navs -->
+            <ul class="nav nav-tabs d-flex justify-content-center mb-3" id="ex1" role="tablist"
+                style="--mdb-nav-tabs-link-active-bg: rgba(253, 112, 20, 0.1)">
+                <li class="nav-item" role="presentation">
+                    <a
+                            class="nav-link active fs-5 border rounded-5 fw-bold mx-3 my-2"
+                            id="ex1-tab-1"
+                            data-mdb-toggle="tab"
+                            href="#ex1-tabs-1"
+                            role="tab"
+                            aria-controls="ex1-tabs-1"
+                            aria-selected="true"
+                            style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"
+                    >Большой Зал на 500 мест</a
+                    >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"
+                            id="ex1-tab-2"
+                            data-mdb-toggle="tab"
+                            href="#ex1-tabs-2"
+                            role="tab"
+                            aria-controls="ex1-tabs-2"
+                            aria-selected="false"
+                            style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"
+                    >Зал на 200 мест</a
+                    >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"
+                            id="ex1-tab-3"
+                            data-mdb-toggle="tab"
+                            href="#ex1-tabs-3"
+                            role="tab"
+                            aria-controls="ex1-tabs-3"
+                            aria-selected="false"
+                            style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"
+                    >Зал на 50 мест</a
+                    >
+                </li>
+            </ul>
+            <!-- Tabs navs -->
+
+            <!-- Tabs content -->
+            <div class="tab-content" id="ex1-content">
+                <div
+                        class="tab-pane fade show active"
+                        id="ex1-tabs-1"
+                        role="tabpanel"
+                        aria-labelledby="ex1-tab-1"
+                >
+                    <div class="card-body my-0 py-1">
+                        <!--                        SWIPER-->
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+                        <!-- Demo styles -->
+                        <style>
+                                .swiper {
+                              width: 100%;
+                              height: 100%;
+                            }
+
+                            .swiper-slide {
+                              text-align: center;
+                              font-size: 18px;
+                              background: #fff;
+                              display: flex;
+                              justify-content: center;
+                              align-items: center;
+                            }
+
+                            .swiper-slide img {
+                              display: block;
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+
+                            .swiper {
+                              width: 100%;
+                              margin-left: auto;
+                              margin-right: auto;
+                            }
+
+                            .swiper-slide {
+                              background-size: cover;
+                              background-position: center;
+                            }
+
+                            .mySwiper2 {
+                              max-height: 700px;
+                              width: auto;
+                            }
+
+                            .mySwiper {
+                              height: 100px;
+                              width: auto;
+                              box-sizing: border-box;
+                              padding: 10px 0;
+                            }
+
+                            .mySwiper .swiper-slide {
+                              width: 25%;
+                              height: 100%;
+                              opacity: 0.4;
+                            }
+
+                            .mySwiper .swiper-slide-thumb-active {
+                              opacity: 1;
+                            }
+
+                            .swiper-slide img {
+                              display: block;
+                              width: 100%;
+                              height: 100%;
+                              object-fit: cover;
+                            }
+                        </style>
+                        <!-- Swiper -->
+
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                             class="swiper mySwiper2 my-3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next" style="color: #fd7014"></div>
+                            <div class="swiper-button-prev" style="color: #fd7014"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Swiper JS -->
+                        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                        <!-- Initialize Swiper -->
+                        <script>
+                            var swiper = new Swiper(".mySwiper", {
+                              loop: true,
+                              spaceBetween: 10,
+                              slidesPerView: 4,
+                              freeMode: true,
+                              lazy: true,
+                              watchSlidesProgress: true,
+                            });
+                            var swiper2 = new Swiper(".mySwiper2", {
+                              loop: true,
+                              spaceBetween: 10,
+                              effect: "fade",
+                              navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                              },
+                              thumbs: {
+                                swiper: swiper,
+                              },
+                            });
+                        </script>
+                        <!--  END SWIPER-->
+<h1 class="text-center" style="color: #FD7014">В ПРОЦЕССЕ СУКА</h1>
+                        <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
+                            <p class="fs-5 my-0 px-3 border rounded-pill"
+                               style="color: #FD7014; --mdb-border-color: #FD7014">
+                                <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
+                            </p>
+                            <p class="fs-5 my-0 px-3 border rounded-pill"
+                               style="color: #FD7014; --mdb-border-color: #FD7014">
+                                <i class="fas fa-user"></i> {{banquet.capacity}} мест
+                            </p>
+                        </div>
+
+                        <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
+                    </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
+                    Tab 2 content
+                </div>
+
+                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
+                    Tab 3 content
+                </div>
+            </div>
+            <!-- Tabs content -->
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

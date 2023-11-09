@@ -5,6 +5,10 @@
 
 {% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
 
+{% block description %}
+{% translate 'Создавайте меню c QR-кодом для своего ресторана.' %}
+{% endblock description %}
+
 {% block content %}
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
@@ -50,9 +54,8 @@
 </section>
 <!--COUNTER END-->
 
-<main class="user-select-none">
-    <section class="skrollable pb-5"
-             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
+<section class="skrollable pb-5 user-select-none"
+         style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
     background-attachment: fixed; background-size: cover;">
         <div class="container pt-3">
             <form action="" method="get">
@@ -102,130 +105,131 @@
         </div>
 
 
-        <div class="container">
-            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
-            <div class="row my-3 gy-5 mx-auto justify-content-center">
-                <!--- цикл -->
-                {% for banquet in banquets %}
-                {% if banquet.status %}
-                <div class="col-12 col-lg-6 text-center">
-                    <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <div class="container">
+        <h1 class="my-3 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
+        <div class="row gy-5 mx-auto justify-content-center">
+            <!--- цикл -->
+            {% for banquet in banquets %}
+            {% if banquet.status %}
+            <div class="col-12 col-lg-6 text-center">
+                <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-                        <!-- Demo styles -->
-                        <style>
-                            html,
-                            body {
-                              position: relative;
-                              height: 100%;
-                            }
+                    <!-- Demo styles -->
+                    <style>
+                        html,
+                        body {
+                          position: relative;
+                          height: 100%;
+                        }
 
-                            body {
-                              background: #eee;
-                              font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-                              font-size: 14px;
-                              color: #000;
-                              margin: 0;
-                              padding: 0;
-                            }
+                        body {
+                          background: #eee;
+                          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                          font-size: 14px;
+                          color: #000;
+                          margin: 0;
+                          padding: 0;
+                        }
 
-                            .swiper {
-                              width: 90%;
-                              height: 300px;
-                              border-radius: 15px;
-                            }
+                        .swiper {
+                          width: 90%;
+                          height: 300px;
+                          border-radius: 15px;
+                        }
 
-                            .swiper-slide {
-                              text-align: center;
-                              font-size: 18px;
-                              background: rgba(33, 37, 41, 0);
-                              display: flex;
-                              justify-content: center;
-                              align-items: center;
-                            }
+                        .swiper-slide {
+                          text-align: center;
+                          font-size: 18px;
+                          background: rgba(33, 37, 41, 0);
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
 
-                            .swiper-slide img {
-                              display: block;
-                              max-width: 100%;
-                              height: 100%;
-                              object-fit: cover;
-                              border-radius: 15px
-                            }
-                        </style>
+                        .swiper-slide img {
+                          display: block;
+                          max-width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                          border-radius: 15px
+                        }
+                    </style>
 
-                        <!-- Swiper -->
-                        <div class="swiper mySwiper mt-1">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
-                                {% if banquet.photo1 %}
-                                <div class="swiper-slide"><img src="{{banquet.photo1.url}}" loading="lazy" alt=""></div>
-                                {% endif %}
-                                {% if banquet.photo2 %}
-                                <div class="swiper-slide"><img src="{{banquet.photo2.url}}" loading="lazy" alt=""></div>
-                                {% endif %}
-                                {% if banquet.photo3 %}
-                                <div class="swiper-slide"><img src="{{banquet.photo3.url}}" loading="lazy" alt=""></div>
-                                {% endif %}
-                                {% if banquet.photo4 %}
-                                <div class="swiper-slide"><img src="{{banquet.photo4.url}}" loading="lazy" alt=""></div>
-                                {% endif %}
-                                {% if banquet.photo5 %}
-                                <div class="swiper-slide"><img src="{{banquet.photo5.url}}" loading="lazy" alt=""></div>
-                                {% endif %}
-                            </div>
-                            <div class="swiper-pagination"></div>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper mt-1">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
+                            {% if banquet.photo1 %}
+                            <div class="swiper-slide"><img src="{{banquet.photo1.url}}" loading="lazy" alt=""></div>
+                            {% endif %}
+                            {% if banquet.photo2 %}
+                            <div class="swiper-slide"><img src="{{banquet.photo2.url}}" loading="lazy" alt=""></div>
+                            {% endif %}
+                            {% if banquet.photo3 %}
+                            <div class="swiper-slide"><img src="{{banquet.photo3.url}}" loading="lazy" alt=""></div>
+                            {% endif %}
+                            {% if banquet.photo4 %}
+                            <div class="swiper-slide"><img src="{{banquet.photo4.url}}" loading="lazy" alt=""></div>
+                            {% endif %}
+                            {% if banquet.photo5 %}
+                            <div class="swiper-slide"><img src="{{banquet.photo5.url}}" loading="lazy" alt=""></div>
+                            {% endif %}
                         </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
 
-                        <!-- Swiper JS -->
-                        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <!-- Swiper JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-                        <!-- Initialize Swiper -->
-                        <script>
-                            var swiper = new Swiper(".mySwiper", {
-                              slidesPerView: 1,
-                              spaceBetween: 1,
-                              loop: true,
-                              lazy: true,
-                              keyboard: {
-                                enabled: false,
-                              },
-                              autoplay: {
-                                delay: 4000,
-                                disableOnInteraction: true,
-                              },
-                            });
-                        </script>
-                        <div class="card-body my-0 py-1">
-                            <h4 data-aos="zoom-out-right" class="card-title my-0">Банкетный зал
-                                <span style="color: #FD7014">{{ banquet.name }}</span></h4>
-                            <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">{{ banquet.address }}</p>
-                            <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">
-                                {% translate 'Время работы' %}:
-                                {{ banquet.working_time }}
+                    <!-- Initialize Swiper -->
+                    <script>
+                        var swiper = new Swiper(".mySwiper", {
+                          slidesPerView: 1,
+                          spaceBetween: 1,
+                          loop: true,
+                          lazy: true,
+                          keyboard: {
+                            enabled: false,
+                          },
+                          autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: true,
+                          },
+                        });
+                    </script>
+                    <div class="card-body my-0 py-1">
+                        <h4 data-aos="zoom-out-right" class="card-title my-0">Банкетный зал
+                            <span style="color: #FD7014">{{ banquet.name }}</span></h4>
+                        <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">{{ banquet.address }}</p>
+                        <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">
+                            {% translate 'Время работы' %}:
+                            {{ banquet.working_time }}
+                        </p>
+                        <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
+                            <p class="fs-5 my-0 px-3 border rounded-pill"
+                               style="color: #FD7014; --mdb-border-color: #FD7014">
+                                <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
                             </p>
-                            <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
-                                <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
-                                   <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
-                                </p>
-                                <p class="fs-5 my-0 px-3 border rounded-pill" style="color: #FD7014; --mdb-border-color: #FD7014">
-                                    <i class="fas fa-user"></i> {{banquet.capacity}} мест
-                                </p>
-                            </div>
-
-                            <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
-                            <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
-                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">
-                                    {% translate 'Перейти' %}
-                                </button>
-                            </a>
+                            <p class="fs-5 my-0 px-3 border rounded-pill"
+                               style="color: #FD7014; --mdb-border-color: #FD7014">
+                                <i class="fas fa-user"></i> {{banquet.capacity}} мест
+                            </p>
                         </div>
+
+                        <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
+                        <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
+                            <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">
+                                {% translate 'Перейти' %}
+                            </button>
+                        </a>
                     </div>
                 </div>
-                {% endif %}
-                {% endfor %}
             </div>
+            {% endif %}
+            {% endfor %}
         </div>
-    </section>
-</main>
+    </div>
+</section>
 
 {% endblock content %}

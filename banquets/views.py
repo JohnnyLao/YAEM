@@ -76,5 +76,6 @@ class BanquetPage(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs['url_name']
         banquet = Banquet.objects.get(url_name=url_name)
-        context['banquets'] = banquet
+        context['banquet'] = banquet
+        print(banquet)
         return context
