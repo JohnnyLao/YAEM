@@ -52,21 +52,6 @@ class BanquetList(View):
         }
         return render(request, self.template_name, context)
 
-    # def post(self, request, *args, **kwargs):
-    #     context = {}
-    #     banquets = Banquet.objects.all()
-    #     capacity = request.POST.get('capacity')
-    #     price = request.POST.get('price_for_person')
-    #     city = request.POST.get('city')
-    #     if capacity:
-    #         banquets = banquets.filter(capacity=capacity)
-    #     if price:
-    #         banquets = banquets.filter(price=price)
-    #     if city:
-    #         banquets = banquets.filter(city__name=city)
-    #     context['banquets'] = banquets
-    #     return render(request, self.template_name, context)
-
 
 class BanquetPage(TemplateView):
     template_name = "banquets/banquet_page.html"
@@ -75,6 +60,7 @@ class BanquetPage(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs['url_name']
         banquet = Banquet.objects.get(url_name=url_name)
+        subhall = banquet.subhalls.all()
         context['banquet'] = banquet
-        print(banquet)
+        context['subhall'] = subhall
         return context
