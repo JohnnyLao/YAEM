@@ -20,32 +20,31 @@ class BanquetList(View):
 
         if capacity:
             if capacity == '100':
-                banquets = Banquet.objects.filter(capacity__lte=100)
+                banquets = banquets.filter(capacity__lte=100)
             elif capacity == '200':
-                banquets = Banquet.objects.filter(capacity__gte=100, capacity__lte=200)
+                banquets = banquets.filter(capacity__gte=100, capacity__lte=200)
             elif capacity == '400':
-                banquets = Banquet.objects.filter(capacity__gte=200, capacity__lte=400)
+                banquets = banquets.filter(capacity__gte=200, capacity__lte=400)
             elif capacity == '401':
-                banquets = Banquet.objects.filter(capacity__gte=401)
+                banquets = banquets.filter(capacity__gte=401)
 
         if price_min_max:
             if price_min_max == '3000':
-                banquets = Banquet.objects.filter(price_min__gte=0, price_min__lte=3000)
+                banquets = banquets.filter(price_min__gte=0, price_min__lte=3000)
             elif price_min_max == '5000':
-                banquets = Banquet.objects.filter(price_min__gte=3000, price_min__lte=5000)
+                banquets = banquets.filter(price_min__gte=3000, price_min__lte=5000)
             elif price_min_max == '10000':
-                banquets = Banquet.objects.filter(price_min__gte=5000, price_min__lte=10000)
+                banquets = banquets.filter(price_min__gte=5000, price_min__lte=10000)
             elif price_min_max == '15000':
-                banquets = Banquet.objects.filter(price_min__gte=10000, price_min__lte=15000)
+                banquets = banquets.filter(price_min__gte=10000, price_min__lte=15000)
 
         if city:
             if city == 'Temirtau' or city == 'Темиртау' or city == 'Теміртау':
-                banquets = banquets.filter(Q(city__name='Temirtau') | Q(city__name='Темиртау') | Q(city__name='Теміртау'))
+                banquets = banquets.filter(
+                    Q(city__name='Temirtau') | Q(city__name='Темиртау') | Q(city__name='Теміртау'))
             elif city == 'Karaganda' or city == 'Караганда' or city == 'Қарағанды':
-                 banquets = banquets.filter(Q(city__name='Karaganda') | Q(city__name='Караганда') | Q(city__name='Қарағанды'))
-
-
-
+                banquets = banquets.filter(
+                    Q(city__name='Karaganda') | Q(city__name='Караганда') | Q(city__name='Қарағанды'))
 
         context = {
             'banquets': banquets,
