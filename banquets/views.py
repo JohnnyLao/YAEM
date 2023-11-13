@@ -63,4 +63,7 @@ class BanquetPage(TemplateView):
         subhall = banquet.subhalls.all()
         context['banquet'] = banquet
         context['subhall'] = subhall
+        x = [1,2,3,4,5]
+        context['x'] = x
+        print(x)
         return context

@@ -22,9 +22,9 @@
 <section style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
     background-attachment: fixed; background-size: cover">
     <div class="container py-3">
-        <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+        <div class="card text-white" style="background: rgba(33, 37, 41, 0.75)">
 
-            <h1 class="py-3 fw-bold text-center">{% translate 'Банкетный зал' %}
+            <h1 class="py-3 fw-bold text-center">{% translate 'Банкетные залы' %}
                 <span style="color: #fd7014"> {{ banquet.name }}</span>
             </h1>
             <!-- Tabs navs -->
@@ -33,54 +33,29 @@
                 {% for hall in subhall %}
                 <li class="nav-item" role="presentation">
                     <a
-                            class="nav-link active fs-5 border rounded-5 fw-bold mx-3 my-2"
-                            id="ex1-tab-1"
+                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"
+                            id="ex1-tab-{{hall.hall_no}}"
                             data-mdb-toggle="tab"
-                            href="#ex1-tabs-1"
+                            href="#ex1-tabs-{{hall.hall_no}}"
                             role="tab"
-                            aria-controls="ex1-tabs-1"
+                            aria-controls="ex1-tabs-{{hall.hall_no}}"
                             aria-selected="true"
                             style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"
                     >{{ hall.name }}</a
                     >
                 </li>
                 {% endfor %}
-<!--                <li class="nav-item" role="presentation">-->
-<!--                    <a-->
-<!--                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"-->
-<!--                            id="ex1-tab-2"-->
-<!--                            data-mdb-toggle="tab"-->
-<!--                            href="#ex1-tabs-2"-->
-<!--                            role="tab"-->
-<!--                            aria-controls="ex1-tabs-2"-->
-<!--                            aria-selected="false"-->
-<!--                            style="color: #FD7014; &#45;&#45;mdb-border-color: #FD7014; &#45;&#45;mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"-->
-<!--                    >Зал на 200 мест</a-->
-<!--                    >-->
-<!--                </li>-->
-<!--                <li class="nav-item" role="presentation">-->
-<!--                    <a-->
-<!--                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"-->
-<!--                            id="ex1-tab-3"-->
-<!--                            data-mdb-toggle="tab"-->
-<!--                            href="#ex1-tabs-3"-->
-<!--                            role="tab"-->
-<!--                            aria-controls="ex1-tabs-3"-->
-<!--                            aria-selected="false"-->
-<!--                            style="color: #FD7014; &#45;&#45;mdb-border-color: #FD7014; &#45;&#45;mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"-->
-<!--                    >Зал на 50 мест</a-->
-<!--                    >-->
-<!--                </li>-->
             </ul>
             <!-- Tabs navs -->
 
             <!-- Tabs content -->
             <div class="tab-content" id="ex1-content">
+                {% for hall in subhall %}
                 <div
-                        class="tab-pane fade show active"
-                        id="ex1-tabs-1"
+                        class="tab-pane fade show"
+                        id="ex1-tabs-{{hall.hall_no}}"
                         role="tabpanel"
-                        aria-labelledby="ex1-tab-1"
+                        aria-labelledby="ex1-tab-{{hall.hall_no}}"
                 >
                     <div class="card-body my-0 py-1">
                         <!--                        SWIPER-->
@@ -88,71 +63,71 @@
 
                         <!-- Demo styles -->
                         <style>
-                                .swiper {
-                              width: 100%;
-                              height: 100%;
-                            }
+                            .swiper{{hall.hall_no}} {
+                          width: 100%;
+                          height: 100%;
+                        }
 
-                            .swiper-slide {
-                              text-align: center;
-                              font-size: 18px;
-                              background: #fff;
-                              display: flex;
-                              justify-content: center;
-                              align-items: center;
-                            }
+                        .swiper-slide {
+                          text-align: center;
+                          font-size: 18px;
+                          background: #fff;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                        }
 
-                            .swiper-slide img {
-                              display: block;
-                              width: 100%;
-                              height: 100%;
-                              object-fit: cover;
-                            }
+                        .swiper-slide img {
+                          display: block;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                        }
 
-                            .swiper {
-                              width: 100%;
-                              margin-left: auto;
-                              margin-right: auto;
-                            }
+                        .swiper{{hall.hall_no}} {
+                          width: 100%;
+                          margin-left: auto;
+                          margin-right: auto;
+                        }
 
-                            .swiper-slide {
-                              background-size: cover;
-                              background-position: center;
-                            }
+                        .swiper-slide {
+                          background-size: cover;
+                          background-position: center;
+                        }
 
-                            .mySwiper2 {
-                              max-height: 700px;
-                              width: auto;
-                            }
+                        .mySwiper2{{hall.hall_no}} {
+                          max-height: 700px;
+                          width: auto;
+                        }
 
-                            .mySwiper {
-                              height: 100px;
-                              width: auto;
-                              box-sizing: border-box;
-                              padding: 10px 0;
-                            }
+                        .mySwiper{{hall.hall_no}} {
+                          height: 100px;
+                          width: auto;
+                          box-sizing: border-box;
+                          padding: 10px 0;
+                        }
 
-                            .mySwiper .swiper-slide {
-                              width: 25%;
-                              height: 100%;
-                              opacity: 0.4;
-                            }
+                        .mySwiper{{hall.hall_no}} .swiper-slide {
+                          width: 25%;
+                          height: 100%;
+                          opacity: 0.4;
+                        }
 
-                            .mySwiper .swiper-slide-thumb-active {
-                              opacity: 1;
-                            }
+                        .mySwiper{{hall.hall_no}} .swiper-slide-thumb-active {
+                          opacity: 1;
+                        }
 
-                            .swiper-slide img {
-                              display: block;
-                              width: 100%;
-                              height: 100%;
-                              object-fit: cover;
-                            }
+                        .swiper-slide img {
+                          display: block;
+                          width: 100%;
+                          height: 100%;
+                          object-fit: cover;
+                        }
                         </style>
                         <!-- Swiper -->
 
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                             class="swiper mySwiper2 my-3">
+                             class="swiper mySwiper2{{hall.hall_no}} my-3">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
@@ -174,21 +149,12 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
                                 </div>
                             </div>
                             <div class="swiper-button-next" style="color: #fd7014"></div>
                             <div class="swiper-button-prev" style="color: #fd7014"></div>
                         </div>
-                        <div thumbsSlider="" class="swiper mySwiper">
+                        <div thumbsSlider="" class="swiper mySwiper{{hall.hall_no}}">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
@@ -210,15 +176,6 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg"/>
                                 </div>
                             </div>
                         </div>
@@ -228,18 +185,20 @@
 
                         <!-- Initialize Swiper -->
                         <script>
-                            var swiper = new Swiper(".mySwiper", {
+                            var swiper = new Swiper(".mySwiper{{hall.hall_no}}", {
                               loop: true,
                               spaceBetween: 10,
                               slidesPerView: 4,
                               freeMode: true,
                               lazy: true,
                               watchSlidesProgress: true,
+                              grabCursor: true,
                             });
-                            var swiper2 = new Swiper(".mySwiper2", {
+                            var swiper2 = new Swiper(".mySwiper2{{hall.hall_no}}", {
                               loop: true,
                               spaceBetween: 10,
                               effect: "fade",
+                              grabCursor: true,
                               navigation: {
                                 nextEl: ".swiper-button-next",
                                 prevEl: ".swiper-button-prev",
@@ -250,30 +209,118 @@
                             });
                         </script>
                         <!--  END SWIPER-->
-<h1 class="text-center" style="color: #FD7014">В ПРОЦЕССЕ СУКА</h1>
+                        <h1 class="text-center mt-4 mb-1 ms-5"><span class="fw-bold" style="color: #fd7014">{{hall.name}}</span>
+                            ресторана <span class="fw-bold" style="color: #fd7014">{{ banquet.name }}</span>
+                        </h1>
+
+                        <div data-aos="flip-left" class="col-4 col-lg-2 px-0 mb-4 mt-0 mx-auto text-center">
+
+                            <a href="" target="_blank">
+                                <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
+                                     style="background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+
+                            <a href="" target="_blank">
+                                <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
+                                     style="background: #f09433;
+background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  }">
+                                    <img src="{% static 'images/menu/2gis.png' %}" alt="" class="img-fluid"
+                                         style="border-radius: 25px;">
+                                </div>
+                            </a>
+
+                            <a href="tel:+">
+                                <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
+                                    <i class="fas fa-phone-flip fa-lg"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="note note-light text-secondary mb-0"
+                             style="background-color: rgba(253, 112, 20, 0.15); border-color: #fd7014">
+                            <div class="row gy-3">
+
+                                <div class="col-12 col-lg-4 mx-auto text-center fs-5">
+                                    <p class="fs-4 fw-bold text-light my-0">Кухня</p>
+                                    <div class="d-flex justify-content-center"
+                                         style="color: #FD7014">
+                                        <div class="col-2 my-auto">
+                                            <i class="fas fa-utensils fa-2x"></i>
+                                        </div>
+                                        <div class="col-10">
+                                            <p class="my-0">Восточно-европейская, казахская, китайская, артёмская</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-lg-4 mx-auto text-center fs-5">
+                                    <p class="fs-4 fw-bold text-light my-0">Средний Чек</p>
+                                    <div class="d-flex justify-content-center"
+                                         style="color: #FD7014">
+                                        <div class="col-2 my-auto">
+                                            <i class="fas fa-coins fa-2x"></i>
+                                        </div>
+                                        <div class="col-10 col-lg-9">
+                                            <p class="my-0 ms-5 ms-lg-3 text-start">10 000 ₸ - 15 000 ₸</p>
+                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">5 000 ₸ - 7 500 ₸
+                                                (поминки)</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-12 col-lg-4 mx-auto text-center fs-5">
+                                    <p class="fs-4 fw-bold text-light my-0">Вместимость</p>
+                                    <div class="d-flex justify-content-center mt-2"
+                                         style="color: #FD7014">
+                                        <div class="col-2 my-auto">
+                                            <i class="fas fa-user fa-2x"></i>
+                                        </div>
+                                        <div class="col-10 col-lg-4">
+                                            <p class="my-0">500 мест</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <p class="mt-3 text-secondary"><span class="fw-bold text-light">Особенности: </span>Сцена,
+                            танцпол, зона для
+                            курящих,
+                            VIP-зал, звуковая аппаратура, световая аппаратура, музыкальное сопровождение, ведущий
+                            (тамада), фотосъёмка, видеосъёмка, оформление зала</p>
+                        <p class="mb-3 text-secondary"><span class="fw-bold text-light">Парковка: </span>охраняемая,
+                            бесплатная, на 100
+                            мест</p>
+                        <p class="text-secondary">Банкетный зал Камила Караганда, Банкетный зал Kamila Караганда
+
+                            Ресторан «Kamila» — лучшее место для вашего праздника!
+
+                            К вашим услугам два банкетных зала — на 160 и 500 мест. Наше меню поразит вас разнообразием,
+                            а богато оформленный зал приведет в восторг гостей.
+
+                            Любое торжество в наших зала запомнится надолго!</p>
+
                         <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
-                            <p class="fs-5 my-0 px-3 border rounded-pill"
-                               style="color: #FD7014; --mdb-border-color: #FD7014">
-                                <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
-                            </p>
-                            <p class="fs-5 my-0 px-3 border rounded-pill"
-                               style="color: #FD7014; --mdb-border-color: #FD7014">
-                                <i class="fas fa-user"></i> {{banquet.capacity}} мест
-                            </p>
+
+
                         </div>
 
                         <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
                     </div>
-
                 </div>
-
-                <div class="tab-pane fade" id="ex1-tabs-2" role="tabpanel" aria-labelledby="ex1-tab-2">
-                    Tab 2 content
-                </div>
-
-                <div class="tab-pane fade" id="ex1-tabs-3" role="tabpanel" aria-labelledby="ex1-tab-3">
-                    Tab 3 content
-                </div>
+                {% endfor %}
             </div>
             <!-- Tabs content -->
         </div>

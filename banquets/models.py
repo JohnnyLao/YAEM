@@ -60,6 +60,7 @@ class SubHall(models.Model):
     # photos = models.ForeignKey(to=SubHallPhoto, on_delete=models.CASCADE)
     name = models.CharField(max_length=256, unique=True)
     description = models.CharField(max_length=256, blank=True, null=True, verbose_name='Описание')
+    hall_no = models.IntegerField(blank=True, null=True, verbose_name="№ Зала")
 
     def __str__(self):
         return self.name
