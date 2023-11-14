@@ -13,5 +13,6 @@ class BanquetAdmin(admin.ModelAdmin):
 
 
 @admin.register(SubHall)
-class BanquetAdmin(admin.ModelAdmin):
-    pass
+class SubHallAdmin(admin.ModelAdmin):
+    list_display = ('name', 'banquet', 'kitchen_type', 'memorials', 'sub_hall_capacity', 'sub_hall_price_for_person')
+    list_filter = ('banquet',)

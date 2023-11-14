@@ -136,25 +136,46 @@
                              class="swiper mySwiper2{{hall.hall_no}} my-3">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    {% if hall.photo1 %}
+                                    <img src="{{ hall.photo1.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo2 %}
+                                    <img src="{{ hall.photo2.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo3 %}
+                                    <img src="{{ hall.photo3.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo4 %}
+                                    <img src="{{ hall.photo4.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo5 %}
+                                    <img src="{{ hall.photo5.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo6 %}
+                                    <img src="{{ hall.photo6.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="swiper-button-next" style="color: #fd7014"></div>
@@ -163,25 +184,46 @@
                         <div thumbsSlider="" class="swiper mySwiper{{hall.hall_no}}">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
+                                    {% if hall.photo1 %}
+                                    <img src="{{ hall.photo1.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo2 %}
+                                    <img src="{{ hall.photo2.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo3 %}
+                                    <img src="{{ hall.photo3.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo4 %}
+                                    <img src="{{ hall.photo4.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo5 %}
+                                    <img src="{{ hall.photo5.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
+                                    {% endif %}
                                 </div>
                                 <div class="swiper-slide">
+                                    {% if hall.photo6 %}
+                                    <img src="{{ hall.photo6.url }}"/>
+                                    {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg"/>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -221,7 +263,7 @@
 
                         <div data-aos="flip-left" class="col-4 col-lg-2 px-0 mb-4 mt-0 mx-auto text-center">
 
-                            <a href="" target="_blank">
+                            <a href="{{ banquet.inst }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -233,7 +275,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
 
-                            <a href="" target="_blank">
+                            <a href="{{ banquet.two_gis }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -246,7 +288,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
 
-                            <a href="tel:+">
+                            <a href="{{ banquet.phone }}">
                                 <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
@@ -265,7 +307,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-utensils fa-2x"></i>
                                         </div>
                                         <div class="col-10">
-                                            <p class="my-0">Восточно-европейская, казахская, китайская, артёмская</p>
+                                            <p class="my-0">{{ hall.kitchen_type }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -278,8 +320,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-coins fa-2x"></i>
                                         </div>
                                         <div class="col-10 col-lg-9">
-                                            <p class="my-0 ms-5 ms-lg-3 text-start">10 000 ₸ - 15 000 ₸</p>
-                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">5 000 ₸ - 7 500 ₸
+                                            <p class="my-0 ms-5 ms-lg-3 text-start">{{ hall.sub_hall_price_for_person }} ₸</p>
+                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">{{ hall.memorials }} ₸
                                                 (поминки)</p>
                                         </div>
                                     </div>
@@ -294,36 +336,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-user fa-2x"></i>
                                         </div>
                                         <div class="col-10 col-lg-4">
-                                            <p class="my-0">500 мест</p>
+                                            <p class="my-0">{{ hall.sub_hall_capacity }}</p>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <p class="mt-3 text-secondary"><span class="fw-bold text-light">Особенности: </span>Сцена,
-                            танцпол, зона для
-                            курящих,
-                            VIP-зал, звуковая аппаратура, световая аппаратура, музыкальное сопровождение, ведущий
-                            (тамада), фотосъёмка, видеосъёмка, оформление зала</p>
-                        <p class="mb-3 text-secondary"><span class="fw-bold text-light">Парковка: </span>охраняемая,
-                            бесплатная, на 100
-                            мест</p>
-                        <p class="text-secondary">Банкетный зал Камила Караганда, Банкетный зал Kamila Караганда
+                        <p class="mt-3 text-secondary"><span class="fw-bold text-light">Особенности: </span>
+                            {{ hall.sub_hall_peculiarities }}
+                        </p>
+                        <p class="mb-3 text-secondary"><span class="fw-bold text-light">Парковка: </span>
+                            {{ hall.parking }}
+                        </p>
+                        <p class="text-secondary">{{ banquet.description }}</p>
 
-                            Ресторан «Kamila» — лучшее место для вашего праздника!
-
-                            К вашим услугам два банкетных зала — на 160 и 500 мест. Наше меню поразит вас разнообразием,
-                            а богато оформленный зал приведет в восторг гостей.
-
-                            Любое торжество в наших зала запомнится надолго!</p>
-
-                        <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
+<!--                        <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">-->
 
 
-                        </div>
+<!--                        </div>-->
 
-                        <p data-aos="zoom-out-right" class="my-0">{{ banquet.description }}</p>
+<!--                        <p data-aos="zoom-out-right" class="my-0"></p>-->
                     </div>
                 </div>
                 {% endfor %}
