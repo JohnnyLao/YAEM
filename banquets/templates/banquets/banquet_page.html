@@ -25,23 +25,23 @@
         <div class="card text-white" style="background: rgba(33, 37, 41, 0.75)">
 
             <h1 class="py-3 fw-bold text-center">{% translate 'Банкетные залы' %}
-                <span style="color: #fd7014"> {{ banquet.name }}</span>
+                <span style="color: #fd7014"> {{ banquet_card.name }}</span>
             </h1>
             <!-- Tabs navs -->
             <ul class="nav nav-tabs d-flex justify-content-center mb-3" id="ex1" role="tablist"
                 style="--mdb-nav-tabs-link-active-bg: rgba(253, 112, 20, 0.1)">
-                {% for hall in subhall %}
+                {% for banquet in banquets %}
                 <li class="nav-item" role="presentation">
                     <a
                             class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"
-                            id="ex1-tab-{{hall.hall_no}}"
+                            id="ex1-tab-{{banquet.hall_no}}"
                             data-mdb-toggle="tab"
-                            href="#ex1-tabs-{{hall.hall_no}}"
+                            href="#ex1-tabs-{{banquet.hall_no}}"
                             role="tab"
-                            aria-controls="ex1-tabs-{{hall.hall_no}}"
+                            aria-controls="ex1-tabs-{{banquet.hall_no}}"
                             aria-selected="true"
                             style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)"
-                    >{{ hall.name }}</a
+                    >{{ banquet.name }}</a
                     >
                 </li>
                 {% endfor %}
@@ -50,12 +50,12 @@
 
             <!-- Tabs content -->
             <div class="tab-content" id="ex1-content">
-                {% for hall in subhall %}
+                {% for banquet in banquets %}
                 <div
                         class="tab-pane fade show"
-                        id="ex1-tabs-{{hall.hall_no}}"
+                        id="ex1-tabs-{{banquet.hall_no}}"
                         role="tabpanel"
-                        aria-labelledby="ex1-tab-{{hall.hall_no}}"
+                        aria-labelledby="ex1-tab-{{banquet.hall_no}}"
                 >
                     <div class="card-body my-0 py-1">
                         <!--                        SWIPER-->
@@ -133,46 +133,46 @@
                         <!-- Swiper -->
 
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
-                             class="swiper mySwiper2{{hall.hall_no}} my-3">
+                             class="swiper mySwiper2{{banquet.hall_no}} my-3">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    {% if hall.photo1 %}
-                                    <img src="{{ hall.photo1.url }}"/>
+                                    {% if banquet.photo1 %}
+                                    <img src="{{ banquet.photo1.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo2 %}
-                                    <img src="{{ hall.photo2.url }}"/>
+                                    {% if banquet.photo2 %}
+                                    <img src="{{ banquet.photo2.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo3 %}
-                                    <img src="{{ hall.photo3.url }}"/>
+                                    {% if banquet.photo3 %}
+                                    <img src="{{ banquet.photo3.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo4 %}
-                                    <img src="{{ hall.photo4.url }}"/>
+                                    {% if banquet.photo4 %}
+                                    <img src="{{ banquet.photo4.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo5 %}
-                                    <img src="{{ hall.photo5.url }}"/>
+                                    {% if banquet.photo5 %}
+                                    <img src="{{ banquet.photo5.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo6 %}
-                                    <img src="{{ hall.photo6.url }}"/>
+                                    {% if banquet.photo6 %}
+                                    <img src="{{ banquet.photo6.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
                                     {% endif %}
@@ -184,43 +184,43 @@
                         <div thumbsSlider="" class="swiper mySwiper{{hall.hall_no}}">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
-                                    {% if hall.photo1 %}
-                                    <img src="{{ hall.photo1.url }}"/>
+                                    {% if banquet.photo1 %}
+                                    <img src="{{ banquet.photo1.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo2 %}
-                                    <img src="{{ hall.photo2.url }}"/>
+                                    {% if banquet.photo2 %}
+                                    <img src="{{ banquet.photo2.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo3 %}
-                                    <img src="{{ hall.photo3.url }}"/>
+                                    {% if banquet.photo3 %}
+                                    <img src="{{ banquet.photo3.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo4 %}
-                                    <img src="{{ hall.photo4.url }}"/>
+                                    {% if banquet.photo4 %}
+                                    <img src="{{ banquet.photo4.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo5 %}
-                                    <img src="{{ hall.photo5.url }}"/>
+                                    {% if banquet.photo5 %}
+                                    <img src="{{ banquet.photo5.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
-                                    {% if hall.photo6 %}
-                                    <img src="{{ hall.photo6.url }}"/>
+                                    {% if banquet.photo6 %}
+                                    <img src="{{ banquet.photo6.url }}"/>
                                     {% else %}
                                     <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
                                     {% endif %}
@@ -257,13 +257,13 @@
                             });
                         </script>
                         <!--  END SWIPER-->
-                        <h1 class="text-center mt-4 mb-1 ms-5"><span class="fw-bold" style="color: #fd7014">{{hall.name}}</span>
-                            ресторана <span class="fw-bold" style="color: #fd7014">{{ banquet.name }}</span>
+                        <h1 class="text-center mt-4 mb-1 ms-5"><span class="fw-bold" style="color: #fd7014">{{banquet.name}}</span>
+                            ресторана <span class="fw-bold" style="color: #fd7014">{{ banquet_card.name }}</span>
                         </h1>
 
                         <div data-aos="flip-left" class="col-4 col-lg-2 px-0 mb-4 mt-0 mx-auto text-center">
 
-                            <a href="{{ banquet.inst }}" target="_blank">
+                            <a href="{{ banquet_card.inst }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -275,7 +275,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
 
-                            <a href="{{ banquet.two_gis }}" target="_blank">
+                            <a href="{{ banquet_card.two_gis }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -288,7 +288,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
 
-                            <a href="{{ banquet.phone }}">
+                            <a href="{{ banquet_card.phone }}">
                                 <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
@@ -307,7 +307,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-utensils fa-2x"></i>
                                         </div>
                                         <div class="col-10">
-                                            <p class="my-0">{{ hall.kitchen_type }}</p>
+                                            {% for kitchen in banquet.kitchen_types.all %}
+                                                {{ kitchen.kitchen_type }}
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -320,8 +322,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-coins fa-2x"></i>
                                         </div>
                                         <div class="col-10 col-lg-9">
-                                            <p class="my-0 ms-5 ms-lg-3 text-start">{{ hall.sub_hall_price_for_person }} ₸</p>
-                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">{{ hall.memorials }} ₸
+                                            <p class="my-0 ms-5 ms-lg-3 text-start">{{ banquet.sub_hall_price_for_person }} ₸</p>
+                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">{{ banquet.memorials }} ₸
                                                 (поминки)</p>
                                         </div>
                                     </div>
@@ -336,7 +338,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-user fa-2x"></i>
                                         </div>
                                         <div class="col-10 col-lg-4">
-                                            <p class="my-0">{{ hall.sub_hall_capacity }}</p>
+                                            <p class="my-0">{{ banquet.sub_hall_capacity }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -344,19 +346,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             </div>
                         </div>
                         <p class="mt-3 text-secondary"><span class="fw-bold text-light">Особенности: </span>
-                            {{ hall.sub_hall_peculiarities }}
+                            {% for features in banquet.features_name.all %}
+                                {{ features.features_name }}
+                            {% endfor %}
                         </p>
                         <p class="mb-3 text-secondary"><span class="fw-bold text-light">Парковка: </span>
-                            {{ hall.parking }}
+                            {{ banquet.parking_1 }} : {{ banquet.parking_2 }}
                         </p>
+
                         <p class="text-secondary">{{ banquet.description }}</p>
-
-<!--                        <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">-->
-
-
-<!--                        </div>-->
-
-<!--                        <p data-aos="zoom-out-right" class="my-0"></p>-->
                     </div>
                 </div>
                 {% endfor %}

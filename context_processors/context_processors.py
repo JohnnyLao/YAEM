@@ -1,5 +1,5 @@
 from main.models import Client, Dish, City
-from banquets.models import Banquet
+from banquets.models import BanquetCard
 from random import randint
 
 
@@ -8,7 +8,7 @@ def data_counter_site(request):
     total_clients = Client.objects.count()
     total_orders = total_clients * randint(9, 15)
 
-    total_banquets = Banquet.objects.count()
+    total_banquets = BanquetCard.objects.count()
     total_cities = City.objects.count()
 
     return {

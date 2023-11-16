@@ -1,18 +1,24 @@
 from django.contrib import admin
-from banquets.models import Banquet, SubHall
+from banquets.models import BanquetCard, Banquet, KitchenType, FeaturesOfTheBanquetHall
+
+
+@admin.register(BanquetCard)
+class BanquetCardAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(Banquet)
 class BanquetAdmin(admin.ModelAdmin):
-    list_display = ['name', 'z_index']
+    filter_horizontal = ["kitchen_types", 'features_name']
+    list_display = ['banquet_card', 'name']
+    list_filter = ['banquet_card']
 
 
-# @admin.register(SubHallPhoto)
-# class BanquetAdmin(admin.ModelAdmin):
-#     pass
+@admin.register(KitchenType)
+class KitchenTypeAdmin(admin.ModelAdmin):
+    pass
 
 
-@admin.register(SubHall)
-class SubHallAdmin(admin.ModelAdmin):
-    list_display = ('name', 'banquet', 'kitchen_type', 'memorials', 'sub_hall_capacity', 'sub_hall_price_for_person')
-    list_filter = ('banquet',)
+@admin.register(FeaturesOfTheBanquetHall)
+class FeaturesOfTheBanquetHallAdmin(admin.ModelAdmin):
+    pass

@@ -2,7 +2,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404
 from django.views import View
 
-from banquets.models import Banquet
+from banquets.models import BanquetCard
 from django.views.generic import TemplateView
 
 from main.models import City
@@ -12,7 +12,7 @@ class BanquetList(View):
     template_name = "banquets/banquet_list.html"
 
     def get(self, request, *args, **kwargs):
-        banquets = Banquet.objects.all()
+        banquets = BanquetCard.objects.all()
         cities = City.objects.values_list('name', flat=True).distinct()
         capacity = request.GET.get('capacity')
         price_min_max = request.GET.get('price_min_max')
@@ -59,8 +59,8 @@ class BanquetPage(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs['url_name']
-        banquet = Banquet.objects.get(url_name=url_name)
-        subhall = banquet.subhalls.all()
-        context['banquet'] = banquet
-        context['subhall'] = subhall
+        banquet_card = BanquetCard.objects.get(url_name=url_name)
+        banquets = banquet_card.banquet_set.all()
+        context['banquet_card'] = banquet_card
+        context['banquets'] = banquets
         return context
