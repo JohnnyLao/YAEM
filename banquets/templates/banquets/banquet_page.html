@@ -314,7 +314,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-utensils fa-2x"></i>
                                         </div>
                                         <div class="col-10">
-                                            <p class="my-0">{{ hall.kitchen_type }}</p>
+                                            <p class="my-0">
+                                                {% for kitchen in hall.kitchen_types.all %}
+                                                    {{ kitchen.kitchen_type }}
+                                                {% endfor %}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -352,12 +356,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <div class="row">
                             <div class="col-6">
                                 <p class="mt-3 text-secondary"><span class="fw-bold text-light">Адрес: </span>
-                                    Улица Есенина дом Каруселено
+                                    {{ banquet.address }}
                                 </p>
                             </div>
                             <div class="col-6">
                                 <p class="mt-3 text-secondary"><span class="fw-bold text-light">Особенности: </span>
-                                    {{ hall.sub_hall_peculiarities }}
+                                    {% for feature in hall.features_name.all %}
+                                        {{ feature.features_name }}
+                                    {% endfor %}
                                 </p>
                             </div>
 
@@ -366,7 +372,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <div class="row">
                             <div class="col-6">
                                 <p class="mt-3 text-secondary"><span class="fw-bold text-light">Парковка: </span>
-                                    {{ hall.parking }}
+                                    {{ hall.parking_1 }} {{ hall.parking_2 }}
                                 </p>
                             </div>
                             <div class="col-6">
