@@ -21,7 +21,7 @@
 <!--button end-->
 
 <!--COUNTER START-->
-<section class="user-select-none" style="background: #212529">
+<section class="" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
             <div class="col-6 col-lg-4">
@@ -54,10 +54,10 @@
 </section>
 <!--COUNTER END-->
 
-<main class="user-select-none">
+<main class="">
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.8)), url({% static 'images/delivery/7-min.jpg' %});
-    background-attachment: fixed; background-size: cover;">
+    background-attachment: fixed; background-size: cover; min-height: 100vh">
         <div class="container">
             <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
 
@@ -116,11 +116,11 @@
                 {% if client.status  %}
 <!--                and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО"-->
                 <div class="col-12 col-md-6 col-lg-4 text-center">
-                    <div class="card text-white" style="background: rgba(33, 37, 41, 0.5)">
+                    <div class="card text-white" style="background: rgba(33, 37, 41, 0.75)">
                         <img data-aos="zoom-out-right" src="{{client.logo.url}}"
                              class="card-img-top mx-auto mt-2 mb-0 rounded"
                              alt="logo image"
-                             style="max-width: 225px; max-height: 225px"
+                             style="width: auto; height: 225px"
                              draggable="false">
 
                         <div class="card-body my-0 py-1">
@@ -131,11 +131,14 @@
 <!--                                </a>-->
 <!--                            </span>-->
                             </h4>
-                            <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">{% translate 'Время работы' %}:
+                            <p data-aos="zoom-out-right" class="my-0 text-white-50">
+                                {{ client.address }}</p>
+                            <p data-aos="zoom-out-right" class="my-0 text-white-50">
+                                {% translate 'Время работы' %}:
                                 {{ client.working_time }}</p>
-                            <p data-aos="zoom-out-right" class="my-0">{{ client.description }}</p>
-                            <div class="row my-0">
 
+
+                            <div class="row my-0">
                                 <div data-aos="zoom-out-right" class="col-6 my-0">
                                     <p class="text my-0"> {% translate 'Самовывоз' %}
                                         {% if client.outside %}
