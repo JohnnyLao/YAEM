@@ -54,9 +54,9 @@
 </section>
 <!--COUNTER END-->
 
-<section class="skrollable pb-5 user-select-none"
+<section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
-    background-attachment: fixed; background-size: cover;">
+    background-attachment: fixed; background-size: cover; min-height: 100vh">
         <div class="container pt-3">
             <form action="" method="get">
                 <div class="row gy-3 d-flex justify-content-center">
@@ -160,6 +160,8 @@
                     <div class="swiper mySwiper mt-1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
+                            <div class="swiper-slide"><img src="{% static 'images/3-min.jpg' %}" loading="lazy" alt=""></div>
+                            <div class="swiper-slide"><img src="{% static 'images/4-min.jpg' %}" loading="lazy" alt=""></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
