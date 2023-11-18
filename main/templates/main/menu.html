@@ -27,6 +27,10 @@
 
 <body>
 <!--  MAIN CONTENT  -->
+
+
+
+
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/menu/6-min.jpg' %});
     background-attachment: fixed;background-size: cover; background-repeat: no-repeat">
@@ -62,26 +66,31 @@
                             {% if client.outside %}
                             <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Самовывоз</span>
                             {% endif %}
+
                             {% if client.outside %}
                             <span class="badge" data-mdb-toggle="tooltip" title="Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp" style="background-color: rgba(253, 112, 20, 0.4)">Доставка
                                 <i class="fas fa-circle-question"  style="color:#fd7014"></i></span>
                             {% endif %}
+
                             {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                             <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Меню
                                 <i class="flag flag-kz"></i><i class="flag flag-ru"></i><i class="flag flag-uk"></i>
                             </span>
                             {% endif %}
-<!--                            IF CLIENT.BANQUETE-->
-                            <a href="#">
+
+                            {% if client_has_banquet %}
+                            <a href="{% url 'banquets:banquet_page' url_name=client.url_name %}">
                                 <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Банкеты <i class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
                             </a>
-<!--                            ENF IF-->
+                            {% endif %}
+
                         </div>
                     </div>
 
                     {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                     <div class="row my-2 d-flex justify-content-around">
                         <div data-aos="flip-left" class="col-8">
+
                             {% if client.inst %}
                             <a href="{{ client.inst }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
@@ -95,6 +104,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
                             {% endif %}
+
                             {% if client.two_gis %}
                             <a href="{{ client.two_gis }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
@@ -109,6 +119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
                             {% endif %}
+
                             {% if client.phone %}
                             <a href="tel:+{{client.phone}}">
                                 <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
@@ -136,6 +147,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     <div class="container text-center my-3">
         <h2 data-aos="fade-right" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
     </div>
+
 
 
     <!--  SWIPER -->

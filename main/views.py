@@ -8,6 +8,7 @@ from django.urls.exceptions import Resolver404
 from django.utils import translation
 from django.views.generic import TemplateView
 
+from banquets.models import BanquetCard
 from main.models import Category, City, Client, Dish, Food_type2
 
 from django.core.cache import cache
@@ -45,6 +46,7 @@ class Menu(TemplateView):
         url_name = self.kwargs["url_name"]
         client = Client.objects.get(url_name=url_name)
         categories = Category.objects.all().order_by("z_index")
+        client_has_banquet = BanquetCard.objects.filter(client=client).exists()
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
@@ -59,6 +61,8 @@ class Menu(TemplateView):
         context["food_type"] = food_type
         context["categories"] = categories
         context["client"] = client
+        context['client_has_banquet'] = client_has_banquet
+
         return context
 
 

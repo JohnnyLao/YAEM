@@ -5,7 +5,7 @@ from django.views import View
 from banquets.models import BanquetCard
 from django.views.generic import TemplateView
 
-from main.models import City
+from main.models import City, Client
 
 
 class BanquetList(View):
