@@ -63,11 +63,11 @@
 
                     <div class="row my-1 d-flex justify-content-around">
                         <div class="col-12 text-center fs-5">
-                            {% if client.outside %}
+                            {% if client.outside and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                             <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Самовывоз</span>
                             {% endif %}
 
-                            {% if client.outside %}
+                            {% if client.outside and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                             <span class="badge" data-mdb-toggle="tooltip" title="Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp" style="background-color: rgba(253, 112, 20, 0.4)">Доставка
                                 <i class="fas fa-circle-question"  style="color:#fd7014"></i></span>
                             {% endif %}
