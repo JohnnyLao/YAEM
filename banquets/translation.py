@@ -3,7 +3,7 @@ from banquets.models import BanquetCard, Banquet, FeaturesOfTheBanquetHall, Kitc
 
 
 class BanquetCardTranslationOptions(TranslationOptions):
-    fields = ["name", 'working_time', "address"]
+    fields = ["name", "address"]
 
 
 translator.register(BanquetCard, BanquetCardTranslationOptions)
