@@ -63,23 +63,23 @@
                     <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_1" aria-label="Default select example"
                                 name="capacity">
-                            <option selected value="">Вместимость</option>
+                            <option selected value="">{% trans 'Вместимость' %}</option>
                                     <!--0 - 100-->
-                            <option value="100" {% if request.GET.capacity == '100' %}selected{% endif %}>до 100</option>
+                            <option value="100" {% if request.GET.capacity == '100' %}selected{% endif %}>{% trans 'до' %} 100</option>
                                     <!--100 - 200-->
                             <option value="200" {% if request.GET.capacity == '200' %}selected{% endif %}>100-200</option>
                                     <!--200 - 400-->
                             <option value="400" {% if request.GET.capacity == '400' %}selected{% endif %}>200-400</option>
                                     <!--400 +-->
-                            <option value="401" {% if request.GET.capacity == '401' %}selected{% endif %}>Свыше 400</option>
+                            <option value="401" {% if request.GET.capacity == '401' %}selected{% endif %}>{% trans 'Свыше' %} 400</option>
                         </select>
                     </div>
                     <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_2" aria-label="Default select example"
                                 name="price_min_max">
-                            <option selected value="">Цена за человека</option>
+                            <option selected value="">{% trans 'Цена за человека' %}</option>
                                     <!--0 - 3000-->
-                            <option value="3000" {% if request.GET.price_min_max == '3000' %}selected{% endif %}>до 3 000</option>
+                            <option value="3000" {% if request.GET.price_min_max == '3000' %}selected{% endif %}>{% trans 'до' %} 3 000</option>
                                     <!--3000 - 5000-->
                             <option value="5000" {% if request.GET.price_min_max == '5000' %}selected{% endif %}>3 000 - 5 000</option>
                                     <!--5000 - 10000-->
@@ -91,7 +91,7 @@
                     <div class="col-5 col-lg-2">
                         <select class="form-select" id="select_3" aria-label="Default select example"
                                 name="city">
-                            <option selected value="">Город</option>
+                            <option selected value="">{% trans 'Город' %}</option>
                                 {% for city in cities %}
                                 <option value="{{ city }}" {% if request.GET.city == city %}selected{% endif %}>{{ city }}</option>
                                 {% endfor %}
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="d-flex mx-auto mt-3 justify-content-center">
-                    <button class="btn btn-success btn-rounded btn-animate" type="submit">Найти</button>
+                    <button class="btn btn-success btn-rounded btn-animate" type="submit">{% trans 'Найти' %}</button>
                 </div>
             </form>
         </div>
@@ -186,7 +186,7 @@
                         });
                     </script>
                     <div class="card-body my-0 py-1">
-                        <h4 data-aos="zoom-out-right" class="card-title my-0">Банкетный зал
+                        <h4 data-aos="zoom-out-right" class="card-title my-0">{% trans 'Банкетный зал' %}
                             <span style="color: #FD7014">{{ banquet.name }}</span></h4>
                         <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">{{ banquet.address }}</p>
                         <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">
@@ -200,7 +200,7 @@
                             </p>
                             <p class="fs-5 my-0 px-3 border rounded-pill"
                                style="color: #FD7014; --mdb-border-color: #FD7014">
-                                <i class="fas fa-user"></i> {{banquet.capacity}} мест
+                                <i class="fas fa-user"></i> {{banquet.capacity}} {% trans 'мест' %}
                             </p>
                         </div>
 

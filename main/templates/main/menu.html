@@ -64,23 +64,24 @@
                     <div class="row my-1 d-flex justify-content-around">
                         <div class="col-12 text-center fs-5">
                             {% if client.outside %}
-                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Самовывоз</span>
+                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Самовывоз' %}</span>
                             {% endif %}
 
                             {% if client.outside %}
-                            <span class="badge" data-mdb-toggle="tooltip" title="Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp" style="background-color: rgba(253, 112, 20, 0.4)">Доставка
+                            <span class="badge" data-mdb-toggle="tooltip" title="{% trans 'Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp' %}" style="background-color: rgba(253, 112, 20, 0.4)">
+                                {% trans 'Доставка' %}
                                 <i class="fas fa-circle-question"  style="color:#fd7014"></i></span>
                             {% endif %}
 
                             {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Меню
+                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Меню' %}
                                 <i class="flag flag-kz"></i><i class="flag flag-ru"></i><i class="flag flag-uk"></i>
                             </span>
                             {% endif %}
 
                             {% if client_has_banquet %}
                             <a href="{% url 'banquets:banquet_page' url_name=client.url_name %}">
-                                <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">Банкеты <i class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
+                                <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
                             </a>
                             {% endif %}
 
