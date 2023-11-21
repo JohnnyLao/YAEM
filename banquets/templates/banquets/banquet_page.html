@@ -145,43 +145,31 @@
                                 <div class="swiper-slide">
                                     {% if hall.photo1 %}
                                     <img src="{{ hall.photo1.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo2 %}
                                     <img src="{{ hall.photo2.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo3 %}
                                     <img src="{{ hall.photo3.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo4 %}
                                     <img src="{{ hall.photo4.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo5 %}
                                     <img src="{{ hall.photo5.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo6 %}
                                     <img src="{{ hall.photo6.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
                                     {% endif %}
                                 </div>
                             </div>
@@ -193,43 +181,31 @@
                                 <div class="swiper-slide">
                                     {% if hall.photo1 %}
                                     <img src="{{ hall.photo1.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-1.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo2 %}
                                     <img src="{{ hall.photo2.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo3 %}
                                     <img src="{{ hall.photo3.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo4 %}
                                     <img src="{{ hall.photo4.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo5 %}
                                     <img src="{{ hall.photo5.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg"/>
                                     {% endif %}
                                 </div>
                                 <div class="swiper-slide">
                                     {% if hall.photo6 %}
                                     <img src="{{ hall.photo6.url }}"/>
-                                    {% else %}
-                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg"/>
                                     {% endif %}
                                 </div>
                             </div>
@@ -313,11 +289,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <div class="col-2 my-auto">
                                             <i class="fas fa-utensils fa-2x"></i>
                                         </div>
-                                        <div class="col-10">
+                                        <div class="col-10 col-lg-6">
                                             <p class="my-0">
-                                                {% for kitchen in hall.kitchen_types.all %}
-                                                    {{ kitchen.kitchen_type }}
-                                                {% endfor %}
+                                            {% for kitchen in hall.kitchen_types.all %}
+                                                {{ kitchen.kitchen_type }}
+                                                {% if not forloop.last %},
+                                                {% endif %}
+                                            {% endfor %}
                                             </p>
                                         </div>
                                     </div>
@@ -345,7 +323,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <div class="col-2 my-auto">
                                             <i class="fas fa-user fa-2x"></i>
                                         </div>
-                                        <div class="col-10 col-lg-4">
+                                        <div class="col-10 col-lg-2">
                                             <p class="my-0">{{ hall.sub_hall_capacity }}</p>
                                         </div>
                                     </div>
@@ -362,7 +340,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             <div class="col-6">
                                 <p class="mt-3 text-secondary"><span class="fw-bold text-light">{% trans 'Особенности' %}: </span>
                                     {% for feature in hall.features_name.all %}
-                                        {{ feature.features_name }}
+                                    {{ feature.features_name }}
+                                    {% if not forloop.last %},
+                                    {% endif %}
                                     {% endfor %}
                                 </p>
                             </div>
