@@ -211,7 +211,11 @@
                             </p>
                             <p class="fs-5 my-0 px-3 border rounded-pill"
                                style="color: #FD7014; --mdb-border-color: #FD7014">
-                                <i class="fas fa-user"></i> {{banquet.capacity}} {% trans 'мест' %}
+                                <i class="fas fa-user"></i>
+                                {% if banquet.min_capacity %}
+                                {{banquet.min_capacity}} -
+                                {% endif %}
+                                {{banquet.capacity}} {% trans 'мест' %}
                             </p>
                         </div>
 
