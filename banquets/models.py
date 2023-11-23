@@ -16,8 +16,6 @@ def subhall_photo_upload_to(instance, filename):
 class BanquetCard(models.Model):
     client = models.ForeignKey(to=Client, verbose_name='Зал заведения:', on_delete=models.CASCADE, blank=True,
                                null=True)
-    tarif_number = models.ForeignKey(to=EstablishmentRates, on_delete=models.CASCADE, verbose_name='Тип тарифа',
-                                     blank=True, null=True)
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
     name = models.CharField(max_length=100, unique=True, verbose_name='Название банкетного зала')
     url_name = models.CharField(max_length=30, verbose_name="/url=client url", unique=True)
@@ -68,22 +66,31 @@ class FeaturesOfTheBanquetHall(models.Model):
         return self.features_name
 
 
-GUARDED = _('Охраняемая')
-UNGUARDED = _('Неохраняемая')
+GUARDED_RU, GUARDED_EN, GUARDED_KK = 'Охраняемая', 'Guarded', 'Қорғалған'
+UNGUARDED_RU, UNGUARDED_EN, UNGUARDED_KK = 'Неохраняемая', 'Unguarded', 'Күзетсіз'
 
-PAID = _('Платная')
-FREE = _('Бесплатная')
+PAID_RU, PAID_EN, PAID_KK = 'Платная', 'Paid', 'Ақылы'
+FREE_RU, FREE_EN, FREE_KK = 'Бесплатная', 'Free', 'Тегін'
 
 PARKING_1_CHOICES = [
-    (GUARDED, 'Охраняемая'),
-    (UNGUARDED, 'Неохраняемая'),
+    (GUARDED_RU, 'Охраняемая'),
+    (GUARDED_EN, 'Guarded'),
+    (GUARDED_KK, 'Қорғалған'),
+
+    (UNGUARDED_RU, 'Неохраняемая'),
+    (UNGUARDED_EN, 'Unguarded'),
+    (UNGUARDED_KK, 'Күзетсіз'),
 ]
 
 PARKING_2_CHOICES = [
-    (PAID, 'Платная'),
-    (FREE, 'Бесплатная'),
-]
+    (PAID_RU, 'Платная'),
+    (PAID_EN, 'Paid'),
+    (PAID_KK, 'Ақылы'),
 
+    (FREE_RU, 'Бесплатная'),
+    (FREE_EN, 'Free'),
+    (FREE_KK, 'Тегін'),
+]
 
 HALL_NUMBER = [
     (1, 'Зал 1'),
@@ -94,9 +101,11 @@ HALL_NUMBER = [
 
 
 class Banquet(models.Model):
-    banquet_card = models.ForeignKey(to=BanquetCard, on_delete=models.CASCADE, verbose_name='Карточка банкетного зала', blank=True, null=True)
+    banquet_card = models.ForeignKey(to=BanquetCard, on_delete=models.CASCADE, verbose_name='Карточка банкетного зала',
+                                     blank=True, null=True)
     name = models.CharField(max_length=256, verbose_name='Название зала', default='Банкетный зал')
-    description = models.CharField(max_length=256, default='Добро пожаловать! Всегда рады видеть вас.', verbose_name='Описание зала', blank=True, null=True)
+    description = models.CharField(max_length=256, default='Добро пожаловать! Всегда рады видеть вас.',
+                                   verbose_name='Описание зала', blank=True, null=True)
     kitchen_types = models.ManyToManyField(to=KitchenType, verbose_name='Виды кухни')
     features_name = models.ManyToManyField(to=FeaturesOfTheBanquetHall, verbose_name='Особенности банкетного зала')
     parking_1 = models.CharField(blank=True, null=True, choices=PARKING_1_CHOICES, max_length=256,

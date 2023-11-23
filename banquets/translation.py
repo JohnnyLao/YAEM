@@ -10,7 +10,7 @@ translator.register(BanquetCard, BanquetCardTranslationOptions)
 
 
 class BanquetTranslationOptions(TranslationOptions):
-    fields = ["name", 'description']
+    fields = ["name", 'description', 'parking_1', 'parking_2']
 
 
 translator.register(Banquet, BanquetTranslationOptions)
