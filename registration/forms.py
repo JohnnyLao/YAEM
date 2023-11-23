@@ -1,5 +1,5 @@
-from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.contrib.auth.forms import UserCreationForm
 
 
 class RegisterForm(UserCreationForm):
@@ -12,4 +12,4 @@ class RegisterForm(UserCreationForm):
     #     return name
 
     class Meta(UserCreationForm.Meta):
-        fields = UserCreationForm.Meta.fields + ('email',)
+        fields = UserCreationForm.Meta.fields + ("email",)

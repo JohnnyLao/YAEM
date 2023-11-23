@@ -3,7 +3,7 @@ from Yaem.settings_dev import *
 # debug for prod
 DEBUG = False
 # hosts for prod
-ALLOWED_HOSTS = ['yaem.kz', 'www.yaem.kz']
+ALLOWED_HOSTS = ["yaem.kz", "www.yaem.kz"]
 # redis cache settings only prod
 # CACHES = {
 #     "default": {

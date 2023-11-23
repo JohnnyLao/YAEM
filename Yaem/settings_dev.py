@@ -29,7 +29,7 @@ DATABASES = {
 
 INSTALLED_APPS = [
     # modern admin
-    'jazzmin',
+    "jazzmin",
     # default django
     "django.contrib.admin",
     "django.contrib.auth",
@@ -44,15 +44,15 @@ INSTALLED_APPS = [
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
-    'registration.apps.RegistrationConfig',
+    "registration.apps.RegistrationConfig",
     # debug_toolbar
     "debug_toolbar",
     # translation
     "modeltranslation",
     # all auth
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     # 'allauth.socialaccount.providers.google',
     # 'allauth.socialaccount.providers.facebook',
     # 'allauth.socialaccount.providers.mailru',
@@ -125,7 +125,9 @@ STATIC_URL = "/static/"
 
 if DEBUG:
     # static for dev
-    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/"),]
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static/"),
+    ]
 else:
     # static for prod
     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
@@ -137,16 +139,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # default redirect
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = "/"
+LOGIN_REDIRECT_URL = "/"
 # cookie time
 SESSION_COOKIE_AGE = 604800
 # cache lifetime (dev django, prod redis)
-CACHES_LIFE_TIME = 0
+CACHES_LIFE_TIME = 5 * 60 * 60
 # django all auth
 AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
 # Provider specific settings
@@ -217,5 +219,3 @@ JAZZMIN_SETTINGS = {
 # Celery settings
 # CELERY_BROKER_URL = "redis://localhost:6379"
 # CELERY_RESULT_BACKEND = "redis://localhost:6379"
-
-

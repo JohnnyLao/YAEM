@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 05:20+0000\n"
+"POT-Creation-Date: 2023-11-23 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,33 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Yaem/settings_dev.py:163
+#: Yaem/settings_dev.py:166
 msgid "Russian"
 msgstr ""
 
-#: Yaem/settings_dev.py:164
+#: Yaem/settings_dev.py:167
 msgid "English"
 msgstr ""
 
-#: Yaem/settings_dev.py:165
+#: Yaem/settings_dev.py:168
 msgid "Kazakh"
 msgstr ""
-
-#: banquets/models.py:71
-msgid "Охраняемая"
-msgstr "Protected"
-
-#: banquets/models.py:72
-msgid "Неохраняемая"
-msgstr "Unguarded"
-
-#: banquets/models.py:74
-msgid "Платная"
-msgstr "Paid"
-
-#: banquets/models.py:75
-msgid "Бесплатная"
-msgstr "Free"
 
 #: banquets/templates/banquets/banquet_list.html:6
 #: banquets/templates/banquets/banquet_page.html:6
@@ -716,8 +700,9 @@ msgstr ""
 
 #: partner/templates/partner/partner.html:573
 #: partner/templates/partner/partner.html:593
-msgid "Вы получите:"
-msgstr "What you get:"
+#: partner/templates/partner/partner.html:615
+msgid "Вы получите"
+msgstr "What you get"
 
 #: partner/templates/partner/partner.html:574
 msgid "Закрытую"
@@ -975,3 +960,18 @@ msgstr ""
 #: upcoming_templates/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
+
+#~ msgid "Вы получите:"
+#~ msgstr "What you get:"
+
+#~ msgid "Охраняемая"
+#~ msgstr "Protected"
+
+#~ msgid "Неохраняемая"
+#~ msgstr "Unguarded"
+
+#~ msgid "Платная"
+#~ msgstr "Paid"
+
+#~ msgid "Бесплатная"
+#~ msgstr "Free"

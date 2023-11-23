@@ -1,6 +1,7 @@
-from main.models import Client, Dish, City
-from banquets.models import BanquetCard
 from random import randint
+
+from banquets.models import BanquetCard
+from main.models import City, Client, Dish
 
 
 def data_counter_site(request):
@@ -15,7 +16,6 @@ def data_counter_site(request):
         "total_dishes": total_dishes,
         "total_clients": total_clients,
         "total_orders": total_orders,
-
-        'total_banquets': total_banquets,
-        'total_cities': total_cities,
+        "total_banquets": total_banquets,
+        "total_cities": total_cities,
     }

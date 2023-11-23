@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 08:47+0000\n"
+"POT-Creation-Date: 2023-11-23 11:33+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -708,7 +708,8 @@ msgstr ""
 
 #: partner/templates/partner/partner.html:573
 #: partner/templates/partner/partner.html:593
-msgid "Вы получите:"
+#: partner/templates/partner/partner.html:615
+msgid "Вы получите"
 msgstr "Сіз аласыз"
 
 #: partner/templates/partner/partner.html:574
@@ -964,6 +965,9 @@ msgstr ""
 #: upcoming_templates/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
+
+#~ msgid "Вы получите:"
+#~ msgstr "Сіз аласыз:"
 
 #~ msgid "тг в год"
 #~ msgstr "теңге жылына"

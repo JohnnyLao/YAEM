@@ -1,6 +1,7 @@
 from urllib.parse import urlparse
 
 from django.conf import settings
+from django.core.cache import cache
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls.base import resolve, reverse
@@ -10,8 +11,6 @@ from django.views.generic import TemplateView
 
 from banquets.models import BanquetCard
 from main.models import Category, City, Client, Dish, Food_type2
-
-from django.core.cache import cache
 
 
 class Main(TemplateView):
@@ -61,7 +60,7 @@ class Menu(TemplateView):
         context["food_type"] = food_type
         context["categories"] = categories
         context["client"] = client
-        context['client_has_banquet'] = client_has_banquet
+        context["client_has_banquet"] = client_has_banquet
 
         return context
 

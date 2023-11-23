@@ -14,8 +14,8 @@ urlpatterns += i18n_patterns(
     path("", include("partner.urls", namespace="partner")),
     path("", include("cart.urls", namespace="cart")),
     path("", include("banquets.urls", namespace="banquets")),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/register/', include('registration.urls', namespace='register')),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/register/", include("registration.urls", namespace="register")),
     prefix_default_language=False,
 )
 

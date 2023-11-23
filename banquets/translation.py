@@ -1,5 +1,7 @@
 from modeltranslation.translator import TranslationOptions, translator
-from banquets.models import BanquetCard, Banquet, FeaturesOfTheBanquetHall, KitchenType
+
+from banquets.models import (Banquet, BanquetCard, FeaturesOfTheBanquetHall,
+                             KitchenType)
 
 
 class BanquetCardTranslationOptions(TranslationOptions):
@@ -10,21 +12,23 @@ translator.register(BanquetCard, BanquetCardTranslationOptions)
 
 
 class BanquetTranslationOptions(TranslationOptions):
-    fields = ["name", 'description', 'parking_1', 'parking_2']
+    fields = ["name", "description", "parking_1", "parking_2"]
 
 
 translator.register(Banquet, BanquetTranslationOptions)
 
 
 class FeaturesOfTheBanquetHallTranslationOptions(TranslationOptions):
-    fields = ['features_name']
+    fields = ["features_name"]
 
 
-translator.register(FeaturesOfTheBanquetHall, FeaturesOfTheBanquetHallTranslationOptions)
+translator.register(
+    FeaturesOfTheBanquetHall, FeaturesOfTheBanquetHallTranslationOptions
+)
 
 
 class KitchenTypeTranslationOptions(TranslationOptions):
-    fields = ['kitchen_type']
+    fields = ["kitchen_type"]
 
 
 translator.register(KitchenType, KitchenTypeTranslationOptions)
