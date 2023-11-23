@@ -1,1 +1,5 @@
 .idea
+.env
+/server_files/
+/fixtures/
+/venv/

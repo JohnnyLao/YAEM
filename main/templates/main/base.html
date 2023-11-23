@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% load static %}
 {% load i18n %}
 
@@ -25,6 +26,7 @@
     <!--  ICON -->
     <link rel="icon" href="{% static 'images/base/favicon1-min.png' %}">
     <title>{% block title %} {% endblock title %}</title>
+    <meta name="description" content="{% block description %} {% endblock description %}">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -69,7 +71,7 @@
     background: rgba(33, 37, 41);
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 200;
     transition: 2s;
     display: flex;
     justify-content: center;
@@ -81,15 +83,11 @@
 </div>
 <script>
     let mask = document.querySelector('.mask');
-    window.addEventListener('load', () => {
+    window.addEventListener('DOMContentLoaded', () => {
         mask.style.display = 'none'});
-
-
-
-
 </script>
 <!-- Navbar -->
-<nav class="navbar navbar-light user-select-none" id="header">
+<nav class="navbar navbar-light" id="header">
     <!-- Container wrapper -->
     <div class="container-fluid text-center">
         <div class="col-5 mx-auto">
@@ -153,11 +151,11 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav fw-bold">
             <li class="nav-item mx-auto">
-                <a class="nav-link active " aria-current="page"
+                <a class="nav-link" aria-current="page"
                    href="{% url 'main:main_page' %}">{% translate 'ГЛАВНАЯ' %}</a>
             </li>
             <li class="nav-item mx-auto my-2">
-                <a href="" class="navbar-toggler fs-6"
+                <a class="navbar-toggler fs-6"
                    type="button"
                    data-mdb-toggle="collapse"
                    data-mdb-target="#navbarToggler1"
@@ -169,30 +167,29 @@
                 </a>
             </li>
 
-            <div class="collapse text-center" id="navbarToggler1">
+            <li class="collapse text-center" id="navbarToggler1">
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
-                            <a class="" href="{% url 'main:main_page' %}">
-                                <button class="btn">{% translate 'Блюда' %} <i class="fas fa-circle fa-xs"
+                            <a class="" href="{% url 'main:delivery_list_page' %}">
+                                <button class="btn btn-animate">{% translate 'Блюда' %} <i class="fas fa-circle fa-xs"
                                                                                style="color: green"></i></button>
                             </a>
-                            <a class="" href="#">
+                            <a href="#">
                                 <button class="btn  text-secondary" disabled>{% translate 'Продукты' %} <i
                                         class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
-                            <a class="" href="#">
-                                <!--{% url 'banquets:banquets_page' %}-->
-                                <button class="btn  text-secondary" disabled>{% translate 'Банкет' %} <i
-                                        class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
+                            <a href="{% url 'banquets:banquet_list_page' %}">
+                                <button class="btn btn-animate">{% translate 'Банкет' %} <i
+                                        class="fas fa-circle fa-xs" style="color: green"></i></button>
                             </a>
                         </div>
                     </li>
                 </ul>
-            </div>
+            </li>
 
             <li class="nav-item mx-auto my-2">
-                <a href="" class="navbar-toggler fs-6"
+                <a class="navbar-toggler fs-6"
                    type="button"
                    data-mdb-toggle="collapse"
                    data-mdb-target="#navbarToggler2"
@@ -204,7 +201,7 @@
                 </a>
             </li>
 
-            <div class="collapse text-center" id="navbarToggler2">
+            <li class="collapse text-center" id="navbarToggler2">
                 <ul class="navbar-nav fw-bold">
                     <li class="nav-item mx-auto">
                         <div class="btn-group-sm" role="group">
@@ -225,7 +222,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
+            </li>
         </ul>
     </div>
 </nav>

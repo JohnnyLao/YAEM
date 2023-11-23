@@ -20,9 +20,12 @@ def calculate_total_price(cart: dict) -> int:
 def generate_total_price_html(total_price: int, product_quantities: dict) -> str:
     total_price_html = f"""<span data-aos="fade-up" class="fs-3 my-0 py-0" style="color: #fd7014; background: rgba(33, 37, 41, 0.5)"> 
                 <i class="fas fa-cart-shopping my-0 py-0"></i> {total_price:,} ₸</span>"""
-    product_quantities_html = ''.join(
-        [f'<span class="product-quantity" data-product-id="{product_id}">Количество: {quantity}</span>' for
-         product_id, quantity in product_quantities.items()])
+    product_quantities_html = "".join(
+        [
+            f'<span class="product-quantity" data-product-id="{product_id}">Количество: {quantity}</span>'
+            for product_id, quantity in product_quantities.items()
+        ]
+    )
     return total_price_html + product_quantities_html
 
 
@@ -48,7 +51,9 @@ class AddToCart(View):
         # Calculate total price
         total_price = calculate_total_price(cart)
         # Generate HTML for total price
-        formatted_total_price = generate_total_price_html(total_price, cart_data).replace(',', ' ')
+        formatted_total_price = generate_total_price_html(
+            total_price, cart_data
+        ).replace(",", " ")
         # Get the updated quantity for the specific product
         updated_quantity = cart.get(key, 0)
         return HttpResponse(updated_quantity)
@@ -68,7 +73,9 @@ class RemoveFromCart(View):
         # Calculate total price
         total_price = calculate_total_price(cart)
         # Generate HTML for total price
-        formatted_total_price = generate_total_price_html(total_price, cart_data).replace(',', ' ')
+        formatted_total_price = generate_total_price_html(
+            total_price, cart_data
+        ).replace(",", " ")
         # return HttpResponse(formatted_total_price)
         # Get the updated quantity for the specific product
         updated_quantity = cart.get(key, 0)
@@ -78,8 +85,8 @@ class RemoveFromCart(View):
 
 class RemoveFromCartOnCartPage(View):
     def post(self, request):
-        product_id = request.POST.get('product_id')
-        cart = request.session['cart']
+        product_id = request.POST.get("product_id")
+        cart = request.session["cart"]
         if product_id in cart:
             if cart[product_id] == 1:
                 del cart[product_id]

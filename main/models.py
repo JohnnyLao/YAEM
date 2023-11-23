@@ -23,16 +23,20 @@ def client_logo_upload_to(instance, filename):
 
 
 class EstablishmentRates(models.Model):
-    BRONZE = 'БРОНЗА'
-    SILVER = 'СЕРЕБРО'
-    GOLD = 'ЗОЛОТО'
+    BRONZE = "БРОНЗА"
+    SILVER = "СЕРЕБРО"
+    GOLD = "ЗОЛОТО"
     RATE_ESTABLISHMENT_CHOICES = [
-        (BRONZE, 'БРОНЗА'),
-        (SILVER, 'СЕРЕБРО'),
-        (GOLD, 'ЗОЛОТО'),
+        (BRONZE, "БРОНЗА"),
+        (SILVER, "СЕРЕБРО"),
+        (GOLD, "ЗОЛОТО"),
     ]
-    name = models.CharField(max_length=15, choices=RATE_ESTABLISHMENT_CHOICES, verbose_name='Название тарифа',
-                            unique=True)
+    name = models.CharField(
+        max_length=15,
+        choices=RATE_ESTABLISHMENT_CHOICES,
+        verbose_name="Название тарифа",
+        unique=True,
+    )
 
     def __str__(self):
         return self.name
@@ -47,7 +51,7 @@ class Client(models.Model):
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
     logo = models.ImageField(upload_to=client_logo_upload_to, verbose_name="Лого")
     description = models.TextField(verbose_name="Описание", max_length=60)
-    working_time = models.CharField(max_length=20, verbose_name="Рабочеее время")
+    working_time = models.CharField(max_length=20, verbose_name="Рабочее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
     phone = models.DecimalField(max_digits=15, decimal_places=0, verbose_name="Телефон")
     inst = models.CharField(max_length=100, blank=True, verbose_name="Instagram")
@@ -58,8 +62,13 @@ class Client(models.Model):
     outside = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
     url_name = models.CharField(max_length=30, verbose_name="/url", unique=True)
-    tarif_number = models.ForeignKey(EstablishmentRates, on_delete=models.CASCADE, blank=True, null=True,
-                                     verbose_name="Тариф")
+    tarif_number = models.ForeignKey(
+        EstablishmentRates,
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True,
+        verbose_name="Тариф",
+    )
     z_index = models.IntegerField(verbose_name="Порядковый №", default=1)
 
     class Meta:

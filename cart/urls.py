@@ -1,6 +1,7 @@
 from django.urls import path
 
-from cart.views import AddToCart, CartClearView, RemoveFromCart, ViewCartPage, RemoveFromCartOnCartPage
+from cart.views import (AddToCart, CartClearView, RemoveFromCart,
+                        RemoveFromCartOnCartPage, ViewCartPage)
 
 app_name = "cart"
 
@@ -13,7 +14,11 @@ urlpatterns = [
         RemoveFromCart.as_view(),
         name="remove_from_cart",
     ),
-    path('remove_on_cart_page/', RemoveFromCartOnCartPage.as_view(), name='remove_on_cart_page'),
+    path(
+        "remove_on_cart_page/",
+        RemoveFromCartOnCartPage.as_view(),
+        name="remove_on_cart_page",
+    ),
     # cart page
     path("cart/", ViewCartPage.as_view(), name="cart_page"),
     path("cart/clear/", CartClearView.as_view(), name="cart_clear"),

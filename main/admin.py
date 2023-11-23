@@ -1,7 +1,9 @@
 from django.contrib import admin
-from main.models import Category, City, Client, Dish, Food_type2, EstablishmentRates
 
-admin.site.site_header = "YaEm"
+from main.models import (Category, City, Client, Dish, EstablishmentRates,
+                         Food_type2)
+
+admin.site.site_header = "Yaem"
 
 
 @admin.register(City)

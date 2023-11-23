@@ -5,6 +5,10 @@
 
 {% block title %} {% translate 'QR Меню для заведений' %} {% endblock title %}
 
+{% block description %}
+{% translate 'Создавайте меню c QR-кодом для своего ресторана.' %}
+{% endblock description %}
+
 {% block content %}
 
 <!--button up-->
@@ -16,7 +20,7 @@
 </a>
 <!--button end-->
 
-<body>
+
 <!--COUNTER START-->
 <section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
@@ -60,11 +64,11 @@
                 <div class="col-lg-6"></div>
                 <div data-aos="fade-up" class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
                      style="background: rgba(20, 164, 77, 0.85);border-radius: 50px">
-                    <h4 class="mt-2 mb-0 ">{% translate 'ОНЛАЙН' %}</h4>
-                    <h4 class="my-0 ">{% translate 'МЕНЮ' %}</h4>
-                    <h3 class="my-3 fw-bold">{% translate 'БЕСПЛАТНО' %}</h3>
-                    <img src="{% static 'images/partner/qr_code.png' %}" height="" alt="" class="img w-100 my-3"
-                         style="border-radius: 10%; max-width: 150px">
+                    <h1 class="mt-2 mb-0 fs-4">{% translate 'ОНЛАЙН' %}</h1>
+                    <h1 class="my-0 fs-4">{% translate 'МЕНЮ' %}</h1>
+                    <h1 class="my-3 fw-bold fs-3">{% translate 'БЕСПЛАТНО' %}</h1>
+                    <img src="{% static 'images/partner/qr_code.png' %}" height="" alt="qr_code" class="img w-100 my-3"
+                         style="border-radius: 10%; max-width: 150px" loading="eager">
                 </div>
             </div>
         </div>
@@ -72,8 +76,8 @@
         <div class="container pb-3">
             <div class="row">
                 <div class="col-lg-6 col-sm-8 text-white text-center">
-                    <h1 data-aos="fade-up" class="fw-bold mt-0">{% translate 'Присоединяйтесь к нашей' %} <strong style="color: #FD7014"> {% translate 'сети' %} </strong> {% translate 'заведений' %}</h1>
-                    <h6 data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4">{% translate 'ЧТОБЫ ПОЛУЧИТЬ' %} <strong style="color: #FD7014"> {% translate 'ОНЛАЙН МЕНЮ' %} </strong></h6>
+                    <p data-aos="fade-up" class="fw-bold mt-0 fs-1">{% translate 'Присоединяйтесь к нашей' %} <strong style="color: #FD7014"> {% translate 'сети' %} </strong> {% translate 'заведений' %}</p>
+                    <p data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4 fs-6">{% translate 'ЧТОБЫ ПОЛУЧИТЬ' %} <strong style="color: #FD7014"> {% translate 'ОНЛАЙН МЕНЮ' %} </strong></p>
                     <a href="https://wa.me/77015302812?text=Здравствуйте,%20пишу%20с%20сайта%20YAEM."
                    target="_blank">
                         <button data-aos="fade-up" data-aos-delay="200" type="button"
@@ -92,21 +96,21 @@
         <div class="container">
             <div class="row gy-3">
                 <div class="col-lg-6 col-sm-12 text-center">
-                    <h2 data-aos="fade-up" class="fw-bold my-4">{% translate 'Всё просто !' %}</h2>
-                    <h5 data-aos="fade-up" data-aos-delay="100" class="">{% translate 'Берём образец' %} <strong style="color: #FD7014">
-                        {% translate 'Вашего меню' %} </strong></h5>
-                    <h5 data-aos="fade-up" data-aos-delay="200" class="m-3">{% translate 'Создаём страницу с меню на' %}
+                    <p data-aos="fade-up" class="fw-bold my-4 fs-2">{% translate 'Всё просто !' %}</p>
+                    <p data-aos="fade-up" data-aos-delay="100" class="fs-5">{% translate 'Берём образец' %} <strong style="color: #FD7014">
+                        {% translate 'Вашего меню' %} </strong></p>
+                    <p data-aos="fade-up" data-aos-delay="200" class="m-3 fs-5">{% translate 'Создаём страницу с меню на' %}
                         <strong style="color: #FD7014">{% translate 'Нашем сайте' %}</strong>
-                    </h5>
-                    <h5 data-aos="fade-up" data-aos-delay="300" class="">{% translate 'Устанавливаем QR код для перехода в' %}
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="300" class="fs-5">{% translate 'Устанавливаем QR код для перехода в' %}
                         <strong style="color: #FD7014">{% translate 'Ваше онлайн меню'%}</strong>
-                    </h5>
-                    <h4 data-aos="fade-up" data-aos-delay="500" class="my-5"><strong style="color: #FD7014">{% translate 'Ваши клиенты' %}</strong>
+                    </p>
+                    <p data-aos="fade-up" data-aos-delay="500" class="my-5 fs-4"><strong style="color: #FD7014">{% translate 'Ваши клиенты' %}</strong>
                         {% translate 'смогут просматривать меню онлайн как в заведении, так и удалённо, совершая заказы онлайн' %}
-                    </h4>
+                    </p>
                 </div>
                 <div class="col-9 col-lg-6 mx-auto my-4 text-center">
-                    <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/qr_sample.jpg' %}" alt=""
+                    <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/qr_sample.jpg' %}" alt="qr_sample"
                          class="img rounded-circle shadow" style="max-width: 250px">
                 </div>
             </div>
@@ -116,7 +120,7 @@
     <!--CAROUSEL START-->
     <section class="py-3" style="background: rgba(33, 37, 41, 0.95)">
         <div class="container">
-            <h2 class="text-center fw-bold">{% translate 'Примеры оформления:'%}</h2>
+            <p class="text-center fw-bold fs-2">{% translate 'Примеры оформления:'%}</p>
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
             <!-- Demo styles -->
             <style>
@@ -168,19 +172,19 @@
             <div data-aos="fade-up" class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img class="img-fluid" src="{% static 'images/partner/sample1-min.png' %}"/>
+                        <img src="{% static 'images/partner/sample1-min.png' %}" alt="qr_sample"/>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{% static 'images/partner/sample2-min.png' %}"/>
+                        <img src="{% static 'images/partner/sample2-min.png' %}" alt="qr_sample"/>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{% static 'images/partner/sample3-min.png' %}"/>
+                        <img src="{% static 'images/partner/sample3-min.png' %}" alt="qr_sample"/>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{% static 'images/partner/sample4-min.png' %}"/>
+                        <img src="{% static 'images/partner/sample4-min.png' %}" alt="qr_sample"/>
                     </div>
                     <div class="swiper-slide">
-                        <img src="{% static 'images/partner/sample5-min.png' %}"/>
+                        <img src="{% static 'images/partner/sample5-min.png' %}" alt="qr_sample"/>
                     </div>
 
                 </div>
@@ -329,13 +333,13 @@
                      class="col-10 col-sm-5 col-lg-3 mx-auto shadow-lg bg-body-secondary"
                      style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.8)), url({% static 'images/partner/bronze-min.jpg' %});
                      border-radius: 10px; background-size: cover;">
-                    <img class="img w-25 my-3" src="{% static 'images/partner/t-1-min.png' %}" alt=""
+                    <img class="img w-25 my-3" src="{% static 'images/partner/t-1-min.png' %}" alt="bg"
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
-                    <h4 class="fw-bold my-3 bg-warning" style="border-radius: 50px; --mdb-bg-opacity: 15%">{%translate 'Бронза' %}</h4>
-                    <h5 style="color: #">
-                        <del>60 000 {% translate 'тг в год' %}</del>
-                    </h5>
-                    <h3 class="fw-bold" style=""> 0 {% translate 'тг в год' %}</h3>
+                    <p class="fw-bold my-3 bg-warning fs-4 my-0" style="border-radius: 50px; --mdb-bg-opacity: 15%">{%translate 'Бронза' %}</p>
+                    <p style="color: #" class="fs-5 my-0">
+                        <del>8 000 {% translate 'тг/мес' %}</del>
+                    </p>
+                    <p class="fw-bold fs-3 my-0" style=""> 0 {% translate 'тг/мес' %}</p>
                     <div id="countdown" class="row" style="color: #fd7014">
                         <div class="col">
                             <p id="days" class="countdown-number fs-3 fw-bold my-0">0</p>
@@ -391,12 +395,12 @@
                      class="col-10 col-sm-5 col-lg-4 mx-auto shadow-lg border"
                      style="border-radius: 10px; background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.9)), url({% static 'images/partner/silver1-min.jpg' %});
                      background-size: cover">
-                    <img class="img w-50" src="{% static 'images/partner/t-2-min.png' %}" alt=""
+                    <img class="img w-50" src="{% static 'images/partner/t-2-min.png' %}" alt="bg"
                          style="border-radius: 10px; max-width: 120px; opacity: 50%">
-                    <h3 class="fw-bold my-3 bg-secondary shadow" style="border-radius: 50px; --mdb-bg-opacity: 50%">
-                        {% translate 'Серебро' %}</h3>
-                    <h4 class="" style="color: #">15 000 {% translate 'тг/мес' %}</h4>
-                    <h3 class="fw-bold" style="color: #"> 150 000 {% translate 'тг/год' %}</h3>
+                    <p class="fw-bold my-3 bg-secondary shadow fs-3" style="border-radius: 50px; --mdb-bg-opacity: 50%">
+                        {% translate 'Серебро' %}</p>
+                    <p class="fs-4 my-0" style="color: #">15 000 {% translate 'тг/мес' %}</p>
+                    <p class="fw-bold fs-3 my-0" style="color: #"> 150 000 {% translate 'тг/год' %}</p>
                     <div class="container py-3">
                         <h5 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -438,6 +442,19 @@
                             </svg>
                             {% translate 'Меню на 3х языках' %}
                         </h5>
+                        <h5 class=" shadow text-start ps-2"
+                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                 class="bi bi-check" viewBox="0 0 16 16">
+                                <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                            </svg>
+                            {% translate 'Страницу банкетного зала' %}
+                            <a href="{% url 'banquets:banquet_list_page' %}">
+                                <button class="btn btn-floating shadow-0 btn-animate" data-mdb-ripple-radius="1">
+                                    <i class="far fa-circle-question fs-5"></i>
+                                </button>
+                            </a>
+                        </h5>
 <!--                        <h5 class="shadow text-start ps-2"-->
 <!--                            style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">-->
 <!--                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"-->
@@ -460,11 +477,11 @@
                 <div data-aos="fade-right" class="col-10 col-sm-6 col-lg-3 mx-auto shadow-lg"
                      style=" background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.3), rgba(51, 51, 51, 0.8)), url({% static 'images/partner/gold3-min.png' %});
                      background-size: cover; border-radius: 10px">
-                    <img class="img w-25 my-3" src="{% static 'images/partner/t-3-min.png' %}" alt=""
+                    <img class="img w-25 my-3" src="{% static 'images/partner/t-3-min.png' %}" alt="bg"
                          style="border-radius: 10px; max-width: 100px; opacity: 80%">
-                    <h4 class="fw-bold my-3 bg-warning" style="border-radius: 50px; --mdb-bg-opacity: 75%">{% translate 'Золото' %}</h4>
-                    <h5 class="fw" style="color: #">25 000 {% translate 'тг/мес' %}</h5>
-                    <h4 class="fw-bold" style="color: #"> 250 000 {% translate 'тг/год' %}</h4>
+                    <p class="fw-bold my-3 bg-warning fs-4 my-0" style="border-radius: 50px; --mdb-bg-opacity: 75%">{% translate 'Золото' %}</p>
+                    <p class="fs-5 my-0">25 000 {% translate 'тг/мес' %}</p>
+                    <p class="fw-bold fs-4 my-0"> 250 000 {% translate 'тг/год' %}</p>
                     <div class="container py-3">
                         <h6 class="shadow text-start ps-2 fw-bold"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -541,19 +558,19 @@
             <h2 class="text-center py-3">{% translate 'Часто задаваемые вопросы' %}:</h2>
             <div class="accordion accordion-borderless" id="accordionPanelsStayOpenExample">
                 <div data-aos="fade-right" class="accordion-item py-1">
-                    <h2 class="accordion-header" id="headingOne">
+                    <p class="accordion-header" id="headingOne">
                         <button class="accordion-button collapsed shadow text-light fs-5" type="button"
                                 data-mdb-toggle="collapse"
                                 data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne" style="background: rgba(33, 37, 41, 0.95);">
                             <i class="fas fa-question-circle me-2 opacity-70"></i> {% translate 'Подробнее о тарифном плане "Бронза"' %}
                         </button>
-                    </h2>
+                    </p>
                     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                          aria-labelledby="headingOne">
                         <div class="accordion-body text-white">
                             {% translate 'Тарифный план бесплатный до конца срока действия Акции. Данный тариф позволяет ознакомиться с технологией Онлайн Меню.' %}
-                            <p class="my-0">{% translate 'Вы получите:' %}</p>
+                            <p class="my-0">{% translate 'Вы получите' %}:</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>{% translate 'Закрытую' %}</u> {% translate 'страницу с карточкой заведения и меню на языке оригинала' %}</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'QR коды для размещения (до 5 шт. бесплатно)' %}</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Функцию корзины' %}</p>
@@ -573,7 +590,7 @@
                          aria-labelledby="headingTwo">
                         <div class="accordion-body text-white">
                             {% translate 'Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для клиента, предоставив удобный сервис по взаимодействию. Смотрите на предпочтения клиентов и готовьтесь к онлайн заказам. Меню реализовано на минимум трёх языках.' %}
-                            <p class="my-0">{% translate 'Вы получите:' %}</p>
+                            <p class="my-0">{% translate 'Вы получите' %}:</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u style="color: #FD7014">{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <strong style="color: #FD7014"> {% translate 'на минимум 3-х языках c фото' %} </strong>  </p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'QR коды для размещения' %} <u style="color: #FD7014">({% translate 'неограничено' %})</u></p>
 <!--                            <p class="my-0" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Функцию корзины и возможность использовать услугу "Доставка / Самовывоз". Принимать заказы удалённо через Телеграм' %}</p>-->
@@ -595,7 +612,7 @@
                          aria-labelledby="headingThree">
                         <div class="accordion-body text-white">
                             {% translate 'ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR кода. Личный кабинет для ведения статистики и аналитики по количеству заказов, предпочтений клиентов, карточке клиента и многие другие показатели. Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные условия по услуге Доставка/Самовывоз и многие другие бонусы.' %}
-                            <p class="my-0">Вы получите:</p>
+                            <p class="my-0">{% trans 'Вы получите' %}:</p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <strong style="color: #FD7014">{% translate 'на минимум 3-х языках и фото блюд с' %}</strong>  <strong style="color: #FD7014">{% translate 'эксклюзивным дизайном' %}</strong> </p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong style="color: #FD7014">{% translate 'Уникальные' %}</strong> {% translate 'QR коды для размещения' %} <u>({% translate 'неограничено' %})</u></p>
                             <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Функцию корзины и возможность использовать услугу Доставка / Самовывоз' %} <strong style="color: #FD7014">{% translate 'на более выгодных условиях' %}.</strong>  {% translate 'Принимать заказы удалённо через Телеграм и' %} <strong style="color: #FD7014">{% translate 'оплатой Kaspi' %}</strong> </p>
@@ -687,6 +704,6 @@
 
     <!--  scripts  -->
     <script src="{% static 'js/countdown.js' %}"></script>
-</body>
+
 
 {% endblock content %}

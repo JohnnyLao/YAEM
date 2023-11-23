@@ -1,6 +1,7 @@
 from urllib.parse import urlparse
 
 from django.conf import settings
+from django.core.cache import cache
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 from django.urls.base import resolve, reverse
@@ -8,11 +9,16 @@ from django.urls.exceptions import Resolver404
 from django.utils import translation
 from django.views.generic import TemplateView
 
+from banquets.models import BanquetCard
 from main.models import Category, City, Client, Dish, Food_type2
 
 
 class Main(TemplateView):
     template_name = "main/index.html"
+
+
+class DeliveryList(TemplateView):
+    template_name = "main/delivery_list.html"
 
     def get_context_data(self, city_slug=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -39,6 +45,7 @@ class Menu(TemplateView):
         url_name = self.kwargs["url_name"]
         client = Client.objects.get(url_name=url_name)
         categories = Category.objects.all().order_by("z_index")
+        client_has_banquet = BanquetCard.objects.filter(client=client).exists()
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
@@ -53,6 +60,8 @@ class Menu(TemplateView):
         context["food_type"] = food_type
         context["categories"] = categories
         context["client"] = client
+        context["client_has_banquet"] = client_has_banquet
+
         return context
 
 
