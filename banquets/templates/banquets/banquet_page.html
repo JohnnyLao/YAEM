@@ -319,8 +319,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             <i class="fas fa-coins fa-2x"></i>
                                         </div>
                                         <div class="col-10 col-lg-9">
-                                            <p class="my-0 ms-5 ms-lg-3 text-start">{{ hall.sub_hall_price_for_person }} ₸</p>
-                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">{{ hall.memorials }} ₸ (поминки)</p>
+
+                                            {% if hall.sub_hall_price_for_person %}
+                                            <p class="my-0 ms-5 ms-lg-3 text-start">
+                                                {{ hall.sub_hall_price_for_person }} ₸
+                                            </p>
+                                            {% endif %}
+
+                                            {% if hall.memorials %}
+                                            <p class="my-0 ms-5 ms-lg-3 text-start opacity-75">
+                                                {{ hall.memorials }} ₸ ({% trans 'поминки' %})
+                                            </p>
+                                            {% endif %}
+
                                         </div>
                                     </div>
                                 </div>

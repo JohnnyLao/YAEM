@@ -199,11 +199,19 @@
                     <div class="card-body my-0 py-1">
                         <h4 data-aos="zoom-out-right" class="card-title my-0">{% trans 'Банкетный зал' %}
                             <span style="color: #FD7014">{{ banquet.name }}</span></h4>
-                        <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">{{ banquet.address }}</p>
+                        {% if banquet.address %}
+                            <p data-aos="zoom-out-right" class="card-title my-0 text-white-50">
+                                {{ banquet.address }}
+                            </p>
+                        {% endif %}
+
                         <p data-aos="zoom-out-right" class="card-text my-0 text-white-50">
                             {% translate 'Время работы' %}:
-                            {{ banquet.working_time }}
+                            {% if banquet.working_time %}
+                                {{ banquet.working_time }}
+                            {% endif %}
                         </p>
+
                         <div data-aos="fade-right" class="d-flex justify-content-around my-2 ">
                             <p class="fs-5 my-0 px-3 border rounded-pill"
                                style="color: #FD7014; --mdb-border-color: #FD7014">

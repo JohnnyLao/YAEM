@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-19 08:44+0000\n"
+"POT-Creation-Date: 2023-11-23 05:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,19 +30,19 @@ msgstr ""
 msgid "Kazakh"
 msgstr ""
 
-#: banquets/models.py:75
+#: banquets/models.py:71
 msgid "Охраняемая"
 msgstr "Protected"
 
-#: banquets/models.py:76
+#: banquets/models.py:72
 msgid "Неохраняемая"
 msgstr "Unguarded"
 
-#: banquets/models.py:80
+#: banquets/models.py:74
 msgid "Платная"
 msgstr "Paid"
 
-#: banquets/models.py:81
+#: banquets/models.py:75
 msgid "Бесплатная"
 msgstr "Free"
 
@@ -72,7 +72,7 @@ msgid "Посетителей"
 msgstr "Visitors"
 
 #: banquets/templates/banquets/banquet_list.html:66
-#: banquets/templates/banquets/banquet_page.html:342
+#: banquets/templates/banquets/banquet_page.html:340
 msgid "Вместимость"
 msgstr "Capacity"
 
@@ -102,53 +102,57 @@ msgstr "Find"
 msgid "Банкетные залы"
 msgstr "Banquet halls"
 
-#: banquets/templates/banquets/banquet_list.html:189
+#: banquets/templates/banquets/banquet_list.html:200
 msgid "Банкетный зал"
 msgstr "Banquet hall"
 
-#: banquets/templates/banquets/banquet_list.html:193
+#: banquets/templates/banquets/banquet_list.html:209
 #: main/templates/main/delivery_list.html:137 main/templates/main/menu.html:60
 msgid "Время работы"
 msgstr "Working hours"
 
-#: banquets/templates/banquets/banquet_list.html:203
+#: banquets/templates/banquets/banquet_list.html:226
 msgid "мест"
 msgstr "places"
 
-#: banquets/templates/banquets/banquet_list.html:210
+#: banquets/templates/banquets/banquet_list.html:233
 #: main/templates/main/delivery_list.html:181
 msgid "Перейти"
 msgstr "Follow"
 
-#: banquets/templates/banquets/banquet_page.html:268
+#: banquets/templates/banquets/banquet_page.html:246
 msgid "ресторана"
 msgstr "restaurant"
 
-#: banquets/templates/banquets/banquet_page.html:310
+#: banquets/templates/banquets/banquet_page.html:296
 msgid "Кухня"
 msgstr "Kitchen"
 
-#: banquets/templates/banquets/banquet_page.html:327
+#: banquets/templates/banquets/banquet_page.html:315
 msgid "Средний Чек"
 msgstr "Average Check"
 
-#: banquets/templates/banquets/banquet_page.html:358
-msgid "Адрес"
-msgstr "Address"
+#: banquets/templates/banquets/banquet_page.html:331
+msgid "поминки"
+msgstr "memorials"
 
-#: banquets/templates/banquets/banquet_page.html:363
+#: banquets/templates/banquets/banquet_page.html:356
 msgid "Особенности"
 msgstr "Peculiarities"
 
-#: banquets/templates/banquets/banquet_page.html:374
-msgid "Парковка"
-msgstr "Parking"
-
-#: banquets/templates/banquets/banquet_page.html:379
+#: banquets/templates/banquets/banquet_page.html:369
 msgid "Описание"
 msgstr "Description"
 
-#: banquets/templates/banquets/banquet_page.html:388
+#: banquets/templates/banquets/banquet_page.html:374
+msgid "Адрес"
+msgstr "Address"
+
+#: banquets/templates/banquets/banquet_page.html:378
+msgid "Парковка"
+msgstr "Parking"
+
+#: banquets/templates/banquets/banquet_page.html:386
 #: main/templates/main/menu.html:77
 msgid "Меню"
 msgstr "Menu"

@@ -68,20 +68,20 @@ class FeaturesOfTheBanquetHall(models.Model):
         return self.features_name
 
 
-GUARDED = 'Охраняемая'
-UNGUARDED = 'Неохраняемая'
+GUARDED = _('Охраняемая')
+UNGUARDED = _('Неохраняемая')
 
-PAID = 'Платная'
-FREE = 'Бесплатная'
+PAID = _('Платная')
+FREE = _('Бесплатная')
 
 PARKING_1_CHOICES = [
-    (GUARDED, _('Охраняемая')),
-    (UNGUARDED, _('Неохраняемая')),
+    (GUARDED, 'Охраняемая'),
+    (UNGUARDED, 'Неохраняемая'),
 ]
 
 PARKING_2_CHOICES = [
-    (PAID, _('Платная')),
-    (FREE, _('Бесплатная')),
+    (PAID, 'Платная'),
+    (FREE, 'Бесплатная'),
 ]
 
 
