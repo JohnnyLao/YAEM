@@ -3,10 +3,12 @@
 {% load i18n %}
 
 
-{% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
+{% block title %}
+{% translate 'Я ЕМ | Банкетные зал' %} {{banquet.name}}
+{% endblock title %}
 
 {% block description %}
-{% translate 'Создавайте меню c QR-кодом для своего ресторана.' %}
+{% translate 'Банкетный зал' %} {{banquet.name}}. {% translate 'Превратите ваше мероприятие в незабываемый опыт с нашим банкетным залом. У нас - идеальное сочетание роскоши, уюта и первоклассного сервиса для ваших особых моментов. Доступно предварительное бронирование' %}
 {% endblock description %}
 
 {% block content %}
