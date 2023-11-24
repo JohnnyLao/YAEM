@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 11:33+0000\n"
+"POT-Creation-Date: 2023-11-24 14:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,29 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: Yaem/settings_dev.py:166
+#: Yaem/settings_dev.py:168
 msgid "Russian"
 msgstr ""
 
-#: Yaem/settings_dev.py:167
+#: Yaem/settings_dev.py:169
 msgid "English"
 msgstr ""
 
-#: Yaem/settings_dev.py:168
+#: Yaem/settings_dev.py:170
 msgid "Kazakh"
 msgstr ""
 
 #: banquets/templates/banquets/banquet_list.html:6
-#: banquets/templates/banquets/banquet_page.html:6
 msgid "Я ЕМ | Банкетные залы"
 msgstr "МЕН ЖЕГЕНІМ | Банкет залдары"
 
 #: banquets/templates/banquets/banquet_list.html:9
-#: banquets/templates/banquets/banquet_page.html:9
-#: main/templates/main/delivery_list.html:9 main/templates/main/index.html:12
-#: partner/templates/partner/partner.html:9
-msgid "Создавайте меню c QR-кодом для своего ресторана."
-msgstr "Мейрамханаңыз үшін QR коды бар мәзір жасаңыз."
+msgid ""
+"Аренда банкетных залов. Удобный фильтр по стоимости и вместимости залов. "
+"Адреса и номера телефонов. Выберите банкетный зал, который Вам подходит "
+"больше всего"
+msgstr ""
+"Банкет залдары жалға беріледі. Залдардың құны мен сыйымдылығы бойынша ыңғайлы фильтр".
+"Мекен-жайлар мен телефондар. Сізге қолайлы банкет залын таңдаңыз"
+"Көбінесе"
 
 #: banquets/templates/banquets/banquet_list.html:31
 #: main/templates/main/index.html:43
@@ -56,7 +58,7 @@ msgid "Посетителей"
 msgstr "Келушілер"
 
 #: banquets/templates/banquets/banquet_list.html:66
-#: banquets/templates/banquets/banquet_page.html:340
+#: banquets/templates/banquets/banquet_page.html:342
 msgid "Вместимость"
 msgstr "Сыйымдылығы"
 
@@ -82,17 +84,14 @@ msgid "Найти"
 msgstr "Табу"
 
 #: banquets/templates/banquets/banquet_list.html:109
-#: banquets/templates/banquets/banquet_page.html:27
-#, fuzzy
-#| msgid "Тарифные планы"
+#: banquets/templates/banquets/banquet_page.html:29
 msgid "Банкетные залы"
-msgstr "Тарифтік жоспарлар"
+msgstr "Банкет залдары"
 
 #: banquets/templates/banquets/banquet_list.html:200
-#, fuzzy
-#| msgid "Банкет"
+#: banquets/templates/banquets/banquet_page.html:11
 msgid "Банкетный зал"
-msgstr "Банкет"
+msgstr "Банкет залдары"
 
 #: banquets/templates/banquets/banquet_list.html:209
 #: main/templates/main/delivery_list.html:137 main/templates/main/menu.html:60
@@ -108,39 +107,52 @@ msgstr "орындар"
 msgid "Перейти"
 msgstr "Бар"
 
-#: banquets/templates/banquets/banquet_page.html:246
+#: banquets/templates/banquets/banquet_page.html:7
+#, fuzzy
+#| msgid "Я ЕМ | Банкетные залы"
+msgid "Я ЕМ | Банкетные зал"
+msgstr "МЕН ЖЕГЕНІМ | Банкет залдары"
+
+#: banquets/templates/banquets/banquet_page.html:11
+msgid ""
+"Превратите ваше мероприятие в незабываемый опыт с нашим банкетным залом. У "
+"нас - идеальное сочетание роскоши, уюта и первоклассного сервиса для ваших "
+"особых моментов. Доступно предварительное бронирование"
+msgstr ""
+
+#: banquets/templates/banquets/banquet_page.html:248
 msgid "ресторана"
 msgstr "мейрамхана"
 
-#: banquets/templates/banquets/banquet_page.html:296
+#: banquets/templates/banquets/banquet_page.html:298
 msgid "Кухня"
 msgstr "Ас үй"
 
-#: banquets/templates/banquets/banquet_page.html:315
+#: banquets/templates/banquets/banquet_page.html:317
 msgid "Средний Чек"
 msgstr "Орташа тексеру"
 
-#: banquets/templates/banquets/banquet_page.html:331
+#: banquets/templates/banquets/banquet_page.html:333
 msgid "поминки"
 msgstr "ояну"
 
-#: banquets/templates/banquets/banquet_page.html:356
+#: banquets/templates/banquets/banquet_page.html:358
 msgid "Особенности"
 msgstr "Ерекшеліктер"
 
-#: banquets/templates/banquets/banquet_page.html:369
+#: banquets/templates/banquets/banquet_page.html:371
 msgid "Описание"
 msgstr "Сипаттама"
 
-#: banquets/templates/banquets/banquet_page.html:374
+#: banquets/templates/banquets/banquet_page.html:376
 msgid "Адрес"
 msgstr "Мекенжай"
 
-#: banquets/templates/banquets/banquet_page.html:378
+#: banquets/templates/banquets/banquet_page.html:380
 msgid "Парковка"
 msgstr "Көлік тұрағы"
 
-#: banquets/templates/banquets/banquet_page.html:386
+#: banquets/templates/banquets/banquet_page.html:388
 #: main/templates/main/menu.html:77
 msgid "Меню"
 msgstr "Мәзір"
@@ -322,9 +334,19 @@ msgstr "Артём"
 msgid "Руководитель отдела разработки"
 msgstr "Дамыту бөлімінің бастығы"
 
-#: main/templates/main/delivery_list.html:6 main/templates/main/index.html:7
-msgid "Я ЕМ | Доставка еды напрямую от заведения"
-msgstr "МЕН ЖЕГЕНІМ | Азық-түлікті тікелей мекемеден жеткізу"
+#: main/templates/main/delivery_list.html:6
+msgid "Я ЕМ | Меню и Доставка напрямую от заведения"
+msgstr "МЕН ЖЕГЕНІМ | Мәзір және жеткізу тікелей мекемеден"
+
+#: main/templates/main/delivery_list.html:9
+msgid ""
+"Цифровое онлайн-меню в вашем городе. Удобный интерфейс, описание, цены. "
+"Имеется доставка по предзаказу. Сканируйте QR, формируйте заказ и "
+"наслаждайтесь комфортным обслуживанием вместе с YAEM"
+msgstr ""
+"Қалаңыздағы онлайн сандық мәзір. Пайдаланушыға ыңғайлы интерфейс, сипаттама, бағалар."
+"Алдын ала тапсырысты жеткізу қол жетімді. QR сканерін сканерлеңіз, тапсырыс беріңіз және "
+"YAEM-пен ыңғайлы қызмет көрсетуден ләззат алыңыз"
 
 #: main/templates/main/delivery_list.html:31 main/templates/main/index.html:35
 #: partner/templates/partner/partner.html:32
@@ -348,6 +370,22 @@ msgstr "МЕКЕМЕЛЕР"
 #: main/templates/main/delivery_list.html:74
 msgid "Все"
 msgstr "Барлық"
+
+#: main/templates/main/index.html:7
+msgid "Я ЕМ | Меню и Банкетные залы"
+msgstr "МЕН ЖЕГЕНІМ | Мәзір және банкет залдары"
+
+#: main/templates/main/index.html:12
+msgid ""
+"Конвертируйте ваше обслуживание в невероятно удобный опыт с помощью "
+"электронных QR-меню от YAEM. Воспользуйтесь функцией поиска банкетного зала "
+"на нашем сайте, для более быстрого доступа ко всем доступным заведениям в "
+"вашем городе."
+msgstr ""
+"«Қызметіңізді керемет ыңғайлы тәжірибеге айналдырыңыз"
+"YAEM электрондық QR мәзірлері. Банкет залын іздеу функциясын пайдаланыңыз"
+"«біздің веб-сайтта, барлық қолжетімді мекемелерге жылдам қол жеткізу үшін"
+"сіздің қалаңыз»."
 
 #: main/templates/main/index.html:66 main/templates/main/menu.html:57
 msgid "Добро пожаловать в"
@@ -391,8 +429,18 @@ msgid "Онлайн меню"
 msgstr "Онлайн мәзір"
 
 #: main/templates/main/menu.html:13
-msgid "Онлайн меню {{client.name}} в городе {{client.city}}"
+msgid "Цифровое онлайн-меню кафе"
+msgstr "Сандық онлайн кафе мәзірі"
+
+#: main/templates/main/menu.html:13
+msgid ""
+"Удобный интерфейс, описание, цены. Имеется доставка по предзаказу. "
+"Сканируйте QR, формируйте заказ и наслаждайтесь комфортным обслуживанием "
+"вместе с YAEM."
 msgstr ""
+"Пайдаланушыға ыңғайлы интерфейс, сипаттамалар, бағалар. Алдын ала тапсырыс жеткізу қолжетімді."
+"QR сканерін сканерлеңіз, тапсырыс беріңіз және ыңғайлы қызметтен ләззат алыңыз."
+"YAEM-мен бірге."
 
 #: main/templates/main/menu.html:61
 msgid "г"
@@ -423,6 +471,16 @@ msgstr "Себетке қосылды"
 #: partner/templates/partner/partner.html:6
 msgid "QR Меню для заведений"
 msgstr "Мекемелерге арналған QR мәзірі"
+
+#: partner/templates/partner/partner.html:9
+msgid ""
+"Создавайте меню c QR-кодом для своего ресторана. Команда компании YAEM "
+"создаст удобное и информативное цифровое QR меню для Вашего кафе или "
+"ресторана. Привлекайте больше клиентов с современными технологиями!"
+msgstr ""
+"Мейрамханаңыз үшін QR коды бар мәзір жасаңыз. YAEM командасы"
+"Сіздің кафеңіз үшін ыңғайлы және ақпаратты сандық QR мәзірін жасайды немесе"
+"мейрамханалар. Заманауи технологиялармен көбірек тұтынушыларды тартыңыз!"
 
 #: partner/templates/partner/partner.html:67
 msgid "ОНЛАЙН"
@@ -965,6 +1023,9 @@ msgstr ""
 #: upcoming_templates/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
+
+#~ msgid "Создавайте меню c QR-кодом для своего ресторана."
+#~ msgstr "Мейрамханаңыз үшін QR коды бар мәзір жасаңыз."
 
 #~ msgid "Вы получите:"
 #~ msgstr "Сіз аласыз:"
