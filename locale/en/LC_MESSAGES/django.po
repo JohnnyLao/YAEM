@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-23 11:33+0000\n"
+"POT-Creation-Date: 2023-11-24 14:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,29 +18,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: Yaem/settings_dev.py:166
+#: Yaem/settings_dev.py:168
 msgid "Russian"
 msgstr ""
 
-#: Yaem/settings_dev.py:167
+#: Yaem/settings_dev.py:169
 msgid "English"
 msgstr ""
 
-#: Yaem/settings_dev.py:168
+#: Yaem/settings_dev.py:170
 msgid "Kazakh"
 msgstr ""
 
 #: banquets/templates/banquets/banquet_list.html:6
-#: banquets/templates/banquets/banquet_page.html:6
 msgid "Я ЕМ | Банкетные залы"
 msgstr "YAEM | Banquet halls"
 
 #: banquets/templates/banquets/banquet_list.html:9
-#: banquets/templates/banquets/banquet_page.html:9
-#: main/templates/main/delivery_list.html:9 main/templates/main/index.html:12
-#: partner/templates/partner/partner.html:9
-msgid "Создавайте меню c QR-кодом для своего ресторана."
-msgstr "Create a menu with a QR code for your restaurant."
+msgid ""
+"Аренда банкетных залов. Удобный фильтр по стоимости и вместимости залов. "
+"Адреса и номера телефонов. Выберите банкетный зал, который Вам подходит "
+"больше всего"
+msgstr ""
+"Banquet halls for rent. Convenient filter by cost and capacity of the halls."
+"Addresses and telephone numbers. Select the banquet hall that suits you"
+"most"
 
 #: banquets/templates/banquets/banquet_list.html:31
 #: main/templates/main/index.html:43
@@ -56,7 +58,7 @@ msgid "Посетителей"
 msgstr "Visitors"
 
 #: banquets/templates/banquets/banquet_list.html:66
-#: banquets/templates/banquets/banquet_page.html:340
+#: banquets/templates/banquets/banquet_page.html:342
 msgid "Вместимость"
 msgstr "Capacity"
 
@@ -82,11 +84,12 @@ msgid "Найти"
 msgstr "Find"
 
 #: banquets/templates/banquets/banquet_list.html:109
-#: banquets/templates/banquets/banquet_page.html:27
+#: banquets/templates/banquets/banquet_page.html:29
 msgid "Банкетные залы"
 msgstr "Banquet halls"
 
 #: banquets/templates/banquets/banquet_list.html:200
+#: banquets/templates/banquets/banquet_page.html:11
 msgid "Банкетный зал"
 msgstr "Banquet hall"
 
@@ -104,39 +107,53 @@ msgstr "places"
 msgid "Перейти"
 msgstr "Follow"
 
-#: banquets/templates/banquets/banquet_page.html:246
+#: banquets/templates/banquets/banquet_page.html:7
+msgid "Я ЕМ | Банкетные зал"
+msgstr "YAEM | Banquet halls"
+
+#: banquets/templates/banquets/banquet_page.html:11
+msgid ""
+"Превратите ваше мероприятие в незабываемый опыт с нашим банкетным залом. У "
+"нас - идеальное сочетание роскоши, уюта и первоклассного сервиса для ваших "
+"особых моментов. Доступно предварительное бронирование"
+msgstr ""
+"Turn your event into an unforgettable experience with our banquet hall. "
+"we are the perfect combination of luxury, comfort and first-class service for your "
+"special moments. Advance booking available"
+
+#: banquets/templates/banquets/banquet_page.html:248
 msgid "ресторана"
 msgstr "restaurant"
 
-#: banquets/templates/banquets/banquet_page.html:296
+#: banquets/templates/banquets/banquet_page.html:298
 msgid "Кухня"
 msgstr "Kitchen"
 
-#: banquets/templates/banquets/banquet_page.html:315
+#: banquets/templates/banquets/banquet_page.html:317
 msgid "Средний Чек"
 msgstr "Average Check"
 
-#: banquets/templates/banquets/banquet_page.html:331
+#: banquets/templates/banquets/banquet_page.html:333
 msgid "поминки"
 msgstr "memorials"
 
-#: banquets/templates/banquets/banquet_page.html:356
+#: banquets/templates/banquets/banquet_page.html:358
 msgid "Особенности"
 msgstr "Peculiarities"
 
-#: banquets/templates/banquets/banquet_page.html:369
+#: banquets/templates/banquets/banquet_page.html:371
 msgid "Описание"
 msgstr "Description"
 
-#: banquets/templates/banquets/banquet_page.html:374
+#: banquets/templates/banquets/banquet_page.html:376
 msgid "Адрес"
 msgstr "Address"
 
-#: banquets/templates/banquets/banquet_page.html:378
+#: banquets/templates/banquets/banquet_page.html:380
 msgid "Парковка"
 msgstr "Parking"
 
-#: banquets/templates/banquets/banquet_page.html:386
+#: banquets/templates/banquets/banquet_page.html:388
 #: main/templates/main/menu.html:77
 msgid "Меню"
 msgstr "Menu"
@@ -316,9 +333,19 @@ msgstr "Artem"
 msgid "Руководитель отдела разработки"
 msgstr "Development dep."
 
-#: main/templates/main/delivery_list.html:6 main/templates/main/index.html:7
-msgid "Я ЕМ | Доставка еды напрямую от заведения"
-msgstr "I EAT | Food delivery directly from the establishment"
+#: main/templates/main/delivery_list.html:6
+msgid "Я ЕМ | Меню и Доставка напрямую от заведения"
+msgstr "I EAT | Menu and Delivery directly from the establishment"
+
+#: main/templates/main/delivery_list.html:9
+msgid ""
+"Цифровое онлайн-меню в вашем городе. Удобный интерфейс, описание, цены. "
+"Имеется доставка по предзаказу. Сканируйте QR, формируйте заказ и "
+"наслаждайтесь комфортным обслуживанием вместе с YAEM"
+msgstr ""
+"Online digital menu in your city. User-friendly interface, description, prices."
+"Pre-order delivery available. Scan the QR, place your order and "
+"enjoy comfortable service with YAEM"
 
 #: main/templates/main/delivery_list.html:31 main/templates/main/index.html:35
 #: partner/templates/partner/partner.html:32
@@ -342,6 +369,22 @@ msgstr "Establishments"
 #: main/templates/main/delivery_list.html:74
 msgid "Все"
 msgstr "All"
+
+#: main/templates/main/index.html:7
+msgid "Я ЕМ | Меню и Банкетные залы"
+msgstr "YAEM | Banquet halls"
+
+#: main/templates/main/index.html:12
+msgid ""
+"Конвертируйте ваше обслуживание в невероятно удобный опыт с помощью "
+"электронных QR-меню от YAEM. Воспользуйтесь функцией поиска банкетного зала "
+"на нашем сайте, для более быстрого доступа ко всем доступным заведениям в "
+"вашем городе."
+msgstr ""
+"Convert your service into an incredibly convenient experience with "
+"electronic QR menus from YAEM. Use the banquet hall search function"
+"on our website, for faster access to all available establishments in "
+"your city."
 
 #: main/templates/main/index.html:66 main/templates/main/menu.html:57
 msgid "Добро пожаловать в"
@@ -385,8 +428,18 @@ msgid "Онлайн меню"
 msgstr "Online menu"
 
 #: main/templates/main/menu.html:13
-msgid "Онлайн меню {{client.name}} в городе {{client.city}}"
+msgid "Цифровое онлайн-меню кафе"
+msgstr "Digital online cafe menu"
+
+#: main/templates/main/menu.html:13
+msgid ""
+"Удобный интерфейс, описание, цены. Имеется доставка по предзаказу. "
+"Сканируйте QR, формируйте заказ и наслаждайтесь комфортным обслуживанием "
+"вместе с YAEM."
 msgstr ""
+"User-friendly interface, descriptions, prices. Pre-order delivery available."
+"Scan the QR, place your order and enjoy comfortable service"
+"together with YAEM."
 
 #: main/templates/main/menu.html:61
 msgid "г"
@@ -415,6 +468,16 @@ msgstr "Added to Cart"
 #: partner/templates/partner/partner.html:6
 msgid "QR Меню для заведений"
 msgstr "QR Menu for food establishments"
+
+#: partner/templates/partner/partner.html:9
+msgid ""
+"Создавайте меню c QR-кодом для своего ресторана. Команда компании YAEM "
+"создаст удобное и информативное цифровое QR меню для Вашего кафе или "
+"ресторана. Привлекайте больше клиентов с современными технологиями!"
+msgstr ""
+"Create a menu with a QR code for your restaurant. YAEM team"
+"will create a convenient and informative digital QR menu for your cafe or "
+"restaurants. Attract more customers with modern technologies!"
 
 #: partner/templates/partner/partner.html:67
 msgid "ОНЛАЙН"
@@ -960,6 +1023,9 @@ msgstr ""
 #: upcoming_templates/password_reset.html:25
 msgid "Please contact us if you have any trouble resetting your password."
 msgstr ""
+
+#~ msgid "Создавайте меню c QR-кодом для своего ресторана."
+#~ msgstr "Create a menu with a QR code for your restaurant."
 
 #~ msgid "Вы получите:"
 #~ msgstr "What you get:"
