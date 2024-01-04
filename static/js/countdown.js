@@ -1,5 +1,5 @@
  // Set the countdown date and time (replace with your own)
-        var countdownDate = new Date("2023-12-31T23:59:59");
+        var countdownDate = new Date("2024-01-28T23:59:59");
 
         // Update the countdown every 1 second
         var countdownTimer = setInterval(function() {
@@ -24,7 +24,7 @@
             // If the countdown is finished, display a message
             if (timeDifference < 0) {
                 clearInterval(countdownTimer);
-                document.getElementById("countdown").innerHTML = "<h2>Countdown Finished</h2>";
+                document.getElementById("countdown").innerHTML = "<h2>Time</h2>";
             }
         }, 1000);
 

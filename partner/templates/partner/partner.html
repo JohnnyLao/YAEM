@@ -336,28 +336,11 @@
                     <img class="img w-25 my-3" src="{% static 'images/partner/t-1-min.png' %}" alt="bg"
                          style="border-radius: 10px; max-width: 100px; opacity: 50%">
                     <p class="fw-bold my-3 bg-warning fs-4 my-0" style="border-radius: 50px; --mdb-bg-opacity: 15%">{%translate 'Бронза' %}</p>
-                    <p style="color: #" class="fs-5 my-0">
+                    <p class="fs-4 my-0">
                         <del>8 000 {% translate 'тг/мес' %}</del>
                     </p>
-                    <p class="fw-bold fs-3 my-0" style=""> 0 {% translate 'тг/мес' %}</p>
-                    <div id="countdown" class="row" style="color: #fd7014">
-                        <div class="col">
-                            <p id="days" class="countdown-number fs-3 fw-bold my-0">0</p>
-                            <p class="my-0">{% translate 'Дней' %}</p>
-                        </div>
-                        <div class="col">
-                            <p id="hours" class="countdown-number fs-3 fw-bold my-0">0</p>
-                            <p class="my-0">{% translate 'Часов' %}</p>
-                        </div>
-                        <div class="col">
-                            <p id="minutes" class="countdown-number fs-3 fw-bold my-0">0</p>
-                            <p class="my-0">{% translate 'Минут' %}</p>
-                        </div>
-                        <div class="col">
-                            <p id="seconds" class="countdown-number fs-3 fw-bold my-0">0</p>
-                            <p class="my-0">{% translate 'Секунд' %}</p>
-                        </div>
-                    </div>
+                    <p class="fs-4 my-0" style=""> 6 000 {% translate 'тг/мес' %}</p>
+                    <p class="fw-bold fs-3 my-0" style="color: #"> 60 000 {% translate 'тг/год' %}</p>
                     <div class="container py-3">
                         <h6 class="shadow text-start" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
@@ -399,8 +382,27 @@
                          style="border-radius: 10px; max-width: 120px; opacity: 50%">
                     <p class="fw-bold my-3 bg-secondary shadow fs-3" style="border-radius: 50px; --mdb-bg-opacity: 50%">
                         {% translate 'Серебро' %}</p>
-                    <p class="fs-4 my-0" style="color: #">15 000 {% translate 'тг/мес' %}</p>
-                    <p class="fw-bold fs-3 my-0" style="color: #"> 150 000 {% translate 'тг/год' %}</p>
+                    <del><p class="fs-4 my-0" style="color: #">15 000 {% translate 'тг/мес' %}</p></del>
+                    <p class="fs-4 my-0" style="color: #">12 000 {% translate 'тг/мес' %}</p>
+                    <p class="fw-bold fs-3 my-0" style="color: #"> 120 000 {% translate 'тг/год' %}</p>
+                    <div id="countdown" class="d-flex justify-content-center" style="background: rgba(51, 51, 51, 0.1); border-radius: 10px; color: #DF7014">
+                        <div class="col">
+                            <p id="days" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Дней' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="hours" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Часов' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="minutes" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Минут' %}</p>
+                        </div>
+                        <div class="col">
+                            <p id="seconds" class="countdown-number fs-3 fw-bold my-0">0</p>
+                            <p class="my-0">{% translate 'Секунд' %}</p>
+                        </div>
+                    </div>
                     <div class="container py-3">
                         <h5 class="shadow text-start ps-2"
                             style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -654,8 +656,8 @@
                         <div class="accordion-body text-white">
                             <p>{% translate 'Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и организуем встречу' %}</p>
                             <p>{% translate 'Оплата по тарифам происходит в двух форматах:' %}</p>
-                            <li> <strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'до 15го числа каждого месяца' %}</li>
-                            <li> <strong style="color: #fd7014">{% translate 'Погодовая' %}:</strong>: {% translate 'оплата происходит до 15го числа за последующий год' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)</li>
+                            <li> <strong style="color: #fd7014">{% translate 'Квартальная' %}:</strong> {% translate 'оплата за 3 месяца' %}</li>
+                            <li> <strong style="color: #fd7014">{% translate 'Годовая' %}:</strong>: {% translate 'оплата за 12 месяцев' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)</li>
                         </div>
                     </div>
                 </div>

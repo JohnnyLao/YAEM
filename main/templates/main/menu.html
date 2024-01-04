@@ -38,11 +38,70 @@
     <!--Flying Cart-->
     <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 15px; display: none; z-index: 101"
-       href="{% url 'cart:cart_page' %}"
+       data-mdb-target="#cart_modal"
+       data-mdb-toggle="modal"
         data-mdb-ripple-color="#FD7014">
             <i class="fas fa-cart-shopping my-0 py-0"></i>
-
     </a>
+
+    <!-- Modal -->
+    <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modal" aria-hidden="true">
+        <div class="modal-dialog modal-xl" style="--mdb-modal-header-border-color: #555555; --mdb-modal-footer-border-color: #555555">
+            <div class="modal-content" style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.95), rgba(25, 25, 25, 0.95)), url({% static 'images/cart/4-min.jpg' %});
+    background-attachment: fixed; background-size: cover; background-repeat: no-repeat">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Корзина</h5>
+                    <button type="button" class="btn-close bg-danger" data-mdb-ripple-init data-mdb-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-2">
+                    <div class="d-flex">
+                        <div class="col-4 col-lg-2 text-center">
+                            <img src="{% static 'images/menu/2gis.png' %}" alt="ФОТО БЛЮДА" style="max-height: 100px">
+                        </div>
+                        <div class="col-8 col-lg-10">
+                            <div class="row">
+                                <p class="fw-bold"> Dish Name</p>
+                            </div>
+                            <div class="row">
+                                <p class=""> Dish description</p>
+                            </div>
+                            <div class="row">
+                                <div class="d-flex content-justify-between">
+                                    <div class="col fw-bold">
+                                        <button class="btn btn-sm btn-danger btn-floating btn-animate shadow-0" data-mdb-ripple-color="danger"><i
+                                                class="fas fa-minus"></i></button>
+                                        <span>000</span>
+                                        <button class="btn btn-sm btn-success btn-floating btn-animate shadow-0" data-mdb-ripple-color="success"><i
+                                                class="fas fa-plus"></i></button>
+                                    </div>
+
+                                    <div class="col fw-bold text-end">0 000 ₸</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-end fw-bold">
+                        <div class="col-6 col-lg-2">
+                            <p class="my-0">Итого</p>
+                            <p class="my-0">Обслуживание</p>
+                            <p class="my-0">Итого с обслуживанием</p>
+                        </div>
+                        <div class="col-2 text-end">
+                            <p class="my-0">0 000 ₸</p>
+                            <p class="my-0">00 %</p>
+                            <p class="my-0">0 000 ₸</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-mdb-ripple-init data-mdb-dismiss="modal">
+                        Закрыть
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
@@ -254,24 +313,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             {% csrf_token %}
                             <!-- Кнопка "-" для уменьшения количества товара -->
                             <input type="hidden" name="remove_quantity" value="1">
-                            <button class="btn btn-animate shadow-0 px-0 py-0 me-1" data-mdb-ripple-color="danger"
+                            <button class="btn btn-floating btn-sm btn-danger btn-animate shadow-0 px-0 py-0 me-1" data-mdb-ripple-color="danger"
                                     hx-post="{% url 'cart:remove_from_cart' dish.id %}"
                                     hx-trigger="click"
                                     hx-target="#product-quantity-{{ dish.id }}"
                                     hidden="hidden">
-                                <i class="far fa-square-minus fa-3x text-danger"></i>
+                                <i class="fas fa-minus"></i>
                             </button>
 
                             <!--КОЛ-ВО БЛЮДА-->
-                            <span class="fw-bold fs-5" id="product-quantity-{{ dish.id }}"></span>
+                            <span class="fw-bold fs-6" id="product-quantity-{{ dish.id }}"></span>
 
                             <!-- Кнопка "+" для увеличения количества товара -->
                             <input type="hidden" name="add_quantity" value="1">
-                            <button class="btn btn-animate shadow-0 px-0 py-0 ms-1" data-mdb-ripple-color="success"
+                            <button class="btn btn-floating btn-sm btn-success btn-animate shadow-0 px-0 py-0 ms-1" data-mdb-ripple-color="success"
                                     hx-post="{% url 'cart:add_to_cart' dish.id %}"
                                     hx-trigger="click"
                                     hx-target="#product-quantity-{{ dish.id }}"><i
-                                    class="far fa-square-plus fa-3x text-success"></i>
+                                    class="fas fa-plus"></i>
                             </button>
                         </form>
                         <script>

@@ -144,7 +144,7 @@ LOGIN_REDIRECT_URL = "/"
 # cookie time
 SESSION_COOKIE_AGE = 604800
 # cache lifetime (dev django, prod redis)
-CACHES_LIFE_TIME = 5 * 60 * 60
+CACHES_LIFE_TIME = 0
 # django all auth
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
