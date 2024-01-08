@@ -6,7 +6,7 @@
 {% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
 
 {% block description %}
-{% translate 'Создавайте меню c QR-кодом для своего ресторана.' %}
+{% translate 'Банкетный зал {{banquet.name}}. Количество мест {{banquet.capacity}}. Средний счёт на человека от {{banquet.price_min}} - {{banquet.price_max}} тенге в городе {{banquet.city.name}}' %}
 {% endblock description %}
 
 {% block content %}
@@ -273,11 +273,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </div>
                             </a>
 
-                            <a href="{{ banquet.phone }}">
+                            <a href="tel:+{{ banquet.phone }}">
                                 <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
                             </a>
+
+                            {% if banquet.whatsapp %}
+                            <a target="_blank"
+                               href="https://wa.me/{{banquet.whatsapp}}">
+                                <div class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
+                                    <i class="fab fa-whatsapp fa-2x"></i>
+                                </div>
+                            </a>
+                            {% endif %}
+
                             {% if banquet.client %}
                             <a href="{% url 'main:menu_page' url_name=banquet.client.url_name %}">
                                 <button class="btn btn-animate text-white btn-floating mt-1 mx-1">
@@ -286,6 +296,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 </button>
                             </a>
                             {% endif %}
+
+
                         </div>
 
                         <div class="note note-light text-secondary mb-0"

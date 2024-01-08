@@ -152,7 +152,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav fw-bold">
             <li class="nav-item mx-auto">
-                <a class="nav-link" aria-current="page"
+                <a class="nav-link my-0 py-1" aria-current="page"
                    href="{% url 'main:main_page' %}">{% translate 'ГЛАВНАЯ' %}</a>
             </li>
             <li class="nav-item mx-auto my-2">
@@ -176,13 +176,13 @@
                                 <button class="btn btn-animate">{% translate 'Блюда' %} <i class="fas fa-circle fa-xs"
                                                                                style="color: green"></i></button>
                             </a>
-                            <a href="#">
-                                <button class="btn  text-secondary" disabled>{% translate 'Продукты' %} <i
-                                        class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
-                            </a>
                             <a href="{% url 'banquets:banquet_list_page' %}">
                                 <button class="btn btn-animate">{% translate 'Банкет' %} <i
                                         class="fas fa-circle fa-xs" style="color: green"></i></button>
+                            </a>
+                            <a href="#">
+                                <button class="btn  text-secondary" disabled>{% translate 'Продукты' %} <i
+                                        class="fas fa-circle fa-xs" style="color: #C0392B"></i></button>
                             </a>
                         </div>
                     </li>
@@ -216,13 +216,13 @@
                                         class="fas fa-circle fa-xs"
                                         style="color: #C0392B"></i></button>
                             </a>
-                            <a class="" href="{% url 'partner:partner_page' %}">
-                                <button class="btn">{% translate 'Контакты' %} <i class="fas fa-circle fa-xs"
-                                                                                  style="color: green"></i></button>
-                            </a>
                         </div>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-item mx-auto">
+                <a class="nav-link my-0 py-1" aria-current="page"
+                   href="{% url 'partner:partner_page' %}">{% translate 'КОНТАКТЫ' %}</a>
             </li>
         </ul>
     </div>
