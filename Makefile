@@ -15,4 +15,4 @@ migrate:
 	python manage.py migrate
 
 loaddata:
-	python loaddata data.json
+	python manage.py loaddata data.json
