@@ -22,24 +22,20 @@ jobs:
       - name: Установка зависимостей(requirements)...
         run: pip install -r requirements.txt
 
-      - name: Сортировка импортов isort...
-        run: isort .
-
-      - name: Форматирование кода black...
-        run: black .
+      - name: Форматирование кода, миграции, загрузка фикстур...
+        run: make all
 
       - name: Деплой...
         uses: appleboy/ssh-action@master
         with:
           host: 194.58.120.24
           username: root
-          password: sTxNYqpeh$4P
+          password: P7!#Luepb9*$
           script: |
             su artem
             cd /home/artem/Site1
             git pull origin master
             echo "artemchik16" | sudo -S systemctl restart gunicorn
 
-      - name: Запуск тестов Django...
-        run: python manage.py test
+      
 

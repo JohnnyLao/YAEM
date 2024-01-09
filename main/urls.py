@@ -2,7 +2,7 @@ from django.urls import path
 from django.views.decorators.cache import cache_page
 
 from main.views import DeliveryList, Main, Menu, set_language
-from Yaem.settings_dev import CACHES_LIFE_TIME
+from Yaem.settings import CACHES_LIFE_TIME
 
 app_name = "main"
 

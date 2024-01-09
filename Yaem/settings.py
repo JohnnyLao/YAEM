@@ -7,6 +7,7 @@ from django.utils.translation import gettext_lazy as _
 # environ
 env = environ.Env(
     SECRET_KEY=str,
+    DEBUG=str,
 )
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -16,15 +17,32 @@ environ.Env.read_env(BASE_DIR / ".env")
 SECRET_KEY = env("SECRET_KEY")
 
 # mutable variables
-DEBUG = True
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+DEBUG = env('DEBUG')
+if DEBUG:
+    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+else:
+    ALLOWED_HOSTS = ["yaem.kz", "www.yaem.kz"]
+
 # Database
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "db.sqlite3",
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "db.sqlite3",
+        }
     }
-}
+else:
+    # postgresql for prod
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'yaem',
+            'USER': 'root',
+            'PASSWORD': '5553210',
+            'HOST': 'localhost',
+            'PORT': '5432',
+        }
+    }
 # end mutable variables
 
 INSTALLED_APPS = [
@@ -95,9 +113,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "Yaem.wsgi.application"
 
-# Password validation
-# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
 AUTH_PASSWORD_VALIDATORS = [
     {
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
@@ -150,18 +165,6 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
-
-# Provider specific settings
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'APP': {
-#             'client_id': '201932057240-947a016k120mbef3tst1c9ujc11hm49g.apps.googleusercontent.com',
-#             'secret': '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',
-#             'key': ''
-#         }
-#     }
-# }
-
 
 # languages
 LANGUAGES = [
