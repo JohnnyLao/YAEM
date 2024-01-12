@@ -703,9 +703,18 @@
 })();
 
 </script>
+<script src="{% static 'js/countdown.js' %}"></script>
+<!--CHAT -->
+<script type="text/javascript">
+    document.umnicoWidgetHash = 'e7f47d30e6b24817faaa29ead64250b1';
+    var x = document.createElement('script');
+    x.src = 'https://umnico.com/assets/widget-loader.js';
+    x.type = 'text/javascript';
+    x.charset = 'UTF-8';
+    x.async = true;
+    document.body.appendChild(x);
+</script>
 
-    <!--  scripts  -->
-    <script src="{% static 'js/countdown.js' %}"></script>
 
 
 {% endblock content %}
