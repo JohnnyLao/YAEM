@@ -11,7 +11,7 @@ class BanquetList(View):
     template_name = "banquets/banquet_list.html"
 
     def get(self, request, *args, **kwargs):
-        banquets = BanquetCard.objects.all()
+        banquets = BanquetCard.objects.all().order_by("z_index")
         cities = City.objects.values_list("name", flat=True).distinct()
         capacity = request.GET.get("capacity")
         price_min_max = request.GET.get("price_min_max")
@@ -50,6 +50,12 @@ class BanquetList(View):
                     | Q(city__name="Караганда")
                     | Q(city__name="Қарағанды")
                 )
+            elif city == "Almaty" or city == "Алматы" or city == "Алматы":
+                banquets = banquets.filter(
+                    Q(city__name="Almaty")
+                    | Q(city__name="Алматы")
+                    | Q(city__name="Алматы")
+            )
 
         context = {"banquets": banquets, "cities": cities}
         return render(request, self.template_name, context)
