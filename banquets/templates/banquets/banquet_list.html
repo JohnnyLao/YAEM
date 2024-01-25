@@ -19,13 +19,14 @@
 </a>
 <!--button end-->
 
+
 <!--COUNTER START-->
 <section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center py-2 fs-6 fw-bold" style="color: #fd7014">
             <div class="col-4 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{ total_cities }}" class="indicators-title"></div>
+                    <div data-num="{{ total_cities }}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white">
                         <i class="fas fa-city fa-xs"></i>
                         {% trans 'Городов' %}
@@ -34,7 +35,7 @@
             </div>
             <div class="col-4 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{ total_banquets }}" class="indicators-title"></div>
+                    <div data-num="{{ total_banquets }}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white">
                         <i class="fas fa-bell-concierge fa-xs"></i>
                         {% trans 'Залов' %}
@@ -43,7 +44,7 @@
             </div>
             <div class="col-4 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num="{{ total_orders }}" class="indicators-title"></div>
+                    <div data-num="{{ total_orders }}" class="indicators-title fs-5"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -57,10 +58,11 @@
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
     background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
-        <div class="container pt-3">
+        <div class="container py-3">
+            <h1 class="fw-bold text-center mb-3" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
             <form action="" method="get">
                 <div class="d-flex justify-content-center">
-                    <div class="col-4 col-lg-2 text-center">
+                    <div class="d-inline-flex text-center">
                         <select class="form-select-sm" id="select_3" aria-label="Default select example"
                                 name="city">
                             <option selected value="">{% trans 'Город' %}</option>
@@ -69,7 +71,7 @@
                                 {% endfor %}
                         </select>
                     </div>
-                    <div class="col-4 col-lg-2 text-center">
+                    <div class="d-inline-flex text-center mx-2">
                         <select class="form-select-sm" id="select_2" aria-label="Default select example"
                                 name="price_min_max">
                             <option selected value="">{% trans 'Цена за человека' %}</option>
@@ -80,10 +82,10 @@
                                     <!--5000 - 10000-->
                             <option value="10000" {% if request.GET.price_min_max == '10000' %}selected{% endif %}>5 000 - 10 000</option>
                                     <!--10000 - 15000-->
-                            <option value="15000" {% if request.GET.price_min_max == '15000' %}selected{% endif %}>10 000 - 15 000</option>
+                            <option value="15000" {% if request.GET.price_min_max == '15000' %}selected{% endif %}>{% trans 'свыше' %} 10 000</option>
                         </select>
                     </div>
-                    <div class="col-4 col-lg-2 text-center">
+                    <div class="d-inline-flex text-center">
                         <select class="form-select-sm" id="select_1" aria-label="Default select example"
                                 name="capacity">
                             <option selected value="">{% trans 'Вместимость' %}</option>
@@ -98,15 +100,19 @@
                         </select>
                     </div>
                 </div>
-                <div class="d-flex mx-auto mt-3 justify-content-center">
-                    <button class="btn btn-success btn-rounded btn-sm btn-animate" type="submit">{% trans 'Найти' %}</button>
+                <div class="d-flex mx-auto mt-2 justify-content-center">
+                    <button data-aos="flip-up" class="btn btn-success btn-rounded btn-sm btn-animate" type="submit"><i class="fas fa-magnifying-glass"></i> {% trans 'ПОИСК' %}</button>
+                    <a target="_blank" data-aos="flip-up" href="https://wa.me/77015302812?text=Здравствуйте,%20какие%20условия%20размещения%20банкетного%20зала?"
+                       class="btn btn-rounded btn-info btn-sm btn-animate ms-5">
+                        {% trans 'РАЗМЕЩЕНИЕ' %}
+                </a>
                 </div>
             </form>
         </div>
 
 
     <div class="container">
-        <h1 class="my-3 fw-bold text-center" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
+
         <div class="row gy-5 mx-auto justify-content-center">
             <!--- цикл -->
             {% for banquet in banquets %}
@@ -134,7 +140,7 @@
 
                         .swiper {
                           width: 90%;
-                          height: 300px;
+                          height: 250px;
                           border-radius: 15px;
                         }
 
@@ -157,7 +163,7 @@
                     </style>
 
                     <!-- Swiper -->
-                    <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
+                    <a class="btn-animate" href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
                     <div class="swiper mySwiper mt-1">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
@@ -204,19 +210,19 @@
                         <h5 class="card-title my-0">{% trans 'Банкетный зал' %}
                             <span style="color: #FD7014">{{ banquet.name }}</span></h5>
                         {% if banquet.address %}
-                            <p data-aos="flip-up" class="card-title my-0 text-white-50">
+                            <p class="card-title my-0 text-white-50">
                                 {{ banquet.address }}
                             </p>
                         {% endif %}
 
-                        <p data-aos="flip-up" class="card-text my-0 text-white-50">
+                        <p class="card-text my-0 text-white-50">
                             {% translate 'Время работы' %}:
                             {% if banquet.working_time %}
                                 {{ banquet.working_time }}
                             {% endif %}
                         </p>
 
-                        <div data-aos="flip-down" class="d-flex justify-content-around my-2 ">
+                        <div class="d-flex justify-content-around my-2 ">
                             <p class="my-0 px-2 border rounded-pill"
                                style="color: #FD7014; --mdb-border-color: #FD7014">
                                 <i class="fas fa-coins"></i> {{banquet.price_min}} ₸ - {{banquet.price_max}} ₸
@@ -231,7 +237,7 @@
                             </p>
                         </div>
 
-                        <p data-aos="flip-up" class="my-0">{{ banquet.description }}</p>
+                        <p class="my-0">{{ banquet.description }}</p>
 <!--                        <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">-->
 <!--                            <button data-aos="flip-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">-->
 <!--                                {% translate 'Перейти' %}-->

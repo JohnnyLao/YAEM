@@ -50,7 +50,7 @@ class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
     logo = models.ImageField(upload_to=client_logo_upload_to, verbose_name="Лого")
-    description = models.TextField(verbose_name="Описание", max_length=60)
+    description = models.TextField(verbose_name="Описание", max_length=100)
     working_time = models.CharField(max_length=20, verbose_name="Рабочее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
     phone = models.DecimalField(max_digits=15, decimal_places=0, verbose_name="Телефон")

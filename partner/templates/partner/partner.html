@@ -24,27 +24,27 @@
 <!--COUNTER START-->
 <section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
-            <div class="col-6 col-lg-4">
+        <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
+            <div class="col-4 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{total_clients}}" class="indicators-title"></div>
+                    <div data-num="{{total_clients}}" class="indicators-title fs-4"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
                     </i> {% trans 'Заведений' %}
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-4 col-lg-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num={{total_dishes}} class="indicators-title"></div>
+                    <div data-num={{total_dishes}} class="indicators-title fs-4"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
 
                     </i> {% trans 'Блюд' %}
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-4 col-lg-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div data-num={{total_orders}} class="indicators-title fs-4"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -67,7 +67,7 @@
                     <h1 class="mt-2 mb-0 fs-4">{% translate 'ОНЛАЙН' %}</h1>
                     <h1 class="my-0 fs-4">{% translate 'МЕНЮ' %}</h1>
                     <h1 class="my-3 fw-bold fs-3">{% translate 'БЕСПЛАТНО' %}</h1>
-                    <img src="{% static 'images/partner/qr_code.png' %}" height="" alt="qr_code" class="img w-100 my-3"
+                    <img src="{% static 'images/partner/qr.jpg' %}" height="" alt="qr_code" class="img w-100 my-3"
                          style="border-radius: 10%; max-width: 150px" loading="eager">
                 </div>
             </div>
@@ -80,7 +80,7 @@
                     <p data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4 fs-6">{% translate 'ЧТОБЫ ПОЛУЧИТЬ' %} <strong style="color: #FD7014"> {% translate 'ОНЛАЙН МЕНЮ' %} </strong></p>
                     <a href="https://wa.me/77015302812?text=Здравствуйте, "
                    target="_blank">
-                        <button data-aos="fade-up" data-aos-delay="200" type="button"
+                        <button id="btn_contact" data-aos="fade-up" data-aos-delay="200" type="button"
                                 class="btn btn-success btn-rounded btn-animate">
                             {% translate 'Подключить' %}
                         </button>
@@ -366,7 +366,7 @@
                     </div>
                     <a href="https://wa.me/77015302812?text=Здравствуйте, "
                    target="_blank">
-                        <button type="button"
+                        <button id="btn_bronze" type="button"
                                 class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
                         </button>
@@ -468,7 +468,7 @@
                     </div>
                     <a href="https://wa.me/77015302812?text=Здравствуйте, "
                    target="_blank">
-                        <button type="button"
+                        <button id="btn_silver" type="button"
                                 class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
                         </button>
@@ -544,7 +544,7 @@
                     </div>
                     <a href="https://wa.me/77015302812?text=Здравствуйте, "
                    target="_blank">
-                        <button type="button"
+                        <button id="btn_gold" type="button"
                                 class="btn btn-success btn-rounded btn-animate mb-3">
                             {% translate 'Подключить' %}
                         </button>

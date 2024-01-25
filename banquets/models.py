@@ -209,6 +209,18 @@ class Banquet(models.Model):
     photo6 = models.ImageField(
         verbose_name="Фото 6", upload_to=subhall_photo_upload_to, blank=True, null=True
     )
+    photo7 = models.ImageField(
+        verbose_name="Фото 7", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo8 = models.ImageField(
+        verbose_name="Фото 8", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo9 = models.ImageField(
+        verbose_name="Фото 9", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo10 = models.ImageField(
+        verbose_name="Фото 10", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
 
     class Meta:
         verbose_name = "Банкетный зал"

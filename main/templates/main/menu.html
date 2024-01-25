@@ -18,9 +18,9 @@
 
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
-   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 100px; left: 15px; display: none; z-index: 100"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; right: 15px; display: none; z-index: 100"
    href="#header"
-    data-mdb-ripple-color="#FD7014">
+   data-mdb-ripple-color="#FD7014">
     <i class="fas fa-arrow-up-long"></i>
 </a>
 <!--button end-->
@@ -29,23 +29,25 @@
 <!--  MAIN CONTENT  -->
 
 
-
-
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/menu/6-min.jpg' %});
-    background-attachment: fixed;background-size: cover; background-repeat: no-repeat">
+    background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
 
     <!--Flying Cart-->
     <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
+       href="/cart/"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 15px; display: none; z-index: 101"
-       href="{% url 'cart:cart_page' %}"
-        data-mdb-ripple-color="#FD7014">
-            <i class="fas fa-cart-shopping my-0 py-0"></i>
+       data-mdb-ripple-color="#FD7014">
+        <i class="fas fa-cart-shopping my-0 py-0"></i>
     </a>
 
-    <!-- Modal -->
+<!--       data-mdb-toggle="modal"-->
+<!--       data-mdb-target="#cart_modal"-->
+
+<!--    Modal-->
 <!--    <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modal" aria-hidden="true">-->
-<!--        <div class="modal-dialog modal-xl" style="&#45;&#45;mdb-modal-header-border-color: #555555; &#45;&#45;mdb-modal-footer-border-color: #555555">-->
+<!--        <div class="modal-dialog modal-xl"-->
+<!--             style="&#45;&#45;mdb-modal-header-border-color: #555555; &#45;&#45;mdb-modal-footer-border-color: #555555">-->
 <!--            <div class="modal-content" style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.95), rgba(25, 25, 25, 0.95)), url({% static 'images/cart/4-min.jpg' %});-->
 <!--    background-attachment: fixed; background-size: cover; background-repeat: no-repeat">-->
 <!--                <div class="modal-header">-->
@@ -68,10 +70,12 @@
 <!--                            <div class="row">-->
 <!--                                <div class="d-flex content-justify-between">-->
 <!--                                    <div class="col fw-bold">-->
-<!--                                        <button class="btn btn-sm btn-danger btn-floating btn-animate shadow-0" data-mdb-ripple-color="danger"><i-->
+<!--                                        <button class="btn btn-sm btn-danger btn-floating btn-animate shadow-0"-->
+<!--                                                data-mdb-ripple-color="danger"><i-->
 <!--                                                class="fas fa-minus"></i></button>-->
 <!--                                        <span>000</span>-->
-<!--                                        <button class="btn btn-sm btn-success btn-floating btn-animate shadow-0" data-mdb-ripple-color="success"><i-->
+<!--                                        <button class="btn btn-sm btn-success btn-floating btn-animate shadow-0"-->
+<!--                                                data-mdb-ripple-color="success"><i-->
 <!--                                                class="fas fa-plus"></i></button>-->
 <!--                                    </div>-->
 
@@ -97,6 +101,7 @@
 <!--                <div class="modal-footer">-->
 <!--                    <button type="button" class="btn btn-danger" data-mdb-ripple-init data-mdb-dismiss="modal">-->
 <!--                        Закрыть-->
+<!--                    </button>-->
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
@@ -105,11 +110,12 @@
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
         <div class="col-12 text-center">
-            <div class="card text-white shadow user-select-none" style="background: rgba(25, 25, 25, 0.75); z-index: auto" >
+            <div class="card text-white shadow user-select-none"
+                 style="background: rgba(25, 25, 25, 0.75); z-index: auto">
                 <img src="{{client.logo.url}}"
                      class="card-img-top mx-auto mt-2 mb-0 shadow rounded" alt="logo image"
                      style="max-width: 220px"
-                    draggable="false">
+                     draggable="false">
 
                 <div class="card-body my-0 py-1">
                     <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
@@ -126,9 +132,11 @@
                             {% endif %}
 
                             {% if client.outside %}
-                            <span class="badge" data-mdb-toggle="tooltip" title="{% trans 'Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp' %}" style="background-color: rgba(253, 112, 20, 0.4)">
+                            <span class="badge" data-mdb-toggle="tooltip"
+                                  title="{% trans 'Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp' %}"
+                                  style="background-color: rgba(253, 112, 20, 0.4)">
                                 {% trans 'Доставка' %}
-                                <i class="fas fa-circle-question"  style="color:#fd7014"></i></span>
+                                <i class="fas fa-circle-question" style="color:#fd7014"></i></span>
                             {% endif %}
 
                             {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
@@ -139,7 +147,8 @@
 
                             {% if client_has_banquet %}
                             <a href="{% url 'banquets:banquet_page' url_name=client.url_name %}">
-                                <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
+                                <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i
+                                        class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
                             </a>
                             {% endif %}
 
@@ -185,7 +194,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
                             </a>
-<!--                            IF WHATSAPP-->
+                            <!--                            IF WHATSAPP-->
                             <a target="_blank"
                                href="https://wa.me/{{client.phone}}">
                                 <div class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
@@ -204,9 +213,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         </div>
     </div>
     <div class="container text-center my-3">
-        <h2 data-aos="fade-right" class="pt-4 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
+        <h2 class="pt-2 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
     </div>
-
 
 
     <!--  SWIPER -->
@@ -252,13 +260,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     <!--    FOOD TYPE SWIPER    -->
     <div class="sticky-top">
-        <div class="container-fluid py-2" style="background: rgba(33, 37, 41, 0.5); overflow-x: hidden;">
+        <div class="container-fluid py-2"
+             style="background: rgba(33, 37, 41, 0.7); overflow-x: hidden;">
             <div class="swiper-container">
                 <div class="swiper-wrapper text-center">
                     {% for ft in food_type %}
-                    <div class="swiper-slide mx-0">
-                        <a class="btn btn-rounded shadow-0 btn-animate"
-                           style="color: #fd7014; background: rgba(33, 37, 41, 0.8)" href="#{{ ft }}">
+                    <div class="swiper-slide me-1">
+                        <a class="btn btn-rounded shadow-0 btn-animate fw-bold"
+                           style="color: #fd7014; background: rgba(24, 24, 24, 0.95)" href="#{{ ft }}">
                             {{ ft }}
                         </a>
                     </div>
@@ -278,74 +287,115 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
 
     {% for ft in food_type %}
-    <h2 data-aos="fade-right" class="ms-5 mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+    <div class="col-12 text-center">
+        <h2 data-aos="fade-right" class="" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+    </div>
+
 
     <!--    DISH CONTENT    -->
     <div class="container-fluid my-3">
-        <div class="row gy-2 mx-auto justify-content-center">
+        <div class="row gy-3 mx-auto justify-content-center">
             {% for dish in dishes %}
             {% if dish.food_type == ft and not dish.stop %}
-            <div data-aos="fade-right" class="col-12 col-md-5 mx-auto"
+            <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3"
                  style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
-                <div class="row">
-                    <div class="col-8 col-lg-9 my-auto px-1 text-center">
-                        {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
+                <div class="d-flex">
+                    {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
+                    <div class="d-flex text-center">
                         <img src="{{ dish.image.url }}" alt="dish img"
-                             class="img bg-white mt-1"
-                             style="max-width: 80px; border-radius: 20px"
-                            draggable="false"
-                        loading="lazy">
-                        {% endif %}
-                        <h5 class="my-1 fw-bold">{{ dish.name }}</h5>
-                        <p class="mb-1">{{ dish.description }}</p>
+                             class="img bg-white"
+                             style="max-width: 138px; max-height: 138px; border-radius: 20px"
+                             draggable="false"
+                             loading="lazy">
                     </div>
-                    <div class="col-4 col-lg-3 text-center mx-0 my-auto ">
-                        {% if dish.old_price > dish.actual_price %}
-                        <del class="fs-4 text-danger">
-                            <p class="my-0" style="color: #fd7014">{{ dish.old_price|intcomma }}</p></del>
-                        {% endif %}
-                        <p class="my-0 fs-4 fw-bold" style="color: #fd7014">{{ dish.actual_price|intcomma }}
-                            ₸</p>
+                    {% endif %}
+                    <div class="container" style="width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;">
+                        <div style="width: 100%;
+    display: flex;
+    flex-direction: column;">
+                            <p class="fw-bold fs-5 mb-1" style="display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: inherit;
+    margin-bottom: 8px;
+    opacity: .9;
+    text-decoration: none;">{{ dish.name }}</p>
 
-                        <!--CART-->
-                        <form class="d-flex justify-content-between">
-                            {% csrf_token %}
-                            <!-- Кнопка "-" для уменьшения количества товара -->
-                            <input type="hidden" name="remove_quantity" value="1">
-                            <button class="btn btn-animate shadow-0 px-0 py-0 me-1" data-mdb-ripple-color="danger"
-                                    hx-post="{% url 'cart:remove_from_cart' dish.id %}"
-                                    hx-trigger="click"
-                                    hx-target="#product-quantity-{{ dish.id }}"
-                                    hidden="hidden">
-                                <i class="far fa-square-minus fa-3x text-danger"></i>
-                            </button>
+                            <p class="text-secondary" style="display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: inherit;
+    margin-bottom: 8px;
+    opacity: .9;
+    text-decoration: none;">{{ dish.description }}</p>
 
-                            <!--КОЛ-ВО БЛЮДА-->
-                            <span class="fw-bold fs-5" id="product-quantity-{{ dish.id }}"></span>
+                        </div>
+                        <div class="row">
+                            <div class="d-flex content-justify-between">
 
-                            <!-- Кнопка "+" для увеличения количества товара -->
-                            <input type="hidden" name="add_quantity" value="1">
-                            <button class="btn btn-animate shadow-0 px-0 py-0 ms-1" data-mdb-ripple-color="success"
-                                    hx-post="{% url 'cart:add_to_cart' dish.id %}"
-                                    hx-trigger="click"
-                                    hx-target="#product-quantity-{{ dish.id }}"><i
-                                    class="far fa-square-plus fa-3x text-success"></i>
-                            </button>
-                        </form>
-                        <script>
-                            // Добавление обработчика события для кнопки "+"
-                            document.querySelectorAll('button[data-mdb-ripple-color="success"]').forEach((button) => {
-                                const quantitySpanId = button.getAttribute("hx-target").substring(1); // Удаление "#"
-                                const minusButton = document.querySelector(`button[data-mdb-ripple-color="danger"][hx-target="#${quantitySpanId}"]`);
+                                <div class="col text-start fs-5" style="color: #DF7014">
+                                    {% if dish.old_price > dish.actual_price %}
+                                    <del>{{dish.old_price}} ₸</del>
+                                    {% endif %}
+                                    <span class="fw-bold">{{dish.actual_price}} ₸</span>
+                                </div>
 
-                                button.addEventListener("click", () => {
-                                    // Сделаем кнопку "-" видимой
-                                    minusButton.removeAttribute("hidden");
+                                <div class="col fw-bold my-auto">
+                                    <!--CART-->
+                                    <form class="d-flex justify-content-between">
+                                        {% csrf_token %}
+                                        <!-- Кнопка "-" для уменьшения количества товара -->
+                                        <input type="hidden" name="remove_quantity" value="1">
+                                        <button class="btn btn-animate shadow-0 px-0 py-0 me-1"
+                                                data-mdb-ripple-color="danger"
+                                                data-mdb-ripple-radius="10"
+                                                hx-post="{% url 'cart:remove_from_cart' dish.id %}"
+                                                hx-trigger="click"
+                                                hx-target="#product-quantity-{{ dish.id }}"
+                                                hidden="hidden">
+                                            <i class="fas fa-circle-minus fa-2x text-danger"></i>
+                                        </button>
 
-                                    // Другие действия, которые вы хотите выполнить при нажатии на "+"
-                                });
-                            });
-                        </script>
+                                        <!--КОЛ-ВО БЛЮДА-->
+                                        <span class="fw-bold fs-5" id="product-quantity-{{ dish.id }}"></span>
+
+                                        <!-- Кнопка "+" для увеличения количества товара -->
+                                        <input type="hidden" name="add_quantity" value="1">
+                                        <button class="btn btn-animate shadow-0 px-0 py-0 ms-1"
+                                                data-mdb-ripple-color="success"
+                                                data-mdb-ripple-radius="10"
+                                                hx-post="{% url 'cart:add_to_cart' dish.id %}"
+                                                hx-trigger="click"
+                                                hx-target="#product-quantity-{{ dish.id }}">
+                                                <i class="fas fa-circle-plus fa-2x text-success"></i>
+                                        </button>
+                                    </form>
+                                    <script>
+                                        // Добавление обработчика события для кнопки "+"
+                                        document.querySelectorAll('button[data-mdb-ripple-color="success"]').forEach((button) => {
+                                            const quantitySpanId = button.getAttribute("hx-target").substring(1); // Удаление "#"
+                                            const minusButton = document.querySelector(`button[data-mdb-ripple-color="danger"][hx-target="#${quantitySpanId}"]`);
+                                            button.addEventListener("click", () => {
+                                                // Сделаем кнопку "-" видимой
+                                                minusButton.removeAttribute("hidden");
+
+                                                // Другие действия, которые вы хотите выполнить при нажатии на "+"
+                                            });
+                                        });
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
