@@ -34,8 +34,8 @@ class BanquetList(View):
                 banquets = banquets.filter(price_min__gte=3000, price_min__lte=5000)
             elif price_min_max == "10000":
                 banquets = banquets.filter(price_min__gte=5000, price_min__lte=10000)
-            elif price_min_max == "15000":
-                banquets = banquets.filter(price_min__gte=10000, price_min__lte=15000)
+            elif price_min_max == "10001":
+                banquets = banquets.filter(price_min__gte=10001)
 
         if city:
             if city == "Temirtau" or city == "Темиртау" or city == "Теміртау":
@@ -55,6 +55,12 @@ class BanquetList(View):
                     Q(city__name="Almaty")
                     | Q(city__name="Алматы")
                     | Q(city__name="Алматы")
+            )
+            elif city == "Astana" or city == "Астана" or city == "Астана":
+                banquets = banquets.filter(
+                    Q(city__name="Astana")
+                    | Q(city__name="Астана")
+                    | Q(city__name="Астана")
             )
 
         context = {"banquets": banquets, "cities": cities}
