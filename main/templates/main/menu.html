@@ -304,7 +304,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     <div class="d-flex text-center">
                         <img src="{{ dish.image.url }}" alt="dish img"
                              class="img bg-white"
-                             style="max-width: 138px; max-height: 138px; border-radius: 20px"
+                             style="max-width: 130px; max-height: 130px; border-radius: 10px"
                              draggable="false"
                              loading="lazy">
                     </div>
@@ -350,9 +350,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     <span class="fw-bold">{{dish.actual_price}} ₸</span>
                                 </div>
 
-                                <div class="col fw-bold my-auto">
+
                                     <!--CART-->
-                                    <form class="d-flex justify-content-between">
+                                    <form class="d-flex justify-content-between ms-5" style="width: 82px">
                                         {% csrf_token %}
                                         <!-- Кнопка "-" для уменьшения количества товара -->
                                         <input type="hidden" name="remove_quantity" value="1">
@@ -393,7 +393,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                             });
                                         });
                                     </script>
-                                </div>
+
                             </div>
                         </div>
                     </div>
