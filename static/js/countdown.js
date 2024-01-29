@@ -24,7 +24,7 @@
             // If the countdown is finished, display a message
             if (timeDifference < 0) {
                 clearInterval(countdownTimer);
-                document.getElementById("countdown").innerHTML = "<h2>Time</h2>";
+                document.getElementById("countdown").innerHTML = "<h2>Акция</h2>";
             }
         }, 1000);
 

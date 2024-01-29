@@ -303,10 +303,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                     <div class="d-flex text-center">
                         <img src="{{ dish.image.url }}" alt="dish img"
-                             class="img bg-white"
+                             class="img bg-white position-relative"
                              style="max-width: 130px; max-height: 130px; border-radius: 10px"
                              draggable="false"
                              loading="lazy">
+                        {% if dish.generated %}
+                        <div class="position-absolute top-0 start-0" data-mdb-toggle="tooltip"
+                             title="{% trans 'Фото сгенериновано YAEM AI' %}">
+                            <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle" style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>
+                        </div>
+                        {% endif %}
                     </div>
                     {% endif %}
                     <div class="container" style="width: 100%;
@@ -317,16 +323,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                         <div style="width: 100%;
     display: flex;
     flex-direction: column;">
-                            <p class="fw-bold fs-5 mb-1" style="display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-weight: 600;
+                            <p class="fw-bold fs-5 mb-1" style="font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     color: inherit;
     margin-bottom: 8px;
     opacity: .9;
-    text-decoration: none;">{{ dish.name }}</p>
+    text-decoration: none;">{{ dish.name }}
+                                {% if dish.popular %}
+                                <span data-mdb-toggle="tooltip"
+                             title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs" style="color: gold"></i></span>
+                                {% endif %}
+                                {% if dish.spicy %}
+                                <span data-mdb-toggle="tooltip"
+                             title="{% trans 'Острое' %}"><i class="fas fa-pepper-hot text-danger fa-xs"></i></span>
+                                {% endif %}
+                                {% if dish.vegetarian %}
+                                <span data-mdb-toggle="tooltip"
+                             title="{% trans 'Вегетерианское' %}"><i class="fas fa-seedling text-success fa-xs"></i></i></span>
+                                {% endif %}
+                            </p>
 
                             <p class="text-secondary" style="display: flex;
     flex-direction: column;
