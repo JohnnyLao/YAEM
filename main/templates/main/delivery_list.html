@@ -23,27 +23,27 @@
 <!--COUNTER START-->
 <section class="" style="background: #212529">
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center fs-4 py-2 fw-bold" style="color: #fd7014">
-            <div class="col-6 col-lg-4">
+        <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
+            <div class="col-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{total_clients}}" class="indicators-title"></div>
+                    <div data-num="{{total_clients}}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
                     </i> {% trans 'Заведений' %}
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-4">
                 <div class="indicators-item"> <!--item-1-->
-                    <div data-num={{total_dishes}} class="indicators-title"></div>
+                    <div data-num={{total_dishes}} class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
 
                     </i> {% trans 'Блюд' %}
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-4">
                 <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title"></div>
+                    <div data-num={{total_orders}} class="indicators-title fs-5"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -59,7 +59,7 @@
              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.8)), url({% static 'images/delivery/7-min.jpg' %});
     background-attachment: fixed; background-size: cover; min-height: 100vh">
         <div class="container">
-            <h1 class="pt-4 fw-bold text-center" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
+            <h1 class="pt-2 fw-bold text-center" style="color: #fd7014">{% translate 'ЗАВЕДЕНИЯ' %}</h1>
 
             <div class="row gy-3">
                 <div class="col-12 text-center mx-auto">
@@ -68,18 +68,18 @@
                     <div class="btn-group-sm" role="group">
                         <a href="{% url 'main:delivery_list_page' %}"
                            {% if city_selected is None %}
-                           class="btn btn-warning btn-animate"
+                           class="btn btn-warning btn-animate my-1"
                            {% else %}
-                           class="btn btn-success btn-animate"
+                           class="btn btn-success btn-animate my-1"
                            {% endif %}>{% translate 'Все' %}
                         </a>
 
                         {% for city in cities %}
                         <a href="{% url 'main:city_filter' city.slug %}"
                            {% if city.pk == city_selected.pk %}
-                           class="btn btn-warning btn-animate"
+                           class="btn btn-warning btn-animate my-1"
                            {% else %}
-                           class="btn btn-success btn-animate"
+                           class="btn btn-success btn-animate my-1"
                            {% endif %}>{{ city }}
                         </a>
                         {% endfor %}
@@ -109,37 +109,39 @@
         </div>
 
         <div class="container">
-            <div class="row my-3 gy-3 mx-auto justify-content-center">
+            <div class="row gy-3 mx-auto justify-content-center">
 
                 <!--- цикл -->
                 {% for client in clients %}
                 {% if client.status  %}
 <!--                and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО"-->
+
                 <div class="col-12 col-md-6 col-lg-4 text-center">
                     <div class="card text-white" style="background: rgba(33, 37, 41, 0.75)">
-                        <img data-aos="zoom-out-right" src="{{client.logo.url}}"
-                             class="card-img-top mx-auto mt-2 mb-0 rounded"
-                             alt="logo image"
-                             style="width: auto; height: 225px"
-                             draggable="false">
-
+                        <a href="{% url 'main:menu_page' url_name=client.url_name %}">
+                            <img src="{{client.logo.url}}"
+                                 class="card-img-top mx-auto mt-2 mb-0 rounded btn-animate"
+                                 alt="logo image"
+                                 style="width: auto; height: 225px"
+                                 draggable="false">
+                        </a>
                         <div class="card-body my-0 py-1">
-                            <h4 data-aos="zoom-out-right" class="card-title my-0">{{ client.name }}
+                            <h4 data-aos="flip-up" class="card-title my-0">{{ client.name }}
 <!--                            <span>-->
 <!--                                <a href="#">-->
 <!--                                    <button class="btn btn-success btn-animate px-1 py-0 mb-3">{% translate 'Банкет' %}</button>-->
 <!--                                </a>-->
 <!--                            </span>-->
                             </h4>
-                            <p data-aos="zoom-out-right" class="my-0 text-white-50">
+                            <p data-aos="flip-up" class="my-0 text-white-50">
                                 {{ client.address }}</p>
-                            <p data-aos="zoom-out-right" class="my-0 text-white-50">
+                            <p data-aos="flip-up" class="my-0 text-white-50">
                                 {% translate 'Время работы' %}:
                                 {{ client.working_time }}</p>
 
 
                             <div class="row my-0">
-                                <div data-aos="zoom-out-right" class="col-6 my-0">
+                                <div data-aos="flip-up" class="col-6 my-0">
                                     <p class="text my-0"> {% translate 'Самовывоз' %}
                                         {% if client.outside %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -157,7 +159,7 @@
                                     </p>
                                     {% endif %}
                                 </div>
-                                <div data-aos="fade-up" class="col-6 my-0">
+                                <div data-aos="flip-up" class="col-6 my-0">
                                     <p class="my-0">{% translate 'Доставка' %}
                                         {% if client.delivery %}
                                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
@@ -176,11 +178,6 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="{% url 'main:menu_page' url_name=client.url_name %}">
-                                <button data-aos="fade-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">
-                                    {% translate 'Перейти' %}
-                                </button>
-                            </a>
                         </div>
                     </div>
                 </div>

@@ -71,7 +71,7 @@ class BanquetCard(models.Model):
         max_length=30, verbose_name="Телефон", blank=True, null=True, unique=True
     )
     z_index = models.IntegerField(
-        verbose_name="Порядковый №", blank=True, null=True, unique=True
+        verbose_name="Порядковый №", blank=True, null=True, default=11
     )
 
     class Meta:
@@ -143,14 +143,12 @@ class Banquet(models.Model):
         to=BanquetCard,
         on_delete=models.CASCADE,
         verbose_name="Карточка банкетного зала",
-        blank=True,
         null=True,
     )
     name = models.CharField(
         max_length=256, verbose_name="Название зала", default="Банкетный зал"
     )
-    description = models.CharField(
-        max_length=256,
+    description = models.TextField(
         default="Добро пожаловать! Всегда рады видеть вас.",
         verbose_name="Описание зала",
         blank=True,
@@ -210,6 +208,18 @@ class Banquet(models.Model):
     )
     photo6 = models.ImageField(
         verbose_name="Фото 6", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo7 = models.ImageField(
+        verbose_name="Фото 7", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo8 = models.ImageField(
+        verbose_name="Фото 8", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo9 = models.ImageField(
+        verbose_name="Фото 9", upload_to=subhall_photo_upload_to, blank=True, null=True
+    )
+    photo10 = models.ImageField(
+        verbose_name="Фото 10", upload_to=subhall_photo_upload_to, blank=True, null=True
     )
 
     class Meta:

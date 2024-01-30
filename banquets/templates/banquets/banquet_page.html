@@ -20,20 +20,20 @@
 <!--button end-->
 
 <section style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
-    background-attachment: fixed; background-size: cover; min-height: 40vh">
+    background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; min-height: 500px">
     <div class="container py-3">
         <div class="card text-white" style="background: rgba(33, 37, 41, 0.75)">
 
-            <h1 class="py-3 fw-bold text-center">{% translate 'Банкетные залы' %}
+            <h2 class="py-1 fw-bold text-center">{% translate 'Банкетные залы' %}
                 <span style="color: #fd7014"> {{ banquet.name }}</span>
-            </h1>
+            </h2>
             <!-- Tabs navs -->
-            <ul class="nav nav-tabs d-flex justify-content-center mb-3" id="ex1" role="tablist"
+            <ul class="nav nav-tabs d-flex justify-content-center my-1" id="ex1" role="tablist"
                 style="--mdb-nav-tabs-link-active-bg: rgba(253, 112, 20, 0.1)">
                 {% for hall in subhall %}
                 <li class="nav-item" role="presentation">
                     <a
-                            class="nav-link fs-5 border rounded-5 fw-bold mx-3 my-2"
+                            class="nav-link fs-6 border rounded-5 fw-bold mx-3 my-2"
                             id="ex1-tab-{{hall.hall_no}}"
                             data-mdb-toggle="tab"
                             href="#ex1-tabs-{{hall.hall_no}}"
@@ -246,7 +246,7 @@
                             {% trans 'ресторана' %} <span class="fw-bold" style="color: #fd7014">{{ banquet.name }}</span>
                         </h1>
 
-                        <div data-aos="flip-left" class="col-12 px-0 mb-4 mt-0 mx-auto text-center">
+                        <div data-aos="flip-up" class="col-12 px-0 mb-4 mt-0 mx-auto text-center">
 
                             <a href="{{ banquet.inst }}" target="_blank">
                                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
@@ -304,8 +304,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                              style="background-color: rgba(253, 112, 20, 0.15); border-color: #fd7014">
                             <div class="row gy-3">
 
-                                <div  class="col-12 col-lg-4 mx-auto text-center">
-                                    <p class="fs-5 fw-bold text-light my-0">{% trans 'Кухня' %}</p>
+                                <div  class="col-12 col-lg-4 mx-auto my-auto text-center">
+                                    <p class="fs-5 fw-bold text-light mt-2 mb-0">{% trans 'Кухня' %}</p>
                                     <div data-aos="fade-right" class="d-flex justify-content-center"
                                          style="color: #FD7014">
                                         <div class="col-2 my-auto">
@@ -323,8 +323,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-lg-4 mx-auto text-center ">
-                                    <p class="fs-5 fw-bold text-light my-0">{% trans 'Средний Чек' %}</p>
+                                <div class="col-12 col-lg-4 mx-auto my-auto text-center ">
+                                    <p class="fs-5 fw-bold text-light mt-2 mb-0">{% trans 'Средний Чек' %}</p>
                                     <div data-aos="fade-right" class="d-flex justify-content-center"
                                          style="color: #FD7014">
                                         <div class="col-2 my-auto">
@@ -348,8 +348,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     </div>
                                 </div>
 
-                                <div class="col-12 col-lg-4 mx-auto text-center 5">
-                                    <p class="fs-5 fw-bold text-light my-0">{% trans 'Вместимость' %}</p>
+                                <div class="col-12 col-lg-4 mx-auto my-auto text-center 5">
+                                    <p class="fs-5 fw-bold text-light mt-2 mb-0">{% trans 'Вместимость' %}</p>
                                     <div data-aos="fade-right" class="d-flex justify-content-center mt-2"
                                          style="color: #FD7014">
                                         <div class="col-2 my-auto">

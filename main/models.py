@@ -50,7 +50,7 @@ class Client(models.Model):
     name = models.CharField(max_length=20, verbose_name="Название")
     city = models.ForeignKey(City, models.CASCADE, verbose_name="Город")
     logo = models.ImageField(upload_to=client_logo_upload_to, verbose_name="Лого")
-    description = models.TextField(verbose_name="Описание", max_length=60)
+    description = models.TextField(verbose_name="Описание", max_length=100)
     working_time = models.CharField(max_length=20, verbose_name="Рабочее время")
     address = models.CharField(max_length=50, verbose_name="Адрес")
     phone = models.DecimalField(max_digits=15, decimal_places=0, verbose_name="Телефон")
@@ -125,6 +125,10 @@ class Dish(models.Model):
     image = models.ImageField(
         verbose_name="Фото", upload_to=dish_image_upload_to, blank=True, null=True
     )
+    generated = models.BooleanField(verbose_name="Фото сгенерировано", default=0)
+    popular = models.BooleanField(verbose_name="Популярное (знак)", default=0)
+    spicy = models.BooleanField(verbose_name="Острое (знак)", default=0)
+    vegetarian = models.BooleanField(verbose_name="Вегетерианское (знак)", default=0)
     description = models.TextField(verbose_name="Описание", max_length=100, blank=True)
     stop = models.BooleanField(verbose_name="Стоп Лист")
     old_price = models.DecimalField(
