@@ -4,7 +4,7 @@ from django.views.decorators.cache import cache_page
 from banquets.views import BanquetList, BanquetPage
 from Yaem.settings import CACHES_LIFE_TIME
 
-app_name = "cart"
+app_name = "banquets"
 
 urlpatterns = [
     path(
