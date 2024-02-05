@@ -47,7 +47,7 @@ class Banquet(models.Model):
 
     memorials = models.CharField(
         max_length=256,
-        verbose_name="Стоимость поминок(XXXX-XXXX)",
+        verbose_name="Стоимость поминок(XXXX - XXXX)",
         blank=True,
         null=True,
     )

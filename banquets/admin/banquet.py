@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from banquets.models import Banquet, FeaturesOfTheBanquetHall, KitchenType
 
-
+#TODO в ватсапе росписал
 class KitchenTypeInlineAdmin(admin.TabularInline):
     model = Banquet.kitchen_types.through
     extra = 1
@@ -19,9 +19,8 @@ class FeaturesOfTheBanquetHallInlineAdmin(admin.TabularInline):
 
 @admin.register(Banquet)
 class BanquetAdmin(admin.ModelAdmin):
-    list_display = ("id", "banquet_card", "name", "get_city")
-    list_filter = ("banquet_card",)
-    list_display_links = ('id', 'name', )
+    list_display = ("banquet_card", "name", "get_city")
+    list_filter = ("banquet_card",) #TODO ты можешь циклом пройтись и узнать в каком зале пусто, и не отображать его, подумай =)
     exclude = (
         "kitchen_types",
         "features_name",

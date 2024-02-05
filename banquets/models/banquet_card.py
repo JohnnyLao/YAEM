@@ -32,8 +32,8 @@ class BanquetCard(models.Model):
     min_capacity = models.PositiveIntegerField(
         verbose_name="Минимальная вместимость", blank=True, null=True
     )
-    price_max = models.PositiveIntegerField(verbose_name="Макс. цена за человека")
     price_min = models.PositiveIntegerField(verbose_name="Мин. цена за человека")
+    price_max = models.PositiveIntegerField(verbose_name="Макс. цена за человека")
     status = models.BooleanField(verbose_name="Активен")
     working_time = models.CharField(
         max_length=20, verbose_name="Рабочее время", blank=True, null=True
@@ -58,8 +58,8 @@ class BanquetCard(models.Model):
     )
 
     class Meta:
-        verbose_name = "Карточку банкетного зала"
-        verbose_name_plural = "Карточки банкетных залов"
+        verbose_name = "Карточка зала"
+        verbose_name_plural = "Карточки залов"
         ordering = ("-z_index",)
 
     def __str__(self):
