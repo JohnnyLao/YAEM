@@ -4,4 +4,4 @@
 /server_files/
 /fixtures/
 /venv/
-db.sqlite3
+/db.sqlite3

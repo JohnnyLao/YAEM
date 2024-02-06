@@ -1,11 +1,3 @@
-all:
-	python manage.py makemigrations
-	python manage.py migrate
-	python loaddata data.json
-	black .
-	isort .
-
-
 code-format:
 	black .
 	isort .
@@ -13,6 +5,9 @@ code-format:
 migrate:
 	python manage.py makemigrations
 	python manage.py migrate
+
+dumpdata:
+	python manage.py dumpdata > data.json
 
 loaddata:
 	python manage.py loaddata data.json

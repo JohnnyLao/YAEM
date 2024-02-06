@@ -1,49 +1,28 @@
 import os
 from pathlib import Path
 
-import environ
 from django.utils.translation import gettext_lazy as _
-
-# environ
-env = environ.Env(
-    SECRET_KEY=str,
-    DEBUG=str,
-)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(BASE_DIR / ".env")
+SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_')
 
-SECRET_KEY = env("SECRET_KEY")
+DEBUG = os.environ.get('DEBUG', True)
 
-# mutable variables
-DEBUG = env('DEBUG')
-if DEBUG:
-    ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
-else:
-    ALLOWED_HOSTS = ["yaem.kz", "www.yaem.kz"]
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default="127.0.0.1,localhost").split(',')
 
-# Database
-if DEBUG:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "db.sqlite3",
-        }
+# databases
+DATABASES = {
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("POSTGRES_DB", os.path.join(BASE_DIR, "db.sqlite3")),
+        "USER": os.environ.get("POSTGRES_USER", "user"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
+        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
+        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
     }
-else:
-    # postgresql for prod
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'yaem',
-            'USER': 'root',
-            'PASSWORD': '5553210',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
-    }
-# end mutable variables
+}
+
 
 INSTALLED_APPS = [
     # modern admin
@@ -71,9 +50,6 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
-    # 'allauth.socialaccount.providers.google',
-    # 'allauth.socialaccount.providers.facebook',
-    # 'allauth.socialaccount.providers.mailru',
 ]
 
 MIDDLEWARE = [
@@ -189,7 +165,6 @@ INTERNAL_IPS = [
 JAZZMIN_UI_TWEAKS = {
     "theme": "litera",
 }
-
 JAZZMIN_SETTINGS = {
     "topmenu_links": [
         {

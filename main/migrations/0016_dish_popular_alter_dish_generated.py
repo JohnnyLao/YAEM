@@ -4,20 +4,19 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('main', '0015_dish_generated'),
+        ("main", "0015_dish_generated"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='dish',
-            name='popular',
-            field=models.BooleanField(default=0, verbose_name='Популярное (знак)'),
+            model_name="dish",
+            name="popular",
+            field=models.BooleanField(default=0, verbose_name="Популярное (знак)"),
         ),
         migrations.AlterField(
-            model_name='dish',
-            name='generated',
-            field=models.BooleanField(default=0, verbose_name='Фото сгенерировано'),
+            model_name="dish",
+            name="generated",
+            field=models.BooleanField(default=0, verbose_name="Фото сгенерировано"),
         ),
     ]

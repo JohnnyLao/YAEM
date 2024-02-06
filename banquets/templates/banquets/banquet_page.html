@@ -142,36 +142,58 @@
                         <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
                              class="swiper mySwiper2{{hall.hall_no}} my-3">
                             <div class="swiper-wrapper">
+
                                 {% if hall.photo1 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo1.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo1.url }}"/>
                                 </div>
                                 {% endif %}
                                 {% if hall.photo2 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo2.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo2.url }}"/>
                                 </div>
                                 {% endif %}
                                 {% if hall.photo3 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo3.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo3.url }}"/>
                                 </div>
                                 {% endif %}
                                 {% if hall.photo4 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo4.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo4.url }}"/>
                                 </div>
                                 {% endif %}
                                 {% if hall.photo5 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo5.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo5.url }}"/>
                                 </div>
                                 {% endif %}
                                 {% if hall.photo6 %}
                                 <div class="swiper-slide">
-                                    <img src="{{ hall.photo6.url }}"/>
+                                    <img style="width: auto" src="{{ hall.photo6.url }}"/>
                                 </div>
                                 {% endif %}
+                                {% if hall.photo7 %}
+                                <div class="swiper-slide">
+                                    <img style="width: auto" src="{{ hall.photo7.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo8 %}
+                                <div class="swiper-slide">
+                                    <img style="width: auto" src="{{ hall.photo8.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo9 %}
+                                <div class="swiper-slide">
+                                    <img style="width: auto" src="{{ hall.photo9.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo10 %}
+                                <div class="swiper-slide">
+                                    <img style="width: auto" src="{{ hall.photo10.url }}"/>
+                                </div>
+                                {% endif %}
+
                             </div>
                             <div class="swiper-button-next" style="color: #fd7014"></div>
                             <div class="swiper-button-prev" style="color: #fd7014"></div>
@@ -209,6 +231,26 @@
                                     <img src="{{ hall.photo6.url }}"/>
                                 </div>
                                 {% endif %}
+                                {% if hall.photo7 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ hall.photo7.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo8 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ hall.photo8.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo9 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ hall.photo9.url }}"/>
+                                </div>
+                                {% endif %}
+                                {% if hall.photo10 %}
+                                <div class="swiper-slide">
+                                    <img src="{{ hall.photo10.url }}"/>
+                                </div>
+                                {% endif %}
                             </div>
                         </div>
 
@@ -229,7 +271,7 @@
                             var swiper2 = new Swiper(".mySwiper2{{hall.hall_no}}", {
                               loop: true,
                               spaceBetween: 10,
-                              effect: "fade",
+                              effect: "coverflow",
                               grabCursor: true,
                               navigation: {
                                 nextEl: ".swiper-button-next",
