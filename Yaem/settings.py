@@ -5,11 +5,15 @@ from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get("SECRET_KEY", 'django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_')
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", "django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_"
+)
 
-DEBUG = os.environ.get('DEBUG', True)
+DEBUG = os.environ.get("DEBUG", True)
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', default="127.0.0.1,localhost").split(',')
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(
+    ","
+)
 
 # databases
 DATABASES = {
