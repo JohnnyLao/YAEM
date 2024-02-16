@@ -30,8 +30,8 @@
 
 
 <section class="skrollable pb-5"
-         style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/menu/6-min.jpg' %});
-    background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
+         style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/menu/bg5.jpg' %});
+    background-repeat: repeat">
 
     <!--Flying Cart-->
     <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
@@ -128,26 +128,26 @@
                     <div class="row my-1 d-flex justify-content-around">
                         <div class="col-12 text-center fs-5">
                             {% if client.outside %}
-                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Самовывоз' %}</span>
+                            <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Самовывоз' %}</span>
                             {% endif %}
 
                             {% if client.outside %}
-                            <span class="badge" data-mdb-toggle="tooltip"
+                            <span data-aos="flip-up" class="badge" data-mdb-toggle="tooltip"
                                   title="{% trans 'Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp' %}"
                                   style="background-color: rgba(253, 112, 20, 0.4)">
                                 {% trans 'Доставка' %}
                                 <i class="fas fa-circle-question" style="color:#fd7014"></i></span>
                             {% endif %}
 
-                            {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                            <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Меню' %}
+                            {% if client.translated %}
+                            <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Меню' %}
                                 <i class="flag flag-kz"></i><i class="flag flag-ru"></i><i class="flag flag-uk"></i>
                             </span>
                             {% endif %}
 
                             {% if client_has_banquet %}
                             <a href="{% url 'banquets:banquet_page' url_name=client.url_name %}">
-                                <span class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i
+                                <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i
                                         class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
                             </a>
                             {% endif %}
@@ -157,11 +157,11 @@
 
                     {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
                     <div class="row my-2 d-flex justify-content-around">
-                        <div data-aos="flip-left" class="col-8">
+                        <div class="col-8">
 
                             {% if client.inst %}
                             <a href="{{ client.inst }}" target="_blank">
-                                <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
+                                <div data-aos="flip-left" class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -175,7 +175,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
                             {% if client.two_gis %}
                             <a href="{{ client.two_gis }}" target="_blank">
-                                <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
+                                <div data-aos="flip-left" data-aos-delay="50" class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -190,14 +190,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
                             {% if client.phone %}
                             <a href="tel:+{{client.phone}}">
-                                <div class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
+                                <div data-aos="flip-left" data-aos-delay="100" class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
                             </a>
                             <!--                            IF WHATSAPP-->
                             <a target="_blank"
                                href="https://wa.me/{{client.phone}}">
-                                <div class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
+                                <div data-aos="flip-left" data-aos-delay="150" class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fab fa-whatsapp fa-2x"></i>
                                 </div>
                             </a>
@@ -220,75 +220,78 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     <!--  SWIPER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <!-- Demo styles -->
-    <style>
-        body {
-          background: #eee;
-          font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-          font-size: 14px;
-          color: #000;
-          margin: 0;
-          padding: 0;
-        }
-
+     <style>
         .swiper {
-          width: 100%;
-          padding-top: 50px;
-          padding-bottom: 50px;
-          transition: opacity 0.3s ease;
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            transition: opacity 0.3s ease;
         }
 
         .swiper-wrapper {
-        height:auto;
+            height: auto;
         }
 
         .swiper-slide {
-          background-position: center;
-          background-size: cover;
-          width: auto;
-          height: auto;
+            background-position: center;
+            background-size: cover;
+            width: auto;
         }
 
         .swiper-slide img {
-          display: block;
-          width: 100%;
+            display: block;
+            width: 100%;
+        }
+
+        .sticky-top {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .food-type-button {
+            color: #fd7014;
+            background: rgba(24, 24, 24, 0.95);
+        }
+
+        .food-type-button.active {
+            font-weight: bold;
+            background: rgba(24, 24, 24, 0.95);
+        }
 
     </style>
 
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/food_swiper.js' %}"></script>
 
     <!--    FOOD TYPE SWIPER    -->
     <div class="sticky-top">
-        <div class="container-fluid py-2 my-3"
-             style="background: rgba(33, 37, 41, 0.7); overflow-x: hidden;">
-            <div class="swiper-container">
-                <div class="swiper-wrapper text-center">
-                    {% for ft in food_type %}
-                    <div class="swiper-slide me-1">
-                        <a class="btn btn-rounded shadow-0 btn-animate fw-bold"
-                           style="color: #fd7014; background: rgba(24, 24, 24, 0.95)" href="#{{ ft }}">
-                            {{ ft }}
-                        </a>
-                    </div>
-                    {% endfor %}
+    <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: scroll; scroll-behavior: smooth; scrollbar-color: transparent transparent; /* Firefox */">
+        <div class="swiper-container" id="foodTypeSwiper">
+            <div class="swiper-wrapper text-center">
+                {% for ft in food_type %}
+                <div class="swiper-slide me-1">
+                    <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button" data-target="{{ ft }}"
+                       style="" href="#{{ ft }}">
+                        {{ ft }}
+                    </a>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 'auto',
-            spaceBetween: 0,
-});
-    </script>
+
     <!--    FOOD TYPE DOWN    -->
 
 
     {% for ft in food_type %}
     <div class="col-12 text-center">
-        <h2 data-aos="fade-right" class="" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
     </div>
 
 
@@ -297,13 +300,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         <div class="row gy-3 mx-auto justify-content-center">
             {% for dish in dishes %}
             {% if dish.food_type == ft and not dish.stop %}
-            <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3"
-                 style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">
+            <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
+                 style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                 <div class="d-flex">
                     {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                    <div class="d-flex text-center">
+                    <div class="d-flex text-center" style="min-width: 130px; background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
                         <img src="{{ dish.image.url }}" alt="dish img"
-                             class="img bg-white position-relative"
+                             class="img bg-white position-relative mx-auto"
                              style="max-width: 130px; max-height: 130px; border-radius: 10px"
                              draggable="false"
                              loading="lazy">
@@ -332,38 +335,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     text-decoration: none;">{{ dish.name }}
                                 {% if dish.popular %}
                                 <span data-mdb-toggle="tooltip"
-                             title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs" style="color: gold"></i></span>
+                                      title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
+                                                                          style="color: gold"></i>
+                                </span>
                                 {% endif %}
                                 {% if dish.spicy %}
                                 <span data-mdb-toggle="tooltip"
-                             title="{% trans 'Острое' %}"><i class="fas fa-pepper-hot text-danger fa-xs"></i></span>
+                                      title="{% trans 'Острое' %}"><i
+                                        class="fas fa-pepper-hot text-danger fa-xs"></i>
+                                </span>
                                 {% endif %}
                                 {% if dish.vegetarian %}
                                 <span data-mdb-toggle="tooltip"
-                             title="{% trans 'Вегетарианское' %}"><i class="fas fa-seedling text-success fa-xs"></i></i></span>
+                                      title="{% trans 'Вегетарианское' %}"><i
+                                        class="fas fa-seedling text-success fa-xs"></i>
+                                </span>
                                 {% endif %}
                             </p>
-
                             <p class="text-secondary" style="display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-    color: inherit;
-    margin-bottom: 8px;
-    opacity: .9;
-    text-decoration: none;">{{ dish.description }}</p>
+                                flex-direction: column;
+                                align-items: flex-start;
+                                font-weight: 600;
+                                font-size: 16px;
+                                line-height: 19px;
+                                color: inherit;
+                                margin-bottom: 8px;">{{ dish.description }}
+                            </p>
 
                         </div>
                         <div class="row">
                             <div class="d-flex content-justify-between">
 
-                                <div class="col text-start fs-5" style="color: #DF7014">
+                                <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
                                     {% if dish.old_price > dish.actual_price %}
-                                    <del>{{dish.old_price}} ₸</del>
+                                    <p class="mb-0"><del>{{dish.old_price}} ₸</del></p>
                                     {% endif %}
-                                    <span class="fw-bold">{{dish.actual_price}} ₸</span>
+                                    <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
                                 </div>
 
 
