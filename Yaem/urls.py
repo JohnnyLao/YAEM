@@ -3,11 +3,24 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
+                                   SpectacularSwaggerView)
 
 urlpatterns = [
     # admin URLS
     path("admin/", admin.site.urls),
+    # api v1
+    path("api/v1/", include("api_v1.urls", namespace="api_v1")),
+    # Online documentation
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "api/v1-ui/",
+        SpectacularSwaggerView.as_view(url_name="schema"),
+        name="swagger-ui",
+    ),
+    path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
 ]
+
 
 urlpatterns += i18n_patterns(
     path("", include("main.urls", namespace="main")),

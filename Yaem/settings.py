@@ -50,6 +50,10 @@ INSTALLED_APPS = [
     "debug_toolbar",
     # translation
     "modeltranslation",
+    # swagger
+    "drf_spectacular",
+    # django rest
+    "rest_framework",
     # all auth
     "allauth",
     "allauth.account",
@@ -198,6 +202,53 @@ JAZZMIN_SETTINGS = {
     ],
 }
 
-# Celery settings
-# CELERY_BROKER_URL = "redis://localhost:6379"
-# CELERY_RESULT_BACKEND = "redis://localhost:6379"
+#########################
+# DJANGO REST FRAMEWORK
+#########################
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAdminUser",),
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        # "rest_framework_simplejwt.authentication.JWTAuthentication",
+        "rest_framework.authentication.BasicAuthentication",
+    ],
+    "DEFAULT_PARSER_CLASSES": [
+        "rest_framework.parsers.JSONParser",
+        "rest_framework.parsers.FormParser",
+        "rest_framework.parsers.MultiPartParser",
+        "rest_framework.parsers.FileUploadParser",
+    ],
+    # "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    # "DEFAULT_PAGINATION_CLASS": "core.pagination.CustomPagination",
+}
+#########################
+
+########################
+# DRF SPECTACULAR
+########################
+SPECTACULAR_SETTINGS = {
+    "TITLE": "YAEM API",
+    "DESCRIPTION": "Documentation for YAEM API",
+    "VERSION": "1.0.0",
+    "SERVE_PERMISSIONS": [
+        "rest_framework.permissions.AllowAny",
+    ],
+    "SERVE_AUTHENTICATION": [
+        "rest_framework.authentication.BasicAuthentication",
+    ],
+    "SWAGGER_UI_SETTINGS": {
+        "deepLinking": True,
+        "displayOperationId": True,
+        "syntaxHighlight.active": True,
+        "syntaxHighlight.theme": "arta",
+        "defaultModelsExpandDepth": -1,
+        "displayRequestDuration": True,
+        "filter": True,
+        "requestSnippetsEnabled": True,
+    },
+    "COMPONENT_SPLIT_REQUEST": True,
+    "SORT_OPERATIONS": False,
+    "ENABLE_DJANGO_DEPLOY_CHECK": False,
+    "DISABLE_ERRORS_AND_WARNINGS": True,
+}
+########################
