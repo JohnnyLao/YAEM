@@ -1,9 +1,6 @@
 .idea
 .idea/*
 .env
-/server_files/
-/fixtures/
 /venv/
 /db.sqlite3
 */migrations/*
-Makefile
