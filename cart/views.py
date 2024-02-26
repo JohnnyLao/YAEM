@@ -126,3 +126,6 @@ class ViewCartPage(View):
             "is_empty": len(cart_items) == 0,
         }
         return render(request, "cart/cart.html", context=context)
+
+
+

@@ -5,3 +5,5 @@
 /fixtures/
 /venv/
 /db.sqlite3
+*/migrations/*
+Makefile

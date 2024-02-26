@@ -1,0 +1,19 @@
+name: Checks and Code format
+on: [push]
+
+jobs:
+  test-format:
+    name: Test and Code format
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Load dependencies
+        run: pip install -r requirements.txt
+
+      - name: Unit testing
+        run: python manage.py test
+
+      - name: Code format
+        run: black --skip-string-normalization . && isort .

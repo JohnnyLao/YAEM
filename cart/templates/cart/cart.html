@@ -15,7 +15,9 @@
     <div class="container">
         <div class="row pt-5">
             <div class="col-12">
-                <div data-aos="fade-right" class="btn btn-animate shadow-0" onclick="history.back();"
+
+                <a href="#" onclick="goBack()">
+                <div data-aos="fade-right" class="btn btn-animate shadow-0"
                      style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
                     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
                          class="bi bi-arrow-left text-start"
@@ -24,6 +26,14 @@
                               d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
                     </svg>
                 </div>
+                </a>
+
+                <script>
+                    function goBack() {
+                        window.history.back();
+                    }
+                </script>
+
                 <h1 class="text-center">{% translate 'Корзина' %}</h1>
             </div>
         </div>
