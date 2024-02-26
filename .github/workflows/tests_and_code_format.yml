@@ -12,6 +12,9 @@ jobs:
       - name: Load dependencies
         run: pip install -r requirements.txt
 
+      - name: Migrations
+        run: python manage.py makemigrations && python manage.py migrate
+
       - name: Unit testing
         run: python manage.py test
 
