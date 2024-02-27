@@ -1,10 +1,9 @@
 #!/bin/bash
 
-cd .. && cd ..
 mkdir other/fixtures
 
 current_date=$(date +"%Y-%m-%d")
-fixture_path="fixtures_${current_date}.json"
+fixture_path="fixture_${current_date}.json"
 log_path="scripts/bash/logs.txt"
 
 green='\033[0;32m'
