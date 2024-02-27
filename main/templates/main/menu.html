@@ -10,7 +10,7 @@
 
 
 {% block description %}
-{% translate 'Цифровое онлайн-меню кафе'%} {{client.name}}. {% translate 'Удобный интерфейс, описание, цены. Имеется доставка по предзаказу. Сканируйте QR, формируйте заказ и наслаждайтесь комфортным обслуживанием вместе с YAEM.' %}
+{% translate 'Онлайн меню {{client.name}} в городе {{client.city}}' %}
 {% endblock description %}
 
 
@@ -269,7 +269,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     <!--    FOOD TYPE SWIPER    -->
     <div class="sticky-top">
-    <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: scroll; scroll-behavior: smooth; scrollbar-color: transparent transparent; /* Firefox */">
+    <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
         <div class="swiper-container" id="foodTypeSwiper">
             <div class="swiper-wrapper text-center">
                 {% for ft in food_type %}
@@ -291,7 +291,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
     {% for ft in food_type %}
     <div class="col-12 text-center">
-        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014" id="{{ ft }}">{{ ft }}</h2>
+        <hr class="opacity-5" id="{{ ft }}">
+        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014" ">{{ ft }}</h2>
     </div>
 
 
@@ -304,10 +305,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                  style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                 <div class="d-flex">
                     {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                    <div class="d-flex text-center" style="min-width: 130px; background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
+                    <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
                         <img src="{{ dish.image.url }}" alt="dish img"
                              class="img bg-white position-relative mx-auto"
-                             style="max-width: 130px; max-height: 130px; border-radius: 10px"
+                             style="width: 130px; height: 130px; border-radius: 10px; object-fit: cover"
                              draggable="false"
                              loading="lazy">
                         {% if dish.generated %}

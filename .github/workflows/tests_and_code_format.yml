@@ -1,0 +1,22 @@
+name: Тестирование и Форматирование
+on: [push]
+
+jobs:
+  test-format:
+    name: Тестирование и форматирование
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Проверка
+        uses: actions/checkout@v2
+
+      - name: Загрузка зависимостей
+        run: pip install -r requirements.txt
+
+      - name: Миграции
+        run: python manage.py makemigrations && python manage.py migrate
+
+      - name: Тестирование
+        run: python manage.py test
+
+      - name: Форматирование
+        run: black --skip-string-normalization . && isort .

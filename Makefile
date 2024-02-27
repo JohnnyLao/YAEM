@@ -1,5 +1,5 @@
 code-format:
-	black .
+	black --skip-string-normalization .
 	isort .
 
 migrate:

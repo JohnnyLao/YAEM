@@ -1,32 +1,42 @@
 import os
 from pathlib import Path
 
+import environ
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY", "django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_"
+env = environ.Env(
+    SECRET_KEY=(
+        str,
+        'django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_',
+    ),
+    DEBUG=(bool, True),
+    ALLOWED_HOSTS=(list, ['localhost']),
+    SQL_ENGINE=(str, 'django.db.backends.sqlite3'),
+    POSTGRES_DB=(str, os.path.join(BASE_DIR, "db.sqlite3")),
+    POSTGRES_USER=(str, 'root'),
+    POSTGRES_PASSWORD=(str, 'password'),
+    POSTGRES_HOST=(str, 'localhost'),
+    POSTGRES_PORT=(str, '5432'),
 )
 
-DEBUG = os.environ.get("DEBUG", True)
+environ.Env.read_env()
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", default="127.0.0.1,localhost").split(
-    ","
-)
+SECRET_KEY = env('SECRET_KEY')
+DEBUG = env('DEBUG')
+ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
-# databases
 DATABASES = {
-    "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("POSTGRES_DB", os.path.join(BASE_DIR, "db.sqlite3")),
-        "USER": os.environ.get("POSTGRES_USER", "user"),
-        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "password"),
-        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
-        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
+    'default': {
+        'ENGINE': env('SQL_ENGINE'),
+        'NAME': env('POSTGRES_DB'),
+        'USER': env('POSTGRES_USER'),
+        'PASSWORD': env('POSTGRES_PASSWORD'),
+        'HOST': env('POSTGRES_HOST'),
+        'PORT': env('POSTGRES_PORT'),
     }
 }
-
 
 INSTALLED_APPS = [
     # modern admin
