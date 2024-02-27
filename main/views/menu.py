@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-
+from django.shortcuts import get_object_or_404
 from banquets.models import BanquetCard
 from main.models import Category, Client, Dish, Food_type
 
@@ -10,7 +10,7 @@ class Menu(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
-        client = Client.objects.get(url_name=url_name)
+        client = get_object_or_404(Client, url_name=url_name)
         categories = Category.objects.all().order_by("z_index")
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
         dishes = (
@@ -19,7 +19,6 @@ class Menu(TemplateView):
             .filter(client=client)
             .order_by("z_index")
         )
-        # Получение уникальных категорий для блюд
         food_type = (
             Food_type.objects.filter(dish__in=dishes).distinct().order_by("z_index")
         )
