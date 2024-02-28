@@ -55,9 +55,11 @@ INSTALLED_APPS = [
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
+    'users.apps.UsersConfig',
     "registration.apps.RegistrationConfig",
     # debug_toolbar
     "debug_toolbar",
+    'phonenumber_field',
     # translation
     "modeltranslation",
     # swagger
@@ -159,6 +161,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
+AUTH_USER_MODEL = 'users.User'
 
 # languages
 LANGUAGES = [

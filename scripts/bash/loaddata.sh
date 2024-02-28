@@ -5,7 +5,7 @@ red='\033[0;31m'
 reset='\033[0m'
 
 current_date=$(date +"%Y-%m-%d")
-fixture_path="fixtures_${current_date}.json"
+fixture_path="fixture_${current_date}.json"
 
 echo -e "${green}Starting loaddata script...${reset}"
 
