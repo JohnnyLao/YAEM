@@ -1,5 +1,7 @@
 from random import randint
+
 from django.core.cache import cache
+
 from banquets.models import BanquetCard
 from main.models import City, Client, Dish
 

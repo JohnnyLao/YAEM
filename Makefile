@@ -11,3 +11,6 @@ dumpdata:
 
 loaddata:
 	python manage.py loaddata data.json
+
+tests:
+	python manage.py test
