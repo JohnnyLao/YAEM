@@ -12,7 +12,7 @@ env = environ.Env(
         'django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_',
     ),
     DEBUG=(bool, True),
-    ALLOWED_HOSTS=(list, ['localhost']),
+    ALLOWED_HOSTS=(list, ['localhost', '127.0.0.1']),
     SQL_ENGINE=(str, 'django.db.backends.sqlite3'),
     POSTGRES_DB=(str, os.path.join(BASE_DIR, "db.sqlite3")),
     POSTGRES_USER=(str, 'root'),
@@ -56,7 +56,6 @@ INSTALLED_APPS = [
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
     'users.apps.UsersConfig',
-    "registration.apps.RegistrationConfig",
     # debug_toolbar
     "debug_toolbar",
     'phonenumber_field',
@@ -151,16 +150,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # default redirect
 LOGOUT_REDIRECT_URL = "/"
-LOGIN_REDIRECT_URL = "/"
 # cookie time
 SESSION_COOKIE_AGE = 604800
 # cache lifetime (dev django, prod redis)
 CACHES_LIFE_TIME = 0
-# django all auth
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
 AUTH_USER_MODEL = 'users.User'
 
 # languages

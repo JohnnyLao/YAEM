@@ -55,6 +55,16 @@
         </div>
     </div>
 </section>
+
+{# Сообщения!!! #}
+{% include "main/messages.html" %}
+
+{#  Модалка для выхода из аккаунта  #}
+{% if user.is_authenticated %}    
+    <button id="logoutButton">Выйти из системы</button>
+    {% include 'users/logout.html' %}
+{% endif %}
+    
 <!--COUNTER END-->
 
 <!--SECTION-->
@@ -67,12 +77,6 @@
                     style="color: #fd7014">YAEM</span>
             </h2>
             <h3 data-aos="fade-up" class="fw-bold text-center">{% trans 'Выберите услугу' %}</h3>
-
-            <!--      DEMO LOGIN/REGISTER BUTTONS      -->
-            <!--            <a href="{% url 'register:signup' %}">Регистрация</a>-->
-            <!--            <a href="{% url 'login' %}">Войти</a>-->
-            <!--            <a href="{% url 'logout' %}">Выйти</a>-->
-            <!--      END DEMO LOGIN/REGISTER BUTTONS    -->
 
             <div class="row my-2 gy-4 d-flex justify-content-center text-center">
                 <!--- DELIVERY -->

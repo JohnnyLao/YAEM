@@ -1,11 +1,26 @@
 from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from phonenumber_field.modelfields import PhoneNumberField
 
 from users.models.user_manager import CustomUserManager
 
 
 class User(AbstractUser):
-    phone_number = PhoneNumberField(verbose_name='Номер телефона', unique=True)
+    username = models.CharField(
+        verbose_name="Никнейм",
+        max_length=64,
+        blank=True,
+        default='',
+    )
+    email = models.EmailField("Почта", unique=True, blank=True)
+    phone_number = PhoneNumberField(
+        verbose_name='Номер телефона', unique=True, db_index=True
+    )
+    is_corporate = models.BooleanField(
+        verbose_name='Корпоративный аккаунт', default=False
+    )
 
     USERNAME_FIELD = 'phone_number'
 
@@ -19,13 +34,17 @@ class User(AbstractUser):
     @property
     def full_name(self):
         if self.first_name and self.last_name:
-            return f'{self.first_name} {self.last_name}'
-        elif self.first_name:
-            return f'{self.first_name} - Фамилия не указана'
-        elif self.last_name:
-            return f'Имя не указано - {self.last_name}'
+            return f'{str(self.first_name).capitalize()} {str(self.last_name).capitalize()}'
         else:
             return 'Личные данные не указанны'
 
     def __str__(self):
         return self.full_name
+
+
+@receiver(signal=post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if not hasattr(User, 'profile') and not created:
+        from users.models import Profile
+
+        Profile.objects.create(user=instance)
