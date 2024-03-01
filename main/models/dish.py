@@ -65,5 +65,10 @@ class Dish(models.Model):
         verbose_name_plural = "Блюда"
         ordering = ["z_index"]
 
+    def total_price(self):
+        if self.old_price:
+            return self.old_price
+        return self.actual_price
+
     def __str__(self):
         return self.name

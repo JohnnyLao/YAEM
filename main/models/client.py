@@ -61,6 +61,7 @@ class Client(models.Model):
         null=True,
         verbose_name="Тариф",
     )
+    service = models.PositiveSmallIntegerField(default=0, verbose_name='% за обслуживание', blank=True)
     z_index = models.IntegerField(
         verbose_name="Порядковый №",
         default=100,
