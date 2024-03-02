@@ -14,4 +14,6 @@ class CartAdmin(admin.ModelAdmin):
         total = sum(item.quantity for item in obj.cart_items.all())
         if total > 0:
             return total
+        else:
+            return 0
     total_dishes.short_description = 'Количество добавленных блюд'

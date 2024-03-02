@@ -1,10 +1,12 @@
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from cart.models import Cart, CartItems
 from main.models import Dish
-from django.shortcuts import get_object_or_404, redirect
 
 
-def add_to_cart(request, dish_id):
-    dish = Dish.objects.filter(pk=dish_id).first()
+def add_to_cart(request):
+    dish_id = request.POST.get('dish_id')
+    dish = get_object_or_404(Dish, pk=dish_id)
     user = request.user
 
     if request.user.is_authenticated:
@@ -17,4 +19,7 @@ def add_to_cart(request, dish_id):
             cart_item.quantity += 1
         cart_item.save()
 
-    return redirect(request.META['HTTP_REFERER'])
+        subtotal = cart_item.subtotal()
+        total = cart.total_cost()
+
+        return JsonResponse({'success': True, 'subtotal': subtotal, 'total': total})
