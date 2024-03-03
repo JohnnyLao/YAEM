@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
+
 from cart.models import Cart, CartItems
 from main.models import Dish
 
@@ -17,9 +18,18 @@ def add_to_cart(request):
             cart_item.quantity = 1
         else:
             cart_item.quantity += 1
+
+        quantity_in_cart = cart_item.quantity
         cart_item.save()
 
         subtotal = cart_item.subtotal()
         total = cart.total_cost()
 
-        return JsonResponse({'success': True, 'subtotal': subtotal, 'total': total})
+        return JsonResponse(
+            {
+                'success': True,
+                'subtotal': subtotal,
+                'total': total,
+                'quantity': quantity_in_cart,
+            }
+        )

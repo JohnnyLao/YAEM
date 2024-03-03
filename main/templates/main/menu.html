@@ -41,72 +41,6 @@
         <i class="fas fa-cart-shopping my-0 py-0"></i>
     </a>
 
-<!--       data-mdb-toggle="modal"-->
-<!--       data-mdb-target="#cart_modal"-->
-
-<!--    Modal-->
-<!--    <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modal" aria-hidden="true">-->
-<!--        <div class="modal-dialog modal-xl"-->
-<!--             style="&#45;&#45;mdb-modal-header-border-color: #555555; &#45;&#45;mdb-modal-footer-border-color: #555555">-->
-<!--            <div class="modal-content" style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.95), rgba(25, 25, 25, 0.95)), url({% static 'images/cart/4-min.jpg' %});-->
-<!--    background-attachment: fixed; background-size: cover; background-repeat: no-repeat">-->
-<!--                <div class="modal-header">-->
-<!--                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Корзина</h5>-->
-<!--                    <button type="button" class="btn-close bg-danger" data-mdb-ripple-init data-mdb-dismiss="modal"-->
-<!--                            aria-label="Close"></button>-->
-<!--                </div>-->
-<!--                <div class="modal-body px-2">-->
-<!--                    <div class="d-flex">-->
-<!--                        <div class="col-4 col-lg-2 text-center">-->
-<!--                            <img src="{% static 'images/menu/2gis.png' %}" alt="ФОТО БЛЮДА" style="max-height: 100px">-->
-<!--                        </div>-->
-<!--                        <div class="col-8 col-lg-10">-->
-<!--                            <div class="row">-->
-<!--                                <p class="fw-bold"> Dish Name</p>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <p class=""> Dish description</p>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex content-justify-between">-->
-<!--                                    <div class="col fw-bold">-->
-<!--                                        <button class="btn btn-sm btn-danger btn-floating btn-animate shadow-0"-->
-<!--                                                data-mdb-ripple-color="danger"><i-->
-<!--                                                class="fas fa-minus"></i></button>-->
-<!--                                        <span>000</span>-->
-<!--                                        <button class="btn btn-sm btn-success btn-floating btn-animate shadow-0"-->
-<!--                                                data-mdb-ripple-color="success"><i-->
-<!--                                                class="fas fa-plus"></i></button>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="col fw-bold text-end">0 000 ₸</div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <hr>-->
-<!--                    <div class="d-flex justify-content-end fw-bold">-->
-<!--                        <div class="col-6 col-lg-2">-->
-<!--                            <p class="my-0">Итого</p>-->
-<!--                            <p class="my-0">Обслуживание</p>-->
-<!--                            <p class="my-0">Итого с обслуживанием</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-2 text-end">-->
-<!--                            <p class="my-0">0 000 ₸</p>-->
-<!--                            <p class="my-0">00 %</p>-->
-<!--                            <p class="my-0">0 000 ₸</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-footer">-->
-<!--                    <button type="button" class="btn btn-danger" data-mdb-ripple-init data-mdb-dismiss="modal">-->
-<!--                        Закрыть-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
         <div class="col-12 text-center">
@@ -378,27 +312,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
                                 </div>
 
-                            {#      CART +/-     #}
-                            <a class="btn btn-animate shadow-0 px-0 py-0 ms-1 add-to-cart"
-                               href="{% url 'cart:add' %}"
-                               data-dish-id="{{ dish.id }}">
-                                <i class="fas fa-circle-plus fa-2x text-success"></i>
-                            </a>
-                            
-                            {% load cart_tag %}
-                            {% user_cart request as cart %}
-                            {% for item in cart.cart_items.all %}
-                            {% if item.dish.id == dish.id %}
-                            <span class="d-inline my-auto cart-quantity">{{ item.quantity }}</span>
-                            {% endif %}
-                            {% endfor %}
-
-                            <a class="btn btn-animate shadow-0 px-0 py-0 me-1 remove-from-cart"
+                            {#      CART -     #}
+                            <a class="btn btn-animate px-0 py-0 me-2 remove-from-cart invisible"
+                               data-mdb-ripple-color="danger"
+                               data-mdb-ripple-radius="10"
                                href="{% url 'cart:remove' %}"
                                data-dish-id="{{ dish.id }}">
                                 <i class="fas fa-circle-minus fa-2x text-danger"></i>
                             </a>
+                            
+                            {#      CART quantity    #}
+                            {% load cart_tag %}
+                            <span class="cart-quantity zero-quantity my-auto mx-auto"
+                                  data-dish-id="{{ dish.id }}">
+                                {{ cart_items|get_item:dish.id }}
+                            </span>
 
+                            {#      CART +     #}
+                            <a class="btn btn-animate px-0 py-0 ms-2 add-to-cart"
+                               data-mdb-ripple-color="success"
+                               data-mdb-ripple-radius="10"
+                               href="{% url 'cart:add' %}"
+                               data-dish-id="{{ dish.id }}">
+                                <i class="fas fa-circle-plus fa-2x text-success"></i>
+                            </a>
 
                             </div>
                         </div>
@@ -413,21 +350,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 </section>
 
 
-<!--  MODAL CART WINDOW  -->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog modal-dialog-centered modal-sm">-->
-<!--        <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">-->
 
-<!--            <div class="modal-body">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-12 text-center">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 </body>
 
 

@@ -9,7 +9,6 @@ from django.views import View
 
 @method_decorator(login_required, name="dispatch")
 class LogoutView(View):
-
     def get(self, request, *args, **kwargs):
         full_name = request.user.full_name
         if request.user.is_authenticated:

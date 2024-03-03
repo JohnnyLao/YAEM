@@ -7,7 +7,10 @@ from cart.models import Cart
 @admin.register(Cart)
 class CartAdmin(admin.ModelAdmin):
     list_display = ('id', 'user', 'created_timestamp', 'total_dishes')
-    list_display_links = ('id', 'user',)
+    list_display_links = (
+        'id',
+        'user',
+    )
     inlines = (CartItemsInlineAdmin,)
 
     def total_dishes(self, obj):
@@ -16,4 +19,5 @@ class CartAdmin(admin.ModelAdmin):
             return total
         else:
             return 0
+
     total_dishes.short_description = 'Количество добавленных блюд'

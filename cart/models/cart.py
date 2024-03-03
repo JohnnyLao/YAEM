@@ -1,14 +1,22 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
 
 from main.models import Dish
 
 
 class Cart(models.Model):
-    user = models.ForeignKey(to=get_user_model(), on_delete=models.CASCADE, verbose_name='Пользователь')
-    items = models.ManyToManyField(to=Dish, through='CartItems', verbose_name='Блюда в корзине')
-    session_key = models.CharField(max_length=32, null=True, blank=True, verbose_name='Сессионный ключ')
-    created_timestamp = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания корзины')
+    user = models.ForeignKey(
+        to=get_user_model(), on_delete=models.CASCADE, verbose_name='Пользователь'
+    )
+    items = models.ManyToManyField(
+        to=Dish, through='CartItems', verbose_name='Блюда в корзине'
+    )
+    session_key = models.CharField(
+        max_length=32, null=True, blank=True, verbose_name='Сессионный ключ'
+    )
+    created_timestamp = models.DateTimeField(
+        auto_now_add=True, verbose_name='Дата создания корзины'
+    )
 
     class Meta:
         verbose_name = 'Корзина'
@@ -22,7 +30,12 @@ class Cart(models.Model):
 
 
 class CartItems(models.Model):
-    cart = models.ForeignKey(to=Cart, on_delete=models.CASCADE, verbose_name='Корзина', related_name='cart_items')
+    cart = models.ForeignKey(
+        to=Cart,
+        on_delete=models.CASCADE,
+        verbose_name='Корзина',
+        related_name='cart_items',
+    )
     dish = models.ForeignKey(to=Dish, on_delete=models.CASCADE, verbose_name='Блюдо')
     quantity = models.PositiveSmallIntegerField(default=0, verbose_name='Количество')
 

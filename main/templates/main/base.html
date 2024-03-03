@@ -127,8 +127,9 @@
             </button>
         </div>
 
-        <div class="col-5 text-center" >
-            <ul class="navbar-nav">
+        <div class="col-5 text-center">
+        <div class="d-flex">
+            <ul class="navbar-nav d-inline">
                 <!-- Icon dropdown -->
                 <li class="nav-item dropdown mx-auto">
                     <a
@@ -166,6 +167,14 @@
                     </ul>
                 </li>
             </ul>
+        {#  Модалка для выхода из аккаунта  #}
+{% if user.is_authenticated %}
+    <button class="d-inline btn btn-floating btn-warning btn-animate" id="logoutButton">
+        <i class="far fa-circle-user fa-3x"></i>
+</button>
+    {% include 'users/logout.html' %}
+{% endif %}
+        </div>
         </div>
     </div>
 
@@ -263,28 +272,30 @@
 <!--FOOTER-->
 <footer class="">
     <div class="container-fluid py-3" style="background: rgba(0, 0, 0, 0.9)">
-        <h3 class="text-center my-3">{% translate 'Наша команда' %}</h3>
+        <h3 class="text-center my-3">{% translate 'Команда' %}
+            <span class="fw-bold" style="color:#FD7014">YAEM</span>
+        </h3>
         <div class="row">
-            <div data-aos="fade-right" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/base/people-1-min.jpg' %}" height="150" width="auto" alt="" class="img"
+            <div data-aos="fade-right" class="col-4 text-center">
+                <img src="{% static 'images/base/people-1-min.jpg' %}" height="125" width="auto" alt="" class="img"
                      style="border-radius: 100%;"
                 draggable="false">
-                <p class="fs-5 mt-3">{% translate 'Егор' %}</p>
-                <p class="">{% translate 'Коммерческий директор' %}</p>
+                <p class="fs-5 mt-3 mb-0">{% translate 'Егор Лошкарев' %}</p>
+                <p class="my-0">{% translate 'Директор' %}</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="200" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/base/people-2-min.jpg' %}" height="150" width="auto" alt="" class="img"
+            <div data-aos="fade-right" data-aos-delay="100" class="col-4 text-center">
+                <img src="{% static 'images/base/people-2-min.jpg' %}" height="125" width="auto" alt="" class="img"
                      style="border-radius: 100%;"
                 draggable="false">
-                <p class="fs-5 mt-3">{% trans 'Олег' %}</p>
-                <p class="">{% translate 'Руководитель отдела развития' %}</p>
+                <p class="fs-5 mt-3 mb-0">{% trans 'Олег Маслеников' %}</p>
+                <p class="my-0">{% translate 'Отдел продаж' %}</p>
             </div>
-            <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-sm-6 col-lg-4 text-center">
-                <img src="{% static 'images/base/people-3-min.jpg' %}" height="150" width="auto" alt="" class="img"
+            <div data-aos="fade-right" data-aos-delay="200" class="col-4 text-center">
+                <img src="{% static 'images/base/people-3-min.jpg' %}" height="125" width="auto" alt="" class="img"
                      style="border-radius: 100%;"
                 draggable="false">
-                <p class="fs-5 mt-3">{% translate 'Артём' %}</p>
-                <p class="">{% translate 'Руководитель отдела разработки' %}</p>
+                <p class="fs-5 mt-3 mb-0">{% translate 'Артём Захарченко' %}</p>
+                <p class="my-0">{% translate 'Отдел разработки' %}</p>
             </div>
         </div>
     </div>
@@ -304,8 +315,8 @@
                 </a>
                 Email: yaem.menu@gmail.com
             </div>
-            <div data-aos="fade-bottom" data-aos-delay="200" class="col-12 col-md-4 my-2">
-                <a href="https://wa.me/77015302812?text=Здравствуйте,"
+            <div data-aos="fade-bottom" data-aos-delay="100" class="col-12 col-md-4 my-2">
+                <a href="{% url 'cart:clear' %}"
                    target="_blank"
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
                     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
@@ -316,7 +327,7 @@
                 </a>
                 Whatsapp: +7 701 530 28 12
             </div>
-            <div data-aos="fade-right" data-aos-delay="400" class="col-12 col-md-4 my-2">
+            <div data-aos="fade-right" data-aos-delay="200" class="col-12 col-md-4 my-2">
                 <a href="https://www.instagram.com/yaem_qr/"
                    target="_blank"
                    class="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-25-hover">
@@ -359,7 +370,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script src="{% static 'js/counter.js' %}"></script>
 <script src="{% static 'js/button_up.js' %}"></script>
 <script src="{% static 'js/session.js' %}"></script>
-<script src="{% static 'js/modal.js' %}"></script>
+{#<script src="{% static 'js/modal.js' %}"></script>#}
 
 
 

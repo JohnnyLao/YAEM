@@ -1,6 +1,6 @@
 from django.shortcuts import redirect
 
-from cart.models import CartItems, Cart
+from cart.models import Cart, CartItems
 
 
 def cart_remove(request):

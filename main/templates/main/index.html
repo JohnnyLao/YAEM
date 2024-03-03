@@ -59,11 +59,7 @@
 {# Сообщения!!! #}
 {% include "main/messages.html" %}
 
-{#  Модалка для выхода из аккаунта  #}
-{% if user.is_authenticated %}    
-    <button id="logoutButton">Выйти из системы</button>
-    {% include 'users/logout.html' %}
-{% endif %}
+
     
 <!--COUNTER END-->
 
