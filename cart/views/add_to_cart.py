@@ -12,24 +12,33 @@ def add_to_cart(request):
 
     if request.user.is_authenticated:
         cart, created = Cart.objects.get_or_create(user=user)
-        cart_item, item_created = CartItems.objects.get_or_create(cart=cart, dish=dish)
+    else:
+        session_key = request.session.session_key
 
-        if item_created:
-            cart_item.quantity = 1
-        else:
-            cart_item.quantity += 1
+        if not session_key:
+            request.session.save()
+            session_key = request.session.session_key
 
-        quantity_in_cart = cart_item.quantity
-        cart_item.save()
+        cart, created = Cart.objects.get_or_create(session_key=session_key, user_id=1)
 
-        subtotal = cart_item.subtotal()
-        total = cart.total_cost()
+    cart_item, item_created = CartItems.objects.get_or_create(cart=cart, dish=dish)
 
-        return JsonResponse(
-            {
-                'success': True,
-                'subtotal': subtotal,
-                'total': total,
-                'quantity': quantity_in_cart,
-            }
-        )
+    if item_created:
+        cart_item.quantity = 1
+    else:
+        cart_item.quantity += 1
+
+    quantity_in_cart = cart_item.quantity
+    cart_item.save()
+
+    subtotal = cart_item.subtotal()
+    total = cart.total_cost()
+
+    return JsonResponse(
+        {
+            'success': True,
+            'subtotal': subtotal,
+            'total': total,
+            'quantity': quantity_in_cart,
+        }
+    )

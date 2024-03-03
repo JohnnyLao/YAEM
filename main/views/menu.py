@@ -25,12 +25,17 @@ class Menu(TemplateView):
             Food_type.objects.filter(dish__in=dishes).distinct().order_by("z_index")
         )
         # dish quantity
-        user_cart = Cart.objects.filter(user=self.request.user).first()
+        user_cart = None
+        if self.request.user.is_authenticated:
+            user_cart = Cart.objects.filter(user=self.request.user).first()
+        else:
+            user_cart = Cart.objects.filter(
+                session_key=self.request.session.session_key
+            ).first()
+
         cart_items = {}
         if user_cart:
-            # Получаем все элементы корзины пользователя
             for cart_item in user_cart.cart_items.all():
-                # Заполняем словарь с парами "идентификатор блюда - количество"
                 cart_items[cart_item.dish.id] = cart_item.quantity
 
         context["dishes"] = dishes

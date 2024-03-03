@@ -6,7 +6,9 @@ from main.models import Dish
 
 class Cart(models.Model):
     user = models.ForeignKey(
-        to=get_user_model(), on_delete=models.CASCADE, verbose_name='Пользователь'
+        to=get_user_model(),
+        on_delete=models.CASCADE,
+        verbose_name='Пользователь',
     )
     items = models.ManyToManyField(
         to=Dish, through='CartItems', verbose_name='Блюда в корзине'
