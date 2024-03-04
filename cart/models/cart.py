@@ -1,5 +1,9 @@
 from django.contrib.auth import get_user_model
+from django.contrib.auth.signals import user_logged_out
+from django.contrib.sessions.models import Session
 from django.db import models
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
 
 from main.models import Dish
 
@@ -9,6 +13,7 @@ class Cart(models.Model):
         to=get_user_model(),
         on_delete=models.CASCADE,
         verbose_name='Пользователь',
+        null=True,
     )
     items = models.ManyToManyField(
         to=Dish, through='CartItems', verbose_name='Блюда в корзине'
@@ -26,6 +31,10 @@ class Cart(models.Model):
 
     def total_cost(self):
         return sum(item.subtotal() for item in self.cart_items.all())
+
+    # def total_quantity(self):
+    #     total_quantity = sum(item.quantity for item in self.cart_items.all())
+    #     return total_quantity
 
     def __str__(self):
         return f'{self.user}'
@@ -50,3 +59,19 @@ class CartItems(models.Model):
 
     def __str__(self):
         return f'{self.dish} ({self.quantity}) в корзине'
+
+
+@receiver(pre_delete, sender=Session)
+def delete_anonim_session_cart(sender, instance, **kwargs):
+    session_key = instance.session_key
+    anonim_cart = Cart.objects.filter(session_key=session_key).first()
+    if anonim_cart:
+        anonim_cart.delete()
+
+
+@receiver(user_logged_out)
+def delete_user_cart_on_logout(sender, user, request, **kwargs):
+    if user.is_authenticated:
+        user_cart = Cart.objects.filter(user=user).first()
+        if user_cart:
+            user_cart.delete()

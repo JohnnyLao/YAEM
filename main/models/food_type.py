@@ -2,8 +2,15 @@ from django.db import models
 
 
 class Food_type(models.Model):
-    name = models.CharField(max_length=50, verbose_name="Отображаемое имя", help_text="Супы")
-    d_name = models.CharField(max_length=50, verbose_name="Имя в базе", help_text="Супы_Алаверди", default="CATEGORY")
+    name = models.CharField(
+        max_length=50, verbose_name="Отображаемое имя", help_text="Супы"
+    )
+    d_name = models.CharField(
+        max_length=50,
+        verbose_name="Имя в базе",
+        help_text="Супы_Алаверди",
+        default="CATEGORY",
+    )
     category = models.ForeignKey(
         "main.Category",
         on_delete=models.CASCADE,
@@ -11,7 +18,9 @@ class Food_type(models.Model):
         blank=True,
         null=True,
     )
-    client = models.ForeignKey("main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True)
+    client = models.ForeignKey(
+        "main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True
+    )
     z_index = models.IntegerField(
         verbose_name="Порядковый №",
         default=0,

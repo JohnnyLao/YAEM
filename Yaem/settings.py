@@ -101,6 +101,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "context_processors.context_processors.data_counter_site",
+                "context_processors.context_processors.get_total_cart_sum",
             ],
         },
     },
