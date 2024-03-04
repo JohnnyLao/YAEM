@@ -56,7 +56,7 @@
                         <span class="" style="color: #FD7014">{{ client.name }}</span>
                     </h4>
 
-                    {# Сообщения!!! #}
+<!--                    {# Сообщения!!! #}-->
                     {% include "main/messages.html" %}
 
                     <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
@@ -212,9 +212,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             <div class="swiper-wrapper text-center">
                 {% for ft in food_type %}
                 <div class="swiper-slide me-1">
-                    <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button" data-target="{{ ft }}"
-                       style="" href="#{{ ft }}">
-                        {{ ft }}
+                    <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button" data-target="{{ ft.name }}"
+                       style="" href="#{{ ft.name }}">
+                        {{ ft.name }}
                     </a>
                 </div>
                 {% endfor %}
@@ -230,7 +230,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     {% for ft in food_type %}
     <div class="col-12 text-center">
         <hr class="opacity-5" id="{{ ft }}">
-        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft }}</h2>
+        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
     </div>
 
 

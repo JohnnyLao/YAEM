@@ -7,7 +7,6 @@ from main.models import Food_type
 class FoodTypeAdmin(admin.ModelAdmin):
     list_filter = ["client"]
     search_fields = ["name"]
-    filter_horizontal = ["client"]
     list_display = ["name", "category_name", "z_index"]
 
     def category_name(self, obj):

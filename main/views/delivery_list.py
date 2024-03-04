@@ -19,6 +19,6 @@ class DeliveryList(TemplateView):
         elif query:
             clients = Client.objects.filter(name__icontains=query)
         context["clients"] = clients
-        context["cities"] = City.objects.all()
+        context["cities"] = City.objects.all().order_by("z_index")
         context["city_selected"] = city_selected
         return context
