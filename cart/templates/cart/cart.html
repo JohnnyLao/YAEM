@@ -21,15 +21,10 @@
             <div class="col-12">
 
                 <a href="{% url 'main:menu_page' url_name=establishment_url %}">
-                    <div data-aos="fade-right" class="btn btn-animate shadow-0"
+                    <button data-aos="fade-right" class="btn btn-sm btn-animate shadow-0"
                          style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
-                             class="bi bi-arrow-left text-start"
-                             viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                  d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                        </svg>
-                    </div>
+                        <i class="fas fa-arrow-left-long fa-3x" style="color: #FD7014"> </i>
+                    </button>
                 </a>
 
                 <script>
@@ -39,7 +34,7 @@
                 </script>
 
 
-                <h1 class="text-center">{% translate 'Корзина' %}</h1>
+                <h2 class="text-center">{% translate 'Корзина' %}</h2>
             </div>
         </div>
     </div>
@@ -48,67 +43,68 @@
     {% load cart_tag %}
     {% user_cart request establishment_url as cart %}
     {% if cart.cart_items.all %}
-    <div class="container my-5 position-relative" style="background: rgba(25, 25, 25, 0.5)">
+    <div class="container my-3 position-relative" style="background: rgba(25, 25, 25, 0.5)">
         {% for item in cart.cart_items.all %}
         {# Обращаемся по классу и передаем id конкретно этой карточки(именно этого блюда) в js #}
         <div class="row shadow-5 cart-element"
              data-dish-id="{{ item.dish.id }}">
 
-            <div class="col-6 my-auto">
-                <p class="fs-5 fw-bold my-2">{{ item.dish.name }}</p>
-                <p>{{ item.dish.description }}</p>
+            <div class="col-6 my-auto me-0 pe-0">
+                <p class="fs-6 fw-bold my-2 " style="line-height: 19px;">{{ item.dish.name }}</p>
+                <p class="" style="font-size: 16px;
+    line-height: 19px;
+    color: inherit;
+    margin-bottom: 8px;
+    opacity: .6;">{{ item.dish.description }}</p>
             </div>
-            <div class="col-2 my-auto">
+            <div class="col-3 mx-0 px-0 my-auto text-center">
 
 <!--                {# Обращаемся по классу и передаем id, href конкретно этой кнопки(именно этого блюда) в js #}-->
-                <a class="btn btn-animate px-0 py-0 ms-2 add-to-cart"
+                <a class="btn btn-animate px-0 py-0 me-1 remove-from-cart"
                    data-mdb-ripple-color="danger"
-                   data-mdb-ripple-radius="10"
-                   href="{% url 'cart:add' %}"
-                   data-dish-id="{{ item.dish.id }}">
-                    <i class="fas fa-circle-plus fa-2x text-success"></i>
-                </a>
-
-<!--                {# Обращаемся по классу и отрисовываем данные с бекенда #}-->
-                <span class="d-inline my-auto cart-quantity"
-                      data-dish-id="{{ item.dish.id }}">{{ item.quantity }}</span>
-
-<!--                {# Обращаемся по классу и передаем id, href конкретно этой кнопки(именно этого блюда) в js #}-->
-                <a class="btn btn-animate px-0 py-0 me-2 remove-from-cart"
-                   data-mdb-ripple-color="success"
                    data-mdb-ripple-radius="10"
                    href="{% url 'cart:remove' %}"
                    data-dish-id="{{ item.dish.id }}">
                     <i class="fas fa-circle-minus fa-2x text-danger"></i>
                 </a>
 
+<!--                {# Обращаемся по классу и отрисовываем данные с бекенда #}-->
+                <span class="my-auto cart-quantity"
+                      data-dish-id="{{ item.dish.id }}">{{ item.quantity }}</span>
+
+
+                <!--                {# Обращаемся по классу и передаем id, href конкретно этой кнопки(именно этого блюда) в js #}-->
+                <a class="btn btn-animate px-0 py-0 ms-1 add-to-cart"
+                   data-mdb-ripple-color="success"
+                   data-mdb-ripple-radius="10"
+                   href="{% url 'cart:add' %}"
+                   data-dish-id="{{ item.dish.id }}">
+                    <i class="fas fa-circle-plus fa-2x text-success"></i>
+                </a>
+
             </div>
 
 <!--            {# Обращаемся по классу cart-subtotal-value и отрисовываем данные с бекенда #}-->
 <!--            {# передаем id конкретно этого элемента (именно этого блюда) в js #}-->
-            <div class="col-4 my-auto text-center">
-                <h5 class="cart-subtotal-value"
+            <div class="col-3 my-auto text-center">
+                <h6 class="cart-subtotal-value"
                     data-dish-id="{{ item.dish.id }}">
                     {{ item.subtotal }} ₸
-                </h5>
+                </h6>
             </div>
-
         </div>
+        <hr class="my-1">
 
         {% endfor %}
         <div class="row mt-2">
-            <div class="col-6 col-lg-8 text-end">
-                <a href="{% url 'cart:clear' %}" target="_blank">
-                    <button class="btn btn-sm btn-danger btn-animate mt-4">Очистить
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                             class="bi bi-trash" viewBox="0 0 16 16">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                        </svg>
+            <div class="col-6 col-lg-8 text-end my-auto">
+                <a href="{% url 'cart:clear' %}" >
+                    <button class="btn btn-sm btn-danger btn-rounded btn-animate my-3" style="width: 120px">Очистить
+                        <i class="far fa-trash-can fa-lg" ></i>
                     </button>
                 </a>
                 {% if request.user.is_authenticated %}
-                <a href="https://wa.me/77022918644?text=
+                <a target="_blank" href="https://wa.me/77022918644?text=
 Здравствуйте, прошу принять заказ через YAEM.KZ: %0a %0a
 Имя: {{ request.user.full_name }} %0a
 Номер телефона: {{ request.user.phone_number }} %0a
@@ -119,19 +115,20 @@
 ">
 
 
-                    <button class="btn btn-sm btn-success btn-animate mt-4 ms-3">Заказать
-                        <i class="fab fa-jedi-order fa-2x"></i>
+                    <button class="btn btn-sm btn-success btn-rounded btn-animate my-3 ms-3" style="width: 120px">Заказать
+                        <i class="fas fa-truck-moving fa-lg"></i>
                     </button>
                 </a>
                 {% endif %}
             </div>
 
 <!--            {# Обращаемся по классу cart-total-value и отрисовываем данные с бекенда #}-->
-            <div class="col-6 col-lg-4 text-center">
-                <p class="mt-3 mb-0 fs-4">{% translate 'Итого' %}:
-                    <span class="d-inline cart-total-value" style="color: #FD7014">{{ cart.total_cost }} ₸</span>
+            <div class="col-6 col-lg-4 text-end">
+                <p class="mt-3 mb-0">{% translate 'Подитог: ' %}
+                    <span class="cart-total-value" style="color: #FD7014">{{ cart.total_cost }} ₸</span>
                 </p>
-                <p>*{% translate 'Без обслуживания' %}</p>
+                <p class="my-0">{% translate 'Сервис: ' %} <span class="ms-2 me-2" style="color:#FD7014">15 %</span></p>
+                <p class="my-0 fw-bold"> {% translate 'Итого: ' %} <span style="color:#FD7014">7 777 ₸</span></p>
                 {% else %}
                 <div class="container my-5" style="background: rgba(25, 25, 25, 0.5)">
                     <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
