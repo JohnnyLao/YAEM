@@ -34,10 +34,11 @@
     background-repeat: repeat">
 
     <!--Flying Cart-->
-    <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
+    <a class="d-inline btn fs-2 shadow btn-rounded btn-animate invisible flying-cart"
        href="{% url 'cart:cart_page' establishment_url_name=client.url_name %}"
        style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 15px; display: none; z-index: 101"
        data-mdb-ripple-color="#FD7014">
+        <span class="total-cart-cost">{{ total_cart_cost }}</span>
         <i class="fas fa-cart-shopping my-0 py-0"></i>
     </a>
 
