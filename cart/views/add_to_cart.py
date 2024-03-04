@@ -48,6 +48,7 @@ def add_to_cart(request):
     subtotal = cart_item.subtotal()
     # Получаем общую стоимость всех блюд в корзине
     total = cart.total_cost()
+    total_with_service = cart.total_cost_with_service()
 
     # Возвращаем JSON-ответ с информацией о добавленном блюде в корзину
     return JsonResponse(
@@ -55,6 +56,7 @@ def add_to_cart(request):
             'success': True,
             'subtotal': subtotal,
             'total': total,
+            'total_with_service': total_with_service,
             'quantity': quantity_in_cart,
         }
     )

@@ -32,9 +32,9 @@ class Cart(models.Model):
     def total_cost(self):
         return sum(item.subtotal() for item in self.cart_items.all())
 
-    # def total_quantity(self):
-    #     total_quantity = sum(item.quantity for item in self.cart_items.all())
-    #     return total_quantity
+    def total_cost_with_service(self):
+        return sum(item.subtotal_with_service() for item in self.cart_items.all())
+
 
     def __str__(self):
         return f'{self.user}'
@@ -56,6 +56,9 @@ class CartItems(models.Model):
 
     def subtotal(self):
         return self.dish.total_price() * self.quantity
+
+    def subtotal_with_service(self):
+        return self.dish.total_price_with_service() * self.quantity
 
     def __str__(self):
         return f'{self.dish} ({self.quantity}) в корзине'

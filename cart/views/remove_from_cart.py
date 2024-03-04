@@ -44,6 +44,7 @@ def remove_from_cart(request):
         subtotal = cart_item.subtotal() if cart_item else 0
         # Получаем общую стоимость всех блюд в корзине (если корзина существует) или устанавливаем равной 0
         total = cart.total_cost() if cart else 0
+        total_with_service = cart.total_cost_with_service()
 
         # Возвращаем JSON-ответ с информацией о удалении блюда из корзины
         return JsonResponse(
@@ -51,6 +52,7 @@ def remove_from_cart(request):
                 'success': True,
                 'subtotal': subtotal,
                 'total': total,
+                'total_with_service': total_with_service,
                 'quantity': quantity_in_cart,
             }
         )

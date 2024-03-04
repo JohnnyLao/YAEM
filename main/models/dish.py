@@ -70,5 +70,14 @@ class Dish(models.Model):
             return self.old_price
         return self.actual_price
 
+    def total_price_with_service(self):
+        if self.client.service > 0:
+            if self.old_price:
+                return self.old_price + (self.old_price * self.client.service / 100)
+            else:
+                return self.actual_price + (self.actual_price * self.client.service / 100)
+        return self.total_price()
+
+
     def __str__(self):
         return self.name

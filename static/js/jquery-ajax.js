@@ -5,6 +5,7 @@ $(document).ready(function () {
         var quantity = $('.cart-quantity[data-dish-id="' + dish_id + '"]');
         var subtotal = $('.cart-subtotal-value[data-dish-id="' + dish_id + '"]');
         var total = $('.cart-total-value');
+        var totalWithService = $('.cart-total-value-with-service');
         var cartElement = $('.cart-element[data-dish-id="' + dish_id + '"]');
         var minusButton = $('.remove-from-cart[data-dish-id="' + dish_id + '"]');
         var zeroQuantity = $('.zero-quantity[data-dish-id="' + dish_id + '"]');
@@ -15,6 +16,7 @@ $(document).ready(function () {
         quantity.text(data.quantity);
         subtotal.text(data.subtotal + ' ₸');
         total.text(data.total + ' ₸');
+        totalWithService.text(data.total_with_service + ' ₸');
         totalCartCost.text(data.total + ' ₸');
 
         if (parseInt(totalCartCost.text()) > 0) {

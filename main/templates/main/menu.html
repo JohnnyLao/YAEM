@@ -156,10 +156,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     </div>
 
 
-    <!--  SWIPER -->
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/food_swiper.js' %}"></script>
+
+    <!--  SWIPER CSS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <!-- Demo styles -->
-     <style>
+    <style>
         .swiper {
             width: 100%;
             padding-top: 50px;
@@ -198,41 +202,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             font-weight: bold;
             background: rgba(24, 24, 24, 0.95);
         }
-
     </style>
-
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <script src="{% static 'js/food_swiper.js' %}"></script>
 
     <!--    FOOD TYPE SWIPER    -->
     <div class="sticky-top">
-    <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
-        <div class="swiper-container" id="foodTypeSwiper">
-            <div class="swiper-wrapper text-center">
-                {% for ft in food_type %}
-                <div class="swiper-slide me-1">
-                    <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button" data-target="{{ ft.name }}"
-                       style="" href="#{{ ft.name }}">
-                        {{ ft.name }}
-                    </a>
+        <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
+            <div class="swiper-container" id="foodTypeSwiper">
+                <div class="swiper-wrapper text-center">
+                    {% for ft in food_type %}
+                        <div class="swiper-slide me-1" data-food="{{ ft.name }}" data-index="{{ forloop.counter0 }}">
+                            <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
+                               data-target="{{ ft.name }}"
+                               style="" href="#">
+                                {{ ft.name }}
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
     </div>
-</div>
-
 
     <!--    FOOD TYPE DOWN    -->
-
-
     {% for ft in food_type %}
-    <div class="col-12 text-center">
-        <hr class="opacity-5" id="{{ ft }}">
-        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
-    </div>
+        <div class="col-12 text-center food-type-section" id="{{ ft.name }}">
+            <hr class="opacity-5">
+            <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
+        </div>
+
 
 
     <!--    DISH CONTENT    -->
