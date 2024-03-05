@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Food_type(models.Model):
+    client = models.ForeignKey(
+        "main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True
+    )
     name = models.CharField(
         max_length=50, verbose_name="Отображаемое имя", help_text="Супы"
     )
@@ -17,9 +20,6 @@ class Food_type(models.Model):
         verbose_name="Категория",
         blank=True,
         null=True,
-    )
-    client = models.ForeignKey(
-        "main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True
     )
     z_index = models.IntegerField(
         verbose_name="Порядковый №",

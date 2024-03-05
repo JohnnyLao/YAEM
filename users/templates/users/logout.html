@@ -10,7 +10,7 @@
         height: 100%;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
-        padding-top: 60px;
+        padding-top: 200px;
     }
 
 
@@ -20,48 +20,29 @@
         padding: 20px;
         border: 1px solid #888;
         width: 80%;
-        max-width: 600px;
+        max-width: 350px;
     }
 
-    .closeModalLogout {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
 
-    .demo1 {
-        color: #aaaaaa;
-        float: right;
-        font-size: 20px;
-        font-weight: bold;
-    }
 
-    .demo2 {
-        color: #aaaaaa;
-        float: right;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .closeModalLogout:hover,
-    .closeModalLogout:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-    }
 </style>
 <body>
 
 <div id="logoutModal" class="modal">
-    <div class="modal-content">
-        <span class="closeModalLogout">&times;</span>
-        <h2 class="demo1">Выход из системы</h2>
-        <p class="demo2">Вы уверены, что хотите выйти? {{ request.user.full_name }}</p>
+    <div class="modal-content text-black bg-light">
+        <div class="modal-header my-0 py-0">
+            <h5 class="modal-title">Выход из системы</h5>
+            <button type="button" class="btn-close closeModalLogout" data-mdb-dismiss="modal"></button>
+        </div>
+        <!--        <span class="closeModalLogout">&times;</span>-->
+        <p class="mt-3">Вы уверены, что хотите выйти? {{ request.user.full_name }}</p>
+        <div class="d-flex justify-content-center">
+            <a href="{% url 'users:logout' %}">
+                <button class="btn btn-success mx-2 btn-animate">Да</button>
+            </a>
+            <button class="btn btn-danger closeModalLogout mx-2 btn-animate">Нет</button>
+        </div>
 
-        <a href="{% url 'users:logout' %}">Выйти</a>
-
-        <span class="closeModalLogout">Отмена</span>
 
 
     </div>

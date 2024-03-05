@@ -43,4 +43,4 @@ def get_total_cart_sum(request):
         if cart:
             total_cart_cost = cart.total_cost()
 
-    return {'total_cart_cost': total_cart_cost}
+    return {'total_cart_cost': str(total_cart_cost) + ' ₸'}

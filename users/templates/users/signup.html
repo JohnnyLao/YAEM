@@ -18,7 +18,7 @@
                         <div class="d-flex justify-content-center py-4">
                             <div class="logo d-flex align-items-center w-auto">
                                 <img src="{% static 'images/base/favicon1-min.png' %}" alt="">
-                                <span class="d-none d-lg-block">YAEM Admin</span>
+                                <span class="">YAEM.KZ</span>
                             </div>
                         </div><!-- End Logo -->
 
@@ -55,14 +55,6 @@
                                         <label for="{{ form.email.id_for_label }}" class="form-label">Адрес эл.почты</label>
                                         {{ form.email }}
                                         {{ form.email.errors }}
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label for="{{ form.username.id_for_label }}" class="form-label">Имя пользователя</label>
-                                        <div class="input-group has-validation">
-                                            {{ form.username }}
-                                            {{ form.username.errors }}
-                                        </div>
                                     </div>
 
                                     <div class="col-12">

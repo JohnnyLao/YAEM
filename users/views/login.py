@@ -35,7 +35,7 @@ class LoginView(View):
                 else:
                     message = 'Добро пожаловать!'
                 messages.success(request=request, message=message)
-            return redirect('main:main_page')
+            return redirect('main:delivery_list_page')
 
         return render(
             request=request,

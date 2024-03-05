@@ -28,7 +28,7 @@ class RegistrationView(View):
             message = f'{user.full_name} - вы успешно зарегистрировались!'
             messages.success(request=request, message=message)
 
-            return redirect('main:main_page')
+            return redirect('main:delivery_list_page')
 
         return render(
             request=request,

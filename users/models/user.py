@@ -33,10 +33,10 @@ class User(AbstractUser):
 
     @property
     def full_name(self):
-        if self.first_name and self.last_name:
-            return f'{str(self.first_name).capitalize()} {str(self.last_name).capitalize()}'
+        if self.first_name:
+            return f'{str(self.first_name).capitalize()}'
         else:
-            return 'Личные данные не указанны'
+            return 'Имя не указано'
 
     def __str__(self):
         return self.full_name

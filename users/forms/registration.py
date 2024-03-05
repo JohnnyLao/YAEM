@@ -19,9 +19,9 @@ class RegistrationForm(UserCreationForm):
             attrs={
                 "class": "form-control",
                 "placeholder": "Иванов",
-                "required": "true",
             }
-        )
+        ),
+        required=False
     )
     phone_number = PhoneNumberField(
         widget=forms.TextInput(
@@ -30,15 +30,6 @@ class RegistrationForm(UserCreationForm):
                 "placeholder": "+77777777777",
             }
         )
-    )
-    username = forms.CharField(
-        widget=forms.TextInput(
-            attrs={
-                "class": "form-control",
-                "placeholder": "Введите имя пользователя (опционально)",
-            }
-        ),
-        required=False,
     )
     email = forms.CharField(
         widget=forms.EmailInput(

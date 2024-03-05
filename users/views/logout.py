@@ -14,4 +14,4 @@ class LogoutView(View):
         if request.user.is_authenticated:
             logout(request)
             messages.warning(request, f"{full_name} - вы вышли из аккаунта")
-            return redirect(reverse("users:signin"))
+            return redirect(reverse("main:delivery_list_page"))
