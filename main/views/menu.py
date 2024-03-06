@@ -45,4 +45,7 @@ class Menu(TemplateView):
         context["client"] = client
         context["client_has_banquet"] = client_has_banquet
 
+        # context['kitchen_menus'] = Food_type.objects.filter(category__name="Кухня")
+        # context['bar_menus'] = Food_type.objects.filter(category__name="Бар")
+
         return context
