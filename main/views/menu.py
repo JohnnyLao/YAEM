@@ -49,4 +49,7 @@ class Menu(TemplateView):
         context['kitchen'] = kitchen
         context['bar'] = bar
 
+        # context['kitchen_menus'] = Food_type.objects.filter(category__name="Кухня")
+        # context['bar_menus'] = Food_type.objects.filter(category__name="Бар")
+
         return context
