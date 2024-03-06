@@ -274,16 +274,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                      style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
                     <div class="swiper-container" id="foodTypeSwiper">
                         <div class="swiper-wrapper text-center">
-                            {% for ft in food_type %}
-                            {% if ft.category.name == "Кухня" %}
-                            <div class="swiper-slide me-1" data-food="{{ ft.name }}" data-index="{{ forloop.counter0 }}">
+                            {% for ft in kitchen %}
+                            <div class="swiper-slide me-1" data-food="{{ ft.name }}"
+                                 data-index="{{ forloop.counter0 }}">
                                 <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
                                    data-target="{{ ft.name }}"
                                    style="" href="#{{ ft.name }}">
                                     {{ ft.name }}
                                 </a>
                             </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -293,21 +292,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
             <!--    FOOD TYPE DOWN    -->
 
-
-            {% for ft in food_type %}
-            {% if ft.category.name == "Кухня" %}
+            {% for ft in kitchen %}
             <div class="col-12 text-center">
                 <hr class="opacity-5" id="{{ ft.name }}">
                 <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
             </div>
-            {% endif %}
 
 
             <!--    DISH CONTENT    -->
             <div class="container-fluid my-3">
                 <div class="row gy-3 mx-auto justify-content-center">
                     {% for dish in dishes %}
-                    {% if dish.food_type == ft and not dish.stop and dish.food_type.category.name == "Кухня" %}
+                    {% if dish.food_type == ft %}
                     <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
                          style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                         <div class="d-flex">
@@ -432,8 +428,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                      style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
                     <div class="swiper-container" id="foodTypeSwiper">
                         <div class="swiper-wrapper text-center">
-                            {% for ft in food_type %}
-                            {% if ft.category.name == "Бар" %}
+                            {% for ft in bar %}
                             <div class="swiper-slide me-1">
                                 <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
                                    data-target="{{ ft.name }}"
@@ -441,7 +436,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                     {{ ft.name }}
                                 </a>
                             </div>
-                            {% endif %}
                             {% endfor %}
                         </div>
                     </div>
@@ -452,20 +446,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             <!--    FOOD TYPE DOWN    -->
 
 
-            {% for ft in food_type %}
-            {% if ft.category.name == "Бар" %}
+            {% for ft in bar %}
             <div class="col-12 text-center">
                 <hr class="opacity-5" id="{{ ft.name }}">
                 <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
             </div>
-            {% endif %}
 
 
             <!--    DISH CONTENT    -->
             <div class="container-fluid my-3">
                 <div class="row gy-3 mx-auto justify-content-center">
                     {% for dish in dishes %}
-                    {% if dish.food_type == ft and not dish.stop and dish.food_type.category.name == "Бар" %}
+                    {% if dish.food_type == ft %}
                     <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
                          style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                         <div class="d-flex">
