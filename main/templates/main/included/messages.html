@@ -1,0 +1,42 @@
+{% load static %}
+
+<div class="col-md-6">
+    {% if messages %}
+        {% for message in messages %}
+            
+            {% if message.tags == 'success' %}
+                <div id="messages"
+                     class="position-fixed start-50 translate-middle-x z-3 alert alert-success fade show custom-shadow my-5"
+                     role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            
+            {% if message.tags == 'warning' %}
+                <div id="messages"
+                     class="position-fixed start-50 translate-middle-x z-3 alert alert-danger fade show custom-shadow my-5"
+                     role="alert">
+                    {{ message }}
+                </div>
+            {% endif %}
+            
+        {% endfor %}
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                var successMessage = document.getElementById("messages");
+                
+                function hideSuccessMessage() {
+                    successMessage.style.opacity = "0";
+                    setTimeout(function () {
+                        successMessage.style.display = "none";
+                    }, 400);
+                }
+                
+                if (successMessage) {
+                    successMessage.style.opacity = "1";
+                    setTimeout(hideSuccessMessage, 1700);
+                }
+            });
+        </script>
+    {% endif %}
+</div>

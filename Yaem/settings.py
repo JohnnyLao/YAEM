@@ -12,7 +12,7 @@ env = environ.Env(
         'django-insecure-s!asdatxswfgdrt*i+gwgxl9i2jh1fo(-a8yf8%)e3(-*5z(xd_',
     ),
     DEBUG=(bool, True),
-    ALLOWED_HOSTS=(list, ['localhost']),
+    ALLOWED_HOSTS=(list, ['localhost', '127.0.0.1']),
     SQL_ENGINE=(str, 'django.db.backends.sqlite3'),
     POSTGRES_DB=(str, os.path.join(BASE_DIR, "db.sqlite3")),
     POSTGRES_USER=(str, 'root'),
@@ -55,9 +55,10 @@ INSTALLED_APPS = [
     "partner.apps.PartnerConfig",
     "cart.apps.CartConfig",
     "banquets.apps.BanquetsConfig",
-    "registration.apps.RegistrationConfig",
+    'users.apps.UsersConfig',
     # debug_toolbar
     "debug_toolbar",
+    'phonenumber_field',
     # translation
     "modeltranslation",
     # swagger
@@ -100,6 +101,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "context_processors.context_processors.data_counter_site",
+                "context_processors.context_processors.get_total_cart_sum",
             ],
         },
     },
@@ -124,7 +126,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 LANGUAGE_CODE = "ru"
-TIME_ZONE = "UTC"
+TIME_ZONE = 'Asia/Almaty'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -149,16 +151,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # default redirect
 LOGOUT_REDIRECT_URL = "/"
-LOGIN_REDIRECT_URL = "/"
 # cookie time
 SESSION_COOKIE_AGE = 604800
 # cache lifetime (dev django, prod redis)
 CACHES_LIFE_TIME = 0
-# django all auth
-AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",
-    "allauth.account.auth_backends.AuthenticationBackend",
-]
+AUTH_USER_MODEL = 'users.User'
 
 # languages
 LANGUAGES = [

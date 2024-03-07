@@ -1,76 +1,70 @@
-
-    document.addEventListener('DOMContentLoaded', function () {
-    var swiper = new Swiper('#foodTypeSwiper', {
+document.addEventListener('DOMContentLoaded', function () {
+    var foodTypeSwiper = new Swiper('#foodTypeSwiper', {
         slidesPerView: 'auto',
-        spaceBetween: 0,
-        on: {
-            slideChangeTransitionEnd: function () {
-                // При изменении слайда свайпера, просто обновляем активную категорию, но не подсвечиваем
-                updateActiveFoodType();
-            },
-        },
+        spaceBetween: 10,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+        allowTouchMove: true // Разрешаем свайп слайдов
     });
 
-    var currentActiveIndex = 0; // Переменная для отслеживания текущей активной категории
+    var foodTypeButtons = document.querySelectorAll('.food-type-button');
+    var foodTypeSections = document.querySelectorAll('.food-type-section');
 
-    function updateActiveFoodType() {
-        var activeIndex = swiper.activeIndex;
-        currentActiveIndex = activeIndex;
-    }
+    console.log(foodTypeButtons);
+    console.log(foodTypeSections);
 
-    function highlightActiveFoodType() {
-        var buttons = document.querySelectorAll('.food-type-button');
-        buttons.forEach(function (button, index) {
-            if (index === currentActiveIndex) {
-                button.classList.add('active');
-            } else {
-                button.classList.remove('active');
+    function setActiveButton(sectionId) {
+        foodTypeButtons.forEach(function (btn) {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-target') === sectionId) {
+                btn.classList.add('active');
             }
         });
     }
 
-    // Вызовем эту функцию при загрузке страницы, чтобы установить начальное состояние
-    updateActiveFoodType();
-    highlightActiveFoodType();
-
-    // Обработчик события прокрутки страницы
-    window.addEventListener('scroll', function () {
-        highlightActiveCategoryOnScroll();
-    });
-
-    function highlightActiveCategoryOnScroll() {
-        var categories = document.querySelectorAll('.food-type-button');
-        var scrollPosition = window.scrollY;
-        var foundActive = false;
-
-        categories.forEach(function (category, index) {
-            var targetId = category.getAttribute('data-target');
-            var targetSection = document.getElementById(targetId);
-
-            if (!foundActive && targetSection.offsetTop <= scrollPosition && targetSection.offsetTop + targetSection.offsetHeight > scrollPosition) {
-                // Проверяем, чтобы не было двух активных категорий
-                if (index !== currentActiveIndex) {
-                    removeActiveClass();
-                    category.classList.add('active');
-
-                    // Перемещаем свайпер к текущей категории
-                    swiper.slideTo(index);
-                    currentActiveIndex = index; // Обновляем текущую активную категорию
-                }
-                foundActive = true;
-            }
-        });
-
-        // Если не найдено активной категории при прокрутке, обновляем активную категорию, чтобы избежать ошибок
-        if (!foundActive) {
-            updateActiveFoodType();
+    function scrollToSection(sectionId) {
+        var targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+            var targetOffsetTop = targetElement.offsetTop;
+            window.scrollTo({ top: targetOffsetTop, behavior: 'smooth' });
+            setActiveButton(sectionId);
         }
     }
 
-    function removeActiveClass() {
-        var categories = document.querySelectorAll('.food-type-button');
-        categories.forEach(function (category) {
-            category.classList.remove('active');
-        });
+    function onScroll() {
+        var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        for (var i = 0; i < foodTypeSections.length; i++) {
+            var section = foodTypeSections[i];
+            if (section.offsetTop <= currentScroll + 30 && section.offsetTop + section.offsetHeight > currentScroll + 50) {
+                setActiveButton(section.getAttribute('id'));
+                break;
+            }
+        }
     }
+
+    window.addEventListener('scroll', function () {
+        onScroll();
+    });
+
+    foodTypeButtons.forEach(function (button) {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            var target = event.currentTarget.getAttribute('data-target');
+            scrollToSection(target);
+        });
+    });
+
+    foodTypeSwiper.on('slideChange', function () {
+        var activeSlide = foodTypeSwiper.slides[foodTypeSwiper.activeIndex];
+        var sectionId = activeSlide.getAttribute('data-food');
+        scrollToSection(sectionId);
+    });
+
+    // Предотвращаем распространение события свайпа, чтобы оно не вызывало прокрутку страницы
+    foodTypeSwiper.el.addEventListener('touchmove', function (e) {
+        e.stopPropagation();
+    });
+
+    setActiveButton(foodTypeSections[0].getAttribute('id'));
 });

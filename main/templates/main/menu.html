@@ -18,7 +18,7 @@
 
 <!--button up-->
 <a id="scrollToTopButton" class="btn fs-1 mx-2 shadow btn-rounded"
-   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; right: 15px; display: none; z-index: 100"
+   style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 15px; right: 15px; display: none; z-index: 100"
    href="#header"
    data-mdb-ripple-color="#FD7014">
     <i class="fas fa-arrow-up-long"></i>
@@ -34,78 +34,13 @@
     background-repeat: repeat">
 
     <!--Flying Cart-->
-    <a class="d-inline btn fs-2 shadow btn-rounded btn-animate"
-       href="/cart/"
-       style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 30px; left: 15px; display: none; z-index: 101"
+    <a class="d-inline btn fs-4 shadow btn-rounded btn-animate invisible flying-cart"
+       href="{% url 'cart:cart_page' establishment_url_name=client.url_name %}"
+       style="color: #fd7014; background: rgba(33, 37, 41, 0.5); position: fixed; bottom: 15px; left: 15px; display: none; z-index: 98"
        data-mdb-ripple-color="#FD7014">
         <i class="fas fa-cart-shopping my-0 py-0"></i>
+        <span class="total-cart-cost">{{ total_cart_cost }}</span>
     </a>
-
-<!--       data-mdb-toggle="modal"-->
-<!--       data-mdb-target="#cart_modal"-->
-
-<!--    Modal-->
-<!--    <div class="modal fade" id="cart_modal" tabindex="-1" aria-labelledby="cart_modal" aria-hidden="true">-->
-<!--        <div class="modal-dialog modal-xl"-->
-<!--             style="&#45;&#45;mdb-modal-header-border-color: #555555; &#45;&#45;mdb-modal-footer-border-color: #555555">-->
-<!--            <div class="modal-content" style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.95), rgba(25, 25, 25, 0.95)), url({% static 'images/cart/4-min.jpg' %});-->
-<!--    background-attachment: fixed; background-size: cover; background-repeat: no-repeat">-->
-<!--                <div class="modal-header">-->
-<!--                    <h5 class="modal-title fw-bold" id="exampleModalLabel">Корзина</h5>-->
-<!--                    <button type="button" class="btn-close bg-danger" data-mdb-ripple-init data-mdb-dismiss="modal"-->
-<!--                            aria-label="Close"></button>-->
-<!--                </div>-->
-<!--                <div class="modal-body px-2">-->
-<!--                    <div class="d-flex">-->
-<!--                        <div class="col-4 col-lg-2 text-center">-->
-<!--                            <img src="{% static 'images/menu/2gis.png' %}" alt="ФОТО БЛЮДА" style="max-height: 100px">-->
-<!--                        </div>-->
-<!--                        <div class="col-8 col-lg-10">-->
-<!--                            <div class="row">-->
-<!--                                <p class="fw-bold"> Dish Name</p>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <p class=""> Dish description</p>-->
-<!--                            </div>-->
-<!--                            <div class="row">-->
-<!--                                <div class="d-flex content-justify-between">-->
-<!--                                    <div class="col fw-bold">-->
-<!--                                        <button class="btn btn-sm btn-danger btn-floating btn-animate shadow-0"-->
-<!--                                                data-mdb-ripple-color="danger"><i-->
-<!--                                                class="fas fa-minus"></i></button>-->
-<!--                                        <span>000</span>-->
-<!--                                        <button class="btn btn-sm btn-success btn-floating btn-animate shadow-0"-->
-<!--                                                data-mdb-ripple-color="success"><i-->
-<!--                                                class="fas fa-plus"></i></button>-->
-<!--                                    </div>-->
-
-<!--                                    <div class="col fw-bold text-end">0 000 ₸</div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <hr>-->
-<!--                    <div class="d-flex justify-content-end fw-bold">-->
-<!--                        <div class="col-6 col-lg-2">-->
-<!--                            <p class="my-0">Итого</p>-->
-<!--                            <p class="my-0">Обслуживание</p>-->
-<!--                            <p class="my-0">Итого с обслуживанием</p>-->
-<!--                        </div>-->
-<!--                        <div class="col-2 text-end">-->
-<!--                            <p class="my-0">0 000 ₸</p>-->
-<!--                            <p class="my-0">00 %</p>-->
-<!--                            <p class="my-0">0 000 ₸</p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="modal-footer">-->
-<!--                    <button type="button" class="btn btn-danger" data-mdb-ripple-init data-mdb-dismiss="modal">-->
-<!--                        Закрыть-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
@@ -121,11 +56,14 @@
                     <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
                         <span class="" style="color: #FD7014">{{ client.name }}</span>
                     </h4>
+
+
+
                     <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.working_time}}</p>
                     <p class="my-0 text-white-50">{% translate 'г' %}.{{client.city}}, {{client.address}}</p>
                     <p class="my-0">{{ client.description }}</p>
 
-                    <div class="row my-1 d-flex justify-content-around">
+                    <div class="row my-1 d-flex justify-content-center">
                         <div class="col-12 text-center fs-5">
                             {% if client.outside %}
                             <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Самовывоз' %}</span>
@@ -147,17 +85,21 @@
 
                             {% if client_has_banquet %}
                             <a href="{% url 'banquets:banquet_page' url_name=client.url_name %}">
-                                <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i
+                                <span data-aos="flip-up" class="badge"
+                                      style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Банкеты' %} <i
                                         class="fas fa-circle-chevron-right" style="color: #fd7014"></i></span>
                             </a>
+                            {% endif %}
+
+                            {% if client.service > 0 %}
+                            <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Сервис' %} {{client.service}} %</span>
                             {% endif %}
 
                         </div>
                     </div>
 
                     {% if client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                    <div class="row my-2 d-flex justify-content-around">
-                        <div class="col-8">
+                        <div class="d-flex justify-content-center">
 
                             {% if client.inst %}
                             <a href="{{ client.inst }}" target="_blank">
@@ -175,7 +117,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
                             {% if client.two_gis %}
                             <a href="{{ client.two_gis }}" target="_blank">
-                                <div data-aos="flip-left" data-aos-delay="50" class="btn btn-animate text-white btn-floating mt-1 mx-1"
+                                <div data-aos="flip-left" data-aos-delay="50"
+                                     class="btn btn-animate text-white btn-floating mt-1 mx-1"
                                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
@@ -190,14 +133,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
                             {% if client.phone %}
                             <a href="tel:+{{client.phone}}">
-                                <div data-aos="flip-left" data-aos-delay="100" class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
+                                <div data-aos="flip-left" data-aos-delay="100"
+                                     class="btn btn-primary btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fas fa-phone-flip fa-lg"></i>
                                 </div>
                             </a>
                             <!--                            IF WHATSAPP-->
                             <a target="_blank"
                                href="https://wa.me/{{client.phone}}">
-                                <div data-aos="flip-left" data-aos-delay="150" class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
+                                <div data-aos="flip-left" data-aos-delay="150"
+                                     class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
                                     <i class="fab fa-whatsapp fa-2x"></i>
                                 </div>
                             </a>
@@ -211,16 +156,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                 </div>
             </div>
         </div>
-    </div>
     <div class="container text-center my-3">
         <h2 class="pt-2 fw-bold" style="color: #fd7014">{% translate 'МЕНЮ' %}</h2>
     </div>
-
-
+    <style>
+        .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active  {
+    color: #FD7014;
+    border-color: #FD7014;
+    background-color: rgba(24, 24, 24, 0.75);
+}
+        .nav-tabs .nav-link:hover {
+    background-color: rgba(24, 24, 24, 0.75);
+    </style>
     <!--  SWIPER -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <!-- Demo styles -->
-     <style>
+    <style>
         .swiper {
             width: 100%;
             padding-top: 50px;
@@ -261,99 +212,151 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         }
 
     </style>
-
-
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="{% static 'js/food_swiper.js' %}"></script>
 
-    <!--    FOOD TYPE SWIPER    -->
-    <div class="sticky-top">
-    <div class="container-fluid py-2 my-3 shadow" style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
-        <div class="swiper-container" id="foodTypeSwiper">
-            <div class="swiper-wrapper text-center">
-                {% for ft in food_type %}
-                <div class="swiper-slide me-1">
-                    <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button" data-target="{{ ft }}"
-                       style="" href="#{{ ft }}">
-                        {{ ft }}
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</div>
-
-
-    <!--    FOOD TYPE DOWN    -->
-
-
-    {% for ft in food_type %}
-    <div class="col-12 text-center">
-        <hr class="opacity-5" id="{{ ft }}">
-        <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014" ">{{ ft }}</h2>
-    </div>
-
-
-    <!--    DISH CONTENT    -->
-    <div class="container-fluid my-3">
-        <div class="row gy-3 mx-auto justify-content-center">
-            {% for dish in dishes %}
-            {% if dish.food_type == ft and not dish.stop %}
-            <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
-                 style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
-                <div class="d-flex">
-                    {% if dish.image and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО" %}
-                    <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
-                        <img src="{{ dish.image.url }}" alt="dish img"
-                             class="img bg-white position-relative mx-auto"
-                             style="width: 130px; height: 130px; border-radius: 10px; object-fit: cover"
-                             draggable="false"
-                             loading="lazy">
-                        {% if dish.generated %}
-                        <div class="position-absolute top-0 start-0" data-mdb-toggle="tooltip"
-                             title="{% trans 'Фото сгенериновано YAEM AI' %}">
-                            <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle" style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>
+    <div class="d-flex justify-content-center">
+        <ul class="nav nav-tabs mb-3 " id="ex1" role="tablist">
+            <li class="nav-item " role="presentation">
+                <a
+                        class="nav-link active"
+                        id="ex1-tab-1"
+                        data-mdb-toggle="tab"
+                        href="#ex1-tabs-1"
+                        role="tab"
+                        aria-controls="ex1-tabs-1"
+                        aria-selected="true"
+                >
+                    <div class="card btn-animate ">
+                        <img src="{% static 'images/menu/kitchen.jpg' %}" alt="" style="width: 120px; height: 90px">
+                        <div class="card-body text-center">
+                            Кухня
                         </div>
-                        {% endif %}
                     </div>
-                    {% endif %}
-                    <div class="container" style="width: 100%;
+                </a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a
+                        class="nav-link"
+                        id="ex1-tab-2"
+                        data-mdb-toggle="tab"
+                        href="#ex1-tabs-2"
+                        role="tab"
+                        aria-controls="ex1-tabs-2"
+                        aria-selected="true"
+                >
+                    <div class="card btn-animate">
+                        <img src="{% static 'images/menu/alc.jpg' %}" alt="" style="width: 120px; height: 90px">
+                        <div class="card-body text-center">
+                            Бар
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <!-- Tabs navs -->
+    </div>
+    <!-- Tabs content -->
+    <div class="tab-content" id="ex1-content">
+        <div
+                class="tab-pane active"
+                id="ex1-tabs-1"
+                role="tabpanel"
+                aria-labelledby="ex1-tab-1"
+        >
+
+
+            <!--    FOOD TYPE SWIPER    -->
+            <div class="sticky-top">
+                <div class="container-fluid py-2 my-3 shadow"
+                     style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
+                    <div class="swiper-container" id="foodTypeSwiper">
+                        <div class="swiper-wrapper text-center">
+                            {% for ft in kitchen %}
+                            <div class="swiper-slide me-1" data-food="{{ ft.name }}"
+                                 data-index="{{ forloop.counter0 }}">
+                                <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
+                                   data-target="{{ ft.name }}"
+                                   style="" href="#{{ ft.name }}">
+                                    {{ ft.name }}
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--    FOOD TYPE DOWN    -->
+
+            {% for ft in kitchen %}
+            <div class="col-12 text-center">
+                <hr class="opacity-5" id="{{ ft.name }}">
+                <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
+            </div>
+
+
+            <!--    DISH CONTENT    -->
+            <div class="container-fluid my-3">
+                <div class="row gy-3 mx-auto justify-content-center">
+                    {% for dish in dishes %}
+                    {% if dish.food_type == ft %}
+                    <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
+                         style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
+                        <div class="d-flex">
+                            {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}
+                            <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
+                                <img src="{{ dish.image.url }}" alt="dish img"
+                                     class="img bg-white position-relative mx-auto"
+                                     style="width: 130px; height: 130px; border-radius: 10px; object-fit: cover"
+                                     draggable="false"
+                                     loading="lazy">
+                                {% if dish.generated %}
+                                <div class="position-absolute top-0 start-0" data-mdb-toggle="tooltip"
+                                     title="{% trans 'Фото сгенериновано YAEM AI' %}">
+                                    <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle"
+                                       style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="container" style="width: 100%;
     min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;">
-                        <div style="width: 100%;
+                                <div style="width: 100%;
     display: flex;
     flex-direction: column;">
-                            <p class="fw-bold fs-5 mb-1" style="font-weight: 600;
+                                    <p class="fw-bold fs-5 mb-1" style="font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     color: inherit;
     margin-bottom: 8px;
     opacity: .9;
     text-decoration: none;">{{ dish.name }}
-                                {% if dish.popular %}
-                                <span data-mdb-toggle="tooltip"
-                                      title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
-                                                                          style="color: gold"></i>
+                                        {% if dish.popular %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
+                                                                                  style="color: gold"></i>
                                 </span>
-                                {% endif %}
-                                {% if dish.spicy %}
-                                <span data-mdb-toggle="tooltip"
-                                      title="{% trans 'Острое' %}"><i
-                                        class="fas fa-pepper-hot text-danger fa-xs"></i>
+                                        {% endif %}
+                                        {% if dish.spicy %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Острое' %}"><i
+                                                class="fas fa-pepper-hot text-danger fa-xs"></i>
                                 </span>
-                                {% endif %}
-                                {% if dish.vegetarian %}
-                                <span data-mdb-toggle="tooltip"
-                                      title="{% trans 'Вегетарианское' %}"><i
-                                        class="fas fa-seedling text-success fa-xs"></i>
+                                        {% endif %}
+                                        {% if dish.vegetarian %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Вегетарианское' %}"><i
+                                                class="fas fa-seedling text-success fa-xs"></i>
                                 </span>
-                                {% endif %}
-                            </p>
-                            <p class="text-secondary" style="display: flex;
+                                        {% endif %}
+                                    </p>
+                                    <p class="text-secondary" style="display: flex;
                                 flex-direction: column;
                                 align-items: flex-start;
                                 font-weight: 600;
@@ -361,91 +364,219 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 line-height: 19px;
                                 color: inherit;
                                 margin-bottom: 8px;">{{ dish.description }}
-                            </p>
+                                    </p>
 
-                        </div>
-                        <div class="row">
-                            <div class="d-flex content-justify-between">
-
-                                <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
-                                    {% if dish.old_price > dish.actual_price %}
-                                    <p class="mb-0"><del>{{dish.old_price}} ₸</del></p>
-                                    {% endif %}
-                                    <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
                                 </div>
+                                <div class="row">
+                                    <div class="d-flex content-justify-between">
 
+                                        <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
+                                            {% if dish.old_price > dish.actual_price %}
+                                            <p class="mb-0">
+                                                <del>{{dish.old_price}} ₸</del>
+                                            </p>
+                                            {% endif %}
+                                            <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
+                                        </div>
 
-                                    <!--CART-->
-                                    <form class="d-flex justify-content-between ms-5" style="width: 82px">
-                                        {% csrf_token %}
-                                        <!-- Кнопка "-" для уменьшения количества товара -->
-                                        <input type="hidden" name="remove_quantity" value="1">
-                                        <button class="btn btn-animate shadow-0 px-0 py-0 me-1"
-                                                data-mdb-ripple-color="danger"
-                                                data-mdb-ripple-radius="10"
-                                                hx-post="{% url 'cart:remove_from_cart' dish.id %}"
-                                                hx-trigger="click"
-                                                hx-target="#product-quantity-{{ dish.id }}"
-                                                hidden="hidden">
+                                        {# CART - #}
+                                        <a class="btn btn-animate px-0 py-0 me-2 remove-from-cart invisible"
+                                           data-mdb-ripple-color="danger"
+                                           data-mdb-ripple-radius="10"
+                                           href="{% url 'cart:remove' %}"
+                                           data-dish-id="{{ dish.id }}">
                                             <i class="fas fa-circle-minus fa-2x text-danger"></i>
-                                        </button>
+                                        </a>
 
-                                        <!--КОЛ-ВО БЛЮДА-->
-                                        <span class="fw-bold fs-5" id="product-quantity-{{ dish.id }}"></span>
+                                        {# CART quantity #}
+                                        {% load cart_tag %}
+                                        <span class="cart-quantity zero-quantity my-auto mx-auto"
+                                              data-dish-id="{{ dish.id }}">
+                                {{ cart_items|get_item:dish.id }}
+                            </span>
 
-                                        <!-- Кнопка "+" для увеличения количества товара -->
-                                        <input type="hidden" name="add_quantity" value="1">
-                                        <button class="btn btn-animate shadow-0 px-0 py-0 ms-1"
-                                                data-mdb-ripple-color="success"
-                                                data-mdb-ripple-radius="10"
-                                                hx-post="{% url 'cart:add_to_cart' dish.id %}"
-                                                hx-trigger="click"
-                                                hx-target="#product-quantity-{{ dish.id }}">
-                                                <i class="fas fa-circle-plus fa-2x text-success"></i>
-                                        </button>
-                                    </form>
-                                    <script>
-                                        // Добавление обработчика события для кнопки "+"
-                                        document.querySelectorAll('button[data-mdb-ripple-color="success"]').forEach((button) => {
-                                            const quantitySpanId = button.getAttribute("hx-target").substring(1); // Удаление "#"
-                                            const minusButton = document.querySelector(`button[data-mdb-ripple-color="danger"][hx-target="#${quantitySpanId}"]`);
-                                            button.addEventListener("click", () => {
-                                                // Сделаем кнопку "-" видимой
-                                                minusButton.removeAttribute("hidden");
+                                        {# CART + #}
+                                        <a class="btn btn-animate px-0 py-0 ms-2 add-to-cart"
+                                           data-mdb-ripple-color="success"
+                                           data-mdb-ripple-radius="10"
+                                           href="{% url 'cart:add' %}"
+                                           data-dish-id="{{ dish.id }}">
+                                            <i class="fas fa-circle-plus fa-2x text-success"></i>
+                                        </a>
 
-                                                // Другие действия, которые вы хотите выполнить при нажатии на "+"
-                                            });
-                                        });
-                                    </script>
-
+                                    </div>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div
+                class="tab-pane"
+                id="ex1-tabs-2"
+                role="tabpanel"
+                aria-labelledby="ex1-tab-2"
+        >
+            <!--    FOOD TYPE SWIPER    -->
+            <div class="sticky-top">
+                <div class="container-fluid py-2 my-3 shadow"
+                     style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">
+                    <div class="swiper-container" id="foodTypeSwiper">
+                        <div class="swiper-wrapper text-center">
+                            {% for ft in bar %}
+                            <div class="swiper-slide me-1">
+                                <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
+                                   data-target="{{ ft.name }}"
+                                   style="" href="#{{ ft.name }}">
+                                    {{ ft.name }}
+                                </a>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
             </div>
-            {% endif %}
+
+
+            <!--    FOOD TYPE DOWN    -->
+
+
+            {% for ft in bar %}
+            <div class="col-12 text-center">
+                <hr class="opacity-5" id="{{ ft.name }}">
+                <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>
+            </div>
+
+
+            <!--    DISH CONTENT    -->
+            <div class="container-fluid my-3">
+                <div class="row gy-3 mx-auto justify-content-center">
+                    {% for dish in dishes %}
+                    {% if dish.food_type == ft %}
+                    <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
+                         style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
+                        <div class="d-flex">
+                            {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}
+                            <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
+                                <img src="{{ dish.image.url }}" alt="dish img"
+                                     class="img bg-white position-relative mx-auto"
+                                     style="width: 130px; height: 130px; border-radius: 10px; object-fit: cover"
+                                     draggable="false"
+                                     loading="lazy">
+                                {% if dish.generated %}
+                                <div class="position-absolute top-0 start-0" data-mdb-toggle="tooltip"
+                                     title="{% trans 'Фото сгенериновано YAEM AI' %}">
+                                    <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle"
+                                       style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>
+                                </div>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            <div class="container" style="width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;">
+                                <div style="width: 100%;
+    display: flex;
+    flex-direction: column;">
+                                    <p class="fw-bold fs-5 mb-1" style="font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: inherit;
+    margin-bottom: 8px;
+    opacity: .9;
+    text-decoration: none;">{{ dish.name }}
+                                        {% if dish.popular %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
+                                                                                  style="color: gold"></i>
+                                </span>
+                                        {% endif %}
+                                        {% if dish.spicy %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Острое' %}"><i
+                                                class="fas fa-pepper-hot text-danger fa-xs"></i>
+                                </span>
+                                        {% endif %}
+                                        {% if dish.vegetarian %}
+                                        <span data-mdb-toggle="tooltip"
+                                              title="{% trans 'Вегетарианское' %}"><i
+                                                class="fas fa-seedling text-success fa-xs"></i>
+                                </span>
+                                        {% endif %}
+                                    </p>
+                                    <p class="text-secondary" style="display: flex;
+                                flex-direction: column;
+                                align-items: flex-start;
+                                font-weight: 600;
+                                font-size: 16px;
+                                line-height: 19px;
+                                color: inherit;
+                                margin-bottom: 8px;">{{ dish.description }}
+                                    </p>
+
+                                </div>
+                                <div class="row">
+                                    <div class="d-flex content-justify-between">
+
+                                        <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
+                                            {% if dish.old_price > dish.actual_price %}
+                                            <p class="mb-0">
+                                                <del>{{dish.old_price}} ₸</del>
+                                            </p>
+                                            {% endif %}
+                                            <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
+                                        </div>
+
+                                        {# CART - #}
+                                        <a class="btn btn-animate px-0 py-0 me-2 remove-from-cart invisible"
+                                           data-mdb-ripple-color="danger"
+                                           data-mdb-ripple-radius="10"
+                                           href="{% url 'cart:remove' %}"
+                                           data-dish-id="{{ dish.id }}">
+                                            <i class="fas fa-circle-minus fa-2x text-danger"></i>
+                                        </a>
+
+                                        {# CART quantity #}
+                                        {% load cart_tag %}
+                                        <span class="cart-quantity zero-quantity my-auto mx-auto"
+                                              data-dish-id="{{ dish.id }}">
+                                {{ cart_items|get_item:dish.id }}
+                            </span>
+
+                                        {# CART + #}
+                                        <a class="btn btn-animate px-0 py-0 ms-2 add-to-cart"
+                                           data-mdb-ripple-color="success"
+                                           data-mdb-ripple-radius="10"
+                                           href="{% url 'cart:add' %}"
+                                           data-dish-id="{{ dish.id }}">
+                                            <i class="fas fa-circle-plus fa-2x text-success"></i>
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
-    {% endfor %}
+
+    <!--Content-->
+
+
 </section>
 
 
-<!--  MODAL CART WINDOW  -->
-<!--<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">-->
-<!--    <div class="modal-dialog modal-dialog-centered modal-sm">-->
-<!--        <div class="modal-content" style="background: rgba(33, 37, 41, 0.5); border-radius: 20px;">-->
-
-<!--            <div class="modal-body">-->
-<!--                <div class="row">-->
-<!--                    <div class="col-12 text-center">-->
-<!--                        <h5 class="modal-title" id="exampleModalLabel">{% translate 'Добавлено в корзину' %}</h5>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
 </body>
 
 

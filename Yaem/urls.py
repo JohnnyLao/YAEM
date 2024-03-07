@@ -23,12 +23,16 @@ urlpatterns = [
 
 
 urlpatterns += i18n_patterns(
+    # menu
     path("", include("main.urls", namespace="main")),
+    # partner
     path("", include("partner.urls", namespace="partner")),
+    # cart
     path("", include("cart.urls", namespace="cart")),
+    # banquets
     path("", include("banquets.urls", namespace="banquets")),
-    path("accounts/", include("django.contrib.auth.urls")),
-    path("accounts/register/", include("registration.urls", namespace="register")),
+    # users
+    path('user/', include('users.urls', namespace='users')),
     prefix_default_language=False,
 )
 

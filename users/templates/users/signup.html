@@ -1,0 +1,110 @@
+{% extends "users/base_registration.html" %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}  YAEM | Регистрация {% endblock title %}
+
+
+{% block content %}
+<main>
+    <div class="container">
+
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+                        <div class="d-flex justify-content-center py-4">
+                            <div class="logo d-flex align-items-center w-auto">
+                                <img src="{% static 'images/base/favicon1-min.png' %}" alt="">
+                                <span class="">YAEM.KZ</span>
+                            </div>
+                        </div><!-- End Logo -->
+
+                        <div class="card mb-3">
+
+                            <div class="card-body">
+
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Создать аккаунт</h5>
+                                    <p class="text-center small">Введите свои данные для создания аккаунта</p>
+                                </div>
+
+                                <form method="post" class="row g-3 needs-validation">
+                                    {% csrf_token %}
+                                    <div class="col-12">
+                                        <label for="{{ form.first_name.id_for_label }}" class="form-label">Имя</label>
+                                        {{ form.first_name }}
+                                        {{ form.first_name.errors }}
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="{{ form.last_name.id_for_label }}" class="form-label">Фамилия</label>
+                                        {{ form.last_name }}
+                                        {{ form.last_name.errors }}
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="{{ form.phone_number.id_for_label }}" class="form-label">Номер телефона</label>
+                                        {{ form.phone_number }}
+                                        {{ form.phone_number.errors }}
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="{{ form.email.id_for_label }}" class="form-label">Адрес эл.почты</label>
+                                        {{ form.email }}
+                                        {{ form.email.errors }}
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="{{ form.password1.id_for_label }}" class="form-label">Пароль</label>
+                                        {{ form.password1 }}
+                                        {{ form.password1.errors }}
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="{{ form.password2.id_for_label }}" class="form-label">Повторите пароль</label>
+                                        {{ form.password2 }}
+                                        {{ form.password2.errors }}
+                                    </div>
+
+
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" name="terms" type="checkbox" value=""
+                                                   id="acceptTerms" required>
+                                            <label class="form-check-label" for="acceptTerms">I agree and accept the <a
+                                                    href="#">terms and conditions</a></label>
+                                            <div class="invalid-feedback">You must agree before submitting.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100" type="submit">Создать аккаунт</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Уже есть аккаунт? <a href="{% url 'users:signin' %}">Войдите</a></p>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                        <div class="credits">
+                            Designed by <a class="fw-bold" href="#"
+                                           style="color: #FD7014">YAEM</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</main><!-- End #main -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
+
+{% endblock content %}

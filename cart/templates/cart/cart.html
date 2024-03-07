@@ -6,235 +6,145 @@
 {% block title %} {% translate 'Корзина' %} {{ total_price|intcomma }} ₸ {% endblock title %}
 
 {% block content %}
-<!--CART-->
-<section class="skrollable pb-5"
-         style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/cart/4-min.jpg' %});
-    background-attachment: fixed; background-position: 70%; background-size: cover; background-repeat: no-repeat">
+    <!--CART-->
+    <section class="skrollable pb-5"
+             style="background-image: linear-gradient(0deg, rgba(51, 51, 51, 0.9), rgba(51, 51, 51, 0.9)), url({% static 'images/cart/4-min.jpg' %});
+                     background-attachment: fixed; background-position: 70%; background-size: cover; background-repeat: no-repeat; min-height: 500px">
 
-    <!-- PART 1  -->
-    <div class="container">
-        <div class="row pt-5">
-            <div class="col-12">
+        <!-- PART 1  -->
+        <div class="container">
+            <div class="row pt-5">
 
-                <a href="#" onclick="goBack()">
-                <div data-aos="fade-right" class="btn btn-animate shadow-0"
-                     style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" fill="#FD7014"
-                         class="bi bi-arrow-left text-start"
-                         viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-                    </svg>
+                {# Сообщения!!! #}
+                {% include "main/included/messages.html" %}
+
+                <div class="col-12">
+
+                    <a href="{% url 'main:menu_page' url_name=establishment_url %}">
+                        <button data-aos="fade-right" class="btn btn-sm btn-animate shadow-0"
+                                style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
+                            <i class="fas fa-arrow-left-long fa-3x" style="color: #FD7014"> </i>
+                        </button>
+                    </a>
+
+
+                    <h2 class="text-center">{% translate 'Корзина' %}</h2>
                 </div>
-                </a>
-
-                <script>
-                    function goBack() {
-                        window.history.back();
-                    }
-                </script>
-
-                <h1 class="text-center">{% translate 'Корзина' %}</h1>
             </div>
         </div>
-    </div>
 
-    <!--  PART 2 CART LOGIC  -->
-    <div class="container my-5 position-relative" style="background: rgba(25, 25, 25, 0.5)">
-        {% if not is_empty %}
-        {% for cart_item in cart_items %}
-        <div class="row shadow-5">
-            <div class="col-6 my-auto">
-                <p class="fs-5 fw-bold my-2">{{ cart_item.product.name }}</p>
-<!--                <p>{{ cart_item.product.description }}</p>-->
-            </div>
-<!--            <div class="col-2 my-auto">-->
-<!--                    <span class="d-inline my-auto">{{ cart_item.quantity }}</span>-->
-<!--                <form class="d-inline" method="post" action="{% url 'cart:remove_on_cart_page' %}">-->
-<!--                    {% csrf_token %}-->
-<!--                    <input class="" type="hidden" name="product_id" value="{{ cart_item.product.id }}">-->
-<!--                        <button class="btn btn-animate shadow-0 px-0 py-0 " data-mdb-ripple-color="danger"-->
-<!--                        ><i class="fas fa-circle-minus fa-2x text-danger"></i>-->
-<!--                        </button>-->
-<!--                </form>-->
-<!--            </div>-->
+        <!--  PART 2 CART LOGIC  -->
+        {% load cart_tag %}
+        {% user_cart request establishment_url as cart %}
+        {% if cart.cart_items.all %}
+            <div class="container my-3 position-relative" style="background: rgba(25, 25, 25, 0.5)">
+            {% for item in cart.cart_items.all %}
+                {# Обращаемся по классу и передаем id конкретно этой карточки(именно этого блюда) в js #}
+                <div class="row shadow-5 cart-element"
+                     data-dish-id="{{ item.dish.id }}">
 
-            <div class="col-4 my-auto text-center">
-                <h5>{{cart_item.sub_total|intcomma}} ₸</h5>
-            </div>
-        </div>
-        <div>
-        </div>
-        {% endfor %}
-        <div class="row mt-2">
-            <div class="col-6 col-lg-8 text-end">
-                <form data-aos="fade-up" data-aos-delay="100" id="clear-form" method="post"
-                      action="{% url 'cart:cart_clear' %}">
-                    {% csrf_token %}
-                    <button class="btn btn-sm btn-danger btn-animate mt-3" type="submit" style="max-width: 140px">{% translate 'Очистить' %}
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                             class="bi bi-trash" viewBox="0 0 16 16">
-                            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
-                            <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
-                        </svg>
+                    <div class="col-6 my-auto me-0 pe-0">
+                        <p class="fs-6 fw-bold my-2 " style="line-height: 19px;">{{ item.dish.name }}</p>
+                        <p class="" style="font-size: 16px;
+    line-height: 19px;
+    color: inherit;
+    margin-bottom: 8px;
+    opacity: .6;">{{ item.dish.description }}</p>
+                    </div>
+                    <div class="col-3 mx-0 px-0 my-auto text-center">
+
+                        <!--                {# Обращаемся по классу и передаем id, href конкретно этой кнопки(именно этого блюда) в js #}-->
+                        <a class="btn btn-animate px-0 py-0 me-1 remove-from-cart"
+                           data-mdb-ripple-color="danger"
+                           data-mdb-ripple-radius="10"
+                           href="{% url 'cart:remove' %}"
+                           data-dish-id="{{ item.dish.id }}">
+                            <i class="fas fa-circle-minus fa-2x text-danger"></i>
+                        </a>
+
+                        <!--                {# Обращаемся по классу и отрисовываем данные с бекенда #}-->
+                        <span class="my-auto cart-quantity"
+                              data-dish-id="{{ item.dish.id }}">{{ item.quantity }}</span>
+
+
+                        <!--                {# Обращаемся по классу и передаем id, href конкретно этой кнопки(именно этого блюда) в js #}-->
+                        <a class="btn btn-animate px-0 py-0 ms-1 add-to-cart"
+                           data-mdb-ripple-color="success"
+                           data-mdb-ripple-radius="10"
+                           href="{% url 'cart:add' %}"
+                           data-dish-id="{{ item.dish.id }}">
+                            <i class="fas fa-circle-plus fa-2x text-success"></i>
+                        </a>
+
+                    </div>
+
+                    <!--            {# Обращаемся по классу cart-subtotal-value и отрисовываем данные с бекенда #}-->
+                    <!--            {# передаем id конкретно этого элемента (именно этого блюда) в js #}-->
+                    <div class="col-3 my-auto text-center">
+                        <h6 class="cart-subtotal-value"
+                            data-dish-id="{{ item.dish.id }}">
+                            {{ item.subtotal }} ₸
+                        </h6>
+                    </div>
+                    <hr class="my-1">
+                </div>
+
+
+            {% endfor %}
+            <div class="row mt-2">
+            <div class="col-5 col-lg-7 text-end my-auto">
+                <a href="{% url 'cart:clear' %}">
+                    <button class="btn btn-sm btn-danger btn-rounded btn-animate my-2 mx-auto" style="width: 120px">Очистить
+                        <i class="far fa-trash-can fa-lg"></i>
                     </button>
-                </form>
-            </div>
-            <div class="col-6 col-lg-4 text-center">
-                <p class="mt-3 mb-0 fs-4">{% translate 'Итого' %}:
-                    <span class="d-inline" style="color: #FD7014">{{ total_price|intcomma }} ₸</span>
-                </p>
-                <p>*{% translate 'Без обслуживания'%}</p>
-                {% else %}
-                <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
+                </a>
+                {% if request.user.is_authenticated %}
+<!--                    <a target="_blank" href="https://wa.me/77022918644?text=-->
+<!--Здравствуйте, прошу принять заказ через YAEM.KZ: %0a %0a-->
+<!--Имя: {{ request.user.full_name }} %0a-->
+<!--Номер телефона: {{ request.user.phone_number }} %0a-->
+<!--Адрес: ........ %0a %0a-->
+<!--{% for item in cart.cart_items.all %}-->
+<!--{{ item.dish.name }} - {{ item.quantity }} шт. %0a-->
+<!--{% endfor %} %0a-->
+<!--">-->
 
+
+<!--                        <button class="btn btn-sm btn-success btn-rounded btn-animate my-2 mx-auto" style="width: 120px">-->
+<!--                            Доставка-->
+<!--                            <i class="fas fa-truck-moving fa-lg"></i>-->
+<!--                        </button>-->
+<!--                    </a>-->
                 {% endif %}
             </div>
+
+            <!--            {# Обращаемся по классу cart-total-value и отрисовываем данные с бекенда #}-->
+                <div class="col-4 col-lg-2 text-end mx-0 px-0">
+                    <p class="mt-3 mb-0">{% translate 'Подитог: ' %}
+                    </p>
+                    {% if service_percent > 0 %}
+                    <p class="my-0">{% translate 'Обслуживание: ' %} </p>
+                    <p class="my-0 fw-bold"> {% translate 'Итого: ' %} </p>
+                    {% endif %}
+                </div>
+                <div class="col-3 text-start ms-0 ps-2">
+                    <p class="cart-total-value mb-0 mt-3" style="color: #FD7014">{{ cart.total_cost }} ₸</p>
+                    {% if service_percent > 0 %}
+                    <p class="my-0" style="color:#FD7014">{{ service_percent }} %</p>
+                    <p style="color:#FD7014" class="cart-total-value-with-service my-0 fw-bold">
+                        {{ cart.total_cost_with_service }} ₸</p>
+                    {% endif %}
+                </div>
+
+
+                {% else %}
+                <div class="container my-5" style="background: rgba(25, 25, 25, 0.5)">
+                    <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
+                </div>
+            </div>
+
+        {% endif %}
         </div>
-
-        <!--        {% if not is_empty %}-->
-        <!--        <div class="container my-5">-->
-        <!--            <div class="row">-->
-        <!--                <div class="col-12 text-center">-->
-        <!--                    <div data-aos="flip-up" data-aos-delay="500" class="btn-group mx-auto mb-3">-->
-        <!--                        <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" disabled/>-->
-        <!--                        <label class="btn btn-success" for="option1">{% translate 'В зале' %}</label>-->
-
-        <!--                        <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" disabled/>-->
-        <!--                        <label class="btn btn-success" for="option2">{% translate 'Самовывоз' %}</label>-->
-
-        <!--                        <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" disabled/>-->
-        <!--                        <label class="btn btn-success" for="option3">{% translate 'Доставка' %}</label>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--                <div id="inputContainer1" class="form-outline" style="display: none">-->
-        <!--                    <form action="" class="needs-validation" novalidate>-->
-        <!--                        <p class="text-light">{% translate 'Отправьте заказ, не дожидаясь официанта' %}</p>-->
-        <!--                        <div class="form-outline">-->
-        <!--                            <input type="text" id="table#" class="form-control text-light" maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary" for="table#">{% translate 'Номер стола' %}</label>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер стола' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="col-12 text-center mt-3">-->
-        <!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
-        <!--                            </button>-->
-        <!--                        </div>-->
-        <!--                    </form>-->
-        <!--                </div>-->
-
-        <!--                <div id="inputContainer2" class="form-outline" style="display: none">-->
-        <!--                    <form action="" class="needs-validation" novalidate>-->
-        <!--                        <p class="text-light">{% translate 'Отправьте заказ, и заберите в удобное время' %}</p>-->
-        <!--                        <div class="form-outline">-->
-        <!--                            <input type="text" id="name" class="form-control text-light" data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary" for="name">{% translate 'Ваше имя' %}</label>-->
-        <!--                            <div class="form-helper"></div>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="form-outline my-5">-->
-        <!--                            <input type="tel" id="phone" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary" for="phone">{% translate 'Номер телефона'%}</label>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="form-outline">-->
-        <!--                            <input type="time" id="time" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary ms-5" for="time">{% translate 'Время самовывоза'%}</label>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали время' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="col-12 text-center mt-3">-->
-        <!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
-        <!--                            </button>-->
-        <!--                        </div>-->
-        <!--                    </form>-->
-        <!--                </div>-->
-        <!--                &lt;!&ndash;СКРИПТ ПО ОБРАБОТКЕ ОТВЕТОВ&ndash;&gt;-->
-        <!--                <script>-->
-        <!--// Example starter JavaScript for disabling form submissions if there are invalid fields-->
-        <!--(() => {-->
-        <!--  'use strict';-->
-
-        <!--  // Fetch all the forms we want to apply custom Bootstrap validation styles to-->
-        <!--  const forms = document.querySelectorAll('.needs-validation');-->
-
-        <!--  // Loop over them and prevent submission-->
-        <!--  Array.prototype.slice.call(forms).forEach((form) => {-->
-        <!--    form.addEventListener('submit', (event) => {-->
-        <!--      if (!form.checkValidity()) {-->
-        <!--        event.preventDefault();-->
-        <!--        event.stopPropagation();-->
-        <!--      }-->
-        <!--      form.classList.add('was-validated');-->
-        <!--    }, false);-->
-        <!--  });-->
-        <!--})();-->
-
-        <!--                </script>-->
-        <!--                <div id="inputContainer3" class="form-outline" style="display: none">-->
-        <!--                    <form action="" class="needs-validation" novalidate>-->
-        <!--                        <p class="text-light">{% translate 'Отправьте заказ, и Вам доставят в удобное время' %}</p>-->
-        <!--                        <div class="form-outline">-->
-        <!--                            <input type="text" id="name1" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary" for="name1">{% translate 'Ваше имя' %}</label>-->
-        <!--                            <div class="form-helper"></div>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали имя' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="form-outline my-5 ">-->
-        <!--                            <input type="tel" id="phone1" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary" for="phone1">{% translate 'Номер телефона'%}</label>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали номер телефона' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="form-outline mb-5 ">-->
-        <!--                            <input type="text" id="address" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="60" required/>-->
-        <!--                            <label class="form-label text-secondary" for="address">{% translate 'Адрес доставки'%}</label>-->
-        <!--                            <div class="form-helper"></div>-->
-        <!--                            <div class="invalid-feedback">{% translate 'Вы не указали адрес доставки' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="form-outline">-->
-        <!--                            <input type="time" id="time1" class="form-control text-light"-->
-        <!--                                   data-mdb-showcounter="true"-->
-        <!--                                   maxlength="20" required/>-->
-        <!--                            <label class="form-label text-secondary ms-5" for="time1">{% translate 'Время доставки'%}</label>-->
-        <!--                            <div class="invalid-feedback ">{% translate 'Вы не указали время доставки' %}</div>-->
-        <!--                        </div>-->
-        <!--                        <div class="col-12 text-center mt-3">-->
-        <!--                            <button type="submit" class="btn btn-success mx-auto my-3">{% translate 'Отправить'%}-->
-        <!--                            </button>-->
-        <!--                        </div>-->
-        <!--                    </form>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <!--        {% endif %}-->
-    </div>
-</section>
-
-
-<!--СКРИПТ ПО ОБРАБОТКЕ РАДИО-->
-<script>
-    const radioOptions = document.querySelectorAll('input[name="options"]');
-    const inputContainers = document.querySelectorAll('[id^="inputContainer"]');
-
-    radioOptions.forEach((radio, index) => {
-        radio.addEventListener('change', () => {
-            inputContainers.forEach(container => {
-                container.style.display = 'none';
-            });
-
-            if (radio.checked) {
-                inputContainers[index].style.display = 'block';
-            }
-        });
-    });
-</script>
+        </div>
+    </section>
 {% endblock content %}
