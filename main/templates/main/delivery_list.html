@@ -52,6 +52,8 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 </section>
 <!--COUNTER END-->
 
@@ -114,7 +116,7 @@
 
                 <!--- цикл -->
                 {% for client in clients %}
-                {% if client.status  %}
+                {% if client.status %}
 <!--                and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО"-->
 
                 <div class="col-6 col-md-4 col-lg-3 text-center btn-animate" >
@@ -124,16 +126,14 @@
                             <img src="{{client.logo.url}}"
                                  class="card-img-top mx-auto mt-0 mb-0 rounded "
                                  alt="logo image"
-                                 style="max-width: 185px; max-height: 185px"
+                                 style="max-width: 150px"
                                  draggable="false">
 
                         <div class="card-body my-0 py-1">
-                            <h5 data-aos="flip-up" class="card-title my-0">{{ client.name }}
-                            </h5>
+                            <h6 data-aos="flip-up" class="card-title my-0">{{ client.name }}
+                            </h6>
                             <p data-aos="flip-up" class="my-0 text-white-50">
                                 {{ client.working_time }}</p>
-                            <p data-aos="flip-up" class="my-0 text-white-50" style="font-size: 12px">
-                                {{ client.address }}</p>
                         </div>
                     </div>
                           </a>

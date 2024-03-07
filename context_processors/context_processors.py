@@ -14,7 +14,7 @@ def data_counter_site(request):
 
     total_dishes = Dish.objects.count()
     total_clients = Client.objects.count()
-    total_orders = total_clients * randint(9, 15)
+    total_orders = total_clients * randint(2, 6)
 
     total_banquets = BanquetCard.objects.count()
     total_cities = City.objects.count()
@@ -26,7 +26,7 @@ def data_counter_site(request):
         "total_banquets": total_banquets,
         "total_cities": total_cities,
     }
-    cache.set('site_counters', site_counters, timeout=86400)
+    cache.set('site_counters', site_counters, timeout=0)
     return site_counters
 
 

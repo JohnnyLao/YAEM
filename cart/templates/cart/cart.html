@@ -86,8 +86,9 @@
                             {{ item.subtotal }} ₸
                         </h6>
                     </div>
+                    <hr class="my-1">
                 </div>
-                <hr class="my-1">
+
 
             {% endfor %}
             <div class="row mt-2">
@@ -118,20 +119,23 @@
             </div>
 
             <!--            {# Обращаемся по классу cart-total-value и отрисовываем данные с бекенда #}-->
-            <div class="col-4 col-lg-2 text-end mx-0 px-0">
-                <p class="mt-3 mb-0">{% translate 'Подитог: ' %}
-
-                </p>
-                {% if service_percent > 0 %}
-                <p class="my-0">{% translate 'Обслуживание: ' %} </p>
-                <p class="my-0 fw-bold"> {% translate 'Итого: ' %} </p>
+                <div class="col-4 col-lg-2 text-end mx-0 px-0">
+                    <p class="mt-3 mb-0">{% translate 'Подитог: ' %}
+                    </p>
+                    {% if service_percent > 0 %}
+                    <p class="my-0">{% translate 'Обслуживание: ' %} </p>
+                    <p class="my-0 fw-bold"> {% translate 'Итого: ' %} </p>
+                    {% endif %}
                 </div>
                 <div class="col-3 text-start ms-0 ps-2">
                     <p class="cart-total-value mb-0 mt-3" style="color: #FD7014">{{ cart.total_cost }} ₸</p>
+                    {% if service_percent > 0 %}
                     <p class="my-0" style="color:#FD7014">{{ service_percent }} %</p>
-                    <p style="color:#FD7014" class="cart-total-value-with-service my-0 fw-bold">{{ cart.total_cost_with_service }} ₸</p>
+                    <p style="color:#FD7014" class="cart-total-value-with-service my-0 fw-bold">
+                        {{ cart.total_cost_with_service }} ₸</p>
+                    {% endif %}
                 </div>
-                {% endif %}
+
 
                 {% else %}
                 <div class="container my-5" style="background: rgba(25, 25, 25, 0.5)">
