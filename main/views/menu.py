@@ -24,8 +24,8 @@ class Menu(TemplateView):
         food_type = (
             Food_type.objects.filter(dish__in=dishes).distinct().order_by("z_index")
         )
-        kitchen = Food_type.objects.filter(dish__in=dishes).filter(category__name="Кухня").distinct()
-        bar = Food_type.objects.filter(dish__in=dishes).filter(category__name="Бар").distinct()
+        kitchen = Food_type.objects.filter(dish__in=dishes).filter(category__name="Кухня").order_by("z_index").distinct()
+        bar = Food_type.objects.filter(dish__in=dishes).filter(category__name="Бар").order_by("z_index").distinct()
         # dish quantity
         user_cart = None
         if self.request.user.is_authenticated:
