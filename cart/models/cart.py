@@ -35,7 +35,6 @@ class Cart(models.Model):
     def total_cost_with_service(self):
         return sum(item.subtotal_with_service() for item in self.cart_items.all())
 
-
     def __str__(self):
         return f'{self.user}'
 
