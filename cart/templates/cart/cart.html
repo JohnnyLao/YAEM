@@ -91,60 +91,53 @@
 
 
         {% endfor %}
-        <div class="row mt-2">
-            <div class="col-5 col-lg-7 text-end my-auto">
-                <a href="{% url 'cart:clear' %}">
-                    <button class="btn btn-sm btn-danger btn-rounded btn-animate my-2 mx-auto" style="width: 120px">
-                        Очистить
-                        <i class="far fa-trash-can fa-lg"></i>
-                    </button>
-                </a>
-                {% if request.user.is_authenticated %}
-                <!--                    <a target="_blank" href="https://wa.me/77022918644?text=-->
-                <!--Здравствуйте, прошу принять заказ через YAEM.KZ: %0a %0a-->
-                <!--Имя: {{ request.user.full_name }} %0a-->
-                <!--Номер телефона: {{ request.user.phone_number }} %0a-->
-                <!--Адрес: ........ %0a %0a-->
-                <!--{% for item in cart.cart_items.all %}-->
-                <!--{{ item.dish.name }} - {{ item.quantity }} шт. %0a-->
-                <!--{% endfor %} %0a-->
-                <!--">-->
+        <div class="d-flex">
 
-
-                <!--                        <button class="btn btn-sm btn-success btn-rounded btn-animate my-2 mx-auto" style="width: 120px">-->
-                <!--                            Доставка-->
-                <!--                            <i class="fas fa-truck-moving fa-lg"></i>-->
-                <!--                        </button>-->
-                <!--                    </a>-->
-                {% endif %}
-            </div>
 
             <!--            {# Обращаемся по классу cart-total-value и отрисовываем данные с бекенда #}-->
-            <div class="col-4 col-lg-2 text-end mx-0 px-0">
+            {% if service_percent > 0 %}
+            <div class="col-9 text-end mx-0 px-0">
                 <p class="mt-3 mb-0">{% translate 'Подитог: ' %}
                 </p>
-                {% if service_percent > 0 %}
                 <p class="my-0">{% translate 'Обслуживание: ' %} </p>
                 <p class="my-0 fw-bold"> {% translate 'Итого: ' %} </p>
-                {% endif %}
             </div>
-            <div class="col-3 text-start ms-0 ps-2">
+            <div class="col-3 text-center ms-0 ps-2">
                 <p class="cart-total-value mb-0 mt-3" style="color: #FD7014">{{ cart.total_cost }} ₸</p>
-                {% if service_percent > 0 %}
                 <p class="my-0" style="color:#FD7014">{{ service_percent }} %</p>
                 <p style="color:#FD7014" class="cart-total-value-with-service my-0 fw-bold">
                     {{ cart.total_cost_with_service }} ₸</p>
-                {% endif %}
             </div>
-
-
             {% else %}
-            <div class="container my-5" style="background: rgba(25, 25, 25, 0.5)">
-                <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
+            <div class="col-9 text-end mx-0 px-0">
+                <p class="mt-3 mb-0 fw-bold">{% translate 'Итого: ' %}</p>
             </div>
+            <div class="col-3 text-center ms-0 ps-2">
+                <p class="cart-total-value mb-0 mt-3 fw-bold" style="color: #FD7014">{{ cart.total_cost }} ₸</p>
+            </div>
+            {% endif %}
+        </div>
+        <div class="container text-center">
+            <a class="text-center" target="_blank" href="https://wa.me/77015302812?text=
+Здравствуйте, прошу принять заказ через YAEM.KZ: %0a %0a
+{% for item in cart.cart_items.all %}
+{{ item.dish.name }} - {{ item.quantity }} шт. %0a
+{% endfor %}">
+                <button class="btn btn-sm btn-success btn-rounded btn-animate my-4 mx-auto">
+                    Заказать доставку
+                    <i class="fas fa-truck-moving fa-lg"></i>
+                </button>
+            </a>
         </div>
 
-        {% endif %}
+
+        {% else %}
+        <div class="container my-5" style="background: rgba(25, 25, 25, 0.5)">
+            <h5 class="text-center py-5">{% translate 'Корзина пуста' %}</h5>
+        </div>
+    </div>
+
+    {% endif %}
     </div>
     </div>
 </section>
