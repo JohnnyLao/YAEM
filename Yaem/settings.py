@@ -215,7 +215,6 @@ JAZZMIN_SETTINGS = {
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAdminUser",),
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        # "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.BasicAuthentication",
     ],
     "DEFAULT_PARSER_CLASSES": [
@@ -226,7 +225,7 @@ REST_FRAMEWORK = {
     ],
     # "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    # "DEFAULT_PAGINATION_CLASS": "core.pagination.CustomPagination",
+    "DEFAULT_PAGINATION_CLASS": "api_v1.utils.pagination.BasePagination",
 }
 #########################
 
