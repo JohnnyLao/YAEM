@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 
 from banquets.models import BanquetCard
-from cart.models import Cart, CartItems
+from cart.models import Cart
 from main.models import Category, Client, Dish, Food_type
 
 

@@ -39,7 +39,7 @@
     {% if cart.cart_items.all %}
     <div class="container my-3 position-relative" style="background: rgba(25, 25, 25, 0.5)">
         {% for item in cart.cart_items.all %}
-        {# Обращаемся по классу и передаем id конкретно этой карточки(именно этого блюда) в js #}
+<!--        {# Обращаемся по классу и передаем id конкретно этой карточки(именно этого блюда) в js #}-->
         <div class="row shadow-5 cart-element"
              data-dish-id="{{ item.dish.id }}">
 
@@ -120,7 +120,7 @@
         {% if delivery %}
         <div class="container text-center">
             <a class="text-center" target="_blank" href="https://wa.me/77015302812?text=
-Здравствуйте, прошу принять заказ через YAEM.KZ: %0a %0a
+Здравствуйте, прошу принять заказ с сайта YAEM.KZ: %0a %0a
 {% for item in cart.cart_items.all %}
 {{ item.dish.name }} - {{ item.quantity }} шт. %0a
 {% endfor %}">
@@ -140,7 +140,5 @@
     </div>
 
     {% endif %}
-    </div>
-    </div>
 </section>
 {% endblock content %}

@@ -47,8 +47,16 @@
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
         <div class="col-12 text-center">
-            <div class="card text-white shadow user-select-none"
+            <div class="card text-white shadow user-select-none position-relative"
                  style="background: rgba(25, 25, 25, 0.75); z-index: auto">
+                <div class="position-absolute top-0 start-0">
+                    <a href="{% url 'main:delivery_list_page' %}">
+                        <button data-aos="fade-right" class="btn btn-sm btn-animate shadow-0"
+                                style="border-radius: 20px; " data-mdb-ripple-color="#fd7014">
+                            <i class="fas fa-arrow-left-long fa-3x" style="color: #FD7014"> </i>
+                        </button>
+                    </a>
+                </div>
                 <img src="{{client.logo.url}}"
                      class="card-img-top mx-auto mt-2 mb-0 shadow rounded" alt="logo image"
                      style="max-width: 220px"
@@ -71,11 +79,10 @@
                             {% endif %}
 
                             {% if client.outside %}
-                            <span data-aos="flip-up" class="badge" data-mdb-toggle="tooltip"
-                                  title="{% trans 'Чтобы заказать самовывоз \ доставку, просмотрите меню ниже, затем нажмите на Телефон или Whatsapp' %}"
+                            <span data-aos="flip-up" class="badge"
                                   style="background-color: rgba(253, 112, 20, 0.4)">
                                 {% trans 'Доставка' %}
-                                <i class="fas fa-circle-question" style="color:#fd7014"></i></span>
+                            </span>
                             {% endif %}
 
                             {% if client.translated %}
