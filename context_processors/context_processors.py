@@ -1,9 +1,12 @@
+from datetime import datetime
 from random import randint
+
 from django.core.cache import cache
+
 from banquets.models import BanquetCard
 from cart.models import Cart
 from main.models import City, Client, Dish
-from datetime import datetime
+
 
 def data_counter_site(request):
     cache_data = cache.get('site_counters')
@@ -27,6 +30,7 @@ def data_counter_site(request):
     cache.set('site_counters', site_counters, timeout=0)
     return site_counters
 
+
 def generate_random_number():
     current_hour = datetime.now().hour
     total_clients = Client.objects.count()
@@ -34,12 +38,11 @@ def generate_random_number():
     if 12 <= current_hour <= 24 or 0 <= current_hour <= 2:
         random_number = randint(total_clients * 2, total_clients * 6)
     elif 8 <= current_hour <= 12:
-        random_number = randint(10, total_clients*2)
+        random_number = randint(10, total_clients * 2)
     else:
         random_number = randint(0, 7)
 
     return random_number
-
 
 
 def get_total_cart_sum(request):

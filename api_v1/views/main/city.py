@@ -13,7 +13,11 @@ from main.models import City
 class CityViewSet(ModelViewSet):
     queryset = City.objects.all().order_by('id')
     serializer_class = main.CitySerializer
-    http_method_names = ("get", "post", "delete",)
+    http_method_names = (
+        "get",
+        "post",
+        "delete",
+    )
 
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):

@@ -13,6 +13,9 @@ class Profile(models.Model):
     telegram_id = models.CharField(
         max_length=50, blank=True, null=True, verbose_name='Телеграм ID'
     )
+    user_address = models.CharField(
+        max_length=150, blank=True, null=True, verbose_name='Адрес'
+    )
 
     class Meta:
         verbose_name = 'Профиль'

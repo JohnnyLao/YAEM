@@ -1,9 +1,17 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 from main.models.utils.images_upload import client_logo_upload_to
 
 
 class Client(models.Model):
+    user = models.ForeignKey(
+        to=get_user_model(),
+        on_delete=models.PROTECT,
+        verbose_name='Владелец',
+        blank=True,
+        null=True,
+    )
     name = models.CharField(max_length=20, verbose_name="Наименование")
     city = models.ForeignKey("main.City", models.CASCADE, verbose_name="Город")
     logo = models.ImageField(

@@ -25,7 +25,7 @@ class RegistrationView(View):
             user = registration_form.save()
             login(request, user)
 
-            message = f'{user.full_name} - вы успешно зарегистрировались!'
+            message = f'{user.first_name} - вы успешно зарегистрировались!'
             messages.success(request=request, message=message)
 
             return redirect('main:delivery_list_page')

@@ -15,6 +15,4 @@ class CitySerializer(ModelSerializer):
 class CityDetailSerializer(ModelSerializer):
     class Meta:
         model = City
-        fields = (
-            'name',
-        )
+        fields = ('name',)

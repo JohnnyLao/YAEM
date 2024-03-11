@@ -152,7 +152,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # default redirect
 LOGOUT_REDIRECT_URL = "/"
 # cookie time
-SESSION_COOKIE_AGE = 604800
+SESSION_COOKIE_AGE = 86400
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # cache lifetime (dev django, prod redis)
 CACHES_LIFE_TIME = 0
 AUTH_USER_MODEL = 'users.User'
@@ -258,3 +259,11 @@ SPECTACULAR_SETTINGS = {
     "DISABLE_ERRORS_AND_WARNINGS": True,
 }
 ########################
+
+######################
+# CORS HEADERS
+######################
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ["*"]
+CSRF_COOKIE_SECURE = False
