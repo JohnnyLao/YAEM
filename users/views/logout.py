@@ -10,8 +10,8 @@ from django.views import View
 @method_decorator(login_required, name="dispatch")
 class LogoutView(View):
     def get(self, request, *args, **kwargs):
-        full_name = request.user.full_name
+        name = request.user.first_name
         if request.user.is_authenticated:
             logout(request)
-            messages.warning(request, f"{full_name} - вы вышли из аккаунта")
+            messages.warning(request, f"{name} - вы вышли из аккаунта")
             return redirect(reverse("main:delivery_list_page"))

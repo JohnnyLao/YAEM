@@ -31,15 +31,8 @@ class User(AbstractUser):
         verbose_name_plural = 'Пользователи'
         ordering = ('id',)
 
-    @property
-    def full_name(self):
-        if self.first_name:
-            return f'{str(self.first_name).capitalize()}'
-        else:
-            return 'Имя не указано'
-
     def __str__(self):
-        return self.full_name
+        return self.first_name
 
 
 @receiver(signal=post_save, sender=User)

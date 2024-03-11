@@ -24,29 +24,28 @@
 {% include "main/included/messages.html" %}
 
 <!--COUNTER START-->
-<section class="" style="background: #212529">
+<section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
-            <div class="col-4">
-                <div class="indicators-item"> <!--item-1-->
+            <div class="col-4 col-lg-4">
+                <div id="counter-1" class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
                     </i> {% trans 'Заведений' %}
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num={{total_dishes}} class="indicators-title fs-5"></div>
+            <div class="col-4 col-lg-4">
+                <div id="counter-4" class="indicators-item"> <!--item-2-->
+                    <div data-num="{{total_dishes}}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
-
                     </i> {% trans 'Блюд' %}
                     </div>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title fs-5"></div>
+            <div class="col-4 col-lg-4">
+                <div id="counter-3" class="indicators-item"><!--item-3-->
+                    <div data-num={{total_online}} class="indicators-title fs-5"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -116,30 +115,27 @@
 
                 <!--- цикл -->
                 {% for client in clients %}
-                {% if client.status %}
-<!--                and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО"-->
+                <!--                and client.tarif_number.name == "СЕРЕБРО" or client.tarif_number.name == "ЗОЛОТО"-->
 
-                <div class="col-6 col-md-4 col-lg-3 text-center btn-animate" >
+                <div class="col-6 col-md-4 col-lg-3 text-center btn-animate">
                     <a href="{% url 'main:menu_page' url_name=client.url_name %}" class="mx-0 px-0">
-                    <div class="card text-white shadow" style="background: rgba(33, 37, 41, 0.75)">
+                        <div class="card text-white shadow" style="background: rgba(33, 37, 41, 0.75); height: 205px">
 
                             <img src="{{client.logo.url}}"
                                  class="card-img-top mx-auto mt-0 mb-0 rounded "
                                  alt="logo image"
-                                 style="max-width: 150px"
+                                 style="max-height: 150px; width: auto"
                                  draggable="false">
 
-                        <div class="card-body my-0 py-1">
-                            <h6 data-aos="flip-up" class="card-title my-0">{{ client.name }}
-                            </h6>
-                            <p data-aos="flip-up" class="my-0 text-white-50">
-                                {{ client.working_time }}</p>
+                            <div class="card-body my-0 py-1">
+                                <h6 data-aos="flip-up" class="card-title my-0">{{ client.name }}
+                                </h6>
+                                <p data-aos="flip-up" class="my-0 text-white-50">
+                                    {{ client.working_time }}</p>
+                            </div>
                         </div>
-                    </div>
-                          </a>
+                    </a>
                 </div>
-
-                {% endif %}
                 {% endfor %}
             </div>
         </div>

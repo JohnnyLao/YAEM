@@ -21,7 +21,7 @@ class RegistrationForm(UserCreationForm):
                 "placeholder": "Иванов",
             }
         ),
-        required=False
+        required=False,
     )
     phone_number = PhoneNumberField(
         widget=forms.TextInput(

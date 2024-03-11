@@ -29,24 +29,24 @@
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{total_clients}}" class="indicators-title fs-4"></div>
+                <div id="counter-1" class="indicators-item"> <!--item-1-->
+                    <div data-num="{{total_clients}}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
                     </i> {% trans 'Заведений' %}
                     </div>
                 </div>
             </div>
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"> <!--item-2-->
-                    <div data-num="{{total_banquets}}" class="indicators-title fs-4"></div>
+                <div id="counter-2" class="indicators-item"> <!--item-2-->
+                    <div data-num="{{total_banquets}}" class="indicators-title fs-5"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
                     </i> {% trans 'Залов' %}
                     </div>
                 </div>
             </div>
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"><!--item-3-->
-                    <div data-num={{total_orders}} class="indicators-title fs-4"></div>
+                <div id="counter-3" class="indicators-item"><!--item-3-->
+                    <div data-num={{total_online}} class="indicators-title fs-5"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
@@ -55,6 +55,7 @@
         </div>
     </div>
 </section>
+
 
 
 
@@ -74,14 +75,14 @@
             <div class="row my-3 d-flex justify-content-evenly text-center mx-auto" style="max-width: 700px">
                 <!--- DELIVERY -->
                 <div class="col-6">
-                    <a href="delivery" class="btn px-0 py-0 btn-animate rounded-pill" data-mdb-ripple-color="#FD7014"
+                    <a href="delivery" class="btn px-0 py-0 btn-animate rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="#FD7014"
                        style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #FD7014">
                         <div class="card shadow-2 rounded-pill"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.5), rgba(25, 25, 25, 0.7)),
                                          url({% static 'images/index/menu-min.jpg' %});
                                         height: 150px; width: 150px; background-size: cover;">
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="" style="color: #FD7014">{% trans 'ДОСТАВКА' %}</h6>
+                                <h6 class="" style="color: #FD7014">{% trans 'МЕНЮ / ДОСТАВКА' %} <p class="my-1 py-0" style="font-size: 10px; opacity: 0.8">без посредников</p></h6>
                             </div>
                         </div>
                     </a>
@@ -89,7 +90,7 @@
                 <!--- BANQUET -->
                 <div class="col-6">
                     <a href="{% url 'banquets:banquet_list_page' %}" class="btn btn-animate px-0 py-0 rounded-pill"
-                       data-mdb-ripple-color="#FD7014"
+                       data-mdb-ripple-init data-mdb-ripple-color="#FD7014"
                     style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #FD7014">
                         <div class="card shadow shadow-inner rounded-pill"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.6), rgba(25, 25, 25, 0.8)),
@@ -104,47 +105,47 @@
             </div>
             <div class="row my-3 gy-4 d-flex justify-content-evenly text-center">
                 <!--- PRODUCTS -->
-                <div data-aos="fade-up" class="col-6 col-lg-3">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-color="dark"
+                <div class="col-6 col-lg-3">
+                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
                     style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
-                        <div class="card shadow rounded-pill"
+                        <div class="card shadow rounded-circle"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.8)),
                                          url({% static 'images/index/supermarket.avif' %});
                                            height: 150px; width: 150px; background-size: cover">
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-muted" style="">{% trans 'ПРОДУКТЫ' %}</h6>
+                                <h6 class="text-white-50" style="">{% trans 'ПРОДУКТЫ' %}</h6>
                             </div>
-                            <p class="">{% trans 'В РАЗРАБОТКЕ' %}</p>
+                            <p class="text-secondary text-opacity-50">{% trans 'В РАЗРАБОТКЕ' %}</p>
                         </div>
                     </button>
                 </div>
                 <!--- CATERING -->
-                <div data-aos="fade-up" class="col-6 col-lg-3">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-color="dark"
+                <div class="col-6 col-lg-3">
+                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
                     style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
                         <div class="card shadow rounded-pill"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.9)),
                                          url({% static 'images/index/catering1-min.jpg' %});
                                            height: 150px; width: 150px; background-size: cover">
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-muted" style="">{% trans 'КЕЙТЕРИНГ' %}</h6>
+                                <h6 class="text-white-50" style="">{% trans 'КЕЙТЕРИНГ' %}</h6>
                             </div>
-                            <p class="" style="">{% trans 'В РАЗРАБОТКЕ' %}</p>
+                            <p class="text-secondary text-opacity-50" style="">{% trans 'В РАЗРАБОТКЕ' %}</p>
                         </div>
                     </button>
                 </div>
                 <!--- TRADERS -->
-                <div data-aos="fade-up" class="col-6 col-lg-3">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-color="dark"
+                <div class="col-6 col-lg-3">
+                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
                     style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
                         <div class="card shadow shadow-inner rounded-pill"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)),
                                          url({% static 'images/index/companies-min.jpg' %});
                                            height: 150px; width: 150px; background-size: cover">
                             <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-muted" style="">{% trans 'ТОРГОВЫЕ ПРЕДСТАВИТЕЛИ' %}</h6>
+                                <h6 class="text-white-50 " style="">{% trans 'ТОРГОВЫЕ ПРЕДСТАВИТЕЛИ' %}</h6>
                             </div>
-                            <p class="">{% trans 'В РАЗРАБОТКЕ' %}</p>
+                            <p class="text-secondary text-opacity-50">{% trans 'В РАЗРАБОТКЕ' %}</p>
                         </div>
                     </button>
                 </div>
@@ -154,8 +155,8 @@
             <div class="row mt-5">
                 <div class="col-12 text-center">
                     <a href="partner" class="text-center">
-                        <button data-aos="flip-up" class="btn btn-rounded btn-danger btn-animate"
-                                style="--mdb-btn-bg: #FD7014">
+                        <button data-aos="flip-up" data-mdb-ripple-init class="btn btn-rounded btn-danger btn-animate"
+                        style="--mdb-btn-bg: #FD7014">
                             {% trans 'Cтать партнёром' %}
                         </button>
                     </a>

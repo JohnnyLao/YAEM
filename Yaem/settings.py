@@ -152,7 +152,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # default redirect
 LOGOUT_REDIRECT_URL = "/"
 # cookie time
-SESSION_COOKIE_AGE = 604800
+SESSION_COOKIE_AGE = 86400
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 # cache lifetime (dev django, prod redis)
 CACHES_LIFE_TIME = 0
 AUTH_USER_MODEL = 'users.User'
@@ -215,7 +216,6 @@ JAZZMIN_SETTINGS = {
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAdminUser",),
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        # "rest_framework_simplejwt.authentication.JWTAuthentication",
         "rest_framework.authentication.BasicAuthentication",
     ],
     "DEFAULT_PARSER_CLASSES": [
@@ -226,7 +226,7 @@ REST_FRAMEWORK = {
     ],
     # "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-    # "DEFAULT_PAGINATION_CLASS": "core.pagination.CustomPagination",
+    "DEFAULT_PAGINATION_CLASS": "api_v1.utils.pagination.BasePagination",
 }
 #########################
 
@@ -259,3 +259,11 @@ SPECTACULAR_SETTINGS = {
     "DISABLE_ERRORS_AND_WARNINGS": True,
 }
 ########################
+
+######################
+# CORS HEADERS
+######################
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_HEADERS = ["*"]
+CSRF_COOKIE_SECURE = False
