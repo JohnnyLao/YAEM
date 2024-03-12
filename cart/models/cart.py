@@ -1,3 +1,5 @@
+import math
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.signals import user_logged_out
 from django.contrib.sessions.models import Session
@@ -33,7 +35,7 @@ class Cart(models.Model):
         return sum(item.subtotal() for item in self.cart_items.all())
 
     def total_cost_with_service(self):
-        return sum(item.subtotal_with_service() for item in self.cart_items.all())
+        return math.ceil(sum(item.subtotal_with_service() for item in self.cart_items.all()))
 
     def __str__(self):
         return f'{self.user}'

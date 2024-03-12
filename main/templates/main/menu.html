@@ -47,7 +47,7 @@
     <!--    CAFE DESCRIPTION    -->
     <div class="container-fluid">
         <div class="col-12 text-center">
-            <div class="card text-white shadow user-select-none position-relative"
+            <div class="card text-white shadow position-relative"
                  style="background: rgba(25, 25, 25, 0.75); z-index: auto">
                 <div class="position-absolute top-0 start-0">
                     <a href="{% url 'main:delivery_list_page' %}">
@@ -101,6 +101,14 @@
 
                             {% if client.service > 0 %}
                             <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)">{% trans 'Обслуживание' %} {{client.service}} %</span>
+                            {% endif %}
+                            {% if client.wifi %}
+                            <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)"><i
+                                    class="fas fa-wifi" style="color: #FD7014"></i> WIFI_NETWORK</span>
+                            {% endif %}
+                            {% if client.wifi_password %}
+                            <span data-aos="flip-up" class="badge" style="background-color: rgba(253, 112, 20, 0.4)"><i
+                                    class="fas fa-key" style="color: #FD7014"> </i> 12345678</span>
                             {% endif %}
 
                         </div>
@@ -237,7 +245,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                    aria-selected="true"
                 >
                     <div class="card btn-animate ">
-                        <img src="{% static 'images/menu/kitchen.jpg' %}" alt="" style="width: 120px; height: 90px">
+                        <img src="{% static 'images/menu/kitchen.jpg' %}" alt="" style="width: 120px; height: 90px" draggable="false">
                         <div class="card-body text-center">
                             Кухня
                         </div>
@@ -255,7 +263,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                    aria-selected="true"
                 >
                     <div class="card btn-animate">
-                        <img src="{% static 'images/menu/alc.jpg' %}" alt="" style="width: 120px; height: 90px">
+                        <img src="{% static 'images/menu/alc.jpg' %}" alt="" style="width: 120px; height: 90px" draggable="false">
                         <div class="card-body text-center">
                             Бар
                         </div>
@@ -381,10 +389,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
                                             {% if dish.old_price > dish.actual_price %}
                                             <p class="mb-0">
-                                                <del>{{dish.old_price}} ₸</del>
+                                                <del>{{dish.old_price|intcomma}} ₸</del>
                                             </p>
                                             {% endif %}
-                                            <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
+                                            <p class="fw-bold my-0 py-0">{{dish.actual_price|intcomma}} ₸</p>
                                         </div>
 
                                         {# CART - #}
@@ -535,10 +543,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">
                                             {% if dish.old_price > dish.actual_price %}
                                             <p class="mb-0">
-                                                <del>{{dish.old_price}} ₸</del>
+                                                <del>{{dish.old_price|intcomma}} ₸</del>
                                             </p>
                                             {% endif %}
-                                            <p class="fw-bold my-0 py-0">{{dish.actual_price}} ₸</p>
+                                            <p class="fw-bold my-0 py-0">{{dish.actual_price|intcomma}} ₸</p>
                                         </div>
 
                                         {# CART - #}

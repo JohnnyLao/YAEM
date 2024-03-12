@@ -8,13 +8,14 @@ class CartPage(TemplateView):
     template_name = 'cart/cart.html'
 
     def get(self, request, establishment_url_name=None, *args, **kwargs):
-        service_percent = Client.objects.get(url_name=establishment_url_name)
+        client = get_object_or_404(Client, url_name=establishment_url_name)
         return render(
             request=request,
             template_name=self.template_name,
             context={
                 'establishment_url': establishment_url_name,
-                'service_percent': service_percent.service,
-                'delivery': service_percent.delivery,
+                'service_percent': client.service,
+                'delivery': client.delivery,
+                'phone': client.phone,
             },
         )

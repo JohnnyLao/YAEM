@@ -353,9 +353,16 @@
         <div class="row">
 
             <div data-aos="fade-right" class="col-4 text-center mx-0 px-0">
-                <img src="{% static 'images/base/people-1-min.jpg' %}" height="90" width="auto" alt="" class="img"
+                <img src="{% static 'images/base/people-1-min.jpg' %}" height="90" width="auto" alt="" class="img position-relative"
                      style="border-radius: 50%"
                      draggable="false">
+                 <a class="mx-3 position-absolute top-25 start-50" target="_blank"
+               href="https://wa.me/77015302812?text=Здравствуйте Егор, ">
+                <div
+                        class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1" style="height: 25px; width: 25px">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                </div>
+            </a>
                 <p class="mt-2 mb-0">{% translate 'Егор' %}</p>
                 <p class="my-0 ">{% translate 'Лошкарев' %}</p>
                 <p class="my-0 text-muted fw-bold">{% translate 'Директор' %}</p>
@@ -365,6 +372,7 @@
                 <img src="{% static 'images/base/people-2-min.jpg' %}" height="90" width="auto" alt="" class="img"
                      style="border-radius: 50%;"
                      draggable="false">
+
                 <p class="mt-2 mb-0">{% trans 'Олег' %}</p>
                 <p class="my-0">{% trans 'Маслеников' %}</p>
                 <p class="my-0 text-muted fw-bold">{% translate 'Администратор' %}</p>
@@ -394,14 +402,14 @@
             </a>
 
             <a class="mx-2" target="_blank"
-               href="https://wa.me/77015302812?text=Здравствуйте, ">
+               href="https://wa.me/77713581356?text=Здравствуйте, ">
                 <div
                         class="btn btn-success btn-animate text-white btn-floating mt-1 mx-1">
                     <i class="fab fa-whatsapp fa-2x"></i>
                 </div>
             </a>
 
-            <a class="mx-2" href="{{ client.inst }}" target="_blank">
+            <a class="mx-2" href="https://www.instagram.com/yaem_qr/" target="_blank">
                 <div class="btn btn-animate text-white btn-floating mt-1 mx-1"
                      style="background: #f09433;
 background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
@@ -414,7 +422,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
             </a>
 
             <a class="mx-2" target="_blank"
-               href="https://wa.me/77713581356?text=Здравствуйте, ">
+               href="https://wa.me/77713581356?text=Здравствуйте, прошу внести изменения в меню: %0a
+Моё имя, должность: %0a
+Заведение: %0a
+Изменения: %0a
+">
                 <div
                         class="btn btn-warning btn-animate text-white btn-floating mt-1 mx-1">
                     <i class="fas fa-screwdriver-wrench fa-2x text-dark"></i>

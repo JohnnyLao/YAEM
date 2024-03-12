@@ -72,6 +72,12 @@ class Client(models.Model):
     service = models.PositiveSmallIntegerField(
         default=0, verbose_name='% за обслуживание', blank=True
     )
+    wifi = models.CharField(
+        verbose_name='WiFi', blank=True, max_length=30
+    )
+    wifi_password = models.CharField(
+        verbose_name='WiFi - пароль', blank=True, max_length=30
+    )
     z_index = models.IntegerField(
         verbose_name="Порядковый №",
         default=100,
