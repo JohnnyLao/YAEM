@@ -21,30 +21,29 @@
 
 
 <!--COUNTER START-->
+
+<!--COUNTER START-->
 <section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
-        <div class="row text-center py-2 fs-6 fw-bold" style="color: #fd7014">
+        <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{ total_cities }}" class="indicators-title fs-5"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">
-                        <i class="fas fa-city fa-xs"></i>
-                        {% trans 'Городов' %}
+                <div id="counter-1" class="indicators-item"> <!--item-1-->
+                    <div data-num="{{total_clients}}" class="indicators-title fs-5"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
+                    </i> {% trans 'Заведений' %}
                     </div>
                 </div>
             </div>
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"> <!--item-1-->
-                    <div data-num="{{ total_banquets }}" class="indicators-title fs-5"></div>
-                    <div class="lng-unit4 indicators-subtitle text-white">
-                        <i class="fas fa-bell-concierge fa-xs"></i>
-                        {% trans 'Залов' %}
+                <div id="counter-2" class="indicators-item"> <!--item-2-->
+                    <div data-num="{{total_banquets}}" class="indicators-title fs-5"></div>
+                    <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-bell-concierge fa-xs"></i> {% trans 'Залов' %}
                     </div>
                 </div>
             </div>
             <div class="col-4 col-lg-4">
-                <div class="indicators-item"><!--item-3-->
-                    <div data-num="{{ total_orders }}" class="indicators-title fs-5"></div>
+                <div id="counter-3" class="indicators-item"><!--item-3-->
+                    <div data-num={{total_online}} class="indicators-title fs-5"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
                         <i class="fas fa-user fa-xs"></i> {% trans 'Онлайн' %}
                     </div>
