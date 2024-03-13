@@ -19,6 +19,9 @@ jobs:
       - name: Установка зависимостей
         run: pip install -r requirements.txt
 
+      - name: Миграции
+        run: chmod +x scripts/bash/migrations.sh && scripts/bash/migrations.sh
+
       - name: Деплой...
         uses: appleboy/ssh-action@master
         with:
@@ -30,12 +33,6 @@ jobs:
             cd /home/artem/Site1
             git stash
             git pull origin master
-
-      - name: Миграции
-        run: chmod +x scripts/bash/migrations.sh && scripts/bash/migrations.sh
-
-      - name: Перезагрузка сервисов
-        run: chmod +x scripts/bash/restart.sh && scripts/bash/restart.sh
-
-      
-
+            echo "artemchik16" | sudo -S systemctl restart gunicorn
+            echo "artemchik16" | sudo -S systemctl restart nginx
+ 
