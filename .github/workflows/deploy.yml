@@ -33,9 +33,6 @@ jobs:
       - name: Миграции
         run: chmod +x scripts/bash/migrations.sh && scripts/bash/migrations.sh
 
-      - name: Загрузка фикстур
-        run: chmod +x scripts/bash/loaddata.sh && scripts/bash/loaddata.sh
-
       - name: Перезагрузка сервисов
         run: chmod +x scripts/bash/restart.sh && scripts/bash/restart.sh
 
