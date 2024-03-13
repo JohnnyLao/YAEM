@@ -13,12 +13,18 @@ env = environ.Env(
     ),
     DEBUG=(bool, True),
     ALLOWED_HOSTS=(list, ['localhost', '127.0.0.1']),
+    # postgres
     SQL_ENGINE=(str, 'django.db.backends.sqlite3'),
     POSTGRES_DB=(str, os.path.join(BASE_DIR, "db.sqlite3")),
     POSTGRES_USER=(str, 'root'),
     POSTGRES_PASSWORD=(str, 'password'),
     POSTGRES_HOST=(str, 'localhost'),
     POSTGRES_PORT=(str, '5432'),
+    # minio
+    MINIO_ROOT_USER=str,
+    MINIO_ROOT_PASSWORD=str,
+    MINIO_BUCKET_NAME=str,
+    MINIO_ENDPOINT=str,
 )
 
 environ.Env.read_env()
@@ -267,3 +273,20 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ["*"]
 CSRF_COOKIE_SECURE = False
+
+# django-storages settings
+if not DEBUG:
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    MINIO_ACCESS_KEY = env("MINIO_ROOT_USER")
+    MINIO_SECRET_KEY = env("MINIO_ROOT_PASSWORD")
+    MINIO_BUCKET_NAME = env("MINIO_BUCKET_NAME")
+    MINIO_ENDPOINT = env("MINIO_ENDPOINT")
+
+    AWS_ACCESS_KEY_ID = MINIO_ACCESS_KEY
+    AWS_SECRET_ACCESS_KEY = MINIO_SECRET_KEY
+    AWS_STORAGE_BUCKET_NAME = MINIO_BUCKET_NAME
+    AWS_S3_ENDPOINT_URL = MINIO_ENDPOINT
+    AWS_DEFAULT_ACL = None
+    AWS_QUERYSTRING_AUTH = True
+    AWS_S3_FILE_OVERWRITE = False
