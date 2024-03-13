@@ -28,6 +28,7 @@ jobs:
           script: |
             su artem
             cd /home/artem/Site1
+            git stash
             git pull origin master
 
       - name: Миграции
