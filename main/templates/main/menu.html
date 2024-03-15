@@ -245,7 +245,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                    aria-selected="true"
                 >
                     <div class="card btn-animate ">
-                        <img src="{% static 'images/menu/kitchen.jpg' %}" alt="" style="width: 120px; height: 90px" draggable="false">
+                        <img src="{% static 'images/menu/kitchen.jpg' %}" alt="" style="width: 100px; height: 70px"
+                             draggable="false">
                         <div class="card-body text-center">
                             Кухня
                         </div>
@@ -263,7 +264,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                    aria-selected="true"
                 >
                     <div class="card btn-animate">
-                        <img src="{% static 'images/menu/alc.jpg' %}" alt="" style="width: 120px; height: 90px" draggable="false">
+                        <img src="{% static 'images/menu/alc.jpg' %}" alt="" style="width: 100px; height: 70px"
+                             draggable="false">
                         <div class="card-body text-center">
                             Бар
                         </div>
@@ -321,7 +323,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     {% if dish.food_type == ft %}
                     <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
                          style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
-                        <div class="d-flex">
+                        <div class="d-flex mt-2">
                             {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}
                             <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
                                 <img src="{{ dish.image.url }}" alt="dish img"
@@ -354,19 +356,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     opacity: .9;
     text-decoration: none;">{{ dish.name }}
                                         {% if dish.popular %}
-                                        <span data-mdb-toggle="tooltip"
+                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"
                                               title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
                                                                                   style="color: gold"></i>
                                 </span>
                                         {% endif %}
                                         {% if dish.spicy %}
-                                        <span data-mdb-toggle="tooltip"
+                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"
                                               title="{% trans 'Острое' %}"><i
                                                 class="fas fa-pepper-hot text-danger fa-xs"></i>
                                 </span>
                                         {% endif %}
                                         {% if dish.vegetarian %}
-                                        <span data-mdb-toggle="tooltip"
+                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"
                                               title="{% trans 'Вегетарианское' %}"><i
                                                 class="fas fa-seedling text-success fa-xs"></i>
                                 </span>
@@ -475,7 +477,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     {% if dish.food_type == ft %}
                     <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
                          style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
-                        <div class="d-flex">
+                        <div class="d-flex mt-2">
                             {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}
                             <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
                                 <img src="{{ dish.image.url }}" alt="dish img"
@@ -484,7 +486,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                      draggable="false"
                                      loading="lazy">
                                 {% if dish.generated %}
-                                <div class="position-absolute top-0 start-0" data-mdb-toggle="tooltip"
+                                <div class="position-absolute top-0 start-0" data-mdb-tooltip-init
+                                     data-mdb-toggle="tooltip"
                                      title="{% trans 'Фото сгенериновано YAEM AI' %}">
                                     <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle"
                                        style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>
@@ -508,21 +511,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
     opacity: .9;
     text-decoration: none;">{{ dish.name }}
                                         {% if dish.popular %}
-                                        <span data-mdb-toggle="tooltip"
+                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"
                                               title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"
                                                                                   style="color: gold"></i>
-                                </span>
-                                        {% endif %}
-                                        {% if dish.spicy %}
-                                        <span data-mdb-toggle="tooltip"
-                                              title="{% trans 'Острое' %}"><i
-                                                class="fas fa-pepper-hot text-danger fa-xs"></i>
-                                </span>
-                                        {% endif %}
-                                        {% if dish.vegetarian %}
-                                        <span data-mdb-toggle="tooltip"
-                                              title="{% trans 'Вегетарианское' %}"><i
-                                                class="fas fa-seedling text-success fa-xs"></i>
                                 </span>
                                         {% endif %}
                                     </p>
