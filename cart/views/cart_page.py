@@ -16,6 +16,7 @@ class CartPage(TemplateView):
                 'establishment_url': establishment_url_name,
                 'service_percent': client.service,
                 'delivery': client.delivery,
+                'outside': client.outside,
                 'phone': client.phone,
             },
         )

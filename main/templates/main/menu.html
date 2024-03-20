@@ -5,12 +5,12 @@
 
 
 {% block title %}
-{% translate 'Онлайн меню' %} {{client.name}} {{client.city}}
+{% translate 'Онлайн меню | Заказать доставку' %} {{client.name}} {{client.city}}
 {% endblock title %}
 
 
 {% block description %}
-{% translate 'Онлайн меню {{client.name}} в городе {{client.city}}' %}
+{% translate 'Онлайн меню' %} {{client.name}} {% translate 'В городе' %} {{client.city}} {% translate '| Заказать доставку' %}
 {% endblock description %}
 
 
