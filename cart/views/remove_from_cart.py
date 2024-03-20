@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, redirect
-
+from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart, CartItems
 
-
+@csrf_exempt
 def remove_from_cart(request):
     # Получаем id блюда из POST-запроса
     dish_id = request.POST.get('dish_id')

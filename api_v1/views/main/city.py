@@ -18,6 +18,8 @@ class CityViewSet(ModelViewSet):
         "post",
         "delete",
     )
+    ordering = ('id',)
+    search_fields = ('name',)
 
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):

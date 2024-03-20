@@ -12,7 +12,7 @@ class CitySerializer(ModelSerializer):
         )
 
 
-class CityDetailSerializer(ModelSerializer):
+class CityRUDSerializer(ModelSerializer):
     class Meta:
         model = City
         fields = ('name',)

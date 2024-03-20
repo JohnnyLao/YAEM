@@ -1,6 +1,7 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import permissions as base_permissions
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.exceptions import PermissionDenied
 
 from api_v1.serializers import main
 from api_v1.utils import permissions as custom_permission
@@ -9,20 +10,28 @@ from main.models import Client
 
 
 @extend_schema_view(
-    list=extend_schema(summary="Список всех заведений", tags=["Меню:Заведения"]),
+    list=extend_schema(summary="List all establishments for user", tags=["Menu: Clients"]),
     retrieve=extend_schema(
-        summary="Полная информация о заведении", tags=["Меню:Заведения"]
+        summary="Retrieve full information about an establishment",
+        tags=["Menu: Clients"],
     ),
-    # create=extend_schema(summary="Создать новое заведение", tags=["Меню:Заведения"]),
-    # update=extend_schema(
-    #     summary="Полностью изменить данные в заведении", tags=["Меню:Заведения"]
-    # ),
-    # partial_update=extend_schema(
-    #     summary="Частично изменить данные в заведении", tags=["Меню:Заведения"]
-    # ),
-    destroy=extend_schema(summary="Удалить заведение", tags=["Меню:Заведения"]),
+    create=extend_schema(summary="Create a new establishment", tags=["Menu: Clients"]),
+    update=extend_schema(
+        summary="Completely modify data in an establishment", tags=["Menu: Clients"]
+    ),
+    partial_update=extend_schema(
+        summary="Partially modify data in an establishment", tags=["Menu: Clients"]
+    ),
+    destroy=extend_schema(summary="Delete an establishment", tags=["Menu: Clients"]),
 )
 class ClientViewSet(CustomModelViewSet):
+    """
+    Custom viewset for managing establishments.
+
+    Supports operations such as listing all establishments, retrieving, creating, updating,
+    partially updating, and deleting establishments.
+    """
+
     queryset = Client.objects.all()
     multi_serializer_classes = {
         'list': main.ClientListSerializer,
@@ -39,15 +48,26 @@ class ClientViewSet(CustomModelViewSet):
         'partial_update': [custom_permission.IsOwnerOrAdmin],
         'destroy': [custom_permission.IsOwnerOrAdmin],
     }
-    authentication_classes = [TokenAuthentication]
     ordering = ('id',)
     search_fields = ('name',)
     lookup_field = 'name'
 
     def get_queryset(self):
+        """
+        Retrieve the queryset based on the current user's permissions.
+
+        For listing all establishments, any user has permission.
+        For retrieve, update, partial update, and destroy operations, only authenticated users have permission.
+        """
         current_user = self.request.user
+
+        # Anonymous users have no permission for retrieve, update, and delete operations
+        if current_user.is_anonymous:
+            raise PermissionDenied('PermissionDenied')
+
+        # Admin group have all permissions for all operations
         if current_user.is_superuser or current_user.is_staff:
             return self.queryset
-        if self.action == 'list':
-            return self.queryset
+
+        # Authenticated users have permissions for specific actions with establishments associated with them
         return self.queryset.filter(user=current_user)

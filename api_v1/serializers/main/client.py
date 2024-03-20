@@ -1,10 +1,16 @@
 from rest_framework import serializers
 
-from api_v1.serializers.main import CityDetailSerializer
+from api_v1.serializers.main import CityRUDSerializer
 from main.models import Client
 
 
 class ClientListSerializer(serializers.ModelSerializer):
+    """
+    Serializer for listing clients.
+
+    This serializer provides basic information about a client,
+    """
+
     class Meta:
         model = Client
         fields = (
@@ -18,14 +24,18 @@ class ClientListSerializer(serializers.ModelSerializer):
 
 
 class ClientRUDSerializer(serializers.ModelSerializer):
+    """
+    Serializer for retrieving, updating, and deleting client information.
+
+    This serializer provides detailed information about a client,
+    """
+
     city_name = serializers.CharField(source='city.name')
-    # user_name = serializers.CharField(source='user.first_name')
     tarif_number_name = serializers.CharField(source='tarif_number.name')
 
     class Meta:
         model = Client
         fields = (
-            # 'user_name',
             'name',
             'city_name',
             'logo',
@@ -45,7 +55,6 @@ class ClientRUDSerializer(serializers.ModelSerializer):
             'service',
         )
         read_only_fields = (
-            # 'user_name',
             'status',
             'outside',
             'delivery',
@@ -63,6 +72,10 @@ class ClientRUDSerializer(serializers.ModelSerializer):
 
 
 class ClientCreateSerializer(serializers.ModelSerializer):
+    """
+    Serializer for creating a new client.
+    """
+
     class Meta:
         model = Client
         fields = ('name',)

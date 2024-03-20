@@ -16,6 +16,7 @@ cryptography==42.0.2
 defusedxml==0.7.1
 Django==4.2.2
 boto3
+djangorestframework-simplejwt
 django-minio-storage
 django-storages
 django-cors-headers==3.13.0
