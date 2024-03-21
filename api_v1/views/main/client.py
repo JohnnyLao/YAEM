@@ -66,8 +66,8 @@ class ClientViewSet(CustomModelViewSet):
             raise PermissionDenied('PermissionDenied')
 
         # Admin group have all permissions for all operations
-        if current_user.is_superuser or current_user.is_staff:
-            return self.queryset
+        # if current_user.is_superuser or current_user.is_staff:
+        #     return self.queryset
 
         # Authenticated users have permissions for specific actions with establishments associated with them
         return self.queryset.filter(user=current_user)
