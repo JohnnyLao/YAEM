@@ -15,7 +15,9 @@ class DeliveryList(TemplateView):
 
         if city_slug:
             city_selected = get_object_or_404(City, slug=city_slug)
-            clients = Client.objects.filter(city=city_selected, status=True, delivery=True)
+            clients = Client.objects.filter(
+                city=city_selected, status=True, delivery=True
+            )
         elif query:
             clients = Client.objects.filter(name__icontains=query)
         context["clients"] = clients

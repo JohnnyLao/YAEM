@@ -224,8 +224,9 @@ JAZZMIN_SETTINGS = {
 # DJANGO REST FRAMEWORK
 #########################
 REST_FRAMEWORK = {
-    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAdminUser",),
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.BasicAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     "DEFAULT_PARSER_CLASSES": [
@@ -238,8 +239,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "api_v1.utils.pagination.BasePagination",
 }
 
-ACCESS_TOKEN_LIFETIME = timedelta(hours=1)
-REFRESH_TOKEN_LIFETIME = timedelta(days=30)
 #########################
 
 ########################
@@ -250,7 +249,7 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "Documentation for YAEM API",
     "VERSION": "1.0.0",
     "SERVE_PERMISSIONS": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticated",
     ],
     "SERVE_AUTHENTICATION": [
         "rest_framework.authentication.BasicAuthentication",

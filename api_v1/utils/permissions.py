@@ -1,35 +1,15 @@
 from rest_framework import permissions
+from rest_framework.exceptions import PermissionDenied
 
 
-class IsOwnerOrAdmin(permissions.BasePermission):
-    """
-    Permission class to allow access to object details, deletion, and modification only to the owner or administrators.
-    """
+class IsEstablishmentOwnerOrAdmin(permissions.BasePermission):
+    message = "You do not have permissions to view other people's establishments"
 
     def has_object_permission(self, request, view, obj):
-        """
-        Check if the user has permission for the requested action on the object.
-        """
-        if request.method in permissions.SAFE_METHODS:
-            return True
-        return (
+        # Client.user == request.user
+        # Authenticated users can only see their establishments
+        return bool(
             obj.user == request.user
+            or request.user.is_superuser
             or request.user.is_staff
-            or request.user.is_superuser
-        )
-
-
-class IsAdminOrCorporateUser(permissions.BasePermission):
-    """
-    Permission class to allow access to create an object only to administrators or corporate users.
-    """
-
-    def has_permission(self, request, view):
-        """
-        Check if the user has permission for the requested action.
-        """
-        return (
-            request.user.is_staff
-            or request.user.is_superuser
-            # or request.user.is_corporate
         )
