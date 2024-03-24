@@ -23,7 +23,8 @@ router.register(
 urlpatterns = [
     # Include the URLs provided by the router
     path('', include(router.urls)),
-    # auth users login
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    # Auth users
+    path("auth/", include("djoser.urls.jwt")),
+    # path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

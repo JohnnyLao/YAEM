@@ -226,7 +226,7 @@ JAZZMIN_SETTINGS = {
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
+        # "rest_framework.authentication.BasicAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     "DEFAULT_PARSER_CLASSES": [
@@ -239,10 +239,9 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "api_v1.utils.pagination.BasePagination",
 }
 
-#########################
 
 ########################
-# DRF SPECTACULAR
+# DRF SPECTACULAR(DOCUMENTATION)
 ########################
 SPECTACULAR_SETTINGS = {
     "TITLE": "YAEM API",
@@ -269,16 +268,53 @@ SPECTACULAR_SETTINGS = {
     "ENABLE_DJANGO_DEPLOY_CHECK": False,
     "DISABLE_ERRORS_AND_WARNINGS": True,
 }
-########################
 
 ######################
 # CORS HEADERS
 ######################
-CORS_ALLOWED_ORIGINS = ['http://127.0.0.1:5173', 'http://127.0.0.1:8000']
-CORS_ALLOW_HEADERS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+# CORS_ALLOW_HEADERS = ["*"]
+CORS_ALLOW_HEADERS = [
+    'Content-Type',
+    'Authorization',
+]
 CSRF_COOKIE_SECURE = False
+
+#######################
+# DJOSER(JWT)
+#######################
+DJOSER = {
+    "PASSWORD_RESET_CONFIRM_URL": "#/password/reset/confirm/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "#/username/reset/confirm/{uid}/{token}",
+    "ACTIVATION_URL": "#/activate/{uid}/{token}",
+    "SEND_ACTIVATION_EMAIL": False,
+    "SERIALIZERS": {},
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+    "ALGORITHM": "HS256",
+    "SIGNING_KEY": SECRET_KEY,
+    "VERIFYING_KEY": None,
+    "AUDIENCE": None,
+    "ISSUER": None,
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "USER_ID_FIELD": "id",
+    "USER_ID_CLAIM": "user_id",
+    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "TOKEN_TYPE_CLAIM": "token_type",
+    "JTI_CLAIM": "jti",
+    "SLIDING_TOKEN_REFRESH_EXP_CLAIM": "refresh_exp",
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=1),
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=7),
+}
+
+
+
 
 # django-storages settings
 # if not DEBUG:

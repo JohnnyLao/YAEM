@@ -1,5 +1,4 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
-from rest_framework.exceptions import PermissionDenied
 from rest_framework.permissions import IsAuthenticated
 
 from api_v1.serializers import main
@@ -62,8 +61,6 @@ class ClientViewSet(CustomModelViewSet):
         # admin group or current user has permission on 'destroy' method
         'destroy': [IsEstablishmentOwnerOrAdmin],
     }
-    ordering = ('id',)
-    search_fields = ('name',)
 
     def get_queryset(self):
         user = self.request.user
