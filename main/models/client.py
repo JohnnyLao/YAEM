@@ -18,19 +18,20 @@ class Client(models.Model):
         upload_to=client_logo_upload_to,
         verbose_name="Лого",
         help_text="Для отображения на главной странице",
+        blank=True,
     )
-    description = models.TextField(verbose_name="Описание", max_length=200)
+    description = models.TextField(verbose_name="Описание", max_length=200, blank=True)
     working_time = models.CharField(
-        max_length=20, verbose_name="Рабочее время", help_text="Формат: '00:00-24:00'"
+        max_length=20, verbose_name="Рабочее время", help_text="Формат: '00:00-24:00'", blank=True
     )
     address = models.CharField(
-        max_length=50, verbose_name="Адрес", help_text="Улица, дом"
+        max_length=50, verbose_name="Адрес", help_text="Улица, дом", blank=True
     )
     phone = models.DecimalField(
         max_digits=15,
         decimal_places=0,
         verbose_name="Телефон",
-        help_text="Формат: '77015302812' (без +)",
+        help_text="Формат: '77015302812' (без +)", blank=True, null=True
     )
     inst = models.CharField(
         max_length=100,
@@ -47,12 +48,12 @@ class Client(models.Model):
         help_text="Ссылка на 2Gis",
     )
     status = models.BooleanField(
-        verbose_name="Активен", help_text="Отображение при поиске в Delivery"
+        verbose_name="Активен", help_text="Отображение при поиске в Delivery", blank=True, default=False
     )
     outside = models.BooleanField(
-        verbose_name="Самовывоз", help_text="Значок Самовывоза"
+        verbose_name="Самовывоз", help_text="Значок Самовывоза", blank=True, default=False
     )
-    delivery = models.BooleanField(verbose_name="Доставка", help_text="Значок Доставки")
+    delivery = models.BooleanField(verbose_name="Доставка", help_text="Значок Доставки", blank=True, default=False)
     translated = models.BooleanField(
         verbose_name="Перевод", default=False, help_text="Значок перевода на 3 языка"
     )
@@ -79,7 +80,7 @@ class Client(models.Model):
     z_index = models.IntegerField(
         verbose_name="Порядковый №",
         default=100,
-        help_text="Алматы 1-10, Астана 11-20, Караганда 21-30",
+        help_text="Алматы 1-10, Астана 11-20, Караганда 21-30", blank=True
     )
 
     class Meta:

@@ -11,7 +11,7 @@ class ClientBaseInfoListSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
-            'description',
+            'url_name',
             'address',
         )
 
@@ -41,4 +41,8 @@ class ClientCreateSerializer(serializers.ModelSerializer):
     # serializer for creating a new establishment.
     class Meta:
         model = Client
-        fields = ('name',)
+        fields = (
+            'name',
+            'city',
+            'url_name',
+        )

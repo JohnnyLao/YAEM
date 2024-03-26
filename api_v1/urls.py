@@ -21,6 +21,8 @@ router.register(
 
 # Define urlpatterns, including the router's URLs
 urlpatterns = [
+    # temp path for categories list
+    path('menu/categories/', main.CategoryListView.as_view()),
     # Include the URLs provided by the router
     path('', include(router.urls)),
     # Auth users
