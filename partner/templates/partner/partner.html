@@ -25,7 +25,7 @@
 <section class="user-select-none" style="background: #212529">
     <div id="counter" class="indicator-list  container">
         <div class="row text-center fs-6 py-2 fw-bold" style="color: #fd7014">
-            <div class="col-4 col-lg-4">
+            <div class="col-4 col-lg-4 mx-0 px-0">
                 <div id="counter-1" class="indicators-item"> <!--item-1-->
                     <div data-num="{{total_clients}}" class="indicators-title fs-4"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-store fa-xs">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 col-lg-4">
+            <div class="col-4 col-lg-4 mx-0 px-0" >
                 <div id="counter-2" class="indicators-item"> <!--item-2-->
                     <div data-num="{{total_banquets}}" class="indicators-title fs-4"></div>
                     <div class="lng-unit4 indicators-subtitle text-white"><i class="fas fa-utensils fa-xs">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 col-lg-4">
+            <div class="col-4 col-lg-4 mx-0 px-0">
                 <div id="counter-3" class="indicators-item"><!--item-3-->
                     <div data-num={{total_online}} class="indicators-title fs-4"></div>
                     <div class="lng-unit6 indicators-subtitle text-white">
@@ -112,7 +112,7 @@
                     {% translate 'смогут просматривать меню онлайн как в заведении, так и удалённо, совершая заказы онлайн' %}
                 </p>
             </div>
-            <div class="col-9 col-lg-6 mx-auto my-4 text-center">
+            <div class="col-9 col-lg-6 mx-0 my-4 text-center">
                 <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/collage.png' %}"
                      alt="qr_sample"
                      class="img" style="max-width: 300px">
@@ -226,7 +226,7 @@
                 <div data-aos="fade-right" class="card"
                      style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                     <div class="card-body">
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-qr-code" viewBox="0 0 16 16">
                                 <path d="M2 2h2v2H2V2Z"/>
@@ -236,37 +236,37 @@
                                 <path d="M7 12h1v3h4v1H7v-4Zm9 2v2h-3v-1h2v-1h1Z"/>
                             </svg>
                             {% translate 'Удобство' %}
-                        </h3>
-                        <h5 class="text-light">{% translate 'Меняйте меню, цены и акции мгновенно! Наша платформа даёт заведению возможность оперативно адаптироваться к рынку и вкусам клиентов' %}</h5>
+                        </h4>
+                        <h6 class="text-light">{% translate 'Меняйте меню, цены и акции мгновенно! Наша платформа даёт заведению возможность оперативно адаптироваться к рынку и вкусам клиентов' %}</h6>
                     </div>
                 </div>
             </div>
             <div data-aos="fade-down" class="col-lg-4 col-sm-6 text-center">
                 <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px">
                     <div class="card-body">
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
                                       d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
                             </svg>
                             {% translate 'Продажи' %}
-                        </h3>
-                        <h5 class="my-3 text-light">{% translate 'Ваша корзина - мощный инструмент для увеличения среднего чека. Простота добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам' %}</h5>
+                        </h4>
+                        <h6 class="my-3 text-light">{% translate 'Ваша корзина - мощный инструмент для увеличения среднего чека. Простота добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам' %}</h6>
                     </div>
                 </div>
             </div>
             <div data-aos="fade-up" class="col-lg-4 col-sm-6 text-center">
                 <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                     <div class="card-body">
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-basket3-fill" viewBox="0 0 16 16">
                                 <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM2.468 15.426.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z"/>
                             </svg>
                             {% translate 'Новые клиенты' %}
-                        </h3>
-                        <h5 class="my-3 text-light">{% translate 'Расширьте свою аудиторию с помощью возможности заказа на вынос и доставку. Привлекайте тех, кто ценит удобство и разнообразие в питании' %}</h5>
+                        </h4>
+                        <h6 class="my-3 text-light">{% translate 'Расширьте свою аудиторию с помощью возможности заказа на вынос и доставку. Привлекайте тех, кто ценит удобство и разнообразие в питании' %}</h6>
                     </div>
                 </div>
 
@@ -274,7 +274,7 @@
             <div data-aos="fade-right" class="col-lg-4 col-sm-6 text-center">
                 <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                     <div class="card-body">
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-clock-history" viewBox="0 0 16 16">
                                 <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
@@ -282,9 +282,9 @@
                                 <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
                             </svg>
                             {% translate 'Эффективность' %}
-                        </h3>
-                        <h5 class="my-3 text-light">{% translate 'Сократите временные затраты благодаря возможности удаленного заказа, ведения стоп-листа и гибкости в изменении меню. Каждая минута - ценный ресурс для вас и вашего бизнеса' %}
-                        </h5>
+                        </h4>
+                        <h6 class="my-3 text-light">{% translate 'Сократите временные затраты благодаря возможности удаленного заказа, ведения стоп-листа и гибкости в изменении меню. Каждая минута - ценный ресурс для вас и вашего бизнеса' %}
+                        </h6>
                     </div>
                 </div>
             </div>
@@ -293,15 +293,15 @@
                 <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                     <div class="card-body">
 
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                  class="bi bi-translate" viewBox="0 0 16 16">
                                 <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
                                 <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
                             </svg>
                             {% translate 'Мультиязычность' %}
-                        </h3>
-                        <h5 class="my-3 text-light">{% translate 'Привлекайте посетителей со всего мира с помощью меню на нескольких языках. Сделайте своё заведение удобным для каждого гостя, независимо от языковых предпочтений' %}</h5>
+                        </h4>
+                        <h6 class="my-3 text-light">{% translate 'Привлекайте посетителей со всего мира с помощью меню на нескольких языках. Сделайте своё заведение удобным для каждого гостя, независимо от языковых предпочтений' %}</h6>
                     </div>
                 </div>
             </div>
@@ -309,11 +309,11 @@
             <div data-aos="fade-up" class="col-lg-4 col-sm-6 text-center">
                 <div class="card" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
                     <div class="card-body">
-                        <h3 class="" style="color: #fd7014">
+                        <h4 class="" style="color: #fd7014">
                             <i class="fas fa-code-branch"></i>
                             {% translate 'Уникальность' %}
-                        </h3>
-                        <h5 class="my-3 text-light">{% translate 'Мы гордимся своей независимостью. Наша собственная команда разработчиков обеспечивает непрерывное обновление и расширение без посредников, что гарантирует вам своевременную поддержку и инновационные возможности' %}</h5>
+                        </h4>
+                        <h6 class="my-3 text-light">{% translate 'Мы гордимся своей независимостью. Наша собственная команда разработчиков обеспечивает непрерывное обновление и расширение без посредников, что гарантирует вам своевременную поддержку и инновационные возможности' %}</h6>
                     </div>
                 </div>
             </div>
@@ -342,7 +342,7 @@
                 <p class="fw-bold fs-4 my-0" style="color: #"> 100 000 {% translate 'тг/год' %} <span class="fs-5"
                                                                                                       style="color: #FD7014">-20%</span>
                 </p>
-                <div class="container py-3">
+                <div class="container py-3 px-0 mx-0">
                     <h6 class="shadow text-start" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Orange"
                              class="bi bi-check" viewBox="0 0 16 16">
@@ -410,7 +410,7 @@
                         <p class="my-0">{% translate 'Секунд' %}</p>
                     </div>
                 </div>
-                <div class="container py-3">
+                <div class="container py-3 px-0 mx-0">
                     <h6 class="shadow text-start ps-2"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -512,7 +512,7 @@
                 <p class="fw-bold fs-4 my-0"> 300 000 {% translate 'тг/год' %} <span class="fs-5"
                                                                                      style="color: #FD7014">-20%</span>
                 </p>
-                <div class="container py-3">
+                <div class="container py-3 px-0 mx-0">
                     <h6 class="shadow text-start ps-2 fw-bold"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Silver"
@@ -560,7 +560,7 @@
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
-                        {% translate 'Заказы из зала iiko/WhatsApp' %}
+                        {% translate 'Заказы из зала iiko / WhatsApp' %}
                     </h6>
                 </div>
                 <a href="https://wa.me/77713581356?text=Здравствуйте, по поводу тарифа Gold %0a"
