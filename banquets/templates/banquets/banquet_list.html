@@ -57,57 +57,63 @@
 <section class="skrollable pb-5"
          style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/banquet/банкет-min.jpg' %});
     background-repeat: no-repeat; background-position: center center; background-attachment: fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover">
-        <div class="container py-3">
-            <h1 class="fw-bold text-center mb-3" style="color: #fd7014">{% translate 'Банкетные залы' %}</h1>
-            <form action="" method="get">
-                <div class="d-flex justify-content-center">
-                    <div class="d-inline-flex text-center">
-                        <select class="form-select-sm" id="select_3" aria-label="Default select example"
-                                name="city">
-                            <option selected value="">{% trans 'Город' %}</option>
-                                {% for city in cities %}
-                                <option value="{{ city }}" {% if request.GET.city == city %}selected{% endif %}>{{ city }}</option>
-                                {% endfor %}
-                        </select>
-                    </div>
-                    <div class="d-inline-flex text-center mx-2">
-                        <select class="form-select-sm" id="select_2" aria-label="Default select example"
-                                name="price_min_max">
-                            <option selected value="">{% trans 'Цена за человека' %}</option>
-                                    <!--0 - 3000-->
-                            <option value="3000" {% if request.GET.price_min_max == '3000' %}selected{% endif %}>{% trans 'до' %} 3 000</option>
-                                    <!--3000 - 5000-->
-                            <option value="5000" {% if request.GET.price_min_max == '5000' %}selected{% endif %}>3 000 - 5 000</option>
-                                    <!--5000 - 10000-->
-                            <option value="10000" {% if request.GET.price_min_max == '10000' %}selected{% endif %}>5 000 - 10 000</option>
-                                    <!--10000 - 15000-->
-                            <option value="10001" {% if request.GET.price_min_max == '10001' %}selected{% endif %}>{% trans 'свыше' %} 10 000</option>
-                        </select>
-                    </div>
-                    <div class="d-inline-flex text-center">
-                        <select class="form-select-sm" id="select_1" aria-label="Default select example"
-                                name="capacity">
-                            <option selected value="">{% trans 'Вместимость' %}</option>
-                                    <!--0 - 100-->
-                            <option value="100" {% if request.GET.capacity == '100' %}selected{% endif %}>{% trans 'до' %} 100</option>
-                                    <!--100 - 200-->
-                            <option value="200" {% if request.GET.capacity == '200' %}selected{% endif %}>100-200</option>
-                                    <!--200 - 400-->
-                            <option value="400" {% if request.GET.capacity == '400' %}selected{% endif %}>200-400</option>
-                                    <!--400 +-->
-                            <option value="401" {% if request.GET.capacity == '401' %}selected{% endif %}>{% trans 'Свыше' %} 400</option>
-                        </select>
-                    </div>
+    <div class="container py-3">
+        <h1 class="fw-bold text-center mb-5" style="color: #fd7014">{% translate 'Банкетные залы' %}
+            <a target="_blank" data-aos="flip-up"
+               href="https://wa.me/77015302812?text=Здравствуйте,%20какие%20условия%20размещения%20банкетного%20зала?"
+               class="btn btn-rounded btn-info btn-sm btn-sm btn-animate py-auto">
+                {% trans 'РАЗМЕСТИТЬ ЗАЛ' %}
+            </a>
+        </h1>
+        <form action="" method="get">
+            <div class="d-flex justify-content-center">
+                <div class="d-inline-flex text-center">
+                    <select class="form-select-sm" id="select_3" aria-label="Default select example"
+                            name="city">
+                        <option selected value="">{% trans 'Город' %}</option>
+                        {% for city in cities %}
+                        <option value="{{ city }}" {% if request.GET.city == city %}selected{% endif %}>{{ city }}
+                        </option>
+                        {% endfor %}
+                    </select>
                 </div>
-                <div class="d-flex mx-auto mt-2 justify-content-center">
-                    <button data-aos="flip-up" class="btn btn-success btn-rounded btn-sm btn-animate" type="submit"><i class="fas fa-magnifying-glass"></i> {% trans 'ПОИСК' %}</button>
-                    <a target="_blank" data-aos="flip-up" href="https://wa.me/77015302812?text=Здравствуйте,%20какие%20условия%20размещения%20банкетного%20зала?"
-                       class="btn btn-rounded btn-info btn-sm btn-animate ms-5">
-                        {% trans 'РАЗМЕЩЕНИЕ' %}
-                </a>
+                <div class="d-inline-flex text-center mx-2">
+                    <select class="form-select-sm" id="select_2" aria-label="Default select example"
+                            name="price_min_max">
+                        <option selected value="">{% trans 'Цена за чел' %}</option>
+                        <!--0 - 3000-->
+                        <option value="3000" {% if request.GET.price_min_max == '3000' %}selected{% endif %}>{% trans 'до' %} 3 000</option>
+                        <!--3000 - 5000-->
+                        <option value="5000" {% if request.GET.price_min_max == '5000' %}selected{% endif %}>3 000 - 5 000</option>
+                        <!--5000 - 10000-->
+                        <option value="10000" {% if request.GET.price_min_max == '10000' %}selected{% endif %}>5 000 - 10 000</option>
+                        <!--10000 - 15000-->
+                        <option value="10001" {% if request.GET.price_min_max == '10001' %}selected{% endif %}>{% trans 'свыше' %} 10 000</option>
+                    </select>
                 </div>
-            </form>
-        </div>
+                <div class="d-inline-flex text-center">
+                    <select class="form-select-sm" id="select_1" aria-label="Default select example"
+                            name="capacity">
+                        <option selected value="">{% trans 'Вместимость' %}</option>
+                        <!--0 - 100-->
+                        <option value="100" {% if request.GET.capacity == '100' %}selected{% endif %}>{% trans 'до' %} 100</option>
+                        <!--100 - 200-->
+                        <option value="200" {% if request.GET.capacity == '200' %}selected{% endif %}>100-200</option>
+                        <!--200 - 400-->
+                        <option value="400" {% if request.GET.capacity == '400' %}selected{% endif %}>200-400</option>
+                        <!--400 +-->
+                        <option value="401" {% if request.GET.capacity == '401' %}selected{% endif %}>{% trans 'Свыше' %} 400</option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex mx-auto mt-2 justify-content-center">
+                <button data-aos="flip-up" class="btn btn-success btn-rounded btn-sm btn-animate" type="submit"><i
+                        class="fas fa-magnifying-glass"></i> {% trans 'ПОИСК' %}
+                </button>
+
+            </div>
+        </form>
+    </div>
 
 
     <div class="container">
@@ -163,27 +169,27 @@
 
                     <!-- Swiper -->
                     <a class="btn-animate" href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">
-                    <div class="swiper mySwiper mt-1">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
-                            {% if banquet.photo1 %}
-                            <div class="swiper-slide"><img src="{{ banquet.photo1.url }}" loading="lazy" alt="">
-                            </div>
-                            {% endif %}
+                        <div class="swiper mySwiper mt-1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide"><img src="{{banquet.logo.url}}" loading="lazy" alt=""></div>
+                                {% if banquet.photo1 %}
+                                <div class="swiper-slide"><img src="{{ banquet.photo1.url }}" loading="lazy" alt="">
+                                </div>
+                                {% endif %}
 
-                            {% if banquet.photo2 %}
-                            <div class="swiper-slide"><img src="{{ banquet.photo2.url }}" loading="lazy" alt="">
-                            </div>
-                            {% endif %}
+                                {% if banquet.photo2 %}
+                                <div class="swiper-slide"><img src="{{ banquet.photo2.url }}" loading="lazy" alt="">
+                                </div>
+                                {% endif %}
 
-                            {% if banquet.photo3 %}
-                            <div class="swiper-slide"><img src="{{ banquet.photo3.url }}" loading="lazy" alt="">
+                                {% if banquet.photo3 %}
+                                <div class="swiper-slide"><img src="{{ banquet.photo3.url }}" loading="lazy" alt="">
+                                </div>
+                                {% endif %}
                             </div>
-                            {% endif %}
+                            <div class="swiper-pagination"></div>
                         </div>
-                        <div class="swiper-pagination"></div>
-                    </div>
-                        </a>
+                    </a>
 
 
                     <!-- Swiper JS -->
@@ -209,15 +215,15 @@
                         <h5 class="card-title my-0">{% trans 'Банкетный зал' %}
                             <span style="color: #FD7014">{{ banquet.name }}</span></h5>
                         {% if banquet.address %}
-                            <p class="card-title my-0 text-white-50">
-                                {{ banquet.address }}
-                            </p>
+                        <p class="card-title my-0 text-white-50">
+                            {{ banquet.address }}
+                        </p>
                         {% endif %}
 
                         <p class="card-text my-0 text-white-50">
                             {% translate 'Время работы' %}:
                             {% if banquet.working_time %}
-                                {{ banquet.working_time }}
+                            {{ banquet.working_time }}
                             {% endif %}
                         </p>
 
@@ -237,11 +243,11 @@
                         </div>
 
                         <p class="my-0">{{ banquet.description }}</p>
-<!--                        <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">-->
-<!--                            <button data-aos="flip-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">-->
-<!--                                {% translate 'Перейти' %}-->
-<!--                            </button>-->
-<!--                        </a>-->
+                        <!--                        <a href="{% url 'banquets:banquet_page' url_name=banquet.url_name %}">-->
+                        <!--                            <button data-aos="flip-up" class="btn btn-success btn-rounded px-4 my-2 btn-animate">-->
+                        <!--                                {% translate 'Перейти' %}-->
+                        <!--                            </button>-->
+                        <!--                        </a>-->
                     </div>
                 </div>
             </div>
