@@ -3,10 +3,12 @@
 {% load i18n %}
 
 
-{% block title %}   {% translate 'Я ЕМ | QR Меню | Доставка в городе' %} {{ city_selected.name }} {% endblock title %}
+{% block title %}
+    {% translate 'Удобная доставка еды с YAEM.KZ' %}{{ city_selected.name }} {% translate 'Оформляйте доставку прямо на сайте' %}
+{% endblock title %}
 
 {% block description %}
-{% translate 'Цифровое онлайн-меню в городе' %} {{ city_selected.name }}. {% translate 'Удобный интерфейс, описание, цены. Имеется доставка по предзаказу. Сканируйте QR, формируйте заказ и наслаждайтесь комфортным обслуживанием вместе с YAEM' %}
+{{ city_selected.name }} {% translate 'Оставляйте заказ на доставку прямо на нашем сайте. Множество кафе и ресторанов готовы доставить вам еду в кротчайшие сроки.' %}
 {% endblock description %}
 
 {% block content %}

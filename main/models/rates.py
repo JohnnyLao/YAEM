@@ -9,6 +9,7 @@ class EstablishmentRates(models.Model):
         choices=Rates.choices,
         verbose_name="Название тарифа",
         unique=True,
+        editable=False,
     )
 
     def __str__(self):
@@ -17,3 +18,4 @@ class EstablishmentRates(models.Model):
     class Meta:
         verbose_name = "Тариф"
         verbose_name_plural = "Тарифы"
+        ordering = ('id',)

@@ -18,6 +18,7 @@ class User(AbstractUser):
     phone_number = PhoneNumberField(
         verbose_name='Номер телефона', unique=True, db_index=True
     )
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, verbose_name='Создан в', null=True)
     is_corporate = models.BooleanField(
         verbose_name='Корпоративный аккаунт', default=False
     )

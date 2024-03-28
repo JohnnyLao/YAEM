@@ -13,29 +13,24 @@ class Menu(TemplateView):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
         client = get_object_or_404(Client, url_name=url_name)
-        categories = Category.objects.all().order_by("z_index")
-        client_has_banquet = BanquetCard.objects.filter(client=client).exists()
+        categories = Category.objects.filter(client=client, is_active=True)
+        # food_types = (
+        #     Food_type.objects.filter(category__in=categories).distinct()
+        # )
+        # dishes = (
+        #     Dish.objects.filter(food_type__in=food_types)
+        # )
         dishes = (
             Dish.objects.select_related("client")
             .prefetch_related("food_type")
-            .filter(client=client)
-            .order_by("z_index")
+            .filter(client=client, stop=False)
         )
-        food_type = (
-            Food_type.objects.filter(dish__in=dishes).distinct().order_by("z_index")
+        food_types = (
+            Food_type.objects.filter(dish__in=dishes).distinct()
         )
-        kitchen = (
-            Food_type.objects.filter(dish__in=dishes)
-            .filter(category__name="Кухня")
-            .order_by("z_index")
-            .distinct()
-        )
-        bar = (
-            Food_type.objects.filter(dish__in=dishes)
-            .filter(category__name="Бар")
-            .order_by("z_index")
-            .distinct()
-        )
+        #
+        client_has_banquet = BanquetCard.objects.filter(client=client).exists()
+
         # dish quantity
         user_cart = None
         if self.request.user.is_authenticated:
@@ -52,14 +47,9 @@ class Menu(TemplateView):
 
         context["dishes"] = dishes
         context['cart_items'] = cart_items
-        context["food_type"] = food_type
+        context["food_type"] = food_types
         context["categories"] = categories
         context["client"] = client
         context["client_has_banquet"] = client_has_banquet
-        context['kitchen'] = kitchen
-        context['bar'] = bar
-
-        # context['kitchen_menus'] = Food_type.objects.filter(category__name="Кухня")
-        # context['bar_menus'] = Food_type.objects.filter(category__name="Бар")
 
         return context

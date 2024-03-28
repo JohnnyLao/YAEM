@@ -3,10 +3,10 @@
 {% load i18n %}
 
 
-{% block title %} {% translate 'Я ЕМ | Банкетные залы' %} {% endblock title %}
+{% block title %} {% translate 'Банкетный зал' %} {{banquet.name}} {% translate 'На сайте Я ЕМ' %} {% endblock title %}
 
 {% block description %}
-{% translate 'Банкетный зал {{banquet.name}}. Количество мест {{banquet.capacity}}. Средний счёт на человека от {{banquet.price_min}} - {{banquet.price_max}} тенге в городе {{banquet.city.name}}' %}
+Банкетный зал {{banquet.name}}. Количество мест {{banquet.capacity}}. Средний счёт на человека от {{banquet.price_min}} до {{banquet.price_max}} тенге в городе {{banquet.city.name}}
 {% endblock description %}
 
 {% block content %}
