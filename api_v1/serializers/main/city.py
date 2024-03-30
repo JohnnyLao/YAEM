@@ -10,9 +10,3 @@ class CitySerializer(ModelSerializer):
             'id',
             'name',
         )
-
-
-class CityRUDSerializer(ModelSerializer):
-    class Meta:
-        model = City
-        fields = ('name',)

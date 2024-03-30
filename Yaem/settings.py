@@ -95,6 +95,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
     # all auth
     "allauth.account.middleware.AccountMiddleware",
+    "crum.CurrentRequestUserMiddleware",
 ]
 
 ROOT_URLCONF = "Yaem.urls"
@@ -312,8 +313,6 @@ SIMPLE_JWT = {
     "SLIDING_TOKEN_LIFETIME": timedelta(minutes=1),
     "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=7),
 }
-
-
 
 
 # django-storages settings

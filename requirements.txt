@@ -15,7 +15,7 @@ click-repl==0.3.0
 cryptography==42.0.2
 defusedxml==0.7.1
 Django==4.2.2
-boto3
+django-crum
 djangorestframework-simplejwt
 djoser
 django-minio-storage

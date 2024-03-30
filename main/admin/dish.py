@@ -5,7 +5,55 @@ from main.models import Dish
 
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
-    list_display = ["name", "food_type", "stop", "actual_price", "z_index"]
-    list_editable = ["actual_price", "z_index"]
-    list_filter = ["client", "food_type", "stop"]
-    search_fields = ["name"]
+    readonly_fields = (
+        'created_at',
+        'updated_at',
+    )
+    list_display = (
+        'id',
+        'name',
+        'created_at',
+        'updated_at',
+    )
+    list_display_links = (
+        'id',
+        'name',
+    )
+
+    fieldsets = (
+        (
+            'Главная информация',
+            {
+                'fields': (
+                    'food_type',
+                    'name',
+                    'actual_price',
+                    'stop',
+                )
+            },
+        ),
+        (
+            'Необязательная информация',
+            {
+                'fields': (
+                    'image',
+                    'description',
+                    'old_price',
+                    'popular',
+                    'spicy',
+                    'vegetarian',
+                )
+            },
+        ),
+        (
+            'Административная информация',
+            {
+                'fields': (
+                    'generated',
+                    'z_index',
+                    'created_at',
+                    'updated_at',
+                )
+            },
+        ),
+    )

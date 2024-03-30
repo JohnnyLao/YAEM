@@ -4,7 +4,9 @@ from django.db import models
 class City(models.Model):
     # admin info
     name = models.CharField(max_length=40, verbose_name="Город", db_index=True)
-    slug = models.SlugField(unique=True, verbose_name="Слаг", blank=True, null=True, db_index=True)
+    slug = models.SlugField(
+        unique=True, verbose_name="Слаг", blank=True, null=True, db_index=True
+    )
     z_index = models.IntegerField(null=True, blank=True)
 
     class Meta:

@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 
@@ -25,10 +26,8 @@ class Menu(TemplateView):
             .prefetch_related("food_type")
             .filter(client=client, stop=False)
         )
-        food_types = (
-            Food_type.objects.filter(dish__in=dishes).distinct()
-        )
-        #
+        food_types = Food_type.objects.filter(dish__in=dishes).distinct()
+
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
 
         # dish quantity
@@ -44,6 +43,24 @@ class Menu(TemplateView):
         if user_cart:
             for cart_item in user_cart.cart_items.all():
                 cart_items[cart_item.dish.id] = cart_item.quantity
+
+        # -------------
+        # user = get_user_model().objects.get(id=1)
+        # print('User:', user)
+        # establishments = user.get_user_establishments.all()
+        # print('Est:', establishments)
+        # for establishment in establishments:
+        #     categories = establishment.get_categories.all()
+        #     print('Cat:', categories)
+        #
+        #     for category in categories:
+        #         subcategories = category.get_subcategories.all()
+        #         print('SubCat:', subcategories)
+        #
+        #         for subcategory in subcategories:
+        #             dishes = subcategory.get_dishes.all()
+        #             print('Dish:', dishes)
+        # -------------
 
         context["dishes"] = dishes
         context['cart_items'] = cart_items

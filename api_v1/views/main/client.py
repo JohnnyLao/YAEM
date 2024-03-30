@@ -1,76 +1,77 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 from api_v1.serializers import main
 from api_v1.utils.base import CustomModelViewSet
-from api_v1.utils.permissions import IsEstablishmentOwnerOrAdmin
+from api_v1.utils.permissions import IsEstablishmentOwner
 from main.models import Client
 
 
 @extend_schema_view(
     list=extend_schema(
-        summary="Return base info list of all establishments for user",
+        summary="Return base info list of all user's establishments",
         tags=["Menu: Clients"],
     ),
     retrieve=extend_schema(
-        summary="Retrieve full information about an establishment for user",
+        summary="Retrieve full information about an user's establishment",
         tags=["Menu: Clients"],
     ),
     create=extend_schema(
-        summary="Create a new establishment for user", tags=["Menu: Clients"]
+        summary="Create a new user's establishment", tags=["Menu: Clients"]
     ),
     update=extend_schema(
-        summary="Completely modify data in an establishment for user",
+        summary="Completely modify data in an user's establishment",
         tags=["Menu: Clients"],
     ),
     partial_update=extend_schema(
-        summary="Partially modify data in an establishment for user",
+        summary="Partially modify data in an user's establishment",
         tags=["Menu: Clients"],
     ),
     destroy=extend_schema(
-        summary="Delete an establishment for user", tags=["Menu: Clients"]
+        summary="Delete an user's establishment", tags=["Menu: Clients"]
     ),
 )
 class ClientViewSet(CustomModelViewSet):
-    queryset = Client.objects.all()
+    # Get queryset
+    queryset = Client.objects
+    # Serializers
     multi_serializer_classes = {
-        # get base list info
+        # When acting on a 'list', a specific serializer is used
         'list': main.ClientBaseInfoListSerializer,
-        # create establishment
+        # When acting on a 'create', a specific serializer is used
         'create': main.ClientCreateSerializer,
-        # get full info about establishment
+        # When acting on a 'retrieve', a specific serializer is used
         'retrieve': main.ClientRUDSerializer,
-        # update full info about establishment
+        # When acting on a 'update', a specific serializer is used
         'update': main.ClientRUDSerializer,
-        # update partial info about establishment
+        # When acting on a 'partial update', a specific serializer is used
         'partial_update': main.ClientRUDSerializer,
-        # delete establishment
+        # When acting on a 'destroy', a specific serializer is used
         'destroy': main.ClientRUDSerializer,
     }
+    # Permissions
     multi_permission_classes = {
-        # admin group or current user have permission on 'list' method
-        'list': [IsEstablishmentOwnerOrAdmin],
-        # admin group or current user have permission on 'retrieve' method
-        'retrieve': [IsEstablishmentOwnerOrAdmin],
-        # any users have permission on 'create' method
+        # Only the establishment creator can interact with them through an action 'list'
+        'list': [IsEstablishmentOwner],
+        # Only the establishment creator can interact with them through an action 'retrieve'
+        'retrieve': [IsEstablishmentOwner],
+        # Only the authenticated users can interact with them through an action 'create'
         'create': [IsAuthenticated],
-        # admin group or current user have permission on 'update' method
-        'update': [IsEstablishmentOwnerOrAdmin],
-        # admin group or current user have permission on 'partial' update method
-        'partial_update': [IsEstablishmentOwnerOrAdmin],
-        # admin group or current user has permission on 'destroy' method
-        'destroy': [IsEstablishmentOwnerOrAdmin],
+        # Only the establishment creator can interact with them through an action 'update'
+        'update': [IsEstablishmentOwner],
+        # Only the establishment creator can interact with them through an action 'partial update'
+        'partial_update': [IsEstablishmentOwner],
+        # Only the establishment creator can interact with them through an action 'destroy'
+        'destroy': [IsEstablishmentOwner],
     }
 
-    def get_queryset(self):
-        user = self.request.user
-        # Admin group can see all establishments
-        if user.is_staff or user.is_superuser:
-            return self.queryset
-        # Authenticated users can only see their establishments
-        if user.is_authenticated:
-            # list action returns only user's establishment
-            if self.action == 'list':
-                return self.queryset.filter(user=user)
-            else:
-                return self.queryset
+    # Overriding the list method, get all establishments created by the user
+    def list(self, request, *args, **kwargs):
+        # Get current user
+        current_user = self.request.user
+        if current_user.is_authenticated:
+            # Get all user's establishments, filtered by client-user
+            queryset = self.queryset.filter(user=current_user)
+            serializer = self.get_serializer(queryset, many=True)
+            return Response(serializer.data)

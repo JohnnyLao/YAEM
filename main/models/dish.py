@@ -11,11 +11,15 @@ class Dish(models.Model):
         models.CASCADE,
         verbose_name="Заведение",
         help_text="Блюдо какого заведения",
+        blank=True,
+        null=True,
     )
     food_type = models.ForeignKey(
         "main.Food_type",
         models.CASCADE,
         verbose_name="Подкатегория",
+        # get all dishes
+        # related_name='get_dishes',
         help_text="Подкатегория",
     )
     name = models.CharField(
@@ -63,9 +67,12 @@ class Dish(models.Model):
         null=True,
         help_text="Порядок отображения 0-99",
     )
-    created_at = models.DateTimeField(auto_now_add=True, blank=True, verbose_name='Время создания', null=True)
-    updated_at = models.DateTimeField(auto_now=True, blank=True, verbose_name='Время обновления', null=True)
-
+    created_at = models.DateTimeField(
+        auto_now_add=True, blank=True, verbose_name='Время создания', null=True
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True, blank=True, verbose_name='Время обновления', null=True
+    )
 
     class Meta:
         verbose_name = "Блюдо"

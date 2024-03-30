@@ -1,31 +1,26 @@
 from rest_framework import serializers
 
-from api_v1.serializers.main import CityRUDSerializer
 from main.models import Client
 
 
+# The sheet is called upon action 'list' and provides basic information
 class ClientBaseInfoListSerializer(serializers.ModelSerializer):
-    # serializer provides basic information about a list of user establishment,
     class Meta:
         model = Client
         fields = (
             'id',
             'name',
             'url_name',
-            'address',
         )
 
 
+# The sheet is called upon action 'retrieve/update/partial update/destroy' and provides detail information
 class ClientRUDSerializer(serializers.ModelSerializer):
-    # serializer for retrieving, updating, and deleting user establishment information.
-
     class Meta:
         model = Client
         fields = (
             'id',
             'name',
-            'description',
-            'address',
         )
 
     # def to_representation(self, instance):
@@ -37,8 +32,8 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     #     return representation
 
 
+# The sheet is called upon action 'create'
 class ClientCreateSerializer(serializers.ModelSerializer):
-    # serializer for creating a new establishment.
     class Meta:
         model = Client
         fields = (

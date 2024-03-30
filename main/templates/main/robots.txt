@@ -16,3 +16,4 @@ Disallow: /js
 Disallow: /css
 Disallow: /cgi-bin
 Disallow: /user
+Disallow: /api/v1

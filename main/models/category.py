@@ -6,7 +6,13 @@ class Category(models.Model):
     name = models.CharField(max_length=30, verbose_name="Категория", db_index=True)
     # to automize TODO
     client = models.ForeignKey(
-        "main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True, blank=True
+        "main.Client",
+        verbose_name="Клиент",
+        on_delete=models.SET_NULL,
+        # get all establishment categories
+        related_name='get_categories',
+        null=True,
+        blank=True,
     )
     # secondary info
     bg_image = models.ImageField(upload_to='media/temp', blank=True, null=True)
@@ -26,5 +32,13 @@ class Category(models.Model):
         verbose_name_plural = "Категории"
         ordering = ("z_index",)
 
+    def save(self, *args, **kwargs):
+        if not self.d_name:
+            if self.client and self.name:
+                client_name = self.client.name.strip().lower().replace(" ", "_")
+                category_name = self.name.strip().lower().replace(" ", "_")
+                self.d_name = f"{client_name}_{category_name}"
+        super().save(*args, **kwargs)
+
     def __str__(self):
-        return self.name
+        return self.d_name

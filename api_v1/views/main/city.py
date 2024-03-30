@@ -6,20 +6,12 @@ from main.models import City
 
 
 @extend_schema_view(
-    list=extend_schema(summary="Список всех городов", tags=["Меню:Города"]),
-    create=extend_schema(summary="Создать новый город", tags=["Меню:Города"]),
-    destroy=extend_schema(summary="Удалить город", tags=["Меню:Города"]),
+    list=extend_schema(summary="List of all cities", tags=["Menu: Cities"]),
 )
 class CityViewSet(ModelViewSet):
-    queryset = City.objects.all().order_by('id')
+    queryset = City.objects.all()
     serializer_class = main.CitySerializer
-    http_method_names = (
-        "get",
-        "post",
-        "delete",
-    )
-    ordering = ('id',)
-    search_fields = ('name',)
+    http_method_names = ("get",)
 
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):

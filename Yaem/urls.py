@@ -3,17 +3,18 @@ from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from Yaem.views import robots_txt_view, sitemap_xml_view
 from drf_spectacular.views import (SpectacularAPIView, SpectacularRedocView,
                                    SpectacularSwaggerView)
+
+from Yaem.views import robots_txt_view, sitemap_xml_view
 
 urlpatterns = [
     # admin URLS
     path("admin/", admin.site.urls),
     # robots txt
-    path('robots.txt/', robots_txt_view, name='robots_txt'),
+    path('robots.txt', robots_txt_view, name='robots_txt'),
     # sitemap xml
-    path('sitemap.xml/', sitemap_xml_view, name='sitemap_xml'),
+    path('sitemap.xml', sitemap_xml_view, name='sitemap_xml'),
     # api v1
     path("api/v1/", include("api_v1.urls", namespace="api_v1")),
     # Online documentation
