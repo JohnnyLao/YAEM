@@ -61,7 +61,7 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         # Get the client ID from the data
         client_id = validated_data.pop('client_id')
         # Get the client by its ID
-        client = Client.objects.get(id=client_id)
+        client = Client.objects.get(id=int(client_id))
 
         # Permission - only the creator of the establishment can create a category for himself
         if not self.context['request'].user == client.user:

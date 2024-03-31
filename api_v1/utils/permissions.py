@@ -16,3 +16,10 @@ class IsCategoryOwner(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return bool(obj.client.user == request.user)
+
+
+class IsSubcategoryOwner(permissions.BasePermission):
+    message = "You do not have permissions to view other people's subcategories"
+
+    def has_object_permission(self, request, view, obj):
+        return bool(obj.category.client.user == request.user)

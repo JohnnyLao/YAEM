@@ -17,17 +17,16 @@ class ClientBaseInfoListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Client
-        # Specifies the model that this serializer works with
         fields = (
-            'user',  # User fields
-            'id',  # ID field
-            'name',  # Name field
-            'url_name',  # URL name field
-            'city',  # City fields
-            'description',  # Description field
-            'logo',  # Logo field
-            'status',  # Status field
-            'tarif_number',  # Tariff number field
+            'user',
+            'id',
+            'name',
+            'url_name',
+            'city',
+            'description',
+            'logo',
+            'status',
+            'tarif_number',
         )
 
 

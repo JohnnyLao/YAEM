@@ -15,6 +15,8 @@ router = DefaultRouter()
 router.register(r"menu/clients", main.ClientViewSet, "clients")
 # Endpoints for categories
 router.register(r'menu/categories', main.CategoryViewSet, 'categories')
+# Endpoints for subcategories
+router.register(r'menu/subcategories', main.SubcategoryViewSet, 'subcategories')
 # Endpoints for cities
 router.register(r"menu/city", main.CityViewSet, "city")
 
