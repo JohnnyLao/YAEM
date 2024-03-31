@@ -1,11 +1,11 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-
+from rest_framework import status
 from api_v1.serializers import main
 from api_v1.utils.base import CustomModelViewSet
 from api_v1.utils.permissions import IsSubcategoryOwner
-from main.models import Client, Food_type
+from main.models import Client, Food_type, Category
 
 
 @extend_schema_view(
@@ -72,10 +72,16 @@ class SubcategoryViewSet(CustomModelViewSet):
             # Get ID from request params (?category_id=*)
             category_id = request.query_params.get('category_id')
             if category_id is not None:
-                # Get all subcategories associated with this category
-                queryset = self.queryset.filter(category_id=int(category_id))
-                serializer = self.get_serializer(queryset, many=True)
-                return Response(serializer.data)
+                category = Category.objects.get(id=int(category_id))
+                # Check if the current user has access
+                if category.client.user == current_user:
+                    # Get all subcategories associated with this category
+                    queryset = self.queryset.filter(category_id=int(category_id))
+                    serializer = self.get_serializer(queryset, many=True)
+                    return Response(serializer.data)
+                else:
+                    return Response({"detail": "You do not have permission to access this action."},
+                                    status=status.HTTP_403_FORBIDDEN)
             else:
                 # If not ID, get all subcategories created by the user
                 if current_user.is_authenticated:
@@ -83,3 +89,7 @@ class SubcategoryViewSet(CustomModelViewSet):
                     queryset = self.queryset.filter(category__client__user=current_user)
                     serializer = self.get_serializer(queryset, many=True)
                     return Response(serializer.data)
+
+    @extend_schema(exclude=True)
+    def retrieve(self, request, *args, **kwargs):
+        return Response('Permission denied')

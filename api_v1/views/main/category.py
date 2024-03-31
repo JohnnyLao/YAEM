@@ -56,7 +56,7 @@ class CategoryViewSet(CustomModelViewSet):
     # Permissions
     multi_permission_classes = {
         # Only the category creator can interact with them through an action 'list'
-        'list': [IsCategoryOwner, IsEstablishmentOwner],
+        'list': [IsCategoryOwner],
         # Only the category creator can interact with them through an action 'retrieve'
         # 'retrieve': [IsCategoryOwner],
         # Only the authenticated users can interact with them through an action 'create'
@@ -77,10 +77,16 @@ class CategoryViewSet(CustomModelViewSet):
             # Get ID from request params (?client_id=*)
             client_id = request.query_params.get('client_id')
             if client_id is not None:
-                # Get all categories associated with this establishment
-                queryset = self.queryset.filter(client_id=int(client_id))
-                serializer = self.get_serializer(queryset, many=True)
-                return Response(serializer.data)
+                establishment = Client.objects.get(id=int(client_id))
+                # Check if the current user has access
+                if establishment.user == current_user:
+                    # Get all categories associated with this establishment
+                    queryset = self.queryset.filter(client_id=int(client_id))
+                    serializer = self.get_serializer(queryset, many=True)
+                    return Response(serializer.data)
+                else:
+                    return Response({"detail": "You do not have permission to access this establishment."},
+                                    status=status.HTTP_403_FORBIDDEN)
             else:
                 # If not ID, get all categories created by the user
                 if current_user.is_authenticated:

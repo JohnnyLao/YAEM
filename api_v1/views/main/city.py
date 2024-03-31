@@ -1,4 +1,5 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework import permissions
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
@@ -12,6 +13,7 @@ from main.models import City
 class CityViewSet(ModelViewSet):
     queryset = City.objects.all()
     serializer_class = main.CitySerializer
+    permission_classes = [permissions.IsAdminUser]
     http_method_names = ("get",)
 
     @extend_schema(exclude=True)

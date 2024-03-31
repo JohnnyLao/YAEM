@@ -23,3 +23,10 @@ class IsSubcategoryOwner(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         return bool(obj.category.client.user == request.user)
+
+
+class IsDishOwner(permissions.BasePermission):
+    message = "You do not have permissions to view other people's dishes"
+
+    def has_object_permission(self, request, view, obj):
+        return bool(obj.food_type.category.client.user == request.user)
