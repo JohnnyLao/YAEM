@@ -8,7 +8,7 @@ class Category(models.Model):
     client = models.ForeignKey(
         "main.Client",
         verbose_name="Клиент",
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         # get all establishment categories
         related_name='get_categories',
         null=True,

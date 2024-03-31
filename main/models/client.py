@@ -28,7 +28,7 @@ class Client(models.Model):
     )
     # establishment city
     city = models.ForeignKey(
-        "main.City", models.SET_NULL, verbose_name="Город", null=True
+        "main.City", on_delete=models.PROTECT, verbose_name="Город", null=True
     )
 
     # remove before ..
@@ -116,6 +116,7 @@ class Client(models.Model):
         blank=True,
         null=True,
         verbose_name="Тариф",
+        default=3,
     )
     # establishment is active
     status = models.BooleanField(
