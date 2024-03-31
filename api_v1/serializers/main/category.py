@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework.exceptions import PermissionDenied
+from rest_framework.exceptions import PermissionDenied, ValidationError
 
 from main.models import Category, Client
 
@@ -11,6 +11,8 @@ class CategoryBaseInfoListSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'bg_image',
+            'is_active',
         )
 
 
@@ -21,7 +23,17 @@ class CategoryRUDSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'name',
+            'bg_image',
+            'is_active',
         )
+
+    # Checking that the category name contains only russian and english letters
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalpha():
+            raise ValidationError(
+                'The name can only contain letters (Russian and English)'
+            )
+        return str(value).capitalize()
 
 
 # The sheet is called upon action 'create'
@@ -36,7 +48,15 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
             'name',
         )
 
-    # Overriding the create method
+    # Checking that the category name contains only russian and english letters
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalpha():
+            raise ValidationError(
+                'The name can only contain letters (Russian and English)'
+            )
+        return str(value).capitalize()
+
+    # Overriding the create method, when creating, we associate the category with the establishment
     def create(self, validated_data):
         # Get the client ID from the data
         client_id = validated_data.pop('client_id')

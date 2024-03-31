@@ -1,4 +1,5 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from api_v1.serializers import main
@@ -15,4 +16,4 @@ class CityViewSet(ModelViewSet):
 
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):
-        pass
+        return Response('Permission denied')
