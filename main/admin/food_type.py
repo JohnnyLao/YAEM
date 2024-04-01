@@ -18,15 +18,17 @@ from main.models import Food_type
 class FoodTypeAdmin(admin.ModelAdmin):
     list_display = (
         'id',
-        # 'category',
-        'name',
         'd_name',
+        'category',
+        'z_index'
     )
     list_display_links = (
         'id',
-        'name',
+        'd_name',
     )
-
+    list_filter = ['category__client', 'category']
+    search_fields = ['name']
+    list_editable = ['category', 'z_index']
     fieldsets = (
         (
             'Главная информация',

@@ -13,17 +13,19 @@ from main.models import Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    search_fields = ('name', 'd_name', 'client')
+    search_fields = ('name', 'd_name', 'client', 'z_index')
     list_filter = ('client', 'is_active')
     list_display = (
         'id',
-        'client',
-        'name',
         'd_name',
+        'client',
+        'z_index',
+        'is_active',
     )
+    list_editable = ["z_index"]
     list_display_links = (
         'id',
-        'name',
+        'd_name',
     )
 
     fieldsets = (

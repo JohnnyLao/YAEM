@@ -9,12 +9,14 @@ admin.site.site_header = "YAEM"
 class ClientAdmin(admin.ModelAdmin):
     readonly_fields = ('user', 'created_at', 'updated_at')
     prepopulated_fields = {"url_name": ("name",)}
+    list_filter = ['user', 'city']
     list_display = (
         'id',
         'name',
-        'user',
-        'url_name',
-        'city',
+        'status',
+        'outside',
+        'delivery',
+        'paid_at',
         'created_at',
         'updated_at',
     )
@@ -22,6 +24,7 @@ class ClientAdmin(admin.ModelAdmin):
         'id',
         'name',
     )
+    list_editable = ['status', 'outside', 'delivery', 'paid_at']
 
     fieldsets = (
         (

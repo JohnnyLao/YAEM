@@ -1,3 +1,5 @@
+from datetime import datetime, date
+
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
@@ -29,7 +31,6 @@ class Menu(TemplateView):
         food_types = Food_type.objects.filter(dish__in=dishes).distinct()
 
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
-
         # dish quantity
         user_cart = None
         if self.request.user.is_authenticated:
@@ -61,7 +62,12 @@ class Menu(TemplateView):
         #             dishes = subcategory.get_dishes.all()
         #             print('Dish:', dishes)
         # -------------
+        client_date = client.paid_at
+        today_date = datetime.now().date()  # Получаем сегодняшнюю дату
 
+        context = {
+            'client_date': client_date,
+            'today_date': today_date}
         context["dishes"] = dishes
         context['cart_items'] = cart_items
         context["food_type"] = food_types

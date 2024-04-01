@@ -238,26 +238,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="{% static 'js/food_swiper.js' %}"></script>
         {#  category cards  #}
+<!--        PAYMENT CHECK-->
+{% if client_date > today_date %}
 
-        <div class="d-flex justify-content-center">
-            <ul class="nav nav-tabs mb-3" role="tablist">
+
+        <div class="container px-0">
+            <ul class="nav nav-tabs mb-3 d-flex justify-content-center" role="tablist">
                 {% for category in categories %}
                     <li class="nav-item" role="presentation">
                         <a data-mdb-tab-init
-                           class="nav-link fs-6 border rounded-5 fw-bold mx-3 my-2"
+                           class="nav-link fs-6 rounded fw-bold mx-1 my-1 px-1 py-1"
                            id="ex1-tab-{{ category.id }}"
                            data-mdb-toggle="tab"
                            href="#ex1-tabs-{{ category.id }}"
                            role="tab"
                            aria-controls="ex1-tabs-{{ category.id }}"
-                           aria-selected="true"
-                           style="color: #FD7014; --mdb-border-color: #FD7014; --mdb-nav-tabs-link-hover-bgc: rgba(253, 112, 20, 0.1)">
-                            <div class="card btn-animate ">
-                                <img src="{% static 'images/menu/kitchen.jpg' %}" alt=""
+                           aria-selected="true">
+                            <div class="card btn-animate" style="width: 100px; height: 130px">
+                                <img class="img rounded-top-3 mx-auto" src="{% static 'images/menu/kitchen.jpg' %}" alt=""
                                      style="width: 100px; height: 70px"
                                      draggable="false">
-                                <div class="card-body text-center text-dark">
-                                    {{ category.name }}
+                                <div class="card-body text-center text-dark px-0">
+                                    <p class="text" style="font-size: 11px">{{ category.name }}</p>
+
                                 </div>
                             </div>
                         </a>
@@ -268,8 +271,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
 
         <!-- Tabs content -->
+        {% for category in categories %}
         <div class="tab-content">
-            {% for category in categories %}
+
 
                 <div
                         class="tab-pane"
@@ -443,8 +447,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
                 </div>
     
-            {% endfor %}
+
         </div>
+        {% endfor %}
 
 
         <!-- Tabs content -->
@@ -608,7 +613,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         {#    </div>#}
 
         <!--Content-->
-
+{% else %}
+    <p>Дата оплаты уже прошла, пизда...</p>
+{% endif %}
 
     </section>
 

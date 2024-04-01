@@ -22,14 +22,14 @@ class Category(models.Model):
     d_name = models.CharField(
         max_length=50,
         verbose_name="Имя в базе",
-        help_text="Кухня_Алаверди",
+        help_text="Алаверди_Кухня - *Auto",
         blank=True,
         null=True,
     )
 
     class Meta:
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name = "Раздел"
+        verbose_name_plural = "Разделы"
         ordering = ("z_index",)
 
     def save(self, *args, **kwargs):

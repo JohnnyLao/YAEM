@@ -17,7 +17,7 @@ class Food_type(models.Model):
     category = models.ForeignKey(
         "main.Category",
         on_delete=models.CASCADE,
-        verbose_name="Категория",
+        verbose_name="Раздел",
         # get all subcategories
         related_name='get_subcategories',
         blank=True,
@@ -28,7 +28,7 @@ class Food_type(models.Model):
     z_index = models.IntegerField(
         verbose_name="Порядковый №",
         default=0,
-        help_text="Категория",
+        help_text="Раздел",
     )
     d_name = models.CharField(
         max_length=50,
@@ -39,8 +39,8 @@ class Food_type(models.Model):
     )
 
     class Meta:
-        verbose_name = "Подкатегория"
-        verbose_name_plural = "Подкатегории"
+        verbose_name = "Категория"
+        verbose_name_plural = "Категории"
         ordering = ('z_index',)
 
     def save(self, *args, **kwargs):

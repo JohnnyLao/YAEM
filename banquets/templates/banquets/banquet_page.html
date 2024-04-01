@@ -6,7 +6,7 @@
 {% block title %} {% translate 'Банкетный зал' %} {{banquet.name}} {% translate 'На сайте Я ЕМ' %} {% endblock title %}
 
 {% block description %}
-Банкетный зал {{banquet.name}}. Количество мест {{banquet.capacity}}. Средний счёт на человека от {{banquet.price_min}} до {{banquet.price_max}} тенге в городе {{banquet.city.name}}
+Банкетный зал {{banquet.name}}. {% for hall in subhall %}{% if forloop.first %}{{ hall.description }}{% endif %}{% endfor %}
 {% endblock description %}
 
 {% block content %}

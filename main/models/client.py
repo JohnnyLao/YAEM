@@ -125,7 +125,7 @@ class Client(models.Model):
         default=False,
     )
     # establishment paid at
-    paid_at = models.DateField(blank=True, verbose_name='Время оплаты', null=True)
+    paid_at = models.DateField(blank=True, verbose_name='Оплачен до', null=True)
     # establishment translated
     translated = models.BooleanField(
         verbose_name="Перевод", default=False, help_text="Значок перевода на 3 языка"
