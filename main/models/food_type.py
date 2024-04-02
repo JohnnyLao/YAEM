@@ -3,10 +3,6 @@ from django.db import models
 
 class Food_type(models.Model):
     # main info
-    # remove
-    client = models.ForeignKey(
-        "main.Client", verbose_name="Клиент", on_delete=models.SET_NULL, null=True
-    )
     name = models.CharField(
         max_length=50,
         verbose_name="Отображаемое имя",

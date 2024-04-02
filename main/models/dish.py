@@ -5,21 +5,12 @@ from main.models.utils.images_upload import dish_image_upload_to
 
 class Dish(models.Model):
     # main info
-    # remove
-    client = models.ForeignKey(
-        "main.Client",
-        models.CASCADE,
-        verbose_name="Заведение",
-        help_text="Блюдо какого заведения",
-        blank=True,
-        null=True,
-    )
     food_type = models.ForeignKey(
         "main.Food_type",
         models.CASCADE,
         verbose_name="Подкатегория",
         # get all dishes
-        # related_name='get_dishes',
+        related_name='get_dishes',
         help_text="Подкатегория",
     )
     name = models.CharField(
@@ -87,12 +78,12 @@ class Dish(models.Model):
 
     # get total price service
     def total_price_with_service(self):
-        if self.client.service > 0:
+        if self.food_type.category.client.service > 0:
             if self.old_price:
-                return self.old_price + (self.old_price * self.client.service / 100)
+                return self.old_price + (self.old_price * self.food_type.category.client.service / 100)
             else:
                 return self.actual_price + (
-                    self.actual_price * self.client.service / 100
+                    self.actual_price * self.food_type.category.client.service / 100
                 )
         return self.total_price()
 

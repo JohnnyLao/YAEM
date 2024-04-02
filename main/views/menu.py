@@ -15,20 +15,17 @@ class Menu(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         url_name = self.kwargs["url_name"]
+        # get establishment info
         client = get_object_or_404(Client, url_name=url_name)
-        categories = Category.objects.filter(client=client, is_active=True)
-        # food_types = (
-        #     Food_type.objects.filter(category__in=categories).distinct()
-        # )
-        # dishes = (
-        #     Dish.objects.filter(food_type__in=food_types)
-        # )
-        dishes = (
-            Dish.objects.select_related("client")
-            .prefetch_related("food_type")
-            .filter(client=client, stop=False)
-        )
-        food_types = Food_type.objects.filter(dish__in=dishes).distinct()
+        categories = client.get_categories.prefetch_related('get_subcategories__get_dishes').all()
+        food_types = []
+        dishes = []
+        for category in categories:
+            subcategories = category.get_subcategories.all()
+            food_types.extend(subcategories)
+            for food_type in subcategories:
+                dish = food_type.get_dishes.all()
+                dishes.extend(dish)
 
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
         # dish quantity
@@ -44,26 +41,8 @@ class Menu(TemplateView):
         if user_cart:
             for cart_item in user_cart.cart_items.all():
                 cart_items[cart_item.dish.id] = cart_item.quantity
-
-        # -------------
-        # user = get_user_model().objects.get(id=1)
-        # print('User:', user)
-        # establishments = user.get_user_establishments.all()
-        # print('Est:', establishments)
-        # for establishment in establishments:
-        #     categories = establishment.get_categories.all()
-        #     print('Cat:', categories)
-        #
-        #     for category in categories:
-        #         subcategories = category.get_subcategories.all()
-        #         print('SubCat:', subcategories)
-        #
-        #         for subcategory in subcategories:
-        #             dishes = subcategory.get_dishes.all()
-        #             print('Dish:', dishes)
-        # -------------
         client_date = client.paid_at
-        today_date = datetime.now().date()  # Получаем сегодняшнюю дату
+        today_date = datetime.now().date()
 
         context = {'client_date': client_date, 'today_date': today_date}
         context["dishes"] = dishes

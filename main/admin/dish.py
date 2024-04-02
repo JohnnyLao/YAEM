@@ -21,7 +21,7 @@ class DishAdmin(admin.ModelAdmin):
         'updated_at',
     )
 
-    list_editable = ['z_index', 'actual_price', 'stop']
+    list_editable = ['z_index', 'actual_price', 'stop',]
     search_fields = ['name']
     list_filter = ['food_type__category__client', 'food_type__category', 'food_type']
     list_display_links = (

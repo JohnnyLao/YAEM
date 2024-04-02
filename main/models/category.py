@@ -1,5 +1,7 @@
 from django.db import models
 
+from main.models.utils.images_upload import category_image_upload_to
+
 
 class Category(models.Model):
     # main info
@@ -15,7 +17,7 @@ class Category(models.Model):
         blank=True,
     )
     # secondary info
-    bg_image = models.ImageField(upload_to='media/temp', blank=True, null=True)
+    bg_image = models.ImageField(upload_to=category_image_upload_to, blank=True, null=True)
     is_active = models.BooleanField(default=True, verbose_name='Видимость')
     # admin info
     z_index = models.IntegerField(verbose_name="Порядковый №", default=1)

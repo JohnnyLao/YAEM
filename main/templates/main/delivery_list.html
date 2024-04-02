@@ -122,13 +122,13 @@
                 <div class="col-6 col-md-4 col-lg-3 text-center btn-animate  px-1">
                     <a href="{% url 'main:menu_page' url_name=client.url_name %}" class="mx-0 px-0">
                         <div class="card text-white shadow" style="background: rgba(33, 37, 41, 0.75); height: 205px">
-
+                            {% if client.logo %}
                             <img src="{{client.logo.url}}"
                                  class="card-img-top mx-auto mt-0 mb-0 rounded "
                                  alt="logo image"
                                  style="max-height: auto; max-width: 152px"
                                  draggable="false">
-
+                            {% endif %}
                             <div class="card-body my-0 py-1">
                                 <h6 data-aos="flip-up" class="card-title my-0">{{ client.name }}
                                 </h6>

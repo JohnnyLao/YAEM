@@ -42,7 +42,7 @@
 
     <section class="skrollable pb-5"
              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)), url({% static 'images/menu/bg5.jpg' %});
-                     background-repeat: repeat">
+                     background-repeat: repeat; min-height: 78vh">
         <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid">
             <div class="col-12 text-center">
@@ -56,11 +56,12 @@
                             </button>
                         </a>
                     </div>
+                    {% if client.logo %}
                     <img src="{{ client.logo.url }}"
                          class="card-img-top mx-auto mt-2 mb-0 shadow rounded" alt="logo image"
                          style="max-width: 220px"
                          draggable="false">
-
+                    {% endif %}
                     <div class="card-body my-0 py-1">
                         <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
                             <span class="" style="color: #FD7014">{{ client.name }}</span>
@@ -254,15 +255,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                            role="tab"
                            aria-controls="ex1-tabs-{{ category.id }}"
                            aria-selected="true">
+                            {% if category.bg_image %}
                             <div class="card btn-animate" style="width: 100px; height: 130px">
-                                <img class="img rounded-top-3 mx-auto" src="{% static 'images/menu/kitchen.jpg' %}" alt=""
+                                <img class="img rounded-top-3 mx-auto" src="{{ category.bg_image.url }}" alt=""
                                      style="width: 100px; height: 70px"
                                      draggable="false">
                                 <div class="card-body text-center text-dark px-0">
                                     <p class="text" style="font-size: 11px">{{ category.name }}</p>
-
+                                </div>
+                            {% else %}
+                            <div class="card btn-animate" style="width: 100px; height: 60px">
+                                <div class="card-body text-center text-dark px-0">
+                                    <p class="text" style="font-size: 11px">{{ category.name }}</p>
                                 </div>
                             </div>
+                            {% endif %}
                         </a>
                     </li>
                 {% endfor %}
@@ -614,7 +621,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
 
         <!--Content-->
 {% else %}
-    <p>Дата оплаты уже прошла, пизда...</p>
+    <div class="container text-center">
+        <h6>У заведения просрочена дата оплаты тарифного плана</h6>
+        <p>Если вы гость, просьба проинформировать персонал</p>
+    </div>
+
 {% endif %}
 
     </section>
