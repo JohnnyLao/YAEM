@@ -120,7 +120,7 @@
 
         <div class="container text-center">
             <div class="d-flex justify-content-center py-4">
-                {% if outside %}
+                {% if outside and phone %}
                 <a class="text-center" target="_blank" href="https://wa.me/{{phone}}?text=
 Здравствуйте, прошу принять заказ YAEM.KZ: %0a %0a
 САМОВЫВОЗ: %0a %0a
@@ -133,7 +133,7 @@
                     </button>
                 </a>
                 {% endif %}
-                {% if delivery %}
+                {% if delivery and phone %}
                 <a class="text-center" target="_blank" href="https://wa.me/{{phone}}?text=
 Здравствуйте, прошу принять заказ YAEM.KZ: %0a %0a
 ДОСТАВКА: %0a %0a

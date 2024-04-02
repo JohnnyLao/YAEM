@@ -334,7 +334,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                         <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
                                              style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                                             <div class="d-flex mt-2">
-                                                {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}
+                                                {% if dish.image %}
                                                     <div class="d-flex"
                                                          style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">
                                                         <img src="{{ dish.image.url }}" alt="dish img"
