@@ -1,7 +1,8 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework import status
+
 from api_v1.serializers import main
 from api_v1.utils.base import CustomModelViewSet
 from api_v1.utils.permissions import IsDishOwner
@@ -76,8 +77,10 @@ class DishViewSet(CustomModelViewSet):
                     serializer = self.get_serializer(queryset, many=True)
                     return Response(serializer.data)
                 else:
-                    return Response({"detail": "You do not have permission to access this action."},
-                                    status=status.HTTP_403_FORBIDDEN)
+                    return Response(
+                        {"detail": "You do not have permission to access this action."},
+                        status=status.HTTP_403_FORBIDDEN,
+                    )
             else:
                 # If not ID, get all dishes created by the user
                 if current_user.is_authenticated:

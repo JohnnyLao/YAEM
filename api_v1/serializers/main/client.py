@@ -1,9 +1,10 @@
+from datetime import datetime, timedelta
 from string import ascii_letters, digits, punctuation
 
-from django.core.exceptions import ValidationError
 from rest_framework import serializers
+from rest_framework.exceptions import PermissionDenied, ValidationError
 
-from main.models import Client
+from main.models import City, Client
 
 
 # The sheet is called upon action 'list' and provides basic information
@@ -48,38 +49,50 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = (
-            'user',  # User field (read-only)
-            'id',  # Identifier
-            'name',  # Establishment name
-            'url_name',  # Establishment URL name
-            'city',  # City where the establishment is located
-            'work_time_start',  # Opening time
-            'work_time_end',  # Closing time
-            'logo',  # Establishment logo
-            'description',  # Establishment description
-            'address',  # Address
-            'phone',  # Phone number
-            'inst',  # Instagram handle
-            'two_gis',  # Link to 2GIS
-            'outside',  # Outdoor seating availability
-            'delivery',  # Delivery service availability
-            'service',  # Additional services
-            'wifi',  # Wi-Fi availability
-            'wifi_password',  # Wi-Fi password
-            'tarif_number',  # Establishment tariff number (read-only)
-            'status',  # Establishment status (read-only)
+            'user',
+            'id',
+            'name',
+            'url_name',
+            'city',
+            'work_time_start',
+            'work_time_end',
+            'logo',
+            'description',
+            'address',
+            'phone',
+            'inst',
+            'two_gis',
+            'outside',
+            'delivery',
+            'service',
+            'wifi',
+            'wifi_password',
+            'tarif_number',
+            'status',
         )
 
-    # Checking that the establishment name contains only russian and english letters
+    # Name validations
     def validate_name(self, value):
+        # Remove spaces from the name and check if it contains only ru/en characters
+        if len(str(value)) >= 30:
+            raise ValidationError(
+                'Max len error'
+            )
         if not str(value).replace(' ', '').isalpha():
             raise ValidationError(
                 'The name can only contain letters (Russian and English)'
             )
         return str(value).title()
 
-    # Checking that the URL of the establishment name contains only english letters
+    # URL name validations
     def validate_url_name(self, value):
+        # Check if the instance exists and if the URL name is unchanged
+        if self.instance and self.instance.url_name == value:
+            return value
+        # Check if a Client with the same URL name already exists
+        if Client.objects.filter(url_name=value).exists():
+            raise ValidationError('Заведение с таким /url уже существует.')
+        # Remove spaces from the URL name and check if it contains only Latin characters
         url_name = str(value).replace(' ', '')
         if any(char not in ascii_letters for char in url_name):
             raise ValidationError('The URL name can only contain Latin characters')
@@ -100,8 +113,9 @@ class ClientCreateSerializer(serializers.ModelSerializer):
         # Optional fields
         extra_kwargs = {'description': {'required': False}, 'logo': {'required': False}}
 
-    # Checking that the establishment name contains only russian and english letters
+    # Name validations
     def validate_name(self, value):
+        # Remove spaces from the name and check if it contains only ru/en characters
         name = str(value).replace(' ', '').isalpha()
         if not name:
             raise ValidationError(
@@ -109,9 +123,33 @@ class ClientCreateSerializer(serializers.ModelSerializer):
             )
         return str(value).title()
 
-    # Checking that the URL of the establishment name contains only english letters
+    # URL validations
     def validate_url_name(self, value):
+        # Remove spaces from the URL name and check if it contains only Latin characters
         url_name = str(value).replace(' ', '')
         if any(char not in ascii_letters for char in url_name):
             raise ValidationError('The URL name can only contain Latin characters')
         return str(value).lower().replace(' ', '-')
+
+    # Override the create method
+    def create(self, validated_data):
+        # Get current user
+        current_user = self.context['request'].user
+
+        # Check if the user exceeds the limit on the number of establishments (no more than three)
+        if current_user.get_user_establishments.count() >= 3:
+            raise ValidationError(
+                "Вы превысили лимит на количество созданных заведений"
+            )
+
+        # Get the current time
+        current_time = datetime.now()
+        # Calculate the payment date 30 days ahead from the current time
+        paid_at = current_time + timedelta(days=30)
+        # Get city name from data
+        city_name = validated_data.pop('city')
+        # Get this city
+        city = City.objects.get(name=city_name)
+        # Create a Client object with set values
+        client = Client.objects.create(city=city, paid_at=paid_at, **validated_data)
+        return client

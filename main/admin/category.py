@@ -2,14 +2,6 @@ from django.contrib import admin
 
 from main.models import Category
 
-# @admin.register(Category)
-# class CategoryAdmin(admin.ModelAdmin):
-#     list_display = [
-#         "name",
-#     ]
-#     search_fields = ["name"]
-#     list_filter = ["name"]
-
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -33,6 +25,7 @@ class CategoryAdmin(admin.ModelAdmin):
             'Главная информация',
             {
                 'fields': (
+                    'z_index',
                     'client',
                     'name',
                 )
@@ -45,7 +38,6 @@ class CategoryAdmin(admin.ModelAdmin):
                     'is_active',
                     'bg_image',
                     'd_name',
-                    'z_index',
                 )
             },
         ),

@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import date, datetime
 
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
@@ -65,9 +65,7 @@ class Menu(TemplateView):
         client_date = client.paid_at
         today_date = datetime.now().date()  # Получаем сегодняшнюю дату
 
-        context = {
-            'client_date': client_date,
-            'today_date': today_date}
+        context = {'client_date': client_date, 'today_date': today_date}
         context["dishes"] = dishes
         context['cart_items'] = cart_items
         context["food_type"] = food_types

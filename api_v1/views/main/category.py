@@ -85,8 +85,12 @@ class CategoryViewSet(CustomModelViewSet):
                     serializer = self.get_serializer(queryset, many=True)
                     return Response(serializer.data)
                 else:
-                    return Response({"detail": "You do not have permission to access this establishment."},
-                                    status=status.HTTP_403_FORBIDDEN)
+                    return Response(
+                        {
+                            "detail": "You do not have permission to access this establishment."
+                        },
+                        status=status.HTTP_403_FORBIDDEN,
+                    )
             else:
                 # If not ID, get all categories created by the user
                 if current_user.is_authenticated:

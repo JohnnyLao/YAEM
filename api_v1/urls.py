@@ -31,4 +31,5 @@ urlpatterns = [
     # Auth users
     path("auth/", include("djoser.urls.jwt")),
     path('auth/create', users.UserRegistrationView.as_view()),
+    path('auth/phone-number', users.UserPhoneNumberView.as_view()),
 ]

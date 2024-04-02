@@ -13,7 +13,7 @@ from main.models import City
 class CityViewSet(ModelViewSet):
     queryset = City.objects.all()
     serializer_class = main.CitySerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
     http_method_names = ("get",)
 
     @extend_schema(exclude=True)

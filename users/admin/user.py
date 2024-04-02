@@ -75,3 +75,4 @@ class UserAdmin(BaseUserAdmin):
         return 'Нет созданных заведений'
 
     establishments_count.short_description = 'Количество созданных заведений'
+

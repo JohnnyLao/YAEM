@@ -14,13 +14,14 @@ class DishAdmin(admin.ModelAdmin):
         'name',
         'get_client_name',
         'food_type',
+        'actual_price',
+        'stop',
         'z_index',
         'created_at',
         'updated_at',
-
     )
 
-    list_editable = ['z_index']
+    list_editable = ['z_index', 'actual_price', 'stop']
     search_fields = ['name']
     list_filter = ['food_type__category__client', 'food_type__category', 'food_type']
     list_display_links = (
@@ -44,6 +45,7 @@ class DishAdmin(admin.ModelAdmin):
             'Необязательная информация',
             {
                 'fields': (
+                    'z_index',
                     'image',
                     'description',
                     'old_price',
@@ -58,14 +60,20 @@ class DishAdmin(admin.ModelAdmin):
             {
                 'fields': (
                     'generated',
-                    'z_index',
                     'created_at',
                     'updated_at',
                 )
             },
         ),
     )
+
     def get_client_name(self, obj):
-        return obj.food_type.category.client.name if obj.food_type and obj.food_type.category and obj.food_type.category.client else "Нет клиента"
+        return (
+            obj.food_type.category.client.name
+            if obj.food_type
+            and obj.food_type.category
+            and obj.food_type.category.client
+            else "Нет клиента"
+        )
 
     get_client_name.short_description = "Client"  # Задаем заголовок колонки
