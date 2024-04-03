@@ -1,5 +1,5 @@
  // Set the countdown date and time (replace with your own)
-        var countdownDate = new Date("2024-03-31T23:59:59");
+        var countdownDate = new Date("2024-04-30T23:59:59");
 
         // Update the countdown every 1 second
         var countdownTimer = setInterval(function() {
