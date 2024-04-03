@@ -24,7 +24,7 @@ class Menu(TemplateView):
             subcategories = category.get_subcategories.all()
             food_types.extend(subcategories)
             for food_type in subcategories:
-                dish = food_type.get_dishes.all()
+                dish = food_type.get_dishes.filter(stop=False)
                 dishes.extend(dish)
 
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
