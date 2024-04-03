@@ -108,12 +108,12 @@
                                 {% if client.wifi %}
                                     <span data-aos="flip-up" class="badge"
                                           style="background-color: rgba(253, 112, 20, 0.4)"><i
-                                            class="fas fa-wifi" style="color: #FD7014"></i> WIFI_NETWORK</span>
+                                            class="fas fa-wifi" style="color: #FD7014"></i> {{ client.wifi }}</span>
                                 {% endif %}
                                 {% if client.wifi_password %}
                                     <span data-aos="flip-up" class="badge"
                                           style="background-color: rgba(253, 112, 20, 0.4)"><i
-                                            class="fas fa-key" style="color: #FD7014"> </i> 12345678</span>
+                                            class="fas fa-key" style="color: #FD7014"> </i> {{ client.wifi_password }}</span>
                                 {% endif %}
 
                             </div>
