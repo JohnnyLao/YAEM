@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta
+import re
 from string import ascii_letters, digits, punctuation
 
 from rest_framework import serializers
@@ -104,23 +104,48 @@ class ClientCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
         fields = (
+            # Required fields
             'name',
             'url_name',
-            'description',
             'city',
+            # Optional fields
+            'description',
             'logo',
+            'address',
+            'phone',
+            'inst',
+            'two_gis',
+            'outside',
+            'delivery',
+            'service',
+            'wifi',
+            'wifi_password',
+            'work_time_start',
+            'work_time_end',
         )
         # Optional fields
-        extra_kwargs = {'description': {'required': False}, 'logo': {'required': False}}
+        extra_kwargs = {
+            'description': {'required': False},
+            'logo': {'required': False},
+            'address': {'required': False},
+            'phone': {'required': False},
+            'inst': {'required': False},
+            'two_gis': {'required': False},
+            'outside': {'required': False},
+            'delivery': {'required': False},
+            'service': {'required': False},
+            'wifi': {'required': False},
+            'wifi_password': {'required': False},
+            'work_time_start': {'required': False},
+            'work_time_end': {'required': False},
+        }
 
     # Name validations
     def validate_name(self, value):
         # Remove spaces from the name and check if it contains only ru/en characters
         name = str(value).replace(' ', '').isalpha()
         if not name:
-            raise ValidationError(
-                'The name can only contain letters (Russian and English)'
-            )
+            raise ValidationError('Name: only ru/en characters')
         return str(value).title()
 
     # URL validations
@@ -128,28 +153,43 @@ class ClientCreateSerializer(serializers.ModelSerializer):
         # Remove spaces from the URL name and check if it contains only Latin characters
         url_name = str(value).replace(' ', '')
         if any(char not in ascii_letters for char in url_name):
-            raise ValidationError('The URL name can only contain Latin characters')
+            raise ValidationError('URL name: only latin characters')
         return str(value).lower().replace(' ', '-')
+
+    def validate_phone(self, value):
+        pattern = r'^(7|8)\d{10}$'
+        if not re.match(pattern, str(value)):
+            raise ValidationError('Phone: correct format - "+7XXXXXXXXXX" or "8XXXXXXXXXX"')
+        return value
+
+    def validate_inst(self, value):
+        print(value)
+        if 'https://www.instagram.com/' not in str(value):
+            raise ValidationError('Instagram error: pattern - https://www.instagram.com/*')
+        return value
+
+    def validate_two_gis(self, value):
+        print(value)
+        if 'https://2gis' not in str(value):
+            raise ValidationError('Two gis error: pattern - https://2gis/*/*')
+        return value
+
+    def validate_service(self, value):
+        if not 1 <= int(value) <= 100:
+            raise ValidationError('Service: only range(1, 100)')
+        return value
 
     # Override the create method
     def create(self, validated_data):
         # Get current user
         current_user = self.context['request'].user
-
         # Check if the user exceeds the limit on the number of establishments (no more than three)
         if current_user.get_user_establishments.count() >= 3:
-            raise ValidationError(
-                "Вы превысили лимит на количество созданных заведений"
-            )
-
-        # Get the current time
-        current_time = datetime.now()
-        # Calculate the payment date 30 days ahead from the current time
-        paid_at = current_time + timedelta(days=30)
+            raise ValidationError("Establishment: limit error")
         # Get city name from data
         city_name = validated_data.pop('city')
         # Get this city
         city = City.objects.get(name=city_name)
         # Create a Client object with set values
-        client = Client.objects.create(city=city, paid_at=paid_at, **validated_data)
+        client = Client.objects.create(city=city, **validated_data)
         return client

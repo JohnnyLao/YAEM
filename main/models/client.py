@@ -43,13 +43,13 @@ class Client(models.Model):
         verbose_name="Начало работы заведения",
         help_text="Формат: '00:00-24:00'",
         blank=True,
-        default=timezone.now,
+        null=True,
     )
     work_time_end = models.TimeField(
         verbose_name="Конец работы заведения",
         help_text="Формат: '00:00-24:00'",
         blank=True,
-        default=timezone.now,
+        null=True,
     )
 
     # secondary info
@@ -125,7 +125,7 @@ class Client(models.Model):
         default=False,
     )
     # establishment paid at
-    paid_at = models.DateField(blank=True, verbose_name='Оплачен до', null=True)
+    paid_at = models.DateField(verbose_name='Оплачен до', blank=True, null=True)
     # establishment translated
     translated = models.BooleanField(
         verbose_name="Перевод", default=False, help_text="Значок перевода на 3 языка"
@@ -154,6 +154,8 @@ class Client(models.Model):
     def save(self, *args, **kwargs):
         if not self.user_id:
             self.user = get_current_user()
+        if not self.paid_at:
+            self.paid_at = timezone.now() + timezone.timedelta(days=30)
         super().save(*args, **kwargs)
 
     def __str__(self):
