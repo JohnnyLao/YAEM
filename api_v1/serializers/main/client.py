@@ -40,7 +40,7 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     # Serializer for the "url_name" field for correct display and not required
     url_name = serializers.CharField(max_length=100, required=False)
     # Serializer for the "city" field for correct display and not required
-    city = serializers.CharField(max_length=50, required=False)
+    # city = serializers.IntegerField(required=False)
     # Serializer for the "tarif_number" for correct display and only read
     tarif_number = serializers.CharField(max_length=20, read_only=True)
     # Serializer for the "status" only read
@@ -170,7 +170,7 @@ class ClientCreateSerializer(serializers.ModelSerializer):
 
     def validate_two_gis(self, value):
         print(value)
-        if 'https://2gis' not in str(value):
+        if '2gis' not in str(value):
             raise ValidationError('Two gis error: pattern - https://2gis/*/*')
         return value
 
