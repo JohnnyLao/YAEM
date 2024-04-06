@@ -13,8 +13,12 @@ class DishBaseInfoListSerializer(serializers.ModelSerializer):
             'name',
             'description',
             'actual_price',
+            'old_price',
             'stop',
             'image',
+            'popular',
+            'spicy',
+            'vegetarian',
         )
 
 
