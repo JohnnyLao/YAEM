@@ -75,9 +75,7 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     def validate_name(self, value):
         # Remove spaces from the name and check if it contains only ru/en characters
         if len(str(value)) >= 30:
-            raise ValidationError(
-                'Max len error'
-            )
+            raise ValidationError('Max len error')
         if not str(value).replace(' ', '').isalpha():
             raise ValidationError(
                 'The name can only contain letters (Russian and English)'
@@ -159,13 +157,17 @@ class ClientCreateSerializer(serializers.ModelSerializer):
     def validate_phone(self, value):
         pattern = r'^(7|8)\d{10}$'
         if not re.match(pattern, str(value)):
-            raise ValidationError('Phone: correct format - "+7XXXXXXXXXX" or "8XXXXXXXXXX"')
+            raise ValidationError(
+                'Phone: correct format - "+7XXXXXXXXXX" or "8XXXXXXXXXX"'
+            )
         return value
 
     def validate_inst(self, value):
         print(value)
         if 'https://www.instagram.com/' not in str(value):
-            raise ValidationError('Instagram error: pattern - https://www.instagram.com/*')
+            raise ValidationError(
+                'Instagram error: pattern - https://www.instagram.com/*'
+            )
         return value
 
     def validate_two_gis(self, value):

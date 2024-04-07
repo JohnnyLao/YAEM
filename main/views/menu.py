@@ -17,7 +17,9 @@ class Menu(TemplateView):
         url_name = self.kwargs["url_name"]
         # get establishment info
         client = get_object_or_404(Client, url_name=url_name)
-        categories = client.get_categories.prefetch_related('get_subcategories__get_dishes').all()
+        categories = client.get_categories.prefetch_related(
+            'get_subcategories__get_dishes'
+        ).all()
         food_types = []
         dishes = []
         for category in categories:

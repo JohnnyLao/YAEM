@@ -24,6 +24,7 @@ router.register(r"menu/city", main.CityViewSet, "city")
 # Endpoints for rates
 router.register(r"menu/rates", main.EstablishmentRatesViewSet, "rates")
 
+
 # Define urlpatterns, including the router's URLs
 urlpatterns = [
     # Include the URLs provided by the router
@@ -32,4 +33,5 @@ urlpatterns = [
     path("auth/", include("djoser.urls.jwt")),
     path('auth/create', users.UserRegistrationView.as_view()),
     path('auth/phone-number', users.UserPhoneNumberView.as_view()),
+    path('auth/payment', users.PaymentView.as_view()),
 ]

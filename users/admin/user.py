@@ -52,6 +52,7 @@ class UserAdmin(BaseUserAdmin):
         'admin_name_or_phone_number',
         'created_at',
         'establishments_count',
+        'payments_count',
     )
     list_display_links = (
         'id',
@@ -76,3 +77,12 @@ class UserAdmin(BaseUserAdmin):
 
     establishments_count.short_description = 'Количество созданных заведений'
 
+    # get user's payments number
+    def payments_count(self, obj):
+        if obj.get_user_payments:
+            payments_count = obj.get_user_payments.count()
+            if payments_count > 0:
+                return payments_count
+            return 'Нет входящих заявок'
+
+    payments_count.short_description = 'Количество заявок на оплату'

@@ -74,10 +74,6 @@ INSTALLED_APPS = [
     "rest_framework",
     # cors
     "corsheaders",
-    # all auth
-    "allauth",
-    "allauth.account",
-    "allauth.socialaccount",
 ]
 
 MIDDLEWARE = [

@@ -1,3 +1,5 @@
+from users.models.payment import Payment, PaymentStatuses
+
 from .category import Category
 from .city import City
 from .client import Client

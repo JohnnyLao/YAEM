@@ -12,6 +12,7 @@ class ClientAdmin(admin.ModelAdmin):
     list_filter = ['user', 'city']
     list_display = (
         'id',
+        'user',
         'name',
         'status',
         'outside',

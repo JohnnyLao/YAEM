@@ -80,7 +80,9 @@ class Dish(models.Model):
     def total_price_with_service(self):
         if self.food_type.category.client.service > 0:
             if self.old_price:
-                return self.old_price + (self.old_price * self.food_type.category.client.service / 100)
+                return self.old_price + (
+                    self.old_price * self.food_type.category.client.service / 100
+                )
             else:
                 return self.actual_price + (
                     self.actual_price * self.food_type.category.client.service / 100

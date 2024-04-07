@@ -46,6 +46,8 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         fields = (
             'client_id',
             'name',
+            'is_active',
+            'z_index',
         )
 
     # Checking that the category name contains only russian and english letters
