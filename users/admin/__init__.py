@@ -1,2 +1,2 @@
-from .payment import PaymentAdmin
 from .user import UserAdmin
+from .payment import PaymentAdmin

@@ -30,7 +30,6 @@ class Client(models.Model):
     city = models.ForeignKey(
         "main.City", on_delete=models.PROTECT, verbose_name="Город", null=True
     )
-
     # remove before ..
     working_time = models.CharField(
         max_length=20,
@@ -51,7 +50,6 @@ class Client(models.Model):
         blank=True,
         null=True,
     )
-
     # secondary info
     # establishment logo
     logo = models.ImageField(

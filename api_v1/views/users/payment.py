@@ -23,16 +23,22 @@ class PaymentLCView(ListAPIView, CreateAPIView, GenericAPIView):
     def list(self, request, *args, **kwargs):
         # Get current user
         current_user = self.request.user
-        if current_user.is_authenticated:
-            # Get all user's payments
-            queryset = self.queryset.filter(user=current_user)
-            serializer = self.get_serializer(queryset, many=True)
-            return Response(serializer.data)
+        try:
+            if current_user.is_authenticated:
+                # Get all user's payments
+                queryset = self.queryset.filter(user=current_user)
+                serializer = self.get_serializer(queryset, many=True)
+                return Response(serializer.data)
+        except Exception as ex:
+            raise ex
 
     def create(self, request, *args, **kwargs):
         # Get current user
         current_user = request.user
-        # Check if the user exceeds the limit on the number of payments (no more than one)
-        if current_user.get_user_payments.count() >= 1:
-            raise ValidationError("Payment: limit error")
-        return super().create(request, *args, **kwargs)
+        try:
+            # Check if the user exceeds the limit on the number of payments (no more than one)
+            if current_user.get_user_payments.count() >= 1:
+                raise ValidationError("Payment: limit error")
+            return super().create(request, *args, **kwargs)
+        except Exception as ex:
+            raise ex

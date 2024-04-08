@@ -88,6 +88,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    # CRUM
+    "crum.CurrentRequestUserMiddleware",
     # debug toolbar
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
