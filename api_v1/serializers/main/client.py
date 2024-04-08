@@ -71,58 +71,66 @@ class ClientRUDSerializer(serializers.ModelSerializer):
 
     # Name validations
     def validate_name(self, value):
-        # Remove spaces from the name and check if it contains only ru/en/digits characters
-        name = str(value).replace(' ', '').isalnum()
-        if not name:
-            raise ValidationError('Name: only ru/en/num characters')
-        return str(value).capitalize()
+        if value:
+            # Remove spaces from the name and check if it contains only ru/en/digits characters
+            name = str(value).replace(' ', '').isalnum()
+            if not name:
+                raise ValidationError('Name: only ru/en/num characters')
+            return str(value).capitalize()
 
     # URL name validations
     def validate_url_name(self, value):
-        # Check if the instance exists and if the URL name is unchanged
-        if self.instance and self.instance.url_name == value:
-            return value
-        # Check if a Client with the same URL name already exists
-        if Client.objects.filter(url_name=value).exists():
-            raise ValidationError('Заведение с таким /url уже существует.')
-        # Remove spaces from the URL name and check if it contains only Latin characters
-        url_name = str(value).replace(' ', '')
-        if any(char not in ascii_letters for char in url_name):
-            raise ValidationError('The URL name can only contain Latin characters')
-        return str(value).lower().replace(' ', '-')
+        if value:
+            # Check if the instance exists and if the URL name is unchanged
+            if self.instance and self.instance.url_name == value:
+                return value
+            # Check if a Client with the same URL name already exists
+            if Client.objects.filter(url_name=value).exists():
+                raise ValidationError('Заведение с таким /url уже существует.')
+            # Remove spaces from the URL name and check if it contains only Latin characters
+            url_name = str(value).replace(' ', '')
+            if any(char not in ascii_letters for char in url_name):
+                raise ValidationError('The URL name can only contain Latin characters')
+            return str(value).lower().replace(' ', '-')
 
     # Phone validations
     def validate_phone(self, value):
-        # Checking that the phone number matches the pattern
-        pattern = r'^(7|8)\d{10}$'
-        if not re.match(pattern, str(value)):
-            raise ValidationError(
-                'Phone: correct format - "+7XXXXXXXXXX" or "8XXXXXXXXXX"'
-            )
-        return value
+        if value:
+            # Checking that the phone number matches the pattern
+            pattern = r'^(7|8)\d{10}$'
+            if not re.match(pattern, str(value)):
+                raise ValidationError(
+                    'Phone: correct format - "+7XXXXXXXXXX" or "8XXXXXXXXXX"'
+                )
+            return value
 
     # Instagram link validations
     def validate_inst(self, value):
-        # Checking that the link matches the pattern
-        if 'https://www.instagram.com/' not in str(value):
-            raise ValidationError(
-                'Instagram error: pattern - https://www.instagram.com/*'
-            )
-        return value
+        if value:
+            # Checking that the link matches the pattern
+            if 'https://www.instagram.com/' not in str(value):
+                raise ValidationError(
+                    'Instagram error: pattern - https://www.instagram.com/*'
+                )
+            return value
 
     # Two gis link validations
     def validate_two_gis(self, value):
-        # Checking that the link matches the pattern
-        if '2gis' not in str(value):
-            raise ValidationError('Two gis error: pattern - https://2gis/*/*')
-        return value
+        if value:
+            # Checking that the link matches the pattern
+            if '2gis' not in str(value):
+                raise ValidationError('Two gis error: pattern - https://2gis/*/*')
+            return value
 
     # Service percent validations
     def validate_service(self, value):
-        # Checking that the service in range 1-100
-        if not 1 <= int(value) <= 100:
-            raise ValidationError('Service: only range(1, 100)')
-        return value
+        if value:
+            # Checking that the service in range 1-100
+            if not 1 <= int(value) <= 100:
+                raise ValidationError('Service: only range(1, 100)')
+            return value
+        else:
+            return value
 
 
 # The sheet is called upon action 'create'
@@ -179,7 +187,7 @@ class ClientCreateSerializer(serializers.ModelSerializer):
         # Remove spaces from the URL name and check if it contains only Latin characters
         url_name = str(value).replace(' ', '')
         if any(char not in ascii_letters for char in url_name):
-            raise ValidationError('URL name: only latin characters')
+            raise ValidationError('The URL name can only contain Latin characters')
         return str(value).lower().replace(' ', '-')
 
     # Phone validations
