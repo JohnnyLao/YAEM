@@ -5,11 +5,12 @@ from main.models import Category, Client, Food_type
 
 
 # The sheet is called upon action 'list' and provides basic information
-class SubcategoryBaseInfoListSerializer(serializers.ModelSerializer):
+class SubcategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food_type
         fields = (
             'id',
+            'z_index',
             'name',
         )
 
@@ -19,11 +20,18 @@ class SubcategoryRUDSerializer(serializers.ModelSerializer):
         model = Food_type
         fields = (
             'id',
+            'z_index',
             'name',
         )
 
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Subcategory: only ru/en/num characters')
+        return str(value).capitalize()
+
 
 class SubcategoryCreateSerializer(serializers.ModelSerializer):
+    # Create field for category id
     category_id = serializers.IntegerField()
 
     class Meta:
@@ -33,18 +41,16 @@ class SubcategoryCreateSerializer(serializers.ModelSerializer):
             'name',
         )
 
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Subcategory: only ru/en/num characters')
+        return str(value).capitalize()
+
     def create(self, validated_data):
         # Get the category ID from the data
         category_id = validated_data.pop('category_id')
         # Get the category by its ID
         category = Category.objects.get(id=int(category_id))
-
-        # Permission - only the creator of the category can create a subcategory for himself
-        if not self.context['request'].user == category.client.user:
-            raise PermissionDenied(
-                "You do not have permission to create a subcategory for this client."
-            )
-
         # Create a category associated with this client
         subcategory = Food_type.objects.create(category=category, **validated_data)
         return subcategory

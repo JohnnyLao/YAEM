@@ -1,3 +1,2 @@
-from .profile import *
-from .user import *
 from .payment import *
+from .user import *

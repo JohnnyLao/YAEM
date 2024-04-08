@@ -1,4 +1,5 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
+from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -38,7 +39,7 @@ class ClientViewSet(CustomModelViewSet):
     # Serializers
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
-        'list': main.ClientBaseInfoListSerializer,
+        'list': main.ClientListSerializer,
         # When acting on a 'create', a specific serializer is used
         'create': main.ClientCreateSerializer,
         # When acting on a 'retrieve', a specific serializer is used
@@ -70,8 +71,23 @@ class ClientViewSet(CustomModelViewSet):
     def list(self, request, *args, **kwargs):
         # Get current user
         current_user = self.request.user
-        if current_user.is_authenticated:
+        # Get all user's establishments, filtered by client-user
+        try:
             # Get all user's establishments, filtered by client-user
             queryset = self.queryset.filter(user=current_user)
             serializer = self.get_serializer(queryset, many=True)
             return Response(serializer.data)
+        except Exception as ex:
+            raise ex
+
+    # Overriding the create method, establishment limit validation
+    def create(self, request, *args, **kwargs):
+        # Get current user
+        current_user = request.user
+        try:
+            # Check if the user exceeds the limit on the number of establishments (no more than three)
+            if current_user.get_user_establishments.count() >= 3:
+                raise ValidationError("Establishment: limit error")
+            return super().create(request, *args, **kwargs)
+        except Exception as ex:
+            raise ex

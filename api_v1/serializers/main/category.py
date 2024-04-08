@@ -5,7 +5,7 @@ from main.models import Category, Client
 
 
 # The sheet is called upon action 'list' and provides basic information
-class CategoryBaseInfoListSerializer(serializers.ModelSerializer):
+class CategoryListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = (
@@ -22,17 +22,16 @@ class CategoryRUDSerializer(serializers.ModelSerializer):
         model = Category
         fields = (
             'id',
+            'z_index',
             'name',
             'bg_image',
             'is_active',
         )
 
-    # Checking that the category name contains only russian and english letters
+    # Checking that the category name contains only russian, english, digits letters
     def validate_name(self, value):
-        if not str(value).replace(' ', '').isalpha():
-            raise ValidationError(
-                'The name can only contain letters (Russian and English)'
-            )
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Category: only ru/en/num characters')
         return str(value).capitalize()
 
 
@@ -45,17 +44,21 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         model = Category
         fields = (
             'client_id',
-            'name',
-            'is_active',
             'z_index',
+            'name',
+            'bg_image',
+            'is_active',
         )
+        # Optional fields
+        extra_kwargs = {
+            'z_index': {'required': False},
+            'bg_image': {'required': False},
+        }
 
     # Checking that the category name contains only russian and english letters
     def validate_name(self, value):
-        if not str(value).replace(' ', '').isalpha():
-            raise ValidationError(
-                'The name can only contain letters (Russian and English)'
-            )
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Category: only ru/en/num characters')
         return str(value).capitalize()
 
     # Overriding the create method, when creating, we associate the category with the establishment
@@ -64,13 +67,6 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
         client_id = validated_data.pop('client_id')
         # Get the client by its ID
         client = Client.objects.get(id=int(client_id))
-
-        # Permission - only the creator of the establishment can create a category for himself
-        if not self.context['request'].user == client.user:
-            raise PermissionDenied(
-                "You do not have permission to create a category for this client."
-            )
-
         # Create a category associated with this client
         category = Category.objects.create(client=client, **validated_data)
         return category

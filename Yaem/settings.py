@@ -81,6 +81,7 @@ MIDDLEWARE = [
     "django.contrib.sessions.middleware.SessionMiddleware",
     # languages
     "django.middleware.locale.LocaleMiddleware",
+    # CORS
     'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -89,9 +90,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     # debug toolbar
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-    # all auth
-    "allauth.account.middleware.AccountMiddleware",
-    "crum.CurrentRequestUserMiddleware",
 ]
 
 ROOT_URLCONF = "Yaem.urls"
@@ -107,6 +105,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                # Custom context processors
                 "context_processors.context_processors.data_counter_site",
                 "context_processors.context_processors.get_total_cart_sum",
             ],

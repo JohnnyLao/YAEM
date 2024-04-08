@@ -10,6 +10,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = get_user_model()
         fields = (
+            # Validate with Django phone number library
             'phone_number',
             'password',
         )

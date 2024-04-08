@@ -1,5 +1,6 @@
 from drf_spectacular.utils import extend_schema, extend_schema_view
 from rest_framework import status
+from rest_framework.exceptions import PermissionDenied, ValidationError
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -14,10 +15,6 @@ from main.models import Client, Dish, Food_type
         summary="Return base info list of all user's dishes, if param - food_type_id exists, Get all dishes associated with this categories",
         tags=["Menu: Dishes"],
     ),
-    # retrieve=extend_schema(
-    #     summary="Retrieve full information about an user's dishes",
-    #     tags=["Menu: Dishes"],
-    # ),
     create=extend_schema(summary="Create a new user's dish", tags=["Menu: Dishes"]),
     update=extend_schema(
         summary="Completely modify data in an user's dish",
@@ -34,11 +31,9 @@ class DishViewSet(CustomModelViewSet):
     # Serializers
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
-        'list': main.DishBaseInfoListSerializer,
+        'list': main.DishListSerializer,
         # When acting on a 'create', a specific serializer is used
         'create': main.DishCreateSerializer,
-        # When acting on a 'retrieve', a specific serializer is used
-        # 'retrieve': main.DishRUDSerializer,
         # When acting on a 'update', a specific serializer is used
         'update': main.DishRUDSerializer,
         # When acting on a 'partial update', a specific serializer is used
@@ -50,8 +45,6 @@ class DishViewSet(CustomModelViewSet):
     multi_permission_classes = {
         # Only the dish creator can interact with them through an action 'list'
         'list': [IsDishOwner],
-        # Only the dish creator can interact with them through an action 'retrieve'
-        # 'retrieve': [IsDishOwner],
         # Only the authenticated users can interact with them through an action 'create'
         'create': [IsAuthenticated],
         # Only the dish creator can interact with them through an action 'update'
@@ -65,7 +58,7 @@ class DishViewSet(CustomModelViewSet):
     # Override the action 'list' to get unique user dishes and subcategory
     def list(self, request, *args, **kwargs):
         current_user = request.user
-        if current_user.is_authenticated:
+        try:
             # Get ID from request params (?food_type_id=*)
             subcategory_id = request.query_params.get('food_type_id')
             if subcategory_id is not None:
@@ -82,15 +75,44 @@ class DishViewSet(CustomModelViewSet):
                         status=status.HTTP_403_FORBIDDEN,
                     )
             else:
-                # If not ID, get all dishes created by the user
-                if current_user.is_authenticated:
-                    # Retrieving all dishes created by the user
-                    queryset = self.queryset.filter(
-                        food_type__category__client__user=current_user
-                    )
-                    serializer = self.get_serializer(queryset, many=True)
-                    return Response(serializer.data)
+                # If not ID, get all dishes created by the user,Retrieving all dishes created by the user
+                queryset = self.queryset.filter(
+                    food_type__category__client__user=current_user
+                )
+                serializer = self.get_serializer(queryset, many=True)
+                return Response(serializer.data)
+        except Exception as ex:
+            raise ex
 
+    # turning off the retrieve method
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):
         return Response('Permission denied')
+
+    def create(self, request, *args, **kwargs):
+        try:
+            # Get subcategory id
+            subcategory_id = request.data.get('subcategory_id')
+            # If category id not exist
+            if not subcategory_id:
+                return Response(
+                    "Subcategory ID is required", status=status.HTTP_400_BAD_REQUEST
+                )
+            try:
+                # Get est by id
+                subcategory = Food_type.objects.get(id=subcategory_id)
+            except Food_type.DoesNotExist:
+                return Response(
+                    "Food type does not exist", status=status.HTTP_404_NOT_FOUND
+                )
+            # Permission - only the creator of the establishment can create a category for himself
+            if not request.user == subcategory.category.client.user:
+                raise PermissionDenied(
+                    "You do not have permission to create a dish for this client."
+                )
+            # Check if the subcategory exceeds the limit on the number of dish
+            if subcategory.get_dishes.count() >= 25:
+                raise ValidationError("Dishes: limit error")
+            return super().create(request, *args, **kwargs)
+        except Exception as ex:
+            raise ex

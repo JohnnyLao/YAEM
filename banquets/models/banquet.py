@@ -1,7 +1,6 @@
 from django.db import models
 
-from banquets.models.utils.choices import (HallNumber, ParkingType1,
-                                           ParkingType2)
+from banquets.models.utils.choices import HallNumber, ParkingType1, ParkingType2
 from banquets.models.utils.images_upload import subhall_photo_upload_to
 
 

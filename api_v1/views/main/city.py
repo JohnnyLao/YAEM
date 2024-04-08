@@ -11,11 +11,16 @@ from main.models import City
     list=extend_schema(summary="List of all cities", tags=["Menu: Cities"]),
 )
 class CityViewSet(ModelViewSet):
+    # Get queryset
     queryset = City.objects.all()
-    serializer_class = main.CitySerializer
+    # Get list serializer
+    serializer_class = main.CityListSerializer
+    # Only authenticated users has permission on this method
     permission_classes = [permissions.IsAuthenticated]
+    # allowing only get method
     http_method_names = ("get",)
 
+    # turning off the retrieve method
     @extend_schema(exclude=True)
     def retrieve(self, request, *args, **kwargs):
         return Response('Permission denied')

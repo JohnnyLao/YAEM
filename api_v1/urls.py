@@ -1,7 +1,6 @@
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from rest_framework_simplejwt.views import (TokenObtainPairView,
-                                            TokenRefreshView)
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from api_v1.views import banquets, main, users
 
@@ -33,5 +32,5 @@ urlpatterns = [
     path("auth/", include("djoser.urls.jwt")),
     path('auth/create', users.UserRegistrationView.as_view()),
     path('auth/phone-number', users.UserPhoneNumberView.as_view()),
-    path('auth/payment', users.PaymentView.as_view()),
+    path('auth/payment', users.PaymentLCView.as_view()),
 ]

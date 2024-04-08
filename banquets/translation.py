@@ -1,7 +1,6 @@
 from modeltranslation.translator import TranslationOptions, translator
 
-from banquets.models import (Banquet, BanquetCard, FeaturesOfTheBanquetHall,
-                             KitchenType)
+from banquets.models import Banquet, BanquetCard, FeaturesOfTheBanquetHall, KitchenType
 
 
 class BanquetCardTranslationOptions(TranslationOptions):

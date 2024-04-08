@@ -1,3 +1,2 @@
-from .profile import *
+from .payment import PaymentLCView
 from .user import *
-from .payment import PaymentView

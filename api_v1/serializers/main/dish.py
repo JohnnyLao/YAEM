@@ -5,7 +5,7 @@ from main.models import Category, Client, Dish, Food_type
 
 
 # The sheet is called upon action 'list' and provides basic information
-class DishBaseInfoListSerializer(serializers.ModelSerializer):
+class DishListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dish
         fields = (
@@ -38,8 +38,14 @@ class DishRUDSerializer(serializers.ModelSerializer):
             'vegetarian',
         )
 
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Dish: only ru/en/num characters')
+        return str(value).capitalize()
+
 
 class DishCreateSerializer(serializers.ModelSerializer):
+    # Create field for subcategory id
     food_type_id = serializers.IntegerField()
 
     class Meta:
@@ -48,23 +54,35 @@ class DishCreateSerializer(serializers.ModelSerializer):
             'food_type_id',
             'name',
             'actual_price',
+            'old_price',
+            'description',
+            'stop',
             'image',
+            'popular',
+            'spicy',
+            'vegetarian',
         )
         # Optional fields
-        extra_kwargs = {'image': {'required': False}}
+        extra_kwargs = {
+            'image': {'required': False},
+            'old_price': {'required': False},
+            'description': {'required': False},
+            'stop': {'required': False},
+            'popular': {'required': False},
+            'spicy': {'required': False},
+            'vegetarian': {'required': False},
+        }
+
+    def validate_name(self, value):
+        if not str(value).replace(' ', '').isalnum():
+            raise ValidationError('Dish: only ru/en/num characters')
+        return str(value).capitalize()
 
     def create(self, validated_data):
         # Get the subcategory ID from the data
         subcategory_id = validated_data.pop('food_type_id')
         # Get the subcategory by its ID
         subcategory = Food_type.objects.get(id=int(subcategory_id))
-
-        # Permission - only the creator of the subcategory can create a dish for himself
-        if not self.context['request'].user == subcategory.category.client.user:
-            raise PermissionDenied(
-                "You do not have permission to create a dish for this client."
-            )
-
         # Create a dish associated with this client
         dish = Dish.objects.create(food_type=subcategory, **validated_data)
         return dish

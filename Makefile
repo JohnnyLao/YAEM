@@ -1,6 +1,5 @@
 code-format:
 	black --skip-string-normalization .
-	isort .
 
 migrate:
 	python manage.py makemigrations
