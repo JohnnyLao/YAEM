@@ -92,7 +92,7 @@ class DishViewSet(CustomModelViewSet):
     def create(self, request, *args, **kwargs):
         try:
             # Get subcategory id
-            subcategory_id = request.data.get('subcategory_id')
+            subcategory_id = request.data.get('food_type_id')
             # If category id not exist
             if not subcategory_id:
                 return Response(

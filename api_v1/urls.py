@@ -20,6 +20,8 @@ router.register(r'menu/subcategories', main.SubcategoryViewSet, 'subcategories')
 router.register(r'menu/dishes', main.DishViewSet, 'dishes')
 # Endpoints for cities
 router.register(r"menu/city", main.CityViewSet, "city")
+# Endpoints for payments
+router.register(r"auth/payment", users.PaymentViewSet, "city")
 # Endpoints for rates
 router.register(r"menu/rates", main.EstablishmentRatesViewSet, "rates")
 
@@ -32,5 +34,4 @@ urlpatterns = [
     path("auth/", include("djoser.urls.jwt")),
     path('auth/create', users.UserRegistrationView.as_view()),
     path('auth/phone-number', users.UserPhoneNumberView.as_view()),
-    path('auth/payment', users.PaymentLCView.as_view()),
 ]

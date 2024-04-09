@@ -1,2 +1,2 @@
-from .payment import PaymentLCView
+from .payment import PaymentViewSet
 from .user import *

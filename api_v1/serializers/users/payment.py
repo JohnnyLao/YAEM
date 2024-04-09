@@ -4,7 +4,7 @@ from users.models import Payment
 
 
 # Payments list and create payment
-class PaymentLCSerializer(serializers.ModelSerializer):
+class PaymentLCDSerializer(serializers.ModelSerializer):
     class Meta:
         model = Payment
         fields = (
