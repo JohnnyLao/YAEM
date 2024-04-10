@@ -10,6 +10,7 @@ class CategoryListSerializer(serializers.ModelSerializer):
         model = Category
         fields = (
             'id',
+            'z_index',
             'name',
             'bg_image',
             'is_active',

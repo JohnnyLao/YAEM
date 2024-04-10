@@ -2,6 +2,7 @@ from django.db.models import TextChoices
 
 
 class Rates(TextChoices):
+    TEST = 'ТЕСТ', 'ТЕСТ'
     BRONZE = "БРОНЗА", "БРОНЗА"
     SILVER = "СЕРЕБРО", "СЕРЕБРО"
     GOLD = "ЗОЛОТО", "ЗОЛОТО"

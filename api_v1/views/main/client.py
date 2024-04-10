@@ -85,8 +85,8 @@ class ClientViewSet(CustomModelViewSet):
         # Get current user
         current_user = request.user
         try:
-            # Check if the user exceeds the limit on the number of establishments (no more than three)
-            if current_user.get_user_establishments.count() >= 3:
+            # Check if the user exceeds the limit on the number of establishments
+            if current_user.get_user_establishments.count() >= 2:
                 raise ValidationError("Establishment: limit error")
             return super().create(request, *args, **kwargs)
         except Exception as ex:

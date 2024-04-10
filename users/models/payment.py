@@ -33,6 +33,7 @@ class Payment(models.Model):
         ordering = ('created_at',)
 
     def save(self, *args, **kwargs):
+        # Create relation with current user
         if not self.user_id:
             self.user = get_current_user()
         super().save(*args, **kwargs)

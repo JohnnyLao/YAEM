@@ -28,6 +28,7 @@ class ClientListSerializer(serializers.ModelSerializer):
             'logo',
             'status',
             'tarif_number',
+            'paid_at',
         )
 
 
