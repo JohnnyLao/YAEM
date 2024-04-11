@@ -16,6 +16,10 @@ from main.models import Category, Client
         summary="Return base info list of all user's categories, if param - client_id exists, Get all categories associated with this establishment",
         tags=["Menu: Categories"],
     ),
+    retrieve=extend_schema(
+        summary="Return detail info of user's categories",
+        tags=["Menu: Categories"],
+    ),
     create=extend_schema(
         summary="Create a new user's category", tags=["Menu: Categories"]
     ),
@@ -38,6 +42,7 @@ class CategoryViewSet(CustomModelViewSet):
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
         'list': main.CategoryListSerializer,
+        'retrieve': main.CategoryRUDSerializer,
         # When acting on a 'create', a specific serializer is used
         'create': main.CategoryCreateSerializer,
         # When acting on a 'update', a specific serializer is used
@@ -51,6 +56,7 @@ class CategoryViewSet(CustomModelViewSet):
     multi_permission_classes = {
         # Only the category creator can interact with them through an action 'list'
         'list': [IsCategoryOwner],
+        'retrieve': [IsCategoryOwner],
         # Only the authenticated users can interact with them through an action 'create'
         'create': [IsAuthenticated],
         # Only the category creator can interact with them through an action 'update'
@@ -92,11 +98,6 @@ class CategoryViewSet(CustomModelViewSet):
                 return Response(serializer.data)
         except Exception as ex:
             raise ex
-
-    # turning off the retrieve method
-    @extend_schema(exclude=True)
-    def retrieve(self, request, *args, **kwargs):
-        return Response('Permission denied')
 
     # Override the action 'create', validations
     def create(self, request, *args, **kwargs):

@@ -15,6 +15,10 @@ from main.models import Client, Dish, Food_type
         summary="Return base info list of all user's dishes, if param - food_type_id exists, Get all dishes associated with this categories",
         tags=["Menu: Dishes"],
     ),
+    retrieve=extend_schema(
+        summary="Return detail info about dish",
+        tags=["Menu: Dishes"],
+    ),
     create=extend_schema(summary="Create a new user's dish", tags=["Menu: Dishes"]),
     update=extend_schema(
         summary="Completely modify data in an user's dish",
@@ -32,6 +36,8 @@ class DishViewSet(CustomModelViewSet):
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
         'list': main.DishListSerializer,
+        # When acting on a 'retrieve', a specific serializer is used
+        'retrieve': main.DishRUDSerializer,
         # When acting on a 'create', a specific serializer is used
         'create': main.DishCreateSerializer,
         # When acting on a 'update', a specific serializer is used
@@ -45,6 +51,8 @@ class DishViewSet(CustomModelViewSet):
     multi_permission_classes = {
         # Only the dish creator can interact with them through an action 'list'
         'list': [IsDishOwner],
+        # Only the dish creator can interact with them through an action 'retrieve'
+        'retrieve': [IsDishOwner],
         # Only the authenticated users can interact with them through an action 'create'
         'create': [IsAuthenticated],
         # Only the dish creator can interact with them through an action 'update'
@@ -83,11 +91,6 @@ class DishViewSet(CustomModelViewSet):
                 return Response(serializer.data)
         except Exception as ex:
             raise ex
-
-    # turning off the retrieve method
-    @extend_schema(exclude=True)
-    def retrieve(self, request, *args, **kwargs):
-        return Response('Permission denied')
 
     def create(self, request, *args, **kwargs):
         try:
