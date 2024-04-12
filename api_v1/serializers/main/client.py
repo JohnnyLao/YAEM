@@ -69,6 +69,9 @@ class ClientRUDSerializer(serializers.ModelSerializer):
             'tarif_number',
             'status',
         )
+        extra_kwargs = {
+            'logo': {'required': False},
+        }
 
     # Name validations
     def validate_name(self, value):
@@ -144,36 +147,36 @@ class ClientCreateSerializer(serializers.ModelSerializer):
             'url_name',
             'city',
             # Optional fields
-            'description',
-            'logo',
-            'address',
-            'phone',
-            'inst',
-            'two_gis',
-            'outside',
-            'delivery',
-            'service',
-            'wifi',
-            'wifi_password',
-            'work_time_start',
-            'work_time_end',
+            # 'description',
+            # 'logo',
+            # 'address',
+            # 'phone',
+            # 'inst',
+            # 'two_gis',
+            # 'outside',
+            # 'delivery',
+            # 'service',
+            # 'wifi',
+            # 'wifi_password',
+            # 'work_time_start',
+            # 'work_time_end',
         )
         # Optional fields
-        extra_kwargs = {
-            'description': {'required': False},
-            'logo': {'required': False},
-            'address': {'required': False},
-            'phone': {'required': False},
-            'inst': {'required': False},
-            'two_gis': {'required': False},
-            'outside': {'required': False},
-            'delivery': {'required': False},
-            'service': {'required': False},
-            'wifi': {'required': False},
-            'wifi_password': {'required': False},
-            'work_time_start': {'required': False},
-            'work_time_end': {'required': False},
-        }
+        # extra_kwargs = {
+        #     'description': {'required': False},
+        #     'logo': {'required': False},
+        #     'address': {'required': False},
+        #     'phone': {'required': False},
+        #     'inst': {'required': False},
+        #     'two_gis': {'required': False},
+        #     'outside': {'required': False},
+        #     'delivery': {'required': False},
+        #     'service': {'required': False},
+        #     'wifi': {'required': False},
+        #     'wifi_password': {'required': False},
+        #     'work_time_start': {'required': False},
+        #     'work_time_end': {'required': False},
+        # }
 
     # Name validations
     def validate_name(self, value):
@@ -204,7 +207,7 @@ class ClientCreateSerializer(serializers.ModelSerializer):
     # Instagram link validations
     def validate_inst(self, value):
         # Checking that the link matches the pattern
-        if 'https://www.instagram.com/' not in str(value):
+        if 'instagram' not in str(value):
             raise ValidationError(
                 'Instagram error: pattern - https://www.instagram.com/*'
             )
@@ -213,7 +216,7 @@ class ClientCreateSerializer(serializers.ModelSerializer):
     # Two gis link validations
     def validate_two_gis(self, value):
         # Checking that the link matches the pattern
-        if '2gis' not in str(value):
+        if 'gis' not in str(value):
             raise ValidationError('Two gis error: pattern - https://2gis/*/*')
         return value
 
@@ -226,10 +229,13 @@ class ClientCreateSerializer(serializers.ModelSerializer):
 
     # Override the create method
     def create(self, validated_data):
+        print(validated_data)
         # Get city name from data
         city_name = validated_data.pop('city')
+        print(city_name)
         # Get this city
-        city = City.objects.get(name=city_name)
+        # city = City.objects.get(name=city_name)
+        # print(city)
         # Create a Client object with set values
-        client = Client.objects.create(city=city, **validated_data)
+        client = Client.objects.create(city=city_name, **validated_data)
         return client

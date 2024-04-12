@@ -29,12 +29,6 @@ class CategoryRUDSerializer(serializers.ModelSerializer):
             'is_active',
         )
 
-    # Checking that the category name contains only russian, english, digits letters
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Category: only ru/en/num characters')
-        return str(value).capitalize()
-
 
 # The sheet is called upon action 'create'
 class CategoryCreateSerializer(serializers.ModelSerializer):
@@ -55,12 +49,6 @@ class CategoryCreateSerializer(serializers.ModelSerializer):
             'z_index': {'required': False},
             'bg_image': {'required': False},
         }
-
-    # Checking that the category name contains only russian and english letters
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Category: only ru/en/num characters')
-        return str(value).capitalize()
 
     # Overriding the create method, when creating, we associate the category with the establishment
     def create(self, validated_data):

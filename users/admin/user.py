@@ -15,6 +15,7 @@ class UserAdmin(BaseUserAdmin):
                 "fields": (
                     "first_name",
                     "phone_number",
+                    'number_of_establishments',
                 )
             },
         ),

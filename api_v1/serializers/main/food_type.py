@@ -24,11 +24,6 @@ class SubcategoryRUDSerializer(serializers.ModelSerializer):
             'name',
         )
 
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Subcategory: only ru/en/num characters')
-        return str(value).capitalize()
-
 
 class SubcategoryCreateSerializer(serializers.ModelSerializer):
     # Create field for category id
@@ -39,12 +34,8 @@ class SubcategoryCreateSerializer(serializers.ModelSerializer):
         fields = (
             'category_id',
             'name',
+            'z_index',
         )
-
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Subcategory: only ru/en/num characters')
-        return str(value).capitalize()
 
     def create(self, validated_data):
         # Get the category ID from the data

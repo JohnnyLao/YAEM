@@ -15,6 +15,10 @@ from main.models import Category, Client, Food_type
         summary="Return base info list of all user's subcategories, if param - category_id exists, Get all subcategories associated with this categories",
         tags=["Menu: Subcategories"],
     ),
+    retrieve=extend_schema(
+        summary="Return info about user's subcategory",
+        tags=["Menu: Subcategories"],
+    ),
     create=extend_schema(
         summary="Create a new user's subcategory", tags=["Menu: Subcategories"]
     ),
@@ -36,6 +40,7 @@ class SubcategoryViewSet(CustomModelViewSet):
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
         'list': main.SubcategoryListSerializer,
+        'retrieve': main.SubcategoryRUDSerializer,
         # When acting on a 'create', a specific serializer is used
         'create': main.SubcategoryCreateSerializer,
         # When acting on a 'update', a specific serializer is used
@@ -49,6 +54,7 @@ class SubcategoryViewSet(CustomModelViewSet):
     multi_permission_classes = {
         # Only the subcategory creator can interact with them through an action 'list'
         'list': [IsSubcategoryOwner],
+        'retrieve': [IsSubcategoryOwner],
         # Only the authenticated users can interact with them through an action 'create'
         'create': [IsAuthenticated],
         # Only the subcategory creator can interact with them through an action 'update'
@@ -85,11 +91,6 @@ class SubcategoryViewSet(CustomModelViewSet):
                 return Response(serializer.data)
         except Exception as ex:
             raise ex
-
-    # turning off the retrieve method
-    @extend_schema(exclude=True)
-    def retrieve(self, request, *args, **kwargs):
-        return Response('Permission denied')
 
     def create(self, request, *args, **kwargs):
         try:

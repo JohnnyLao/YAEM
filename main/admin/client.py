@@ -7,12 +7,12 @@ admin.site.site_header = "YAEM"
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    readonly_fields = ('created_at', 'updated_at', 'translated')
+    readonly_fields = ('created_at', 'updated_at', 'translated', 'user')
     prepopulated_fields = {"url_name": ("name",)}
     list_filter = ['user', 'city']
     list_display = (
         'id',
-        'user',
+        # 'user',
         'name',
         'status',
         'outside',

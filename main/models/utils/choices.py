@@ -9,6 +9,6 @@ class Rates(TextChoices):
 
 
 class PaymentStatuses(TextChoices):
-    INPROCESSING = 'INPROCESSING', 'В ОБРАБОТКЕ'
-    PAID = 'PAID', 'ОПЛАЧЕНО'
-    CANCELLED = 'CANCELLED', 'ОТМЕНЕНО'
+    INPROCESSING = 'В ОБРАБОТКЕ', 'В ОБРАБОТКЕ'
+    PAID = 'ОПЛАЧЕНО', 'ОПЛАЧЕНО'
+    CANCELLED = 'ОТМЕНЕНО', 'ОТМЕНЕНО'

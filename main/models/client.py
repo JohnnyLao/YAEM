@@ -28,7 +28,7 @@ class Client(models.Model):
     )
     # establishment city
     city = models.ForeignKey(
-        "main.City", on_delete=models.PROTECT, verbose_name="Город", null=True
+        "main.City", on_delete=models.PROTECT, verbose_name="Город",
     )
     # remove before ..
     working_time = models.CharField(
@@ -121,7 +121,7 @@ class Client(models.Model):
         default=False,
     )
     # establishment paid at
-    paid_at = models.DateField(verbose_name='Оплачен до', blank=True)
+    paid_at = models.DateField(verbose_name='Оплачен до', blank=True, null=True)
     # establishment translated
     translated = models.BooleanField(
         verbose_name="Перевод", default=False, help_text="Значок перевода на 3 языка"
@@ -146,12 +146,12 @@ class Client(models.Model):
         verbose_name_plural = "Заведения"
         ordering = ('z_index',)
 
-    # Override save method,
+    # Override save method
     def save(self, *args, **kwargs):
         # create relation between current user-client
         if not self.user_id:
             self.user = get_current_user()
-        #
+        # add paid at logic
         if not self.paid_at:
             self.paid_at = timezone.now() + timezone.timedelta(days=30)
         super().save(*args, **kwargs)

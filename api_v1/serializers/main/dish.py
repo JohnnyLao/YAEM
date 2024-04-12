@@ -37,11 +37,9 @@ class DishRUDSerializer(serializers.ModelSerializer):
             'spicy',
             'vegetarian',
         )
-
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Dish: only ru/en/num characters')
-        return str(value).capitalize()
+        extra_kwargs = {
+            'image': {'required': False},
+        }
 
 
 class DishCreateSerializer(serializers.ModelSerializer):
@@ -72,11 +70,6 @@ class DishCreateSerializer(serializers.ModelSerializer):
             'spicy': {'required': False},
             'vegetarian': {'required': False},
         }
-
-    def validate_name(self, value):
-        if not str(value).replace(' ', '').isalnum():
-            raise ValidationError('Dish: only ru/en/num characters')
-        return str(value).capitalize()
 
     def create(self, validated_data):
         # Get the subcategory ID from the data

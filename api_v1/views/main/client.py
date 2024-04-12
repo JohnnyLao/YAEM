@@ -35,15 +35,15 @@ from main.models import Client
 )
 class ClientViewSet(CustomModelViewSet):
     # Get queryset
-    queryset = Client.objects
+    queryset = Client.objects.all()
     # Serializers
     multi_serializer_classes = {
         # When acting on a 'list', a specific serializer is used
         'list': main.ClientListSerializer,
-        # When acting on a 'create', a specific serializer is used
-        'create': main.ClientCreateSerializer,
         # When acting on a 'retrieve', a specific serializer is used
         'retrieve': main.ClientRUDSerializer,
+        # When acting on a 'create', a specific serializer is used
+        'create': main.ClientCreateSerializer,
         # When acting on a 'update', a specific serializer is used
         'update': main.ClientRUDSerializer,
         # When acting on a 'partial update', a specific serializer is used
@@ -86,7 +86,7 @@ class ClientViewSet(CustomModelViewSet):
         current_user = request.user
         try:
             # Check if the user exceeds the limit on the number of establishments
-            if current_user.get_user_establishments.count() >= 2:
+            if current_user.get_user_establishments.count() >= current_user.number_of_establishments:
                 raise ValidationError("Establishment: limit error")
             return super().create(request, *args, **kwargs)
         except Exception as ex:
