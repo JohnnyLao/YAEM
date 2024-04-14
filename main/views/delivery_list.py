@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
-
+from django.utils import timezone
 from main.models import City, Client
 
 
@@ -12,7 +12,11 @@ class DeliveryList(TemplateView):
         city_selected = None
         # query = self.request.GET.get("q")
         clients = Client.objects.filter(status=True, delivery=True)
-
+        # closed_clients = []
+        # print(timezone.localtime(timezone.now()).time())
+        # for client in clients:
+        #     if timezone.localtime(timezone.now()).time() >= client.work_time_start and timezone.localtime(timezone.now()).time() <= client.work_time_end:
+        #         closed_clients.append(client)
         if city_slug:
             city_selected = get_object_or_404(City, slug=city_slug)
             clients = Client.objects.filter(
