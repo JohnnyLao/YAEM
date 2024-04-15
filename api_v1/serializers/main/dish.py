@@ -27,6 +27,7 @@ class DishRUDSerializer(serializers.ModelSerializer):
         model = Dish
         fields = (
             'id',
+            'z_index',
             'name',
             'description',
             'actual_price',
@@ -50,7 +51,7 @@ class DishCreateSerializer(serializers.ModelSerializer):
         model = Dish
         fields = (
             'food_type_id',
-            'name',
+            'z_index',
             'actual_price',
             'old_price',
             'description',
