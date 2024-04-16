@@ -147,36 +147,36 @@ class ClientCreateSerializer(serializers.ModelSerializer):
             'url_name',
             'city',
             # Optional fields
-            # 'description',
-            # 'logo',
-            # 'address',
-            # 'phone',
-            # 'inst',
-            # 'two_gis',
-            # 'outside',
-            # 'delivery',
-            # 'service',
-            # 'wifi',
-            # 'wifi_password',
-            # 'work_time_start',
-            # 'work_time_end',
+            'description',
+            'logo',
+            'address',
+            'phone',
+            'inst',
+            'two_gis',
+            'outside',
+            'delivery',
+            'service',
+            'wifi',
+            'wifi_password',
+            'work_time_start',
+            'work_time_end',
         )
         # Optional fields
-        # extra_kwargs = {
-        #     'description': {'required': False},
-        #     'logo': {'required': False},
-        #     'address': {'required': False},
-        #     'phone': {'required': False},
-        #     'inst': {'required': False},
-        #     'two_gis': {'required': False},
-        #     'outside': {'required': False},
-        #     'delivery': {'required': False},
-        #     'service': {'required': False},
-        #     'wifi': {'required': False},
-        #     'wifi_password': {'required': False},
-        #     'work_time_start': {'required': False},
-        #     'work_time_end': {'required': False},
-        # }
+        extra_kwargs = {
+            'description': {'required': False},
+            'logo': {'required': False},
+            'address': {'required': False},
+            'phone': {'required': False},
+            'inst': {'required': False},
+            'two_gis': {'required': False},
+            'outside': {'required': False},
+            'delivery': {'required': False},
+            'service': {'required': False},
+            'wifi': {'required': False},
+            'wifi_password': {'required': False},
+            'work_time_start': {'required': False},
+            'work_time_end': {'required': False},
+        }
 
     # Name validations
     def validate_name(self, value):
@@ -232,10 +232,8 @@ class ClientCreateSerializer(serializers.ModelSerializer):
         print(validated_data)
         # Get city name from data
         city_name = validated_data.pop('city')
-        print(city_name)
         # Get this city
         # city = City.objects.get(name=city_name)
-        # print(city)
         # Create a Client object with set values
         client = Client.objects.create(city=city_name, **validated_data)
         return client
