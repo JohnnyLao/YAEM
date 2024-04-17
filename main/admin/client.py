@@ -74,4 +74,15 @@ class ClientAdmin(admin.ModelAdmin):
                 )
             },
         ),
+        (
+            'Переводы',
+            {
+                'fields': (
+                    'description_en',
+                    'description_kk',
+                    'address_en',
+                    'address_kk',
+                )
+            },
+        ),
     )

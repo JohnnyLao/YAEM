@@ -41,4 +41,13 @@ class CategoryAdmin(admin.ModelAdmin):
                 )
             },
         ),
+        (
+            'Переводы',
+            {
+                'fields': (
+                    'name_en',
+                    'name_kk',
+                )
+            },
+        ),
     )

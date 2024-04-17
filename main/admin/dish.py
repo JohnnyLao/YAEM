@@ -69,6 +69,17 @@ class DishAdmin(admin.ModelAdmin):
                 )
             },
         ),
+        (
+            'Переводы',
+            {
+                'fields': (
+                    'name_en',
+                    'name_kk',
+                    'description_en',
+                    'description_kk',
+                )
+            },
+        ),
     )
 
     def get_client_name(self, obj):

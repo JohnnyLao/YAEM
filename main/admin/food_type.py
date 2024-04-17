@@ -28,4 +28,13 @@ class FoodTypeAdmin(admin.ModelAdmin):
             'Административная информация',
             {'fields': ('d_name',)},
         ),
+        (
+            'Переводы',
+            {
+                'fields': (
+                    'name_en',
+                    'name_kk',
+                )
+            },
+        ),
     )
