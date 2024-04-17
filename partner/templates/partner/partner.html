@@ -173,9 +173,9 @@
         <!-- Swiper -->
         <div data-aos="fade-up" class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" >
-                    <img src="{% static 'images/partner/collage.png' %}" alt="qr_sample" style="max-height: 424px"/>
-                </div>
+<!--                <div class="swiper-slide" >-->
+<!--                    <img src="{% static 'images/partner/collage.png' %}" alt="qr_sample" style="max-height: 424px"/>-->
+<!--                </div>-->
                 <div class="swiper-slide">
                     <img src="{% static 'images/partner/sample1-min.png' %}" alt="qr_sample"/>
                 </div>
@@ -461,7 +461,7 @@
                 <div class="card-body px-2 py-2">
                     <div class="row d-flex align-items-center">
                         <div class="col mx-0">
-                            <h5 class="fw-bold">{% translate 'Больше клиентов в нашем' %} <a class="btn-animate" style="color: #FD7014" href="https://www.instagram.com/yaem_qr/"><u><i class="far fa-hand-point-right"></i> Instagram</u></a>
+                            <h5 class="fw-bold">{% translate 'Больше клиентов в нашем' %} <a class="btn-animate" target="_blank" style="color: #FD7014" href="https://www.instagram.com/yaem_qr/"><u><i class="far fa-hand-point-right"></i> Instagram</u></a>
                             </h5>
                         </div>
                     </div>
@@ -657,7 +657,7 @@
                 <div class="container py-3 px-0 mx-0">
                     <h6 class="shadow text-start ps-2 fw-bold"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Silver"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
@@ -673,7 +673,7 @@
                     </h6>
                     <h6 class=" shadow text-start ps-2"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Gold"
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
@@ -894,7 +894,7 @@
                         <p>{% translate 'Вы можете подключить личный кабинет, и приступить к созданию своего Онлайн Меню. Либо связаться с нами и организуем встречу' %}</p>
                         <p>{% translate 'Оставить заявку на оплату можно в личном кабинете' %}</p>
                         <p>{% translate 'Оплата по тарифам происходит в двух форматах:' %}</p>
-                        <li><strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'оплата за до 5 числа каждого месяца' %}
+                        <li><strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'оплата до 5 числа каждого месяца' %}
                         </li>
                         <li><strong style="color: #fd7014">{% translate 'Годовая' %}:</strong>: {% translate 'оплата за 12 месяцев' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)
                         </li>
@@ -926,7 +926,7 @@
                     <div class="accordion-body">
                         <p>{% translate 'Без проблем. Мы можем предоставить все необходимые документы.' %} <span style="color: #FD7014">ЭСФ, Акт выполненных работ</span></p>
                         <p>{% translate 'Вам не потребуется подписывать договор. Ознакомится с нашей публичной оффертой можно тут' %}
-                            <a class="fw-bold" target="_blank" href="{% static 'public_offer.pdf' %}" style="color: #FD7014"><i class="far fa-hand-point-right"></i> Документ</a></p>
+                            <a class="fw-bold" target="_blank" href="{% static 'public_offer_yaem.pdf' %}" style="color: #FD7014"><i class="far fa-hand-point-right"></i> Документ</a></p>
                     </div>
                 </div>
             </div>
