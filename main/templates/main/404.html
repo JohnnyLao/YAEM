@@ -14,8 +14,8 @@
             <div class="col-8 pt-5 text-center" style="">
                 <h1 style="font-size: 100px; text-shadow: 4px 4px 8px #000000; color: #fd7014;">404</h1>
                 <h3 class="pt-5">{% translate 'Упс, кажется что-то пошло не так' %}</h3>
-                <h4 class="my-3">{% translate 'Но Вы можете вернуться' %}</h4>
-                <div class="btn my-3 bg-black" onclick="history.back();" style="border-radius: 40px;--bs-bg-opacity: 0.2 ">
+                <h4 class="my-3">{% translate 'Вернуться на главную' %}</h4>
+                <div class="btn my-3 bg-black" onclick="{% url 'main:main_page' %};" style="border-radius: 40px;--bs-bg-opacity: 0.2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="60" fill="#fd7014"
                          class="bi bi-arrow-left"
                          viewBox="0 0 16 16">

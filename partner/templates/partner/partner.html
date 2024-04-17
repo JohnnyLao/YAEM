@@ -57,13 +57,12 @@
 <!--COUNTER END-->
 <!--  PART 1  -->
 <section class="skrollable py-3"
-         style="background-image: url({% static 'images/partner/5-min.jpg' %});
+         style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 1), rgba(25, 25, 25, 0.5)), url({% static 'images/partner/5-min.jpg' %});
     background-attachment:fixed; background-repeat: no-repeat; background-size: cover">
 
     <div class="container">
         <div class="row text-white">
-            <div class="col-lg-6"></div>
-            <div data-aos="fade-up" class="col-8 col-lg-3 col-sm-5 text-center my-3 mx-auto"
+            <div data-aos="fade-up" class="col-auto px-5 text-center my-3 mx-auto"
                  style="background: rgba(20, 164, 77, 0.85);border-radius: 50px">
                 <h1 class="mt-2 mb-0 fs-4">{% translate 'ОНЛАЙН' %}</h1>
                 <h1 class="my-0 fs-4">{% translate 'МЕНЮ' %}</h1>
@@ -76,11 +75,11 @@
 
     <div class="container pb-3">
         <div class="row">
-            <div class="col-lg-6 col-sm-8 text-white text-center">
+            <div class="col mx-auto text-white text-center">
                 <p data-aos="fade-up" class="fw-bold mt-0 fs-1">{% translate 'Присоединяйтесь к нашей' %} <strong
                         style="color: #FD7014"> {% translate 'сети' %} </strong> {% translate 'заведений' %}</p>
                 <p data-aos="fade-up" data-aos-delay="100" class="fw-bold my-4 fs-6">{% translate 'ЧТОБЫ ПОЛУЧИТЬ ОНЛАЙН' %} <strong style="color: #FD7014"> {% translate 'QR МЕНЮ' %} </strong></p>
-                <a href="https://wa.me/77713581356?text=Здравствуйте, "
+                <a href="https://admin-yaem.kz/registration"
                    target="_blank">
                     <button id="btn_contact" data-aos="fade-up" data-aos-delay="200" type="button"
                             class="btn btn-success btn-rounded btn-animate">
@@ -97,24 +96,27 @@
 <section class="py-3" style="background: rgba(33, 37, 41, 0.95)">
     <div class="container">
         <div class="row gy-3">
-            <div class="col-lg-6 col-sm-12 text-center">
-                <p data-aos="fade-up" class="fw-bold my-4 fs-2">{% translate 'Всё просто !' %}</p>
-                <p data-aos="fade-up" data-aos-delay="50" class="fs-5">{% translate 'Берём образец' %} <strong
+            <div class="col text-center">
+                <p data-aos="fade-up" class="fw-bold fs-2">{% translate 'Всё просто !' %}</p>
+                <p data-aos="fade-up" data-aos-delay="50" class="fs-5">{% translate 'Проходите регистрацию в ' %} <strong
                         style="color: #FD7014">
-                    {% translate 'Вашего меню' %} </strong></p>
-                <p data-aos="fade-up" data-aos-delay="100" class="fs-5">{% translate 'Создаём страницу с меню на' %}
-                    <strong style="color: #FD7014">{% translate 'Нашем сайте' %}</strong>
+                    {% translate 'Личном кабинете' %} </strong></p>
+                <p data-aos="fade-up" data-aos-delay="100" class="fs-5">{% translate 'Создаёте меню в' %}
+                    <strong style="color: #FD7014">{% translate 'Удобном интерфесе' %}</strong>
                 </p>
-                <p data-aos="fade-up" data-aos-delay="150" class="fs-5">{% translate 'Устанавливаем QR код для перехода в' %}
+                <p data-aos="fade-up" data-aos-delay="150" class="fs-5">{% translate 'Скачиваете QR код для перехода в' %}
                     <strong style="color: #FD7014">{% translate 'Ваше онлайн меню'%}</strong>
                 </p>
-                <p class="mt-5 fs-4 fw-bold" data-aos="fade-up" data-aos-delay="200">Результат:</p>
-                <p data-aos="fade-up" data-aos-delay="250" class=" fs-4">
+                <p data-aos="fade-up" data-aos-delay="150" class="fs-5">{% translate 'Размещаете' %}
+                    <strong style="color: #FD7014">{% translate 'QR коды'%}</strong> и ссылку в соц. сетях и <span><strong style="color: #FD7014">{% translate 'Готово !'%}</strong></span>
+                </p>
+                <p class="fs-2 fw-bold" data-aos="fade-up" data-aos-delay="200">Результат:</p>
+                <p data-aos="fade-up" data-aos-delay="250" class=" fs-5">
                     <strong style="color: #FD7014">{% translate 'Ваши клиенты' %}</strong>
-                    {% translate 'смогут просматривать меню онлайн как в заведении, так и удалённо, совершая заказы онлайн' %}
+                    {% translate 'смогут просматривать онлайн меню находясь в зале / номере / удаленно' %}
                 </p>
             </div>
-            <div class="col-9 col-lg-6 mx-0 my-4 text-center">
+            <div class="col-auto mx-auto text-center">
                 <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/collage.png' %}"
                      alt="qr_sample"
                      class="img" style="max-width: 300px">
@@ -171,6 +173,9 @@
         <!-- Swiper -->
         <div data-aos="fade-up" class="swiper mySwiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide" >
+                    <img src="{% static 'images/partner/collage.png' %}" alt="qr_sample" style="max-height: 424px"/>
+                </div>
                 <div class="swiper-slide">
                     <img src="{% static 'images/partner/sample1-min.png' %}" alt="qr_sample"/>
                 </div>
@@ -218,8 +223,8 @@
 </section>
 
 <!--  PART 4  -->
-<section class="skrollable"
-         style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.2), rgba(33, 37, 41, 0.2)), url({% static 'images/partner/1-min.jpg' %});
+<section class="skrollable pb-5"
+         style="background-image: linear-gradient(0deg, rgba(33, 37, 41, 0.5), rgba(33, 37, 41, 0.2)), url({% static 'images/partner/1-min.jpg' %});
     background-attachment:fixed; background-size: cover">
     <div class="container">
         <h2 class="text-center fw-bold pt-3">{% translate 'Наши приемущества' %}</h2>
@@ -321,6 +326,149 @@
             </div>
         </div>
     </div>
+
+
+    <h2 class="fw-bold my-5 text-center">{% translate 'Наши клиенты' %}</h2>
+    <div class="row mx-5">
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo1.png' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Cuprum (Казахмыс)
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/cuprum_bar/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo2.png' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Мама Люба
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/mamalubakafe_krg/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo3.png' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Фараон
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/faraon_1305/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo4.png' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Chito-Gvrito
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/chitogvrito25/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo5.jpg' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Element
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/element.gastrobar/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-lg-0">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-auto mx-0">
+                            <img src="{% static 'images/partner/logo6.png' %}"
+                                 alt="" class="img-fluid rounded mb-2 mb-lg-0" style="max-height: 75px"></div>
+                        <div class="col mx-0">
+                            <h6 class="fw-bold">Алаверди
+                            </h6>
+                            <a class="position-absolute bottom-0 end-0" href="https://www.instagram.com/alaverdi_restoran_/"
+                                                          target="_blank">
+                                <div class="btn btn-animate btn-floating" style="color: #FD7014">
+                                    <i class="fab fa-instagram fa-2x"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col text-center">
+            <div class="card mb-3 shadow-2-strong text-light position relative" data-aos="fade-up" style="background: rgba(33, 37, 41, 0.5);border-radius: 10px ">
+                <div class="card-body px-2 py-2">
+                    <div class="row d-flex align-items-center">
+                        <div class="col mx-0">
+                            <h5 class="fw-bold">{% translate 'Больше клиентов в нашем' %} <a class="btn-animate" style="color: #FD7014" href="https://www.instagram.com/yaem_qr/"><u><i class="far fa-hand-point-right"></i> Instagram</u></a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!--    PART 5 PRICING-->
@@ -357,7 +505,7 @@
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
-                        {% translate 'Базовый QR код' %}
+                        {% translate 'Онлайн QR код' %}
                     </h6>
                     <h6 class="shadow text-start" style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="Orange"
@@ -368,7 +516,7 @@
                     </h6>
 
                 </div>
-                <a href="https://wa.me/77713581356?text=Здравствуйте, по поводу тарифа Bronze %0a"
+                <a href="https://admin-yaem.kz/registration"
                    target="_blank">
                     <button id="btn_bronze" type="button"
                             class="btn btn-success btn-rounded btn-animate mb-3">
@@ -430,7 +578,7 @@
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
-                        {% translate 'Продвинутый QR код' %}
+                        {% translate 'Настольный QR код' %}
                     </h6>
                     <h6 class="shadow text-start ps-2"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -486,7 +634,7 @@
                     <!--                                <i class="fas fa-circle-question mx-1 mt-1" style="color: silver"></i></span>-->
                     <!--                        </h6>-->
                 </div>
-                <a href="https://wa.me/77713581356?text=Здравствуйте, по поводу тарифа Silver %0a"
+                <a href="https://admin-yaem.kz/registration"
                    target="_blank">
                     <button id="btn_silver" type="button"
                             class="btn btn-success btn-rounded btn-animate mb-3">
@@ -521,7 +669,7 @@
                              class="bi bi-check" viewBox="0 0 16 16">
                             <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
                         </svg>
-                        {% translate 'Проффессиональный QR код' %}
+                        {% translate 'Продвинутый QR код' %}
                     </h6>
                     <h6 class=" shadow text-start ps-2"
                         style="background: rgba(255, 255, 255, 0.1); border-radius: 10px">
@@ -564,7 +712,7 @@
                         {% translate 'Заказы из зала iiko / WhatsApp' %}
                     </h6>
                 </div>
-                <a href="https://wa.me/77713581356?text=Здравствуйте, по поводу тарифа Gold %0a"
+                <a href="https://admin-yaem.kz/registration"
                    target="_blank">
                     <button id="btn_gold" type="button"
                             class="btn btn-success btn-rounded btn-animate mb-3">
@@ -640,8 +788,8 @@
                         {% translate 'Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для клиента, предоставив удобный сервис по взаимодействию. Смотрите на предпочтения клиентов и готовьтесь к онлайн заказам. Меню реализовано на минимум трёх языках.' %}
                         <p class="my-0">{% translate 'Вы получите' %}:</p>
                         <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u
-                                style="color: #FD7014">{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <strong style="color: #FD7014"> {% translate 'на минимум 3-х языках c фото' %} </strong></p>
-                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'QR коды для размещения' %} <u style="color: #FD7014">({% translate 'неограничено' %})</u></p>
+                                style="color: #FD7014">{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <span style="color: #FD7014"> {% translate 'c фотографиями блюд' %} </span></p>
+                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Настольный QR код' %} <span style="color: #FD7014">({% translate 'дерево / бумага с ламинацией' %})</span></p>
                         <!--                            <p class="my-0" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Функцию корзины и возможность использовать услугу "Доставка / Самовывоз". Принимать заказы удалённо через Телеграм' %}</p>-->
                         <p class="my-0" style="color: #FD7014"><i class="fas fa-angle-right" style="color: #FD7014"></i>
                             {% translate 'Техническую поддержку с возможностью устроить акцию или скидку на блюда, управление стоп-листом, использовать метки на блюдах (популярное, острое, вегетарианское, детское)' %}</p>
@@ -673,21 +821,19 @@
                     <div class="accordion-body">
                          {% translate 'ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых строках  на главной странице портала.' %}
                         <p class="my-0">{% trans 'Вы получите' %}:</p>
-                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <strong
-                                style="color: #FD7014">{% translate 'на минимум 3-х языках и фото блюд с' %}</strong>
-                            <strong style="color: #FD7014">{% translate 'эксклюзивным дизайном' %}</strong></p>
-                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong
-                                style="color: #FD7014">{% translate 'Уникальные' %}</strong> {% translate 'QR коды для размещения' %} <u>({% translate 'неограничено' %})</u></p>
-                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> {% translate 'Функцию корзины и возможность использовать услугу Доставка / Самовывоз' %} <strong
-                                    style="color: #FD7014">{% translate 'на более выгодных условиях' %}.</strong>
-                            {% translate 'Принимать заказы удалённо через Телеграм и' %}
-                            <strong style="color: #FD7014">{% translate 'оплатой Kaspi' %}</strong></p>
-                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <strong
-                                style="color: #FD7014">{% translate 'Персонального менджера' %}</strong> {% translate 'с возможностью устроить акцию или скидку на блюда, управление стоп-листом и' %}
-                            <strong style="color: #FD7014">{% translate 'дополнительные услуги от YAEM' %} </strong></p>
-                        <p class="my-0 fw-bold" style="color: #FD7014">
+                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <u>{% translate 'Открытую' %}</u> {% translate 'страницу с карточкой заведения и меню' %} <span
+                                style="color: #FD7014">{% translate 'на минимум 3-х языках и фото блюд с' %}</span>
+                            <span style="color: #FD7014">{% translate 'эксклюзивным дизайном' %}</span></p>
+                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <span
+                                style="color: #FD7014">{% translate 'Уникальные' %}</span> {% translate 'Продвинутый QR код' %} <span style="color: #FD7014">({% translate 'Заказы поступят в ваш терминал' %})</span></p>
+                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i><span style="color: #FD7014">{% translate ' Уникальный дизайн,'%}</span>  {% translate 'разработанный по вашим корпоративным стандартам' %} <span
+                                    style="color: #FD7014">{% translate '' %}</span></p>
+                        <p class="my-0"><i class="fas fa-angle-right" style="color: #FD7014"></i> <span
+                                style="color: #FD7014">{% translate 'Персонального менджера' %}</span> {% translate 'с возможностью устроить акцию или скидку на блюда, управление стоп-листом и' %}
+                            <span style="color: #FD7014">{% translate 'дополнительные услуги от YAEM' %} </span></p>
+                        <p class="my-0">
                             <i class="fas fa-angle-right" style="color: #FD7014"></i>
-                            {% translate 'Личный кабинет, где будут подключены Yandex и Google метрики' %}</p>
+                            <span style="color: #FD7014">{% translate 'Онлайн оплату.' %}</span> Гости оплачивают заказы удаленно</p>
                     </div>
                 </div>
             </div>
@@ -717,7 +863,7 @@
                          <p>{% translate 'Конечно, Вы можете опробовать тариф' %}
                              <strong style="color: #fd7014"> {% translate 'Бронза' %}</strong> или <strong style="color: #fd7014"> {% translate 'Серебро' %}</strong>
                              {% translate 'в течении месяца, и Вам будет легко понять концепцию онлайн меню и потенциал сотрудничества с нами' %}</p>
-                        <p>{% translate 'Тариф' %} и <strong style="color: #fd7014">{% translate 'Золото' %}</strong>
+                        <p>{% translate 'Тариф' %} <strong style="color: #fd7014">{% translate 'Золото' %}</strong>
                             {% translate 'не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска' %}</p>
                     </div>
                 </div>
@@ -745,12 +891,42 @@
                         style="background: rgba(33, 37, 41, 0.95);"
                 >
                     <div class="accordion-body">
-                        <p>{% translate 'Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и организуем встречу' %}</p>
+                        <p>{% translate 'Вы можете подключить личный кабинет, и приступить к созданию своего Онлайн Меню. Либо связаться с нами и организуем встречу' %}</p>
+                        <p>{% translate 'Оставить заявку на оплату можно в личном кабинете' %}</p>
                         <p>{% translate 'Оплата по тарифам происходит в двух форматах:' %}</p>
-                        <li><strong style="color: #fd7014">{% translate 'Квартальная' %}:</strong> {% translate 'оплата за 3 месяца' %}
+                        <li><strong style="color: #fd7014">{% translate 'Помесячная' %}:</strong> {% translate 'оплата за до 5 числа каждого месяца' %}
                         </li>
                         <li><strong style="color: #fd7014">{% translate 'Годовая' %}:</strong>: {% translate 'оплата за 12 месяцев' %} (<strong style="color: #fd7014">{% translate 'Скидка -20%' %}</strong>)
                         </li>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item my-2">
+                <h2 class="accordion-header" id="flush-heading6" style="background: rgba(33, 37, 41, 0.95); border-radius: 10px">
+                    <button
+                            data-mdb-collapse-init
+                            class="accordion-button collapsed text-light"
+                            type="button"
+                            data-mdb-toggle="collapse"
+                            data-mdb-target="#flush-collapse6"
+                            aria-expanded="false"
+                            aria-controls="flush-collapse6"
+                            style="background: rgba(33, 37, 41, 0.95);"
+                    >
+ <i class="fas fa-question-circle me-2 opacity-70"></i>{% translate 'Мне нужны договор и документы ?'%}
+                    </button>
+                </h2>
+                <div
+                        id="flush-collapse6"
+                        class="accordion-collapse collapse text-light"
+                        aria-labelledby="flush-headingThree"
+                        data-mdb-parent="#accordionFlushExample"
+                        style="background: rgba(33, 37, 41, 0.95);"
+                >
+                    <div class="accordion-body">
+                        <p>{% translate 'Без проблем. Мы можем предоставить все необходимые документы.' %} <span style="color: #FD7014">ЭСФ, Акт выполненных работ</span></p>
+                        <p>{% translate 'Вам не потребуется подписывать договор. Ознакомится с нашей публичной оффертой можно тут' %}
+                            <a class="fw-bold" target="_blank" href="{% static 'public_offer.pdf' %}" style="color: #FD7014"><i class="far fa-hand-point-right"></i> Документ</a></p>
                     </div>
                 </div>
             </div>
@@ -760,9 +936,9 @@
 
 <section>
     <div class="container-fluid py-2" style="background: rgba(0, 0, 0, 0.9)">
-        <h3 class="text-center my-3">{% translate 'Команда' %}
+        <h4 class="text-center my-3">{% translate 'Команда' %}
             <span class="fw-bold" style="color:#FD7014">YAEM</span>
-        </h3>
+        </h4>
         <div class="row">
 
             <div data-aos="fade-right" class="col-4 text-center mx-0 px-0">

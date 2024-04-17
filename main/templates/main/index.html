@@ -66,17 +66,16 @@
 <main class="user-select-none">
     <section class="skrollable py-3"
              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.9), rgba(25, 25, 25, 0.5)), url({% static 'images/index/bg-min.jpg' %});
-    background-attachment: fixed; background-size: cover; background-position: center; min-height: 68vh">
+    background-attachment: fixed; background-size: cover; background-position: center; min-height: 50vh">
         <div class="container mx-auto px-0 py-2">
-            <div class="row my-3 d-flex justify-content-evenly text-center mx-auto" style="max-width: 700px">
+            <div class="row my-3 mx-0 gy-3 px-0 d-flex justify-content-evenly text-center mx-auto" style="max-width: 700px">
                 <!--- DELIVERY -->
-                <div class="col-6 ">
-                    <a href="delivery" class="btn px-0 py-0 btn-animate rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="#FD7014"
+                <div class="col">
+                    <a href="delivery" class="btn px-0 py-0 btn-animate" data-mdb-ripple-init data-mdb-ripple-color="#FD7014"
                        style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #FD7014">
-                        <div class="card shadow-2 rounded-pill"
+                        <div class="card shadow-2"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.5), rgba(25, 25, 25, 0.7)),
-                                         url({% static 'images/index/menu-min.jpg' %});
-                                        height: 140px; width: 140px; background-size: cover;">
+                                         url({% static 'images/index/menu-min.jpg' %}); background-size: cover; height: 40vh; width: 30vh">
                             <div class="card-body d-flex align-items-center justify-content-center">
                                 <h6 class="" style="color: #FD7014">{% trans 'ДОСТАВКА' %}</h6>
                             </div>
@@ -84,81 +83,18 @@
                     </a>
                     </div>
                 <!--- BANQUET -->
-                <div class="col-6">
-                    <a href="{% url 'banquets:banquet_list_page' %}" class="btn btn-animate px-0 py-0 rounded-pill"
+                <div class="col">
+                    <a href="{% url 'banquets:banquet_list_page' %}" class="btn btn-animate px-0 py-0"
                        data-mdb-ripple-init data-mdb-ripple-color="#FD7014"
                     style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #FD7014">
-                        <div class="card shadow shadow-inner rounded-pill"
+                        <div class="card shadow shadow-inner"
                              style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.6), rgba(25, 25, 25, 0.8)),
-                                         url({% static 'images/index/banquet-min.jpg' %});
-                                           height: 140px; width: 140px; background-size: cover">
+                                         url({% static 'images/index/banquet-min.jpg' %}); background-size: cover; height: 40vh; width: 30vh">
                             <div class="card-body d-flex align-items-center justify-content-center">
                                 <h6 class="" style="color: #FD7014">{% trans 'БАНКЕТЫ' %}</h6>
                             </div>
                         </div>
                     </a>
-                </div>
-            </div>
-            <div class="row my-4 gy-3 d-flex justify-content-between text-center mx-0 px-0">
-<!--                Правильное питание / домашняя кухня-->
-                <div class="col-6 col-lg-3 px-0 mx-0">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
-                    style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
-                        <div class="card shadow shadow-inner rounded-pill"
-                             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)),
-                                         url({% static 'images/index/home.jpg' %});
-                                           height: 140px; width: 140px; background-size: cover">
-                            <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-white-50 d-none" style="">{% trans 'Домашняя кухня' %}</h6>
-                            </div>
-                            <p class="text-secondary text-opacity-50">{% trans 'В РАЗРАБОТКЕ' %}</p>
-                        </div>
-                    </button>
-                </div>
-                <!--- PRODUCTS -->
-                <div class="col-6 col-lg-3 px-0 mx-0">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
-                    style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
-                        <div class="card shadow rounded-circle"
-                             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.8)),
-                                         url({% static 'images/index/supermarket.avif' %});
-                                           height: 140px; width: 140px; background-size: cover">
-                            <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-white-50 d-none" style="">{% trans 'ПРОДУКТЫ' %}</h6>
-                            </div>
-                            <p class="text-secondary text-opacity-50">{% trans 'В РАЗРАБОТКЕ' %}</p>
-                        </div>
-                    </button>
-                </div>
-                <!--- CATERING -->
-                <div class="col-6 col-lg-3">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
-                    style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
-                        <div class="card shadow rounded-pill"
-                             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.9)),
-                                         url({% static 'images/index/catering1-min.jpg' %});
-                                           height: 140px; width: 140px; background-size: cover">
-                            <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-white-50 d-none" style="">{% trans 'КЕЙТЕРИНГ' %}</h6>
-                            </div>
-                            <p class="text-secondary text-opacity-50" style="">{% trans 'В РАЗРАБОТКЕ' %}</p>
-                        </div>
-                    </button>
-                </div>
-                <!--- TRADERS -->
-                <div class="col-6 col-lg-3">
-                    <button class="btn px-0 py-0 rounded-pill" data-mdb-ripple-init data-mdb-ripple-color="dark"
-                    style="-webkit-box-shadow:0 0 10px #000; box-shadow:0 0 10px #878686">
-                        <div class="card shadow shadow-inner rounded-pill"
-                             style="background-image: linear-gradient(0deg, rgba(25, 25, 25, 0.8), rgba(25, 25, 25, 0.9)),
-                                         url({% static 'images/index/companies-min.jpg' %});
-                                           height: 140px; width: 140px; background-size: cover">
-                            <div class="card-body d-flex align-items-center justify-content-center">
-                                <h6 class="text-white-50 d-none" style="">{% trans 'ТОРГОВЫЕ ПРЕДСТАВИТЕЛИ' %}</h6>
-                            </div>
-                            <p class="text-secondary text-opacity-50">{% trans 'В РАЗРАБОТКЕ' %}</p>
-                        </div>
-                    </button>
                 </div>
             </div>
 
@@ -177,7 +113,7 @@
         </div>
     </section>
 
-<section class="section py-2" style="background: rgba(33, 37, 41)">
+<section class="section pt-2" style="background: rgba(33, 37, 41)">
         <h4 class="text-center my-2">{% translate 'Контакты' %} <span style="color: #FD7014">YAEM</span></h4>
         <div class="d-flex justify-content-center">
 
