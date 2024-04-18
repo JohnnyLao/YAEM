@@ -113,8 +113,8 @@ class SubcategoryViewSet(CustomModelViewSet):
                 raise PermissionDenied(
                     "You do not have permission to create a subcategory for this client."
                 )
-            # Check if the category exceeds the limit on the number of subcategories (no more than ten)
-            if category.get_subcategories.count() >= 15:
+            # Check if the category exceeds the limit on the number of subcategories
+            if category.get_subcategories.count() >= 30:
                 raise ValidationError("Subcategories: limit error")
             return super().create(request, *args, **kwargs)
         except Exception as ex:
