@@ -13,7 +13,7 @@ urlpatterns = [
         name="banquet_list_page",
     ),
     path(
-        "<str:url_name>/banquet",
+        "banquet/<str:url_name>",
         cache_page(CACHES_LIFE_TIME)(BanquetPage.as_view()),
         name="banquet_page",
     ),
