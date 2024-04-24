@@ -136,6 +136,28 @@ class ClientRUDSerializer(serializers.ModelSerializer):
         else:
             return value
 
+    def validate_logo(self, value):
+        # Maximum allowed file size in MB
+        max_logo_size_mb = 1
+        # Convert MB to bytes
+        max_size_bytes = max_logo_size_mb * 1024 * 1024
+        # If image more than 1mb, raise exception
+        if value.size >= max_size_bytes:
+            raise ValidationError('Image: max size error(1mb)')
+        return value
+
+    def update(self, instance, validated_data):
+        # If the logo key exists, update according to standard logic
+        if 'logo' in validated_data:
+            new_logo = validated_data.pop('logo')
+            instance.logo = new_logo
+        #  If not, then the logo has been deleted, delete it from the database
+        else:
+            instance.logo.delete()
+        # Save and return updated object
+        instance.save()
+        return instance
+
 
 # The sheet is called upon action 'create'
 class ClientCreateSerializer(serializers.ModelSerializer):
@@ -220,6 +242,16 @@ class ClientCreateSerializer(serializers.ModelSerializer):
             raise ValidationError('Two gis error: pattern - https://2gis/*/*')
         return value
 
+    def validate_logo(self, value):
+        # Maximum allowed file size in MB
+        max_logo_size_mb = 1
+        # Convert MB to bytes
+        max_size_bytes = max_logo_size_mb * 1024 * 1024
+        # If image more than 1mb, raise exception
+        if value.size >= max_size_bytes:
+            raise ValidationError('Image: max size error(1mb)')
+        return value
+
     # Service percent validations
     def validate_service(self, value):
         # Checking that the service in range 1-100
@@ -229,11 +261,8 @@ class ClientCreateSerializer(serializers.ModelSerializer):
 
     # Override the create method
     def create(self, validated_data):
-        print(validated_data)
         # Get city name from data
         city_name = validated_data.pop('city')
-        # Get this city
-        # city = City.objects.get(name=city_name)
         # Create a Client object with set values
         client = Client.objects.create(city=city_name, **validated_data)
         return client
