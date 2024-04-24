@@ -20,6 +20,8 @@ class Menu(TemplateView):
         categories = client.get_categories.prefetch_related(
             'get_subcategories__get_dishes'
         ).all()
+
+        food_types_without_dishes = []
         food_types = []
         dishes = []
         for category in categories:
@@ -28,6 +30,10 @@ class Menu(TemplateView):
             for food_type in subcategories:
                 dish = food_type.get_dishes.filter(stop=False)
                 dishes.extend(dish)
+
+        for food_type in food_types:
+            if food_type.get_dishes.count() > 0:
+                food_types_without_dishes.append(food_type)
 
         client_has_banquet = BanquetCard.objects.filter(client=client).exists()
         # dish quantity
@@ -46,12 +52,14 @@ class Menu(TemplateView):
         client_date = client.paid_at
         today_date = datetime.now().date()
 
-        context = {'client_date': client_date, 'today_date': today_date}
+        context['client_date'] = client_date
+        context['today_date'] = today_date
         context["dishes"] = dishes
         context['cart_items'] = cart_items
-        context["food_type"] = food_types
+        context["food_type"] = food_types_without_dishes
         context["categories"] = categories
         context["client"] = client
         context["client_has_banquet"] = client_has_banquet
+        print(context)
 
         return context
