@@ -282,17 +282,17 @@ CSRF_COOKIE_SECURE = False
 #######################
 # DJOSER(JWT)
 #######################
-DJOSER = {
-    "PASSWORD_RESET_CONFIRM_URL": "#/password/reset/confirm/{uid}/{token}",
-    "USERNAME_RESET_CONFIRM_URL": "#/username/reset/confirm/{uid}/{token}",
-    "ACTIVATION_URL": "#/activate/{uid}/{token}",
-    "SEND_ACTIVATION_EMAIL": False,
-    "SERIALIZERS": {},
-}
-
+# DJOSER = {
+#     "PASSWORD_RESET_CONFIRM_URL": "#/password/reset/confirm/{uid}/{token}",
+#     "USERNAME_RESET_CONFIRM_URL": "#/username/reset/confirm/{uid}/{token}",
+#     "ACTIVATION_URL": "#/activate/{uid}/{token}",
+#     "SEND_ACTIVATION_EMAIL": False,
+#     "SERIALIZERS": {},
+# }
+# JWT AUTH
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ACCESS_TOKEN_LIFETIME": timedelta(hours=3),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=5),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
     "ALGORITHM": "HS256",
