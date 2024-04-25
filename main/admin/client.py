@@ -7,7 +7,7 @@ admin.site.site_header = "YAEM"
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    readonly_fields = ('created_at', 'updated_at', 'translated',)
+    readonly_fields = ('created_at', 'updated_at',)
     prepopulated_fields = {"url_name": ("name",)}
     list_filter = ['user', 'city']
     list_display = (
@@ -67,7 +67,6 @@ class ClientAdmin(admin.ModelAdmin):
                     'tarif_number',
                     'status',
                     'paid_at',
-                    'translated',
                     'z_index',
                     'created_at',
                     'updated_at',
@@ -78,6 +77,7 @@ class ClientAdmin(admin.ModelAdmin):
             'Переводы',
             {
                 'fields': (
+                    'translated',
                     'description_en',
                     'description_kk',
                     'address_en',

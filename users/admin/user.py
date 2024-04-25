@@ -50,23 +50,26 @@ class UserAdmin(BaseUserAdmin):
 
     list_display = (
         'id',
-        'admin_name_or_phone_number',
+        'phone_number',
+        'first_name',
         'created_at',
         'establishments_count',
         'payments_count',
     )
     list_display_links = (
         'id',
-        'admin_name_or_phone_number',
+        'phone_number',
+        'first_name',
+
     )
 
     # get name if user is superuser, else return phone number
-    def admin_name_or_phone_number(self, obj):
-        if obj.is_superuser or obj.is_staff:
-            return obj.first_name
-        return obj.phone_number
+    # def admin_name_or_phone_number(self, obj):
+    #     if obj.first_name:
+    #         return obj.first_name
+    #     return obj.phone_number
 
-    admin_name_or_phone_number.short_description = 'Информация'
+    # admin_name_or_phone_number.short_description = 'Информация'
 
     # get user's establishments number
     def establishments_count(self, obj):
