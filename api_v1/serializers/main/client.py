@@ -146,17 +146,17 @@ class ClientRUDSerializer(serializers.ModelSerializer):
             raise ValidationError('Image: max size error(1mb)')
         return value
 
-    def update(self, instance, validated_data):
-        # If the logo key exists, update according to standard logic
-        if 'logo' in validated_data:
-            new_logo = validated_data.pop('logo')
-            instance.logo = new_logo
-        #  If not, then the logo has been deleted, delete it from the database
-        else:
-            instance.logo.delete()
-        # Save and return updated object
-        instance.save()
-        return instance
+    # def update(self, instance, validated_data):
+    #     # If the logo key exists, update according to standard logic
+    #     if 'logo' in validated_data:
+    #         new_logo = validated_data.pop('logo')
+    #         instance.logo = new_logo
+    #     #  If not, then the logo has been deleted, delete it from the database
+    #     else:
+    #         instance.logo.delete()
+    #     # Save and return updated object
+    #     instance.save()
+    #     return instance
 
 
 # The sheet is called upon action 'create'

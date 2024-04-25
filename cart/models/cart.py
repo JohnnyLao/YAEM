@@ -65,19 +65,3 @@ class CartItems(models.Model):
 
     def __str__(self):
         return f'{self.dish} ({self.quantity}) в корзине'
-
-
-@receiver(pre_delete, sender=Session)
-def delete_anonim_session_cart(sender, instance, **kwargs):
-    session_key = instance.session_key
-    anonim_cart = Cart.objects.filter(session_key=session_key).first()
-    if anonim_cart:
-        anonim_cart.delete()
-
-
-@receiver(user_logged_out)
-def delete_user_cart_on_logout(sender, user, request, **kwargs):
-    if user.is_authenticated:
-        user_cart = Cart.objects.filter(user=user).first()
-        if user_cart:
-            user_cart.delete()
