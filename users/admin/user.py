@@ -59,9 +59,10 @@ class UserAdmin(BaseUserAdmin):
     list_display_links = (
         'id',
         'phone_number',
-        'first_name',
 
     )
+
+    list_editable = ['first_name',]
 
     # get name if user is superuser, else return phone number
     # def admin_name_or_phone_number(self, obj):

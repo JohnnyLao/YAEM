@@ -10,7 +10,7 @@ class User(AbstractUser):
     phone_number = PhoneNumberField(
         verbose_name='Номер телефона', unique=True, db_index=True
     )
-    number_of_establishments = models.PositiveSmallIntegerField(default=2, verbose_name='Количество разрешенных клиентов')
+    number_of_establishments = models.PositiveSmallIntegerField(default=2, verbose_name='Макс. Количество заведений')
     created_at = models.DateTimeField(
         auto_now_add=True, blank=True, verbose_name='Создан', null=True
     )
