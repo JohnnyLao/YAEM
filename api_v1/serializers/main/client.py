@@ -112,7 +112,7 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     def validate_inst(self, value):
         if value:
             # Checking that the link matches the pattern
-            if 'https://www.instagram.com/' not in str(value):
+            if 'instagram' not in str(value):
                 raise ValidationError(
                     'Instagram error: pattern - https://www.instagram.com/*'
                 )
@@ -122,7 +122,7 @@ class ClientRUDSerializer(serializers.ModelSerializer):
     def validate_two_gis(self, value):
         if value:
             # Checking that the link matches the pattern
-            if '2gis' not in str(value):
+            if 'gis' not in str(value):
                 raise ValidationError('Two gis error: pattern - https://2gis/*/*')
             return value
 
