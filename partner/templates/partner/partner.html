@@ -96,7 +96,7 @@
 <section class="py-3" style="background: rgba(33, 37, 41, 0.95)">
     <div class="container">
         <div class="row gy-3">
-            <div class="col text-center">
+            <div class="col my-auto text-center">
                 <p data-aos="fade-up" class="fw-bold fs-2">{% translate 'Всё просто !' %}</p>
                 <p data-aos="fade-up" data-aos-delay="50" class="fs-5">{% translate 'Проходите регистрацию в ' %} <strong
                         style="color: #FD7014">
@@ -110,16 +110,21 @@
                 <p data-aos="fade-up" data-aos-delay="150" class="fs-5">{% translate 'Размещаете' %}
                     <strong style="color: #FD7014">{% translate 'QR коды'%}</strong> и ссылку в соц. сетях и <span><strong style="color: #FD7014">{% translate 'Готово !'%}</strong></span>
                 </p>
-                <p class="fs-2 fw-bold" data-aos="fade-up" data-aos-delay="200">Результат:</p>
+                <p class="fs-2 fw-bold mt-5" data-aos="fade-up" data-aos-delay="200">Результат:</p>
                 <p data-aos="fade-up" data-aos-delay="250" class=" fs-5">
                     <strong style="color: #FD7014">{% translate 'Ваши клиенты' %}</strong>
-                    {% translate 'смогут просматривать онлайн меню находясь в зале / номере / удаленно' %}
+                    {% translate 'смогут просматривать онлайн меню в зале / номере / удаленно и делать заказы' %}
                 </p>
             </div>
-            <div class="col-auto mx-auto text-center">
-                <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/collage.png' %}"
+            <div class="col-auto mx-auto px-0 text-center d-none d-sm-block">
+                <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/лк.png' %}"
                      alt="qr_sample"
-                     class="img" style="max-width: 300px">
+                     class="img " style="max-width: 450px">
+            </div>
+            <div class="col-12 mx-auto px-0 text-center d-block d-sm-none">
+                <img draggable="false" data-aos="fade-up" src="{% static 'images/partner/лк.png' %}"
+                     alt="qr_sample"
+                     class="img " style="max-width: 350px">
             </div>
         </div>
     </div>
@@ -173,9 +178,9 @@
         <!-- Swiper -->
         <div data-aos="fade-up" class="swiper mySwiper">
             <div class="swiper-wrapper">
-<!--                <div class="swiper-slide" >-->
-<!--                    <img src="{% static 'images/partner/collage.png' %}" alt="qr_sample" style="max-height: 424px"/>-->
-<!--                </div>-->
+                <div class="swiper-slide" >
+                    <img src="{% static 'images/partner/collage.png' %}" alt="qr_sample" style="max-height: 424px"/>
+                </div>
                 <div class="swiper-slide">
                     <img src="{% static 'images/partner/sample1-min.png' %}" alt="qr_sample"/>
                 </div>
