@@ -19,6 +19,7 @@ class DishListSerializer(serializers.ModelSerializer):
             'popular',
             'spicy',
             'vegetarian',
+            'z_index',
         )
 
 
