@@ -3,12 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#: partner/templates/partner/partner.html:853
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-17 12:50+0600\n"
+"POT-Creation-Date: 2024-06-09 21:00+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,1734 +32,165 @@ msgid "Kazakh"
 msgstr ""
 
 #: banquets/templates/banquets/banquet_list.html:6
-#: banquets/templates/banquets/banquet_page.html:6
 msgid "Я ЕМ | Банкетные залы"
 msgstr "МЕН ЖЕГЕНІМ | Банкет залдары"
 
 #: banquets/templates/banquets/banquet_list.html:9
 msgid ""
-"Банкетные залы в Темиртау, Караганде, Алмате для юбилея, свадьбы, "
+"Банкетные залы в Темиртау, Караганде, Алмате, Астане для юбилея, свадьбы, "
 "корпоратива. Заказать банкет онлайн."
 msgstr ""
 
-#: banquets/templates/banquets/banquet_list.html:31
-#: main/templates/main/index.html:43
-msgid "Банкетных залов"
-msgstr "Банкет залдары"
+#: banquets/templates/banquets/banquet_list.html:33
+#: main/templates/main/delivery_list.html:36 main/templates/main/index.html:35
+#: partner/templates/partner/partner.html:34
+msgid "Заведений"
+msgstr "Мекемелер"
 
 #: banquets/templates/banquets/banquet_list.html:40
-msgid "Городов"
-msgstr "Қалалар"
+#: main/templates/main/index.html:42 partner/templates/partner/partner.html:42
+msgid "Залов"
+msgstr "Залдар"
 
 #: banquets/templates/banquets/banquet_list.html:48
-msgid "Посетителей"
-msgstr "Келушілер"
+#: main/templates/main/delivery_list.html:52 main/templates/main/index.html:50
+#: partner/templates/partner/partner.html:50
+msgid "Онлайн"
+msgstr "Желіде"
 
-#: banquets/templates/banquets/banquet_list.html:66
-#: banquets/templates/banquets/banquet_page.html:352
-msgid "Вместимость"
-msgstr "Сыйымдылығы"
-
-#: banquets/templates/banquets/banquet_list.html:68
-#: banquets/templates/banquets/banquet_list.html:82
-msgid "до"
-msgstr "бұрын"
-
-#: banquets/templates/banquets/banquet_list.html:74
-msgid "Свыше"
-msgstr "Бітті"
-
-#: banquets/templates/banquets/banquet_list.html:80
-msgid "Цена за человека"
-msgstr "Бір адамға баға"
-
-#: banquets/templates/banquets/banquet_list.html:94
-msgid "Город"
-msgstr "Қала"
-
-#: banquets/templates/banquets/banquet_list.html:102
-msgid "Найти"
-msgstr "Табу"
-
-#: banquets/templates/banquets/banquet_list.html:109
-#: banquets/templates/banquets/banquet_page.html:27
+#: banquets/templates/banquets/banquet_list.html:61
+#: banquets/templates/banquets/banquet_page.html:37
 #, fuzzy
 #| msgid "Тарифные планы"
 msgid "Банкетные залы"
 msgstr "Тарифтік жоспарлар"
 
-#: banquets/templates/banquets/banquet_list.html:200
+#: banquets/templates/banquets/banquet_list.html:65
+#, fuzzy
+#| msgid "БАНКЕТНЫЕ ЗАЛЫ"
+msgid "РАЗМЕСТИТЬ ЗАЛ"
+msgstr "БАНКЕТ ЗАЛДАР"
+
+#: banquets/templates/banquets/banquet_list.html:73
+msgid "Город"
+msgstr "Қала"
+
+#: banquets/templates/banquets/banquet_list.html:83
+#, fuzzy
+#| msgid "Цена за человека"
+msgid "Цена за чел"
+msgstr "Бір адамға баға"
+
+#: banquets/templates/banquets/banquet_list.html:85
+#: banquets/templates/banquets/banquet_list.html:99
+msgid "до"
+msgstr "бұрын"
+
+#: banquets/templates/banquets/banquet_list.html:91
+#, fuzzy
+#| msgid "Свыше"
+msgid "свыше"
+msgstr "Бітті"
+
+#: banquets/templates/banquets/banquet_list.html:97
+#: banquets/templates/banquets/banquet_page.html:404
+msgid "Вместимость"
+msgstr "Сыйымдылығы"
+
+#: banquets/templates/banquets/banquet_list.html:105
+msgid "Свыше"
+msgstr "Бітті"
+
+#: banquets/templates/banquets/banquet_list.html:111
+msgid "ПОИСК"
+msgstr ""
+
+#: banquets/templates/banquets/banquet_list.html:215
+#: banquets/templates/banquets/banquet_page.html:6
 #, fuzzy
 #| msgid "Банкет"
 msgid "Банкетный зал"
 msgstr "Банкет"
 
-#: banquets/templates/banquets/banquet_list.html:209
-#: main/templates/main/delivery_list.html:137 main/templates/main/menu.html:118
+#: banquets/templates/banquets/banquet_list.html:224
+#: main/templates/main/menu.html:71
 msgid "Время работы"
 msgstr "Жұмыс уақыты"
 
-#: banquets/templates/banquets/banquet_list.html:226
+#: banquets/templates/banquets/banquet_list.html:241
 msgid "мест"
 msgstr "орындар"
 
-#: banquets/templates/banquets/banquet_list.html:233
-#: main/templates/main/delivery_list.html:181
+#: banquets/templates/banquets/banquet_list.html:248
 msgid "Перейти"
 msgstr "Бар"
 
-#: banquets/templates/banquets/banquet_page.html:9
-msgid ""
-"Банкетный зал {{banquet.name}}. Количество мест {{banquet.capacity}}. "
-"Средний счёт на человека от {{banquet.price_min}} - {{banquet.price_max}} "
-"тенге в городе {{banquet.city.name}}"
-msgstr ""
+#: banquets/templates/banquets/banquet_page.html:6
+#, fuzzy
+#| msgid "Нашем сайте"
+msgid "На сайте Я ЕМ"
+msgstr "бар бетті жасаймыз"
 
-#: banquets/templates/banquets/banquet_page.html:246
+#: banquets/templates/banquets/banquet_page.html:298
 msgid "ресторана"
 msgstr "мейрамхана"
 
-#: banquets/templates/banquets/banquet_page.html:308
+#: banquets/templates/banquets/banquet_page.html:360
 msgid "Кухня"
 msgstr "Ас үй"
 
-#: banquets/templates/banquets/banquet_page.html:327
+#: banquets/templates/banquets/banquet_page.html:379
 msgid "Средний Чек"
 msgstr "Орташа тексеру"
 
-#: banquets/templates/banquets/banquet_page.html:343
+#: banquets/templates/banquets/banquet_page.html:395
 msgid "поминки"
 msgstr "ояну"
 
-#: banquets/templates/banquets/banquet_page.html:368
+#: banquets/templates/banquets/banquet_page.html:420
 msgid "Особенности"
 msgstr "Ерекшеліктер"
 
-#: banquets/templates/banquets/banquet_page.html:381
+#: banquets/templates/banquets/banquet_page.html:433
 msgid "Описание"
 msgstr "Сипаттама"
 
-#: banquets/templates/banquets/banquet_page.html:386
+#: banquets/templates/banquets/banquet_page.html:438
 msgid "Адрес"
 msgstr "Мекенжай"
 
-#: banquets/templates/banquets/banquet_page.html:390
+#: banquets/templates/banquets/banquet_page.html:442
 msgid "Парковка"
 msgstr "Көлік тұрағы"
 
-#: banquets/templates/banquets/banquet_page.html:398
-#: main/templates/main/menu.html:135
+#: banquets/templates/banquets/banquet_page.html:450
+#: main/templates/main/menu.html:91
 msgid "Меню"
 msgstr "Мәзір"
 
-#: cart/templates/cart/cart.html:6 cart/templates/cart/cart.html:27
+#: cart/templates/cart/cart.html:6 cart/templates/cart/cart.html:31
 msgid "Корзина"
 msgstr "Себет"
 
-#: cart/templates/cart/cart.html:64
-msgid "Очистить"
-msgstr "Таза"
+#: cart/templates/cart/cart.html:98
+msgid "Подитог: "
+msgstr ""
 
-#: cart/templates/cart/cart.html:74
-msgid "Итого"
-msgstr "Барлығы"
-
-#: cart/templates/cart/cart.html:77
-msgid "Без обслуживания"
+#: cart/templates/cart/cart.html:100
+#, fuzzy
+#| msgid "Без обслуживания"
+msgid "Обслуживание: "
 msgstr "Қызмет жоқ"
 
-#: cart/templates/cart/cart.html:79
+#: cart/templates/cart/cart.html:101 cart/templates/cart/cart.html:111
+#, fuzzy
+#| msgid "Итого"
+msgid "Итого: "
+msgstr "Барлығы"
+
+#: cart/templates/cart/cart.html:156
 msgid "Корзина пуста"
 msgstr "Себет бос"
-
-#: cart/templates/cart/cart.html:91
-msgid "В зале"
-msgstr "Залда"
-
-#: cart/templates/cart/cart.html:94 main/templates/main/delivery_list.html:143
-#: main/templates/main/menu.html:125
-msgid "Самовывоз"
-msgstr "Ала кету"
-
-#: cart/templates/cart/cart.html:97 main/templates/main/delivery_list.html:161
-#: main/templates/main/menu.html:130
-msgid "Доставка"
-msgstr "Жеткізу"
-
-#: cart/templates/cart/cart.html:102
-msgid "Отправьте заказ, не дожидаясь официанта"
-msgstr "Даяшыны күтпей-ақ тапсырысыңызды беріңіз"
-
-#: cart/templates/cart/cart.html:105
-msgid "Номер стола"
-msgstr "Кесте нөмірі"
-
-#: cart/templates/cart/cart.html:106
-msgid "Вы не указали номер стола"
-msgstr "Сіз кестенің нөмірін көрсетпедіңіз"
-
-#: cart/templates/cart/cart.html:109 cart/templates/cart/cart.html:140
-#: cart/templates/cart/cart.html:201
-msgid "Отправить"
-msgstr "Жіберу"
-
-#: cart/templates/cart/cart.html:117
-msgid "Отправьте заказ, и заберите в удобное время"
-msgstr "Тапсырысыңызды жіберіңіз және оны ыңғайлы уақытта алыңыз"
-
-#: cart/templates/cart/cart.html:121 cart/templates/cart/cart.html:174
-msgid "Ваше имя"
-msgstr "Сіздің атыңыз"
-
-#: cart/templates/cart/cart.html:123 cart/templates/cart/cart.html:176
-msgid "Вы не указали имя"
-msgstr "Сіз атау бермедіңіз"
-
-#: cart/templates/cart/cart.html:129 cart/templates/cart/cart.html:182
-msgid "Номер телефона"
-msgstr "Телефон нөмірі"
-
-#: cart/templates/cart/cart.html:130 cart/templates/cart/cart.html:183
-msgid "Вы не указали номер телефона"
-msgstr "Сіз телефон нөмірін бермедіңіз"
-
-#: cart/templates/cart/cart.html:136
-msgid "Время самовывоза"
-msgstr "Алып кету уақыты"
-
-#: cart/templates/cart/cart.html:137
-msgid "Вы не указали время"
-msgstr "Сіз уақытты көрсетпегенсіз"
-
-#: cart/templates/cart/cart.html:169
-msgid "Отправьте заказ, и Вам доставят в удобное время"
-msgstr "Тапсырысыңызды жіберіңіз, ол сізге ыңғайлы уақытта жеткізіледі"
-
-#: cart/templates/cart/cart.html:189
-msgid "Адрес доставки"
-msgstr "Жеткізу мекенжайы"
-
-#: cart/templates/cart/cart.html:191
-msgid "Вы не указали адрес доставки"
-msgstr "Жеткізу мекенжайын көрсетпегенсіз"
-
-#: cart/templates/cart/cart.html:197
-msgid "Время доставки"
-msgstr "Жеткізу уақыты"
-
-#: cart/templates/cart/cart.html:198
-msgid "Вы не указали время доставки"
-msgstr "Жеткізу уақытын көрсетпедіңіз"
-
-#: env/lib/python3.10/site-packages/click/_termui_impl.py:518
-#, python-brace-format
-msgid "{editor}: Editing failed"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/_termui_impl.py:522
-#, python-brace-format
-msgid "{editor}: Editing failed: {e}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1120
-msgid "Aborted!"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1309
-#: env/lib/python3.10/site-packages/click/decorators.py:559
-msgid "Show this message and exit."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1340
-#: env/lib/python3.10/site-packages/click/core.py:1370
-#, python-brace-format
-msgid "(Deprecated) {text}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1387
-msgid "Options"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1413
-#, python-brace-format
-msgid "Got unexpected extra argument ({args})"
-msgid_plural "Got unexpected extra arguments ({args})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1429
-msgid "DeprecationWarning: The command {name!r} is deprecated."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1636
-msgid "Commands"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1668
-msgid "Missing command."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:1746
-msgid "No such command {name!r}."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2310
-msgid "Value must be an iterable."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2331
-#, python-brace-format
-msgid "Takes {nargs} values but 1 was given."
-msgid_plural "Takes {nargs} values but {len} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2778
-#, python-brace-format
-msgid "env var: {var}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2808
-msgid "(dynamic)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2821
-#, python-brace-format
-msgid "default: {default}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/core.py:2834
-msgid "required"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/decorators.py:465
-#, python-format
-msgid "%(prog)s, version %(version)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/decorators.py:528
-msgid "Show the version and exit."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:44
-#: env/lib/python3.10/site-packages/click/exceptions.py:80
-#, python-brace-format
-msgid "Error: {message}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:72
-#, python-brace-format
-msgid "Try '{command} {option}' for help."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:121
-#, python-brace-format
-msgid "Invalid value: {message}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:123
-#, python-brace-format
-msgid "Invalid value for {param_hint}: {message}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:179
-msgid "Missing argument"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:181
-msgid "Missing option"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:183
-msgid "Missing parameter"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:185
-#, python-brace-format
-msgid "Missing {param_type}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:192
-#, python-brace-format
-msgid "Missing parameter: {param_name}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:212
-#, python-brace-format
-msgid "No such option: {name}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:224
-#, python-brace-format
-msgid "Did you mean {possibility}?"
-msgid_plural "(Possible options: {possibilities})"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:262
-msgid "unknown error"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/exceptions.py:269
-msgid "Could not open file {filename!r}: {message}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/parser.py:231
-msgid "Argument {name!r} takes {nargs} values."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/parser.py:413
-msgid "Option {name!r} does not take a value."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/parser.py:474
-msgid "Option {name!r} requires an argument."
-msgid_plural "Option {name!r} requires {nargs} arguments."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/shell_completion.py:319
-msgid "Shell completion is not supported for Bash versions older than 4.4."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/shell_completion.py:326
-msgid "Couldn't detect Bash version, shell completion is not supported."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:158
-msgid "Repeat for confirmation"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:174
-msgid "Error: The value you entered was invalid."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:176
-#, python-brace-format
-msgid "Error: {e.message}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:187
-msgid "Error: The two entered values do not match."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:243
-msgid "Error: invalid input"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/termui.py:773
-msgid "Press any key to continue..."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:266
-#, python-brace-format
-msgid ""
-"Choose from:\n"
-"\t{choices}"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:298
-msgid "{value!r} is not {choice}."
-msgid_plural "{value!r} is not one of {choices}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/types.py:392
-msgid "{value!r} does not match the format {format}."
-msgid_plural "{value!r} does not match the formats {formats}."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/click/types.py:414
-msgid "{value!r} is not a valid {number_type}."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:470
-#, python-brace-format
-msgid "{value} is not in the range {range}."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:611
-msgid "{value!r} is not a valid boolean."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:635
-msgid "{value!r} is not a valid UUID."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:822
-msgid "file"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:824
-msgid "directory"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:826
-msgid "path"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:877
-msgid "{name} {filename!r} does not exist."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:886
-msgid "{name} {filename!r} is a file."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:894
-#, python-brace-format
-msgid "{name} '{filename}' is a directory."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:903
-msgid "{name} {filename!r} is not readable."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:912
-msgid "{name} {filename!r} is not writable."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:921
-msgid "{name} {filename!r} is not executable."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/click/types.py:988
-#, python-brace-format
-msgid "{len_type} values are required, but {len_value} was given."
-msgid_plural "{len_type} values are required, but {len_value} were given."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/contrib/messages/apps.py:15
-msgid "Messages"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/contrib/sitemaps/apps.py:8
-msgid "Site Maps"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/contrib/staticfiles/apps.py:9
-msgid "Static Files"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/contrib/syndication/apps.py:7
-msgid "Syndication"
-msgstr ""
-
-#. Translators: String used to replace omitted page numbers in elided page
-#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
-#: env/lib/python3.10/site-packages/django/core/paginator.py:30
-msgid "…"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/paginator.py:50
-msgid "That page number is not an integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/paginator.py:52
-msgid "That page number is less than 1"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/paginator.py:54
-msgid "That page contains no results"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:22
-msgid "Enter a valid value."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:104
-#: env/lib/python3.10/site-packages/django/forms/fields.py:749
-msgid "Enter a valid URL."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:164
-msgid "Enter a valid integer."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:175
-msgid "Enter a valid email address."
-msgstr ""
-
-#. Translators: "letters" means latin letters: a-z and A-Z.
-#: env/lib/python3.10/site-packages/django/core/validators.py:256
-msgid ""
-"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:264
-msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:276
-#: env/lib/python3.10/site-packages/django/core/validators.py:284
-#: env/lib/python3.10/site-packages/django/core/validators.py:313
-msgid "Enter a valid IPv4 address."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:293
-#: env/lib/python3.10/site-packages/django/core/validators.py:314
-msgid "Enter a valid IPv6 address."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:305
-#: env/lib/python3.10/site-packages/django/core/validators.py:312
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:348
-msgid "Enter only digits separated by commas."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:354
-#, python-format
-msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:389
-#, python-format
-msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:398
-#, python-format
-msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:407
-#, python-format
-msgid "Ensure this value is a multiple of step size %(limit_value)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:417
-#, python-format
-msgid ""
-"Ensure this value has at least %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:435
-#, python-format
-msgid ""
-"Ensure this value has at most %(limit_value)d character (it has "
-"%(show_value)d)."
-msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has "
-"%(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:458
-#: env/lib/python3.10/site-packages/django/forms/fields.py:347
-#: env/lib/python3.10/site-packages/django/forms/fields.py:386
-msgid "Enter a number."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:460
-#, python-format
-msgid "Ensure that there are no more than %(max)s digit in total."
-msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:465
-#, python-format
-msgid "Ensure that there are no more than %(max)s decimal place."
-msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:470
-#, python-format
-msgid ""
-"Ensure that there are no more than %(max)s digit before the decimal point."
-msgid_plural ""
-"Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:541
-#, python-format
-msgid ""
-"File extension “%(extension)s” is not allowed. Allowed extensions are: "
-"%(allowed_extensions)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/core/validators.py:602
-msgid "Null characters are not allowed."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/base.py:1423
-#: env/lib/python3.10/site-packages/django/forms/models.py:893
-msgid "and"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/base.py:1425
-#, python-format
-msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/constraints.py:17
-#, python-format
-msgid "Constraint “%(name)s” is violated."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:128
-#, python-format
-msgid "Value %(value)r is not a valid choice."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:129
-msgid "This field cannot be null."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:130
-msgid "This field cannot be blank."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:131
-#, python-format
-msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
-
-#. Translators: The 'lookup_type' is one of 'date', 'year' or
-#. 'month'. Eg: "Title must be unique for pub_date year"
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:135
-#, python-format
-msgid ""
-"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:173
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1094
-#, python-format
-msgid "“%(value)s” value must be either True or False."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1095
-#, python-format
-msgid "“%(value)s” value must be either True, False, or None."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1097
-msgid "Boolean (Either True or False)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1147
-#, python-format
-msgid "String (up to %(max_length)s)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1149
-msgid "String (unlimited)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1253
-msgid "Comma-separated integers"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1354
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
-"format."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1358
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1493
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
-"date."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1362
-msgid "Date (without time)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1489
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1497
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1502
-msgid "Date (with time)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1626
-#, python-format
-msgid "“%(value)s” value must be a decimal number."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1628
-msgid "Decimal number"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1789
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1793
-msgid "Duration"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1845
-msgid "Email address"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1870
-msgid "File path"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1948
-#, python-format
-msgid "“%(value)s” value must be a float."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1950
-msgid "Floating point number"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1990
-#, python-format
-msgid "“%(value)s” value must be an integer."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:1992
-msgid "Integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2088
-msgid "Big (8 byte) integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2105
-msgid "Small integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2113
-msgid "IPv4 address"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2144
-msgid "IP address"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2237
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2238
-#, python-format
-msgid "“%(value)s” value must be either None, True or False."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2240
-msgid "Boolean (Either True, False or None)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2291
-msgid "Positive big integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2306
-msgid "Positive integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2321
-msgid "Positive small integer"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2337
-#, python-format
-msgid "Slug (up to %(max_length)s)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2373
-msgid "Text"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2448
-#, python-format
-msgid ""
-"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-"format."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2452
-#, python-format
-msgid ""
-"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-"invalid time."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2456
-msgid "Time"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2564
-msgid "URL"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2588
-msgid "Raw binary data"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2653
-#, python-format
-msgid "“%(value)s” is not a valid UUID."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/__init__.py:2655
-msgid "Universally unique identifier"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/files.py:232
-msgid "File"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/files.py:393
-msgid "Image"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/json.py:26
-msgid "A JSON object"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/json.py:28
-msgid "Value must be valid JSON."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:919
-#, python-format
-msgid "%(model)s instance with %(field)s %(value)r does not exist."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:921
-msgid "Foreign Key (type determined by related field)"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1212
-msgid "One-to-one relationship"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1269
-#, python-format
-msgid "%(from)s-%(to)s relationship"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1271
-#, python-format
-msgid "%(from)s-%(to)s relationships"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/db/models/fields/related.py:1319
-msgid "Many-to-many relationship"
-msgstr ""
-
-#. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
-#: env/lib/python3.10/site-packages/django/forms/boundfield.py:184
-msgid ":?.!"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:91
-msgid "This field is required."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:298
-msgid "Enter a whole number."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:467
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1238
-msgid "Enter a valid date."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:490
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1239
-msgid "Enter a valid time."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:517
-msgid "Enter a valid date/time."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:551
-msgid "Enter a valid duration."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:552
-#, python-brace-format
-msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:618
-msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:619
-msgid "No file was submitted."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:620
-msgid "The submitted file is empty."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:622
-#, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
-msgid_plural ""
-"Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:627
-msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:691
-msgid ""
-"Upload a valid image. The file you uploaded was either not an image or a "
-"corrupted image."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:854
-#: env/lib/python3.10/site-packages/django/forms/fields.py:946
-#: env/lib/python3.10/site-packages/django/forms/models.py:1566
-#, python-format
-msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:948
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1067
-#: env/lib/python3.10/site-packages/django/forms/models.py:1564
-msgid "Enter a list of values."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1068
-msgid "Enter a complete value."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1307
-msgid "Enter a valid UUID."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/fields.py:1337
-msgid "Enter a valid JSON."
-msgstr ""
-
-#. Translators: This is the default suffix added to form field labels
-#: env/lib/python3.10/site-packages/django/forms/forms.py:98
-msgid ":"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/forms.py:244
-#: env/lib/python3.10/site-packages/django/forms/forms.py:328
-#, python-format
-msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:63
-#, python-format
-msgid ""
-"ManagementForm data is missing or has been tampered with. Missing fields: "
-"%(field_names)s. You may need to file a bug report if the issue persists."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:67
-#, python-format
-msgid "Please submit at most %(num)d form."
-msgid_plural "Please submit at most %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:72
-#, python-format
-msgid "Please submit at least %(num)d form."
-msgid_plural "Please submit at least %(num)d forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:484
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:491
-msgid "Order"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/formsets.py:499
-msgid "Delete"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:886
-#, python-format
-msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:891
-#, python-format
-msgid "Please correct the duplicate data for %(field)s, which must be unique."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:898
-#, python-format
-msgid ""
-"Please correct the duplicate data for %(field_name)s which must be unique "
-"for the %(lookup)s in %(date_field)s."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:907
-msgid "Please correct the duplicate values below."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:1338
-msgid "The inline value did not match the parent instance."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:1429
-msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/models.py:1568
-#, python-format
-msgid "“%(pk)s” is not a valid value."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/utils.py:226
-#, python-format
-msgid ""
-"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
-"may be ambiguous or it may not exist."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:463
-msgid "Clear"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:464
-msgid "Currently"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:465
-msgid "Change"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:794
-msgid "Unknown"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:795
-msgid "Yes"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/forms/widgets.py:796
-msgid "No"
-msgstr ""
-
-#. Translators: Please do not add spaces around commas.
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:861
-msgid "yes,no,maybe"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:891
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:908
-#, python-format
-msgid "%(size)d byte"
-msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:910
-#, python-format
-msgid "%s KB"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:912
-#, python-format
-msgid "%s MB"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:914
-#, python-format
-msgid "%s GB"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:916
-#, python-format
-msgid "%s TB"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/template/defaultfilters.py:918
-#, python-format
-msgid "%s PB"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:73
-msgid "p.m."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:74
-msgid "a.m."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:79
-msgid "PM"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:80
-msgid "AM"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:152
-msgid "midnight"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dateformat.py:154
-msgid "noon"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:7
-msgid "Monday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:8
-msgid "Tuesday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:9
-msgid "Wednesday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:10
-msgid "Thursday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:11
-msgid "Friday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:12
-msgid "Saturday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:13
-msgid "Sunday"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:16
-msgid "Mon"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:17
-msgid "Tue"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:18
-msgid "Wed"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:19
-msgid "Thu"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:20
-msgid "Fri"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:21
-msgid "Sat"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:22
-msgid "Sun"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:25
-msgid "January"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:26
-msgid "February"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:27
-msgid "March"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:28
-msgid "April"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:29
-msgid "May"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:30
-msgid "June"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:31
-msgid "July"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:32
-msgid "August"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:33
-msgid "September"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:34
-msgid "October"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:35
-msgid "November"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:36
-msgid "December"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:39
-msgid "jan"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:40
-msgid "feb"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:41
-msgid "mar"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:42
-msgid "apr"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:43
-msgid "may"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:44
-msgid "jun"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:45
-msgid "jul"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:46
-msgid "aug"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:47
-msgid "sep"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:48
-msgid "oct"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:49
-msgid "nov"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:50
-msgid "dec"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:53
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:54
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:55
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:56
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:57
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:58
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:59
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:60
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:61
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:62
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:63
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:64
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:67
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:68
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:69
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:70
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:71
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:72
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:73
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:74
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:75
-msgctxt "alt. month"
-msgid "September"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:76
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:77
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/dates.py:78
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/ipv6.py:8
-msgid "This is not a valid IPv6 address."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/text.py:78
-#, python-format
-msgctxt "String to return when truncating text"
-msgid "%(truncated_text)s…"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/text.py:254
-msgid "or"
-msgstr ""
-
-#. Translators: This string is used as a separator between list elements
-#: env/lib/python3.10/site-packages/django/utils/text.py:273
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:135
-msgid ", "
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:8
-#, python-format
-msgid "%(num)d year"
-msgid_plural "%(num)d years"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:9
-#, python-format
-msgid "%(num)d month"
-msgid_plural "%(num)d months"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:10
-#, python-format
-msgid "%(num)d week"
-msgid_plural "%(num)d weeks"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:11
-#, python-format
-msgid "%(num)d day"
-msgid_plural "%(num)d days"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:12
-#, python-format
-msgid "%(num)d hour"
-msgid_plural "%(num)d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/utils/timesince.py:13
-#, python-format
-msgid "%(num)d minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:111
-msgid "Forbidden"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:112
-msgid "CSRF verification failed. Request aborted."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:116
-msgid ""
-"You are seeing this message because this HTTPS site requires a “Referer "
-"header” to be sent by your web browser, but none was sent. This header is "
-"required for security reasons, to ensure that your browser is not being "
-"hijacked by third parties."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:122
-msgid ""
-"If you have configured your browser to disable “Referer” headers, please re-"
-"enable them, at least for this site, or for HTTPS connections, or for “same-"
-"origin” requests."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:127
-msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a "
-"rel=\"noreferrer\" …> for links to third-party sites."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:136
-msgid ""
-"You are seeing this message because this site requires a CSRF cookie when "
-"submitting forms. This cookie is required for security reasons, to ensure "
-"that your browser is not being hijacked by third parties."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:142
-msgid ""
-"If you have configured your browser to disable cookies, please re-enable "
-"them, at least for this site, or for “same-origin” requests."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/csrf.py:148
-msgid "More information is available with DEBUG=True."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:44
-msgid "No year specified"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:64
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:115
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:214
-msgid "Date out of range"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:94
-msgid "No month specified"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:147
-msgid "No day specified"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:194
-msgid "No week specified"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:349
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:380
-#, python-format
-msgid "No %(verbose_name_plural)s available"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:652
-#, python-format
-msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/dates.py:692
-#, python-format
-msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/detail.py:56
-#, python-format
-msgid "No %(verbose_name)s found matching the query"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/list.py:70
-msgid "Page is not “last”, nor can it be converted to an int."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/list.py:77
-#, python-format
-msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/generic/list.py:169
-#, python-format
-msgid "Empty list and “%(class_name)s.allow_empty” is False."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/static.py:38
-msgid "Directory indexes are not allowed here."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/static.py:40
-#, python-format
-msgid "“%(path)s” does not exist"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/static.py:79
-#, python-format
-msgid "Index of %(directory)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:7
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:220
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:206
-#, python-format
-msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:221
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" "
-"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
-"configured any URLs."
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:229
-msgid "Django Documentation"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:230
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:238
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:239
-msgid "Get started with Django"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:247
-msgid "Django Community"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/django/views/templates/default_urlconf.html:248
-msgid "Connect, get help, or contribute"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/isort/main.py:158
-msgid "show this help message and exit"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/kombu/transport/qpid.py:1311
-#, python-format
-msgid "Attempting to connect to qpid with SASL mechanism %s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/kombu/transport/qpid.py:1316
-#, python-format
-msgid "Connected to qpid with SASL mechanism %s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/kombu/transport/qpid.py:1334
-#, python-format
-msgid "Unable to connect to qpid with SASL mechanism %s"
-msgstr ""
-
-#: env/lib/python3.10/site-packages/modeltranslation/widgets.py:24
-msgid "None"
-msgstr ""
 
 #: main/templates/main/404.html:5
 #, fuzzy
@@ -1771,183 +203,228 @@ msgid "Упс, кажется что-то пошло не так"
 msgstr "Ой, бірдеңе дұрыс болмады"
 
 #: main/templates/main/404.html:17
-msgid "Но Вы можете вернуться"
-msgstr "Бірақ қайтып келуге болады"
-
-#: main/templates/main/base.html:156
-msgid "ГЛАВНАЯ"
-msgstr "ҮЙ"
-
-#: main/templates/main/base.html:166
-msgid "ЗАКАЗАТЬ"
-msgstr "ТАПСЫРЫС"
-
-#: main/templates/main/base.html:176
-msgid "Блюда"
-msgstr "Ыдыс-аяқ"
-
-#: main/templates/main/base.html:180 main/templates/main/delivery_list.html:130
-msgid "Банкет"
-msgstr "Банкет"
-
-#: main/templates/main/base.html:184
-msgid "Продукты"
-msgstr "Өнімдер"
-
-#: main/templates/main/base.html:200
-msgid "БИЗНЕСУ"
-msgstr "БИЗНЕС"
-
-#: main/templates/main/base.html:210
-msgid "Кайтеринг"
+msgid "Вернуться на главную"
 msgstr ""
 
-#: main/templates/main/base.html:215
-msgid "Представители"
-msgstr "Өкілдері"
+#: main/templates/main/base.html:179
+msgid "Главная"
+msgstr "Басты бет"
 
-#: main/templates/main/base.html:225
-msgid "КОНТАКТЫ"
-msgstr "БАЙЛАНЫСТАР"
+#: main/templates/main/base.html:182 main/templates/main/menu.html:85
+msgid "Доставка"
+msgstr "Жеткізу"
 
-#: main/templates/main/base.html:245
-msgid "Наша команда"
-msgstr "Біздің команда"
+#: main/templates/main/base.html:185 main/templates/main/menu.html:99
+msgid "Банкеты"
+msgstr "Банкеттер"
 
-#: main/templates/main/base.html:251
-msgid "Егор"
-msgstr "Егор"
-
-#: main/templates/main/base.html:252
-msgid "Коммерческий директор"
-msgstr "Коммерциялық директор"
-
-#: main/templates/main/base.html:258
-msgid "Олег"
-msgstr "Олег"
-
-#: main/templates/main/base.html:259
-msgid "Руководитель отдела развития"
-msgstr "Дамыту бөлімінің бастығы"
-
-#: main/templates/main/base.html:265
-msgid "Артём"
-msgstr "Артём"
-
-#: main/templates/main/base.html:266
-msgid "Руководитель отдела разработки"
-msgstr "Дамыту бөлімінің бастығы"
-
-#: main/templates/main/base.html:272
+#: main/templates/main/base.html:188 main/templates/main/index.html:117
+#: partner/templates/partner/partner.html:1007
 msgid "Контакты"
 msgstr "Контактілер"
 
-#: main/templates/main/delivery_list.html:6 main/templates/main/index.html:7
-msgid "Я ЕМ | Доставка еды напрямую от заведения"
-msgstr "МЕН ЖЕГЕНІМ | Азық-түлікті тікелей мекемеден жеткізу"
+#: main/templates/main/base.html:261
+msgid "Профиль"
+msgstr ""
 
-#: main/templates/main/delivery_list.html:9 main/templates/main/index.html:12
-#: partner/templates/partner/partner.html:9
-msgid "Создавайте меню c QR-кодом для своего ресторана."
-msgstr "Мейрамханаңыз үшін QR коды бар мәзір жасаңыз."
+#: main/templates/main/base.html:265
+#, fuzzy
+#| msgid "Настольный QR код"
+msgid "Настройки"
+msgstr "Жұмыс үстелінің QR коды"
 
-#: main/templates/main/delivery_list.html:31 main/templates/main/index.html:35
-#: partner/templates/partner/partner.html:32
-msgid "Заведений"
-msgstr "Мекемелер"
+#: main/templates/main/base.html:269
+msgid "Выйти"
+msgstr ""
 
-#: main/templates/main/delivery_list.html:40
-#: partner/templates/partner/partner.html:41
+#: main/templates/main/base.html:292
+msgid "Логин"
+msgstr ""
+
+#: main/templates/main/base.html:296
+msgid "Регистрация"
+msgstr ""
+
+#: main/templates/main/base.html:311
+msgid "ГЛАВНАЯ"
+msgstr "ҮЙ"
+
+#: main/templates/main/base.html:315 main/templates/main/index.html:80
+msgid "ДОСТАВКА"
+msgstr "ЖЕТКІЗУ"
+
+#: main/templates/main/base.html:319 main/templates/main/index.html:94
+msgid "БАНКЕТЫ"
+msgstr "БАНКЕТТЕР"
+
+#: main/templates/main/base.html:323 main/templates/main/base.html:396
+msgid "КОНТАКТЫ"
+msgstr "БАЙЛАНЫСТАР"
+
+#: main/templates/main/base.html:334
+msgid "ЗАКАЗАТЬ"
+msgstr "ТАПСЫРЫС"
+
+#: main/templates/main/base.html:344
+msgid "Блюда"
+msgstr "Ыдыс-аяқ"
+
+#: main/templates/main/base.html:349
+msgid "Банкет"
+msgstr "Банкет"
+
+#: main/templates/main/base.html:353
+msgid "Продукты"
+msgstr "Өнімдер"
+
+#: main/templates/main/base.html:371
+msgid "БИЗНЕСУ"
+msgstr "БИЗНЕС"
+
+#: main/templates/main/base.html:381
+msgid "Кайтеринг"
+msgstr ""
+
+#: main/templates/main/base.html:386
+msgid "Представители"
+msgstr "Өкілдері"
+
+#: main/templates/main/delivery_list.html:7
+msgid "Удобная доставка еды с YAEM.KZ"
+msgstr ""
+
+#: main/templates/main/delivery_list.html:7
+msgid "Оформляйте доставку прямо на сайте"
+msgstr ""
+
+#: main/templates/main/delivery_list.html:11
+msgid ""
+"Оставляйте заказ на доставку прямо на нашем сайте. Множество кафе и "
+"ресторанов готовы доставить вам еду в кротчайшие сроки."
+msgstr ""
+
+#: main/templates/main/delivery_list.html:44
 msgid "Блюд"
 msgstr "Ыдыс-аяқ"
 
-#: main/templates/main/delivery_list.html:48 main/templates/main/index.html:51
-#: partner/templates/partner/partner.html:49
-msgid "Онлайн"
-msgstr "Желіде"
+#: main/templates/main/delivery_list.html:66
+msgid "Доставка еды"
+msgstr "Тамақ жеткізу"
 
-#: main/templates/main/delivery_list.html:62
-msgid "ЗАВЕДЕНИЯ"
-msgstr "МЕКЕМЕЛЕР"
-
-#: main/templates/main/delivery_list.html:74
+#: main/templates/main/delivery_list.html:78
 msgid "Все"
 msgstr "Барлық"
 
-#: main/templates/main/index.html:66 main/templates/main/menu.html:115
-msgid "Добро пожаловать в"
-msgstr "Қош келдіңіз"
+#: main/templates/main/index.html:7
+msgid "Я ЕМ | QR меню | Доставка"
+msgstr ""
 
-#: main/templates/main/index.html:68
-msgid "Выберите услугу"
-msgstr "Қызметті таңдаңыз"
+#: main/templates/main/index.html:12
+msgid "QR-меню от YAEM. Прямая доставка от кафе и ресторанов в вашем городе."
+msgstr ""
 
-#: main/templates/main/index.html:85
-msgid "МЕНЮ ДОСТАВКА"
-msgstr "ЖЕТКІЗУ МӘЗІРІ"
-
-#: main/templates/main/index.html:98
-msgid "БАНКЕТНЫЕ ЗАЛЫ"
-msgstr "БАНКЕТ ЗАЛДАР"
-
-#: main/templates/main/index.html:111
-msgid "ПРОДУКТЫ"
-msgstr "ӨНІМДЕР"
-
-#: main/templates/main/index.html:113 main/templates/main/index.html:127
-#: main/templates/main/index.html:141
-msgid "В РАЗРАБОТКЕ"
-msgstr "ЖАСАЛУДА"
-
-#: main/templates/main/index.html:125
-msgid "КАЙТЕРИНГ"
-msgstr "ТАМАҚТАНДЫРУ"
-
-#: main/templates/main/index.html:139
-msgid "ТОРГОВЫЕ ПРЕДСТАВИТЕЛИ"
-msgstr "САТУ ӨКІЛДЕРІ"
-
-#: main/templates/main/index.html:151
+#: main/templates/main/index.html:107
 msgid "Cтать партнёром"
 msgstr "Серіктес болыңыз"
 
-#: main/templates/main/menu.html:8 partner/templates/partner/partner.html:350
+#: main/templates/main/menu.html:8
+#, fuzzy
+#| msgid "Онлайн меню с фото блюд"
+msgid "Онлайн меню | Заказать доставку"
+msgstr "Тағамдардың фотосуреттері бар онлайн мәзір"
+
+#: main/templates/main/menu.html:13 partner/templates/partner/partner.html:524
 msgid "Онлайн меню"
 msgstr "Онлайн мәзір"
 
 #: main/templates/main/menu.html:13
-msgid "Онлайн меню {{client.name}} в городе {{client.city}}"
-msgstr ""
+#, fuzzy
+#| msgid "Город"
+msgid "В городе"
+msgstr "Қала"
 
-#: main/templates/main/menu.html:119
+#: main/templates/main/menu.html:14
+#, fuzzy
+#| msgid "Вы не указали адрес доставки"
+msgid "| Заказать доставку"
+msgstr "Жеткізу мекенжайын көрсетпегенсіз"
+
+#: main/templates/main/menu.html:66
+msgid "Добро пожаловать в"
+msgstr "Қош келдіңіз"
+
+#: main/templates/main/menu.html:72
 msgid "г"
 msgstr "қ"
 
-#: main/templates/main/menu.html:129
-msgid ""
-"Чтобы заказать самовывоз \\ доставку, просмотрите меню ниже, затем нажмите "
-"на Телефон или Whatsapp"
-msgstr ""
-"Алып кетуге тапсырыс беру үшін төмендегі мәзірді қараңыз, содан кейін "
-"Телефонға немесе Whatsappқа"
+#: main/templates/main/menu.html:79
+msgid "Самовывоз"
+msgstr "Ала кету"
 
-#: main/templates/main/menu.html:142
-#, fuzzy
-#| msgid "Банкет"
-msgid "Банкеты"
-msgstr "Банкет"
+#: main/templates/main/menu.html:106
+msgid "Обслуживание"
+msgstr "Қызмет"
 
-#: main/templates/main/menu.html:207 partner/templates/partner/partner.html:68
+#: main/templates/main/menu.html:182 partner/templates/partner/partner.html:68
 msgid "МЕНЮ"
 msgstr "МӘЗІР"
 
-#: main/templates/main/menu.html:368
-msgid "Добавлено в корзину"
-msgstr "Себетке қосылды"
+#: main/templates/main/menu.html:360
+msgid "Фото сгенериновано YAEM AI"
+msgstr ""
 
-#: partner/templates/partner/partner.html:6
-msgid "QR Меню для заведений"
-msgstr "Мекемелерге арналған QR мәзірі"
+#: main/templates/main/menu.html:384
+msgid "Популярное"
+msgstr ""
+
+#: main/templates/main/menu.html:391
+msgid "Острое"
+msgstr ""
+
+#: main/templates/main/menu.html:397
+msgid "Вегетарианское"
+msgstr ""
+
+#: other/upcoming_templates/password_change.html:5
+#: other/upcoming_templates/password_change.html:8
+#: other/upcoming_templates/password_change.html:15
+msgid "Change Password"
+msgstr ""
+
+#: other/upcoming_templates/password_change.html:16
+msgid "Forgot Password?"
+msgstr ""
+
+#: other/upcoming_templates/password_reset.html:6
+#: other/upcoming_templates/password_reset.html:10
+msgid "Password Reset"
+msgstr ""
+
+#: other/upcoming_templates/password_reset.html:17
+msgid ""
+"Forgotten your password? Enter your email address below, and we'll send you "
+"an email allowing you to reset it."
+msgstr ""
+
+#: other/upcoming_templates/password_reset.html:22
+msgid "Reset My Password"
+msgstr ""
+
+#: other/upcoming_templates/password_reset.html:25
+msgid "Please contact us if you have any trouble resetting your password."
+msgstr ""
+
+#: partner/templates/partner/partner.html:7
+msgid ""
+"Партнерство с YAEM.KZ: Инновационные QR-технологии и удобное меню для "
+"успешного сотрудничества"
+msgstr ""
+
+#: partner/templates/partner/partner.html:11
+msgid ""
+"Станьте партнером YAEM.KZ и воспользуйтесь преимуществом QR-технологий и "
+"удобного меню для эффективной работы вместе"
+msgstr ""
 
 #: partner/templates/partner/partner.html:67
 msgid "ОНЛАЙН"
@@ -1961,80 +438,105 @@ msgstr "ТЕГІН"
 msgid "Присоединяйтесь к нашей"
 msgstr "Біздің мекемелер "
 
-#: partner/templates/partner/partner.html:79
+#: partner/templates/partner/partner.html:80
 msgid "сети"
 msgstr "желісіне"
 
-#: partner/templates/partner/partner.html:79
+#: partner/templates/partner/partner.html:80
 msgid "заведений"
 msgstr "қосылыңыз"
 
-#: partner/templates/partner/partner.html:80
-msgid "ЧТОБЫ ПОЛУЧИТЬ"
+#: partner/templates/partner/partner.html:81
+#, fuzzy
+#| msgid "ЧТОБЫ ПОЛУЧИТЬ"
+msgid "ЧТОБЫ ПОЛУЧИТЬ ОНЛАЙН"
 msgstr "АЛУ ҮШІН"
 
-#: partner/templates/partner/partner.html:80
-msgid "ОНЛАЙН МЕНЮ"
-msgstr "ОНЛАЙН МӘЗІР"
+#: partner/templates/partner/partner.html:81
+#, fuzzy
+#| msgid "МЕНЮ"
+msgid "QR МЕНЮ"
+msgstr "МӘЗІР"
 
-#: partner/templates/partner/partner.html:85
-#: partner/templates/partner/partner.html:371
-#: partner/templates/partner/partner.html:473
-#: partner/templates/partner/partner.html:549
+#: partner/templates/partner/partner.html:86
+#: partner/templates/partner/partner.html:546
+#: partner/templates/partner/partner.html:664
+#: partner/templates/partner/partner.html:742
 msgid "Подключить"
 msgstr "Қосу үшін"
 
-#: partner/templates/partner/partner.html:99
+#: partner/templates/partner/partner.html:100
 msgid "Всё просто !"
 msgstr "Бәрі оңай !"
 
-#: partner/templates/partner/partner.html:100
-msgid "Берём образец"
-msgstr "Мәзірдің үлгісін"
-
 #: partner/templates/partner/partner.html:101
-msgid "Вашего меню"
-msgstr "алыңыз"
-
-#: partner/templates/partner/partner.html:102
-msgid "Создаём страницу с меню на"
-msgstr "Біз веб-сайтымызда мәзірі"
+msgid "Проходите регистрацию в "
+msgstr ""
 
 #: partner/templates/partner/partner.html:103
-msgid "Нашем сайте"
-msgstr "бар бетті жасаймыз"
+#, fuzzy
+#| msgid "Личный кабинет"
+msgid "Личном кабинете"
+msgstr "Жеке бөлме"
+
+#: partner/templates/partner/partner.html:104
+#, fuzzy
+#| msgid "Создаём страницу с меню на"
+msgid "Создаёте меню в"
+msgstr "Біз веб-сайтымызда мәзірі"
 
 #: partner/templates/partner/partner.html:105
-msgid "Устанавливаем QR код для перехода в"
+msgid "Удобном интерфесе"
+msgstr ""
+
+#: partner/templates/partner/partner.html:107
+#, fuzzy
+#| msgid "Устанавливаем QR код для перехода в"
+msgid "Скачиваете QR код для перехода в"
 msgstr "Онлайн мәзіріңізге өту"
 
-#: partner/templates/partner/partner.html:106
+#: partner/templates/partner/partner.html:108
 msgid "Ваше онлайн меню"
 msgstr "үшін QR кодын береміз"
 
-#: partner/templates/partner/partner.html:108
+#: partner/templates/partner/partner.html:110
+msgid "Размещаете"
+msgstr ""
+
+#: partner/templates/partner/partner.html:111
+msgid "QR коды"
+msgstr ""
+
+#: partner/templates/partner/partner.html:111
+msgid "Готово !"
+msgstr ""
+
+#: partner/templates/partner/partner.html:115
 msgid "Ваши клиенты"
 msgstr "Клиенттер мәзірді"
 
-#: partner/templates/partner/partner.html:109
+#: partner/templates/partner/partner.html:116
+#, fuzzy
+#| msgid ""
+#| "смогут просматривать меню онлайн как в заведении, так и удалённо, "
+#| "совершая заказы онлайн"
 msgid ""
-"смогут просматривать меню онлайн как в заведении, так и удалённо, совершая "
-"заказы онлайн"
+"смогут просматривать онлайн меню в зале / номере / удаленно и делать заказы"
 msgstr "мекемеде де, онлайн тапсырыс беру арқылы қашықтан да көре алады"
 
-#: partner/templates/partner/partner.html:123
+#: partner/templates/partner/partner.html:136
 msgid "Примеры оформления:"
 msgstr "Дизайн үлгілері:"
 
-#: partner/templates/partner/partner.html:225
+#: partner/templates/partner/partner.html:235
 msgid "Наши приемущества"
 msgstr "Біздің артықшылықтарымыз"
 
-#: partner/templates/partner/partner.html:240
+#: partner/templates/partner/partner.html:250
 msgid "Удобство"
 msgstr "Қарапайымдылық"
 
-#: partner/templates/partner/partner.html:242
+#: partner/templates/partner/partner.html:252
 msgid ""
 "Меняйте меню, цены и акции мгновенно! Наша платформа даёт заведению "
 "возможность оперативно адаптироваться к рынку и вкусам клиентов"
@@ -2043,11 +545,11 @@ msgstr ""
 "өзгерістерге және тұтынушылардың қалауларына бірден жаңарту және жылдам "
 "жауап беру мүмкіндігі «"
 
-#: partner/templates/partner/partner.html:255
+#: partner/templates/partner/partner.html:265
 msgid "Продажи"
 msgstr "Сатылымдар"
 
-#: partner/templates/partner/partner.html:257
+#: partner/templates/partner/partner.html:267
 msgid ""
 "Ваша корзина - мощный инструмент для увеличения среднего чека. Простота "
 "добавления блюд и напитков в онлайн меню побуждает клиентов к покупкам"
@@ -2055,11 +557,11 @@ msgstr ""
 "Онлайн мәзір себеті орташа есепшотты арттыруға көмектеседі, өйткені "
 "тұтынушылар оған қосымша тағамдар мен сусындарды оңай қоса алады"
 
-#: partner/templates/partner/partner.html:269
+#: partner/templates/partner/partner.html:279
 msgid "Новые клиенты"
 msgstr "Жаңа клиенттер"
 
-#: partner/templates/partner/partner.html:271
+#: partner/templates/partner/partner.html:281
 msgid ""
 "Расширьте свою аудиторию с помощью возможности заказа на вынос и доставку. "
 "Привлекайте тех, кто ценит удобство и разнообразие в питании"
@@ -2067,11 +569,11 @@ msgstr ""
 "Қашықтан тапсырыс беру опциясы алып кету немесе жеткізу тағамдарын қалайтын "
 "тұтынушыларды тартуға мүмкіндік береді"
 
-#: partner/templates/partner/partner.html:286
+#: partner/templates/partner/partner.html:296
 msgid "Эффективность"
 msgstr "Тиімділік"
 
-#: partner/templates/partner/partner.html:288
+#: partner/templates/partner/partner.html:298
 msgid ""
 "Сократите временные затраты благодаря возможности удаленного заказа, ведения "
 "стоп-листа и гибкости в изменении меню. Каждая минута - ценный ресурс для "
@@ -2080,11 +582,11 @@ msgstr ""
 "Клиенттің мәзірмен танысу, тапсырыстарды қашықтан қабылдау, тоқтату тізімін "
 "жүргізу және мәзірді өзгерту мүмкіндігі, бұл уақыт шығындарын азайтады."
 
-#: partner/templates/partner/partner.html:304
+#: partner/templates/partner/partner.html:314
 msgid "Мультиязычность"
 msgstr "Көп тілді"
 
-#: partner/templates/partner/partner.html:306
+#: partner/templates/partner/partner.html:316
 msgid ""
 "Привлекайте посетителей со всего мира с помощью меню на нескольких языках. "
 "Сделайте своё заведение удобным для каждого гостя, независимо от языковых "
@@ -2093,11 +595,11 @@ msgstr ""
 "Бірнеше тілде мәзірлерді ұсыну мекемені шетелдік қонақтар мен туристер үшін "
 "тартымды етеді."
 
-#: partner/templates/partner/partner.html:316
+#: partner/templates/partner/partner.html:326
 msgid "Уникальность"
 msgstr "Бірегейлік"
 
-#: partner/templates/partner/partner.html:318
+#: partner/templates/partner/partner.html:328
 msgid ""
 "Мы гордимся своей независимостью. Наша собственная команда разработчиков "
 "обеспечивает непрерывное обновление и расширение без посредников, что "
@@ -2107,125 +609,177 @@ msgstr ""
 "делдалдарсыз үздіксіз жаңартуды және кеңейтуді қамтамасыз етеді, бұл Сізге "
 "уақтылы қолдау мен инновациялық мүмкіндіктерге кепілдік береді"
 
-#: partner/templates/partner/partner.html:329
+#: partner/templates/partner/partner.html:336
+#, fuzzy
+#| msgid "Ваши клиенты"
+msgid "Наши клиенты"
+msgstr "Клиенттер мәзірді"
+
+#: partner/templates/partner/partner.html:482
+#, fuzzy
+#| msgid "Новые клиенты"
+msgid "Больше клиентов в нашем"
+msgstr "Жаңа клиенттер"
+
+#: partner/templates/partner/partner.html:500
 msgid "Тарифные планы"
 msgstr "Тарифтік жоспарлар"
 
-#: partner/templates/partner/partner.html:338
-#: partner/templates/partner/partner.html:639
+#: partner/templates/partner/partner.html:510
+#: partner/templates/partner/partner.html:887
 msgid "Бронза"
 msgstr "Қола"
 
-#: partner/templates/partner/partner.html:340
-#: partner/templates/partner/partner.html:342
-#: partner/templates/partner/partner.html:385
-#: partner/templates/partner/partner.html:386
-#: partner/templates/partner/partner.html:485
+#: partner/templates/partner/partner.html:512
+#: partner/templates/partner/partner.html:514
+#: partner/templates/partner/partner.html:560
+#: partner/templates/partner/partner.html:561
+#: partner/templates/partner/partner.html:676
 msgid "тг/мес"
 msgstr "теңге айына"
 
-#: partner/templates/partner/partner.html:343
-#: partner/templates/partner/partner.html:387
-#: partner/templates/partner/partner.html:486
+#: partner/templates/partner/partner.html:515
+#: partner/templates/partner/partner.html:564
+#: partner/templates/partner/partner.html:677
 msgid "тг/год"
 msgstr "теңге жылына"
 
-#: partner/templates/partner/partner.html:357
-#: partner/templates/partner/partner.html:421
-msgid "Настольный QR код"
-msgstr "Жұмыс үстелінің QR коды"
+#: partner/templates/partner/partner.html:531
+#, fuzzy
+#| msgid "Онлайн меню"
+msgid "Онлайн QR код"
+msgstr "Онлайн мәзір"
 
-#: partner/templates/partner/partner.html:364
-msgid "Редакция 4 раза в год"
-msgstr "Редакция жылына 4 рет"
+#: partner/templates/partner/partner.html:538
+#: partner/templates/partner/partner.html:648
+#, fuzzy
+#| msgid "Техническая поддержка"
+msgid "Тех. поддержка"
+msgstr "Техникалық көмек"
 
-#: partner/templates/partner/partner.html:384
-#: partner/templates/partner/partner.html:640
+#: partner/templates/partner/partner.html:559
+#: partner/templates/partner/partner.html:887
 msgid "Серебро"
 msgstr "Күміс"
 
-#: partner/templates/partner/partner.html:391
+#: partner/templates/partner/partner.html:571
 msgid "Дней"
 msgstr "Күндер"
 
-#: partner/templates/partner/partner.html:395
+#: partner/templates/partner/partner.html:575
 msgid "Часов"
 msgstr "Сағат"
 
-#: partner/templates/partner/partner.html:399
+#: partner/templates/partner/partner.html:579
 msgid "Минут"
 msgstr "Минут"
 
-#: partner/templates/partner/partner.html:403
+#: partner/templates/partner/partner.html:583
 msgid "Секунд"
 msgstr "Секундтар"
 
-#: partner/templates/partner/partner.html:413
+#: partner/templates/partner/partner.html:593
 msgid "Онлайн меню с фото блюд"
 msgstr "Тағамдардың фотосуреттері бар онлайн мәзір"
 
-#: partner/templates/partner/partner.html:429
-msgid "Акции и скидки"
+#: partner/templates/partner/partner.html:595
+msgid ""
+"Если нет фото блюд, возможно сгенерировать с помощью нейросети YAEM AI (доп. "
+"стоимость)"
+msgstr ""
+
+#: partner/templates/partner/partner.html:604
+#: partner/templates/partner/partner.html:815
+msgid "Настольный QR код"
+msgstr "Жұмыс үстелінің QR коды"
+
+#: partner/templates/partner/partner.html:612
+#, fuzzy
+#| msgid "Акции и скидки"
+msgid "Акции и метки"
 msgstr "Акциялар мен жеңілдіктер"
 
-#: partner/templates/partner/partner.html:437
-msgid "Техническая поддержка"
-msgstr "Техникалық көмек"
+#: partner/templates/partner/partner.html:614
+msgid "Отмечайте свои особые блюда и делайте скидки"
+msgstr ""
 
-#: partner/templates/partner/partner.html:445
-msgid "Меню на 3х языках"
-msgstr "3 тілдегі мәзір"
-
-#: partner/templates/partner/partner.html:453
-msgid "Страницу банкетного зала"
-msgstr "Банкет залының беті"
-
-#: partner/templates/partner/partner.html:466
-msgid "Услуга: Самовывоз и Доставка"
+#: partner/templates/partner/partner.html:624
+#, fuzzy
+#| msgid "Услуга: Самовывоз и Доставка"
+msgid "Самовывоз / Доставка"
 msgstr "Қызмет: алып кету және жеткізу"
 
-#: partner/templates/partner/partner.html:484
-#: partner/templates/partner/partner.html:640
+#: partner/templates/partner/partner.html:626
+msgid "Приём заказов в WhatsApp"
+msgstr ""
+
+#: partner/templates/partner/partner.html:636
+msgid "Блок с реквизитами"
+msgstr ""
+
+#: partner/templates/partner/partner.html:638
+msgid "Блок с вашими реквизитами (Instagram, 2Gis, Телефон, WhatsApp)"
+msgstr ""
+
+#: partner/templates/partner/partner.html:654
+#, fuzzy
+#| msgid "Банкет"
+msgid "Бонус: банкетный зал"
+msgstr "Банкет"
+
+#: partner/templates/partner/partner.html:656
+msgid ""
+"Отдельная страница с банкетным залом в агрегаторе YAEM-банкеты в связке с "
+"меню"
+msgstr ""
+
+#: partner/templates/partner/partner.html:675
+#: partner/templates/partner/partner.html:889
 msgid "Золото"
 msgstr "Алтын"
 
-#: partner/templates/partner/partner.html:494
+#: partner/templates/partner/partner.html:687
 msgid "Тариф Серебро"
 msgstr "Тарифтік күміс"
 
-#: partner/templates/partner/partner.html:502
-msgid "Эксклюзивный QR код"
+#: partner/templates/partner/partner.html:695
+#: partner/templates/partner/partner.html:851
+#, fuzzy
+#| msgid "Эксклюзивный QR код"
+msgid "Продвинутый QR код"
 msgstr "Эксклюзивті QR коды"
 
-#: partner/templates/partner/partner.html:510
+#: partner/templates/partner/partner.html:703
+msgid "Меню на 3х языках"
+msgstr "3 тілдегі мәзір"
+
+#: partner/templates/partner/partner.html:711
 msgid "Эксклюзивный дизайн меню"
 msgstr "Эксклюзивті мәзір дизайны"
 
-#: partner/templates/partner/partner.html:518
-msgid "Личный кабинет"
-msgstr "Жеке бөлме"
-
-#: partner/templates/partner/partner.html:526
-msgid "Онлайн оплата Kaspi"
+#: partner/templates/partner/partner.html:719
+#, fuzzy
+#| msgid "Онлайн оплата Kaspi"
+msgid "Онлайн оплата"
 msgstr "Kaspi онлайн төлемі"
 
-#: partner/templates/partner/partner.html:534
-msgid "Персональный менеджер"
-msgstr "Жеке менеджер"
-
-#: partner/templates/partner/partner.html:542
+#: partner/templates/partner/partner.html:727
 msgid "Аналитика Google, Yandex"
 msgstr "Google Analytics, Yandex"
 
-#: partner/templates/partner/partner.html:560
+#: partner/templates/partner/partner.html:735
+msgid "Заказы из зала iiko / WhatsApp"
+msgstr ""
+
+#: partner/templates/partner/partner.html:753
 msgid "Часто задаваемые вопросы"
 msgstr "Жиі қойылатын сұрақтар"
 
-#: partner/templates/partner/partner.html:568
+#: partner/templates/partner/partner.html:767
 msgid "Подробнее о тарифном плане \"Бронза\""
 msgstr "Bronze тарифтік жоспары туралы қосымша ақпарат"
 
-#: partner/templates/partner/partner.html:574
+#: partner/templates/partner/partner.html:778
 msgid ""
 "Тарифный план бесплатный до конца срока действия Акции. Данный тариф "
 "позволяет ознакомиться с технологией Онлайн Меню."
@@ -2233,33 +787,33 @@ msgstr ""
 "Тарифтік жоспар Науқан мерзімінің соңына дейін тегін. Бұл тариф Онлайн мәзір "
 "технологиясымен танысуға мүмкіндік береді"
 
-#: partner/templates/partner/partner.html:575
-#: partner/templates/partner/partner.html:595
-#: partner/templates/partner/partner.html:617
+#: partner/templates/partner/partner.html:779
+#: partner/templates/partner/partner.html:812
+#: partner/templates/partner/partner.html:846
 msgid "Вы получите"
 msgstr "Сіз аласыз"
 
-#: partner/templates/partner/partner.html:576
+#: partner/templates/partner/partner.html:781
 msgid "Закрытую"
 msgstr "Мекеменің"
 
-#: partner/templates/partner/partner.html:576
+#: partner/templates/partner/partner.html:781
 msgid "страницу с карточкой заведения и меню на языке оригинала"
 msgstr "картасы және түпнұсқа тілдегі мәзірі бар жабық бет"
 
-#: partner/templates/partner/partner.html:577
-msgid "QR коды для размещения (до 5 шт. бесплатно)"
-msgstr "Орналастыруға арналған QR кодтары (5 данаға дейін тегін)"
+#: partner/templates/partner/partner.html:783
+msgid "QR коды для размещения"
+msgstr "Жариялауға арналған QR"
 
-#: partner/templates/partner/partner.html:578
+#: partner/templates/partner/partner.html:784
 msgid "Функцию корзины"
 msgstr "Арба функциясы"
 
-#: partner/templates/partner/partner.html:588
+#: partner/templates/partner/partner.html:800
 msgid "Подробнее о тарифном плане \"Серебро\""
 msgstr "Silver тарифтік жоспары туралы қосымша ақпарат"
 
-#: partner/templates/partner/partner.html:594
+#: partner/templates/partner/partner.html:811
 msgid ""
 "Серебро - самый популярный тариф. Позволяет Вашему заведению раскрыться для "
 "клиента, предоставив удобный сервис по взаимодействию. Смотрите на "
@@ -2270,31 +824,25 @@ msgstr ""
 "мекемеңізге клиентке ашуға мүмкіндік береді. Клиенттердің қалауын қараңыз "
 "және онлайн тапсырыстарға дайындалыңыз. Мәзір кемінде үш тілде орындалады."
 
-#: partner/templates/partner/partner.html:596
-#: partner/templates/partner/partner.html:618
+#: partner/templates/partner/partner.html:814
+#: partner/templates/partner/partner.html:847
 msgid "Открытую"
 msgstr "Мекеме"
 
-#: partner/templates/partner/partner.html:596
-#: partner/templates/partner/partner.html:618
+#: partner/templates/partner/partner.html:814
+#: partner/templates/partner/partner.html:847
 msgid "страницу с карточкой заведения и меню"
 msgstr "картасы және кем дегенде"
 
-#: partner/templates/partner/partner.html:596
-msgid "на минимум 3-х языках c фото"
-msgstr "3 тілдегі мәзір және тағамдардың фотосуреттері бар ашық бет"
+#: partner/templates/partner/partner.html:814
+msgid "c фотографиями блюд"
+msgstr ""
 
-#: partner/templates/partner/partner.html:597
-#: partner/templates/partner/partner.html:619
-msgid "QR коды для размещения"
-msgstr "Жариялауға арналған QR"
+#: partner/templates/partner/partner.html:815
+msgid "дерево / бумага с ламинацией"
+msgstr ""
 
-#: partner/templates/partner/partner.html:597
-#: partner/templates/partner/partner.html:619
-msgid "неограничено"
-msgstr "шектелмеген"
-
-#: partner/templates/partner/partner.html:598
+#: partner/templates/partner/partner.html:816
 msgid ""
 "Функцию корзины и возможность использовать услугу \"Доставка / Самовывоз\". "
 "Принимать заказы удалённо через Телеграм"
@@ -2302,201 +850,410 @@ msgstr ""
 "Арба функциясы және Жеткізу/Алып кету қызметін пайдалану мүмкіндігі. "
 "Telegram арқылы қашықтан тапсырыстарды қабылдаңыз"
 
-#: partner/templates/partner/partner.html:599
+#: partner/templates/partner/partner.html:818
+#, fuzzy
+#| msgid ""
+#| "Техническую поддержку с возможностью устроить акцию или скидку на блюда, "
+#| "управление стоп-листом"
 msgid ""
 "Техническую поддержку с возможностью устроить акцию или скидку на блюда, "
-"управление стоп-листом"
+"управление стоп-листом, использовать метки на блюдах (популярное, острое, "
+"вегетарианское, детское)"
 msgstr ""
 "Ыдыс-аяқтарға жеңілдік немесе жеңілдік ұйымдастыру, тоқтату тізімін басқару "
 "мүмкіндігі бар техникалық қолдау"
 
-#: partner/templates/partner/partner.html:610
+#: partner/templates/partner/partner.html:834
 msgid "Подробнее о тарифном плане \"Золото\""
 msgstr "Gold тарифтік жоспары туралы қосымша ақпарат"
 
-#: partner/templates/partner/partner.html:616
+#: partner/templates/partner/partner.html:845
 msgid ""
 "ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых "
-"строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR "
-"кода. Личный кабинет для ведения статистики и аналитики по количеству "
-"заказов, предпочтений клиентов, карточке клиента и многие другие показатели. "
-"Принимать оплату Онлайн напрямую от клиента без задержек. Более выгодные "
-"условия по услуге Доставка/Самовывоз и многие другие бонусы."
+"строках  на главной странице портала."
 msgstr ""
-"GOLD - Білетіндерге арналған тариф. Сіздің мекемеңізге порталдың басты "
-"бетіндегі бірінші жолдарда тұруға мүмкіндік береді. Онлайн мәзір мен QR "
-"кодтың эксклюзивті дизайны. Тапсырыстар саны, тұтынушы қалауы, тұтынушы "
-"картасы және басқа да көптеген көрсеткіштер бойынша статистика мен "
-"аналитиканы жүргізуге арналған жеке кабинет. Клиенттен онлайн төлемді "
-"кідіріссіз қабылдаңыз. Жеткізу/алып кету қызметі және басқа да көптеген "
-"бонустар үшін неғұрлым қолайлы шарттар."
 
-#: partner/templates/partner/partner.html:618
+#: partner/templates/partner/partner.html:848
 msgid "на минимум 3-х языках и фото блюд с"
 msgstr "кем дегенде 3 тілде және"
 
-#: partner/templates/partner/partner.html:618
+#: partner/templates/partner/partner.html:849
 msgid "эксклюзивным дизайном"
 msgstr "эксклюзивті дизайндағы тағамдардың фотосуреттері"
 
-#: partner/templates/partner/partner.html:619
+#: partner/templates/partner/partner.html:851
 msgid "Уникальные"
 msgstr "Бірегей"
 
-#: partner/templates/partner/partner.html:620
-msgid "Функцию корзины и возможность использовать услугу Доставка / Самовывоз"
-msgstr "Арба функциясы және Жеткізу/Алып кету қызметін тиімдірек"
+#: partner/templates/partner/partner.html:851
+msgid "Заказы поступят в ваш терминал"
+msgstr ""
 
-#: partner/templates/partner/partner.html:620
-msgid "на более выгодных условиях"
-msgstr "шарттарда пайдалану мүмкіндігі"
+#: partner/templates/partner/partner.html:852
+#, fuzzy
+#| msgid "Уникальные"
+msgid " Уникальный дизайн,"
+msgstr "Бірегей"
 
-#: partner/templates/partner/partner.html:620
-msgid "Принимать заказы удалённо через Телеграм и"
-msgstr "Telegram арқылы қашықтан тапсырыстарды қабылдаңыз және"
+#: partner/templates/partner/partner.html:852
+msgid "разработанный по вашим корпоративным стандартам"
+msgstr ""
 
-#: partner/templates/partner/partner.html:620
-msgid "оплатой Kaspi"
-msgstr "Kaspi арқылы төлем жасаңыз"
-
-#: partner/templates/partner/partner.html:621
+#: partner/templates/partner/partner.html:855
 msgid "Персонального менджера"
 msgstr "Жеке менеджер"
 
-#: partner/templates/partner/partner.html:621
+#: partner/templates/partner/partner.html:855
 msgid ""
 "с возможностью устроить акцию или скидку на блюда, управление стоп-листом и"
 msgstr ""
 "Ыдыс-аяқтарға акцияны немесе жеңілдікті ұйымдастыру мүмкіндігімен, тоқтату "
 "тізімін басқару және"
 
-#: partner/templates/partner/partner.html:621
+#: partner/templates/partner/partner.html:856
 msgid "дополнительные услуги от YAEM"
 msgstr "YAEM қосымша қызметтері"
 
-#: partner/templates/partner/partner.html:622
-msgid "Личный кабинет, где будут подключены Yandex и Google метрики"
-msgstr "Яндекс пен Google көрсеткіштері қосылатын жеке есептік жазба"
+#: partner/templates/partner/partner.html:859
+#, fuzzy
+#| msgid "Онлайн оплата Kaspi"
+msgid "Онлайн оплату."
+msgstr "Kaspi онлайн төлемі"
 
-#: partner/templates/partner/partner.html:633
-msgid "Есть ли бесплатный период ?"
+#: partner/templates/partner/partner.html:875
+#, fuzzy
+#| msgid "Есть ли бесплатный период ?"
+msgid "Пробный период ?"
 msgstr "Бос кезең бар ма?"
 
-#: partner/templates/partner/partner.html:639
+#: partner/templates/partner/partner.html:886
 #, fuzzy
 #| msgid "Конечно, до конца года тариф"
 msgid "Конечно, Вы можете опробовать тариф"
 msgstr "Әрине, тарифті қолданып көруге болады"
 
-#: partner/templates/partner/partner.html:639
+#: partner/templates/partner/partner.html:888
 msgid ""
 "в течении месяца, и Вам будет легко понять концепцию онлайн меню и потенциал "
 "сотрудничества с нами"
 msgstr ""
-"бір ай ішінде, және сізге онлайн мәзір тұжырымдамасын және"
-"бізбен ынтымақтастық әлеуетін түсіну оңай болады"
+"бір ай ішінде, және сізге онлайн мәзір тұжырымдамасын жәнебізбен "
+"ынтымақтастық әлеуетін түсіну оңай болады"
 
-#: partner/templates/partner/partner.html:640
-msgid "Тарифы"
+#: partner/templates/partner/partner.html:889
+#, fuzzy
+#| msgid "Тарифы"
+msgid "Тариф"
 msgstr "Тарифтер"
 
-#: partner/templates/partner/partner.html:640
+#: partner/templates/partner/partner.html:890
+#, fuzzy
+#| msgid ""
+#| "не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска "
+#| "проекта"
 msgid ""
-"не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска "
-"проекта"
+"не имеют бесплатного периода, т.к. требуют больше инвестиций для запуска"
 msgstr ""
 "бос кезең жоқ, өйткені оларды іске қосу үшін көбірек инвестиция қажет жоба"
 
-#: partner/templates/partner/partner.html:651
-msgid "Я готов, как начать ?  Оплата ?"
+#: partner/templates/partner/partner.html:906
+#, fuzzy
+#| msgid "Я готов, как начать ?  Оплата ?"
+msgid "Как начать ? Оплата ?"
 msgstr "Мен дайынмын, неден бастау керек? Төлем бе?"
 
-#: partner/templates/partner/partner.html:657
+#: partner/templates/partner/partner.html:917
+#, fuzzy
+#| msgid ""
+#| "Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и "
+#| "организуем встречу"
 msgid ""
-"Вы можете связаться с нами или оставить заявку. Мы свяжемся с Вами и "
-"организуем встречу"
+"Вы можете подключить личный кабинет, и приступить к созданию своего Онлайн "
+"Меню. Либо связаться с нами и организуем встречу"
 msgstr ""
 "Төмендегі пішінде өтініш қалдыра аласыз. Біз сізбен байланысып, кездесу "
 "ұйымдастырамыз"
 
-#: partner/templates/partner/partner.html:658
+#: partner/templates/partner/partner.html:918
+msgid "Оставить заявку на оплату можно в личном кабинете"
+msgstr ""
+
+#: partner/templates/partner/partner.html:919
 msgid "Оплата по тарифам происходит в двух форматах:"
 msgstr "Тарифтерді төлеу екі форматта жүзеге асырылады:"
 
-#: partner/templates/partner/partner.html:659
-msgid "Квартальная"
-msgstr "Тоқсан сайын"
+#: partner/templates/partner/partner.html:920
+msgid "Помесячная"
+msgstr "Ай сайын"
 
-#: partner/templates/partner/partner.html:659
-msgid "оплата за 3 месяца"
+#: partner/templates/partner/partner.html:920
+#, fuzzy
+#| msgid "оплата за 3 месяца"
+msgid "оплата до 5 числа каждого месяца"
 msgstr "төлем 3 айға"
 
-#: partner/templates/partner/partner.html:660
+#: partner/templates/partner/partner.html:922
 msgid "Годовая"
 msgstr "Жылдық"
 
-#: partner/templates/partner/partner.html:660
+#: partner/templates/partner/partner.html:922
 msgid "оплата за 12 месяцев"
 msgstr "12 айға төлем"
 
-#: partner/templates/partner/partner.html:660
+#: partner/templates/partner/partner.html:922
 #, python-format
 msgid "Скидка -20%%"
 msgstr "Жеңілдік -20%"
 
-#: partner/templates/partner/partner.html:675
-msgid "Спасибо!"
-msgstr "Рақмет сізге!"
-
-#: partner/templates/partner/partner.html:676
-msgid "Заявка принята"
-msgstr "Өтінім қабылданды"
-
-#: partner/templates/partner/partner.html:677
-msgid "Мы скоро свяжемся с Вами"
-msgstr "Өтінішіңізді жіберіңіз"
-
-#: registration/templates/registration/logged_out.html:5
-#: registration/templates/registration/logged_out.html:8
-#: registration/templates/registration/logged_out.html:17
-msgid "Sign Out"
+#: partner/templates/partner/partner.html:939
+msgid "Мне нужны договор и документы ?"
 msgstr ""
 
-#: registration/templates/registration/logged_out.html:10
-msgid "Are you sure you want to sign out?"
+#: partner/templates/partner/partner.html:950
+msgid "Без проблем. Мы можем предоставить все необходимые документы."
 msgstr ""
 
-#: upcoming_templates/password_change.html:5
-#: upcoming_templates/password_change.html:8
-#: upcoming_templates/password_change.html:15
-msgid "Change Password"
-msgstr ""
-
-#: upcoming_templates/password_change.html:16
-msgid "Forgot Password?"
-msgstr ""
-
-#: upcoming_templates/password_reset.html:6
-#: upcoming_templates/password_reset.html:10
-msgid "Password Reset"
-msgstr ""
-
-#: upcoming_templates/password_reset.html:17
+#: partner/templates/partner/partner.html:951
 msgid ""
-"Forgotten your password? Enter your email address below, and we'll send you "
-"an email allowing you to reset it."
+"Вам не потребуется подписывать договор. Ознакомится с нашей публичной "
+"оффертой можно тут"
 msgstr ""
 
-#: upcoming_templates/password_reset.html:22
-msgid "Reset My Password"
+#: partner/templates/partner/partner.html:962
+#, fuzzy
+#| msgid "Наша команда"
+msgid "Команда"
+msgstr "Біздің команда"
+
+#: partner/templates/partner/partner.html:978
+msgid "Егор"
+msgstr "Егор"
+
+#: partner/templates/partner/partner.html:979
+msgid "Лошкарев"
 msgstr ""
 
-#: upcoming_templates/password_reset.html:25
-msgid "Please contact us if you have any trouble resetting your password."
+#: partner/templates/partner/partner.html:980
+msgid "Директор"
 msgstr ""
 
-#~ msgid "Помесячная"
-#~ msgstr "Ай сайын"
+#: partner/templates/partner/partner.html:988
+msgid "Олег"
+msgstr "Олег"
+
+#: partner/templates/partner/partner.html:989
+msgid "Маслеников"
+msgstr ""
+
+#: partner/templates/partner/partner.html:990
+msgid "Администратор"
+msgstr ""
+
+#: partner/templates/partner/partner.html:997
+msgid "Артём"
+msgstr "Артём"
+
+#: partner/templates/partner/partner.html:998
+msgid "Захарченко"
+msgstr ""
+
+#: partner/templates/partner/partner.html:999
+#, fuzzy
+#| msgid "Время работы"
+msgid "Разработчик"
+msgstr "Жұмыс уақыты"
+
+#: users/admin/user.py:23
+msgid "Permissions"
+msgstr ""
+
+#: users/admin/user.py:34
+msgid "Important dates"
+msgstr ""
+
+#~ msgid "Банкетных залов"
+#~ msgstr "Банкет залдары"
+
+#~ msgid "Городов"
+#~ msgstr "Қалалар"
+
+#~ msgid "Посетителей"
+#~ msgstr "Келушілер"
+
+#~ msgid "Найти"
+#~ msgstr "Табу"
+
+#~ msgid "Очистить"
+#~ msgstr "Таза"
+
+#~ msgid "В зале"
+#~ msgstr "Залда"
+
+#~ msgid "Отправьте заказ, не дожидаясь официанта"
+#~ msgstr "Даяшыны күтпей-ақ тапсырысыңызды беріңіз"
+
+#~ msgid "Номер стола"
+#~ msgstr "Кесте нөмірі"
+
+#~ msgid "Вы не указали номер стола"
+#~ msgstr "Сіз кестенің нөмірін көрсетпедіңіз"
+
+#~ msgid "Отправить"
+#~ msgstr "Жіберу"
+
+#~ msgid "Отправьте заказ, и заберите в удобное время"
+#~ msgstr "Тапсырысыңызды жіберіңіз және оны ыңғайлы уақытта алыңыз"
+
+#~ msgid "Ваше имя"
+#~ msgstr "Сіздің атыңыз"
+
+#~ msgid "Вы не указали имя"
+#~ msgstr "Сіз атау бермедіңіз"
+
+#~ msgid "Номер телефона"
+#~ msgstr "Телефон нөмірі"
+
+#~ msgid "Вы не указали номер телефона"
+#~ msgstr "Сіз телефон нөмірін бермедіңіз"
+
+#~ msgid "Время самовывоза"
+#~ msgstr "Алып кету уақыты"
+
+#~ msgid "Вы не указали время"
+#~ msgstr "Сіз уақытты көрсетпегенсіз"
+
+#~ msgid "Отправьте заказ, и Вам доставят в удобное время"
+#~ msgstr "Тапсырысыңызды жіберіңіз, ол сізге ыңғайлы уақытта жеткізіледі"
+
+#~ msgid "Адрес доставки"
+#~ msgstr "Жеткізу мекенжайы"
+
+#~ msgid "Время доставки"
+#~ msgstr "Жеткізу уақыты"
+
+#~ msgid "Вы не указали время доставки"
+#~ msgstr "Жеткізу уақытын көрсетпедіңіз"
+
+#~ msgid "Но Вы можете вернуться"
+#~ msgstr "Бірақ қайтып келуге болады"
+
+#~ msgid "Коммерческий директор"
+#~ msgstr "Коммерциялық директор"
+
+#~ msgid "Руководитель отдела развития"
+#~ msgstr "Дамыту бөлімінің бастығы"
+
+#~ msgid "Руководитель отдела разработки"
+#~ msgstr "Дамыту бөлімінің бастығы"
+
+#~ msgid "Я ЕМ | Доставка еды напрямую от заведения"
+#~ msgstr "МЕН ЖЕГЕНІМ | Азық-түлікті тікелей мекемеден жеткізу"
+
+#~ msgid "Создавайте меню c QR-кодом для своего ресторана."
+#~ msgstr "Мейрамханаңыз үшін QR коды бар мәзір жасаңыз."
+
+#~ msgid "ЗАВЕДЕНИЯ"
+#~ msgstr "МЕКЕМЕЛЕР"
+
+#~ msgid "Выберите услугу"
+#~ msgstr "Қызметті таңдаңыз"
+
+#~ msgid "ПРОДУКТЫ"
+#~ msgstr "ӨНІМДЕР"
+
+#~ msgid "В РАЗРАБОТКЕ"
+#~ msgstr "ЖАСАЛУДА"
+
+#~ msgid "КАЙТЕРИНГ"
+#~ msgstr "ТАМАҚТАНДЫРУ"
+
+#~ msgid "ТОРГОВЫЕ ПРЕДСТАВИТЕЛИ"
+#~ msgstr "САТУ ӨКІЛДЕРІ"
+
+#~ msgid ""
+#~ "Чтобы заказать самовывоз \\ доставку, просмотрите меню ниже, затем "
+#~ "нажмите на Телефон или Whatsapp"
+#~ msgstr ""
+#~ "Алып кетуге тапсырыс беру үшін төмендегі мәзірді қараңыз, содан кейін "
+#~ "Телефонға немесе Whatsappқа"
+
+#~ msgid "Добавлено в корзину"
+#~ msgstr "Себетке қосылды"
+
+#~ msgid "QR Меню для заведений"
+#~ msgstr "Мекемелерге арналған QR мәзірі"
+
+#~ msgid "ОНЛАЙН МЕНЮ"
+#~ msgstr "ОНЛАЙН МӘЗІР"
+
+#~ msgid "Берём образец"
+#~ msgstr "Мәзірдің үлгісін"
+
+#~ msgid "Вашего меню"
+#~ msgstr "алыңыз"
+
+#~ msgid "Редакция 4 раза в год"
+#~ msgstr "Редакция жылына 4 рет"
+
+#~ msgid "Страницу банкетного зала"
+#~ msgstr "Банкет залының беті"
+
+#~ msgid "Персональный менеджер"
+#~ msgstr "Жеке менеджер"
+
+#~ msgid "QR коды для размещения (до 5 шт. бесплатно)"
+#~ msgstr "Орналастыруға арналған QR кодтары (5 данаға дейін тегін)"
+
+#~ msgid "на минимум 3-х языках c фото"
+#~ msgstr "3 тілдегі мәзір және тағамдардың фотосуреттері бар ашық бет"
+
+#~ msgid "неограничено"
+#~ msgstr "шектелмеген"
+
+#~ msgid ""
+#~ "ЗОЛОТО - Тариф для знающих. Позволяет Вашему заведению находится в первых "
+#~ "строках на главной странице портала. Эксклюзивный дизайн онлайн меню и QR "
+#~ "кода. Личный кабинет для ведения статистики и аналитики по количеству "
+#~ "заказов, предпочтений клиентов, карточке клиента и многие другие "
+#~ "показатели. Принимать оплату Онлайн напрямую от клиента без задержек. "
+#~ "Более выгодные условия по услуге Доставка/Самовывоз и многие другие "
+#~ "бонусы."
+#~ msgstr ""
+#~ "GOLD - Білетіндерге арналған тариф. Сіздің мекемеңізге порталдың басты "
+#~ "бетіндегі бірінші жолдарда тұруға мүмкіндік береді. Онлайн мәзір мен QR "
+#~ "кодтың эксклюзивті дизайны. Тапсырыстар саны, тұтынушы қалауы, тұтынушы "
+#~ "картасы және басқа да көптеген көрсеткіштер бойынша статистика мен "
+#~ "аналитиканы жүргізуге арналған жеке кабинет. Клиенттен онлайн төлемді "
+#~ "кідіріссіз қабылдаңыз. Жеткізу/алып кету қызметі және басқа да көптеген "
+#~ "бонустар үшін неғұрлым қолайлы шарттар."
+
+#~ msgid ""
+#~ "Функцию корзины и возможность использовать услугу Доставка / Самовывоз"
+#~ msgstr "Арба функциясы және Жеткізу/Алып кету қызметін тиімдірек"
+
+#~ msgid "на более выгодных условиях"
+#~ msgstr "шарттарда пайдалану мүмкіндігі"
+
+#~ msgid "Принимать заказы удалённо через Телеграм и"
+#~ msgstr "Telegram арқылы қашықтан тапсырыстарды қабылдаңыз және"
+
+#~ msgid "оплатой Kaspi"
+#~ msgstr "Kaspi арқылы төлем жасаңыз"
+
+#~ msgid "Личный кабинет, где будут подключены Yandex и Google метрики"
+#~ msgstr "Яндекс пен Google көрсеткіштері қосылатын жеке есептік жазба"
+
+#~ msgid "Квартальная"
+#~ msgstr "Тоқсан сайын"
+
+#~ msgid "Спасибо!"
+#~ msgstr "Рақмет сізге!"
+
+#~ msgid "Заявка принята"
+#~ msgstr "Өтінім қабылданды"
+
+#~ msgid "Мы скоро свяжемся с Вами"
+#~ msgstr "Өтінішіңізді жіберіңіз"
 
 #~ msgid "оплата происходит до 15го числа за последующий год"
 #~ msgstr "төлем келесі жылдың 15-іне дейін төленеді"
