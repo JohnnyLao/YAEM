@@ -309,11 +309,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                                 <div class="swiper-wrapper text-center">
                                     {% for ft in food_type %}
                                         {% if ft.category.id == category.id %}
-                                            <div class="swiper-slide me-1" data-food="{{ ft.name }}"
+                                            <div class="swiper-slide me-1" data-food="{{ ft.id }}"
                                                  data-index="{{ forloop.counter0 }}">
                                                 <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"
-                                                   data-target="{{ ft.name }}"
-                                                   style="" href="#{{ ft.name }}">
+                                                   data-target="{{ ft.id }}"
+                                                   style="" href="#{{ ft.id }}">
                                                     {{ ft.name }}
                                                 </a>
                                             </div>
@@ -329,7 +329,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                     {% for ft in food_type %}
                         {% if ft.category.id == category.id %}
                             <div class="col-12 text-center">
-                                <hr class="opacity-5" id="{{ ft.name }}">
+                                <hr class="opacity-5" id="{{ ft.id }}">
                                 <h2 data-aos="fade-right" class="food_type mt-5"
                                     style="color: #fd7014">{{ ft.name }}</h2>
                             </div>
@@ -471,165 +471,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
         {% endfor %}
 
 
-        <!-- Tabs content -->
-        {#    <div class="tab-content" id="ex1-content">#}
-        {#        <div#}
-        {#                class="tab-pane active"#}
-        {#                id="ex1-tabs-1"#}
-        {#                role="tabpanel"#}
-        {#                aria-labelledby="ex1-tab-1"#}
-        {#        >#}
-        {##}
-        {##}
-        {#            <!--    FOOD TYPE SWIPER    -->#}
-        {#            <div class="sticky-top">#}
-        {#                <div class="container-fluid py-2 my-3 shadow"#}
-        {#                     style="background: rgba(25, 25, 25, 0.75); overflow-x: hidden">#}
-        {#                    <div class="swiper-container" id="foodTypeSwiper">#}
-        {#                        <div class="swiper-wrapper text-center">#}
-        {#                            {% for ft in kitchen %}#}
-        {#                            <div class="swiper-slide me-1" data-food="{{ ft.name }}"#}
-        {#                                 data-index="{{ forloop.counter0 }}">#}
-        {#                                <a class="btn btn-rounded shadow-0 btn-animate fw-bold food-type-button"#}
-        {#                                   data-target="{{ ft.name }}"#}
-        {#                                   style="" href="#{{ ft.name }}">#}
-        {#                                    {{ ft.name }}#}
-        {#                                </a>#}
-        {#                            </div>#}
-        {#                            {% endfor %}#}
-        {#                        </div>#}
-        {#                    </div>#}
-        {#                </div>#}
-        {#            </div>#}
-        {##}
-        {##}
-        {#            <!--    FOOD TYPE DOWN    -->#}
-        {##}
-        {#            {% for ft in kitchen %}#}
-        {#            <div class="col-12 text-center">#}
-        {#                <hr class="opacity-5" id="{{ ft.name }}">#}
-        {#                <h2 data-aos="fade-right" class="food_type mt-5" style="color: #fd7014">{{ ft.name }}</h2>#}
-        {#            </div>#}
-        {##}
-        {##}
-        {#            <!--    DISH CONTENT    -->#}
-        {#            <div class="container-fluid my-3">#}
-        {#                <div class="row gy-3 mx-auto justify-content-center">#}
-        {#                    {% for dish in dishes %}#}
-        {#                    {% if dish.food_type == ft %}#}
-        {#                    <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"#}
-        {#                         style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">#}
-        {#                        <div class="d-flex mt-2">#}
-        {#                            {% if dish.image and client.tarif_number.name == "СЕРЕБРО" %}#}
-        {#                            <div class="d-flex" style="background: rgba(33, 37, 41, 0.8); border-radius: 20px;">#}
-        {#                                <img src="{{ dish.image.url }}" alt="dish img"#}
-        {#                                     class="img bg-white position-relative mx-auto"#}
-        {#                                     style="width: 130px; height: 130px; border-radius: 10px; object-fit: cover"#}
-        {#                                     draggable="false"#}
-        {#                                     loading="lazy">#}
-        {#                                {% if dish.generated %}#}
-        {#                                <div class="position-absolute top-0 start-0" data-mdb-tooltip-init data-mdb-toggle="tooltip"#}
-        {#                                     title="{% trans 'Фото сгенериновано YAEM AI' %}">#}
-        {#                                    <i class="fas fa-exclamation mx-2 mt-2 px-2 py-1 rounded-circle"#}
-        {#                                       style="color: #FD7014; background: rgba(33, 37, 41, 0.15); border-radius: 20px"></i>#}
-        {#                                </div>#}
-        {#                                {% endif %}#}
-        {#                            </div>#}
-        {#                            {% endif %}#}
-        {#                            <div class="container" style="width: 100%;#}
-        {#    min-height: auto;#}
-        {#    display: flex;#}
-        {#    flex-direction: column;#}
-        {#    justify-content: space-between;">#}
-        {#                                <div style="width: 100%;#}
-        {#    display: flex;#}
-        {#    flex-direction: column;">#}
-        {#                                    <p class="fw-bold fs-5 mb-1" style="font-weight: 600;#}
-        {#    font-size: 16px;#}
-        {#    line-height: 19px;#}
-        {#    color: inherit;#}
-        {#    margin-bottom: 8px;#}
-        {#    opacity: .9;#}
-        {#    text-decoration: none;">{{ dish.name }}#}
-        {#                                        {% if dish.popular %}#}
-        {#                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"#}
-        {#                                              title="{% trans 'Популярное' %}"><i class="fas fa-star fa-xs"#}
-        {#                                                                                  style="color: gold"></i>#}
-        {#                                </span>#}
-        {#                                        {% endif %}#}
-        {#                                        {% if dish.spicy %}#}
-        {#                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"#}
-        {#                                              title="{% trans 'Острое' %}"><i#}
-        {#                                                class="fas fa-pepper-hot text-danger fa-xs"></i>#}
-        {#                                </span>#}
-        {#                                        {% endif %}#}
-        {#                                        {% if dish.vegetarian %}#}
-        {#                                        <span data-mdb-tooltip-init data-mdb-toggle="tooltip"#}
-        {#                                              title="{% trans 'Вегетарианское' %}"><i#}
-        {#                                                class="fas fa-seedling text-success fa-xs"></i>#}
-        {#                                </span>#}
-        {#                                        {% endif %}#}
-        {#                                    </p>#}
-        {#                                    <p class="text-secondary" style="display: flex;#}
-        {#                                flex-direction: column;#}
-        {#                                align-items: flex-start;#}
-        {#                                font-weight: 600;#}
-        {#                                font-size: 16px;#}
-        {#                                line-height: 19px;#}
-        {#                                color: inherit;#}
-        {#                                margin-bottom: 8px;">{{ dish.description }}#}
-        {#                                    </p>#}
-        {##}
-        {#                                </div>#}
-        {#                                <div class="row">#}
-        {#                                    <div class="d-flex content-justify-between">#}
-        {##}
-        {#                                        <div class="col text-start fs-6 my-0 py-0" style="color: #DF7014">#}
-        {#                                            {% if dish.old_price > dish.actual_price %}#}
-        {#                                            <p class="mb-0">#}
-        {#                                                <del>{{dish.old_price|intcomma}} ₸</del>#}
-        {#                                            </p>#}
-        {#                                            {% endif %}#}
-        {#                                            <p class="fw-bold my-0 py-0">{{dish.actual_price|intcomma}} ₸</p>#}
-        {#                                        </div>#}
-        {##}
-        {# CART - #}
-        {#                                        <a class="btn btn-animate px-0 py-0 me-2 remove-from-cart invisible"#}
-        {#                                           data-mdb-ripple-color="danger"#}
-        {#                                           data-mdb-ripple-radius="10"#}
-        {#                                           href="{% url 'cart:remove' %}"#}
-        {#                                           data-dish-id="{{ dish.id }}">#}
-        {#                                            <i class="fas fa-circle-minus fa-2x text-danger"></i>#}
-        {#                                        </a>#}
-        {##}
-        {# CART quantity #}
-        {#                                        {% load cart_tag %}#}
-        {#                                        <span class="cart-quantity zero-quantity my-auto mx-auto"#}
-        {#                                              data-dish-id="{{ dish.id }}">#}
-        {#                                {{ cart_items|get_item:dish.id }}#}
-        {#                            </span>#}
-        {##}
-        {# CART + #}
-        {#                                        <a class="btn btn-animate px-0 py-0 ms-2 add-to-cart"#}
-        {#                                           data-mdb-ripple-color="success"#}
-        {#                                           data-mdb-ripple-radius="10"#}
-        {#                                           href="{% url 'cart:add' %}"#}
-        {#                                           data-dish-id="{{ dish.id }}">#}
-        {#                                            <i class="fas fa-circle-plus fa-2x text-success"></i>#}
-        {#                                        </a>#}
-        {##}
-        {#                                    </div>#}
-        {#                                </div>#}
-        {#                            </div>#}
-        {#                        </div>#}
-        {#                    </div>#}
-        {#                    {% endif %}#}
-        {#                    {% endfor %}#}
-        {#                </div>#}
-        {#            </div>#}
-        {#            {% endfor %}#}
-        {#        </div>#}
-        {#    </div>#}
+
 
         <!--Content-->
 {% else %}
