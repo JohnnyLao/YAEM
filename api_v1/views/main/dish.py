@@ -114,7 +114,7 @@ class DishViewSet(CustomModelViewSet):
                     "You do not have permission to create a dish for this client."
                 )
             # Check if the subcategory exceeds the limit on the number of dish
-            if subcategory.get_dishes.count() >= 30:
+            if subcategory.get_dishes.count() >= 100:
                 raise ValidationError("Dishes: limit error")
             return super().create(request, *args, **kwargs)
         except Exception as ex:
