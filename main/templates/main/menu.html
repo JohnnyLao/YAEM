@@ -66,9 +66,12 @@
                         <h4 class="my-0"> {% translate 'Добро пожаловать в' %}
                             <span class="" style="color: #FD7014">{{ client.name }}</span>
                         </h4>
-
-
-                        <p class="my-0 text-white-50">{% translate 'Время работы' %}: {{ client.work_time_start }}-{{ client.work_time_end }}</p>
+                        <p class="my-0 text-white-50">{% translate 'Время работы' %}:
+                        {% if client.work_time_start == client.work_time_end %}
+                        {% translate 'Круглосуточно' %}
+                        {% else %}
+                        {{ client.work_time_start }}-{{ client.work_time_end }}</p>
+                        {% endif %}
                         <p class="my-0 text-white-50">{% translate 'г' %}.{{ client.city }}, {{ client.address }}</p>
                         <p class="my-0">{{ client.description }}</p>
 
