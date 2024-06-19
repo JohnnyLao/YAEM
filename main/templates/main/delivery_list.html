@@ -133,7 +133,13 @@
                                 <h6 data-aos="flip-up" class="card-title my-0">{{ client.name }}
                                 </h6>
                                 <p data-aos="flip-up" class="my-0 text-white-50">
-                                    {{ client.work_time_start }}-{{ client.work_time_end }}</p>
+                                    {% if client.work_time_start == client.work_time_end %}
+                                    {% translate 'Круглосуточно' %}
+                                    {% else %}
+                                    {{ client.work_time_start }}-{{ client.work_time_end }}
+                                    {% endif %}
+                                </p>
+
                             </div>
                         </div>
                     </a>
