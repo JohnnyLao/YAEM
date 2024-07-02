@@ -26,9 +26,9 @@ class Dish(models.Model):
     )
     description = models.TextField(
         verbose_name="Описание",
-        max_length=120,
+        max_length=200,
         blank=True,
-        help_text="Описание блюда (120 символов)",
+        help_text="Описание блюда (200 символов)",
     )
     old_price = models.DecimalField(
         verbose_name="Старая цена",
