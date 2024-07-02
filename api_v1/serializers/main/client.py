@@ -224,7 +224,7 @@ class ClientCreateSerializer(serializers.ModelSerializer):
         name = str(value).replace(' ', '').isalnum()
         if not name:
             raise ValidationError('Name: only ru/en/num characters')
-        return str(value).capitalize()
+        return str(value)
 
     # URL validations
     def validate_url_name(self, value):

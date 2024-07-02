@@ -96,6 +96,10 @@ class Client(models.Model):
     delivery = models.BooleanField(
         verbose_name="Доставка", help_text="Значок Доставки", default=False
     )
+    # establishment delivery description
+    delivery_description = models.BooleanField(
+        verbose_name="Отправка описаний блюд", help_text="Отправлять описание позиции при заказе", default=True
+    )
     # establishment service
     service = models.PositiveSmallIntegerField(
         default=0, verbose_name='% за обслуживание', blank=True
