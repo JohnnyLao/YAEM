@@ -18,5 +18,6 @@ class CartPage(TemplateView):
                 'delivery': client.delivery,
                 'outside': client.outside,
                 'phone': client.phone,
+                'delivery_description': client.delivery_description,
             },
         )

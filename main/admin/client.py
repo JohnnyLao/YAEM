@@ -51,6 +51,7 @@ class ClientAdmin(admin.ModelAdmin):
                     'two_gis',
                     'outside',
                     'delivery',
+                    'delivery_description',
                     'service',
                     'wifi',
                     'wifi_password',

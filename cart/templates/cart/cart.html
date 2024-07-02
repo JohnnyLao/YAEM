@@ -125,9 +125,9 @@
 Здравствуйте, прошу принять заказ YAEM.KZ: %0a %0a
 САМОВЫВОЗ: %0a %0a
 {% for item in cart.cart_items.all %}
-*{{ item.dish.name }}* %0a
+*{{ item.dish.name }}* - *{{ item.quantity }} шт.* %0a
 {% if delivery_description %}
-(_{{ item.dish.description }}_) - *{{ item.quantity }} шт.* %0a %0a
+(_{{ item.dish.description }}_) %0a %0a
 {% endif %}
 {% endfor %}">
                     <button class="btn btn-success btn-rounded btn-animate mx-2">
@@ -141,9 +141,9 @@
 Здравствуйте, прошу принять заказ YAEM.KZ: %0a %0a
 ДОСТАВКА: %0a %0a
 {% for item in cart.cart_items.all %}
-*{{ item.dish.name }}* %0a
+*{{ item.dish.name }}* - *{{ item.quantity }} шт.* %0a
 {% if delivery_description %}
-(_{{ item.dish.description }}_) - *{{ item.quantity }} шт.* %0a %0a
+(_{{ item.dish.description }}_) %0a %0a
 {% endif %}
 {% endfor %}">
                     <button class="btn btn-success btn-rounded btn-animate mx-2">

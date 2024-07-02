@@ -45,7 +45,7 @@
                      background-repeat: repeat; min-height: 88vh">
 
 
-    <section class="mx-auto py-0 my-0" style="max-width: 1000px; background: rgba(25, 25, 25, 0.25)">
+    <section class="mx-auto py-0 my-0" style="max-width: 1024px; background: rgba(25, 25, 25, 0.25)">
         <!--    CAFE DESCRIPTION    -->
         <div class="container-fluid px-0">
             <div class="col-12 text-center">
@@ -349,7 +349,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', end
                             <div class="row gy-3 mx-auto justify-content-center">
                                 {% for dish in dishes %}
                                     {% if dish.food_type == ft and dish.food_type.category.id == category.id %}
-                                        <div data-aos="fade-right" class="col-12 col-md-5 my-2 px-1 mx-3 shadow"
+                                        <div data-aos="fade-up" class="col-12 col-md-6 my-2 shadow"
                                              style="background: rgba(25, 25, 25, 0.5); border-radius: 20px;">
                                             <div class="d-flex mt-2">
                                                 {% if dish.image %}
