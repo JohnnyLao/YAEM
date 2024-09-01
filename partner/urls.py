@@ -8,6 +8,6 @@ app_name = "partner"
 
 urlpatterns = [
     path(
-        "partner/", cache_page(CACHES_LIFE_TIME)(Partner.as_view()), name="partner_page"
+        "partner/", Partner.as_view(), name="partner_page"
     ),
 ]

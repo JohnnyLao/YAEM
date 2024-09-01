@@ -1,5 +1,6 @@
-from django.views.generic import TemplateView
+from django.views.generic import RedirectView
 
 
-class Partner(TemplateView):
-    template_name = "partner/partner.html"
+class Partner(RedirectView):
+    permanent = True
+    url = 'https://online-menu.org/'
